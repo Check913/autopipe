@@ -9,6 +9,7 @@ Le script :
   4. le bot 24/7 repart automatiquement au prochain run GitHub Actions.
 """
 import base64
+import os
 import sys
 from pathlib import Path
 
@@ -42,6 +43,10 @@ def push_github_secret(name, value):
     from nacl.encoding import Base64Encoder
     from nacl.public import PublicKey, SealedBox
 
+    # Comme fix_proxy_env("direct") : le proxy systeme Windows ne sait pas
+    # tunneler le HTTPS (WRONG_VERSION_NUMBER) -> force la connexion directe.
+    os.environ["NO_PROXY"] = "*"
+    os.environ["no_proxy"] = "*"
     headers = gh_headers()
     api = "https://api.github.com/repos/%s/actions/secrets" % REPO
     r = requests.get(api + "/public-key", headers=headers, timeout=30)
