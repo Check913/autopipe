@@ -1,0 +1,54 @@
+{
+  "title": "Andes Horror: The Unthinkable Survival Choice",
+  "hook": "Could YOU eat the unthinkable?",
+  "script": "They ate their friends to live.\nThis was no horror movie.\nIt was the Andes Mountains, October 1972.\nUruguayan Air Force Flight 571 crashed.\nCarrying a rugby team and their companions.\nStranded at 12,000 feet.\nTemperatures plunged to minus 30 Celsius.\nNo food. No rescue for weeks.\nAfter two weeks, they faced an impossible decision.\nTo survive, the living consumed the dead.\n16 people endured 72 horrific days.\nCould you make that unthinkable choice to see another sunrise?",
+  "comment": "What's the most extreme survival story you know?",
+  "description": "The true story of the Andes plane crash survivors reveals the horrifying limits of human endurance. What would you sacrifice for life?\n#AndesSurvival #TrueStories #ImpossibleChoices",
+  "tags": [
+    "andes plane crash",
+    "survival story",
+    "true story",
+    "rugby team",
+    "uruguayan flight 571",
+    "extreme survival",
+    "cannibalism",
+    "human endurance",
+    "disaster survival",
+    "real stories",
+    "shocking facts",
+    "documentary"
+  ],
+  "duration_target": 35,
+  "source_topic": "True story of a sports team surviving a disaster.",
+  "source_short_id": "IrD_onZ3n3Y",
+  "source_short_url": "https://www.youtube.com/watch?v=IrD_onZ3n3Y",
+  "source_short_title": "TRUE STORY soccerteam survivors￼￼￼ ￼🔥 #shorts #viralshorts",
+  "source_short_views": 1,
+  "analysis": {
+    "core_hook": "TRUE STORY soccerteam survivors - promises a dramatic, real-life survival narrative.",
+    "psychological_formula": [
+      "curiosity_gap",
+      "shock",
+      "true_story_credibility",
+      "high_stakes",
+      "emotional_appeal"
+    ],
+    "pacing": {
+      "words_per_minute": 160,
+      "sentence_style": "descriptive_narrative",
+      "estimated_hook_seconds": 4
+    },
+    "subject": "True story of a sports team surviving a disaster.",
+    "rewrite_directive": "Create a new short about a different, equally dramatic true survival story, focusing on an impossible moral dilemma. Enhance with a strong visual cue and precise, verifiable facts. Maintain ultra-short sentences and a loop ending.",
+    "generator": "llm:gemini-2.5-flash"
+  },
+  "generator": "remake:gemini-2.5-flash",
+  "originality": {
+    "title_jaccard": 0.0,
+    "script_jaccard": 0.027,
+    "max_jaccard": 0.027,
+    "passed": true
+  },
+  "score": 1,
+  "id": "20261026-004133-remake-01"
+}

@@ -1,0 +1,168 @@
+# ============================================================
+# AutoPipe - configuration (US edition)
+# Copy this file to "autopipe.toml" then adjust the values.
+# ============================================================
+
+[general]
+niche = "amazing facts"          # channel theme
+language = "en"                  # video language (US English)
+region = "US"                    # region for YouTube trending (US audience)
+data_dir = "data"
+output_dir = "output"
+cache_dir = "cache"
+log_file = "autopipe.log"
+log_level = "INFO"               # INFO or DEBUG
+
+[scout]
+trending_count = 25              # number of trending videos to fetch
+keywords = ["amazing facts", "true story", "science explained"]
+
+[radar]
+# Radar multi-plateformes : scrape des sources PUBLIQUES (aucune cle requise)
+# pour trouver les contenus viraux du moment dont le pipeline doit s'inspirer.
+# Reddit (JSON public) + Hacker News + Google News + Google Trends + YouTube
+# Shorts via yt-dlp. TikTok/Instagram : pages tag publiques (best-effort,
+# souvent protegees -> desactivees par defaut ; activer pour tenter quand meme).
+enabled = true
+cache_ttl_minutes = 20           # reutilise latest.json si plus frais (cache)
+items_cap = 150                  # max items conserves par scan
+video_min_items = 40             # reserve de places pour les videos (sinon Reddit/HN ecrasent les videos fraiches)
+topics_cap = 25                  # max sujets exposes a ideas/remake
+pacing_seconds = 0.4             # pause entre requetes (politesse anti-ban)
+request_timeout = 15             # timeout HTTP par requete
+reddit_subs = ["interestingasfuck", "Damnthatsinteresting", "BeAmazed", "interesting"]
+reddit_per_sub = 25
+hackernews_enabled = true
+hackernews_per_query = 30
+google_news_enabled = true
+google_news_per_keyword = 20
+google_trends_enabled = true
+google_trends_geo = ""           # vide = reprend general.region
+youtube_enabled = true
+youtube_per_keyword = 15         # resultats par requete yt-dlp
+youtube_recency_days = 7         # sp YouTube : publiees il y a <= N jours (1/7/30) -> videos RECENTMENT virales
+youtube_queries = ["{kw} shorts", "{kw} viral shorts", "{kw} moments caught on camera"]
+                                 # requetes variees ({kw} = mot-cle de niche) -> fini "toujours les memes videos"
+history_days = 45                # memoire anti-repetition (data/radar/history.json) : oublie un item vu il y a > N jours
+novelty_boost = 1.5              # multiplicateur de score des items JAMAIS vus (les deja-vus perdent 20%/scan)
+tiktok_enabled = false           # activer = tente les pages tag publiques
+tiktok_tags = ["viral", "interesting"]
+instagram_enabled = false
+instagram_tags = ["viral", "reels"]
+
+[remake]
+# Super-Remake "10% Better" (desactive par defaut dans cet exemple) :
+# part d'un Short deja viral de la niche, decode sa formule psychologique
+# (Core Hook), regenere un script 100% original + garde anti-duplication.
+# Mettre enabled = true pour que le scheduler remake avant les templates.
+enabled = false
+count = 2                        # remakes par iteration du pipeline
+keywords = []                    # vide = reprend scout.keywords
+min_views = 500000               # seuil "viral" en vues
+max_duration = 75                # vrais Shorts seulement (secondes)
+limit = 5                        # Shorts conserves par scan
+search_per_keyword = 10          # resultats yt-dlp par mot-cle
+hydrate_count = 15               # candidats a verifier si les vues sont inconnues
+radar_hits = 10                  # hits video du radar fusionnes dans discover_hits
+hook_sentences = 3               # premieres phrases = hook de l'analyse
+hook_chars = 160
+keywords_from_text = 8
+temperature = 0.85               # creativite du moteur 10% Better
+max_jaccard = 0.35               # anti-duplication : similarite max vs l'original
+comments_enabled = true          # scraper commentaires + matrice retention s/s
+max_comments = 60                # commentaires analyses par hit viral
+retention_buckets = 20           # tranches de la matrice de retention
+interrupt_interval = [7, 10]     # pattern interrupt force toutes les 7-10 s
+
+[llm]
+# Optional: LLM for more original scripts (OpenAI-compatible API).
+# If empty, AutoPipe generates scripts from trending topics (templates).
+base_url = ""                    # e.g. https://api.openai.com/v1
+                                 # Gemini: https://generativelanguage.googleapis.com/v1beta/openai/
+                                 #   (modele conseille 2026: gemini-3.8-flash ; liste: GET .../v1beta/openai/models)
+api_key = ""                     # or env var LLM_API_KEY ; Gemini: https://aistudio.google.com/apikey
+model = "gpt-4o-mini"
+temperature = 0.8
+
+[tts]
+voice = "en-US-AndrewNeural"     # US male voice (list: edge-tts --list-voices)
+                                 # other good US voices: en-US-ChristopherNeural,
+                                 # en-US-EricNeural, en-US-AriaNeural (female)
+rate = "+0%"                     # e.g. "+10%" to speak faster
+volume = "+0%"
+
+[subs]
+max_chars = 42
+max_lines = 2
+min_duration = 0.7
+
+[fetch_media]
+provider = "auto"                # auto (pixabay si une cle pixabay existe, sinon pexels) / pixabay / pexels
+pixabay_api_key = ""             # gratuit + cle immediate: https://pixabay.com/api/docs/ (ou env PIXABAY_API_KEY)
+pexels_api_key = ""              # optionnel: https://www.pexels.com/api/ (creation de cle en pause en oct. 2026)
+clips_per_video = 6
+min_width = 720
+
+[video]
+width = 1080
+height = 1920                    # vertical Shorts format
+fps = 30
+music_volume = 0.15
+music_dir = "assets/music"       # optional background music (mp3)
+loop_ending = true               # fin en boucle: dernieres images = premieres images (retention Shorts)
+loop_tail = 0.7                  # duree de la re-intro (secondes)
+hook_overlay = true              # texte choc jaune grave de 0 a 3s (anti swipe-away)
+hook_duration = 3.0              # duree d'affichage du hook (secondes)
+hook_font_size = 84
+
+[upload]
+privacy = "public"               # public / unlisted / private
+category_id = "24"               # 24 = Entertainment
+made_for_kids = false
+client_secrets = "client_secret.json"
+token_file = "token.json"
+daily_limit = 6                  # safety (YouTube quota ~6 uploads/day)
+post_hours_utc = [15, 21]        # US peak hours: 15 UTC = 11am ET, 21 UTC = 5pm ET
+auto_comment = true              # commentaire engageant publie automatiquement sous chaque video
+comment_template = ""            # vide = template par defaut ({title} / {hook} / {tags} disponibles)
+
+[scheduler]
+interval_hours = 4               # 24/7 mode frequency (fallback without post_hours_utc)
+state_file = "data/scheduler_state.json"
+
+[network]
+# Correctif proxy : si votre machine declare un proxy local avec un mauvais
+# schema (ex. HTTPS_PROXY=https://127.0.0.1:PORT), urllib3 tente du TLS vers
+# un proxy HTTP -> SSLError WRONG_VERSION_NUMBER / ProxyError.
+#   direct = ignore les variables proxy (recommande si le reseau direct passe)
+#   fix    = reecrit https:// en http:// pour le proxy declare
+#   keep   = ne modifie rien
+proxy_mode = "direct"
+[visual]
+# Module 1 : analyse OpenCV des premieres secondes des hits viraux ->
+# rythme des coupes, zooms, palette, zone des sous-titres, appliques
+# automatiquement aux parametres de rendu (video.py).
+enabled = true
+analyze_seconds = 3.0            # duree analysee par hit
+max_videos = 5                   # hits analyses par run (tries par vues)
+download_max_height = 720        # resolution de telechargement (leger)
+cut_threshold = 0.40             # sensibilite detection de jump cuts
+cache_hours = 168                # re-analyse d'un meme hit apres 7 jours
+
+[trend]
+# Module 2 : arbitrage de tendance - croise Google Trends et la saturation
+# YouTube pour generer AVANT que le sujet ne sature.
+enabled = true
+geo = ""                         # vide = radar.google_trends_geo / general.region
+max_topics = 15                  # sujets analyses par run
+top_n = 5                        # sujets gardes dans le top
+min_momentum = 0.3               # seuil de momentum pour proposer un sujet
+cache_hours = 6                  # validite du dernier snapshot
+
+[optimizer]
+# Module 3 : boucle auto-apprenante - croise analytics (videos publiees)
+# et caracteristiques des remakes pour ajuster prompts et montage.
+enabled = true
+min_samples = 3                  # videos publiees min. avant apprentissage
+max_delta = 0.35                 # variation max appliquee a un parametre
+patterns_file = ""               # vide = data/optimizer/patterns.json

@@ -1,0 +1,132 @@
+{
+  "maxx crosby": {
+    "traffic": 500.0,
+    "first_seen": "2026-10-26T14:16:16",
+    "last_seen": "2026-10-26T14:16:16",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-26T14:16:16",
+        500.0
+      ]
+    ]
+  },
+  "el nino us winter forecast": {
+    "traffic": 500.0,
+    "first_seen": "2026-10-26T14:16:16",
+    "last_seen": "2026-10-26T14:16:16",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-26T14:16:16",
+        500.0
+      ]
+    ]
+  },
+  "wwe wrestling": {
+    "traffic": 1000.0,
+    "first_seen": "2026-10-26T14:16:16",
+    "last_seen": "2026-10-26T14:16:16",
+    "delta": 1000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-26T14:16:16",
+        1000.0
+      ]
+    ]
+  },
+  "russian": {
+    "traffic": 200.0,
+    "first_seen": "2026-10-26T14:16:16",
+    "last_seen": "2026-10-26T14:16:16",
+    "delta": 200.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-26T14:16:16",
+        200.0
+      ]
+    ]
+  },
+  "timothy simons": {
+    "traffic": 10000.0,
+    "first_seen": "2026-10-26T14:16:16",
+    "last_seen": "2026-10-26T14:16:16",
+    "delta": 10000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-26T14:16:16",
+        10000.0
+      ]
+    ]
+  },
+  "keith urban": {
+    "traffic": 200.0,
+    "first_seen": "2026-10-26T14:16:16",
+    "last_seen": "2026-10-26T14:16:16",
+    "delta": 200.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-26T14:16:16",
+        200.0
+      ]
+    ]
+  },
+  "defaulted federal student loan collections": {
+    "traffic": 2000.0,
+    "first_seen": "2026-10-26T14:16:16",
+    "last_seen": "2026-10-26T14:16:16",
+    "delta": 2000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-26T14:16:16",
+        2000.0
+      ]
+    ]
+  },
+  "robbery": {
+    "traffic": 500.0,
+    "first_seen": "2026-10-26T14:16:16",
+    "last_seen": "2026-10-26T14:16:16",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-26T14:16:16",
+        500.0
+      ]
+    ]
+  },
+  "humana": {
+    "traffic": 1000.0,
+    "first_seen": "2026-10-26T14:16:16",
+    "last_seen": "2026-10-26T14:16:16",
+    "delta": 1000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-26T14:16:16",
+        1000.0
+      ]
+    ]
+  },
+  "chevrolet corvette (c8)": {
+    "traffic": 200.0,
+    "first_seen": "2026-10-26T14:16:16",
+    "last_seen": "2026-10-26T14:16:16",
+    "delta": 200.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-26T14:16:16",
+        200.0
+      ]
+    ]
+  }
+}

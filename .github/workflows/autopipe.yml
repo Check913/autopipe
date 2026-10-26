@@ -1,0 +1,86 @@
+# AutoPipe 24/7 sur GitHub Actions :
+#   - 2 executions planifiees par jour aux heures de pic US (15h et 21h UTC,
+#     soit 11h et 17h heure de l'Est), matching upload.post_hours_utc.
+#   - workflow_dispatch = declenchement manuel depuis l'onglet "Actions".
+#   - Les secrets (config avec cles, token OAuth YouTube, client_secret) sont
+#     injectes depuis les secrets chiffres du depot : rien de sensible dans
+#     l'historique git.
+#   - Le dossier data/ (historique anti-repetition, compteur d'uploads) est
+#     commite a la fin de chaque run pour persister d'un jour a l'autre.
+name: autopipe
+
+on:
+  schedule:
+    - cron: "0 15 * * *"
+    - cron: "0 21 * * *"
+  workflow_dispatch:
+
+# Le run commite l'etat (data/) a la fin -> droit d'ecriture requis.
+permissions:
+  contents: write
+
+concurrency:
+  group: autopipe-run
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      # ffmpeg (avec libass pour les sous-titres) + polices equivalentes Arial
+      - name: Installer ffmpeg + polices
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg fontconfig fonts-liberation
+          fc-cache -f
+
+      - name: Installer les dependances Python
+        run: pip install --no-cache-dir -r requirements.txt
+
+      # Restauration de la config + credentials depuis les secrets chiffres.
+      # gh secret set AUTOPIPE_TOML < autopipe.toml (cles incluses, chiffrees)
+      - name: Restaurer la configuration et les credentials
+        env:
+          AUTOPIPE_TOML: ${{ secrets.AUTOPIPE_TOML }}
+          YOUTUBE_TOKEN_JSON: ${{ secrets.YOUTUBE_TOKEN_JSON }}
+          CLIENT_SECRET_JSON: ${{ secrets.CLIENT_SECRET_JSON }}
+        run: |
+          set -euo pipefail
+          test -n "$AUTOPIPE_TOML" || { echo "Secret AUTOPIPE_TOML manquant"; exit 1; }
+          test -n "$YOUTUBE_TOKEN_JSON" || { echo "Secret YOUTUBE_TOKEN_JSON manquant"; exit 1; }
+          printf '%s' "$AUTOPIPE_TOML" > autopipe.toml
+          printf '%s' "$YOUTUBE_TOKEN_JSON" > token.json
+          if [ -n "${CLIENT_SECRET_JSON:-}" ]; then
+            printf '%s' "$CLIENT_SECRET_JSON" > client_secret.json
+          fi
+          mkdir -p data cache output assets
+          chmod 600 token.json client_secret.json 2>/dev/null || true
+
+      # serve --once = une iteration complete : radar/remake/idees -> TTS ->
+      # clips -> montage -> upload YouTube + commentaire epingle.
+      # (En mode once, la fenetre post_hours_utc n'est pas attendue : le cron
+      # EST la fenetre.)
+      - name: Executer le pipeline
+        run: python -m autopipe.cli serve --once
+
+      # Persistance de l'etat (data/) : historique radar/remake, compteur
+      # d'uploads du jour, analytics. Sans ca, le bot oublierait tout a chaque
+      # run et repeterait les memes sujets.
+      - name: Commiter l'etat du bot
+        run: |
+          git config user.name "autopipe-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data || true
+          if git diff --cached --quiet; then
+            echo "Etat inchangé"
+          else
+            git commit -m "etat du bot: $(date -u '+%Y-%m-%d %H:%M UTC')"
+            git push
+          fi

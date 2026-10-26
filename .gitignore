@@ -1,0 +1,20 @@
+# === SECRETS : JAMAIS dans le depot (injectes via GitHub Actions secrets) ===
+autopipe.toml
+client_secret.json
+token.json
+*.token.json
+
+# === Donnees locales / caches (le dossier data/ EST versionne : historique
+# anti-repetition + compteur d'uploads quotidiens doivent persister) ===
+cache/
+output/
+*.log
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Kits et outils locaux
+deploy247/
+AutoPipe_247_kit.zip
+rebuild_zip_tmp.py
+verify_keys_tmp.py

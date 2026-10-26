@@ -1,0 +1,53 @@
+{
+  "title": "Uncover the Spiritual Lie Stealing Your Inner Peace",
+  "hook": "Is a Spiritual Lie Stealing Your Peace?",
+  "script": "The biggest spiritual lie steals your peace.\nYou're told constant striving leads to growth.\nAlways chasing more enlightenment, more virtue.\nBut ancient texts reveal a radical secret.\nTrue transformation begins by letting go.\nNot adding, but shedding what burdens your spirit.\nBrain scans confirm: releasing old thought patterns literally rewires your mind.\nThis isn't about perfection, it's about profound presence.\nIt unlocks lasting serenity within.\nHas this counter-intuitive truth ever shifted your world?\nStop the chasing, and reclaim the peace this lie stole.",
+  "comment": "What's one thing you've released that brought you true peace?",
+  "description": "Many seek spiritual growth by adding more, but true transformation often lies in the art of letting go. Discover how ancient wisdom, backed by neuroscience, challenges common beliefs about inner peace. #SpiritualGrowth #InnerPeace #LettingGo",
+  "tags": [
+    "spiritual growth",
+    "inner peace",
+    "letting go",
+    "mindset",
+    "neuroscience",
+    "ancient wisdom",
+    "personal transformation",
+    "self improvement",
+    "spiritual awakening",
+    "mindfulness",
+    "mental clarity"
+  ],
+  "duration_target": 34,
+  "source_topic": "Religious facts and personal testimony of divine change.",
+  "source_short_id": "CZ_eQAUDyDE",
+  "source_short_url": "https://www.youtube.com/watch?v=CZ_eQAUDyDE",
+  "source_short_title": "Has God Changed Your Life Through Amazing Facts? Share Your Story!",
+  "source_short_views": 3556,
+  "analysis": {
+    "core_hook": "Personal transformation through divinely-inspired facts.",
+    "psychological_formula": [
+      "Curiosity Gap (about 'amazing facts')",
+      "Personal Relevance (direct question about viewer's life)",
+      "Emotional Connection (faith, personal change)",
+      "Call to Action (share your story)",
+      "Community Building (shared religious experience)"
+    ],
+    "pacing": {
+      "words_per_minute": 160,
+      "sentence_style": "varied (inferred), likely conversational",
+      "estimated_hook_seconds": 3
+    },
+    "subject": "Religious facts and personal testimony of divine change.",
+    "rewrite_directive": "Create a new Short using the same psychological formula (curiosity, personal relevance, emotional connection, paradigm shift) but apply it to a secular, mind-bending scientific or philosophical fact. The new Short must open with a shock question/brutal claim, use ultra-short sentences (150-170 wpm), feature concrete, checkable facts, have a loop ending, and include one stronger counter-intuitive twist or visual cue. Avoid any religious references.",
+    "generator": "llm:gemini-2.5-flash"
+  },
+  "generator": "remake:gemini-2.5-flash",
+  "originality": {
+    "title_jaccard": 0.0,
+    "script_jaccard": 0.006,
+    "max_jaccard": 0.006,
+    "passed": true
+  },
+  "score": 3563,
+  "id": "20261026-003713-remake-01"
+}

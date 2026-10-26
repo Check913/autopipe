@@ -1,0 +1,54 @@
+{
+  "title": "Dark Matter: Your invisible universe",
+  "hook": "Is your universe mostly invisible?",
+  "script": "The universe is mostly invisible.\n85% of all matter is completely hidden.\nWe call it Dark Matter.\nIt doesn't absorb or emit light.\nIt doesn't even interact with normal matter.\nYet, its gravity dictates galaxy formation.\nIt warps light from distant stars.\nTrillions of these particles are phasing through your body every second.\nScientists are building giant detectors deep underground.\nThey hope to catch a single interaction.\nUnraveling dark matter redefines cosmic reality.\nIts unseen presence dictates everything, making the universe mostly invisible.",
+  "comment": "What if we could finally see dark matter?",
+  "description": "Discover the unseen force shaping our cosmos. Dark matter makes up 85% of the universe, yet remains a profound mystery. #DarkMatter #Cosmology #InvisibleUniverse",
+  "tags": [
+    "dark matter",
+    "universe",
+    "space",
+    "astronomy",
+    "science",
+    "physics",
+    "cosmology",
+    "mystery",
+    "invisible",
+    "galaxies",
+    "gravity",
+    "unseen"
+  ],
+  "duration_target": 36,
+  "source_topic": "Antimatter's nature and implications explained concisely.",
+  "source_short_id": "FqkyMSDm-HY",
+  "source_short_url": "https://www.youtube.com/watch?v=FqkyMSDm-HY",
+  "source_short_title": "ANTIMATTER — explained in 60sec #Shorts #Science",
+  "source_short_views": 8545,
+  "analysis": {
+    "core_hook": "The inherent mystery of antimatter and the promise of a rapid, clear explanation for a complex scientific concept.",
+    "psychological_formula": [
+      "Curiosity Gap",
+      "Awe/Wonder",
+      "Information Efficiency",
+      "Stakes (implied power/danger)",
+      "Payoff (understanding exotic science)"
+    ],
+    "pacing": {
+      "words_per_minute": 150,
+      "sentence_style": "Declarative, informative",
+      "estimated_hook_seconds": 3
+    },
+    "subject": "Antimatter's nature and implications explained concisely.",
+    "rewrite_directive": "Create a new Short explaining a complex, awe-inspiring scientific concept with a shock opening, tighter pacing, and stronger, verifiable facts, adhering to the viral formula.",
+    "generator": "llm:gemini-2.5-flash"
+  },
+  "generator": "remake:gemini-2.5-flash",
+  "originality": {
+    "title_jaccard": 0.0,
+    "script_jaccard": 0.02,
+    "max_jaccard": 0.02,
+    "passed": true
+  },
+  "score": 8545,
+  "id": "20261026-003105-remake-01"
+}

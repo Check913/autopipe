@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-26T14:16:46.353724",
+  "region": "US",
+  "language": "en",
+  "keywords": [
+    "amazing facts",
+    "true story",
+    "science explained"
+  ],
+  "min_views": 500000,
+  "max_duration": 75,
+  "total_found": 52,
+  "rejected": 50,
+  "hits": [
+    {
+      "id": "FqkyMSDm-HY",
+      "title": "ANTIMATTER — explained in 60sec #Shorts #Science",
+      "channel": "ABC Science",
+      "views": 8546,
+      "duration": 61.0,
+      "url": "https://www.youtube.com/watch?v=FqkyMSDm-HY",
+      "query": "ytsearch10:science explained #shorts"
+    },
+    {
+      "id": "CZ_eQAUDyDE",
+      "title": "Has God Changed Your Life Through Amazing Facts? Share Your Story!",
+      "channel": "AmazingFacts",
+      "views": 3575,
+      "duration": 46.0,
+      "url": "https://www.youtube.com/watch?v=CZ_eQAUDyDE",
+      "query": "ytsearch10:amazing facts #shorts"
+    }
+  ]
+}

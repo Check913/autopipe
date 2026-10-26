@@ -1,0 +1,113 @@
+{
+  "fetched": "2026-10-26T14:16:35",
+  "geo": "",
+  "topics": [
+    {
+      "query": "defaulted federal student loan collections",
+      "traffic": 2000.0,
+      "rise": 10.0,
+      "saturation_views": 16955.0,
+      "momentum": 3.0964
+    },
+    {
+      "query": "timothy simons",
+      "traffic": 10000.0,
+      "rise": 10.0,
+      "saturation_views": 859492.0,
+      "momentum": 2.0267
+    },
+    {
+      "query": "el nino us winter forecast",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 1809821.0,
+      "momentum": 1.902
+    },
+    {
+      "query": "wwe wrestling",
+      "traffic": 1000.0,
+      "rise": 10.0,
+      "saturation_views": 2054826.0,
+      "momentum": 1.8823
+    },
+    {
+      "query": "maxx crosby",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 2863783.0,
+      "momentum": 1.8325
+    },
+    {
+      "query": "humana",
+      "traffic": 1000.0,
+      "rise": 10.0,
+      "saturation_views": 6313319.0,
+      "momentum": 1.7241
+    },
+    {
+      "query": "chevrolet corvette (c8)",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 8814552.0,
+      "momentum": 1.682
+    },
+    {
+      "query": "russian",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 15213224.0,
+      "momentum": 1.6175
+    },
+    {
+      "query": "robbery",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 651191315.0,
+      "momentum": 1.2798
+    },
+    {
+      "query": "keith urban",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 721849917.0,
+      "momentum": 1.2725
+    }
+  ],
+  "top": [
+    {
+      "query": "defaulted federal student loan collections",
+      "traffic": 2000.0,
+      "rise": 10.0,
+      "saturation_views": 16955.0,
+      "momentum": 3.0964
+    },
+    {
+      "query": "timothy simons",
+      "traffic": 10000.0,
+      "rise": 10.0,
+      "saturation_views": 859492.0,
+      "momentum": 2.0267
+    },
+    {
+      "query": "el nino us winter forecast",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 1809821.0,
+      "momentum": 1.902
+    },
+    {
+      "query": "wwe wrestling",
+      "traffic": 1000.0,
+      "rise": 10.0,
+      "saturation_views": 2054826.0,
+      "momentum": 1.8823
+    },
+    {
+      "query": "maxx crosby",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 2863783.0,
+      "momentum": 1.8325
+    }
+  ]
+}

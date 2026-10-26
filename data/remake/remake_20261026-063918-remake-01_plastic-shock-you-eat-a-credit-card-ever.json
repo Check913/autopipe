@@ -1,0 +1,123 @@
+{
+  "title": "Plastic Shock: You eat a credit card every week",
+  "hook": "EAT A CREDIT CARD EVERY WEEK?",
+  "script": "You swallow a credit card's worth of plastic every single week.\nThink that's impossible?\nMicroplastics are everywhere.\nIn your food.\nIn your water.\nEven the air you breathe.\nWe consume 5 grams weekly.\nThat's like eating a full credit card.\nFrom synthetic clothes.\nTo tire dust and packaging.\nThese particles cause inflammation.\nThey disrupt gut health.\nLinked to various diseases.\nAre we accepting this fate?\nReducing single-use plastics helps.\nFiltering your water.\nBut can you escape it?\nThis plastic cycle is global.\nIt's raining plastic worldwide.\nIs a credit card's worth of plastic really what you want for dinner?",
+  "comment": "How much plastic do you think is in your body right now?",
+  "description": "The shocking truth about microplastic consumption. You're likely eating more plastic than you think, with serious health implications. #Microplastics #HealthFacts #HiddenDangers",
+  "tags": [
+    "microplastics",
+    "plastic consumption",
+    "health facts",
+    "environmental impact",
+    "food safety",
+    "water pollution",
+    "hidden dangers",
+    "shocking facts",
+    "human body",
+    "daily habits",
+    "toxic chemicals",
+    "credit card plastic"
+  ],
+  "duration_target": 38,
+  "source_topic": "Original short's transcript is missing from the provided data. Cannot determine subject accurately.",
+  "source_short_id": "9sueQEfMzJ4",
+  "source_short_url": "https://www.youtube.com/watch?v=9sueQEfMzJ4",
+  "source_short_title": "A Priceless Pearl 2026 | Amazing Facts",
+  "source_short_views": 3354,
+  "analysis": {
+    "core_hook": "Original short's transcript is missing from the provided data. Cannot decode core hook.",
+    "psychological_formula": [
+      "Cannot analyze without original transcript."
+    ],
+    "pacing": {
+      "words_per_minute": null,
+      "sentence_style": "unknown",
+      "estimated_hook_seconds": null
+    },
+    "subject": "Original short's transcript is missing from the provided data. Cannot determine subject accurately.",
+    "rewrite_directive": "Please provide the full transcript of the original viral short to enable analysis and a new short generation. The 'OBSERVED OPENING' provided was not a transcript.",
+    "generator": "llm:gemini-2.5-flash",
+    "retention": {
+      "source": "ytdlp",
+      "n_comments": 6,
+      "kinds": {
+        "question": 1,
+        "reaction": 0,
+        "general": 5
+      },
+      "bucket_s": 3,
+      "unlocated": 6,
+      "density": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "spikes_s": [],
+      "interrupts": [
+        {
+          "s": 7,
+          "align_spike": false,
+          "type": "question"
+        },
+        {
+          "s": 17,
+          "align_spike": false,
+          "type": "question"
+        },
+        {
+          "s": 27,
+          "align_spike": false,
+          "type": "question"
+        },
+        {
+          "s": 37,
+          "align_spike": false,
+          "type": "question"
+        },
+        {
+          "s": 47,
+          "align_spike": false,
+          "type": "question"
+        },
+        {
+          "s": 57,
+          "align_spike": false,
+          "type": "question"
+        }
+      ],
+      "hook_triggers": {},
+      "gaps": [
+        {
+          "text": "Practice what you are preaching Pastor.",
+          "likes": 0
+        }
+      ]
+    }
+  },
+  "generator": "remake:gemini-2.5-flash",
+  "originality": {
+    "title_jaccard": 0.0,
+    "script_jaccard": 0.006,
+    "max_jaccard": 0.006,
+    "passed": true
+  },
+  "score": 3354,
+  "id": "20261026-063918-remake-01"
+}
