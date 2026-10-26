@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-26T19:06:00.032644",
+  "date": "2026-10-26T19:30:30.007418",
   "region": "US",
   "language": "en",
   "keywords": [
@@ -9,8 +9,8 @@
   ],
   "min_views": 500000,
   "max_duration": 75,
-  "total_found": 44,
-  "rejected": 41,
+  "total_found": 51,
+  "rejected": 47,
   "hits": [
     {
       "id": "FqkyMSDm-HY",
@@ -19,7 +19,16 @@
       "views": 8547,
       "duration": 61.0,
       "url": "https://www.youtube.com/watch?v=FqkyMSDm-HY",
-      "query": "ytsearch10:science explained #shorts"
+      "query": "ytsearch10:science explained shorts"
+    },
+    {
+      "id": "C7wVga8Qj9A",
+      "title": "Growing in Christ | Amazing Facts (Doug Batchelor)",
+      "channel": "AmazingFacts",
+      "views": 3495,
+      "duration": 61.0,
+      "url": "https://www.youtube.com/watch?v=C7wVga8Qj9A",
+      "query": "ytsearch10:amazing facts #shorts"
     },
     {
       "id": "9sueQEfMzJ4",
@@ -31,13 +40,13 @@
       "query": "ytsearch10:amazing facts shorts"
     },
     {
-      "id": "9spifqMjZCE",
-      "title": "Amazing Facts TV",
-      "channel": "AmazingFacts",
-      "views": 0,
-      "duration": 0.0,
-      "url": "https://www.youtube.com/watch?v=9spifqMjZCE",
-      "query": "ytsearch10:amazing facts #shorts"
+      "id": "RXbljrD8_GU",
+      "title": "Why Does Ice Float? 🧊 The Science Will Surprise You! #Shorts",
+      "channel": "Rahbar Kids Science Club",
+      "views": 9,
+      "duration": 24.0,
+      "url": "https://www.youtube.com/watch?v=RXbljrD8_GU",
+      "query": "ytsearch10:science explained shorts"
     }
   ]
 }

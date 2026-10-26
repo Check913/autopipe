@@ -1,113 +1,113 @@
 {
-  "fetched": "2026-10-26T19:05:52",
+  "fetched": "2026-10-26T19:30:23",
   "geo": "",
   "topics": [
     {
-      "query": "west university avenue",
-      "traffic": 500.0,
+      "query": "sevilla - osasuna",
+      "traffic": 1000.0,
       "rise": 10.0,
-      "saturation_views": 3864.0,
-      "momentum": 3.8637
+      "saturation_views": 49248.0,
+      "momentum": 2.7082
     },
     {
-      "query": "jacob morley",
+      "query": "green bay packers officiating complaints",
+      "traffic": 20000.0,
+      "rise": 10.0,
+      "saturation_views": 166465.0,
+      "momentum": 2.3689
+    },
+    {
+      "query": "sevilla vs osasuna",
+      "traffic": 1000.0,
+      "rise": 10.0,
+      "saturation_views": 207616.0,
+      "momentum": 2.3163
+    },
+    {
+      "query": "from netflix horror series review",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 20809.0,
-      "momentum": 3.0134
+      "saturation_views": 593914.0,
+      "momentum": 2.0948
+    },
+    {
+      "query": "psg - lyon",
+      "traffic": 10000.0,
+      "rise": 4.0,
+      "saturation_views": 442784.0,
+      "momentum": 0.8609
+    },
+    {
+      "query": "chrishell stause",
+      "traffic": 2000.0,
+      "rise": 3.0,
+      "saturation_views": 275658.0,
+      "momentum": 0.6756
+    },
+    {
+      "query": "psg vs ol",
+      "traffic": 20000.0,
+      "rise": 3.0,
+      "saturation_views": 484271.0,
+      "momentum": 0.6403
+    },
+    {
+      "query": "west university avenue",
+      "traffic": 1000.0,
+      "rise": 1.0,
+      "saturation_views": 1493.0,
+      "momentum": 0.4594
+    },
+    {
+      "query": "beyoncé",
+      "traffic": 2000.0,
+      "rise": 3.0,
+      "saturation_views": 2793476097.0,
+      "momentum": 0.3552
     },
     {
       "query": "st. louis blues",
       "traffic": 500.0,
-      "rise": 10.0,
-      "saturation_views": 142565.0,
-      "momentum": 2.4073
-    },
-    {
-      "query": "chrishell stause",
-      "traffic": 500.0,
-      "rise": 10.0,
-      "saturation_views": 185564.0,
-      "momentum": 2.3427
-    },
-    {
-      "query": "state farm arena",
-      "traffic": 1000.0,
-      "rise": 10.0,
-      "saturation_views": 306810.0,
-      "momentum": 2.2287
-    },
-    {
-      "query": "psg - lyon",
-      "traffic": 2000.0,
-      "rise": 10.0,
-      "saturation_views": 444437.0,
-      "momentum": 2.1515
-    },
-    {
-      "query": "ina garten",
-      "traffic": 500.0,
-      "rise": 10.0,
-      "saturation_views": 1526849.0,
-      "momentum": 1.9291
-    },
-    {
-      "query": "psg vs ol",
-      "traffic": 5000.0,
-      "rise": 10.0,
-      "saturation_views": 3552595.0,
-      "momentum": 1.8016
-    },
-    {
-      "query": "beyoncé",
-      "traffic": 500.0,
-      "rise": 10.0,
-      "saturation_views": 3042968232.0,
-      "momentum": 1.1788
-    },
-    {
-      "query": "bird flu",
-      "traffic": 500.0,
       "rise": 0.0,
-      "saturation_views": 5475947.0,
+      "saturation_views": 439741.0,
       "momentum": 0.0
     }
   ],
   "top": [
     {
-      "query": "west university avenue",
-      "traffic": 500.0,
-      "rise": 10.0,
-      "saturation_views": 3864.0,
-      "momentum": 3.8637
-    },
-    {
-      "query": "jacob morley",
-      "traffic": 500.0,
-      "rise": 10.0,
-      "saturation_views": 20809.0,
-      "momentum": 3.0134
-    },
-    {
-      "query": "st. louis blues",
-      "traffic": 500.0,
-      "rise": 10.0,
-      "saturation_views": 142565.0,
-      "momentum": 2.4073
-    },
-    {
-      "query": "chrishell stause",
-      "traffic": 500.0,
-      "rise": 10.0,
-      "saturation_views": 185564.0,
-      "momentum": 2.3427
-    },
-    {
-      "query": "state farm arena",
+      "query": "sevilla - osasuna",
       "traffic": 1000.0,
       "rise": 10.0,
-      "saturation_views": 306810.0,
-      "momentum": 2.2287
+      "saturation_views": 49248.0,
+      "momentum": 2.7082
+    },
+    {
+      "query": "green bay packers officiating complaints",
+      "traffic": 20000.0,
+      "rise": 10.0,
+      "saturation_views": 166465.0,
+      "momentum": 2.3689
+    },
+    {
+      "query": "sevilla vs osasuna",
+      "traffic": 1000.0,
+      "rise": 10.0,
+      "saturation_views": 207616.0,
+      "momentum": 2.3163
+    },
+    {
+      "query": "from netflix horror series review",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 593914.0,
+      "momentum": 2.0948
+    },
+    {
+      "query": "psg - lyon",
+      "traffic": 10000.0,
+      "rise": 4.0,
+      "saturation_views": 442784.0,
+      "momentum": 0.8609
     }
   ]
 }
