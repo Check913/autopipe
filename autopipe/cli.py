@@ -243,6 +243,38 @@ def cmd_test_video(a):
     print("OK: %s (%.1fs)" % (final, media_duration(final)))
 
 
+def cmd_check_token(a):
+    """Sante du token YouTube ; alerte Gmail si une re-autorisation est requise."""
+    cfg = _init(a.verbose)
+    from .alerts import notify_if_action_needed, token_health
+    health = token_health(cfg)
+    print("Token YouTube: %s%s" % (
+        health["status"],
+        "" if health["status"] == "ok" else " (%s)" % health.get("reason", "")))
+    _, sent = notify_if_action_needed(cfg, force=a.force, cause="reauth")
+    if sent:
+        print("Email d'alerte envoye (re-autorisation requise, voir reauth_247.bat).")
+    if health["status"] != "ok":
+        # CI : echec immediat -> notify-failure prend le relais, et on evite de
+        # generer une video inuploadable (ou un flow OAuth qui bloquerait).
+        sys.exit(1)
+
+
+def cmd_notify_failure(a):
+    """Alerte Gmail d'echec de run (appelle par GitHub Actions en if: failure())."""
+    cfg = _init(a.verbose)
+    from .alerts import notify_if_action_needed, token_health
+    health = token_health(cfg)
+    if health["status"] != "ok":
+        # Echec probablement cause par le token : l'email "re-autorisation"
+        # (anti-spam 24 h, envoye par check-token) couvre deja ce cas.
+        _, sent = notify_if_action_needed(cfg, force=False, cause="reauth")
+    else:
+        _, sent = notify_if_action_needed(cfg, force=a.force, cause="runfail")
+    print("Notification: %s" % ("email envoye" if sent else
+          "pas d'email (Gmail non configure ou alerte deja envoyee recemment)"))
+
+
 def cmd_setup(a):
     cfg = _init(a.verbose)
     paths = get_paths(cfg)
@@ -378,6 +410,18 @@ def main(argv=None):
 
     p = sub.add_parser("test-video", help="test d'assemblage video")
     p.set_defaults(fn=cmd_test_video)
+
+    p = sub.add_parser("check-token",
+                       help="verifier le token YouTube (+ alerte Gmail si re-autorisation requise)")
+    p.add_argument("--force", action="store_true",
+                   help="envoyer l'email meme si le token est valide (pour tester)")
+    p.set_defaults(fn=cmd_check_token)
+
+    p = sub.add_parser("notify-failure",
+                       help="alerte Gmail d'echec de run (usage CI, if: failure)")
+    p.add_argument("--force", action="store_true",
+                   help="ignorer l'anti-spam de 2 h pour l'email d'echec")
+    p.set_defaults(fn=cmd_notify_failure)
 
     p = sub.add_parser("setup", help="verifier l'installation")
     p.set_defaults(fn=cmd_setup)

@@ -63,6 +63,16 @@ jobs:
           mkdir -p data cache output assets
           chmod 600 token.json client_secret.json 2>/dev/null || true
 
+      # Sante du token YouTube AVANT de generer la video. Si une
+      # re-autorisation est requise, envoie l'alerte Gmail (avec la marche a
+      # suivre) puis arrete le run immediatement : ni calcul gaspille, ni
+      # blocage sur un flow OAuth interactif impossible sur le runner.
+      - name: Verifier le token YouTube (alerte Gmail si action requise)
+        env:
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: python -m autopipe.cli check-token
+
       # serve --once = une iteration complete : radar/remake/idees -> TTS ->
       # clips -> montage -> upload YouTube + commentaire epingle.
       # (En mode once, la fenetre post_hours_utc n'est pas attendue : le cron
@@ -74,6 +84,7 @@ jobs:
       # d'uploads du jour, analytics. Sans ca, le bot oublierait tout a chaque
       # run et repeterait les memes sujets.
       - name: Commiter l'etat du bot
+        if: always()
         run: |
           git config user.name "autopipe-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -84,3 +95,13 @@ jobs:
             git commit -m "etat du bot: $(date -u '+%Y-%m-%d %H:%M UTC')"
             git push
           fi
+
+      # Alerte Gmail si le run echoue : email "re-autorisation" si le token
+      # est en cause (anti-spam 24 h, pas de doublon avec check-token), sinon
+      # email "echec de run" avec le lien vers les logs.
+      - name: Alerte Gmail en cas d'echec
+        if: failure()
+        env:
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: python -m autopipe.cli notify-failure --force
