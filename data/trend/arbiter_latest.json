@@ -1,113 +1,113 @@
 {
-  "fetched": "2026-10-26T18:46:38",
+  "fetched": "2026-10-26T19:05:52",
   "geo": "",
   "topics": [
     {
-      "query": "galatasaray - fenerbahçe",
+      "query": "west university avenue",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 3864.0,
+      "momentum": 3.8637
+    },
+    {
+      "query": "jacob morley",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 20809.0,
+      "momentum": 3.0134
+    },
+    {
+      "query": "st. louis blues",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 142565.0,
+      "momentum": 2.4073
+    },
+    {
+      "query": "chrishell stause",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 185564.0,
+      "momentum": 2.3427
+    },
+    {
+      "query": "state farm arena",
+      "traffic": 1000.0,
+      "rise": 10.0,
+      "saturation_views": 306810.0,
+      "momentum": 2.2287
+    },
+    {
+      "query": "psg - lyon",
       "traffic": 2000.0,
       "rise": 10.0,
-      "saturation_views": 0.0,
-      "momentum": 33.2193
+      "saturation_views": 444437.0,
+      "momentum": 2.1515
     },
     {
-      "query": "antoine de massy",
+      "query": "ina garten",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 70376.0,
-      "momentum": 2.5991
+      "saturation_views": 1526849.0,
+      "momentum": 1.9291
     },
     {
-      "query": "airbnb new cleaning policy rules",
+      "query": "psg vs ol",
+      "traffic": 5000.0,
+      "rise": 10.0,
+      "saturation_views": 3552595.0,
+      "momentum": 1.8016
+    },
+    {
+      "query": "beyoncé",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 106678.0,
-      "momentum": 2.4826
-    },
-    {
-      "query": "santa clara vs benfica",
-      "traffic": 2000.0,
-      "rise": 10.0,
-      "saturation_views": 193401.0,
-      "momentum": 2.3329
-    },
-    {
-      "query": "hannah waddingham",
-      "traffic": 500.0,
-      "rise": 10.0,
-      "saturation_views": 725712.0,
-      "momentum": 2.0573
-    },
-    {
-      "query": "dre kirkpatrick jr",
-      "traffic": 500.0,
-      "rise": 10.0,
-      "saturation_views": 1099965.0,
-      "momentum": 1.9836
-    },
-    {
-      "query": "travis kelce taylor swift chiefs games",
-      "traffic": 20000.0,
-      "rise": 10.0,
-      "saturation_views": 1510505.0,
-      "momentum": 1.9308
-    },
-    {
-      "query": "psg vs lyon",
-      "traffic": 500.0,
-      "rise": 10.0,
-      "saturation_views": 1694648.0,
-      "momentum": 1.9124
+      "saturation_views": 3042968232.0,
+      "momentum": 1.1788
     },
     {
       "query": "bird flu",
       "traffic": 500.0,
-      "rise": 10.0,
-      "saturation_views": 5475913.0,
-      "momentum": 1.7426
-    },
-    {
-      "query": "nfl top 10",
-      "traffic": 100000.0,
-      "rise": 10.0,
-      "saturation_views": 12096918.0,
-      "momentum": 1.644
+      "rise": 0.0,
+      "saturation_views": 5475947.0,
+      "momentum": 0.0
     }
   ],
   "top": [
     {
-      "query": "galatasaray - fenerbahçe",
-      "traffic": 2000.0,
-      "rise": 10.0,
-      "saturation_views": 0.0,
-      "momentum": 33.2193
-    },
-    {
-      "query": "antoine de massy",
+      "query": "west university avenue",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 70376.0,
-      "momentum": 2.5991
+      "saturation_views": 3864.0,
+      "momentum": 3.8637
     },
     {
-      "query": "airbnb new cleaning policy rules",
+      "query": "jacob morley",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 106678.0,
-      "momentum": 2.4826
+      "saturation_views": 20809.0,
+      "momentum": 3.0134
     },
     {
-      "query": "santa clara vs benfica",
-      "traffic": 2000.0,
-      "rise": 10.0,
-      "saturation_views": 193401.0,
-      "momentum": 2.3329
-    },
-    {
-      "query": "hannah waddingham",
+      "query": "st. louis blues",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 725712.0,
-      "momentum": 2.0573
+      "saturation_views": 142565.0,
+      "momentum": 2.4073
+    },
+    {
+      "query": "chrishell stause",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 185564.0,
+      "momentum": 2.3427
+    },
+    {
+      "query": "state farm arena",
+      "traffic": 1000.0,
+      "rise": 10.0,
+      "saturation_views": 306810.0,
+      "momentum": 2.2287
     }
   ]
 }
