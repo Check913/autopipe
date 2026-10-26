@@ -136,6 +136,43 @@ def post_pinned_comment(video_id, text, cfg=None):
         return None
 
 
+def ensure_channel_country(cfg=None):
+    """Aligne la localisation de la chaine (brandingSettings.channel.country).
+
+    Google a retire la geolocalisation par video (videos.insert
+    recordingDetails, depuis 2017) et regionCode n'est qu'un filtre de
+    recherche/charts : le seul levier API officiel pour que la page YouTube
+    apparaisse "localisee" est le pays de la chaine
+    (brandingSettings.channel.country). Ecriture = 50 unites de quota
+    (lecture = 1), donc idempotent : on n'ecrit que si la valeur differe.
+    Retourne {country, changed, previous} ou None en cas d'echec.
+    """
+    cfg = cfg or get_config()
+    country = str(cfg["upload"].get("channel_country", "US"))
+    try:
+        yt = get_service(cfg)
+        resp = yt.channels().list(part="brandingSettings", mine=True).execute()
+        items = resp.get("items") or []
+        if not items:
+            log.warning("Localisation chaine: aucune chaine pour ce token")
+            return None
+        # On ne renvoie que la sous-partie "channel" : "image"/"hints" sont
+        # deprecated et leur aller-retour provoque des 400 Invalid value.
+        channel = dict((items[0].get("brandingSettings") or {}).get("channel") or {})
+        previous = channel.get("country")
+        if previous == country:
+            log.info("Localisation de la chaine deja '%s' (rien a faire)", country)
+            return {"country": country, "changed": False, "previous": previous}
+        channel["country"] = country
+        yt.channels().update(part="brandingSettings",
+                             body={"brandingSettings": {"channel": channel}}).execute()
+        log.info("Localisation de la chaine: %s -> '%s'", previous, country)
+        return {"country": country, "changed": True, "previous": previous}
+    except Exception as exc:
+        log.warning("Localisation de la chaine non appliquee: %s", exc)
+        return None
+
+
 def upload_video(video_path, title, description, tags=None, cfg=None, privacy=None,
                  pinned_comment=None):
     """Resumable upload. Returns the YouTube video ID."""
@@ -167,6 +204,10 @@ def upload_video(video_path, title, description, tags=None, cfg=None, privacy=No
             log.info("Upload: %.0f%%", status.progress() * 100)
     video_id = response.get("id")
     log.info("Video published: https://youtu.be/%s", video_id)
+    if cfg["upload"].get("enforce_channel_country", True):
+        # A chaque publication, re-aligne le pays de la chaine (US par defaut) :
+        # idempotent, 1 unite de quota si deja correct, 50 sinon.
+        ensure_channel_country(cfg)
     if pinned_comment:
         post_pinned_comment(video_id, pinned_comment, cfg)
     return video_id

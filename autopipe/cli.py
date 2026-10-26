@@ -275,6 +275,21 @@ def cmd_notify_failure(a):
           "pas d'email (Gmail non configure ou alerte deja envoyee recemment)"))
 
 
+def cmd_set_country(a):
+    """Force la localisation US de la page YouTube (pays de la chaine)."""
+    cfg = _init(a.verbose)
+    from .upload import ensure_channel_country
+    result = ensure_channel_country(cfg)
+    if result is None:
+        print("Echec: localisation non appliquee (voir log).")
+        sys.exit(1)
+    state = "deja correcte" if not result["changed"] else "APPLIQUEE"
+    prev = " (avant: %s)" % result["previous"] if result.get("previous") else ""
+    print("Localisation de la page YouTube: %s -> %s%s" % (
+        result["country"], state, prev))
+    print("Effet visible sur la page chaine sous peu (cache YouTube possible).")
+
+
 def cmd_setup(a):
     cfg = _init(a.verbose)
     paths = get_paths(cfg)
@@ -422,6 +437,10 @@ def main(argv=None):
     p.add_argument("--force", action="store_true",
                    help="ignorer l'anti-spam de 2 h pour l'email d'echec")
     p.set_defaults(fn=cmd_notify_failure)
+
+    p = sub.add_parser("set-country-us",
+                       help="forcer la localisation US de la page YouTube (pays de la chaine)")
+    p.set_defaults(fn=cmd_set_country)
 
     p = sub.add_parser("setup", help="verifier l'installation")
     p.set_defaults(fn=cmd_setup)
