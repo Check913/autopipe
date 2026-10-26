@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-26T14:16:46.353724",
+  "date": "2026-10-26T18:46:46.222208",
   "region": "US",
   "language": "en",
   "keywords": [
@@ -9,26 +9,35 @@
   ],
   "min_views": 500000,
   "max_duration": 75,
-  "total_found": 52,
-  "rejected": 50,
+  "total_found": 51,
+  "rejected": 48,
   "hits": [
     {
       "id": "FqkyMSDm-HY",
       "title": "ANTIMATTER — explained in 60sec #Shorts #Science",
       "channel": "ABC Science",
-      "views": 8546,
+      "views": 8547,
       "duration": 61.0,
       "url": "https://www.youtube.com/watch?v=FqkyMSDm-HY",
-      "query": "ytsearch10:science explained #shorts"
+      "query": "ytsearch10:science explained shorts"
     },
     {
-      "id": "CZ_eQAUDyDE",
-      "title": "Has God Changed Your Life Through Amazing Facts? Share Your Story!",
+      "id": "9sueQEfMzJ4",
+      "title": "A Priceless Pearl 2026 | Amazing Facts",
       "channel": "AmazingFacts",
-      "views": 3575,
-      "duration": 46.0,
-      "url": "https://www.youtube.com/watch?v=CZ_eQAUDyDE",
-      "query": "ytsearch10:amazing facts #shorts"
+      "views": 3354,
+      "duration": 61.0,
+      "url": "https://www.youtube.com/watch?v=9sueQEfMzJ4",
+      "query": "ytsearch10:amazing facts shorts"
+    },
+    {
+      "id": "RXbljrD8_GU",
+      "title": "Why Does Ice Float? 🧊 The Science Will Surprise You! #Shorts",
+      "channel": "Rahbar Kids Science Club",
+      "views": 9,
+      "duration": 24.0,
+      "url": "https://www.youtube.com/watch?v=RXbljrD8_GU",
+      "query": "ytsearch10:science explained shorts"
     }
   ]
 }

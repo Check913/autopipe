@@ -128,5 +128,135 @@
         200.0
       ]
     ]
+  },
+  "bird flu": {
+    "traffic": 500.0,
+    "first_seen": "2026-10-26T18:46:29",
+    "last_seen": "2026-10-26T18:46:29",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-26T18:46:29",
+        500.0
+      ]
+    ]
+  },
+  "psg vs lyon": {
+    "traffic": 500.0,
+    "first_seen": "2026-10-26T18:46:29",
+    "last_seen": "2026-10-26T18:46:29",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-26T18:46:29",
+        500.0
+      ]
+    ]
+  },
+  "nfl top 10": {
+    "traffic": 100000.0,
+    "first_seen": "2026-10-26T18:46:29",
+    "last_seen": "2026-10-26T18:46:29",
+    "delta": 100000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-26T18:46:29",
+        100000.0
+      ]
+    ]
+  },
+  "antoine de massy": {
+    "traffic": 500.0,
+    "first_seen": "2026-10-26T18:46:29",
+    "last_seen": "2026-10-26T18:46:29",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-26T18:46:29",
+        500.0
+      ]
+    ]
+  },
+  "travis kelce taylor swift chiefs games": {
+    "traffic": 20000.0,
+    "first_seen": "2026-10-26T18:46:29",
+    "last_seen": "2026-10-26T18:46:29",
+    "delta": 20000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-26T18:46:29",
+        20000.0
+      ]
+    ]
+  },
+  "santa clara vs benfica": {
+    "traffic": 2000.0,
+    "first_seen": "2026-10-26T18:46:29",
+    "last_seen": "2026-10-26T18:46:29",
+    "delta": 2000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-26T18:46:29",
+        2000.0
+      ]
+    ]
+  },
+  "airbnb new cleaning policy rules": {
+    "traffic": 500.0,
+    "first_seen": "2026-10-26T18:46:29",
+    "last_seen": "2026-10-26T18:46:29",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-26T18:46:29",
+        500.0
+      ]
+    ]
+  },
+  "dre kirkpatrick jr": {
+    "traffic": 500.0,
+    "first_seen": "2026-10-26T18:46:29",
+    "last_seen": "2026-10-26T18:46:29",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-26T18:46:29",
+        500.0
+      ]
+    ]
+  },
+  "hannah waddingham": {
+    "traffic": 500.0,
+    "first_seen": "2026-10-26T18:46:29",
+    "last_seen": "2026-10-26T18:46:29",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-26T18:46:29",
+        500.0
+      ]
+    ]
+  },
+  "galatasaray - fenerbahçe": {
+    "traffic": 2000.0,
+    "first_seen": "2026-10-26T18:46:29",
+    "last_seen": "2026-10-26T18:46:29",
+    "delta": 2000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-26T18:46:29",
+        2000.0
+      ]
+    ]
   }
 }

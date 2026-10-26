@@ -1,113 +1,113 @@
 {
-  "fetched": "2026-10-26T14:16:35",
+  "fetched": "2026-10-26T18:46:38",
   "geo": "",
   "topics": [
     {
-      "query": "defaulted federal student loan collections",
+      "query": "galatasaray - fenerbahçe",
       "traffic": 2000.0,
       "rise": 10.0,
-      "saturation_views": 16955.0,
-      "momentum": 3.0964
+      "saturation_views": 0.0,
+      "momentum": 33.2193
     },
     {
-      "query": "timothy simons",
-      "traffic": 10000.0,
-      "rise": 10.0,
-      "saturation_views": 859492.0,
-      "momentum": 2.0267
-    },
-    {
-      "query": "el nino us winter forecast",
+      "query": "antoine de massy",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 1809821.0,
-      "momentum": 1.902
+      "saturation_views": 70376.0,
+      "momentum": 2.5991
     },
     {
-      "query": "wwe wrestling",
-      "traffic": 1000.0,
-      "rise": 10.0,
-      "saturation_views": 2054826.0,
-      "momentum": 1.8823
-    },
-    {
-      "query": "maxx crosby",
+      "query": "airbnb new cleaning policy rules",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 2863783.0,
-      "momentum": 1.8325
+      "saturation_views": 106678.0,
+      "momentum": 2.4826
     },
     {
-      "query": "humana",
-      "traffic": 1000.0,
+      "query": "santa clara vs benfica",
+      "traffic": 2000.0,
       "rise": 10.0,
-      "saturation_views": 6313319.0,
-      "momentum": 1.7241
+      "saturation_views": 193401.0,
+      "momentum": 2.3329
     },
     {
-      "query": "chevrolet corvette (c8)",
-      "traffic": 200.0,
-      "rise": 10.0,
-      "saturation_views": 8814552.0,
-      "momentum": 1.682
-    },
-    {
-      "query": "russian",
-      "traffic": 200.0,
-      "rise": 10.0,
-      "saturation_views": 15213224.0,
-      "momentum": 1.6175
-    },
-    {
-      "query": "robbery",
+      "query": "hannah waddingham",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 651191315.0,
-      "momentum": 1.2798
+      "saturation_views": 725712.0,
+      "momentum": 2.0573
     },
     {
-      "query": "keith urban",
-      "traffic": 200.0,
+      "query": "dre kirkpatrick jr",
+      "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 721849917.0,
-      "momentum": 1.2725
+      "saturation_views": 1099965.0,
+      "momentum": 1.9836
+    },
+    {
+      "query": "travis kelce taylor swift chiefs games",
+      "traffic": 20000.0,
+      "rise": 10.0,
+      "saturation_views": 1510505.0,
+      "momentum": 1.9308
+    },
+    {
+      "query": "psg vs lyon",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 1694648.0,
+      "momentum": 1.9124
+    },
+    {
+      "query": "bird flu",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 5475913.0,
+      "momentum": 1.7426
+    },
+    {
+      "query": "nfl top 10",
+      "traffic": 100000.0,
+      "rise": 10.0,
+      "saturation_views": 12096918.0,
+      "momentum": 1.644
     }
   ],
   "top": [
     {
-      "query": "defaulted federal student loan collections",
+      "query": "galatasaray - fenerbahçe",
       "traffic": 2000.0,
       "rise": 10.0,
-      "saturation_views": 16955.0,
-      "momentum": 3.0964
+      "saturation_views": 0.0,
+      "momentum": 33.2193
     },
     {
-      "query": "timothy simons",
-      "traffic": 10000.0,
-      "rise": 10.0,
-      "saturation_views": 859492.0,
-      "momentum": 2.0267
-    },
-    {
-      "query": "el nino us winter forecast",
+      "query": "antoine de massy",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 1809821.0,
-      "momentum": 1.902
+      "saturation_views": 70376.0,
+      "momentum": 2.5991
     },
     {
-      "query": "wwe wrestling",
-      "traffic": 1000.0,
-      "rise": 10.0,
-      "saturation_views": 2054826.0,
-      "momentum": 1.8823
-    },
-    {
-      "query": "maxx crosby",
+      "query": "airbnb new cleaning policy rules",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 2863783.0,
-      "momentum": 1.8325
+      "saturation_views": 106678.0,
+      "momentum": 2.4826
+    },
+    {
+      "query": "santa clara vs benfica",
+      "traffic": 2000.0,
+      "rise": 10.0,
+      "saturation_views": 193401.0,
+      "momentum": 2.3329
+    },
+    {
+      "query": "hannah waddingham",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 725712.0,
+      "momentum": 2.0573
     }
   ]
 }
