@@ -2,6 +2,7 @@
 # Python 3.10+ ; tomli n'est requis qu'avant 3.11 (tomllib est dans la stdlib ensuite)
 
 requests>=2.31
+numpy>=1.26
 yt-dlp>=2024.12.13
 edge-tts>=6.1.0
 google-api-python-client>=2.100.0
