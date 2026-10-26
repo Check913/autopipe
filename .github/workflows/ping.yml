@@ -1,0 +1,11 @@
+# Test minuscule : verifie qu'un runner GitHub est attribue.
+# A supprimer apres diagnostic.
+name: ping
+on: workflow_dispatch
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Ping
+        run: echo "PING OK - runner attribue"
