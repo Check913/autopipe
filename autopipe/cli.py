@@ -221,6 +221,81 @@ def cmd_optimize(a):
     print("Patterns: %s" % (get_paths(cfg).optimizer / "patterns.json"))
 
 
+def cmd_baseline(a):
+    """V3 : etat baseline, delta, kill switch et patterns actifs (lecture)."""
+    cfg = _init(a.verbose)
+    from . import optimizer
+    samples = optimizer._join_samples(cfg)
+    bdoc = optimizer.load_json(
+        optimizer._optimizer_file(cfg, "baseline.json")) or {}
+    target = int(bdoc.get("target")
+                 or cfg.get("optimizer", {}).get("baseline_size", 10))
+    print("=== Baseline (data/optimizer/baseline.json) ===")
+    if not bdoc:
+        print("  absente : 0/%d Shorts de reference" % target)
+        print("  -> ajustements numeriques SUSPENDUS jusqu'au verrouillage")
+    elif not bdoc.get("locked"):
+        print("  en cours : %d/%d Shorts" % (int(bdoc.get("n") or 0), target))
+        print("  -> ajustements numeriques SUSPENDUS jusqu'au verrouillage")
+    else:
+        m = bdoc.get("metrics") or {}
+        print("  VERROUILLEE (%d Shorts, le %s)" % (
+            int(bdoc.get("n") or 0), bdoc.get("locked_at")))
+        print("  engagement moyen %s%%   retention moyenne %s%%" % (
+            m.get("engagement_mean"), m.get("avg_view_pct_mean")))
+        for fam, mean in sorted((m.get("by_family") or {}).items()):
+            print("    famille %-10s %s%%" % (fam, mean))
+        delta = optimizer.baseline_delta(cfg, samples)
+        if delta is None:
+            print("  delta : indisponible")
+        elif delta.get("status") == "pending":
+            print("  delta : en attente (0/%d Shorts post-baseline)" %
+                  int(delta.get("target") or target))
+        else:
+            d = delta.get("delta") or {}
+            print("  delta post-baseline (%d/%s Shorts) :" %
+                  (int(delta.get("n_after") or 0),
+                   delta.get("target") or target))
+            print("    engagement %+s pts   retention %+s pts" % (
+                d.get("engagement_mean"), d.get("avg_view_pct_mean")))
+    ks = optimizer.load_json(
+        optimizer._optimizer_file(cfg, "killswitch.json")) or {}
+    banned = ks.get("banned_families") or {}
+    niche = ks.get("niche") or {}
+    print("=== Kill switch (data/optimizer/killswitch.json) ===")
+    if not banned and not niche.get("alert"):
+        print("  rien de banni, niche en regle")
+    else:
+        for fam, info in sorted(banned.items()):
+            print("  famille %s BANIE (%d Shorts restants, depuis %s)" % (
+                fam, int(info.get("remaining", 0)),
+                info.get("banned_at")))
+        if niche.get("alert"):
+            print("  niche '%s' en PAUSE : %d Shorts restants (streak %d "
+                  "< %s%%)" % (niche.get("topic"),
+                               int(niche.get("escape_remaining", 0)),
+                               int(niche.get("streak", 0)),
+                               (ks.get("thresholds") or {}).get(
+                                   "niche_pct", 40.0)))
+    ap = optimizer.load_json(
+        optimizer._optimizer_file(cfg, "active_patterns.json")) or {}
+    act = [p for p in (ap.get("active") or [])
+           if int(p.get("remaining", 0)) > 0]
+    print("=== Patterns actifs (data/optimizer/active_patterns.json) ===")
+    if not act:
+        oc = cfg.get("optimizer", {})
+        print("  aucun (seuil : > %s%% sur %d Shorts)" % (
+            oc.get("active_min_pct", 70.0),
+            int(oc.get("active_min_n", 3))))
+    else:
+        for p in act:
+            print("  FORCE %s=%s : %.0f%% moyen sur %d Shorts "
+                  "(%d restants)" % (p.get("dimension"), p.get("value"),
+                                     float(p.get("mean_avg_view_pct") or 0),
+                                     int(p.get("n") or 0),
+                                     int(p.get("remaining", 0))))
+
+
 def cmd_hook_ab(a):
     """A/B hooks : statistiques par variante + meilleure famille."""
     cfg = _init(a.verbose)
@@ -474,6 +549,11 @@ def main(argv=None):
     p = sub.add_parser("hook-ab",
                        help="A/B hooks : stats par variante + meilleure famille")
     p.set_defaults(fn=cmd_hook_ab)
+
+    p = sub.add_parser("baseline",
+                       help="V3 : etat baseline 10 Shorts, delta, kill "
+                            "switch et patterns actifs (lecture seule)")
+    p.set_defaults(fn=cmd_baseline)
 
     p = sub.add_parser("run", help="pipeline complet une fois")
     p.add_argument("--no-upload", action="store_true")

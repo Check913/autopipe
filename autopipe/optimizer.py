@@ -66,6 +66,17 @@ def _features_from_remake(path):
     ret = analysis.get("retention") or {}
     script = str(data.get("script") or "")
     words = len(script.split())
+    # Bug 2026-10-27 : les vrais remakes ont density = LISTE de buckets
+    # (matrice retention s/s de remake.py) - float(list) levait et tuait
+    # TOUT _join_samples (optimizer degrade en silence).
+    _density = ret.get("density")
+    if isinstance(_density, (list, tuple)):
+        _vals = [float(x) for x in _density if isinstance(x, (int, float))]
+        _density = (sum(_vals) / len(_vals)) if _vals else 0.0
+    try:
+        _density = float(_density or 0.0)
+    except (TypeError, ValueError):
+        _density = 0.0
     return {
         "id": data.get("id") or Path(path).stem,
         "title": title,
@@ -86,7 +97,7 @@ def _features_from_remake(path):
         "originality": float((data.get("originality") or {}).get("max", 0.0)
                              if isinstance(data.get("originality"), dict)
                              else data.get("originality") or 0.0),
-        "retention_density": float(ret.get("density") or 0.0),
+        "retention_density": _density,
         "retention_spikes": len(ret.get("spikes_s") or []),
         "source_topic": str(data.get("source_topic") or ""),
     }
@@ -132,7 +143,12 @@ def _join_samples(cfg=None):
         ret = {}
     samples = []
     for path in _remake_files(cfg):
-        feats = _features_from_remake(path)
+        try:
+            feats = _features_from_remake(path)
+        except Exception as exc:
+            # Un remake corrompu ne doit pas tuer toute la boucle.
+            log.warning("remake ignore (%s): %s", path, exc)
+            continue
         row = by_id.get(str(feats["id"]))
         if row:
             feats["engagement"] = _engagement_index(row)
