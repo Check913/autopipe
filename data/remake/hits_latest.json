@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-27T11:43:30.225789",
+  "date": "2026-10-27T20:00:27.048248",
   "region": "US",
   "language": "en",
   "keywords": [
@@ -16,10 +16,19 @@
       "id": "FqkyMSDm-HY",
       "title": "ANTIMATTER — explained in 60sec #Shorts #Science",
       "channel": "ABC Science",
-      "views": 8550,
+      "views": 8553,
       "duration": 61.0,
       "url": "https://www.youtube.com/watch?v=FqkyMSDm-HY",
-      "query": "ytsearch10:science explained shorts"
+      "query": "ytsearch10:science explained #shorts"
+    },
+    {
+      "id": "9sueQEfMzJ4",
+      "title": "A Priceless Pearl 2026 | Amazing Facts",
+      "channel": "AmazingFacts",
+      "views": 3365,
+      "duration": 61.0,
+      "url": "https://www.youtube.com/watch?v=9sueQEfMzJ4",
+      "query": "ytsearch10:amazing facts shorts"
     },
     {
       "id": "RXbljrD8_GU",
@@ -29,15 +38,6 @@
       "duration": 24.0,
       "url": "https://www.youtube.com/watch?v=RXbljrD8_GU",
       "query": "ytsearch10:science explained shorts"
-    },
-    {
-      "id": "IrD_onZ3n3Y",
-      "title": "TRUE STORY soccerteam survivors￼￼￼ ￼🔥 #shorts #viralshorts",
-      "channel": "Mysteriquess",
-      "views": 1,
-      "duration": 55.0,
-      "url": "https://www.youtube.com/watch?v=IrD_onZ3n3Y",
-      "query": "ytsearch10:true story #shorts"
     }
   ]
 }

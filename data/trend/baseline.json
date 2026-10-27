@@ -715,5 +715,135 @@
         100.0
       ]
     ]
+  },
+  "malik beasley": {
+    "traffic": 500.0,
+    "first_seen": "2026-10-27T20:00:10",
+    "last_seen": "2026-10-27T20:00:10",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-27T20:00:10",
+        500.0
+      ]
+    ]
+  },
+  "michael weatherly": {
+    "traffic": 500.0,
+    "first_seen": "2026-10-27T20:00:10",
+    "last_seen": "2026-10-27T20:00:10",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-27T20:00:10",
+        500.0
+      ]
+    ]
+  },
+  "tom jones postpones california concerts": {
+    "traffic": 200.0,
+    "first_seen": "2026-10-27T20:00:10",
+    "last_seen": "2026-10-27T20:00:10",
+    "delta": 200.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-27T20:00:10",
+        200.0
+      ]
+    ]
+  },
+  "the voice elimination episode kelly clarkson": {
+    "traffic": 1000.0,
+    "first_seen": "2026-10-27T20:00:10",
+    "last_seen": "2026-10-27T20:00:10",
+    "delta": 1000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-27T20:00:10",
+        1000.0
+      ]
+    ]
+  },
+  "torino - como": {
+    "traffic": 500.0,
+    "first_seen": "2026-10-27T20:00:10",
+    "last_seen": "2026-10-27T20:00:10",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-27T20:00:10",
+        500.0
+      ]
+    ]
+  },
+  "david walliams": {
+    "traffic": 500.0,
+    "first_seen": "2026-10-27T20:00:10",
+    "last_seen": "2026-10-27T20:00:10",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-27T20:00:10",
+        500.0
+      ]
+    ]
+  },
+  "movieweb": {
+    "traffic": 500.0,
+    "first_seen": "2026-10-27T20:00:10",
+    "last_seen": "2026-10-27T20:00:10",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-27T20:00:10",
+        500.0
+      ]
+    ]
+  },
+  "fleetwood vs arsenal": {
+    "traffic": 50000.0,
+    "first_seen": "2026-10-27T20:00:10",
+    "last_seen": "2026-10-27T20:00:10",
+    "delta": 50000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-27T20:00:10",
+        50000.0
+      ]
+    ]
+  },
+  "roma vs cagliari": {
+    "traffic": 5000.0,
+    "first_seen": "2026-10-27T20:00:10",
+    "last_seen": "2026-10-27T20:00:10",
+    "delta": 5000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-27T20:00:10",
+        5000.0
+      ]
+    ]
+  },
+  "aclu report ai road surveillance": {
+    "traffic": 2000.0,
+    "first_seen": "2026-10-27T20:00:10",
+    "last_seen": "2026-10-27T20:00:10",
+    "delta": 2000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-27T20:00:10",
+        2000.0
+      ]
+    ]
   }
 }
