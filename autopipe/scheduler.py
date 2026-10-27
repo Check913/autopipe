@@ -2,10 +2,11 @@
 import datetime as dt
 import time
 import traceback
+from pathlib import Path
 
 from . import analytics, fetch_media, ideas, scout, subs, tts, video
 from .config import get_config, get_paths
-from .upload import pinned_comment_text, upload_video
+from .upload import get_service, pinned_comment_text, upload_video
 from .util import fix_proxy_env, get_logger, load_json, save_json
 
 log = get_logger("scheduler")
@@ -147,11 +148,16 @@ def run_pipeline_once(config=None, do_upload=True, idea=None):
     # 6. Assembly
     final = video.run_video(idea, audio, timings, clips, cfg)
 
-    result = {"idea": idea["id"], "title": idea.get("title"), "video": str(final)}
+    # Commentaire et metadonnees calcules meme sans upload : la pre-generation
+    # (publication differee a l'heure exacte) a besoin de tout pour uploader
+    # plus tard sans regenerer l'idee.
+    comment = pinned_comment_text(idea, cfg)
+    result = {"idea": idea["id"], "title": idea.get("title"), "video": str(final),
+              "description": idea.get("description", ""), "tags": idea.get("tags", []),
+              "comment": comment, "pair_id": idea.get("pair_id")}
 
     # 7. Upload + stats
     if do_upload:
-        comment = pinned_comment_text(idea, cfg)
         video_id = upload_video(final, idea["title"], idea["description"],
                                 idea.get("tags", []), cfg, pinned_comment=comment)
         result["youtube_id"] = video_id
@@ -173,12 +179,162 @@ def run_pipeline_once(config=None, do_upload=True, idea=None):
     return result
 
 
-def run_loop(config=None, once=False):
-    """Permanent loop.
+def _utcnow():
+    return dt.datetime.now(dt.timezone.utc)
 
-    If [upload] post_hours_utc is set (e.g. [15, 21] = 15:00 and 21:00 UTC,
-    peak US audience hours), uploads happen at those UTC windows only.
-    Otherwise one run every scheduler.interval_hours.
+
+def _pending_path(paths):
+    return paths.data / "pending_publish.json"
+
+
+def _clear_pending(pending_file):
+    try:
+        pending_file.unlink(missing_ok=True)
+    except OSError:
+        pass
+
+
+def _alert(cfg, subject, body):
+    """Alerte email best-effort (jamais fatal)."""
+    try:
+        from .alerts import send_gmail_alert
+        send_gmail_alert(cfg, subject, body)
+    except Exception:
+        pass
+
+
+def publish_pending_video(cfg, paths, pending, pending_file=None):
+    """Publie une video pre-generee EXACTEMENT a l'heure prevue.
+
+    pending["publish_at"] : heure cible ISO (UTC). Si l'heure est dans le
+    futur, l'upload demarre en PRIVE `publish_lead_s` avant la cible, puis le
+    statut bascule en "public" pile a l'heure cible (YouTube date la
+    publication publique de la bascule) : ponctualite a la seconde.
+    Si l'heure cible est deja passee, publication directe en public le plus
+    vite possible (jamais de video abandonnee). Si pending contient
+    "youtube_id" (tentative precedente bloquee en prive), on rebascule
+    seulement, sans re-uploader.
+    """
+    video_path = Path(str(pending.get("video") or ""))
+    idea = pending.get("idea") or {}
+    title = str(pending.get("title") or idea.get("title") or "Untitled")
+    description = str(pending.get("description") or idea.get("description") or "")
+    tags = pending.get("tags") or idea.get("tags") or []
+    comment = pending.get("comment")
+    pair_id = pending.get("pair_id") or idea.get("pair_id")
+    pub_at = dt.datetime.fromisoformat(str(pending["publish_at"]))
+    lead = int(cfg["scheduler"].get("publish_lead_s", 120))
+
+    if not pending.get("youtube_id") and not video_path.exists():
+        log.error("Video pre-generee introuvable: %s", video_path)
+        return {"published": False, "reason": "missing_video",
+                "video": str(video_path)}
+
+    uploaded_public = False
+    now = _utcnow()
+    if pending.get("youtube_id"):
+        video_id = str(pending["youtube_id"])
+        log.info("Reprise: video %s deja uploadee en prive -> bascule public", video_id)
+        # La bascule public reste PILE a l'heure cible, meme apres un
+        # redemarrage entre l'upload prive et la bascule.
+        if now < pub_at:
+            wait = (pub_at - now).total_seconds()
+            log.info("Bascule public a %s UTC (attente %s)",
+                     pub_at.strftime("%H:%M:%S"), dt.timedelta(seconds=int(wait)))
+            time.sleep(max(0.0, wait))
+            now = _utcnow()
+    elif now < pub_at:
+        wait = (pub_at - now).total_seconds() - lead
+        if wait > 0:
+            log.info("Publication exacte a %s UTC: upload prive dans %s",
+                     pub_at.strftime("%Y-%m-%d %H:%M:%S"),
+                     dt.timedelta(seconds=int(wait)))
+            time.sleep(wait)
+        log.info("Upload prive demarre (basculera en public a %s UTC)",
+                 pub_at.strftime("%H:%M:%S"))
+        video_id = upload_video(video_path, title, description, tags, cfg,
+                                privacy="private")
+        # Point de reprise: l'id de la video privee est persiste TOUT DE SUITE,
+        # pour qu'un crash pendant l'attente se resume en bascule simple
+        # (jamais un re-upload / video dupliquee).
+        if pending_file is not None:
+            pending["youtube_id"] = video_id
+            save_json(pending_file, pending)
+        now = _utcnow()
+        if now < pub_at:
+            time.sleep(max(0.0, (pub_at - now).total_seconds()))
+            now = _utcnow()
+    else:
+        late_min = (now - pub_at).total_seconds() / 60.0
+        log.warning("Cible %s UTC depassee de %.1f min -> publication publique "
+                    "immediate (en retard, mais pas annulee)",
+                    pub_at.strftime("%Y-%m-%d %H:%M"), late_min)
+        video_id = upload_video(video_path, title, description, tags, cfg,
+                                pinned_comment=comment)
+        comment = None  # deja poste par upload_video
+        uploaded_public = True  # pas de bascule necessaire
+
+    # Bascule en public a l'heure cible exacte (ou immediatement en retard).
+    # En retard pur l'upload est deja public: pas de bascule a faire.
+    flipped = uploaded_public
+    for attempt in range(4):
+        try:
+            get_service(cfg).videos().update(
+                part="status",
+                body={"id": video_id, "status": {"privacyStatus": "public"}}
+            ).execute()
+            flipped = True
+            break
+        except Exception as exc:
+            log.warning("Bascule public echouee (%s), tentative %d/4",
+                        exc, attempt + 1)
+            time.sleep(5)
+    if not flipped:
+        log.critical("Video %s reste PRIVEE: bascule impossible. Action manuelle "
+                     "requise dans YouTube Studio (ou relancer le bot: la "
+                     "bascule sera re tentee).", video_id)
+        _alert(cfg, "AutoPipe: video NON publiee (bascule public echouee)",
+               "La video %s (%s) est uploadee mais reste PRIVEE.\n"
+               "Basculez-la manuellement dans YouTube Studio." % (video_id, title))
+        return {"published": False, "reason": "flip_failed",
+                "youtube_id": video_id, "video": str(video_path)}
+    log.info("VIDEO PUBLIEE (public) a %s UTC (cible %s): https://youtu.be/%s",
+             _utcnow().strftime("%H:%M:%S"), pub_at.strftime("%H:%M:%S"), video_id)
+
+    if comment:
+        try:
+            from .upload import post_pinned_comment
+            post_pinned_comment(video_id, comment, cfg)
+        except Exception as exc:
+            log.warning("Commentaire non publie: %s", exc)
+    try:
+        analytics.record([video_id], cfg)
+    except Exception as exc:
+        log.warning("Stats initiales indisponibles: %s", exc)
+    if pair_id:
+        try:
+            from .hook_ab import attach_video
+            attach_video(pair_id, video_id, cfg)
+        except Exception as exc:
+            log.warning("Hook A/B attach impossible: %s", exc)
+    return {"published": True, "youtube_id": video_id,
+            "video": str(video_path)}
+
+
+def run_loop(config=None, once=False):
+    """Permanent loop with EXACT-time publishing.
+
+    With [upload] post_hours_utc (e.g. [15, 21] = 15:00 and 21:00 UTC, peak
+    US audience hours), each video is published EXACTLY at the window start:
+      1. PRE-GENERATION: the video (idea, TTS, clips, editing) is fully built
+         `pregen_minutes` before the window, without uploading
+         (data/pending_publish.json = contrat de publication, survit aux
+         redemarrages du bot) ;
+      2. PUBLICATION A L'HEURE EXACTE: upload prive qui demarre
+         `publish_lead_s` avant la cible, puis bascule public PILE a l'heure.
+    Un bot relance en retard publie la video des que possible (fallback,
+    jamais annule). Sans post_hours_utc: une generation+publication par
+    scheduler.interval_hours (comportement historique).
     """
     cfg = config or get_config()
     paths = get_paths(cfg)
@@ -197,20 +353,27 @@ def run_loop(config=None, once=False):
         post_hours = []
         log.warning("Invalid upload.post_hours_utc -> UTC windows disabled")
 
+    pending_file = _pending_path(paths)
+    lead = int(cfg["scheduler"].get("publish_lead_s", 120))
+    pregen_min = int(cfg["scheduler"].get("pregen_minutes", 20))
+
     while True:
         state = load_json(state_file, {}) or {}
         today = dt.date.today().isoformat()
         if state.get("day") != today:
             state = {"day": today, "uploads": 0}
         can_upload = state.get("uploads", 0) < daily_limit
-        if not can_upload:
+
+        pending_quota = load_json(pending_file, None)
+        quota_block = not can_upload and not (isinstance(pending_quota, dict)
+                                              and pending_quota.get("publish_at"))
+        if quota_block:
             log.info("Daily upload quota reached (%s/%s)", state.get("uploads"), daily_limit)
             if not once:
                 # Fix boucle serree (2026-10-27) : quota atteint + fenetres
-                # horaires -> l'ancien code relancait run_pipeline_once
-                # (ideas+LLM+tts) SANS upload et SANS sleep, en boucle
-                # rapprochee. On dort jusqu'a la premiere fenetre de demain.
-                now = dt.datetime.now(dt.timezone.utc)
+                # horaires -> on dort jusqu'a la premiere fenetre de demain
+                # (pas de pipeline a vide, pas de pre-generation inutile).
+                now = _utcnow()
                 if post_hours:
                     target = (now.replace(hour=0, minute=0, second=0,
                                           microsecond=0)
@@ -223,32 +386,142 @@ def run_loop(config=None, once=False):
                          dt.timedelta(seconds=wait))
                 time.sleep(wait)
                 continue
+            # once + quota : le pipeline ci-dessous tournera sans upload.
 
-        if can_upload and post_hours and not once:
-            now = dt.datetime.now(dt.timezone.utc)
-            target = _next_window_start(now, post_hours)
-            wait = max(0, int((target - now).total_seconds()))
-            log.info("Next US posting window: %s UTC (waiting %s)",
-                     target.strftime("%Y-%m-%d %H:%M"), dt.timedelta(seconds=wait))
-            time.sleep(wait)
+        if once or not post_hours:
+            # Mode manuel (`run`, `serve --once`) ou fenetres desactivees :
+            # chaine complete immediate (comportement historique).
+            failed = False
+            try:
+                result = run_pipeline_once(cfg, do_upload=can_upload)
+                if can_upload and result.get("youtube_id"):
+                    state["uploads"] = state.get("uploads", 0) + 1
+                    save_json(state_file, state)
+            except Exception:
+                failed = True
+                log.error("Pipeline failed:\n%s", traceback.format_exc())
+            if once:
+                break
+            if failed:
+                # Avant ce correctif, un echec pendant la fenetre de grace
+                # (5 min) relançait le pipeline toutes les ~30 s.
+                log.info("Pipeline failed -> retry in 5 min (no tight loop)")
+                time.sleep(300)
+            else:
+                log.info("Next run in %s h (Ctrl+C to stop)", interval // 3600)
+                time.sleep(interval)
+            continue
 
-        failed = False
-        try:
-            result = run_pipeline_once(cfg, do_upload=can_upload)
-            if can_upload and result.get("youtube_id"):
+        # --- Mode fenetres horaires: pre-generation + publication a l'heure exacte ---
+        now = _utcnow()
+        pending = load_json(pending_file, None)
+        if not isinstance(pending, dict):
+            pending = None
+        if pending and pending.get("publish_at"):
+            try:
+                pub_at = dt.datetime.fromisoformat(str(pending["publish_at"]))
+            except (TypeError, ValueError):
+                log.error("pending_publish.json corrompu (publish_at=%r) "
+                          "-> ignore", pending.get("publish_at"))
+                _clear_pending(pending_file)
+                time.sleep(60)  # pas de boucle serree sur un fichier corrompu
+                continue
+            if now < pub_at - dt.timedelta(seconds=lead):
+                wait = int((pub_at - dt.timedelta(seconds=lead) - now).total_seconds())
+                log.info("Video pre-generee en attente -> publication a %s UTC "
+                         "(attente %s)", pub_at.strftime("%Y-%m-%d %H:%M:%S"),
+                         dt.timedelta(seconds=wait))
+                time.sleep(max(1, wait))
+                continue
+            try:
+                res = publish_pending_video(cfg, paths, pending,
+                                            pending_file=pending_file)
+            except Exception:
+                log.error("Publication en echec:\n%s", traceback.format_exc())
+                time.sleep(60)
+                continue
+            if res.get("published"):
                 state["uploads"] = state.get("uploads", 0) + 1
                 save_json(state_file, state)
-        except Exception:
-            failed = True
-            log.error("Pipeline failed:\n%s", traceback.format_exc())
+                save_json(paths.data / "last_run.json", {
+                    "idea": pending.get("idea_id"),
+                    "title": pending.get("title"),
+                    "video": pending.get("video"),
+                    "youtube_id": res.get("youtube_id")})
+                _clear_pending(pending_file)
+            elif res.get("reason") == "flip_failed":
+                # La video privee existe: on memorise son id pour rebasculer
+                # sans re-uploader, et on retente bientot.
+                pending["youtube_id"] = res.get("youtube_id")
+                save_json(pending_file, pending)
+                log.info("Bascule public en attente -> nouvelle tentative "
+                         "dans 60 s")
+                time.sleep(60)
+            elif res.get("reason") == "missing_video":
+                # Fichier disparu (nettoyage manuel...) : regeneration
+                # immediate + publication (retard assume, jamais annule).
+                _clear_pending(pending_file)
+                _alert(cfg, "AutoPipe: video pre-generee perdue",
+                       "pending_publish.json pointait vers un fichier "
+                       "introuvable (%s). Regeneration + publication "
+                       "immediate." % res.get("video"))
+                try:
+                    result = run_pipeline_once(cfg, do_upload=True)
+                    if result.get("youtube_id"):
+                        state["uploads"] = state.get("uploads", 0) + 1
+                        save_json(state_file, state)
+                except Exception:
+                    log.error("Pipeline failed:\n%s", traceback.format_exc())
+                    time.sleep(300)
+            continue
 
-        if once:
-            break
-        if failed:
-            # Avant ce correctif, un echec pendant la fenetre de grace (5 min)
-            # relançait le pipeline toutes les ~30 s en boucle serree.
-            log.info("Pipeline failed -> retry in 5 min (no tight loop)")
-            time.sleep(300)
-        elif not post_hours:
-            log.info("Next run in %s h (Ctrl+C to stop)", interval // 3600)
-            time.sleep(interval)
+        target = _next_window_start(now, post_hours)
+        pregen_start = target - dt.timedelta(minutes=pregen_min)
+        if now >= pregen_start:
+            if now >= target:
+                # Fenetre active sans pre-generation (bot lance en retard,
+                # pregen echouee...) : generation + publication immediates.
+                log.warning("Fenetre %s UTC active sans pre-generation -> "
+                            "generation + publication immediates (retard)",
+                            target.strftime("%Y-%m-%d %H:%M"))
+                try:
+                    result = run_pipeline_once(cfg, do_upload=True)
+                    if result.get("youtube_id"):
+                        state["uploads"] = state.get("uploads", 0) + 1
+                        save_json(state_file, state)
+                except Exception:
+                    log.error("Pipeline failed:\n%s", traceback.format_exc())
+                    time.sleep(300)
+                continue
+            # Pre-generation pour la fenetre a venir (sans upload).
+            log.info("Pre-generation pour la fenetre %s UTC (avance: %s)",
+                     target.strftime("%Y-%m-%d %H:%M"),
+                     dt.timedelta(seconds=int((target - now).total_seconds())))
+            try:
+                result = run_pipeline_once(cfg, do_upload=False)
+                pending = {
+                    "publish_at": target.isoformat(),
+                    "video": result.get("video"),
+                    "idea_id": result.get("idea"),
+                    "title": result.get("title"),
+                    "description": result.get("description"),
+                    "tags": result.get("tags"),
+                    "comment": result.get("comment"),
+                    "pair_id": result.get("pair_id"),
+                    "created": now.isoformat(),
+                }
+                save_json(pending_file, pending)
+                log.info("Video pre-generee -> publication programme a %s UTC: %s",
+                         target.strftime("%Y-%m-%d %H:%M:%S"), pending["title"])
+            except Exception:
+                log.error("Pre-generation echouee (retry in 5 min):\n%s",
+                          traceback.format_exc())
+                time.sleep(300)
+            continue
+
+        wait = int((pregen_start - now).total_seconds())
+        log.info("Prochaine fenetre: %s UTC (pre-generation a %s, attente %s)",
+                 target.strftime("%Y-%m-%d %H:%M"),
+                 pregen_start.strftime("%Y-%m-%d %H:%M"),
+                 dt.timedelta(seconds=wait))
+        time.sleep(max(1, wait))

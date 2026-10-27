@@ -136,6 +136,11 @@ comment_template = ""            # vide = template par defaut ({title} / {hook} 
 [scheduler]
 interval_hours = 4               # 24/7 mode frequency (fallback without post_hours_utc)
 state_file = "data/scheduler_state.json"
+# Publication a l'heure EXACTE : pre-generation `pregen_minutes` avant la
+# fenetre, upload prive `publish_lead_s` avant l'heure cible, puis bascule
+# public PILE a l'heure cible (voir autopipe/scheduler.py: run_loop).
+pregen_minutes = 20
+publish_lead_s = 120
 
 [network]
 # Correctif proxy : si votre machine declare un proxy local avec un mauvais
