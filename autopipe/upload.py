@@ -149,9 +149,26 @@ def ensure_channel_country(cfg=None):
     """
     cfg = cfg or get_config()
     country = str(cfg["upload"].get("channel_country", "US"))
+    # Fix 2026-10-27 : YouTube renvoie parfois un 500 INTERNAL_ERROR
+    # transient sur channels.list/update -> on retente 2 fois (pause 5/10 s)
+    # avant de declarer l'echec.
+    import time
+    from googleapiclient.errors import HttpError
     try:
         yt = get_service(cfg)
-        resp = yt.channels().list(part="brandingSettings", mine=True).execute()
+        resp = None
+        for attempt in range(3):
+            try:
+                resp = yt.channels().list(part="brandingSettings", mine=True).execute()
+                break
+            except HttpError as exc:
+                status = getattr(exc.resp, "status", None) or 0
+                if status >= 500 and attempt < 2:
+                    log.warning("Localisation chaine: HTTP %s transient, "
+                                "tentative %d/3", status, attempt + 1)
+                    time.sleep(5 * (attempt + 1))
+                    continue
+                raise
         items = resp.get("items") or []
         if not items:
             log.warning("Localisation chaine: aucune chaine pour ce token")
@@ -164,8 +181,19 @@ def ensure_channel_country(cfg=None):
             log.info("Localisation de la chaine deja '%s' (rien a faire)", country)
             return {"country": country, "changed": False, "previous": previous}
         channel["country"] = country
-        yt.channels().update(part="brandingSettings",
-                             body={"brandingSettings": {"channel": channel}}).execute()
+        for attempt in range(3):
+            try:
+                yt.channels().update(part="brandingSettings",
+                                     body={"brandingSettings": {"channel": channel}}).execute()
+                break
+            except HttpError as exc:
+                status = getattr(exc.resp, "status", None) or 0
+                if status >= 500 and attempt < 2:
+                    log.warning("Localisation chaine: HTTP %s transient sur "
+                                "update, tentative %d/3", status, attempt + 1)
+                    time.sleep(5 * (attempt + 1))
+                    continue
+                raise
         log.info("Localisation de la chaine: %s -> '%s'", previous, country)
         return {"country": country, "changed": True, "previous": previous}
     except Exception as exc:

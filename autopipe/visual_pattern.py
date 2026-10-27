@@ -59,11 +59,19 @@ def _ydl_opts(cfg, dest_dir):
     remake._ydl_opts) sinon yt-dlp echoue sur le proxy du registre Windows.
     """
     max_h = max(240, int(cfg.get("visual", {}).get("download_max_height", 720)))
+    # Fix 2026-10-27 : YouTube ne sert plus de flux progressif mp4 unique
+    # pour la plupart des Shorts (SABR/DASH) -> "best[ext=mp4]" renvoyait
+    # "Requested format is not available". On passe par des flux separes
+    # (video+audio) fusionnes par ffmpeg, avec replis progressives.
     opts = {
         "quiet": True,
         "no_warnings": True,
         "outtmpl": str(Path(dest_dir) / "%(id)s.%(ext)s"),
-        "format": "best[height<=%d][ext=mp4]/best[height<=%d]/best" % (max_h, max_h),
+        "format": ("bv*[height<=%d][ext=mp4]+ba[ext=m4a]/"
+                   "b[height<=%d][ext=mp4]/b[height<=%d]/"
+                   "bv*[height<=%d]+ba/bv*+ba/b") % (
+                       max_h, max_h, max_h, max_h),
+        "merge_output_format": "mp4",
         "noplaylist": True,
         "socket_timeout": 30,
         "retries": 2,

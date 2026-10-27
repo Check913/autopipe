@@ -1,0 +1,46 @@
+{
+  "title": "Why Did Australia Fight a War Against Emus?",
+  "hook": "Australia declared war on emus and lost?",
+  "script": "Did you know in 1932, the Australian military actually declared war on emus and lost? After World War I, soldiers settled in Western Australia, but a massive drought brought 20,000 emus to their farms, destroying crops. Farmers, many ex-servicemen, asked for military help. So, Major G.P.W. Meredith and his team, armed with machine guns, were sent to cull the birds. What followed was an absolute disaster. The emus, surprisingly agile and organized, used guerrilla tactics, scattering at the first sign of danger. They were incredibly resilient, often shrugging off multiple bullet hits. Soldiers struggled with jammed guns and the sheer speed of the birds. Despite firing thousands of rounds, the official count of emus killed was a mere few hundred. The operation was quickly deemed a failure by the media and public. The military ultimately retreated, admitting defeat to the flightless birds. This incredible true story shows how the Australian military actually declared war on emus and lost.",
+  "comment": "Could you imagine being a soldier fighting emus?",
+  "description": "Uncover the unbelievable true story of the Great Emu War of 1932! Learn how the Australian military faced off against 20,000 emus and suffered a surprising defeat.\n#EmuWar #AmazingFacts #TrueStory",
+  "tags": [
+    "Emu War",
+    "Australia",
+    "Military history",
+    "Amazing facts",
+    "Did you know",
+    "True story",
+    "Unbelievable",
+    "Historical facts",
+    "Animal facts",
+    "Strange history",
+    "World history",
+    "Curiosity"
+  ],
+  "density": 4,
+  "duration_format": "long",
+  "duration_target": 60,
+  "duration_range": [
+    50,
+    60
+  ],
+  "source_topic": "A TRUE STORY That Will Shake You to Your Core | Based On True Story 2026 | Drama Thriller Movie 2026",
+  "generator": "llm:gemini-2.5-flash",
+  "score": 87.2,
+  "pair_id": "pair_20261027_0003",
+  "hook_variant": "A",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "Australia declared war on emus and lost?",
+      "family": "question"
+    },
+    {
+      "variant": "B",
+      "hook": "3 TRUE STORY That Will Shake facts they never teach you",
+      "family": "number"
+    }
+  ],
+  "id": "20261027-112540-03"
+}

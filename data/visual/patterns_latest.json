@@ -1,0 +1,13 @@
+{
+  "n_samples": 1,
+  "cuts_per_second": 1.17,
+  "cut_interval_s": 0.1,
+  "zoom_ratio": 0.1591,
+  "subtitle_zone": "bottom",
+  "dominant_colors": [
+    "#353231",
+    "#676354"
+  ],
+  "brightness": 0.425,
+  "contrast": 0.195
+}

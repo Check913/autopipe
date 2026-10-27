@@ -1,0 +1,46 @@
+{
+  "title": "Why Is Space So Quiet?",
+  "hook": "Space is completely silent.",
+  "script": "Space is completely silent. You might imagine huge explosions or rockets blasting off, but out there, you wouldn't hear a thing. That's because sound needs something to travel through, like the air we breathe or water in the ocean. Think of it like a ripple in a pond – it needs water to move. In space, there's almost nothing. It's a giant, empty vacuum. There's no air, no water, no material for sound waves to push against. So, even if a massive star exploded right next to you, sending out incredible energy, your ears would detect absolutely nothing. All those dramatic movie sounds of spaceships battling? Pure fiction! It's one of the most mind-blowing physics facts: the universe beyond Earth is a realm of absolute quiet, proving that even the biggest events make no noise if there's no medium to carry the sound. Which is why space is completely silent.",
+  "comment": "What's your favorite mind-blowing space fact?",
+  "description": "Ever wonder what space sounds like? Spoiler: it's not what you think! Discover the incredible physics behind why the universe is a realm of absolute quiet.\n#SpaceFacts #PhysicsExplained #DidYouKnow",
+  "tags": [
+    "space facts",
+    "silent space",
+    "physics explained",
+    "amazing facts",
+    "science shorts",
+    "vacuum of space",
+    "sound in space",
+    "universe facts",
+    "mind blowing facts",
+    "educational content",
+    "science for kids",
+    "space exploration"
+  ],
+  "density": 4,
+  "duration_format": "long",
+  "duration_target": 60,
+  "duration_range": [
+    50,
+    60
+  ],
+  "source_topic": "Physics Explained Like You Are 5 Years Old",
+  "generator": "llm:gemini-2.5-flash",
+  "score": 195.9,
+  "pair_id": "pair_20261027_0001",
+  "hook_variant": "A",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "Space is completely silent.",
+      "family": "statement"
+    },
+    {
+      "variant": "B",
+      "hook": "3 Physics Explained Like You facts they never teach you",
+      "family": "number"
+    }
+  ],
+  "id": "20261027-112540-01"
+}

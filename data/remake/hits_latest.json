@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-27T00:42:59.322921",
+  "date": "2026-10-27T11:43:30.225789",
   "region": "US",
   "language": "en",
   "keywords": [
@@ -9,26 +9,17 @@
   ],
   "min_views": 500000,
   "max_duration": 75,
-  "total_found": 52,
-  "rejected": 47,
+  "total_found": 47,
+  "rejected": 44,
   "hits": [
     {
       "id": "FqkyMSDm-HY",
       "title": "ANTIMATTER — explained in 60sec #Shorts #Science",
       "channel": "ABC Science",
-      "views": 8549,
+      "views": 8550,
       "duration": 61.0,
       "url": "https://www.youtube.com/watch?v=FqkyMSDm-HY",
       "query": "ytsearch10:science explained shorts"
-    },
-    {
-      "id": "sPHNOaamo5g",
-      "title": "These Facts Will Blow Your Mind 🤯 | Amazing Facts #Shorts",
-      "channel": "FactBlast USA",
-      "views": 10,
-      "duration": 66.0,
-      "url": "https://www.youtube.com/watch?v=sPHNOaamo5g",
-      "query": "ytsearch10:amazing facts shorts"
     },
     {
       "id": "RXbljrD8_GU",
@@ -40,22 +31,13 @@
       "query": "ytsearch10:science explained shorts"
     },
     {
-      "id": "0rshN5oWw-8",
-      "title": "A True Love Story ❤️ | You Are My Forever 💔🥹 #Shorts #viralvideo #viralshortsvideo",
-      "channel": "Hǒi-Khøñgs̱Aî",
+      "id": "IrD_onZ3n3Y",
+      "title": "TRUE STORY soccerteam survivors￼￼￼ ￼🔥 #shorts #viralshorts",
+      "channel": "Mysteriquess",
       "views": 1,
-      "duration": 71.0,
-      "url": "https://www.youtube.com/watch?v=0rshN5oWw-8",
+      "duration": 55.0,
+      "url": "https://www.youtube.com/watch?v=IrD_onZ3n3Y",
       "query": "ytsearch10:true story #shorts"
-    },
-    {
-      "id": "bEBIc4y1QZY",
-      "title": "3 Amazing Brain Facts You Probably Didn't Know! 🧠🤯 #Shorts",
-      "channel": "USA TruthBox",
-      "views": 0,
-      "duration": 20.0,
-      "url": "https://www.youtube.com/watch?v=bEBIc4y1QZY",
-      "query": "ytsearch10:amazing facts shorts"
     }
   ]
 }

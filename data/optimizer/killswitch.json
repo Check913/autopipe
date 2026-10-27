@@ -1,0 +1,17 @@
+{
+  "family_fails": {},
+  "banned_families": {},
+  "niche": {
+    "streak": 0,
+    "topic": "",
+    "alert": false,
+    "escape_remaining": 0
+  },
+  "thresholds": {
+    "family_pct": 30.0,
+    "niche_pct": 40.0
+  },
+  "seen_ids": [],
+  "updated": "2026-10-27T11:24:16",
+  "events": []
+}
