@@ -12,19 +12,29 @@ from .util import fix_proxy_env, get_logger, load_json, save_json
 log = get_logger("scheduler")
 
 
-def _next_window_start(now_utc, post_hours, grace_min=5):
+def _next_window_start(now_utc, post_hours, grace_min=5, served=None):
     """Next UTC target for posting.
 
     A window less than grace_min minutes in the past is still honored
     (starting at 15:00-15:05 posts immediately instead of skipping a day).
+    `served` : ensemble des fenetres deja servies (ISO de l'heure pile).
+    Une fenetre servie n'est JAMAIS re-selectionnee, meme pendant la grace
+    (cause racine du doublon du 2026-10-27 18:00 : publication a 18:00:02,
+    pending efface, puis grace -> regeneration + 2e publication).
     """
+    served = served or set()
     candidates = []
     for h in post_hours:
         cand = now_utc.replace(hour=int(h) % 24, minute=0, second=0, microsecond=0)
+        if cand.isoformat() in served:
+            continue
         if cand > now_utc:
             candidates.append(cand)
         elif (now_utc - cand).total_seconds() <= grace_min * 60:
-            candidates.append(now_utc)
+            # Grace : on cible l'heure PILE (cand), pas `now`. La publication
+            # partira tout de suite (now >= target) et la fenetre sera
+            # marquee servie -> pas de re-pick a l'iteration suivante.
+            candidates.append(cand)
     if not candidates:
         earliest = min(int(h) % 24 for h in post_hours)
         return (now_utc + dt.timedelta(days=1)).replace(
@@ -192,6 +202,20 @@ def _clear_pending(pending_file):
         pending_file.unlink(missing_ok=True)
     except OSError:
         pass
+
+
+def _mark_window_served(state, window_iso, today=None):
+    """Memorise une fenetre servie dans l'etat (anti-doublon 2026-10-27).
+
+    Les fenetres des jours passes sont ecartees : la grace de 5 min ne peut
+    concerner que la fenetre courante, donc une prune par jour suffit.
+    """
+    wins = {str(w) for w in (state.get("served_windows") or []) if str(w)}
+    if window_iso:
+        wins.add(window_iso)
+    if today:
+        wins = {w for w in wins if w.startswith(today)}
+    state["served_windows"] = sorted(wins)
 
 
 def _alert(cfg, subject, body):
@@ -363,6 +387,9 @@ def run_loop(config=None, once=False):
         if state.get("day") != today:
             state = {"day": today, "uploads": 0}
         can_upload = state.get("uploads", 0) < daily_limit
+        # Fenetres deja servies aujourd'hui (anti-doublon, prune par jour).
+        served = {str(w) for w in (state.get("served_windows") or [])
+                  if str(w).startswith(today)}
 
         pending_quota = load_json(pending_file, None)
         quota_block = not can_upload and not (isinstance(pending_quota, dict)
@@ -442,6 +469,10 @@ def run_loop(config=None, once=False):
                 continue
             if res.get("published"):
                 state["uploads"] = state.get("uploads", 0) + 1
+                # Anti-doublon (2026-10-27) : memorise la fenetre servie pour
+                # que la grace de 5 min ne la re-selectionne pas.
+                _mark_window_served(state, str(pending.get("publish_at") or ""),
+                                    today)
                 save_json(state_file, state)
                 save_json(paths.data / "last_run.json", {
                     "idea": pending.get("idea_id"),
@@ -461,6 +492,9 @@ def run_loop(config=None, once=False):
                 # Fichier disparu (nettoyage manuel...) : regeneration
                 # immediate + publication (retard assume, jamais annule).
                 _clear_pending(pending_file)
+                _mark_window_served(state, str(pending.get("publish_at") or ""),
+                                    today)
+                save_json(state_file, state)
                 _alert(cfg, "AutoPipe: video pre-generee perdue",
                        "pending_publish.json pointait vers un fichier "
                        "introuvable (%s). Regeneration + publication "
@@ -475,10 +509,18 @@ def run_loop(config=None, once=False):
                     time.sleep(300)
             continue
 
-        target = _next_window_start(now, post_hours)
+        target = _next_window_start(now, post_hours, served=served)
         pregen_start = target - dt.timedelta(minutes=pregen_min)
         if now >= pregen_start:
             if now >= target:
+                if target.isoformat() in served:
+                    # Filet de securite anti-doublon (2026-10-27) : la fenetre
+                    # vient d'etre servie -> JAMAIS de regeneration. En
+                    # nominal, served est deja exclu par _next_window_start.
+                    log.info("Fenetre %s UTC deja servie -> aucune "
+                             "duplication", target.strftime("%Y-%m-%d %H:%M"))
+                    time.sleep(60)
+                    continue
                 # Fenetre active sans pre-generation (bot lance en retard,
                 # pregen echouee...) : generation + publication immediates.
                 log.warning("Fenetre %s UTC active sans pre-generation -> "
@@ -488,6 +530,7 @@ def run_loop(config=None, once=False):
                     result = run_pipeline_once(cfg, do_upload=True)
                     if result.get("youtube_id"):
                         state["uploads"] = state.get("uploads", 0) + 1
+                        _mark_window_served(state, target.isoformat(), today)
                         save_json(state_file, state)
                 except Exception:
                     log.error("Pipeline failed:\n%s", traceback.format_exc())
