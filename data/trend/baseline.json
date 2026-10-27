@@ -455,5 +455,135 @@
         20000.0
       ]
     ]
+  },
+  "eagles": {
+    "traffic": 200000.0,
+    "first_seen": "2026-10-27T00:42:37",
+    "last_seen": "2026-10-27T00:42:37",
+    "delta": 200000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-27T00:42:37",
+        200000.0
+      ]
+    ]
+  },
+  "ryan vilade": {
+    "traffic": 500.0,
+    "first_seen": "2026-10-27T00:42:37",
+    "last_seen": "2026-10-27T00:42:37",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-27T00:42:37",
+        500.0
+      ]
+    ]
+  },
+  "chicago bulls vs boston celtics match player stats": {
+    "traffic": 200.0,
+    "first_seen": "2026-10-27T00:42:37",
+    "last_seen": "2026-10-27T00:42:37",
+    "delta": 200.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-27T00:42:37",
+        200.0
+      ]
+    ]
+  },
+  "freddy peralta": {
+    "traffic": 5000.0,
+    "first_seen": "2026-10-27T00:42:37",
+    "last_seen": "2026-10-27T00:42:37",
+    "delta": 5000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-27T00:42:37",
+        5000.0
+      ]
+    ]
+  },
+  "meghan markle news": {
+    "traffic": 500.0,
+    "first_seen": "2026-10-27T00:42:37",
+    "last_seen": "2026-10-27T00:42:37",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-27T00:42:37",
+        500.0
+      ]
+    ]
+  },
+  "nebraska basketball": {
+    "traffic": 200.0,
+    "first_seen": "2026-10-27T00:42:37",
+    "last_seen": "2026-10-27T00:42:37",
+    "delta": 200.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-27T00:42:37",
+        200.0
+      ]
+    ]
+  },
+  "grizzlies vs jazz": {
+    "traffic": 5000.0,
+    "first_seen": "2026-10-27T00:42:37",
+    "last_seen": "2026-10-27T00:42:37",
+    "delta": 5000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-27T00:42:37",
+        5000.0
+      ]
+    ]
+  },
+  "hs": {
+    "traffic": 500.0,
+    "first_seen": "2026-10-27T00:42:37",
+    "last_seen": "2026-10-27T00:42:37",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-27T00:42:37",
+        500.0
+      ]
+    ]
+  },
+  "pittsburgh steelers wide receiver trade rumors": {
+    "traffic": 500.0,
+    "first_seen": "2026-10-27T00:42:37",
+    "last_seen": "2026-10-27T00:42:37",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-27T00:42:37",
+        500.0
+      ]
+    ]
+  },
+  "sony playstation": {
+    "traffic": 500.0,
+    "first_seen": "2026-10-27T00:42:37",
+    "last_seen": "2026-10-27T00:42:37",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-27T00:42:37",
+        500.0
+      ]
+    ]
   }
 }
