@@ -79,6 +79,17 @@ def run_pipeline_once(config=None, do_upload=True, idea=None):
             log.warning("Trend Arbiter a echoue (non fatal):\n%s",
                         traceback.format_exc())
 
+    # 1.8 Boucle retention (critique 2026-10-27) : metrique
+    # averageViewPercentage (proxy Viewed vs Swiped Away) via Analytics
+    # API - token SEPARÉ (yt-analytics.readonly), le token d'upload et la
+    # facon de publier restent intacts. Non autorise/non fatal -> le
+    # pipeline tourne comme avant (voir `autopipe analytics-auth`).
+    try:
+        analytics.refresh_retention(cfg)
+    except Exception:
+        log.warning("Refresh retention a echoue (non fatal):\n%s",
+                    traceback.format_exc())
+
     # 1.9 MODULE 3 (graft non-cassant) : boucle d'auto-apprentissage.
     # Apprend les patterns gagnants des videos publiees puis ajuste la cfg
     # du lot (hooks, temperatures, directives de prompt) SANS intervention.
@@ -165,7 +176,13 @@ def run_loop(config=None, once=False):
     paths = get_paths(cfg)
     state_file = paths.root / cfg["scheduler"].get("state_file", "data/scheduler_state.json")
     interval = int(cfg["scheduler"].get("interval_hours", 4)) * 3600
-    daily_limit = int(cfg["upload"].get("daily_limit", 6))
+    # Frequence de publication CONSERVEE a l'identique (decision du
+    # 2026-10-27) : daily_limit + post_hours_utc inchanges.
+    # posts_per_day reste disponible mais vaut 0 par defaut (0 -> jamais
+    # utilise : c'est daily_limit qui gere le quota, comme avant).
+    posts_per_day = int(cfg["upload"].get("posts_per_day", 0))
+    daily_limit = (posts_per_day if posts_per_day > 0
+                   else int(cfg["upload"].get("daily_limit", 6)))
     try:
         post_hours = [int(h) % 24 for h in cfg["upload"].get("post_hours_utc", [])]
     except (TypeError, ValueError):
@@ -180,6 +197,24 @@ def run_loop(config=None, once=False):
         can_upload = state.get("uploads", 0) < daily_limit
         if not can_upload:
             log.info("Daily upload quota reached (%s/%s)", state.get("uploads"), daily_limit)
+            if not once:
+                # Fix boucle serree (2026-10-27) : quota atteint + fenetres
+                # horaires -> l'ancien code relancait run_pipeline_once
+                # (ideas+LLM+tts) SANS upload et SANS sleep, en boucle
+                # rapprochee. On dort jusqu'a la premiere fenetre de demain.
+                now = dt.datetime.now(dt.timezone.utc)
+                if post_hours:
+                    target = (now.replace(hour=0, minute=0, second=0,
+                                          microsecond=0)
+                              + dt.timedelta(days=1, hours=min(post_hours)))
+                else:
+                    target = now + dt.timedelta(seconds=interval)
+                wait = max(0, int((target - now).total_seconds()))
+                log.info("Quota atteint -> reprise a %s UTC (attente %s)",
+                         target.strftime("%Y-%m-%d %H:%M"),
+                         dt.timedelta(seconds=wait))
+                time.sleep(wait)
+                continue
 
         if can_upload and post_hours and not once:
             now = dt.datetime.now(dt.timezone.utc)

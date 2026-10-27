@@ -129,7 +129,35 @@ def cmd_analytics(a):
     from . import analytics
     if a.ids:
         analytics.record(a.ids, cfg)
+    if getattr(a, "retention", False):
+        # Boucle Viewed vs Swiped Away (proxy averageViewPercentage).
+        # Necessite `autopipe analytics-auth` une seule fois.
+        result = analytics.refresh_retention(cfg)
+        status = result.get("status") if isinstance(result, dict) else None
+        if status in ("unauthorized_or_error", "no_videos"):
+            print("Retention indisponible (%s) - autorise avec: "
+                  "autopipe analytics-auth" % status)
     analytics.print_summary(cfg)
+
+
+def cmd_analytics_auth(a):
+    """Autorisation Analytics API (token separe, le token d'upload est
+    jamais touche) : metrique averageViewPercentage = proxy Studio
+    'Viewed vs Swiped Away' cible 70 %."""
+    cfg = _init(a.verbose)
+    from . import analytics
+    svc = analytics.get_analytics_service(cfg, interactive=True)
+    if svc is None:
+        print("Echec: autorisation analytics non obtenue (voir log).")
+        sys.exit(1)
+    print("Token analytics OK -> %s" % analytics._analytics_token_file(cfg))
+    result = analytics.refresh_retention(cfg)
+    print("Retention: status=%s" % result.get("status"))
+    rows = result.get("rows") or []
+    if rows:
+        print("%-15s %8s %8s" % ("ID", "VUES", "RET%"))
+        for r in rows:
+            print("%-15s %8s %8s" % (r["id"], r["views"], r["avg_view_pct"]))
 
 
 def cmd_visual(a):
@@ -394,7 +422,16 @@ def main(argv=None):
 
     p = sub.add_parser("analytics", help="stats des videos")
     p.add_argument("--ids", nargs="*", help="IDs YouTube a rafraichir")
+    p.add_argument("--retention", action="store_true",
+                   help="inclure la metrique Viewed vs Swiped Away "
+                        "(proxy averageViewPercentage, demande analytics-auth)")
     p.set_defaults(fn=cmd_analytics)
+
+    p = sub.add_parser("analytics-auth",
+                       help="autoriser une fois la metrique retention "
+                            "(Analytics API, token separe - ne touche pas "
+                            "au token d'upload)")
+    p.set_defaults(fn=cmd_analytics_auth)
 
     p = sub.add_parser("visual", help="MODULE 1: analyser les codes visuels des tops viraux")
     p.add_argument("--hits", help="JSON de hits (defaut: data/remake/hits_latest.json via cache)")

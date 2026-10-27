@@ -102,12 +102,22 @@ def _join_samples(cfg=None):
     latest = load_json(paths.analytics / "latest.json") or []
     rows = latest if isinstance(latest, list) else latest.get("rows", [])
     by_id = {str(r.get("id")): r for r in rows if r.get("id")}
+    # Retention (proxy Viewed vs Swiped Away, Analytics API scope separe).
+    ret = {}
+    try:
+        rdoc = load_json(paths.analytics / "retention_latest.json") or {}
+        ret = {str(r.get("id")): r for r in (rdoc.get("rows") or [])}
+    except Exception:
+        ret = {}
     samples = []
     for path in _remake_files(cfg):
         feats = _features_from_remake(path)
         row = by_id.get(str(feats["id"]))
         if row:
             feats["engagement"] = _engagement_index(row)
+            rrow = ret.get(str(feats["id"]))
+            if rrow:
+                feats["avg_view_pct"] = float(rrow.get("avg_view_pct") or 0.0)
             samples.append(feats)
     return samples
 
@@ -174,15 +184,30 @@ def apply_config(cfg, patterns_doc=None):
     oc = cfg.get("optimizer", {})
     if not oc.get("enabled", True):
         return []
+    applied = []
+
+    # Boucle retention (critique 2026-10-27) : directive derivee de la
+    # metrique averageViewPercentage (proxy Viewed vs Swiped Away, cible
+    # 70 %). Calculee AVANT le early-return : elle s'applique meme sans
+    # pattern (des la 1re video publiee).
+    try:
+        from .analytics import hook_directive
+        retention_directive = hook_directive(cfg)
+    except Exception:
+        retention_directive = ""
+
     if patterns_doc is None:
         paths = get_paths(cfg)
         file = oc.get("patterns_file") or ""
         src = Path(file) if file else paths.optimizer / "patterns.json"
         patterns_doc = load_json(src)
     if not patterns_doc or not patterns_doc.get("patterns"):
-        return []
+        if retention_directive:
+            cfg.setdefault("ideas", {})["style_directive"] = retention_directive
+            cfg.setdefault("remake", {})["style_directive"] = retention_directive
+            applied.append("style_directive (retention hook discipline)")
+        return applied
     max_delta = float(oc.get("max_delta", 0.35))
-    applied = []
 
     def _num(section, key, factor, clamp=None):
         base = cfg.get(section, {}).get(key)
@@ -207,14 +232,19 @@ def apply_config(cfg, patterns_doc=None):
             _num("llm", "temperature", 2.0 - factor)  # titles chiffres: moins creatif
         elif p["dimension"] == "title_has_number":
             _num("video", "hook_font_size", factor)
-    # Directive de style injectee dans les prompts d'idees (texte, sans LLM ici)
     labels = [p["label"] for p in patterns_doc["patterns"][:3]]
     if labels:
         directive = "Patterns appris (auto-optimisation): " + " | ".join(labels)
+        if retention_directive:
+            directive = retention_directive + " | " + directive
         cfg.setdefault("ideas", {})["style_directive"] = directive
         # Meme directive pour les prompts Super-Remake (_rewrite_user_prompt).
         cfg.setdefault("remake", {})["style_directive"] = directive
         applied.append("style_directive (ideas+remake): %d patterns" % len(labels))
+    elif retention_directive:
+        cfg.setdefault("ideas", {})["style_directive"] = retention_directive
+        cfg.setdefault("remake", {})["style_directive"] = retention_directive
+        applied.append("style_directive (retention hook discipline)")
     return applied
 
 
@@ -262,7 +292,10 @@ def hook_before_batch(cfg):
     """
     try:
         doc = run_optimizer(cfg)
-        if doc.get("status") == "learned":
+        # apply_config aussi en 'pending' : la directive retention (hook
+        # discipline) s'applique des la 1re video publiee, sans attendre
+        # min_samples patterns.
+        if doc.get("status") in ("learned", "pending"):
             applied = apply_config(cfg, patterns_doc=doc)
             if applied:
                 log.info("Optimizer: config ajustee pour ce lot: %s",

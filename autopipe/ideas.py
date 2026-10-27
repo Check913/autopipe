@@ -7,6 +7,7 @@ from pathlib import Path
 import requests
 
 from .config import get_config, get_paths
+from .identity import duration_clamp, filter_topics, hook_fix, identity_block, title_fix
 from .scout import pick_topics
 from .util import LLMClient, as_script_text, get_logger, load_json, save_json, slugify
 
@@ -22,27 +23,52 @@ HOOKS = [
     "Stop scrolling: this changes everything about",
 ]
 
-SYSTEM_PROMPT = (
-    "You are an expert US YouTube Shorts writer, vertical format, faceless. "
-    "Write in natural US English, short spoken sentences (130-170 wpm). "
-    "STRICT RULES: "
-    "(1) title: max 60 characters, curiosity-gap, keyword in the first 3 words, "
-    "and it never promises anything the script does not deliver. Winning "
-    "examples: 'The Ocean Has a Secret Nobody Talks About', "
-    "'Scientists Can't Explain What They Found', "
-    "'This Everyday Habit Steals 3 Hours of Your Day'. "
-    "(2) script: 85-120 words (30-45 seconds). Sentence 1 IS the hook: the most "
-    "shocking fact or claim, no greeting, no intro, no 'welcome back'. "
-    "(3) LOOP ENDING: the last sentence must flow back into the first sentence "
-    "so the video loops seamlessly. "
-    "(4) No subscribe begging; engagement comes from the pinned comment "
-    "question. "
-    "You reply ONLY with valid JSON with keys: title, hook (max 60 chars: the "
-    "shocking first fact, used as on-screen text), script, comment (one short "
-    "question to pin as first comment to spark replies), description (2-3 lines "
-    "with 3 hashtags), tags (list of 8-12 keywords), duration_target (int, "
-    "seconds)."
-)
+def _system_prompt(cfg=None):
+    """Prompt systeme Shorts calibre 2026 (titres 50, scripts 50-85 mots).
+
+    Remplace la constante historique SYSTEM_PROMPT (titres 60 car., scripts
+    85-120 mots = 30-45 s) qui produisait le titre-article 'AP Dhillon's
+    Success Hides a Global Music Shift' et des Shorts trop longs. Les
+    limites viennent de [ideas] et le bloc identite de [identity] est
+    injecte pour que l'algorithme puisse cataloguer la chaine.
+    """
+    cfg = cfg or get_config()
+    ideas = cfg.get("ideas", {}) or {}
+    return (
+        "You are an expert US YouTube Shorts writer, vertical format, faceless. "
+        "Write in natural US English, short spoken sentences (150-170 wpm). "
+        "STRICT RULES: "
+        "(1) title: max %(title_max)d characters, SHORT and CONCRETE, written "
+        "to make someone tap: second person ('you'/'your') or a shocking "
+        "question, keyword in the first 3 words, NO abstract article-style "
+        "phrasing (never 'hides a shift', 'the rise of', 'an era of'). "
+        "Winning examples: 'Why Everyone Is Copying This Song', "
+        "'You Won't Believe What This Singer Earns', "
+        "'This Habit Steals 3 Hours of Your Day'. "
+        "(2) script: %(words_min)d-%(words_max)d words (%(dur_min)d-%(dur_max)d "
+        "seconds). SHORTER IS BETTER: cut anything that does not build the "
+        "hook or the payoff. Sentence 1 IS the hook: the most shocking fact or "
+        "claim, no greeting, no intro, no 'welcome back'. "
+        "(3) LOOP ENDING: the last sentence must flow back into the first "
+        "sentence so the video loops seamlessly. "
+        "(4) No subscribe begging; engagement comes from the pinned comment "
+        "question. "
+        "%(identity)s"
+        "You reply ONLY with valid JSON with keys: title (max %(title_max)d "
+        "chars), hook (max %(hook_max)d chars: the shocking first fact, used "
+        "as on-screen text), script, comment (one short question to pin as "
+        "first comment to spark replies), description (2-3 lines with 3 "
+        "hashtags), tags (list of 8-12 keywords), duration_target (int "
+        "seconds, between %(dur_min)d and %(dur_max)d)."
+    ) % {
+        "title_max": int(ideas.get("title_max_chars", 50)),
+        "hook_max": int(ideas.get("hook_max_chars", 60)),
+        "words_min": int(ideas.get("script_words_min", 50)),
+        "words_max": int(ideas.get("script_words_max", 85)),
+        "dur_min": int(ideas.get("duration_min", 15)),
+        "dur_max": int(ideas.get("duration_max", 32)),
+        "identity": identity_block(cfg),
+    }
 
 
 def _user_prompt(topic, language, niche, directive=None):
@@ -79,19 +105,19 @@ COMMENT_TEMPLATES = [
 ]
 
 
-def _curiosity_title(topic):
-    """Titre curiosity-gap coupe sur un mot entier (60 car. max)."""
+def _curiosity_title(topic, cfg=None):
+    """Titre curiosity-gap -> title_fix (<= title_max_chars, non abstrait).
+
+    Historiquement 60 car. max : c'est comme cela qu'est ne le titre-article
+    critique. On passe maintenant par identity.title_fix qui coupe a 50,
+    bannit les mots abstraits et reecrit si besoin en question/2e personne.
+    """
+    cfg = cfg or get_config()
     t = " ".join(str(topic).split())
     if t:
         t = t[0].upper() + t[1:]
     raw = TITLE_PATTERNS[len(t) % len(TITLE_PATTERNS)].format(t=t)
-    if len(raw) <= 60:
-        return raw
-    cut = raw[:60]
-    # Ne jamais couper en plein mot: on recule jusqu'au dernier espace.
-    if " " in cut:
-        cut = cut[: cut.rfind(" ")].rstrip(" ,.-\u2013")
-    return cut
+    return title_fix(raw, topic=t, cfg=cfg)
 
 
 def _normalize_topic(topic):
@@ -168,21 +194,17 @@ def _wiki_summary(title, headers):
         return []
 
 
-def fallback_idea(topic):
+def fallback_idea(topic, cfg=None):
     """Backup idea sans LLM, mais avec du contenu REEL (Wikipedia).
     Un script 100% template sans information fait swiper les viewers en 2 s
     et tue la distribution seed (regle YouTube oct. 2026: contenu original
     favored, contenu generique penalise)."""
+    cfg = cfg or get_config()
     t = " ".join(str(topic).split())
-    title = _curiosity_title(t)
+    title = _curiosity_title(t, cfg=cfg)
     facts = _wiki_facts(t)
     if facts:
-        hook = facts[0]
-        if len(hook) > 60:
-            cut = hook[:60]
-            if " " in cut:
-                cut = cut[: cut.rfind(" ")]
-            hook = cut
+        hook = hook_fix(facts[0], topic=t, cfg=cfg)
         script = (
             "%s\n"  # phrase 1: le fait reel, accroche directe
             "That is not a guess \u2013 it is what the science actually says.\n"
@@ -193,7 +215,7 @@ def fallback_idea(topic):
              facts[2] if len(facts) > 2 else "Most people have never heard this.", t)
         generator = "fallback+wiki"
     else:
-        hook = ("Nobody talks about %s" % t)[:60]
+        hook = hook_fix("Nobody talks about %s" % t, topic=t, cfg=cfg)
         script = (
             "What nobody tells you about %s.\n"
             "Here is the part almost everyone skips.\n"
@@ -203,6 +225,7 @@ def fallback_idea(topic):
             "And that is exactly what nobody tells you about %s."
         ) % (t, t)
         generator = "fallback"
+    ideas = cfg.get("ideas", {}) or {}
     return {
         "title": title,
         "hook": hook,
@@ -213,7 +236,9 @@ def fallback_idea(topic):
             "#shorts #facts #didyouknow" % title
         ),
         "tags": ["shorts", t[:40], "facts", "didyouknow", "mind blowing"],
-        "duration_target": 40,
+        # Critique 2026-10-27 : 40 s etait trop long (retention en chute) ->
+        # on cible la fenetre 15-32 s via identity.duration_clamp.
+        "duration_target": duration_clamp(ideas.get("duration_default", 24), cfg=cfg),
         "source_topic": t,
         "generator": generator,
     }
@@ -222,7 +247,7 @@ def fallback_idea(topic):
 def llm_idea(llm, topic, cfg):
     try:
         data = llm.chat_json(
-            SYSTEM_PROMPT,
+            _system_prompt(cfg),
             _user_prompt(topic, cfg["general"].get("language", "en"),
                          cfg["general"].get("niche", ""),
                          directive=(cfg.get("ideas", {}) or {}).get("style_directive")),
@@ -234,11 +259,15 @@ def llm_idea(llm, topic, cfg):
     for key in ("title", "hook", "script", "description", "tags"):
         if not data.get(key):
             return None
-    data["title"] = str(data["title"]).strip()[:60]
-    data["hook"] = str(data["hook"]).strip()[:60]
+    # Normalisation dure (critique 2026-10-27) : meme si le LLM ignore les
+    # consignes, title_fix/hook_fix/duration_clamp remettent l'idee dans le
+    # moule Shorts (titre <=50 non-abstrait, hook <=60, duree 15-32 s).
+    data["title"] = title_fix(data["title"], topic=topic, cfg=cfg)
+    data["hook"] = hook_fix(data["hook"], topic=topic, cfg=cfg)
     # Le LLM renvoie parfois le script en tableau JSON de lignes (observe
     # avec gemini-2.5-flash le 2026-10-26): edge-tts exige un str.
     data["script"] = as_script_text(data["script"])
+    data["duration_target"] = duration_clamp(data.get("duration_target"), cfg=cfg)
     if not data.get("comment"):
         data["comment"] = COMMENT_TEMPLATES[0]
     if not isinstance(data["tags"], list):
@@ -254,7 +283,7 @@ def run_ideas(config=None, count=5):
     scout_data = load_json(paths.scout / "latest.json", {"top": []})
     # On demande plus de sujets que necessaire: le dedup inter-runs va en
     # eliminer (les 3 runs du 23/10 avaient produit 3x le meme sujet).
-    candidates = pick_topics(scout_data, n=max(count * 4, 12))
+    candidates = pick_topics(scout_data, n=max(count * 4, 12), cfg=cfg)
     # Complement radar multi-plateformes : scout.topics inclut desormais les
     # sujets radar (fusion scout), et on complete en direct avec
     # data/radar/latest.json (Reddit/Trends/News/TikTok) si le scout etait
@@ -275,6 +304,11 @@ def run_ideas(config=None, count=5):
                 continue
             seen_topics.add(key)
             candidates.append(t)
+    # Gate de niche (critique 2026-10-27) : AP Dhillon, lingerie 475 crore,
+    # Venus, Tenet et 'walking with God' dans la meme journee rendaient la
+    # chaine inclassable. filter_topics garde uniquement les sujets
+    # [identity].keywords et rejette [identity].anti_topics.
+    candidates = filter_topics(candidates, cfg=cfg)
     used = _used_topics(paths)
     topics = [t for t in candidates
               if _normalize_topic(t["topic"]) not in used][:count]
@@ -300,7 +334,7 @@ def run_ideas(config=None, count=5):
         if llm.enabled:
             idea = llm_idea(llm, topic, cfg)
         if not idea:
-            idea = fallback_idea(topic)
+            idea = fallback_idea(topic, cfg=cfg)
         idea["score"] = t.get("score")
         ideas.append(idea)
 

@@ -4,6 +4,7 @@ import datetime as dt
 from yt_dlp import YoutubeDL
 
 from .config import get_config, get_paths
+from .identity import filter_topics
 from .util import get_logger, save_json
 
 log = get_logger("scout")
@@ -61,8 +62,17 @@ def score_entry(e):
     return float(views)
 
 
-def pick_topics(scout_data, n=5):
-    """Extracts n short topics from the best-scored titles."""
+def pick_topics(scout_data, n=5, cfg=None):
+    """Meilleurs titres -> sujets, puis gate de niche [identity].
+
+    Critique 2026-10-27 : sans gate, le bot prenait 'lingerie 475 crore',
+    'Venus', 'Tenet' et 'walking with God' dans le meme top 5 -> chaine
+    inclassable pour l'algorithme. pick_topics applique maintenant
+    identity.filter_topics (mots-cles niche + anti_topics) et, si le gate
+    vide tout, retombe sur les mots-cles de niche du scout (comportement
+    historique pour n'empirer jamais).
+    """
+    cfg = cfg or get_config()
     topics = []
     seen = set()
     for e in scout_data.get("top", []):
@@ -77,7 +87,13 @@ def pick_topics(scout_data, n=5):
                        "score": round(score_entry(e), 1)})
         if len(topics) >= n:
             break
-    return topics
+    kept = filter_topics(topics, cfg=cfg)
+    if not kept:
+        log.info("Gate niche: aucun sujet on-niche dans le top YouTube; "
+                 "retour aux mots-cles de niche du scout.")
+        kept = [{"topic": kw, "source": "niche-keyword", "score": 0.0}
+                for kw in (cfg.get("scout", {}) or {}).get("keywords", [])]
+    return kept
 
 
 def run_scout(config=None, keywords=None):
@@ -103,7 +119,7 @@ def run_scout(config=None, keywords=None):
     flat = list(data["trending"]) + [e for lst in data["keywords"].values() for e in lst]
     flat.sort(key=score_entry, reverse=True)
     data["top"] = flat[:30]
-    data["topics"] = pick_topics(data)
+    data["topics"] = pick_topics(data, cfg=cfg)
     # Fusion des topics du radar multi-plateformes (Reddit/Hacker News/
     # Google News/Trends/TikTok...) : AJOUT apres les topics YouTube, dedup,
     # jamais fatal (une panne radar ne casse pas le scout).
@@ -111,8 +127,11 @@ def run_scout(config=None, keywords=None):
         from .radar import merge_radar_topics
         before = len(data["topics"])
         data["topics"] = merge_radar_topics(data["topics"], cfg)
+        # Gate de niche aussi sur les sujets radar : Reddit/HN/News peuvent
+        # amener n'importe quoi (politique, religion, data science...).
+        data["topics"] = filter_topics(data["topics"], cfg=cfg)
         if len(data["topics"]) > before:
-            log.info("Radar topics merges: +%s sujets externes",
+            log.info("Radar topics merges: +%s sujets externes (apres gate niche)",
                      len(data["topics"]) - before)
     except Exception as exc:
         log.warning("Fusion topics radar ignoree: %s", exc)

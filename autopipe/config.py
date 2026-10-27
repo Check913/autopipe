@@ -21,6 +21,32 @@ DEFAULTS = {
         "log_file": "autopipe.log",
         "log_level": "INFO",
     },
+    "identity": {
+        # Identite de chaine (2026-10-27) : gate de niche + bloc injecte dans
+        # tous les prompts LLM. L'algo YouTube ne cataloge la chaine que si
+        # la niche est stable (critique : sujets heterogenes inclassables).
+        "name": "",
+        "niche": "",              # vide -> general.niche
+        "audience": "",
+        "promise": "",
+        "tone": "",
+        "keywords": [],           # themes on-niche (gate scout/ideas)
+        "anti_topics": [],       # themes interdits (gate scout/ideas)
+        "strict": True,          # False -> sujets hors niche toleres en queue
+    },
+    "ideas": {
+        # Calibrage Shorts 2026 (critique AP Dhillon) : titres <= 50 car.
+        # concrets, hooks <= 60 car., scripts 50-85 mots (18-32 s) - sweet
+        # spot retention 15-35 s, hooks forts des les 2 premieres secondes.
+        "title_max_chars": 50,
+        "hook_max_chars": 60,
+        "banned_title_words": [],
+        "script_words_min": 50,
+        "script_words_max": 85,
+        "duration_min": 15,
+        "duration_max": 32,
+        "duration_default": 24,
+    },
     "scout": {
         "trending_count": 25,
         "keywords": ["amazing facts", "true story", "science explained"],
@@ -132,6 +158,9 @@ DEFAULTS = {
         "client_secrets": "client_secret.json",
         "token_file": "token.json",
         "daily_limit": 6,
+        # posts_per_day : 0 = comportement historique conserve (daily_limit,
+        # nombre de Shorts/jour actuel de la chaine, volontairement intact).
+        "posts_per_day": 0,
         "post_hours_utc": [15, 21],
         "auto_comment": True,
         "comment_template": "",
