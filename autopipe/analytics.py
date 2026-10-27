@@ -120,6 +120,17 @@ VIEWED_TARGET_PCT = 70.0
 # "Top videos" (dimensions=video). Repli historique : averageViewPercentage.
 ENGAGED_TARGET_PCT = 70.0
 
+# V3 : loop rate = vues / viewers uniques. C'est LA metrique qui valide ou
+# invalide le loop "fin rejoint debut" : > 100 % = les viewers re-regardent
+# (le loop fonctionne), < 80 % = le loop ne prend pas (ils ne reviennent
+# pas au debut). uniqueViewers n'est PAS exposee par l'API Analytics v2
+# (Studio Advanced Mode uniquement ; la metrique historique "uniques" est
+# depreciee depuis 2016 - verifie 2026-10-27). On TENTE quand meme la
+# requete (Google peut ouvrir la metrique sans preavis) avec repli propre,
+# meme pattern que engagedViews. Jamais fatal.
+LOOP_TARGET_PCT = 100.0   # au-dessus : les viewers re-regardent
+LOOP_MIN_PCT = 80.0       # en-dessous : le loop ne fonctionne pas
+
 
 def _analytics_token_file(cfg):
     return get_paths(cfg).root / (cfg.get("analytics", {}) or {}).get(
@@ -195,6 +206,76 @@ def get_analytics_service(cfg=None, interactive=False):
         return None
 
 
+def loop_thresholds(cfg=None):
+    """Seuils loop rate (pct vues/viewers uniques) depuis la cfg."""
+    acfg = (cfg or get_config()).get("analytics", {}) or {}
+    try:
+        target = float(acfg.get("loop_target_pct", LOOP_TARGET_PCT))
+    except (TypeError, ValueError):
+        target = LOOP_TARGET_PCT
+    try:
+        minimum = float(acfg.get("loop_min_pct", LOOP_MIN_PCT))
+    except (TypeError, ValueError):
+        minimum = LOOP_MIN_PCT
+    return target, minimum
+
+
+def _loop_uniques(svc, ids, start, end):
+    """Tente views+uniqueViewers par video (V3 loop rate).
+
+    Renvoie {video_id: unique_viewers} ou {} si la metrique est refusee
+    (cas documente : Studio-only). Aucune exception ne remonte.
+    """
+    try:
+        resp = svc.reports().query(
+            ids="channel==MINE", startDate=start, endDate=end,
+            metrics="views,uniqueViewers", dimensions="video",
+            filters="video==" + ",".join(ids)).execute()
+    except Exception as exc:
+        log.info("uniqueViewers refusee par l'API (Studio-only, verifie "
+                 "2026-10-27) -> loop rate indisponible via API: %s",
+                 str(exc)[:140])
+        return {}
+    cols = [c.get("name") for c in (resp.get("columnHeaders") or [])]
+    idx = {n: p for p, n in enumerate(cols)}
+    out = {}
+    for row in resp.get("rows", []) or []:
+        try:
+            vid = str(row[idx["video"]])
+            uv = float(row[idx["uniqueViewers"]] or 0.0)
+            if vid and uv > 0:
+                out[vid] = int(uv)
+        except (KeyError, IndexError, TypeError, ValueError):
+            continue
+    if out:
+        log.info("uniqueViewers DISPONIBLE pour %s videos -> loop rate "
+                 "calcule directement", len(out))
+    return out
+
+
+def loop_value(row):
+    """Loop rate d'une ligne retention (pct vues/viewers uniques).
+
+    Renvoie None si la donnee n'existe pas (metrique API refusee).
+    """
+    if not isinstance(row, dict):
+        return None
+    v = row.get("loop_rate")
+    return float(v) if isinstance(v, (int, float)) else None
+
+
+def loop_verdict(rate, cfg=None):
+    """ok | weak | None pour un loop rate en % (None si pas de donnee)."""
+    if not isinstance(rate, (int, float)):
+        return None
+    target, minimum = loop_thresholds(cfg)
+    if rate >= target:
+        return "ok"
+    if rate < minimum:
+        return "weak"
+    return "borderline"
+
+
 def engagement_value(row):
     """Ratio d'engagement d'une ligne retention : engaged_ratio si present,
     sinon avg_view_pct (compat anciens snapshots)."""
@@ -225,10 +306,18 @@ def retention_for(video_ids, cfg=None, days=28):
     out = []
     end = dt.date.today().isoformat()
     start = (dt.date.today() - dt.timedelta(days=days)).isoformat()
+    # V3 loop rate : une seule tentative uniqueViewers par appel (si la
+    # metrique est refusee une fois, inutile de marteler l'API).
+    uniques_by_id = {}
+    loop_supported = True
     # L'API accepte plusieurs ids par filtre mais limite la taille : on
     # decoupe en paquets de 10 (suffisant : 6 uploads/jour max).
     for i in range(0, len(ids), 10):
         chunk = ids[i:i + 10]
+        if loop_supported and not uniques_by_id:
+            uniques_by_id = _loop_uniques(svc, chunk, start, end)
+            if not uniques_by_id:
+                loop_supported = False
         metrics = ("views,engagedViews,averageViewDuration,"
                    "averageViewPercentage,likes,comments,shares")
         try:
@@ -270,6 +359,8 @@ def retention_for(video_ids, cfg=None, days=28):
             views = int(_f("views"))
             engaged = int(_f("engagedViews"))
             avg_pct = round(_f("averageViewPercentage"), 1)
+            vid = str(row[idx["video"]]) if idx.get("video") is not None \
+                  and idx["video"] < len(row) else ""
             if views > 0 and engaged > 0:
                 # VRAI ratio "restes vs swipes" : vues qui continuent apres
                 # la premiere frame / demarrages totaux. Sur Shorts, une
@@ -285,9 +376,16 @@ def retention_for(video_ids, cfg=None, days=28):
                 # favorable aux Shorts courts - a interpreter avec prudence).
                 engaged_ratio = avg_pct
                 engaged_source = "fallback_averageViewPercentage"
+            # V3 loop rate : vues / viewers uniques (>100 % = re-regard).
+            uv = uniques_by_id.get(vid)
+            if uv:
+                loop_rate = round(100.0 * views / uv, 1)
+                loop_source = "uniqueViewers"
+            else:
+                loop_rate = None
+                loop_source = "unavailable" if not loop_supported else "pending"
             out.append({
-                "id": str(row[idx["video"]]) if idx.get("video") is not None
-                      and idx["video"] < len(row) else "",
+                "id": vid,
                 "range_start": start,
                 "range_end": end,
                 "views": views,
@@ -302,6 +400,10 @@ def retention_for(video_ids, cfg=None, days=28):
                 "comments": int(_f("comments")),
                 "shares": int(_f("shares")),
                 "viewed_target_pct": VIEWED_TARGET_PCT,
+                "unique_viewers": uv,
+                "loop_rate": loop_rate,
+                "loop_source": loop_source,
+                "loop_verdict": loop_verdict(loop_rate, cfg),
                 "fetched": dt.datetime.now().isoformat(timespec="seconds"),
             })
     return out
@@ -339,6 +441,29 @@ def refresh_retention(cfg=None):
     log.info("Retention rafraichie: %s videos, engagement moyen %.1f %% "
              "(cible %.0f %%) - %s sous le seuil",
              len(rows), mean, doc["engaged_target_pct"], len(weak))
+    # V3 diagnostic loop rate : la metrique qui valide le "fin rejoint
+    # debut". None partout = uniqueViewers encore refusee par l'API.
+    loops = [loop_value(r) for r in rows]
+    measured = [v for v in loops if v is not None]
+    loop_mean = (sum(measured) / len(measured)) if measured else None
+    doc["loop_target_pct"], doc["loop_min_pct"] = loop_thresholds(cfg)
+    doc["loop_mean"] = round(loop_mean, 1) if loop_mean is not None else None
+    doc["loop_n_measured"] = len(measured)
+    if loop_mean is not None:
+        verdict = "ok" if loop_mean >= doc["loop_target_pct"] else (
+            "weak" if loop_mean < doc["loop_min_pct"] else "borderline")
+        doc["loop_verdict"] = verdict
+        log.info("Loop rate moyen: %.1f %% (cible %.0f %%, min %.0f %%) -> %s",
+                 loop_mean, doc["loop_target_pct"], doc["loop_min_pct"],
+                 verdict)
+        if verdict == "weak":
+            log.warning("Loop rate < %.0f %% : le 'fin rejoint debut' ne "
+                        "prend PAS - renforce la boucle (payoff tease des le "
+                        "debut, derniere image = premiere image).",
+                        doc["loop_min_pct"])
+    else:
+        log.info("Loop rate: metrique uniqueViewers indisponible via API "
+                 "(Studio-only) - loop non mesure ce run")
     return {"status": "ok", "n": len(rows), "rows": rows,
             "weak": [r["id"] for r in weak]}
 
@@ -380,4 +505,22 @@ def hook_directive(cfg=None):
     if mean < 50.0:
         parts.append("Script SHORTER: aim for the low end of the duration "
                      "range; every extra second loses swipers.")
+    # V3 feedback loop rate : valide ou invalide le 'fin rejoint debut'.
+    loops = [loop_value(r) for r in rows]
+    measured = [v for v in loops if v is not None]
+    if measured:
+        lmean = sum(measured) / len(measured)
+        ltarget, lmin = loop_thresholds(cfg)
+        if lmean < lmin:
+            parts.append(
+                "CRITICAL loop check FAILED: viewers/unique-viewers ratio is "
+                "only %.0f%% (below %.0f%%) - viewers are NOT rewatching. "
+                "Close the narrative circle: the last visual/line must answer "
+                "or echo the opening hook, and tease early that the payoff "
+                "rewards a second watch." % (lmean, lmin))
+        elif lmean >= ltarget:
+            parts.append(
+                "Loop check PASSED: viewers/unique-viewers ratio %.0f%% "
+                "(rewatching confirmed) - keep the ending-to-beginning loop "
+                "exactly this strong." % lmean)
     return " ".join(parts)

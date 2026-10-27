@@ -233,37 +233,49 @@ def run_video(idea, audio, timings_json, clips, config=None):
         except Exception as exc:
             log.warning("Hook visuel ignore: %s", exc)
 
-    # V2/V3 : checkpoint (re-call curiosite) - uniquement sur les formats
-    # longs (60 s) : sur 13 s un checkpoint a 15 s n'existe pas. Position en
-    # % de la duree audio (checkpoint_at_pct, defaut 0.45) cible le point de
-    # rupture de retention (~60 % a 15 s, ~50 % a 30 s) ; un checkpoint fixe
-    # a 15 s tomberait trop tot sur un 60 s. Plancher = checkpoint_seconds.
-    # Fenetre de securite : au moins 3 s apres le debut et 3 s avant la fin
-    # de la piste audio.
+    # V3 : checkpoints FIXES aux trois moments qui comptent - 2 s (le hook :
+    # la decision de swipe se joue a 1,4-2,3 s), 8 s (premier beat : la
+    # promesse doit tenir) et le dernier tiers (payoff, formats longs
+    # uniquement). L'ancien checkpoint_at_pct unique (0.45 = 27 s sur un
+    # 60 s, 6 s sur un 13 s) ne testait qu'un moment de la courbe : a 27 s,
+    # un viewer encore present est DEJA accroche - le test utile est avant.
+    # Deduplication : deux checkpoints a moins de 1.5 s d'ecart sont
+    # fusionnes (sur un 13 s, le dernier tiers ~10 s tombe pres du 8 s).
     extra_ass = []
     is_long = (str(idea.get("duration_format") or "") == "long"
                or audio_dur > 30.0)
-    if vcfg.get("checkpoint_enabled", True) and is_long:
+    if vcfg.get("checkpoint_enabled", True):
         try:
-            pct = float(vcfg.get("checkpoint_at_pct", 0.45) or 0.45)
+            base_times = [float(t) for t in
+                          (vcfg.get("checkpoint_times_s") or [2.0, 8.0])]
         except (TypeError, ValueError):
-            pct = 0.45
-        if not (0.10 <= pct <= 0.90):
-            pct = 0.45
-        at = max(float(vcfg.get("checkpoint_seconds", 15) or 15),
-                 audio_dur * pct)
-        if 3.0 <= at <= audio_dur - 3.0:
+            base_times = [2.0, 8.0]
+        times = list(base_times)
+        last_third = audio_dur * (2.0 / 3.0)
+        if is_long and 1.5 <= last_third <= audio_dur - 3.0:
+            times.append(last_third)
+        # Fenetre de securite : >= 1.5 s apres le debut, >= 3 s avant la fin.
+        times = sorted(t for t in times if 1.5 <= t <= audio_dur - 3.0)
+        placed = []
+        for t in times:
+            if placed and t - placed[-1] < 1.5:
+                continue
+            placed.append(t)
+        text = str(vcfg.get("checkpoint_text") or "STAY - IT GETS WILD")
+        for k, at in enumerate(placed):
             try:
                 from .subs import write_checkpoint_ass
                 ckpt = write_checkpoint_ass(
-                    str(vcfg.get("checkpoint_text") or "STAY - IT GETS WILD"),
-                    out_dir / "checkpoint.ass", at_seconds=at,
+                    text, out_dir / ("checkpoint_%d.ass" % k), at_seconds=at,
                     width=int(vcfg.get("width", 1080)),
                     height=int(vcfg.get("height", 1920)))
                 if ckpt:
                     extra_ass.append(ckpt)
             except Exception as exc:
-                log.warning("Checkpoint visuel ignore: %s", exc)
+                log.warning("Checkpoint visuel ignore (%s s): %s", at, exc)
+        if placed:
+            log.info("Checkpoints places a: %s",
+                     ", ".join("%.1fs" % t for t in placed))
 
     final = assemble(track, audio, srt, out_dir / "video.mp4", cfg, music=music,
                      hook_ass=hook_ass, extra_ass=extra_ass)

@@ -114,12 +114,12 @@ loop_tail = 0.7                  # duree de la re-intro (secondes)
 hook_overlay = true              # texte choc jaune grave de 0 a 3s (anti swipe-away)
 hook_duration = 3.0              # duree d'affichage du hook (secondes)
 hook_font_size = 84
-# V2/V3 : checkpoint (texte de rappel) pour retenir les swipes sur les
-# formats 60 s (inutile sur les 13 s). Position en % de la duree audio
-# (45 % = point de rupture de retention), plancher a checkpoint_seconds.
+# V3 : checkpoints (texte de rappel) pour retenir les swipes, places a
+# des temps fixes : 2 s (apres le hook), 8 s (premier beat) et dernier
+# tiers (payoff). Anciennes cles checkpoint_seconds/checkpoint_at_pct
+# encore tolerees mais ignorees si checkpoint_times_s est present.
 checkpoint_enabled = true
-checkpoint_seconds = 15
-checkpoint_at_pct = 0.45
+checkpoint_times_s = [2.0, 8.0]
 checkpoint_text = "STAY - IT GETS WILD"
 
 [upload]
@@ -174,6 +174,23 @@ min_samples = 3                  # videos publiees min. avant apprentissage
 max_delta = 0.35                 # variation max appliquee a un parametre
 patterns_file = ""               # vide = data/optimizer/patterns.json
 
+# V3 kill switch : coupe les familles/niches qui s'effondrent.
+kill_switch = true
+kill_family_pct = 30.0           # 3 Shorts consecutifs < 30 % -> ban famille
+kill_niche_pct = 40.0            # 5 Shorts consecutifs < 40 % -> pause niche
+kill_ban_shorts = 20             # duree du ban famille (en Shorts)
+kill_niche_shorts = 10           # duree de la pause niche (en Shorts)
+
+# V3 baseline : 10 Shorts de reference avant d'ajuster, puis delta
+# compare apres 10 Shorts V3 (data/optimizer/baseline.json).
+baseline_size = 10
+
+# V3 patterns actifs : un pattern > 70 % sur 3 Shorts est FORCE dans
+# les 5 Shorts suivants (teardown des succes, pas seulement des echecs).
+active_min_pct = 70.0
+active_min_n = 3
+active_shorts = 5
+
 [identity]
 # V2 : identite de chaine + gate de niche. Soft score par defaut : les
 # sujets hors niche sont penalises (off_niche_penalty), pas rejetes.
@@ -200,6 +217,14 @@ long = { target = 60, min = 50, max = 60 }
 # V2 : vrai proxy de retention Shorts = engagedViews / views (YouTube
 # compte une "vue" des le demarrage depuis 2025). Cible : >= 70 %.
 engaged_target_pct = 70
+
+# V3 : taux de bouclage = views / uniqueViewers. ATTENTION (2026-10-27) :
+# uniqueViewers n'est PAS documente dans l'API YouTube Analytics v2
+# (l'ancienne metrique "uniques" est depresiee depuis 2016) ; le code
+# tente la metrique et retombe sur unavailable/pending si l'API refuse.
+# Verifiable uniquement dans Studio > mode avance.
+loop_target_pct = 100            # cible : 100 % (1 vue = 1 spectateur)
+loop_min_pct = 80                # sous 80 % -> alerte CRITICAL dans le hook
 
 [hook_ab]
 # V2 : A/B de hook - deux variantes par sujet, tracker variant -> retention

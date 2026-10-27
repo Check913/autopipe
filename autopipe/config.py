@@ -148,6 +148,20 @@ DEFAULTS = {
         "min_samples": 3,         # videos minimales avant tout apprentissage
         "max_delta": 0.35,        # variation max appliquee a un parametre
         "patterns_file": "",      # vide -> data/optimizer/patterns.json
+        # V3 kill switch : stoppe la propagation d'une famille/niche morte.
+        "kill_switch": True,
+        "kill_family_pct": 30.0,   # 3 Shorts < 30 % dans une famille -> ban
+        "kill_niche_pct": 40.0,    # 5 Shorts consecutifs < 40 % -> alerte niche
+        "kill_ban_shorts": 20,     # duree du ban (en Shorts publies analyses)
+        "kill_niche_shorts": 10,   # duree de la pause de niche
+        # V3 baseline : verrouille les `baseline_size` premiers Shorts publies
+        # ; aucun ajustement numerique tant que ce n'est pas verrouille.
+        "baseline_size": 10,
+        # V3 patterns actifs : retention moyenne > active_min_pct sur
+        # >= active_min_n Shorts -> force dans les `active_shorts` suivants.
+        "active_min_pct": 70.0,
+        "active_min_n": 3,
+        "active_shorts": 5,
     },
     "llm": {"base_url": "", "api_key": "", "model": "gpt-4o-mini", "temperature": 0.8},
     "tts": {"voice": "en-US-AndrewNeural", "rate": "+0%", "volume": "+0%"},
@@ -163,13 +177,17 @@ DEFAULTS = {
               "music_dir": "assets/music", "loop_ending": True, "loop_tail": 0.7,
               "hook_overlay": True, "hook_duration": 3.0, "hook_font_size": 84,
               # V2 : checkpoint mi-video (texte de rappel affiche a N s) pour
-              # retenir les swipes sur les formats 60 s. Desactive pour les
-              # formats 13 s (inutile, trop court).
-              "checkpoint_enabled": True, "checkpoint_seconds": 15,
-              # V3 : position du checkpoint en % de la duree audio (plancher
-              # a checkpoint_seconds). 45 % cible le point de rupture de
-              # retention (~60 % a 15 s, ~50 % a 30 s) sans coller au debut.
-              "checkpoint_at_pct": 0.45,
+              # retenir les swipes sur les formats 60 s.
+              "checkpoint_enabled": True,
+              # V3 : checkpoints FIXES aux moments qui comptent - la decision
+              # de swipe se joue a 1,4-2,3 s (hook), le premier beat tient a
+              # 8 s, le payoff arrive dans le dernier tiers. L'ancien
+              # checkpoint_at_pct unique (0.45 = 27 s sur un 60 s) ne
+              # testait qu'un moment de la courbe : a 27 s, qui reste est
+              # deja accroche. Le dernier tiers est ajoute automatiquement
+              # sur les formats longs (60 s) ; sur 13 s il tomberait a
+              # ~10 s, trop proche du checkpoint 8 s -> deduplique.
+              "checkpoint_times_s": [2.0, 8.0],
               "checkpoint_text": "STAY - #3 IS WILD"},
     "upload": {
         "privacy": "public",
@@ -191,6 +209,13 @@ DEFAULTS = {
         # (doc YouTube, revision du 31/03/2025) - PAS "actif a 30 s".
         # Croise avec averageViewPercentage. Cible : >= 70 %.
         "engaged_target_pct": 70,
+        # V3 loop rate : vues / viewers uniques - valide le "fin rejoint
+        # debut". > 100 % = les viewers re-regardent (loop OK) ; < 80 % =
+        # le loop ne prend pas. uniqueViewers est Studio-only via API
+        # (verifie 2026-10-27) : le code TENTE la metrique et replie
+        # proprement si Google la refuse.
+        "loop_target_pct": 100,
+        "loop_min_pct": 80,
     },
     "hook_ab": {
         # V2 : A/B de hook - deux variantes par sujet, tracker

@@ -77,9 +77,37 @@ Fichiers :
 - **Hooks specifiques** : templates de repli + titres reecrits (chiffre,
   erreur nommee, resultat) - les hooks vagues perdent ~4x plus de viewers ;
   hook a l'ecran lisible en < 2 s (max 12 mots voix, 3-7 mots a l'ecran).
-- **Checkpoint en %** : `video.checkpoint_at_pct = 0.45` (plancher
-  `checkpoint_seconds`) - un checkpoint fixe a 15 s tombait trop tot sur
-  un 60 s.
+- **Checkpoints fixes (V3.1, 27/10/2026)** : `video.checkpoint_times_s =
+  [2.0, 8.0]` + dernier tiers (payoff) - remplace `checkpoint_at_pct = 0.45`
+  (les anciennes cles restent tolerees si `checkpoint_times_s` est absent).
+  2 s = apres le hook, 8 s = premier beat, dernier tiers = payoff.
+- **Taux de bouclage (V3.1, 27/10/2026)** : `analytics.loop_target_pct =
+  100`, `analytics.loop_min_pct = 80`. `analytics.py` demande
+  `metrics=views,uniqueViewers` et retombe sur `unavailable` (ou `pending`
+  si video trop jeune) - **`uniqueViewers` n'est PAS une metrique documentee
+  de l'Analytics API v2** (verifie sur developers.google.com/youtube/analytics/
+  metrics le 27/10/2026 ; l'ancienne metrique `uniques` est depresiee depuis
+  le 31/10/2016). Elle n'existe que dans Studio > mode avance. Si l'API
+  l'accepte un jour, le verdict s'allume tout seul ; sinon loop_source =
+  `unavailable` et aucune fausse alerte.
+- **Kill switch (V3.1, 27/10/2026)** : `optimizer.kill_switch = true` :
+  - 3 Shorts consecutifs < `kill_family_pct` (30 %) dans la meme famille
+    de hook -> famille bannie `kill_ban_shorts` (20) Shorts ;
+  - 5 Shorts consecutifs < `kill_niche_pct` (40 %) dans la meme niche ->
+    pause de `kill_niche_shorts` (10) Shorts, alerte Gmail si configuree
+    (bug corrige : l'alerte niche ne partait jamais - `__mod__` sans %s).
+  Etat : `data/optimizer/kill_switch.json`.
+- **Baseline (V3.1, 27/10/2026)** : `optimizer.baseline_size = 10` - les
+  ajustements numeriques de l'optimizer sont SUSPENDUS jusqu'a 10 Shorts
+  de reference (`data/optimizer/baseline.json`, ecriture atomique + lock).
+  Ensuite `baseline_delta` compare les 10 Shorts suivants : delta moyen
+  d'avg_view_pct et d'engagement dans le doc optimizer.
+- **Patterns actifs (V3.1, 27/10/2026)** : `optimizer.active_min_pct =
+  70`, `active_min_n = 3`, `active_shorts = 5` - un pattern (dimension
+  hook_type/duration_format/hook_variant/title_has_number) > 70 % sur
+  >= 3 Shorts est FORCE dans les 5 Shorts suivants (directive "FORCE
+  pattern" dans les prompts). Teardown des succes, pas seulement des
+  echecs. Etat : `data/optimizer/active_patterns.json`.
 - **Taxonomie hook_type unifiee** : l'optimizer utilise desormais
   `identity.hook_family` (question/number/negation/statement), meme
   classification que le A/B.

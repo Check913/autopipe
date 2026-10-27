@@ -239,19 +239,42 @@ def apply_config(cfg, patterns_doc=None):
             "digit, negation = stop/never/nobody, statement = blunt claim)."
             % (ab_family, ab_family))
 
+    # V3 : directives FORCEES au-dessus des patterns statistiques -
+    # d'abord les patterns actifs (teardown des succes, wording FORCE),
+    # puis le kill switch (familles bannies, pause de niche).
+    prefix_parts = [retention_directive, ab_directive]
+    try:
+        prefix_parts.append(active_patterns_directive(cfg) or "")
+    except Exception:
+        pass
+    try:
+        prefix_parts.append(kill_switch_directive(cfg) or "")
+    except Exception:
+        pass
+    prefix = " | ".join(p for p in prefix_parts if p)
+
+    # V3 baseline : aucun ajustement NUMERIQUE tant que la baseline des
+    # `baseline_size` premiers Shorts publies n'est pas verrouillee
+    # ("sans baseline, tu optimises a l'aveugle"). Les directives
+    # textuelles restent actives (elles ne touchent aucun parametre).
+    baseline_locked = True
+    bdoc = {}
+    try:
+        bdoc = load_json(_optimizer_file(cfg, "baseline.json")) or {}
+        baseline_locked = bool(bdoc.get("locked"))
+    except Exception:
+        baseline_locked = True
+
     if patterns_doc is None:
         paths = get_paths(cfg)
         file = oc.get("patterns_file") or ""
         src = Path(file) if file else paths.optimizer / "patterns.json"
         patterns_doc = load_json(src)
     if not patterns_doc or not patterns_doc.get("patterns"):
-        if retention_directive or ab_directive:
-            directive = " | ".join(d for d in (retention_directive,
-                                               ab_directive) if d)
-            cfg.setdefault("ideas", {})["style_directive"] = directive
-            cfg.setdefault("remake", {})["style_directive"] = directive
-            applied.append("style_directive (retention hook discipline)"
-                           + ("" if not ab_family else " + A/B"))
+        if prefix:
+            cfg.setdefault("ideas", {})["style_directive"] = prefix
+            cfg.setdefault("remake", {})["style_directive"] = prefix
+            applied.append("style_directive (directives V3)")
         return applied
     max_delta = float(oc.get("max_delta", 0.35))
 
@@ -265,7 +288,12 @@ def apply_config(cfg, patterns_doc=None):
             applied.append("%s.%s: %s -> %s" % (section, key, base,
                                                 cfg[section][key]))
 
-    for p in patterns_doc["patterns"]:
+    if not baseline_locked:
+        applied.append("baseline non verrouillee (%d/%d Shorts publies) - "
+                       "ajustements numeriques suspendus"
+                       % (int(bdoc.get("n") or 0),
+                          int(oc.get("baseline_size", 10))))
+    for p in (patterns_doc["patterns"] if baseline_locked else []):
         factor = 1.0 + max(-max_delta, min(max_delta, p["relative_delta"]))
         if p["dimension"] == "hook_type" and p["value"] == "question" \
                 and p["relative_delta"] > 0:
@@ -281,25 +309,395 @@ def apply_config(cfg, patterns_doc=None):
     labels = [p["label"] for p in patterns_doc["patterns"][:3]]
     if labels:
         directive = "Patterns appris (auto-optimisation): " + " | ".join(labels)
-        if ab_directive:
-            directive = ab_directive + " | " + directive
-        if retention_directive:
-            directive = retention_directive + " | " + directive
+        if prefix:
+            directive = prefix + " | " + directive
         cfg.setdefault("ideas", {})["style_directive"] = directive
         # Meme directive pour les prompts Super-Remake (_rewrite_user_prompt).
         cfg.setdefault("remake", {})["style_directive"] = directive
         applied.append("style_directive (ideas+remake): %d patterns" % len(labels))
-    elif retention_directive or ab_directive:
-        directive = " | ".join(d for d in (retention_directive,
-                                           ab_directive) if d)
-        cfg.setdefault("ideas", {})["style_directive"] = directive
-        cfg.setdefault("remake", {})["style_directive"] = directive
-        applied.append("style_directive (retention hook discipline)"
-                       + ("" if not ab_family else " + A/B"))
+    elif prefix:
+        cfg.setdefault("ideas", {})["style_directive"] = prefix
+        cfg.setdefault("remake", {})["style_directive"] = prefix
+        applied.append("style_directive (directives V3)")
     return applied
 
 
-def run_optimizer(cfg=None):
+# ---------------------------------------------------------------------------
+# V3 : kill switch, baseline, patterns actifs
+# ---------------------------------------------------------------------------
+
+_ACTIVE_DIMS = ("hook_type", "duration_format", "hook_variant",
+                "title_has_number")
+
+
+def _optimizer_file(cfg, name):
+    """Chemin d'un fichier d'etat V3 dans data/optimizer/."""
+    return get_paths(cfg).optimizer / name
+
+
+def _norm_topic(topic):
+    """Cle de niche normalisee (minuscules, espaces colapses)."""
+    return " ".join(str(topic or "").lower().split())
+
+
+def _chronological(samples):
+    """Echantillons du plus ancien au plus recent (_remake_files est
+    triee du plus recent au plus ancien)."""
+    return list(reversed(list(samples or [])))
+
+
+def _new_samples(samples, seen_ids):
+    """Echantillons jamais analyses (ordre chronologique) + ensemble
+    complet des ids publies."""
+    chrono = _chronological(samples)
+    seen = set(str(i) for i in (seen_ids or ()))
+    new = [s for s in chrono if str(s.get("id")) not in seen]
+    return new, {str(s.get("id")) for s in chrono}
+
+
+def update_kill_switch(cfg=None, samples=None):
+    """Kill switch V3 (data/optimizer/killswitch.json).
+
+    Regles (critique : une famille morte ne doit PAS se propager) :
+      - 3 Shorts publies consecutifs d'une meme famille de hook <
+        kill_family_pct (30 %) -> famille BANIE pour les
+        kill_ban_shorts (20) Shorts publies suivants ;
+      - 5 Shorts consecutifs de la meme niche < kill_niche_pct (40 %)
+        -> alerte Gmail + directive changement de niche pendant
+        kill_niche_shorts (10) Shorts.
+    Le decompte decremente par NOUVEAU Short publie analyse (le lag
+    publication -> analyse est acceptable). Jamais d'exception.
+    """
+    try:
+        cfg = cfg or get_config()
+        oc = cfg.get("optimizer", {})
+        if not oc.get("kill_switch", True):
+            return None
+        fail_fam = float(oc.get("kill_family_pct", 30.0))
+        fail_niche = float(oc.get("kill_niche_pct", 40.0))
+        ban_len = int(oc.get("kill_ban_shorts", 20))
+        niche_len = int(oc.get("kill_niche_shorts", 10))
+        file = _optimizer_file(cfg, "killswitch.json")
+        state = load_json(file) or {}
+        fam_fails = state.setdefault("family_fails", {})
+        banned = state.setdefault("banned_families", {})
+        niche = state.setdefault("niche", {})
+        niche.setdefault("streak", 0)
+        niche.setdefault("topic", "")
+        niche.setdefault("alert", False)
+        niche.setdefault("escape_remaining", 0)
+        state["thresholds"] = {"family_pct": fail_fam, "niche_pct": fail_niche}
+        events = list(state.get("events") or [])
+        new, all_ids = _new_samples(samples, state.get("seen_ids"))
+        for s in new:
+            ret = s.get("avg_view_pct")
+            if ret is None:
+                continue  # pas de donnee retention -> pas de verdict
+            ret = float(ret)
+            pre_banned = set(banned)
+            alert_before = bool(niche.get("alert"))
+            # Familles de hook : 3 < fail_fam consecutifs -> ban
+            fam = str(s.get("hook_type") or "statement")
+            ff = fam_fails.setdefault(fam, {"streak": 0, "ids": []})
+            if ret < fail_fam:
+                ff["streak"] = int(ff.get("streak", 0)) + 1
+                ff.setdefault("ids", []).append(str(s.get("id")))
+                if ff["streak"] >= 3 and fam not in banned:
+                    banned[fam] = {
+                        "remaining": ban_len,
+                        "banned_at": dt.datetime.now().isoformat(
+                            timespec="seconds"),
+                        "last_ids": list(ff["ids"])[-3:],
+                    }
+                    ff["streak"] = 0
+                    ff["ids"] = []
+                    events.append("FAMILY BAN %s (%d Shorts < %s%%)"
+                                  % (fam, ban_len, fail_fam))
+                    log.warning("KILL SWITCH: famille '%s' bannie %d Shorts "
+                                "(3 Shorts consecutifs < %s%%)",
+                                fam, ban_len, fail_fam)
+            else:
+                ff["streak"] = 0
+                ff["ids"] = []
+            # Niche : 5 < fail_niche consecutifs sur le meme sujet
+            topic = _norm_topic(s.get("source_topic"))
+            if topic and topic != niche.get("topic"):
+                niche["streak"] = 0
+                niche["topic"] = topic
+            if topic:
+                if ret < fail_niche:
+                    niche["streak"] = int(niche.get("streak", 0)) + 1
+                    if niche["streak"] >= 5 and not niche.get("alert"):
+                        niche["alert"] = True
+                        niche["escape_remaining"] = niche_len
+                        events.append("NICHE ALERT %s (%d Shorts < %s%%)"
+                                      % (topic, niche_len, fail_niche))
+                        log.warning("KILL SWITCH: niche '%s' : %d Shorts "
+                                    "consecutifs < %s%% - changement de "
+                                    "niche requis", topic, niche_len,
+                                    fail_niche)
+                        try:
+                            from .alerts import send_gmail_alert
+                            send_gmail_alert(
+                                cfg,
+                                "AutoPipe kill switch - niche en echec",
+                                "5 Shorts consecutifs de la niche '%s' sont "
+                                "sous %s%% de retention. Change de niche "
+                                "pour les %d prochains Shorts."
+                                % (topic, fail_niche, niche_len))
+                        except Exception:
+                            pass  # alerte best-effort
+                else:
+                    niche["streak"] = 0
+                    if niche.get("alert"):
+                        niche["alert"] = False
+                        niche["escape_remaining"] = 0
+                        events.append("NICHE RECOVERY %s" % topic)
+            # Decompte des bans/pauses (par Short publie analyse ; les
+            # declencheurs du jour ne comptent pas contre leur propre ban)
+            for fam_b in list(pre_banned):
+                if fam_b in banned:
+                    banned[fam_b]["remaining"] = (int(banned[fam_b].get(
+                        "remaining", 0)) - 1)
+                    if banned[fam_b]["remaining"] <= 0:
+                        del banned[fam_b]
+                        events.append("FAMILY UNBAN %s" % fam_b)
+            if alert_before and niche.get("escape_remaining"):
+                niche["escape_remaining"] = (int(niche["escape_remaining"])
+                                             - 1)
+                if niche["escape_remaining"] <= 0:
+                    niche["alert"] = False
+                    niche["streak"] = 0
+                    events.append("NICHE ESCAPE END")
+        state["seen_ids"] = sorted(all_ids)[-400:]
+        state["updated"] = dt.datetime.now().isoformat(timespec="seconds")
+        state["events"] = events[-50:]
+        save_json(file, state)
+        return state
+    except Exception as exc:
+        log.warning("kill switch degrade: %s", exc)
+        return None
+
+
+def kill_switch_directive(cfg=None):
+    """Directive du kill switch (None si rien d'actif).
+
+    Injectee dans style_directive par apply_config : familles bannies
+    interdites d'ouverture, pause de niche imposee.
+    """
+    try:
+        state = load_json(_optimizer_file(cfg, "killswitch.json")) or {}
+    except Exception:
+        return None
+    parts = []
+    banned = state.get("banned_families") or {}
+    if banned:
+        items = ", ".join(
+            "%s (%d Shorts restants)" % (k, int(v.get("remaining", 0)))
+            for k, v in sorted(banned.items()))
+        parts.append("KILL SWITCH: hook families BANNED - do NOT open any "
+                     "script with: %s. Use another hook family." % items)
+    niche = state.get("niche") or {}
+    if niche.get("alert"):
+        thr = (state.get("thresholds") or {}).get("niche_pct", 40.0)
+        parts.append("KILL SWITCH: niche '%s' failed %d consecutive Shorts "
+                     "(< %s%% retention) - STOP this topic and switch to a "
+                     "different niche topic for the next %d Shorts."
+                     % (niche.get("topic"), int(niche.get("streak", 0)),
+                        thr, int(niche.get("escape_remaining", 0))))
+    return " | ".join(parts) if parts else None
+
+
+def _baseline_metrics(samples):
+    """Moyennes d'engagement/retention d'une liste d'echantillons."""
+    eng = [float(s["engagement"]) for s in samples
+           if s.get("engagement") is not None]
+    ret = [float(s["avg_view_pct"]) for s in samples
+           if s.get("avg_view_pct") is not None]
+    by_family = {}
+    for s in samples:
+        r = s.get("avg_view_pct")
+        if r is None:
+            continue
+        fam = str(s.get("hook_type") or "statement")
+        by_family.setdefault(fam, []).append(float(r))
+    return {
+        "n": len(samples),
+        "engagement_mean": round(sum(eng) / len(eng), 2) if eng else None,
+        "avg_view_pct_mean": round(sum(ret) / len(ret), 2) if ret else None,
+        "by_family": {k: round(sum(v) / len(v), 2)
+                      for k, v in sorted(by_family.items())},
+    }
+
+
+def update_baseline(cfg=None, samples=None):
+    """Baseline V3 (data/optimizer/baseline.json).
+
+    Verrouille les `baseline_size` (defaut 10) premiers Shorts PUBLIES :
+    engagement et retention moyens, par famille de hook. Tant que
+    `locked` est False, apply_config n'ajuste AUCUN parametre numerique
+    ("sans baseline, tu optimises a l'aveugle"). Idempotent : un Short
+    deja baseline n'y revient jamais.
+    """
+    try:
+        cfg = cfg or get_config()
+        oc = cfg.get("optimizer", {})
+        target = max(1, int(oc.get("baseline_size", 10)))
+        file = _optimizer_file(cfg, "baseline.json")
+        doc = load_json(file) or {}
+        doc.setdefault("locked", False)
+        doc["target"] = target
+        have = {str(s.get("id")) for s in (doc.get("samples") or [])}
+        for s in _chronological(samples):
+            sid = str(s.get("id"))
+            if sid in have or s.get("engagement") is None:
+                continue
+            doc.setdefault("samples", []).append({
+                "id": sid,
+                "engagement": s.get("engagement"),
+                "avg_view_pct": s.get("avg_view_pct"),
+                "hook_type": s.get("hook_type"),
+            })
+            have.add(sid)
+        doc["samples"] = (doc.get("samples") or [])[:target]
+        doc["n"] = len(doc["samples"])
+        if not doc.get("locked") and doc["n"] >= target:
+            doc["locked"] = True
+            doc["locked_at"] = dt.datetime.now().isoformat(timespec="seconds")
+            doc["metrics"] = _baseline_metrics(doc["samples"])
+            m = doc["metrics"]
+            log.info("Baseline verrouillee (%d Shorts): engagement moyen %s, "
+                     "retention moyenne %s%%", doc["n"],
+                     m.get("engagement_mean"), m.get("avg_view_pct_mean"))
+        doc["updated"] = dt.datetime.now().isoformat(timespec="seconds")
+        save_json(file, doc)
+        return doc
+    except Exception as exc:
+        log.warning("baseline degradee: %s", exc)
+        return None
+
+
+def baseline_delta(cfg=None, samples=None):
+    """Comparaison des `baseline_size` Shorts SUIVANTS vs la baseline.
+
+    Renvoie None tant que la baseline n'est pas verrouillee, sinon
+    {status, n_after, baseline, current, delta}. Les Shorts post-baseline
+    sont les premiers publies dont l'id n'est PAS dans la baseline.
+    """
+    try:
+        doc = load_json(_optimizer_file(cfg, "baseline.json")) or {}
+        if not doc.get("locked"):
+            return None
+        target = int(doc.get("target") or 10)
+        base_ids = {str(s.get("id")) for s in (doc.get("samples") or [])}
+        after = [s for s in _chronological(samples)
+                 if str(s.get("id")) not in base_ids
+                 and s.get("engagement") is not None][:target]
+        if not after:
+            return {"status": "pending", "n_after": 0, "target": target}
+        base = doc.get("metrics") or {}
+        cur = _baseline_metrics(after)
+        delta = {}
+        for key in ("engagement_mean", "avg_view_pct_mean"):
+            b, c = base.get(key), cur.get(key)
+            delta[key] = (round(c - b, 2)
+                          if isinstance(b, (int, float))
+                          and isinstance(c, (int, float)) else None)
+        return {"status": "ok", "n_after": len(after), "target": target,
+                "baseline": base, "current": cur, "delta": delta}
+    except Exception as exc:
+        log.warning("baseline delta degrade: %s", exc)
+        return None
+
+
+def update_active_patterns(cfg=None, samples=None):
+    """Patterns ACTIFS V3 (data/optimizer/active_patterns.json).
+
+    Teardown des succes : un pattern (valeur d'une dimension de
+    _ACTIVE_DIMS) dont la retention moyenne depasse active_min_pct (70 %)
+    sur >= active_min_n (3) Shorts est FORCE dans les active_shorts (5)
+    Shorts suivants via active_patterns_directive. Decompte par nouveau
+    Short publie analyse ; re-armement seulement si de nouveaux Shorts du
+    groupe sont arrives (sinon le pattern se re-force en boucle).
+    """
+    try:
+        cfg = cfg or get_config()
+        oc = cfg.get("optimizer", {})
+        min_pct = float(oc.get("active_min_pct", 70.0))
+        min_n = int(oc.get("active_min_n", 3))
+        duration = max(1, int(oc.get("active_shorts", 5)))
+        file = _optimizer_file(cfg, "active_patterns.json")
+        doc = load_json(file) or {}
+        active = {str(a.get("key")): a for a in (doc.get("active") or [])}
+        samples = list(samples or [])
+        new, all_ids = _new_samples(samples, doc.get("seen_ids"))
+        # Statistiques groupees sur TOUT l'historique publie.
+        groups = {}
+        for s in samples:
+            r = s.get("avg_view_pct")
+            if r is None:
+                continue
+            for dim in _ACTIVE_DIMS:
+                key = "%s:%s" % (dim, str(s.get(dim)))
+                groups.setdefault(key, []).append(float(r))
+        entries = []
+        for key, vals in sorted(groups.items()):
+            n, mean = len(vals), sum(vals) / len(vals)
+            if n < min_n or mean <= min_pct:
+                continue
+            dim, value = key.split(":", 1)
+            prev = active.get(key)
+            if prev:
+                remaining = int(prev.get("remaining", 0)) - len(new)
+                if remaining <= 0:
+                    if n <= int(prev.get("group_n", 0)):
+                        continue  # rien de neuf -> pas de re-armement
+                    remaining = duration
+            else:
+                remaining = duration
+            entry = {"key": key, "dimension": dim, "value": value,
+                     "n": n, "mean_avg_view_pct": round(mean, 1),
+                     "remaining": min(remaining, duration), "group_n": n}
+            entries.append(entry)
+            if prev is None or int(prev.get("remaining", 0)) <= 0:
+                log.info("Pattern ACTIF: %s (retention moyenne %.0f%% sur "
+                         "%d Shorts) force dans les %d prochains",
+                         key, mean, n, entry["remaining"])
+        doc["active"] = entries
+        doc["seen_ids"] = sorted(all_ids)[-400:]
+        doc["updated"] = dt.datetime.now().isoformat(timespec="seconds")
+        save_json(file, doc)
+        return doc
+    except Exception as exc:
+        log.warning("patterns actifs degrades: %s", exc)
+        return None
+
+
+def active_patterns_directive(cfg=None):
+    """Directive des patterns actifs (None si aucun actif).
+
+    Wording FORCE : ces patterns ont PROUVE (> active_min_pct sur
+    active_min_n Shorts), ils s'imposent dans le prompt des prochains
+    Shorts, au-dessus des ajustements statistiques.
+    """
+    try:
+        doc = load_json(_optimizer_file(cfg, "active_patterns.json")) or {}
+    except Exception:
+        return None
+    parts = []
+    for a in doc.get("active") or []:
+        if int(a.get("remaining", 0)) <= 0:
+            continue
+        parts.append("FORCE pattern %s=%s: %.0f%% avg retention over %d "
+                     "Shorts - replicate this pattern in EVERY script "
+                     "(%d Shorts remaining)."
+                     % (a.get("dimension"), a.get("value"),
+                        float(a.get("mean_avg_view_pct") or 0.0),
+                        int(a.get("n") or 0), int(a.get("remaining", 0))))
+    return " | ".join(parts) if parts else None
+
+
+def run_optimizer(cfg=None, samples=None):
     """Boucle complete : collecte -> correlation -> patterns.json.
 
     Renvoie {status: learned|pending|disabled|error, n_samples, patterns,
@@ -312,7 +710,7 @@ def run_optimizer(cfg=None):
             return {"status": "disabled", "n_samples": 0, "patterns": []}
         paths = get_paths(cfg)
         min_samples = int(oc.get("min_samples", 3))
-        samples = _join_samples(cfg)
+        samples = samples if samples is not None else _join_samples(cfg)
         doc = extract_patterns(samples)
         out = {
             "fetched": dt.datetime.now().isoformat(timespec="seconds"),
@@ -321,6 +719,42 @@ def run_optimizer(cfg=None):
             "n_samples": len(samples),
             **doc,
         }
+        # V3 : etats persistants (kill switch, baseline, patterns actifs).
+        # Chacun est no-fail et renvoie None en cas de souci ; ils restent
+        # alimentes meme en 'pending' (des le 1er Short publie).
+        try:
+            ks = update_kill_switch(cfg, samples)
+            if ks:
+                out["kill_switch"] = {
+                    "banned_families": {k: int(v.get("remaining", 0))
+                                        for k, v in
+                                        (ks.get("banned_families") or
+                                         {}).items()},
+                    "niche_alert": bool((ks.get("niche") or {}).get("alert")),
+                    "niche_topic": (ks.get("niche") or {}).get("topic") or "",
+                }
+        except Exception as exc:
+            log.warning("kill switch degrade: %s", exc)
+        try:
+            bl = update_baseline(cfg, samples)
+            if bl is not None:
+                out["baseline"] = {"locked": bool(bl.get("locked")),
+                                   "n": int(bl.get("n") or 0),
+                                   "target": int(bl.get("target") or 0)}
+        except Exception as exc:
+            log.warning("baseline degradee: %s", exc)
+        try:
+            delta = baseline_delta(cfg, samples)
+            if delta:
+                out["baseline_delta"] = delta
+        except Exception as exc:
+            log.warning("baseline delta degrade: %s", exc)
+        try:
+            ap = update_active_patterns(cfg, samples)
+            if ap is not None:
+                out["active_patterns"] = len(ap.get("active") or [])
+        except Exception as exc:
+            log.warning("patterns actifs degrades: %s", exc)
         save_json(paths.optimizer / "patterns.json", out)
         if out["status"] == "learned":
             log.info("Optimizer: %d patterns appris sur %d videos",

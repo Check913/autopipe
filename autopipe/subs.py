@@ -174,7 +174,10 @@ def write_checkpoint_ass(text, out_ass, at_seconds, duration=2.5,
     from pathlib import Path
     at_seconds = float(at_seconds)
     duration = float(duration)
-    if at_seconds < 3.0 or duration <= 0:
+    # V3 : garde abaassee a 1.5 s pour autoriser le checkpoint hook a 2 s
+    # (la decision de swipe se joue a 1,4-2,3 s - un checkpoint a 3 s la
+    # ratait).
+    if at_seconds < 1.5 or duration <= 0:
         return None
     if text is None or not str(text).strip():
         return None
