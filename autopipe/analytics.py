@@ -110,6 +110,15 @@ YT_ANALYTICS_SCOPE = "https://www.googleapis.com/auth/yt-analytics.readonly"
 
 # Seuil Studio "Viewed vs Swiped Away" a viser (zone virale documentee).
 VIEWED_TARGET_PCT = 70.0
+# V2 : cible sur le VRAI ratio d'engagement engagedViews/views.
+# Semantique OFFICIELLE (doc YouTube, revision du 31/03/2025) : une "view"
+# Shorts compte chaque DEMARRAGE de lecture (meme un swipe instantane),
+# une "engaged view" compte une lecture qui CONTINUE apres la premiere
+# frame (ou un clic volontaire). Donc engagedViews/views = part des
+# demarrages qui ne swipent pas immediat - le vrai proxy "Viewed vs Swiped
+# Away" de Studio. engagedViews est une metrique core v2 du rapport
+# "Top videos" (dimensions=video). Repli historique : averageViewPercentage.
+ENGAGED_TARGET_PCT = 70.0
 
 
 def _analytics_token_file(cfg):
@@ -186,12 +195,27 @@ def get_analytics_service(cfg=None, interactive=False):
         return None
 
 
+def engagement_value(row):
+    """Ratio d'engagement d'une ligne retention : engaged_ratio si present,
+    sinon avg_view_pct (compat anciens snapshots)."""
+    if not isinstance(row, dict):
+        return 0.0
+    for key in ("engaged_ratio", "avg_view_pct"):
+        v = row.get(key)
+        if isinstance(v, (int, float)):
+            return float(v)
+    return 0.0
+
+
 def retention_for(video_ids, cfg=None, days=28):
-    """averageViewPercentage par video (proxy Viewed vs Swiped Away).
+    """Retention par video : engagedViews/views (V2) + averageViewPercentage.
 
     Requete Analytics API reports().query, dimensions=video, dernieres
     `days` jours (les metriques Shorts mettent ~24-48 h a se stabiliser).
-    Renvoie [] si non autorise ou erreur (jamais fatal).
+    engagedViews est une metrique core v2 (rapport "Top videos") ; si la
+    metrique est refusee, repli sans elle et engaged_ratio retombe sur
+    averageViewPercentage (champ engaged_source l'indique). Renvoie [] si
+    non autorise ou erreur (jamais fatal).
     """
     cfg = cfg or get_config()
     svc = get_analytics_service(cfg)
@@ -205,18 +229,33 @@ def retention_for(video_ids, cfg=None, days=28):
     # decoupe en paquets de 10 (suffisant : 6 uploads/jour max).
     for i in range(0, len(ids), 10):
         chunk = ids[i:i + 10]
+        metrics = ("views,engagedViews,averageViewDuration,"
+                   "averageViewPercentage,likes,comments,shares")
         try:
             resp = svc.reports().query(
                 ids="channel==MINE",
                 startDate=start, endDate=end,
-                metrics=("views,averageViewDuration,"
-                         "averageViewPercentage,likes,comments,shares"),
+                metrics=metrics,
                 dimensions="video",
                 filters="video==" + ",".join(chunk),
             ).execute()
         except Exception as exc:
-            log.warning("Analytics query echouee (paquet %s): %s", i, exc)
-            continue
+            # engagedViews indisponible (compte non eligible, API degradee,
+            # etc.) -> repli historique sans engagedViews, jamais fatal.
+            log.warning("Analytics query avec engagedViews echouee (paquet "
+                        "%s): %s -> repli sans engagedViews", i, exc)
+            try:
+                resp = svc.reports().query(
+                    ids="channel==MINE",
+                    startDate=start, endDate=end,
+                    metrics=("views,averageViewDuration,"
+                             "averageViewPercentage,likes,comments,shares"),
+                    dimensions="video",
+                    filters="video==" + ",".join(chunk),
+                ).execute()
+            except Exception as exc2:
+                log.warning("Analytics query echouee (paquet %s): %s", i, exc2)
+                continue
         cols = [c.get("name") for c in (resp.get("columnHeaders") or [])]
         idx = {name: pos for pos, name in enumerate(cols)}
         for row in resp.get("rows", []) or []:
@@ -228,16 +267,37 @@ def retention_for(video_ids, cfg=None, days=28):
                     return float(row[pos] or 0.0)
                 except (TypeError, ValueError):
                     return 0.0
+            views = int(_f("views"))
+            engaged = int(_f("engagedViews"))
+            avg_pct = round(_f("averageViewPercentage"), 1)
+            if views > 0 and engaged > 0:
+                # VRAI ratio "restes vs swipes" : vues qui continuent apres
+                # la premiere frame / demarrages totaux. Sur Shorts, une
+                # "view" compte tout demarrage (meme un swipe a 1 s) et une
+                # "engaged view" une lecture qui continue - doc YouTube,
+                # revision du 31/03/2025. averageViewPercentage seul ment :
+                # il noie les swipes precoces dans les longues sessions des
+                # viewers restes (moyenne, pas taux).
+                engaged_ratio = round(100.0 * engaged / views, 1)
+                engaged_source = "engagedViews"
+            else:
+                # Repli : averageViewPercentage (proxy historique, biais
+                # favorable aux Shorts courts - a interpreter avec prudence).
+                engaged_ratio = avg_pct
+                engaged_source = "fallback_averageViewPercentage"
             out.append({
                 "id": str(row[idx["video"]]) if idx.get("video") is not None
                       and idx["video"] < len(row) else "",
                 "range_start": start,
                 "range_end": end,
-                "views": int(_f("views")),
+                "views": views,
+                "engagedViews": engaged,
+                "engaged_ratio": engaged_ratio,
+                "engaged_source": engaged_source,
                 "avg_view_duration_s": round(_f("averageViewDuration"), 1),
                 # Proxy direct de "Viewed vs Swiped Away" (Studio) : un
                 # Short regarde en moyenne a X % de sa duree.
-                "avg_view_pct": round(_f("averageViewPercentage"), 1),
+                "avg_view_pct": avg_pct,
                 "likes": int(_f("likes")),
                 "comments": int(_f("comments")),
                 "shares": int(_f("shares")),
@@ -268,13 +328,17 @@ def refresh_retention(cfg=None):
         for r in rows:
             fh.write(json.dumps(r, ensure_ascii=False) + "\n")
     doc = {"rows": rows, "fetched": dt.datetime.now().isoformat(),
-           "viewed_target_pct": VIEWED_TARGET_PCT}
+           "viewed_target_pct": VIEWED_TARGET_PCT,
+           "engaged_target_pct": float(
+               (cfg.get("analytics", {}) or {}).get(
+                   "engaged_target_pct", ENGAGED_TARGET_PCT))}
     save_json(paths.analytics / "retention_latest.json", doc)
-    weak = [r for r in rows if r["avg_view_pct"] < VIEWED_TARGET_PCT]
-    log.info("Retention rafraichie: %s videos, moyenne %.1f %% "
+    weak = [r for r in rows if engagement_value(r) <
+            doc["engaged_target_pct"]]
+    mean = (sum(engagement_value(r) for r in rows) / len(rows)) if rows else 0.0
+    log.info("Retention rafraichie: %s videos, engagement moyen %.1f %% "
              "(cible %.0f %%) - %s sous le seuil",
-             len(rows), (sum(r["avg_view_pct"] for r in rows) / len(rows))
-             if rows else 0.0, VIEWED_TARGET_PCT, len(weak))
+             len(rows), mean, doc["engaged_target_pct"], len(weak))
     return {"status": "ok", "n": len(rows), "rows": rows,
             "weak": [r["id"] for r in weak]}
 
@@ -290,17 +354,27 @@ def hook_directive(cfg=None):
     rows = doc.get("rows") or []
     if not rows:
         return ""
-    pcts = [float(r.get("avg_view_pct") or 0.0) for r in rows]
-    mean = sum(pcts) / len(pcts)
-    target = float(doc.get("viewed_target_pct") or VIEWED_TARGET_PCT)
+    vals = [engagement_value(r) for r in rows]
+    mean = sum(vals) / len(vals)
+    try:
+        target = float(doc.get("engaged_target_pct") or
+                       (cfg.get("analytics", {}) or {}).get(
+                           "engaged_target_pct", ENGAGED_TARGET_PCT))
+    except (TypeError, ValueError):
+        target = ENGAGED_TARGET_PCT
     if mean >= target:
-        return ("Learned retention: average view percentage %.0f%% "
+        return ("Learned retention: engaged-view ratio %.0f%% "
                 "(target %.0f%%, keep doing exactly this)." % (mean, target))
     parts = [
-        "CRITICAL hook discipline (learned): current average view percentage "
+        "CRITICAL hook discipline (learned): current engaged-view ratio "
         "is only %.0f%%, target is %.0f%%." % (mean, target),
         "Front-load the single most shocking fact in the FIRST sentence so "
-        "the hook lands within the first 2 seconds.",
+        "the hook lands within the first 2 seconds (viewers decide to swipe "
+        "or stay in under 2 seconds).",
+        "Be SPECIFIC: name the exact number, mistake, or outcome - vague "
+        "hooks like 'you won't believe this' lose about 4x more viewers.",
+        "The on-screen hook text must read in under 2 seconds (max 12 spoken "
+        "words, 3-7 on-screen words).",
         "Cut anything that does not build the hook or the payoff.",
     ]
     if mean < 50.0:

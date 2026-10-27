@@ -114,6 +114,13 @@ loop_tail = 0.7                  # duree de la re-intro (secondes)
 hook_overlay = true              # texte choc jaune grave de 0 a 3s (anti swipe-away)
 hook_duration = 3.0              # duree d'affichage du hook (secondes)
 hook_font_size = 84
+# V2/V3 : checkpoint (texte de rappel) pour retenir les swipes sur les
+# formats 60 s (inutile sur les 13 s). Position en % de la duree audio
+# (45 % = point de rupture de retention), plancher a checkpoint_seconds.
+checkpoint_enabled = true
+checkpoint_seconds = 15
+checkpoint_at_pct = 0.45
+checkpoint_text = "STAY - IT GETS WILD"
 
 [upload]
 privacy = "public"               # public / unlisted / private
@@ -166,3 +173,35 @@ enabled = true
 min_samples = 3                  # videos publiees min. avant apprentissage
 max_delta = 0.35                 # variation max appliquee a un parametre
 patterns_file = ""               # vide = data/optimizer/patterns.json
+
+[identity]
+# V2 : identite de chaine + gate de niche. Soft score par defaut : les
+# sujets hors niche sont penalises (off_niche_penalty), pas rejetes.
+# strict = true serait un rejet dur (deconseille a petit volume).
+# IMPORTANT : remplir keywords avec des themes MATCHANT votre niche, sinon
+# le gate ne classera aucun sujet (lecon du bug 2026-10-27).
+name = ""
+niche = ""                       # vide = general.niche
+audience = ""
+promise = ""
+tone = ""
+keywords = ["amazing facts", "true story", "science explained"]
+anti_topics = []
+strict = false
+off_niche_penalty = 1.5
+
+[ideas.duration_profiles]
+# V2 : deux formats, pas un milieu - 13 s ultra-dense OU 60 s narration
+# complete. Le LLM choisit selon la densite du sujet.
+short = { target = 13, min = 12, max = 18 }
+long = { target = 60, min = 50, max = 60 }
+
+[analytics]
+# V2 : vrai proxy de retention Shorts = engagedViews / views (YouTube
+# compte une "vue" des le demarrage depuis 2025). Cible : >= 70 %.
+engaged_target_pct = 70
+
+[hook_ab]
+# V2 : A/B de hook - deux variantes par sujet, tracker variant -> retention
+# (data/hook_ab/assignments.jsonl). Voir README-analytics.md.
+enabled = true

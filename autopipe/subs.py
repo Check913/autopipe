@@ -125,6 +125,8 @@ def write_hook_ass(hook_text, out_ass, duration=3.0, width=1080, height=1920,
     """
     import textwrap
     from pathlib import Path
+    if hook_text is None or not str(hook_text).strip():
+        return None
     raw = _ass_escape(hook_text).strip().upper()
     if not raw:
         return None
@@ -138,4 +140,56 @@ def write_hook_ass(hook_text, out_ass, duration=3.0, width=1080, height=1920,
     out_ass = Path(out_ass)
     out_ass.write_text(content, encoding="utf-8")
     log.info("Hook visuel: %d lignes, %.1fs -> %s", len(lines), duration, out_ass)
+    return out_ass
+
+
+_ASS_CHECKPOINT_TEMPLATE = """[Script Info]
+ScriptType: v4.00+
+PlayResX: {width}
+PlayResY: {height}
+WrapStyle: 0
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Ckpt,Arial,{font_size},&H00FFFFFF,&H000000FF,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,4,1,2,50,50,110,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,{start},{end},Ckpt,,0,0,0,,{text}
+"""
+
+
+def write_checkpoint_ass(text, out_ass, at_seconds, duration=2.5,
+                         width=1080, height=1920, font_size=64,
+                         wrap_chars=24, max_lines=2):
+    """Checkpoint mi-video : rappel de curiosite affiche a `at_seconds`.
+
+    Vise la chute de retention du milieu de Short (formats 60 s) : un texte
+    court blanc (outline noir), bas de l'ecran, affiche pendant
+    `duration` secondes a partir de `at_seconds`. Desactive pour les formats
+    13 s (inutile a cette echelle). Renvoie None si le texte est vide ou si
+    la fenetre est invalide (at_seconds trop tot/tard dans la video).
+    """
+    import textwrap
+    from pathlib import Path
+    at_seconds = float(at_seconds)
+    duration = float(duration)
+    if at_seconds < 3.0 or duration <= 0:
+        return None
+    if text is None or not str(text).strip():
+        return None
+    raw = _ass_escape(text).strip().upper()
+    if not raw:
+        return None
+    lines = textwrap.wrap(raw, width=wrap_chars)[:max_lines]
+    if not lines:
+        return None
+    content = _ASS_CHECKPOINT_TEMPLATE.format(
+        width=int(width), height=int(height), font_size=int(font_size),
+        start=_ass_ts(at_seconds), end=_ass_ts(at_seconds + duration),
+        text="\\N".join(lines))
+    out_ass = Path(out_ass)
+    out_ass.write_text(content, encoding="utf-8")
+    log.info("Checkpoint visuel: '%s' a %.1fs (%.1fs) -> %s",
+             " / ".join(lines)[:60], at_seconds, duration, out_ass)
     return out_ass

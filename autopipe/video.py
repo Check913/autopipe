@@ -117,7 +117,8 @@ def _sub_style(cfg):
             "Outline=2,Shadow=0,Alignment=%d,MarginV=%d" % (fs, align, margin_v))
 
 
-def assemble(track, audio, srt, out_path, cfg=None, music=None, hook_ass=None):
+def assemble(track, audio, srt, out_path, cfg=None, music=None, hook_ass=None,
+             extra_ass=None):
     """Multiplexe piste video + voix (+ musique) + sous-titres graves."""
     cfg = cfg or get_config()
     out_path = Path(out_path)
@@ -145,6 +146,9 @@ def assemble(track, audio, srt, out_path, cfg=None, music=None, hook_ass=None):
     vfilter = "subtitles=%s:force_style='%s'" % (srt_r, style)
     if hook_ass:
         vfilter += ",subtitles=%s" % Path(hook_ass).name
+    for extra in (extra_ass or []):
+        if extra:
+            vfilter += ",subtitles=%s" % Path(extra).name
     # MODULE 1 : zoom progressif (codes visuels viraux) APPLIQUE AVANT les
     # sous-titres, pour que le texte reste fixe pendant que l'image zoome.
     vcfg2 = cfg.get("video", {}) or {}
@@ -228,7 +232,40 @@ def run_video(idea, audio, timings_json, clips, config=None):
                                       font_size=int(vcfg.get("hook_font_size", 84)))
         except Exception as exc:
             log.warning("Hook visuel ignore: %s", exc)
+
+    # V2/V3 : checkpoint (re-call curiosite) - uniquement sur les formats
+    # longs (60 s) : sur 13 s un checkpoint a 15 s n'existe pas. Position en
+    # % de la duree audio (checkpoint_at_pct, defaut 0.45) cible le point de
+    # rupture de retention (~60 % a 15 s, ~50 % a 30 s) ; un checkpoint fixe
+    # a 15 s tomberait trop tot sur un 60 s. Plancher = checkpoint_seconds.
+    # Fenetre de securite : au moins 3 s apres le debut et 3 s avant la fin
+    # de la piste audio.
+    extra_ass = []
+    is_long = (str(idea.get("duration_format") or "") == "long"
+               or audio_dur > 30.0)
+    if vcfg.get("checkpoint_enabled", True) and is_long:
+        try:
+            pct = float(vcfg.get("checkpoint_at_pct", 0.45) or 0.45)
+        except (TypeError, ValueError):
+            pct = 0.45
+        if not (0.10 <= pct <= 0.90):
+            pct = 0.45
+        at = max(float(vcfg.get("checkpoint_seconds", 15) or 15),
+                 audio_dur * pct)
+        if 3.0 <= at <= audio_dur - 3.0:
+            try:
+                from .subs import write_checkpoint_ass
+                ckpt = write_checkpoint_ass(
+                    str(vcfg.get("checkpoint_text") or "STAY - IT GETS WILD"),
+                    out_dir / "checkpoint.ass", at_seconds=at,
+                    width=int(vcfg.get("width", 1080)),
+                    height=int(vcfg.get("height", 1920)))
+                if ckpt:
+                    extra_ass.append(ckpt)
+            except Exception as exc:
+                log.warning("Checkpoint visuel ignore: %s", exc)
+
     final = assemble(track, audio, srt, out_dir / "video.mp4", cfg, music=music,
-                     hook_ass=hook_ass)
+                     hook_ass=hook_ass, extra_ass=extra_ass)
     log.info("Video finale: %s", final)
     return final

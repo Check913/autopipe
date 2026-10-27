@@ -34,6 +34,21 @@ _QUESTION_RE = re.compile(r"^(who|what|why|how|when|where|which|can|do|does|did|
 _NUMBER_RE = re.compile(r"\b\d[\d,.]*\b")
 
 
+def _hook_family(hook):
+    """Taxonomie de hook commune avec identity.hook_family (V3).
+
+    Repli historique sur les regexes locales si l'import echoue.
+    """
+    try:
+        from .identity import hook_family
+        return hook_family(hook)
+    except Exception:
+        h = str(hook or "")
+        return ("question" if _QUESTION_RE.search(h.strip())
+                else ("number" if _NUMBER_RE.search(h[:60])
+                      else "statement"))
+
+
 def _remake_files(cfg=None):
     """Fichiers remake JSON (ideas generees) tries du plus recent."""
     paths = get_paths(cfg)
@@ -55,9 +70,15 @@ def _features_from_remake(path):
         "id": data.get("id") or Path(path).stem,
         "title": title,
         "title_len": len(title),
-        "hook_type": ("question" if _QUESTION_RE.search(hook.strip())
-                      else ("number" if _NUMBER_RE.search(hook[:60])
-                            else "statement")),
+        # V3 : meme taxonomie que identity.hook_family (question/number/
+        # negation/statement) - les regexes locales ne distinguaient pas la
+        # negation et desapprenaient des patterns incohérents avec le A/B.
+        "hook_type": _hook_family(hook),
+        # V2 : format de duree et variante A/B de hook -> dimensions
+        # apprenables par extract_patterns (le bot sait desormais SI le
+        # format 13 s bat le 60 s, et SI la variante A ou B retient mieux).
+        "duration_format": str(data.get("duration_format") or ""),
+        "hook_variant": str(data.get("hook_variant") or ""),
         "hook_len": len(hook),
         "title_has_number": bool(_NUMBER_RE.search(title)),
         "duration_target": float(data.get("duration_target") or 0.0),
@@ -118,6 +139,10 @@ def _join_samples(cfg=None):
             rrow = ret.get(str(feats["id"]))
             if rrow:
                 feats["avg_view_pct"] = float(rrow.get("avg_view_pct") or 0.0)
+                # V2 : vrai ratio engagedViews/views (engage_ratio) si
+                # disponible (sinon fallback averageViewPercentage).
+                from .analytics import engagement_value
+                feats["engaged_ratio"] = engagement_value(rrow)
             samples.append(feats)
     return samples
 
@@ -135,8 +160,12 @@ def extract_patterns(samples):
     eng = [s["engagement"] for s in samples]
     global_mean = sum(eng) / n
     patterns = []
+    # V2 : duration_format (13 s vs 60 s) et hook_variant (A/B) sont des
+    # dimensions apprenables a part entiere.
     for field, label in (("hook_type", "hook type"), ("title_has_number",
-                                                      "chiffre dans le titre")):
+                                                      "chiffre dans le titre"),
+                         ("duration_format", "format duree"),
+                         ("hook_variant", "hook A/B")):
         groups = {}
         for s in samples:
             key = str(s.get(field))
@@ -195,6 +224,20 @@ def apply_config(cfg, patterns_doc=None):
         retention_directive = hook_directive(cfg)
     except Exception:
         retention_directive = ""
+    # V2 A/B hooks : si une famille de hook domine clairement (>= 3 mesures,
+    # ecart >= 5 pts), le lot suivant l'utilise comme directive de style.
+    try:
+        from .hook_ab import best_family
+        ab_family = best_family(cfg)
+    except Exception:
+        ab_family = None
+    ab_directive = ""
+    if ab_family:
+        ab_directive = (
+            "Learned hook A/B: family '%s' retains best - open EVERY script "
+            "with a %s-style hook (question = end with ?, number = leading "
+            "digit, negation = stop/never/nobody, statement = blunt claim)."
+            % (ab_family, ab_family))
 
     if patterns_doc is None:
         paths = get_paths(cfg)
@@ -202,10 +245,13 @@ def apply_config(cfg, patterns_doc=None):
         src = Path(file) if file else paths.optimizer / "patterns.json"
         patterns_doc = load_json(src)
     if not patterns_doc or not patterns_doc.get("patterns"):
-        if retention_directive:
-            cfg.setdefault("ideas", {})["style_directive"] = retention_directive
-            cfg.setdefault("remake", {})["style_directive"] = retention_directive
-            applied.append("style_directive (retention hook discipline)")
+        if retention_directive or ab_directive:
+            directive = " | ".join(d for d in (retention_directive,
+                                               ab_directive) if d)
+            cfg.setdefault("ideas", {})["style_directive"] = directive
+            cfg.setdefault("remake", {})["style_directive"] = directive
+            applied.append("style_directive (retention hook discipline)"
+                           + ("" if not ab_family else " + A/B"))
         return applied
     max_delta = float(oc.get("max_delta", 0.35))
 
@@ -235,16 +281,21 @@ def apply_config(cfg, patterns_doc=None):
     labels = [p["label"] for p in patterns_doc["patterns"][:3]]
     if labels:
         directive = "Patterns appris (auto-optimisation): " + " | ".join(labels)
+        if ab_directive:
+            directive = ab_directive + " | " + directive
         if retention_directive:
             directive = retention_directive + " | " + directive
         cfg.setdefault("ideas", {})["style_directive"] = directive
         # Meme directive pour les prompts Super-Remake (_rewrite_user_prompt).
         cfg.setdefault("remake", {})["style_directive"] = directive
         applied.append("style_directive (ideas+remake): %d patterns" % len(labels))
-    elif retention_directive:
-        cfg.setdefault("ideas", {})["style_directive"] = retention_directive
-        cfg.setdefault("remake", {})["style_directive"] = retention_directive
-        applied.append("style_directive (retention hook discipline)")
+    elif retention_directive or ab_directive:
+        directive = " | ".join(d for d in (retention_directive,
+                                           ab_directive) if d)
+        cfg.setdefault("ideas", {})["style_directive"] = directive
+        cfg.setdefault("remake", {})["style_directive"] = directive
+        applied.append("style_directive (retention hook discipline)"
+                       + ("" if not ab_family else " + A/B"))
     return applied
 
 

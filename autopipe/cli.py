@@ -221,6 +221,28 @@ def cmd_optimize(a):
     print("Patterns: %s" % (get_paths(cfg).optimizer / "patterns.json"))
 
 
+def cmd_hook_ab(a):
+    """A/B hooks : statistiques par variante + meilleure famille."""
+    cfg = _init(a.verbose)
+    from . import hook_ab
+    doc = hook_ab.summarize(cfg)
+    status = doc.get("status", "ok")
+    print("hook-ab: status=%s" % status)
+    for name, st in sorted(doc.get("variants", {}).items()):
+        # summarize() expose "assigned" (ideas taggees) et "measured"
+        # (mesures de retention rattachees) - pas "n".
+        print("  variante %s: assignees=%s  mesurees=%s  engagement moyen=%s  views moyennes=%s"
+              % (name, st.get("assigned"), st.get("measured"),
+                 st.get("mean_engagement"), st.get("mean_views")))
+    family = hook_ab.best_family(cfg)
+    if family:
+        print("  meilleure famille: %s" % family)
+    else:
+        print("  meilleure famille: (pas encore decidable - il faut >= 3 "
+              "mesures par variante et >= 5 pts d'ecart)")
+    print("Summary: %s" % (get_paths(cfg).hook_ab / "summary.json"))
+
+
 def cmd_run(a):
     cfg = _init(a.verbose)
     from .scheduler import run_pipeline_once
@@ -448,6 +470,10 @@ def main(argv=None):
 
     p = sub.add_parser("optimize", help="MODULE 3: boucle d'auto-apprentissage analytics")
     p.set_defaults(fn=cmd_optimize)
+
+    p = sub.add_parser("hook-ab",
+                       help="A/B hooks : stats par variante + meilleure famille")
+    p.set_defaults(fn=cmd_hook_ab)
 
     p = sub.add_parser("run", help="pipeline complet une fois")
     p.add_argument("--no-upload", action="store_true")

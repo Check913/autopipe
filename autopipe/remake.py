@@ -38,9 +38,16 @@ HARD_PROMPT = (
     "ABSOLUTE RULES: "
     "(1) NEVER copy or paraphrase the original text: no reused sentence, no "
     "reused title, no reused catch-phrase. Write every sentence from zero. "
-    "(2) OPEN with a shock question or a brutal claim in the very first words. "
-    "(3) ULTRA-SHORT sentences, one idea per line, spoken rhythm 150-170 wpm, "
-    "85-120 words total (30-45 seconds). "
+    "(2) OPEN with a shock question or a brutal claim in the very first "
+    "words. The hook is SPECIFIC: name the exact number, mistake, or "
+    "outcome - vague hooks ('you won't believe this') lose about 4x more "
+    "viewers. "
+    "(3) ULTRA-SHORT sentences, one idea per line, spoken rhythm 150-170 wpm. "
+    "(3-d) DURATION: pick EXACTLY ONE of two formats - NEVER in between: "
+    "'short' = 13-second ultra-dense punch (one shocking fact, 31-36 words, "
+    "density 1-2) OR 'long' = 60-second full story (145-165 words, setup + "
+    "payoff arc, density 3-5). Output 'density' (int 1-5) and "
+    "'duration_format' ('short' or 'long'). "
     "(3b) PATTERN INTERRUPTS: no flat stretch longer than 10 seconds - every "
     "7-10 seconds of script (about every 2-3 lines) insert a micro-turn: a "
     "shock question, a reversal, or a change of visual focus for the editor. "
@@ -59,7 +66,7 @@ HARD_PROMPT = (
     "never an array: ONE ultra-short sentence per line, 6-12 lines), comment "
     "(one short pinned question), description "
     "(2-3 lines ending with 3 hashtags), tags (list of 8-12 lowercase "
-    "keywords), duration_target (int seconds)."
+    "keywords), density (int 1-5), duration_format ('short' or 'long')."
 )
 
 STOPWORDS = frozenset((
@@ -599,12 +606,21 @@ def _rewrite_user_prompt(analysis, niche, language, cfg=None):
 
 
 def _normalize_idea(data, defaults_source, cfg, analysis):
-    """Normalise le JSON LLM vers le contrat d'idee AutoPipe + provenance remake."""
+    """Normalise le JSON LLM vers le contrat d'idee AutoPipe + provenance remake.
+
+    V2 (2026-10-27 pm) : le remake etait le CHEMIN PRINCIPAL de production
+    (remake.enabled=true) mais contournait tous les correctifs critiques :
+    titre/hook non passes par title_fix/hook_fix, duree hard-codee a 40 s
+    (hors clamp 15-32 s). Il est desormais route comme ideas.py.
+    """
+    from .identity import duration_plan, hook_fix, title_fix
     for key in ("title", "hook", "script", "description", "tags"):
         if not data.get(key):
             raise RuntimeError("Remake LLM incomplet: cle '%s' absente" % key)
-    data["title"] = str(data["title"]).strip()[:60]
-    data["hook"] = str(data["hook"]).strip()[:60]
+    a0 = (analysis.get("analysis") or {})
+    subj0 = " ".join(str(a0.get("subject") or analysis.get("title") or "").split())
+    data["title"] = title_fix(data["title"], topic=subj0, cfg=cfg)
+    data["hook"] = hook_fix(data["hook"], topic=subj0, cfg=cfg)
     # gemini-2.5-flash renvoie parfois le script en tableau JSON de lignes
     # (observe le 2026-10-26): edge-tts exige un str -> normalisation ici.
     data["script"] = as_script_text(data["script"])
@@ -617,7 +633,23 @@ def _normalize_idea(data, defaults_source, cfg, analysis):
     data["tags"] = [str(t).strip().lower() for t in data["tags"]][:12]
     a = analysis.get("analysis") or {}
     subject = " ".join(str(a.get("subject") or analysis.get("title") or "").split())
-    data["duration_target"] = int(data.get("duration_target") or 40)
+    # V2 : duree via duration_plan (13 s OU 60 s, jamais un milieu
+    # arbitraire type 40 s). Remake d'un recit viral -> densite 4 (format
+    # long) par defaut, sauf si le LLM a pose duration_format lui-meme.
+    try:
+        density = int(data.get("density"))
+    except (TypeError, ValueError):
+        density = 4
+    fmt = str(data.get("duration_format") or "").lower()
+    if fmt == "short":
+        density = 1
+    elif fmt == "long":
+        density = max(density, 3)
+    plan = duration_plan(density, cfg=cfg)
+    data["density"] = density
+    data["duration_format"] = plan["format"]
+    data["duration_target"] = plan["target"]
+    data["duration_range"] = [plan["min"], plan["max"]]
     data["source_topic"] = subject
     data["source_short_id"] = analysis["id"]
     data["source_short_url"] = analysis.get("url")
@@ -648,8 +680,11 @@ def _fallback_remake_idea(analysis, cfg):
     subject = " ".join(str(a.get("subject") or analysis.get("title") or "").split()) or "this topic"
     kw = list(analysis.get("keywords") or [])
     tags = ["shorts"] + [k for k in kw[:4] if len(k) > 3] + ["facts", "mindblowing"]
-    title = defaults_source._curiosity_title("What Really Happens With %s" % subject)[:60]
-    hook = ("Why does %s break every rule?" % subject)[:60]
+    from .identity import duration_plan, hook_fix
+    title = defaults_source._curiosity_title(
+        "What Really Happens With %s" % subject, cfg=cfg)
+    hook = hook_fix("Why does %s break every rule?" % subject,
+                    topic=subject, cfg=cfg)
     script = (
         "Why does %s break every rule?\n"
         "Nobody warned you about this part.\n"
@@ -666,7 +701,11 @@ def _fallback_remake_idea(analysis, cfg):
         "comment": defaults_source.COMMENT_TEMPLATES[0],
         "description": "%s\nThe documented version, in 30 seconds.\n#shorts #facts #didyouknow" % title,
         "tags": tags[:12],
-        "duration_target": 40,
+        # V2 : 40 s hard-code supprime -> duration_plan (format long par
+        # defaut pour un remake de recit viral).
+        "duration_target": duration_plan(4, cfg=cfg)["target"],
+        "duration_format": "long",
+        "density": 4,
         "source_topic": subject,
         "source_short_id": analysis["id"],
         "source_short_url": analysis.get("url"),
@@ -801,6 +840,22 @@ def run_remake(config=None, count=None):
             continue
 
         idea["score"] = hit.get("views")
+        # V2 : le remake suit la meme discipline A/B de hook que ideas.py
+        # (sinon le chemin principal reste hors boucle d'apprentissage).
+        try:
+            from .hook_ab import assign as ab_assign
+            from .identity import hook_variants
+            variants = hook_variants(idea.get("source_topic", ""),
+                                     idea.get("hook"), cfg=cfg)
+            ab = ab_assign(idea.get("source_topic", ""), variants, cfg=cfg)
+        except Exception as exc:
+            variants, ab = [], None
+            log.warning("Hook A/B remake indisponible: %s", exc)
+        if ab:
+            idea["hook"] = ab["hook"]
+            idea["pair_id"] = ab["pair_id"]
+            idea["hook_variant"] = ab["variant"]
+        idea["hook_variants"] = variants
         idea["id"] = "%s-remake-%02d" % (stamp, len(ideas) + 1)
         path = paths.remake / ("remake_%s_%s.json" % (idea["id"], slugify(idea["title"], 40)))
         save_json(path, idea)

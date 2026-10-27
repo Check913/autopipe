@@ -159,6 +159,14 @@ def run_pipeline_once(config=None, do_upload=True, idea=None):
             analytics.record([video_id], cfg)
         except Exception as exc:
             log.warning("Initial stats unavailable: %s", exc)
+        # V2 : rattacher l'id YouTube a la paire A/B de hook (si le sujet
+        # en a une) pour que summarize() puisse joindre variant -> retention.
+        if idea.get("pair_id"):
+            try:
+                from .hook_ab import attach_video
+                attach_video(idea["pair_id"], video_id, cfg)
+            except Exception as exc:
+                log.warning("Hook A/B attach impossible: %s", exc)
 
     save_json(paths.data / "last_run.json", result)
     log.info("=== AutoPipe: pipeline finished: %s ===", result)

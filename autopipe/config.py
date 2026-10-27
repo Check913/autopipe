@@ -32,7 +32,12 @@ DEFAULTS = {
         "tone": "",
         "keywords": [],           # themes on-niche (gate scout/ideas)
         "anti_topics": [],       # themes interdits (gate scout/ideas)
-        "strict": True,          # False -> sujets hors niche toleres en queue
+        # V2 : soft score par defaut. strict=True n'est conserve que pour qui
+        # veut un gate dur explicite - a petit volume il rejette trop de
+        # sujets et tue la cadence (bug observe : keywords=[] + strict ->
+        # 100 % des tendances rejetees).
+        "strict": False,
+        "off_niche_penalty": 1.5,  # malus rank_score des sujets hors niche
     },
     "ideas": {
         # Calibrage Shorts 2026 (critique AP Dhillon) : titres <= 50 car.
@@ -46,6 +51,12 @@ DEFAULTS = {
         "duration_min": 15,
         "duration_max": 32,
         "duration_default": 24,
+        # V2 : deux formats, pas un milieu - 13 s ultra-dense OU 60 s
+        # narration complete. density 1-2 -> short, 3+ -> long.
+        "duration_profiles": {
+            "short": {"target": 13, "min": 12, "max": 18},
+            "long": {"target": 60, "min": 50, "max": 60},
+        },
     },
     "scout": {
         "trending_count": 25,
@@ -150,7 +161,16 @@ DEFAULTS = {
     },
     "video": {"width": 1080, "height": 1920, "fps": 30, "music_volume": 0.15,
               "music_dir": "assets/music", "loop_ending": True, "loop_tail": 0.7,
-              "hook_overlay": True, "hook_duration": 3.0, "hook_font_size": 84},
+              "hook_overlay": True, "hook_duration": 3.0, "hook_font_size": 84,
+              # V2 : checkpoint mi-video (texte de rappel affiche a N s) pour
+              # retenir les swipes sur les formats 60 s. Desactive pour les
+              # formats 13 s (inutile, trop court).
+              "checkpoint_enabled": True, "checkpoint_seconds": 15,
+              # V3 : position du checkpoint en % de la duree audio (plancher
+              # a checkpoint_seconds). 45 % cible le point de rupture de
+              # retention (~60 % a 15 s, ~50 % a 30 s) sans coller au debut.
+              "checkpoint_at_pct": 0.45,
+              "checkpoint_text": "STAY - #3 IS WILD"},
     "upload": {
         "privacy": "public",
         "category_id": "24",
@@ -165,7 +185,18 @@ DEFAULTS = {
         "auto_comment": True,
         "comment_template": "",
     },
-    "analytics": {},
+    "analytics": {
+        # V2/V3 : vrai proxy de retention = engagedViews/views. Une "engaged
+        # view" Shorts = une lecture qui continue apres la premiere frame
+        # (doc YouTube, revision du 31/03/2025) - PAS "actif a 30 s".
+        # Croise avec averageViewPercentage. Cible : >= 70 %.
+        "engaged_target_pct": 70,
+    },
+    "hook_ab": {
+        # V2 : A/B de hook - deux variantes par sujet, tracker
+        # variant_id -> retention (data/hook_ab/assignments.jsonl).
+        "enabled": True,
+    },
     "network": {"proxy_mode": "direct"},
     "scheduler": {"interval_hours": 4, "state_file": "data/scheduler_state.json"},
 }
@@ -240,13 +271,14 @@ class Paths:
         self.visual = self.data / "visual"
         self.trend = self.data / "trend"
         self.optimizer = self.data / "optimizer"
+        self.hook_ab = self.data / "hook_ab"
         self.audio_cache = self.cache / "audio"
         self.video_cache = self.cache / "pexels"
 
     def ensure(self):
         for d in (self.data, self.output, self.cache, self.scout,
                   self.ideas, self.remake, self.radar, self.analytics,
-                  self.visual, self.trend, self.optimizer,
+                  self.visual, self.trend, self.optimizer, self.hook_ab,
                   self.audio_cache, self.video_cache):
             d.mkdir(parents=True, exist_ok=True)
         return self

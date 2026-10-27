@@ -7,7 +7,9 @@ from pathlib import Path
 import requests
 
 from .config import get_config, get_paths
-from .identity import duration_clamp, filter_topics, hook_fix, identity_block, title_fix
+from .hook_ab import assign as ab_assign
+from .identity import (duration_plan, filter_topics, hook_fix, hook_variants,
+                       identity_block, script_word_budget, title_fix)
 from .scout import pick_topics
 from .util import LLMClient, as_script_text, get_logger, load_json, save_json, slugify
 
@@ -24,7 +26,9 @@ HOOKS = [
 ]
 
 def _system_prompt(cfg=None):
-    """Prompt systeme Shorts calibre 2026 (titres 50, scripts 50-85 mots).
+    """Prompt systeme Shorts calibre 2026 (titres 50, budget de mots par
+    format via identity.script_word_budget : 31-36 mots pour 13 s,
+    145-165 pour 60 s).
 
     Remplace la constante historique SYSTEM_PROMPT (titres 60 car., scripts
     85-120 mots = 30-45 s) qui produisait le titre-article 'AP Dhillon's
@@ -45,28 +49,45 @@ def _system_prompt(cfg=None):
         "Winning examples: 'Why Everyone Is Copying This Song', "
         "'You Won't Believe What This Singer Earns', "
         "'This Habit Steals 3 Hours of Your Day'. "
-        "(2) script: %(words_min)d-%(words_max)d words (%(dur_min)d-%(dur_max)d "
-        "seconds). SHORTER IS BETTER: cut anything that does not build the "
+        "(2) script: %(w_short_min)d-%(w_short_max)d words for 'short' "
+        "format (%(dur_short)d seconds) OR %(w_long_min)d-%(w_long_max)d "
+        "words for 'long' format (%(dur_long)d seconds) - the word count "
+        "MUST match the chosen format. SHORTER IS BETTER: cut anything "
+        "that does not build the "
         "hook or the payoff. Sentence 1 IS the hook: the most shocking fact or "
-        "claim, no greeting, no intro, no 'welcome back'. "
+        "claim, no greeting, no intro, no 'welcome back'. The hook is "
+        "SPECIFIC: name the exact number, mistake, or outcome - vague hooks "
+        "('you won't believe this') lose about 4x more viewers. "
+        "The on-screen hook text must read in under 2 seconds (max 12 "
+        "spoken words). "
         "(3) LOOP ENDING: the last sentence must flow back into the first "
         "sentence so the video loops seamlessly. "
         "(4) No subscribe begging; engagement comes from the pinned comment "
         "question. "
+        "(5) DURATION: pick EXACTLY ONE of two formats - NEVER in between: "
+        "'short' = 13-second ultra-dense punch (one shocking fact, "
+        "%(dur_short)d seconds, use when the topic is a single listicle "
+        "fact, density 1-2) OR 'long' = %(dur_long)d-second full story "
+        "(dense narrative with a payoff arc, use when the topic needs "
+        "setup + reveal, density 3-5). Output 'density' (int 1-5) and "
+        "'duration_format' ('short' or 'long'); the script length must "
+        "match the chosen format. "
         "%(identity)s"
         "You reply ONLY with valid JSON with keys: title (max %(title_max)d "
         "chars), hook (max %(hook_max)d chars: the shocking first fact, used "
         "as on-screen text), script, comment (one short question to pin as "
         "first comment to spark replies), description (2-3 lines with 3 "
-        "hashtags), tags (list of 8-12 keywords), duration_target (int "
-        "seconds, between %(dur_min)d and %(dur_max)d)."
+        "hashtags), tags (list of 8-12 keywords), density (int 1-5), "
+        "duration_format ('short' or 'long')."
     ) % {
         "title_max": int(ideas.get("title_max_chars", 50)),
         "hook_max": int(ideas.get("hook_max_chars", 60)),
-        "words_min": int(ideas.get("script_words_min", 50)),
-        "words_max": int(ideas.get("script_words_max", 85)),
-        "dur_min": int(ideas.get("duration_min", 15)),
-        "dur_max": int(ideas.get("duration_max", 32)),
+        "w_short_min": script_word_budget("short", cfg=cfg)[0],
+        "w_short_max": script_word_budget("short", cfg=cfg)[1],
+        "w_long_min": script_word_budget("long", cfg=cfg)[0],
+        "w_long_max": script_word_budget("long", cfg=cfg)[1],
+        "dur_short": duration_plan(1, cfg=cfg)["target"],
+        "dur_long": duration_plan(4, cfg=cfg)["target"],
         "identity": identity_block(cfg),
     }
 
@@ -90,12 +111,15 @@ def _user_prompt(topic, language, niche, directive=None):
     return prompt
 
 
+# V3 : patterns de titres specifiques (chiffre, erreur nommee, contre-
+# attente) - les titres vagues type "The Hidden Truth About X" perdent face
+# aux promesses concretes (benchmarks Shorts 2026).
 TITLE_PATTERNS = [
-    "Nobody Talks About {t}",
-    "The Hidden Truth About {t}",
-    "Why Is Nobody Talking About {t}?",
-    "{t}: What They Never Tell You",
-    "The Secret Side of {t} Nobody Shows",
+    "Nobody Warns You About {t}",
+    "3 Things About {t} Nobody Says",
+    "Why Everyone Gets {t} Wrong",
+    "{t}: The Part Everyone Misses",
+    "The {t} Mistake You Keep Making",
 ]
 
 COMMENT_TEMPLATES = [
@@ -236,9 +260,11 @@ def fallback_idea(topic, cfg=None):
             "#shorts #facts #didyouknow" % title
         ),
         "tags": ["shorts", t[:40], "facts", "didyouknow", "mind blowing"],
-        # Critique 2026-10-27 : 40 s etait trop long (retention en chute) ->
-        # on cible la fenetre 15-32 s via identity.duration_clamp.
-        "duration_target": duration_clamp(ideas.get("duration_default", 24), cfg=cfg),
+        # V2 : deux formats, jamais entre les deux - le fallback (sans LLM)
+        # part sur le format court (defaut securise, meilleur retention).
+        "duration_target": duration_plan(1, cfg=cfg)["target"],
+        "duration_format": "short",
+        "density": 1,
         "source_topic": t,
         "generator": generator,
     }
@@ -259,15 +285,28 @@ def llm_idea(llm, topic, cfg):
     for key in ("title", "hook", "script", "description", "tags"):
         if not data.get(key):
             return None
-    # Normalisation dure (critique 2026-10-27) : meme si le LLM ignore les
-    # consignes, title_fix/hook_fix/duration_clamp remettent l'idee dans le
-    # moule Shorts (titre <=50 non-abstrait, hook <=60, duree 15-32 s).
+    # Normalisation dure (critique 2026-10-27 + V2) : meme si le LLM ignore
+    # les consignes, title_fix/hook_fix/duration_plan remettent l'idee dans
+    # le moule Shorts (titre <=50 non-abstrait, hook <=60, duree 13 OU 60 s,
+    # jamais un milieu arbitraire).
     data["title"] = title_fix(data["title"], topic=topic, cfg=cfg)
     data["hook"] = hook_fix(data["hook"], topic=topic, cfg=cfg)
     # Le LLM renvoie parfois le script en tableau JSON de lignes (observe
     # avec gemini-2.5-flash le 2026-10-26): edge-tts exige un str.
     data["script"] = as_script_text(data["script"])
-    data["duration_target"] = duration_clamp(data.get("duration_target"), cfg=cfg)
+    try:
+        density = int(data.get("density"))
+    except (TypeError, ValueError):
+        density = 3  # inconnu -> sujet a priori dense -> format long
+    plan = duration_plan(density, cfg=cfg)
+    fmt = str(data.get("duration_format") or plan["format"]).lower()
+    if fmt not in ("short", "long"):
+        fmt = plan["format"]
+    plan = duration_plan(1 if fmt == "short" else 4, cfg=cfg)
+    data["density"] = density
+    data["duration_format"] = fmt
+    data["duration_target"] = plan["target"]
+    data["duration_range"] = [plan["min"], plan["max"]]
     if not data.get("comment"):
         data["comment"] = COMMENT_TEMPLATES[0]
     if not isinstance(data["tags"], list):
@@ -336,6 +375,20 @@ def run_ideas(config=None, count=5):
         if not idea:
             idea = fallback_idea(topic, cfg=cfg)
         idea["score"] = t.get("score")
+        # V2 : A/B de hook - deux variantes de familles differentes, une
+        # seule publiee (alternance deterministic), la paire trackee pour
+        # joindre variant -> retention plus tard (hook_ab.summarize).
+        try:
+            variants = hook_variants(topic, idea.get("hook"), cfg=cfg)
+            ab = ab_assign(topic, variants, cfg=cfg)
+        except Exception as exc:
+            variants, ab = [], None
+            log.warning("Hook A/B indisponible pour '%s': %s", topic[:60], exc)
+        if ab:
+            idea["hook"] = ab["hook"]
+            idea["pair_id"] = ab["pair_id"]
+            idea["hook_variant"] = ab["variant"]
+        idea["hook_variants"] = variants
         ideas.append(idea)
 
     stamp = dt.datetime.now().strftime("%Y%m%d-%H%M%S")

@@ -58,7 +58,12 @@ def load_identity(cfg=None):
     ident.setdefault("tone", "")
     ident.setdefault("keywords", [])
     ident.setdefault("anti_topics", [])
-    ident.setdefault("strict", True)
+    # V2 (2026-10-27 pm) : strict=False par defaut. Un gate dur sans
+    # mots-cles configures (cas reel du 2026-10-27 : [identity] absent du
+    # autopipe.toml -> keywords=[]) rejettait 100 % des sujets tendances et
+    # faisait retomber le pipeline sur les 3 keywords generiques du scout,
+    # a chaque run. Mode soft par defaut : on garde tout, on trie.
+    ident.setdefault("strict", False)
     ideas = cfg.get("ideas", {}) or {}
     ident["title_max_chars"] = int(ideas.get("title_max_chars", 50))
     ident["hook_max_chars"] = int(ideas.get("hook_max_chars", 60))
@@ -147,17 +152,30 @@ def topic_score(topic_text, ident=None):
 
 
 def filter_topics(topics, cfg=None):
-    """Gate de niche : ne garde que les sujets on-niche, tries par pertinence.
+    """Soft score de niche : garde TOUT, penalise le hors-niche dans le tri.
 
-    Chaque topic est un dict {"topic": ..., ...} (scout/radar). Les sujets
-    hors niche sont ecartes (loggue, observabilite), jamais generes. Avec
-    identity.strict=false, les sujets hors niche sont toleres mais places
-    en queue (depriorises). Renvoie [] si rien ne passe : l'appelant doit
-    retomber sur les mots-cles de niche du scout.
+    V2 (2026-10-27 pm) - critique : a petit volume (3 vues), un gate dur
+    rejette 3 sujets sur 4 et tue la cadence de publication, alors que
+    l'algo a besoin de volume pour cataloguer la chaine. Le gate devient un
+    score : les sujets on-niche remontent dans le ranking, les hors-niche
+    restent generables en queue. Seuls les anti_topics restent un rejet dur.
+
+    Comportements :
+      - anti-topic -> rejet (jamais genere) ;
+      - on-niche (score > 0) -> rank_score = score brut, place en tete ;
+      - hors-niche (score 0) -> rank_score = score brut - penalty (defaut
+        1.5, [identity].off_niche_penalty), place en queue ; genere quand
+        meme si le lot est maigre ;
+      - identity.strict=true (explicitement) -> ancien gate dur (rejet hors
+        niche), pour qui veut la coherence maximale.
     """
     cfg = cfg or get_config()
     ident = load_identity(cfg)
-    strict = bool(ident.get("strict", True))
+    strict = bool(ident.get("strict", False))
+    try:
+        penalty = float(ident.get("off_niche_penalty", 1.5))
+    except (TypeError, ValueError):
+        penalty = 1.5
     kept, dropped = [], []
     for t in topics or []:
         if not isinstance(t, dict):
@@ -169,25 +187,26 @@ def filter_topics(topics, cfg=None):
         if s < 0:
             dropped.append((subject, "anti-topic"))
             continue
-        if s == 0:
-            if strict:
-                dropped.append((subject, "hors niche"))
-                continue
-            t = dict(t)
-            t["identity_score"] = 0
-            kept.append(t)
+        if s == 0 and strict:
+            dropped.append((subject, "hors niche"))
             continue
         t = dict(t)
-        t["identity_score"] = s
+        t["identity_score"] = int(s)
+        base = float(t.get("score") or 0.0)
+        t["rank_score"] = base if s > 0 else base - penalty
         kept.append(t)
     for subject, why in dropped[:10]:
         log.info("Gate niche: sujet ignore (%s): %s", why, subject[:70])
+    n_off = sum(1 for t in kept if int(t.get("identity_score") or 0) == 0)
+    if kept and n_off:
+        log.info("Gate niche (soft): %s/%s sujets hors niche gardes en queue "
+                 "(penalite %.1f)", n_off, len(kept), penalty)
     if not kept:
-        log.warning("Gate niche: 0/%s sujets on-niche -> l'appelant doit "
+        log.warning("Gate niche: 0/%s sujets passent -> l'appelant doit "
                     "utiliser les mots-cles de niche", len(topics or []))
         return []
-    kept.sort(key=lambda t: (-int(t.get("identity_score") or 0),
-                             -float(t.get("score") or 0)))
+    kept.sort(key=lambda t: (-float(t.get("rank_score") or 0.0),
+                             -int(t.get("identity_score") or 0)))
     return kept
 
 
@@ -279,13 +298,17 @@ def title_fix(title, topic=None, cfg=None):
 
 def _default_hook(topic):
     base = _topic_base(topic)
-    for tpl in ("Why is {t} everywhere?",
-                "{t} is not what you think",
-                "Nobody warned you about {t}"):
+    # V3 (2026-10-27) : hooks de repli SPECIFIQUES. Donnees web 2026 : les
+    # hooks vagues ("you won't believe this", "why is X everywhere?")
+    # performent ~4x moins que les hooks qui nomment un chiffre, une erreur
+    # ou un resultat precis. Templates retenus : chiffre + erreur precise.
+    for tpl in ("3 {t} facts nobody tells you",
+                "Nobody warned you about {t}",
+                "{t}: the mistake everyone repeats"):
         cand = tpl.format(t=base)
         if len(cand) <= 60:
             return cand
-    return _shorten("This is not what you think", 60)
+    return _shorten("The {t} mistake everyone repeats", 60)
 
 
 def hook_fix(hook, topic=None, cfg=None):
@@ -318,3 +341,187 @@ def duration_clamp(seconds, cfg=None):
     except (TypeError, ValueError):
         s = int(ideas.get("duration_default", 24))
     return max(lo, min(hi, s))
+
+# --- V2 (2026-10-27 pm) : formats 13 s / 60 s + variantes de hook ----------
+# Critiques a traiter :
+#   - le clamp unique 15-32 s est arbitraire : deux formats, pas un milieu
+#     (13 s ultra-dense, 60 s narration complete), le LLM choisit selon la
+#     densite du sujet ;
+#   - un seul hook par sujet = on optimise a l'aveugle : il faut une variante
+#     B de hook differente (famille differente) pour alimenter un A/B.
+
+# Profils de duree : cible + marge, en secondes. Jamais entre les deux.
+_DURATION_PROFILES = {
+    "short": {"target": 13, "min": 12, "max": 18},
+    "long": {"target": 60, "min": 50, "max": 60},
+}
+
+
+def duration_profiles(cfg=None):
+    """Profils de duree configurables [ideas].duration_profiles.
+
+    Defaut : {"short": {target 13, min 12, max 18}, "long": {target 60,
+    min 50, max 60}}. Chaque valeur est un dict {"target", "min", "max"}.
+    """
+    cfg = cfg or get_config()
+    ideas = cfg.get("ideas", {}) or {}
+    profiles = ideas.get("duration_profiles") or {}
+    out = {}
+    for name in ("short", "long"):
+        p = profiles.get(name) or _DURATION_PROFILES[name]
+        try:
+            target = int(p.get("target", _DURATION_PROFILES[name]["target"]))
+            mn = int(p.get("min", _DURATION_PROFILES[name]["min"]))
+            mx = int(p.get("max", _DURATION_PROFILES[name]["max"]))
+        except (TypeError, ValueError, AttributeError):
+            target, mn, mx = (_DURATION_PROFILES[name][k] for k in
+                              ("target", "min", "max"))
+        out[name] = {"target": target, "min": mn, "max": mx}
+    return out
+
+
+def duration_plan(density, cfg=None):
+    """Choisit le format selon la densite du sujet : 'short' (13 s) ou
+    'long' (60 s). Jamais entre les deux.
+
+    density : entier 1-5. 1-2 = sujet simple/listicle -> 13 s ; 3+ =
+    sujet dense/recit -> 60 s. Valeurs hors 1-5 -> 'short' (defaut securise :
+    les Shorts courts retiennent mieux et sont moins chers a produire).
+
+    Renvoie {"format", "target", "min", "max"}.
+    """
+    try:
+        d = int(density)
+    except (TypeError, ValueError):
+        d = 1
+    profiles = duration_profiles(cfg)
+    fmt = "short" if d <= 2 else "long"
+    p = profiles[fmt]
+    return {"format": fmt, "target": p["target"],
+            "min": p["min"], "max": p["max"]}
+
+
+def script_word_budget(format_name, cfg=None):
+    """Budget de mots cohérent avec la durée cible d'un format.
+
+    V3 (2026-10-27) - faille : le prompt ideas demandait "%(words_min)d-
+    %(words_max)d words" (50-85, calibre pour l'ancien 15-32 s) MÊME pour
+    le format 13 s -> à 160 wpm ça fait 19-32 s, jamais 13 s. Le budget est
+    désormais dérivé de la cible du format à 145-165 mots/minute :
+      short (13 s) -> 31-36 mots ; long (60 s) -> 145-165 mots.
+    Renvoie (min, max) entiers.
+    """
+    plan = duration_plan(1 if str(format_name) == "short" else 4, cfg=cfg)
+    target = plan["target"]
+    lo = int(round(target * 145 / 60.0))
+    hi = int(round(target * 165 / 60.0))
+    return max(8, lo), max(lo + 2, hi)
+
+
+def checkpoint_seconds(cfg=None):
+    """Secondes de la mid-video checkpoint (texte 'STAY' / recall).
+
+    Vise la moitie de la duree cible du format, plancher 5 s (un checkpoint
+    avant 5 s surprend avant que le viewer ait accroche). Renvoie int.
+    """
+    cfg = cfg or get_config()
+    video = cfg.get("video", {}) or {}
+    try:
+        return int(video.get("checkpoint_seconds", 15))
+    except (TypeError, ValueError):
+        return 15
+
+
+_HOOK_FAMILIES = ("question", "number", "negation", "statement")
+
+
+def hook_family(hook):
+    """Classe un hook dans une famille : question / number / negation /
+    statement. Sert a garantir que la variante B est d'une famille
+    DIFFERENTE (sinon l'A/B teste deux fois la meme chose)."""
+    t = " ".join(str(hook or "").split()).strip()
+    if not t:
+        return "statement"
+    if t.endswith("?"):
+        return "question"
+    if any(c.isdigit() for c in t):
+        return "number"
+    head = t.lower()
+    for w in ("nobody", "never", "no one", "not ", "stop ", "don't", "dont ",
+              "why you", "you're", "youre", "warning", "the truth", "lies"):
+        if head.startswith(w) or w in head[:30]:
+            return "negation"
+    return "statement"
+
+
+_ALT_TEMPLATES = {
+    # V3 : variantes B plus specifiques (chiffre, erreur nommee, resultat
+    # concret) - les curiosity gaps precis completent +63 % mieux que les
+    # vagues (benchmarks Shorts 2026).
+    "question": ("What if everything you know about {t} is wrong?",
+                 "Why does nobody explain {t} like this?"),
+    "number": ("3 {t} facts they never teach you",
+               "{t}: the 1 mistake everyone repeats"),
+    "negation": ("Nobody warned you about {t}",
+                 "Stop believing this about {t}"),
+    "statement": ("{t} just changed forever. Here's the proof.",
+                  "This is the {t} moment everyone missed"),
+}
+
+
+def alt_hook(topic, hook, cfg=None):
+    """Genere une variante B de hook dans une famille DIFFERENTE du hook A.
+
+    Renvoie "" si impossible (sujet vide). Le hook sort toujours <=
+    hook_max_chars (60 par defaut), comme hook_fix().
+    """
+    cfg = cfg or get_config()
+    max_chars = int((cfg.get("ideas", {}) or {}).get("hook_max_chars", 60))
+    base = _topic_base(topic or "")
+    if not base:
+        return ""
+    fam_a = hook_family(hook)
+    cands = []
+    for fam, templates in _ALT_TEMPLATES.items():
+        if fam == fam_a:
+            continue
+        for tpl in templates:
+            cand = tpl.format(t=base)
+            if len(cand) <= max_chars:
+                # Priorite : question > negation > number > statement.
+                prio = _HOOK_FAMILIES.index(fam)
+                cands.append((prio, len(cand), cand, fam))
+    if not cands:
+        return ""
+    cands.sort()
+    return cands[0][2]
+
+
+def hook_variants(topic, hook, cfg=None):
+    """Paire A/B de hooks pour un sujet : le hook LLM (ou un defaut) plus
+    une variante generative d'une famille differente.
+
+    Renvoie [{"variant": "A", "hook": ..., "family": ...},
+             {"variant": "B", "hook": ..., "family": ...}].
+    Si alt_hook() n'aboutit pas, B = default_hook sur le sujet (fallback
+    degrade : l'A/B tourne quand meme, familles possiblement proches).
+    """
+    cfg = cfg or get_config()
+    a = hook_fix(hook, topic=topic, cfg=cfg)
+    fam_a = hook_family(a)
+    b_raw = alt_hook(topic, a, cfg=cfg)
+    if not b_raw:
+        b_raw = _default_hook(topic or "")
+    b = hook_fix(b_raw, topic=topic, cfg=cfg)
+    if hook_family(b) == fam_a:
+        # Derniere chance : forcer une autre famille via les templates.
+        for tpl in ("3 {t} facts they never teach you",
+                    "Why does nobody explain {t} like this?",
+                    "{t} just changed forever. Here's the proof."):
+            cand = hook_fix(tpl.format(t=_topic_base(topic or "")),
+                            topic=topic, cfg=cfg)
+            if hook_family(cand) != fam_a:
+                b = cand
+                break
+    return [{"variant": "A", "hook": a, "family": fam_a},
+            {"variant": "B", "hook": b, "family": hook_family(b)}]
