@@ -1,0 +1,45 @@
+{
+  "title": "Why You Think You're Smarter Than You Are",
+  "hook": "Why does nobody explain Psychology #funny like this?",
+  "script": "70% of people overestimate their intelligence. It's the Dunning-Kruger effect. Unskilled individuals can't see their own incompetence. This bias makes them believe they're experts. That's why 70% overestimate their intelligence.",
+  "comment": "Do you ever catch yourself overestimating your skills? 🤔",
+  "description": "Discover the Dunning-Kruger effect and why most people think they're smarter than they actually are. A fascinating psychology fact!\n#AmazingFacts #PsychologyFacts #DunningKruger",
+  "tags": [
+    "Dunning-Kruger effect",
+    "psychology facts",
+    "amazing facts",
+    "cognitive bias",
+    "human behavior",
+    "self-perception",
+    "intelligence",
+    "mind hacks",
+    "science explained",
+    "true story",
+    "facts"
+  ],
+  "density": 2,
+  "duration_format": "short",
+  "duration_target": 13,
+  "duration_range": [
+    12,
+    18
+  ],
+  "source_topic": "Psychology #funny #trendingvideo #new #travel #motivation #general",
+  "generator": "llm:gemini-2.5-flash",
+  "score": 21.1,
+  "pair_id": "pair_20261028_0008",
+  "hook_variant": "B",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "70% Overestimate Their Intelligence!",
+      "family": "number"
+    },
+    {
+      "variant": "B",
+      "hook": "Why does nobody explain Psychology #funny like this?",
+      "family": "question"
+    }
+  ],
+  "id": "20261028-001856-02"
+}

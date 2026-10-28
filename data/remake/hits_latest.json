@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-27T20:00:27.048248",
+  "date": "2026-10-28T00:18:19.983098",
   "region": "US",
   "language": "en",
   "keywords": [
@@ -9,26 +9,36 @@
   ],
   "min_views": 500000,
   "max_duration": 75,
-  "total_found": 47,
-  "rejected": 44,
+  "total_found": 51,
+  "rejected": 47,
   "hits": [
     {
       "id": "FqkyMSDm-HY",
       "title": "ANTIMATTER — explained in 60sec #Shorts #Science",
       "channel": "ABC Science",
-      "views": 8553,
+      "views": 8554,
       "duration": 61.0,
       "url": "https://www.youtube.com/watch?v=FqkyMSDm-HY",
-      "query": "ytsearch10:science explained #shorts"
+      "query": "ytsearch10:science explained shorts"
     },
     {
       "id": "9sueQEfMzJ4",
       "title": "A Priceless Pearl 2026 | Amazing Facts",
       "channel": "AmazingFacts",
-      "views": 3365,
+      "views": 3367,
       "duration": 61.0,
       "url": "https://www.youtube.com/watch?v=9sueQEfMzJ4",
       "query": "ytsearch10:amazing facts shorts"
+    },
+    {
+      "id": "lkRGO9jxLYk",
+      "title": "Why Are Scientists Burying Thousands of Underwear in Dirt 😱/ Weird Fact",
+      "channel": "InfoThink Knowlogy",
+      "views": 1168,
+      "duration": 65.0,
+      "url": "https://www.youtube.com/watch?v=lkRGO9jxLYk",
+      "query": "radar:youtube",
+      "score": 3.6
     },
     {
       "id": "RXbljrD8_GU",

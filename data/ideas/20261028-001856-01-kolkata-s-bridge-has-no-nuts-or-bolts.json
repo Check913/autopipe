@@ -1,0 +1,46 @@
+{
+  "title": "Kolkata's Bridge Has NO Nuts OR Bolts?",
+  "hook": "Kolkata's iconic Howrah Bridge stands strong without a",
+  "script": "Kolkata's iconic Howrah Bridge stands strong without a single nut or bolt! This engineering marvel, a cantilever bridge, simply relies on its intricate steel structure and rivets. It’s mind-blowing when you think about it. But that's not the only secret this incredible city holds. Head to the Acharya Jagadish Chandra Bose Indian Botanic Garden, and you’ll find the Great Banyan Tree. It’s not just a tree; it’s a forest unto itself, spanning over 4 acres with thousands of aerial roots! It’s the widest tree in the world. And did you know Kolkata was once the capital of British India? From 1772 to 1911, it was the center of power, shaping much of modern India's history. It's also the only city in India where hand-pulled rickshaws are still operational, a unique glimpse into its colonial past. From its astounding engineering to its ancient botanical wonders and historical significance, Kolkata is truly a city of unparalleled surprises, just like its bridge that stands strong without a single nut or bolt!",
+  "comment": "Which Kolkata fact surprised you most?",
+  "description": "Uncover the astonishing secrets of Kolkata, from its engineering wonders to its botanical marvels. This city is full of surprises!\n#KolkataFacts #AmazingIndia #CityOfJoy",
+  "tags": [
+    "Kolkata",
+    "Howrah Bridge",
+    "Great Banyan Tree",
+    "India facts",
+    "amazing facts",
+    "unknown facts",
+    "city of joy",
+    "travel India",
+    "incredible India",
+    "unique places",
+    "science explained",
+    "history facts"
+  ],
+  "density": 4,
+  "duration_format": "long",
+  "duration_target": 60,
+  "duration_range": [
+    50,
+    60
+  ],
+  "source_topic": "Amazing Unknown Facts About Kolkata! 😱 | Kolkata Amazing Facts",
+  "generator": "llm:gemini-2.5-flash",
+  "score": 21.7,
+  "pair_id": "pair_20261028_0007",
+  "hook_variant": "A",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "Kolkata's iconic Howrah Bridge stands strong without a",
+      "family": "statement"
+    },
+    {
+      "variant": "B",
+      "hook": "3 Amazing Unknown Facts About facts they never teach you",
+      "family": "number"
+    }
+  ],
+  "id": "20261028-001856-01"
+}

@@ -1,25 +1,26 @@
 {
   "status": "ok",
-  "pairs": 3,
+  "pairs": 6,
   "joined": 0,
   "variants": {
     "A": {
-      "assigned": 2,
+      "assigned": 3,
       "measured": 0,
       "mean_engagement": null,
       "mean_views": null,
       "families": {
-        "statement": 1,
+        "statement": 2,
         "question": 1
       }
     },
     "B": {
-      "assigned": 1,
+      "assigned": 3,
       "measured": 0,
       "mean_engagement": null,
       "mean_views": null,
       "families": {
-        "question": 1
+        "question": 2,
+        "number": 1
       }
     }
   },
@@ -65,7 +66,49 @@
       "video_id": null,
       "engagement": null,
       "views": null
+    },
+    {
+      "ts": "2026-10-27T20:00:36",
+      "pair_id": "pair_20261027_0004",
+      "topic": "How Decision Making is Actually Science: Game Theory Explained",
+      "variant": "B",
+      "hook": "Why does nobody explain How Decision Making is like this?",
+      "family": "question",
+      "family_other": "statement",
+      "hook_a": "Decision theory or the theory of rational choice is a",
+      "hook_b": "Why does nobody explain How Decision Making is like this?",
+      "video_id": "2PksSqFQ9uU",
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-10-27T20:00:40",
+      "pair_id": "pair_20261027_0005",
+      "topic": "The Most Amazing Things That Science Still Can't Explain",
+      "variant": "A",
+      "hook": "Science fiction is the genre of speculative fiction that",
+      "family": "statement",
+      "family_other": "question",
+      "hook_a": "Science fiction is the genre of speculative fiction that",
+      "hook_b": "Why does nobody explain The Most Amazing Things like this?",
+      "video_id": null,
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-10-27T20:00:41",
+      "pair_id": "pair_20261027_0006",
+      "topic": "Donkey Ki mazedaar amazing facts dekhe 👌🐎 Must Watch Donkey Videos 📸🐴",
+      "variant": "B",
+      "hook": "3 Donkey Ki mazedaar amazing facts they never teach you",
+      "family": "number",
+      "family_other": "negation",
+      "hook_a": "Nobody talks about Donkey Ki mazedaar amazing facts dekhe",
+      "hook_b": "3 Donkey Ki mazedaar amazing facts they never teach you",
+      "video_id": null,
+      "engagement": null,
+      "views": null
     }
   ],
-  "fetched": "2026-10-27T20:00:19"
+  "fetched": "2026-10-28T00:18:12"
 }

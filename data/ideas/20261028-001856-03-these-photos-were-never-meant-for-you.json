@@ -1,0 +1,46 @@
+{
+  "title": "These Photos Were NEVER Meant For You",
+  "hook": "Some photos are so disturbing, they're censored globally.",
+  "script": "Some photos are so disturbing, they're censored globally. You've likely seen countless historical images, but many of the most unsettling human moments remain hidden. These aren't just graphic; they often capture immense suffering or the final, private moments of individuals, raising profound ethical questions. The debate isn't about hiding history, but about respecting human dignity. For instance, images from battlefields or disaster zones, taken moments before or after death, often cross a line. They strip individuals of their final privacy, turning their ultimate vulnerability into public spectacle. Curators and historians grapple with the responsibility: document the truth, or protect the deceased's dignity and prevent the potential glorification of violence? It's a constant tightrope walk. So, when you think about history, remember the unseen frames, the ones deemed too sensitive or exploitative for public consumption, which is exactly why some photos are so disturbing, they're censored globally.",
+  "comment": "Should all historical photos, no matter how disturbing, be publicly available?",
+  "description": "Explore the hidden history behind some of the world's most controversial photographs. Discover why certain images are deemed too disturbing for public view, raising ethical questions about documentation and privacy.\n#ForbiddenPhotos #HistoricalFacts #EthicalDilemmas",
+  "tags": [
+    "forbidden photos",
+    "disturbing images",
+    "historical facts",
+    "shocking truth",
+    "censorship",
+    "ethical photography",
+    "untold stories",
+    "amazing facts",
+    "world history",
+    "controversial pictures",
+    "banned photos",
+    "privacy concerns"
+  ],
+  "density": 4,
+  "duration_format": "long",
+  "duration_target": 60,
+  "duration_range": [
+    50,
+    60
+  ],
+  "source_topic": "Inhumane Final Photographs We Should Never Have Seen",
+  "generator": "llm:gemini-2.5-flash",
+  "score": 14.1,
+  "pair_id": "pair_20261028_0009",
+  "hook_variant": "A",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "Some photos are so disturbing, they're censored globally.",
+      "family": "statement"
+    },
+    {
+      "variant": "B",
+      "hook": "3 Inhumane Final Photographs facts they never teach you",
+      "family": "number"
+    }
+  ],
+  "id": "20261028-001856-03"
+}
