@@ -1,25 +1,25 @@
 {
   "status": "ok",
-  "pairs": 6,
+  "pairs": 9,
   "joined": 0,
   "variants": {
     "A": {
-      "assigned": 3,
+      "assigned": 5,
       "measured": 0,
       "mean_engagement": null,
       "mean_views": null,
       "families": {
-        "statement": 2,
+        "statement": 4,
         "question": 1
       }
     },
     "B": {
-      "assigned": 3,
+      "assigned": 4,
       "measured": 0,
       "mean_engagement": null,
       "mean_views": null,
       "families": {
-        "question": 2,
+        "question": 3,
         "number": 1
       }
     }
@@ -108,7 +108,49 @@
       "video_id": null,
       "engagement": null,
       "views": null
+    },
+    {
+      "ts": "2026-10-28T00:18:31",
+      "pair_id": "pair_20261028_0007",
+      "topic": "Amazing Unknown Facts About Kolkata! 😱 | Kolkata Amazing Facts",
+      "variant": "A",
+      "hook": "Kolkata's iconic Howrah Bridge stands strong without a",
+      "family": "statement",
+      "family_other": "number",
+      "hook_a": "Kolkata's iconic Howrah Bridge stands strong without a",
+      "hook_b": "3 Amazing Unknown Facts About facts they never teach you",
+      "video_id": "dY8f7PRh71k",
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-10-28T00:18:46",
+      "pair_id": "pair_20261028_0008",
+      "topic": "Psychology #funny #trendingvideo #new #travel #motivation #general",
+      "variant": "B",
+      "hook": "Why does nobody explain Psychology #funny like this?",
+      "family": "question",
+      "family_other": "number",
+      "hook_a": "70% Overestimate Their Intelligence!",
+      "hook_b": "Why does nobody explain Psychology #funny like this?",
+      "video_id": null,
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-10-28T00:18:56",
+      "pair_id": "pair_20261028_0009",
+      "topic": "Inhumane Final Photographs We Should Never Have Seen",
+      "variant": "A",
+      "hook": "Some photos are so disturbing, they're censored globally.",
+      "family": "statement",
+      "family_other": "number",
+      "hook_a": "Some photos are so disturbing, they're censored globally.",
+      "hook_b": "3 Inhumane Final Photographs facts they never teach you",
+      "video_id": null,
+      "engagement": null,
+      "views": null
     }
   ],
-  "fetched": "2026-10-28T00:18:12"
+  "fetched": "2026-10-28T20:01:38"
 }

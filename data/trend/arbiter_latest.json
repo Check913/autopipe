@@ -1,113 +1,113 @@
 {
-  "fetched": "2026-10-28T00:18:12",
+  "fetched": "2026-10-28T20:01:38",
   "geo": "",
   "topics": [
     {
-      "query": "griffin jax",
-      "traffic": 200000.0,
-      "rise": 10.0,
-      "saturation_views": 6570.0,
-      "momentum": 3.5483
-    },
-    {
-      "query": "nolan traoré",
-      "traffic": 1000.0,
-      "rise": 10.0,
-      "saturation_views": 15471.0,
-      "momentum": 3.135
-    },
-    {
-      "query": "saddiq bey",
-      "traffic": 200.0,
-      "rise": 10.0,
-      "saturation_views": 21934.0,
-      "momentum": 2.9928
-    },
-    {
-      "query": "day'ron sharpe",
-      "traffic": 200.0,
-      "rise": 10.0,
-      "saturation_views": 29033.0,
-      "momentum": 2.8876
-    },
-    {
-      "query": "john smoltz",
+      "query": "venezia fc vs inter milan standings",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 420037.0,
-      "momentum": 2.163
+      "saturation_views": 791.0,
+      "momentum": 5.2531
     },
     {
-      "query": "julius randle",
-      "traffic": 1000.0,
-      "rise": 10.0,
-      "saturation_views": 464048.0,
-      "momentum": 2.1429
-    },
-    {
-      "query": "hailey bills",
-      "traffic": 200.0,
-      "rise": 10.0,
-      "saturation_views": 1008723.0,
-      "momentum": 1.9985
-    },
-    {
-      "query": "laura bozzo",
+      "query": "weil gotshal & manges",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 2152856.0,
-      "momentum": 1.8751
+      "saturation_views": 3510.0,
+      "momentum": 3.9269
     },
     {
-      "query": "cade mower the voice",
+      "query": "lewis uvwo",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 15247.0,
+      "momentum": 3.1412
+    },
+    {
+      "query": "leverkusen vs nürnberg",
       "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 3753999.0,
-      "momentum": 1.7939
+      "saturation_views": 29132.0,
+      "momentum": 2.8864
     },
     {
-      "query": "what time does vision quest come out",
-      "traffic": 2000.0,
+      "query": "learner tien",
+      "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 16701527.0,
-      "momentum": 1.607
+      "saturation_views": 148686.0,
+      "momentum": 2.3968
+    },
+    {
+      "query": "porto vs académico de viseu",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 159629.0,
+      "momentum": 2.3792
+    },
+    {
+      "query": "sunshine protection act",
+      "traffic": 1000.0,
+      "rise": 10.0,
+      "saturation_views": 167970.0,
+      "momentum": 2.3667
+    },
+    {
+      "query": "kyle larson",
+      "traffic": 5000.0,
+      "rise": 10.0,
+      "saturation_views": 638067.0,
+      "momentum": 2.0812
+    },
+    {
+      "query": "arsenal vs benfica",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 713897.0,
+      "momentum": 2.0603
+    },
+    {
+      "query": "jimmy carr",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 6158807.0,
+      "momentum": 1.7273
     }
   ],
   "top": [
     {
-      "query": "griffin jax",
-      "traffic": 200000.0,
-      "rise": 10.0,
-      "saturation_views": 6570.0,
-      "momentum": 3.5483
-    },
-    {
-      "query": "nolan traoré",
-      "traffic": 1000.0,
-      "rise": 10.0,
-      "saturation_views": 15471.0,
-      "momentum": 3.135
-    },
-    {
-      "query": "saddiq bey",
-      "traffic": 200.0,
-      "rise": 10.0,
-      "saturation_views": 21934.0,
-      "momentum": 2.9928
-    },
-    {
-      "query": "day'ron sharpe",
-      "traffic": 200.0,
-      "rise": 10.0,
-      "saturation_views": 29033.0,
-      "momentum": 2.8876
-    },
-    {
-      "query": "john smoltz",
+      "query": "venezia fc vs inter milan standings",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 420037.0,
-      "momentum": 2.163
+      "saturation_views": 791.0,
+      "momentum": 5.2531
+    },
+    {
+      "query": "weil gotshal & manges",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 3510.0,
+      "momentum": 3.9269
+    },
+    {
+      "query": "lewis uvwo",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 15247.0,
+      "momentum": 3.1412
+    },
+    {
+      "query": "leverkusen vs nürnberg",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 29132.0,
+      "momentum": 2.8864
+    },
+    {
+      "query": "learner tien",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 148686.0,
+      "momentum": 2.3968
     }
   ]
 }

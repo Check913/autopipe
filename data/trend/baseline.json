@@ -975,5 +975,135 @@
         2000.0
       ]
     ]
+  },
+  "lewis uvwo": {
+    "traffic": 500.0,
+    "first_seen": "2026-10-28T20:01:28",
+    "last_seen": "2026-10-28T20:01:28",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-28T20:01:28",
+        500.0
+      ]
+    ]
+  },
+  "venezia fc vs inter milan standings": {
+    "traffic": 500.0,
+    "first_seen": "2026-10-28T20:01:28",
+    "last_seen": "2026-10-28T20:01:28",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-28T20:01:28",
+        500.0
+      ]
+    ]
+  },
+  "jimmy carr": {
+    "traffic": 200.0,
+    "first_seen": "2026-10-28T20:01:28",
+    "last_seen": "2026-10-28T20:01:28",
+    "delta": 200.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-28T20:01:28",
+        200.0
+      ]
+    ]
+  },
+  "learner tien": {
+    "traffic": 200.0,
+    "first_seen": "2026-10-28T20:01:28",
+    "last_seen": "2026-10-28T20:01:28",
+    "delta": 200.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-28T20:01:28",
+        200.0
+      ]
+    ]
+  },
+  "sunshine protection act": {
+    "traffic": 1000.0,
+    "first_seen": "2026-10-28T20:01:28",
+    "last_seen": "2026-10-28T20:01:28",
+    "delta": 1000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-28T20:01:28",
+        1000.0
+      ]
+    ]
+  },
+  "porto vs académico de viseu": {
+    "traffic": 200.0,
+    "first_seen": "2026-10-28T20:01:28",
+    "last_seen": "2026-10-28T20:01:28",
+    "delta": 200.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-28T20:01:28",
+        200.0
+      ]
+    ]
+  },
+  "leverkusen vs nürnberg": {
+    "traffic": 200.0,
+    "first_seen": "2026-10-28T20:01:28",
+    "last_seen": "2026-10-28T20:01:28",
+    "delta": 200.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-28T20:01:28",
+        200.0
+      ]
+    ]
+  },
+  "kyle larson": {
+    "traffic": 5000.0,
+    "first_seen": "2026-10-28T20:01:28",
+    "last_seen": "2026-10-28T20:01:28",
+    "delta": 5000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-28T20:01:28",
+        5000.0
+      ]
+    ]
+  },
+  "weil gotshal & manges": {
+    "traffic": 500.0,
+    "first_seen": "2026-10-28T20:01:28",
+    "last_seen": "2026-10-28T20:01:28",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-28T20:01:28",
+        500.0
+      ]
+    ]
+  },
+  "arsenal vs benfica": {
+    "traffic": 500.0,
+    "first_seen": "2026-10-28T20:01:28",
+    "last_seen": "2026-10-28T20:01:28",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-28T20:01:28",
+        500.0
+      ]
+    ]
   }
 }
