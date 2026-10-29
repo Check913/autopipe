@@ -318,6 +318,32 @@ def cmd_hook_ab(a):
     print("Summary: %s" % (get_paths(cfg).hook_ab / "summary.json"))
 
 
+def cmd_research(a):
+    """MODULE 4 : benchmarks quantitatifs de la niche (scrape + rapport)."""
+    cfg = _init(a.verbose)
+    from . import research
+    if a.force:
+        research.run_research(cfg, force=True)
+    print(research.report(cfg))
+
+
+def cmd_monetize(a):
+    """MODULE 5 : suivi YPP (abonnes, vues 90 j, heures, ETA, revenus)."""
+    cfg = _init(a.verbose)
+    from . import monetization
+    print(monetization.report(cfg))
+
+
+def cmd_brain(a):
+    """Memoire de publication : registre idea_id <-> youtube_id."""
+    cfg = _init(a.verbose)
+    from . import registry
+    doc = registry.report(cfg)
+    for key in ("total", "linked_to_idea", "linked_to_ab_pair",
+                "first_published", "file"):
+        print("%s: %s" % (key, doc.get(key)))
+
+
 def cmd_run(a):
     cfg = _init(a.verbose)
     from .scheduler import run_pipeline_once
@@ -554,6 +580,20 @@ def main(argv=None):
                        help="V3 : etat baseline 10 Shorts, delta, kill "
                             "switch et patterns actifs (lecture seule)")
     p.set_defaults(fn=cmd_baseline)
+
+    p = sub.add_parser("research",
+                       help="MODULE 4: benchmarks chiffres de la niche (web)")
+    p.add_argument("--force", action="store_true",
+                   help="re-scraper tout de suite (ignore le cache TTL)")
+    p.set_defaults(fn=cmd_research)
+
+    p = sub.add_parser("monetize",
+                       help="MODULE 5: suivi YPP + ETA + revenus estimes")
+    p.set_defaults(fn=cmd_monetize)
+
+    p = sub.add_parser("brain",
+                       help="registre memoire: video <-> idee + rapport")
+    p.set_defaults(fn=cmd_brain)
 
     p = sub.add_parser("run", help="pipeline complet une fois")
     p.add_argument("--no-upload", action="store_true")

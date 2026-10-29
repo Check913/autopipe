@@ -53,6 +53,15 @@ def _remake_files(cfg=None):
     """Fichiers remake JSON (ideas generees) tries du plus recent."""
     paths = get_paths(cfg)
     files = sorted(glob.glob(str(paths.remake / "*.json")))
+    # FAILLE CORRIGEE 2026-10-29 : les idees sources vivent aussi dans
+    # data/ideas/ (<idea_id>-<slug>.json). Sans elles, les shorts publies
+    # sans remake correspondant etaient invisibles de la boucle
+    # d'apprentissage. Les deux dossiers sont fusionnes, deduplies plus
+    # bas dans _join_samples par idea id.
+    try:
+        files += sorted(glob.glob(str(paths.ideas / "*.json")))
+    except Exception:
+        pass
     return [f for f in files
             if not Path(f).name.startswith(("hits_", "remakes_"))]
 
@@ -80,6 +89,9 @@ def _features_from_remake(path):
     return {
         "id": data.get("id") or Path(path).stem,
         "title": title,
+        # MAX : texte brut du hook, requis pour le few-shot prompt (lecons
+        # TOP/WORST citees verbatim dans les prompts LLM).
+        "hook": hook,
         "title_len": len(title),
         # V3 : meme taxonomie que identity.hook_family (question/number/
         # negation/statement) - les regexes locales ne distinguaient pas la
@@ -133,7 +145,24 @@ def _join_samples(cfg=None):
     paths = get_paths(cfg)
     latest = load_json(paths.analytics / "latest.json") or []
     rows = latest if isinstance(latest, list) else latest.get("rows", [])
-    by_id = {str(r.get("id")): r for r in rows if r.get("id")}
+    # Pont youtube_id -> idea_id (registre permanent). En echec, on
+    # retombe sur la jointure legacy par youtube id (au pire 0 jointure,
+    # jamais d'exception levee).
+    idea_by_video = {}
+    try:
+        from .registry import map_video_to_idea
+        idea_by_video = map_video_to_idea(cfg) or {}
+    except Exception as exc:
+        log.warning("registre indisponible pour la jointure: %s", exc)
+    by_id = {}
+    for r in rows:
+        vid = str(r.get("id") or "")
+        if not vid:
+            continue
+        by_id[vid] = r
+        iid = str(idea_by_video.get(vid, vid))
+        if iid:
+            by_id[iid] = r  # idea id ET youtube id -> meme ligne de stats
     # Retention (proxy Viewed vs Swiped Away, Analytics API scope separe).
     ret = {}
     try:
@@ -142,6 +171,9 @@ def _join_samples(cfg=None):
     except Exception:
         ret = {}
     samples = []
+    # Une meme idee peut exister en data/remake ET data/ideas -> dedup
+    # par idea id (priorite au data/remake = version finale produite).
+    seen_ids = set()
     for path in _remake_files(cfg):
         try:
             feats = _features_from_remake(path)
@@ -149,10 +181,16 @@ def _join_samples(cfg=None):
             # Un remake corrompu ne doit pas tuer toute la boucle.
             log.warning("remake ignore (%s): %s", path, exc)
             continue
-        row = by_id.get(str(feats["id"]))
+        fid = str(feats["id"])
+        if fid in seen_ids:
+            continue
+        seen_ids.add(fid)
+        row = by_id.get(fid)
         if row:
             feats["engagement"] = _engagement_index(row)
-            rrow = ret.get(str(feats["id"]))
+            feats["views"] = int(row.get("views") or 0)
+            feats["published"] = str(row.get("published") or "")
+            rrow = ret.get(fid)
             if rrow:
                 feats["avg_view_pct"] = float(rrow.get("avg_view_pct") or 0.0)
                 # V2 : vrai ratio engagedViews/views (engage_ratio) si
@@ -161,6 +199,132 @@ def _join_samples(cfg=None):
                 feats["engaged_ratio"] = engagement_value(rrow)
             samples.append(feats)
     return samples
+
+
+# ---------------------------------------------------------------------------
+# MAX (2026-10-29) : lecons persistantes + few-shot prompt.
+# data/optimizer/lessons.jsonl = memoire d'apprentissage brute,
+# dedupliqúee par idea id, survivant a la purge des snapshots analytics.
+# few_shot_directive en tire des exemples reels TOP/WORST injectes dans
+# les prompts LLM via apply_config.
+# ---------------------------------------------------------------------------
+
+def _lessons_file(cfg):
+    """Chemin du journal d'apprentissage persistant."""
+    return _optimizer_file(cfg, "lessons.jsonl")
+
+
+def _append_lessons(cfg, samples):
+    """Upsert des lecons d'apprentissage (les stats les plus recentes
+
+    gagnent). Deduplique par idea id : une re-analyse avec plus de vues
+    ecrase l'ancienne ligne au lieu de dupliquer. Renvoie le nb de lecons.
+    """
+    path = _lessons_file(cfg)
+    rows = []
+    if path.exists():
+        for line in path.read_text(encoding="utf-8").splitlines():
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                row = json.loads(line)
+            except Exception:
+                continue
+            if isinstance(row, dict):
+                rows.append(row)
+    by_id = {str(r.get("id")): r for r in rows if r.get("id")}
+    now = dt.datetime.now().isoformat(timespec="seconds")
+    for s in samples or []:
+        if not isinstance(s, dict) or not s.get("id"):
+            continue
+        by_id[str(s["id"])] = {
+            "id": str(s["id"]),
+            "title": str(s.get("title") or ""),
+            "hook": str(s.get("hook") or ""),
+            "hook_type": str(s.get("hook_type") or ""),
+            "duration_format": str(s.get("duration_format") or ""),
+            "hook_variant": str(s.get("hook_variant") or ""),
+            "engagement": s.get("engagement"),
+            "avg_view_pct": s.get("avg_view_pct"),
+            "views": s.get("views"),
+            "published": str(s.get("published") or ""),
+            "updated": now,
+        }
+    doc = [by_id[k] for k in sorted(by_id)]
+    text = "\n".join(json.dumps(r, ensure_ascii=False) for r in doc)
+    path.write_text((text + "\n") if text else "", encoding="utf-8")
+    return len(doc)
+
+
+def _load_lessons(cfg):
+    """Lecons chargees (lignes corrompues ignorees, jamais d'exception)."""
+    path = _lessons_file(cfg)
+    if not path.exists():
+        return []
+    out = []
+    try:
+        for line in path.read_text(encoding="utf-8").splitlines():
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                row = json.loads(line)
+            except Exception:
+                continue
+            if isinstance(row, dict):
+                out.append(row)
+    except Exception:
+        return []
+    return out
+
+
+def few_shot_directive(cfg=None, k=2):
+    """Directive few-shot : lecons reelles TOP k vs WORST k.
+
+    Ne rank que les videos avec engagement numerique ET assez de vues
+    (optimizer.few_shot_min_views, defaut 100) pour qu'une video publiee
+    la veille a 0 vue ne soit pas elue "pire performer" par artefact.
+    Retourne "" tant qu'il n'y a pas au moins 2 lecons mesurables.
+    """
+    cfg = cfg or get_config()
+    oc = cfg.get("optimizer", {})
+    try:
+        min_views = int(oc.get("few_shot_min_views", 100))
+    except (TypeError, ValueError):
+        min_views = 100
+    lessons = []
+    for r in _load_lessons(cfg):
+        eng = r.get("engagement")
+        views = r.get("views")
+        if not isinstance(eng, (int, float)):
+            continue
+        if not isinstance(views, (int, float)) or float(views) < min_views:
+            continue
+        lessons.append(r)
+    if len(lessons) < 2:
+        return ""
+    ranked = sorted(lessons, key=lambda r: -float(r["engagement"]))
+    top = ranked[:k]
+    worst = list(reversed(ranked[-k:]))
+
+    def _clean(text):
+        return " ".join(str(text or "").replace('"', " ").split())
+
+    parts = []
+    for r in top:
+        parts.append(
+            'TOP performer: "%s" (%s hook, %s views, engagement %.0f/100) '
+            "- IMITATE its structure exactly: same hook style, same pacing."
+            % (_clean(r.get("title")), _clean(r.get("hook_type")) or "n/a",
+               int(r.get("views") or 0), float(r["engagement"])))
+    for r in worst:
+        parts.append(
+            'WORST performer: "%s" (%s hook, %s views, engagement %.0f/100) '
+            "- do NOT copy its pattern."
+            % (_clean(r.get("title")), _clean(r.get("hook_type")) or "n/a",
+               int(r.get("views") or 0), float(r["engagement"])))
+    return " ".join(parts)
 
 
 def extract_patterns(samples):
@@ -265,6 +429,12 @@ def apply_config(cfg, patterns_doc=None):
         pass
     try:
         prefix_parts.append(kill_switch_directive(cfg) or "")
+    except Exception:
+        pass
+    # MAX : few-shot reel (lecons TOP/WORST verbatim) - s'applique des
+    # qu'il y a 2 shorts mesurables, independamment des patterns stats.
+    try:
+        prefix_parts.append(few_shot_directive(cfg) or "")
     except Exception:
         pass
     prefix = " | ".join(p for p in prefix_parts if p)
@@ -735,6 +905,12 @@ def run_optimizer(cfg=None, samples=None):
             "n_samples": len(samples),
             **doc,
         }
+        # MAX : lecons persistantes (surviennent aux purges de snapshots)
+        # + nb expose dans patterns.json pour suivi.
+        try:
+            out["lessons"] = _append_lessons(cfg, samples)
+        except Exception as exc:
+            log.warning("lessons degradees: %s", exc)
         # V3 : etats persistants (kill switch, baseline, patterns actifs).
         # Chacun est no-fail et renvoie None en cas de souci ; ils restent
         # alimentes meme en 'pending' (des le 1er Short publie).

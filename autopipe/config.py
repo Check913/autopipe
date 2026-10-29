@@ -222,6 +222,34 @@ DEFAULTS = {
         # variant_id -> retention (data/hook_ab/assignments.jsonl).
         "enabled": True,
     },
+    "research": {
+        # MODULE 4 (2026-10-29) : benchmark quantitatif continu de la niche.
+        # Scraping yt-dlp (sans cle) des Shorts qui gagnent + canaux rivaux
+        # -> chiffres reels (durees, patterns de titres, velocite de vues)
+        # injectes dans les prompts. Differe du radar (sujets viraux a
+        # remaker) : ici on mesure COMMENT les gagnants gagnent.
+        "enabled": True,
+        "keywords": [],           # vide -> scout.keywords
+        "competitors": [],        # handles (@x) ou urls de canaux a espionner
+        "search_per_keyword": 15, # resultats flat par mot-cle
+        "competitor_max": 20,     # Shorts recents analyses par concurrent
+        "min_views": 100000,      # seuil "gagnant" pour l'analyse
+        "top_n": 20,              # taille de l'echantillon gagnant analyse
+        "cache_hours": 12,        # re-scrape apres ce delai
+        "pacing_seconds": 0.6,    # pause entre requetes (respect des cibles)
+    },
+    "monetization": {
+        # MODULE 5 (2026-10-29) : suivi YPP (Programme Partenaire YouTube)
+        # + ETA + revenus estimes. Sources : channels.list (abonnes),
+        # registre (vues Shorts 90 j), Analytics API (heures visionnage,
+        # si le token yt-analytics.readonly est present).
+        "enabled": True,
+        "check_hours": 12,        # frequence du check (cache progress.json)
+        "target_subs": 1000,
+        "target_shorts_views_90d": 10000000,
+        "target_watch_hours_12m": 4000,
+        "rpm_shorts_usd": 0.08,   # RPM Shorts estime ($ / 1000 vues)
+    },
     "network": {"proxy_mode": "direct"},
     "scheduler": {"interval_hours": 4, "state_file": "data/scheduler_state.json"},
 }
@@ -297,6 +325,9 @@ class Paths:
         self.trend = self.data / "trend"
         self.optimizer = self.data / "optimizer"
         self.hook_ab = self.data / "hook_ab"
+        self.registry = self.data / "registry"
+        self.research = self.data / "research"
+        self.monetization = self.data / "monetization"
         self.audio_cache = self.cache / "audio"
         self.video_cache = self.cache / "pexels"
 
@@ -304,6 +335,7 @@ class Paths:
         for d in (self.data, self.output, self.cache, self.scout,
                   self.ideas, self.remake, self.radar, self.analytics,
                   self.visual, self.trend, self.optimizer, self.hook_ab,
+                  self.registry, self.research, self.monetization,
                   self.audio_cache, self.video_cache):
             d.mkdir(parents=True, exist_ok=True)
         return self

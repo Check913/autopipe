@@ -90,6 +90,17 @@ def run_pipeline_once(config=None, do_upload=True, idea=None):
             log.warning("Trend Arbiter a echoue (non fatal):\n%s",
                         traceback.format_exc())
 
+    # 1.6 MODULE 4 (greffe non-cassante) : recherche continue. Scrute le
+    # web (yt-dlp flat, sans cle) pour MESURER comment les gagnants de la
+    # niche gagnent : durees, patterns de titres, familles de hooks,
+    # velocite de vues -> benchmarks chiffres pour les prompts (TTL cache).
+    try:
+        from . import research
+        research.run_research(cfg)
+    except Exception:
+        log.warning("Research a echoue (non fatal):\n%s",
+                    traceback.format_exc())
+
     # 1.8 Boucle retention (critique 2026-10-27) : metrique
     # averageViewPercentage (proxy Viewed vs Swiped Away) via Analytics
     # API - token SEPARÉ (yt-analytics.readonly), le token d'upload et la
@@ -110,6 +121,25 @@ def run_pipeline_once(config=None, do_upload=True, idea=None):
         optimizer.hook_before_batch(cfg)
     except Exception:
         log.warning("Optimizer hook a echoue (non fatal):\n%s",
+                    traceback.format_exc())
+
+    # 1.95 MODULE 4bis : directive research. APRES l'optimizer hook car
+    # apply_config() ECRASE cfg["ideas"|"remake"]["style_directive"] ; ici
+    # on CONCATENE les chiffres du marche a la directive finale du lot.
+    try:
+        from . import research
+        research.inject_directive(cfg)
+    except Exception:
+        log.warning("Research directive a echoue (non fatal):\n%s",
+                    traceback.format_exc())
+
+    # 1.97 MODULE 5 : suivi YPP (abonnes, vues Shorts 90 j, heures 12 m,
+    # ETA, revenus estimes). TTL cache + jamais fatal.
+    try:
+        from . import monetization
+        monetization.run_check(cfg)
+    except Exception:
+        log.warning("Monetization check a echoue (non fatal):\n%s",
                     traceback.format_exc())
 
     # 2. Idea + script. Si remake.enabled, on part d'un Short viral de la niche
@@ -171,6 +201,16 @@ def run_pipeline_once(config=None, do_upload=True, idea=None):
         video_id = upload_video(final, idea["title"], idea["description"],
                                 idea.get("tags", []), cfg, pinned_comment=comment)
         result["youtube_id"] = video_id
+        # MAX (2026-10-29) : memoire long-terme - TOUTE video publiee est
+        # ecrite au registre AVEC son idee complete (hook, pair_id, duree...)
+        # pour que l'optimizer, la retention et le hook A/B la joignent pour
+        # toujours (le backfill legacy ne restait que sur last_run.json).
+        try:
+            from .registry import register
+            register(idea, video_id, cfg)
+        except Exception:
+            log.warning("Registry register a echoue (non fatal):\n%s",
+                        traceback.format_exc())
         try:
             analytics.record([video_id], cfg)
         except Exception as exc:
@@ -331,6 +371,16 @@ def publish_pending_video(cfg, paths, pending, pending_file=None):
             post_pinned_comment(video_id, comment, cfg)
         except Exception as exc:
             log.warning("Commentaire non publie: %s", exc)
+    # MAX (2026-10-29) : registre alimente au moment de la publication
+    # (meme contrat que run_pipeline_once : une video publiee = une entree).
+    # pending ne contient qu'un idea_id + titre -> entree minimale, complete
+    # ensuite par enrich_from_idea/backfill depuis le fichier idea.
+    try:
+        from .registry import register
+        register({"id": pending.get("idea_id") or idea.get("id"),
+                  "title": title}, video_id, cfg)
+    except Exception as exc:
+        log.warning("Registry register (pending) echoue: %s", exc)
     try:
         analytics.record([video_id], cfg)
     except Exception as exc:

@@ -1,6 +1,7 @@
 """Suivi des performances des videos publiees (YouTube Data API)."""
 import datetime as dt
 import json
+import traceback
 
 from .config import get_config, get_paths
 from .util import get_logger, load_json, save_json
@@ -33,6 +34,16 @@ def stats_for(video_ids, cfg=None):
 
 
 def record(video_ids, cfg=None):
+    """Stats de la video fraichement publiee + UNION de toutes les autres.
+
+    FAILLE CORRIGEE 2026-10-29 : latest.json etait ECRASE avec la seule video
+    du run -> les videos precedentes devenaient invisibles (optimizer,
+    hook A/B et retention ne mesuraient que la derniere publication).
+    Desormais latest.json est un snapshot de TOUTES les videos connues du
+    registre (data/registry/published.json). Cote quota : videos.list coute
+    1 unite par appel pour <= 50 ids, donc rafraichir toute l'histoire ne
+    consomme quasi rien.
+    """
     cfg = cfg or get_config()
     paths = get_paths(cfg)
     rows = stats_for(video_ids, cfg)
@@ -43,8 +54,20 @@ def record(video_ids, cfg=None):
     with open(hist, "a", encoding="utf-8") as fh:
         for r in rows:
             fh.write(json.dumps(r, ensure_ascii=False) + "\n")
+    # Union : complete le snapshot avec TOUTES les autres videos connues
+    # (registre) non couvertes par la reponse ci-dessus.
+    try:
+        from .registry import all_ids
+        known = {str(r["id"]) for r in rows if r.get("id")}
+        missing = [i for i in all_ids(cfg) if i not in known]
+        if missing:
+            rows = rows + stats_for(missing, cfg)
+            log.info("Union registre: +%s video(s) au snapshot", len(missing))
+    except Exception:
+        log.warning("Union registre ratee (latest.json reste mono-video):\n%s",
+                    traceback.format_exc())
     save_json(paths.analytics / "latest.json", rows)
-    log.info("Stats enregistrees: %s videos", len(rows))
+    log.info("Stats enregistrees: %s videos (snapshot union)", len(rows))
     return rows
 
 
@@ -412,14 +435,30 @@ def retention_for(video_ids, cfg=None, days=28):
 def refresh_retention(cfg=None):
     """Rafraichit la retention de toutes les videos connues (non fatal).
 
-    Sources d'ids: data/analytics/latest.json (record). Ecrit
-    data/analytics/retention_latest.json + history_retention.jsonl,
+    FAILLE CORRIGEE 2026-10-29 : les ids venaient de latest.json (snapshot
+    de la seule derniere video) -> toute l'histoire etait perdue pour le
+    hook A/B et l'optimizer. Desormais source = REGISTRE permanent
+    (data/registry/published.json), backfill lourd inclus au premier appel.
+    Ecrit data/analytics/retention_latest.json + history_retention.jsonl,
     et calcule un diagnostic hook (cible 70 %).
     """
     cfg = cfg or get_config()
     paths = get_paths(cfg)
-    latest = load_json(paths.analytics / "latest.json", []) or []
-    ids = [r.get("id") for r in latest if isinstance(r, dict) and r.get("id")]
+    ids = []
+    try:
+        from .registry import all_ids as registry_ids
+        # refresh=True : backfill lourd du registre depuis les sources
+        # historiques (hook_ab, history.jsonl, last_run) a la 1re fois,
+        # idempotent ensuite.
+        ids = registry_ids(cfg, refresh=True)
+    except Exception:
+        log.warning("Registre indisponible pour la retention:\n%s",
+                    traceback.format_exc())
+    if not ids:
+        latest = load_json(paths.analytics / "latest.json", []) or []
+        ids = [r.get("id") for r in latest
+               if isinstance(r, dict) and r.get("id")]
+    ids = [i for i in ids if i]
     if not ids:
         return {"status": "no_videos"}
     rows = retention_for(ids, cfg)
