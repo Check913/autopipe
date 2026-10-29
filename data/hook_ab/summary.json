@@ -1,25 +1,25 @@
 {
   "status": "ok",
-  "pairs": 9,
+  "pairs": 12,
   "joined": 0,
   "variants": {
     "A": {
-      "assigned": 5,
+      "assigned": 6,
       "measured": 0,
       "mean_engagement": null,
       "mean_views": null,
       "families": {
-        "statement": 4,
+        "statement": 5,
         "question": 1
       }
     },
     "B": {
-      "assigned": 4,
+      "assigned": 6,
       "measured": 0,
       "mean_engagement": null,
       "mean_views": null,
       "families": {
-        "question": 3,
+        "question": 5,
         "number": 1
       }
     }
@@ -150,7 +150,49 @@
       "video_id": null,
       "engagement": null,
       "views": null
+    },
+    {
+      "ts": "2026-10-28T20:03:01",
+      "pair_id": "pair_20261028_0010",
+      "topic": "The Scientific Method",
+      "variant": "B",
+      "hook": "Why does nobody explain The Scientific Method like this?",
+      "family": "question",
+      "family_other": "statement",
+      "hook_a": "The Scientific Method actually demands you *try* to prove",
+      "hook_b": "Why does nobody explain The Scientific Method like this?",
+      "video_id": "Q0-al_RfiNE",
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-10-28T20:03:03",
+      "pair_id": "pair_20261028_0011",
+      "topic": "Someone's Outside In The Field... [Tales Of Fear]",
+      "variant": "A",
+      "hook": "Stealing thunder is to use someone else's idea for one's",
+      "family": "statement",
+      "family_other": "question",
+      "hook_a": "Stealing thunder is to use someone else's idea for one's",
+      "hook_b": "Why does nobody explain Someone's Outside In The like this?",
+      "video_id": null,
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-10-28T20:03:05",
+      "pair_id": "pair_20261028_0012",
+      "topic": "5 SAAL Future mein Teleport Hogya Ye PLANE 🚀⏳ Manifest Sci-fi Series Explained",
+      "variant": "B",
+      "hook": "Why does nobody explain SAAL Future mein Teleport like this?",
+      "family": "question",
+      "family_other": "number",
+      "hook_a": "Nobody talks about 5 SAAL Future mein Teleport Hogya Ye",
+      "hook_b": "Why does nobody explain SAAL Future mein Teleport like this?",
+      "video_id": null,
+      "engagement": null,
+      "views": null
     }
   ],
-  "fetched": "2026-10-28T20:01:38"
+  "fetched": "2026-10-29T00:39:23"
 }

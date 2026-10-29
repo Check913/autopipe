@@ -1,0 +1,46 @@
+{
+  "title": "This Molasses Flood Killed 21 People?",
+  "hook": "Nobody warned you about 🎬This is the most shocking",
+  "script": "Imagine a 25-foot wave, not of water, but of sticky, brown molasses, crashing through your city streets. That's exactly what happened in Boston on January 15th, 1919, in one of history's most bizarre disasters. A giant storage tank, holding 2.3 million gallons of molasses, suddenly ruptured. This sugary tsunami, 25 feet high and 160 feet wide, surged through the North End at 35 miles per hour. It demolished buildings, crushing people and horses, and even derailed a train. Twenty-one people died, and 150 were injured in the sticky chaos. Rescuers struggled through the knee-deep goo, making recovery efforts incredibly difficult. The cleanup took weeks, and the area smelled of molasses for decades, especially on warm days. This shocking true story led to landmark legal cases and stricter building codes, proving even the sweetest substance can be deadly. It's truly wild to think a 25-foot wave, not of water, but of sticky, brown molasses, could crash through city streets.",
+  "comment": "Could a disaster like the Molasses Flood ever happen again today?",
+  "description": "Dive into the unbelievable true story of Boston's Great Molasses Flood of 1919. A 25-foot wave of molasses caused unimaginable destruction and loss of life.\nDiscover how this bizarre historical event shaped city safety and left a lasting, sweet-smelling legacy. #MolassesFlood #AmazingFacts #HistoryShock",
+  "tags": [
+    "molasses flood",
+    "boston history",
+    "true story",
+    "amazing facts",
+    "historical disaster",
+    "1919 events",
+    "strange facts",
+    "unbelievable",
+    "science explained",
+    "weird history",
+    "tragic events",
+    "urban legends"
+  ],
+  "density": 4,
+  "duration_format": "long",
+  "duration_target": 60,
+  "duration_range": [
+    50,
+    60
+  ],
+  "source_topic": "🎬This is the most shocking TRUE STORY you’ve ever seen! 😱 Watch and see for yourself",
+  "generator": "llm:gemini-2.5-flash",
+  "score": 120.7,
+  "pair_id": "pair_20261029_0014",
+  "hook_variant": "B",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "A 25-foot molasses wave killed 21 in Boston.",
+      "family": "number"
+    },
+    {
+      "variant": "B",
+      "hook": "Nobody warned you about 🎬This is the most shocking",
+      "family": "negation"
+    }
+  ],
+  "id": "20261029-004004-02"
+}

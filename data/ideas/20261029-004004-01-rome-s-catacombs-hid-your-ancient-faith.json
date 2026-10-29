@@ -1,0 +1,46 @@
+{
+  "title": "Rome's Catacombs Hid YOUR Ancient Faith",
+  "hook": "12 Million Bodies Hid Rome's Early Christians",
+  "script": "Beneath Rome, a hidden city of 12 million bodies protected early Christians from persecution. These vast, underground labyrinths, stretching for hundreds of miles, weren't just tombs. They were secret sanctuaries where faith thrived despite constant threats. Imagine worship services held in dimly lit chambers, families burying their loved ones, and leaders secretly gathering, all while Roman authorities hunted them above ground. The catacombs became a symbol of resilience, a testament to unwavering belief in the face of death. For nearly 300 years, from the 2nd to the 5th centuries, these tunnels safeguarded a fledgling faith. They weren't just burial sites; they were living archives of courage. Early Christians faced brutal persecution, but in these subterranean passages, their community grew. They etched symbols of hope and resurrection onto the walls, affirming their beliefs. This incredible history reminds us how deeply faith can take root, even in the darkest places, just like this hidden city of 12 million bodies protected early Christians from persecution.",
+  "comment": "Could you imagine practicing your faith in secret like the early Christians?",
+  "description": "Discover the incredible true story of Rome's ancient catacombs, where early Christians bravely practiced their faith in secret. These underground tunnels became a sanctuary from persecution and a testament to enduring belief.\n#AmazingFacts #Catacombs #AncientHistory",
+  "tags": [
+    "amazing facts",
+    "catacombs",
+    "Rome",
+    "ancient Rome",
+    "early Christians",
+    "Christian history",
+    "faith",
+    "persecution",
+    "underground city",
+    "Doug Batchelor",
+    "history explained",
+    "secret tunnels"
+  ],
+  "density": 4,
+  "duration_format": "long",
+  "duration_target": 60,
+  "duration_range": [
+    50,
+    60
+  ],
+  "source_topic": "Amazing Facts of Faith - The Catacombs with Doug Batchelor",
+  "generator": "llm:gemini-2.5-flash",
+  "score": 127.8,
+  "pair_id": "pair_20261029_0013",
+  "hook_variant": "A",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "12 Million Bodies Hid Rome's Early Christians",
+      "family": "number"
+    },
+    {
+      "variant": "B",
+      "hook": "Nobody warned you about Amazing Facts of Faith The",
+      "family": "negation"
+    }
+  ],
+  "id": "20261029-004004-01"
+}

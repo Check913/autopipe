@@ -1,0 +1,45 @@
+{
+  "title": "Your Brain Can't Grasp True Evil",
+  "hook": "Your brain literally can't comprehend true evil.",
+  "script": "Your brain literally can't comprehend true evil. Studies show our minds downplay truly disturbing acts as a defense mechanism. This explains why some true crime stories feel unreal, yet they're absolutely factual. Your brain literally can't comprehend true evil.",
+  "comment": "What's the most unbelievable true crime fact you've heard?",
+  "description": "Ever wonder why some true crime stories just don't feel real? It's your brain protecting you. Discover the amazing psychology behind how we process disturbing facts.\n#AmazingFacts #TrueCrimePsychology #BrainFacts",
+  "tags": [
+    "amazing facts",
+    "brain facts",
+    "psychology",
+    "true crime",
+    "disturbing facts",
+    "human brain",
+    "mental health",
+    "cognitive bias",
+    "unbelievable facts",
+    "shorts",
+    "youtube shorts"
+  ],
+  "density": 2,
+  "duration_format": "short",
+  "duration_target": 13,
+  "duration_range": [
+    12,
+    18
+  ],
+  "source_topic": "CAUTION!!! This Story Is Extremely Disturbing | True Crime Documentary",
+  "generator": "llm:gemini-2.5-flash",
+  "score": 98.5,
+  "pair_id": "pair_20261029_0015",
+  "hook_variant": "A",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "Your brain literally can't comprehend true evil.",
+      "family": "statement"
+    },
+    {
+      "variant": "B",
+      "hook": "Why does nobody explain CAUTION!!! This Story Is like this?",
+      "family": "question"
+    }
+  ],
+  "id": "20261029-004004-03"
+}

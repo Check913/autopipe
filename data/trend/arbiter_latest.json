@@ -1,113 +1,113 @@
 {
-  "fetched": "2026-10-28T20:01:38",
+  "fetched": "2026-10-29T00:39:23",
   "geo": "",
   "topics": [
     {
-      "query": "venezia fc vs inter milan standings",
-      "traffic": 500.0,
+      "query": "jacob misiorowski",
+      "traffic": 20000.0,
       "rise": 10.0,
-      "saturation_views": 791.0,
-      "momentum": 5.2531
+      "saturation_views": 67965.0,
+      "momentum": 2.6094
     },
     {
-      "query": "weil gotshal & manges",
-      "traffic": 500.0,
+      "query": "drew rasmussen",
+      "traffic": 2000.0,
       "rise": 10.0,
-      "saturation_views": 3510.0,
-      "momentum": 3.9269
+      "saturation_views": 115563.0,
+      "momentum": 2.4613
     },
     {
-      "query": "lewis uvwo",
-      "traffic": 500.0,
-      "rise": 10.0,
-      "saturation_views": 15247.0,
-      "momentum": 3.1412
-    },
-    {
-      "query": "leverkusen vs nürnberg",
-      "traffic": 200.0,
-      "rise": 10.0,
-      "saturation_views": 29132.0,
-      "momentum": 2.8864
-    },
-    {
-      "query": "learner tien",
-      "traffic": 200.0,
-      "rise": 10.0,
-      "saturation_views": 148686.0,
-      "momentum": 2.3968
-    },
-    {
-      "query": "porto vs académico de viseu",
-      "traffic": 200.0,
-      "rise": 10.0,
-      "saturation_views": 159629.0,
-      "momentum": 2.3792
-    },
-    {
-      "query": "sunshine protection act",
+      "query": "arkansas basketball",
       "traffic": 1000.0,
       "rise": 10.0,
-      "saturation_views": 167970.0,
-      "momentum": 2.3667
+      "saturation_views": 263263.0,
+      "momentum": 2.2622
     },
     {
-      "query": "kyle larson",
-      "traffic": 5000.0,
+      "query": "jumanji open world",
+      "traffic": 1000.0,
       "rise": 10.0,
-      "saturation_views": 638067.0,
-      "momentum": 2.0812
+      "saturation_views": 274838.0,
+      "momentum": 2.2527
     },
     {
-      "query": "arsenal vs benfica",
-      "traffic": 500.0,
-      "rise": 10.0,
-      "saturation_views": 713897.0,
-      "momentum": 2.0603
-    },
-    {
-      "query": "jimmy carr",
+      "query": "where to watch san antonio spurs vs utah jazz",
       "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 6158807.0,
-      "momentum": 1.7273
+      "saturation_views": 388435.0,
+      "momentum": 2.179
+    },
+    {
+      "query": "war",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 430727.0,
+      "momentum": 2.1579
+    },
+    {
+      "query": "nba games today",
+      "traffic": 5000.0,
+      "rise": 10.0,
+      "saturation_views": 1382303.0,
+      "momentum": 1.9453
+    },
+    {
+      "query": "foxone",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 1754601.0,
+      "momentum": 1.9069
+    },
+    {
+      "query": "earthquake near me",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 5063464.0,
+      "momentum": 1.753
+    },
+    {
+      "query": "earthquake",
+      "traffic": 2000.0,
+      "rise": 10.0,
+      "saturation_views": 28987619.0,
+      "momentum": 1.5475
     }
   ],
   "top": [
     {
-      "query": "venezia fc vs inter milan standings",
-      "traffic": 500.0,
+      "query": "jacob misiorowski",
+      "traffic": 20000.0,
       "rise": 10.0,
-      "saturation_views": 791.0,
-      "momentum": 5.2531
+      "saturation_views": 67965.0,
+      "momentum": 2.6094
     },
     {
-      "query": "weil gotshal & manges",
-      "traffic": 500.0,
+      "query": "drew rasmussen",
+      "traffic": 2000.0,
       "rise": 10.0,
-      "saturation_views": 3510.0,
-      "momentum": 3.9269
+      "saturation_views": 115563.0,
+      "momentum": 2.4613
     },
     {
-      "query": "lewis uvwo",
-      "traffic": 500.0,
+      "query": "arkansas basketball",
+      "traffic": 1000.0,
       "rise": 10.0,
-      "saturation_views": 15247.0,
-      "momentum": 3.1412
+      "saturation_views": 263263.0,
+      "momentum": 2.2622
     },
     {
-      "query": "leverkusen vs nürnberg",
+      "query": "jumanji open world",
+      "traffic": 1000.0,
+      "rise": 10.0,
+      "saturation_views": 274838.0,
+      "momentum": 2.2527
+    },
+    {
+      "query": "where to watch san antonio spurs vs utah jazz",
       "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 29132.0,
-      "momentum": 2.8864
-    },
-    {
-      "query": "learner tien",
-      "traffic": 200.0,
-      "rise": 10.0,
-      "saturation_views": 148686.0,
-      "momentum": 2.3968
+      "saturation_views": 388435.0,
+      "momentum": 2.179
     }
   ]
 }

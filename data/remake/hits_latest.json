@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-28T20:01:46.648915",
+  "date": "2026-10-29T00:39:30.122051",
   "region": "US",
   "language": "en",
   "keywords": [
@@ -9,53 +9,26 @@
   ],
   "min_views": 500000,
   "max_duration": 75,
-  "total_found": 44,
-  "rejected": 37,
+  "total_found": 42,
+  "rejected": 40,
   "hits": [
     {
-      "id": "FqkyMSDm-HY",
-      "title": "ANTIMATTER — explained in 60sec #Shorts #Science",
-      "channel": "ABC Science",
-      "views": 8556,
+      "id": "9spifqMjZCE",
+      "title": "Amazing Facts TV",
+      "channel": "AmazingFacts",
+      "views": 377813,
+      "duration": 0.0,
+      "url": "https://www.youtube.com/watch?v=9spifqMjZCE",
+      "query": "ytsearch10:amazing facts #shorts"
+    },
+    {
+      "id": "9sueQEfMzJ4",
+      "title": "A Priceless Pearl 2026 | Amazing Facts",
+      "channel": "AmazingFacts",
+      "views": 3377,
       "duration": 61.0,
-      "url": "https://www.youtube.com/watch?v=FqkyMSDm-HY",
-      "query": "ytsearch10:science explained #shorts"
-    },
-    {
-      "id": "Bc8VlQ7sWTg",
-      "title": "🇺🇸 7 Amazing Facts About the USA That Will Surprise You! 🤯🔥 #Shorts",
-      "channel": "CrazyFacts USA 2.0",
-      "views": 2,
-      "duration": 11.0,
-      "url": "https://www.youtube.com/watch?v=Bc8VlQ7sWTg",
+      "url": "https://www.youtube.com/watch?v=9sueQEfMzJ4",
       "query": "ytsearch10:amazing facts shorts"
-    },
-    {
-      "id": "wJCB9nfSmss",
-      "title": "These Rocks Move by Themselves?! 😱 The Death Valley Mystery #Shorts",
-      "channel": "World Facts Hub",
-      "views": 2,
-      "duration": 47.0,
-      "url": "https://www.youtube.com/watch?v=wJCB9nfSmss",
-      "query": "ytsearch10:amazing facts shorts"
-    },
-    {
-      "id": "VnGs0MaGQ5E",
-      "title": "3 Amazing Facts About America 🇺🇸 | Did You Know? #shorts",
-      "channel": " USA Fact Zone",
-      "views": 2,
-      "duration": 46.0,
-      "url": "https://www.youtube.com/watch?v=VnGs0MaGQ5E",
-      "query": "ytsearch10:amazing facts shorts"
-    },
-    {
-      "id": "s-3H8R2doBA",
-      "title": "Emily Carter Vanished at 3:17 AM - Full Story On My Channel #shorts",
-      "channel": "Whispers At Midnight ",
-      "views": 2,
-      "duration": 23.0,
-      "url": "https://www.youtube.com/watch?v=s-3H8R2doBA",
-      "query": "ytsearch10:true story #shorts"
     }
   ]
 }
