@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-29T00:39:30.122051",
+  "date": "2026-10-29T20:01:47.832712",
   "region": "US",
   "language": "en",
   "keywords": [
@@ -9,26 +9,54 @@
   ],
   "min_views": 500000,
   "max_duration": 75,
-  "total_found": 42,
+  "total_found": 45,
   "rejected": 40,
   "hits": [
     {
-      "id": "9spifqMjZCE",
-      "title": "Amazing Facts TV",
-      "channel": "AmazingFacts",
-      "views": 377813,
-      "duration": 0.0,
-      "url": "https://www.youtube.com/watch?v=9spifqMjZCE",
-      "query": "ytsearch10:amazing facts #shorts"
+      "id": "zbAdXnuLGOU",
+      "title": "THE BOY & THE JINN - SCARY TRUE STORY #shorts",
+      "channel": "One Islam Productions",
+      "views": 33950,
+      "duration": 61.0,
+      "url": "https://www.youtube.com/watch?v=zbAdXnuLGOU",
+      "query": "ytsearch10:true story shorts"
+    },
+    {
+      "id": "FqkyMSDm-HY",
+      "title": "ANTIMATTER — explained in 60sec #Shorts #Science",
+      "channel": "ABC Science",
+      "views": 8557,
+      "duration": 61.0,
+      "url": "https://www.youtube.com/watch?v=FqkyMSDm-HY",
+      "query": "ytsearch10:science explained #shorts"
+    },
+    {
+      "id": "yTZxqJjxciE",
+      "title": "बच्चे ना देखे 🫢 ये 18 + 🔥💯",
+      "channel": "X Ahha",
+      "views": 7608,
+      "duration": 37.0,
+      "url": "https://www.youtube.com/watch?v=yTZxqJjxciE",
+      "query": "radar:youtube",
+      "score": 190.2
     },
     {
       "id": "9sueQEfMzJ4",
       "title": "A Priceless Pearl 2026 | Amazing Facts",
       "channel": "AmazingFacts",
-      "views": 3377,
+      "views": 3380,
       "duration": 61.0,
       "url": "https://www.youtube.com/watch?v=9sueQEfMzJ4",
       "query": "ytsearch10:amazing facts shorts"
+    },
+    {
+      "id": "9spifqMjZCE",
+      "title": "Amazing Facts TV",
+      "channel": "AmazingFacts",
+      "views": 0,
+      "duration": 0.0,
+      "url": "https://www.youtube.com/watch?v=9spifqMjZCE",
+      "query": "ytsearch10:amazing facts #shorts"
     }
   ]
 }

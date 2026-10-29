@@ -1,26 +1,28 @@
 {
   "status": "ok",
-  "pairs": 12,
+  "pairs": 15,
   "joined": 0,
   "variants": {
     "A": {
-      "assigned": 6,
+      "assigned": 8,
       "measured": 0,
       "mean_engagement": null,
       "mean_views": null,
       "families": {
-        "statement": 5,
-        "question": 1
+        "statement": 6,
+        "question": 1,
+        "number": 1
       }
     },
     "B": {
-      "assigned": 6,
+      "assigned": 7,
       "measured": 0,
       "mean_engagement": null,
       "mean_views": null,
       "families": {
         "question": 5,
-        "number": 1
+        "number": 1,
+        "negation": 1
       }
     }
   },
@@ -192,7 +194,49 @@
       "video_id": null,
       "engagement": null,
       "views": null
+    },
+    {
+      "ts": "2026-10-29T00:39:39",
+      "pair_id": "pair_20261029_0013",
+      "topic": "Amazing Facts of Faith - The Catacombs with Doug Batchelor",
+      "variant": "A",
+      "hook": "12 Million Bodies Hid Rome's Early Christians",
+      "family": "number",
+      "family_other": "negation",
+      "hook_a": "12 Million Bodies Hid Rome's Early Christians",
+      "hook_b": "Nobody warned you about Amazing Facts of Faith The",
+      "video_id": "Jnluda0VHEI",
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-10-29T00:39:50",
+      "pair_id": "pair_20261029_0014",
+      "topic": "🎬This is the most shocking TRUE STORY you’ve ever seen! 😱 Watch and see for yourself",
+      "variant": "B",
+      "hook": "Nobody warned you about 🎬This is the most shocking",
+      "family": "negation",
+      "family_other": "number",
+      "hook_a": "A 25-foot molasses wave killed 21 in Boston.",
+      "hook_b": "Nobody warned you about 🎬This is the most shocking",
+      "video_id": null,
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-10-29T00:40:04",
+      "pair_id": "pair_20261029_0015",
+      "topic": "CAUTION!!! This Story Is Extremely Disturbing | True Crime Documentary",
+      "variant": "A",
+      "hook": "Your brain literally can't comprehend true evil.",
+      "family": "statement",
+      "family_other": "question",
+      "hook_a": "Your brain literally can't comprehend true evil.",
+      "hook_b": "Why does nobody explain CAUTION!!! This Story Is like this?",
+      "video_id": null,
+      "engagement": null,
+      "views": null
     }
   ],
-  "fetched": "2026-10-29T00:39:23"
+  "fetched": "2026-10-29T20:01:36"
 }

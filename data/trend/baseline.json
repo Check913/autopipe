@@ -1235,5 +1235,135 @@
         500.0
       ]
     ]
+  },
+  "copa del rey": {
+    "traffic": 500.0,
+    "first_seen": "2026-10-29T20:01:27",
+    "last_seen": "2026-10-29T20:01:27",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-29T20:01:27",
+        500.0
+      ]
+    ]
+  },
+  "patrick stewart": {
+    "traffic": 50000.0,
+    "first_seen": "2026-10-29T20:01:27",
+    "last_seen": "2026-10-29T20:01:27",
+    "delta": 50000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-29T20:01:27",
+        50000.0
+      ]
+    ]
+  },
+  "joe buck": {
+    "traffic": 1000.0,
+    "first_seen": "2026-10-29T20:01:27",
+    "last_seen": "2026-10-29T20:01:27",
+    "delta": 1000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-29T20:01:27",
+        1000.0
+      ]
+    ]
+  },
+  "poké ball pattern vivillon distribution": {
+    "traffic": 500.0,
+    "first_seen": "2026-10-29T20:01:27",
+    "last_seen": "2026-10-29T20:01:27",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-29T20:01:27",
+        500.0
+      ]
+    ]
+  },
+  "halle berry": {
+    "traffic": 2000.0,
+    "first_seen": "2026-10-29T20:01:27",
+    "last_seen": "2026-10-29T20:01:27",
+    "delta": 2000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-29T20:01:27",
+        2000.0
+      ]
+    ]
+  },
+  "ford fathom": {
+    "traffic": 500.0,
+    "first_seen": "2026-10-29T20:01:27",
+    "last_seen": "2026-10-29T20:01:27",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-29T20:01:27",
+        500.0
+      ]
+    ]
+  },
+  "fiorentina vs atalanta": {
+    "traffic": 1000.0,
+    "first_seen": "2026-10-29T20:01:27",
+    "last_seen": "2026-10-29T20:01:27",
+    "delta": 1000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-29T20:01:27",
+        1000.0
+      ]
+    ]
+  },
+  "fiorentina - atalanta": {
+    "traffic": 1000.0,
+    "first_seen": "2026-10-29T20:01:27",
+    "last_seen": "2026-10-29T20:01:27",
+    "delta": 1000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-29T20:01:27",
+        1000.0
+      ]
+    ]
+  },
+  "knights will be knights": {
+    "traffic": 200.0,
+    "first_seen": "2026-10-29T20:01:27",
+    "last_seen": "2026-10-29T20:01:27",
+    "delta": 200.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-29T20:01:27",
+        200.0
+      ]
+    ]
+  },
+  "mark cuban": {
+    "traffic": 1000.0,
+    "first_seen": "2026-10-29T20:01:27",
+    "last_seen": "2026-10-29T20:01:27",
+    "delta": 1000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-29T20:01:27",
+        1000.0
+      ]
+    ]
   }
 }

@@ -1,0 +1,35 @@
+{
+  "title": "How Zombie Biology Explained Took Over So Fast",
+  "hook": "Why does nobody explain Zombie Biology Explained like this?",
+  "script": "Ophiocordyceps unilateralis, commonly known as zombie-ant fungus, is an insect-pathogenic fungus, discovered by the British naturalist Alfred Russel Wallace in 1859.\nThat is not a guess – it is what the science actually says.\nZombie ants, infected by the Ophiocordyceps unilateralis fungus, are predominantly found in tropical rainforests.\nMost people have never heard this.\nAnd that is the real story of Zombie Biology Explained | The Science of Zombism.",
+  "comment": "Be honest: did you already know this?",
+  "description": "How Zombie Biology Explained Took Over So Fast\nThe real facts, in 30 seconds.\n#shorts #facts #didyouknow",
+  "tags": [
+    "shorts",
+    "Zombie Biology Explained | The Science o",
+    "facts",
+    "didyouknow",
+    "mind blowing"
+  ],
+  "duration_target": 13,
+  "duration_format": "short",
+  "density": 1,
+  "source_topic": "Zombie Biology Explained | The Science of Zombism",
+  "generator": "fallback+wiki",
+  "score": 1619.0,
+  "pair_id": "pair_20261029_0016",
+  "hook_variant": "B",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "Ophiocordyceps unilateralis, commonly known as zombie-ant",
+      "family": "statement"
+    },
+    {
+      "variant": "B",
+      "hook": "Why does nobody explain Zombie Biology Explained like this?",
+      "family": "question"
+    }
+  ],
+  "id": "20261029-200205-01"
+}
