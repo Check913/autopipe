@@ -1,0 +1,305 @@
+{
+  "videos": {
+    "PCyc1j7hQ1s": {
+      "title": "Physics Explained Like You Are 5 Years Old",
+      "published_at": "2026-10-29T20:33:01.189764+00:00",
+      "source": "hook_ab",
+      "pair_id": "pair_20261027_0001",
+      "source_topic": "Physics Explained Like You Are 5 Years Old",
+      "alt_titles": [
+        "Why Is Space So Quiet?"
+      ]
+    },
+    "2PksSqFQ9uU": {
+      "title": "How Decision Making is Actually Science: Game Theory Explained",
+      "published_at": "2026-10-29T20:33:01.189764+00:00",
+      "source": "hook_ab",
+      "pair_id": "pair_20261027_0004",
+      "source_topic": "How Decision Making is Actually Science: Game Theory Explained",
+      "alt_titles": [
+        "You Won't Believe How Decision Making is Did This"
+      ]
+    },
+    "dY8f7PRh71k": {
+      "title": "Amazing Unknown Facts About Kolkata! 😱 | Kolkata Amazing Facts",
+      "published_at": "2026-10-29T20:33:01.189764+00:00",
+      "source": "hook_ab",
+      "pair_id": "pair_20261028_0007",
+      "source_topic": "Amazing Unknown Facts About Kolkata! 😱 | Kolkata Amazing Facts",
+      "alt_titles": [
+        "Kolkata's Bridge Has NO Nuts OR Bolts?"
+      ]
+    },
+    "Q0-al_RfiNE": {
+      "title": "The Scientific Method",
+      "published_at": "2026-10-29T20:33:01.189764+00:00",
+      "source": "hook_ab",
+      "pair_id": "pair_20261028_0010",
+      "source_topic": "The Scientific Method",
+      "alt_titles": [
+        "This Scientific Method Secret Changes Everything"
+      ]
+    },
+    "Jnluda0VHEI": {
+      "title": "Amazing Facts of Faith - The Catacombs with Doug Batchelor",
+      "published_at": "2026-10-29T20:33:01.189764+00:00",
+      "source": "hook_ab",
+      "pair_id": "pair_20261029_0013",
+      "source_topic": "Amazing Facts of Faith - The Catacombs with Doug Batchelor",
+      "alt_titles": [
+        "Rome's Catacombs Hid YOUR Ancient Faith"
+      ]
+    },
+    "2rplet7RjXs": {
+      "title": "Zombie Biology Explained | The Science of Zombism",
+      "published_at": "2026-10-29T20:33:01.189764+00:00",
+      "source": "hook_ab",
+      "pair_id": "pair_20261029_0016",
+      "source_topic": "Zombie Biology Explained | The Science of Zombism",
+      "alt_titles": [
+        "How Zombie Biology Explained Took Over So Fast",
+        "How Zombie Biology Explained Took Over So Fast",
+        "How Zombie Biology Explained Took Over So Fast"
+      ],
+      "idea_id": "20261029-200205-01",
+      "hook": "Why does nobody explain Zombie Biology Explained like this?",
+      "hook_variant": "B",
+      "duration_format": "short",
+      "density": 1,
+      "duration_target": 13,
+      "generator": "fallback+wiki",
+      "tags": [
+        "shorts",
+        "Zombie Biology Explained | The Science o",
+        "facts",
+        "didyouknow",
+        "mind blowing"
+      ]
+    },
+    "bAaEIEQf5e4": {
+      "title": "Ariana Grande's Music Hides a Shocking Secret",
+      "published_at": "2026-10-24T15:05:31Z",
+      "source": "history",
+      "idea_id": "20261024-150259-01",
+      "hook": "Ariana Grande's songs aren't just catchy tunes; they're her ",
+      "duration_target": 38,
+      "generator": "llm:gemini-2.5-flash",
+      "source_topic": "Ariana Grande - true story (lyric visualizer)",
+      "tags": [
+        "Ariana Grande",
+        "pop music",
+        "music facts",
+        "true story",
+        "lyric meaning",
+        "songwriting",
+        "celebrity secrets",
+        "amazing facts",
+        "pop culture",
+        "music industry",
+        "thank u next",
+        "eternal sunshine"
+      ]
+    },
+    "3P6EVtK_zyE": {
+      "title": "Why Is Nobody Talking About Nature of Science?",
+      "published_at": "2026-10-24T21:01:58Z",
+      "source": "history",
+      "idea_id": "20261024-210017-01",
+      "hook": "Philosophy of science is the branch of philosophy concerned",
+      "duration_target": 40,
+      "generator": "fallback+wiki",
+      "source_topic": "Nature of Science",
+      "tags": [
+        "shorts",
+        "Nature of Science",
+        "facts",
+        "didyouknow",
+        "mind blowing"
+      ]
+    },
+    "t0RUmUMuqN8": {
+      "title": "Armageddon: The True Story Nobody Tells",
+      "published_at": "2026-10-24T21:05:44Z",
+      "source": "history",
+      "idea_id": "20261024-210326-01",
+      "hook": "Armageddon isn't about bombs, but a spiritual battle.",
+      "duration_target": 38,
+      "generator": "llm:gemini-2.5-flash",
+      "source_topic": "Armageddon and the Final Events of Bible Prophecy | Doug Batchelor (Amazing Facts)",
+      "tags": [
+        "Armageddon",
+        "Bible Prophecy",
+        "End Times",
+        "Revelation",
+        "Spiritual Warfare",
+        "Amazing Facts",
+        "Doug Batchelor",
+        "Final Events",
+        "Christianity",
+        "Biblical Truth",
+        "Prophecy Explained",
+        "Faceless Shorts"
+      ]
+    },
+    "XVqWJZe6O1Q": {
+      "title": "The Hidden Truth About BIOLOGY explained in 17 Minutes",
+      "published_at": "2026-10-25T21:04:06Z",
+      "source": "history",
+      "idea_id": "20261025-210034-01",
+      "hook": "Biology is the scientific study of life and living",
+      "duration_target": 40,
+      "generator": "fallback+wiki",
+      "source_topic": "BIOLOGY explained in 17 Minutes",
+      "tags": [
+        "shorts",
+        "BIOLOGY explained in 17 Minutes",
+        "facts",
+        "didyouknow",
+        "mind blowing"
+      ]
+    },
+    "LxsigBjC0y8": {
+      "title": "True Stories Reveal This Brain Secret",
+      "published_at": "2026-10-25T21:07:59Z",
+      "source": "history",
+      "idea_id": "20261025-210514-01",
+      "hook": "Did you know true stories activate parts of your brain no ot",
+      "duration_target": 39,
+      "generator": "llm:gemini-2.5-flash",
+      "source_topic": "True Story (Official Music Video) - Timaya | Official Timaya",
+      "tags": [
+        "true stories",
+        "brain facts",
+        "neuroscience",
+        "psychology",
+        "storytelling",
+        "amazing facts",
+        "human brain",
+        "oxytocin",
+        "empathy",
+        "real life stories",
+        "science explained",
+        "mind blowing facts"
+      ]
+    },
+    "LpXgT934lS4": {
+      "title": "Tenet's Secret: Your Future Is Already Written",
+      "published_at": "2026-10-26T06:45:30Z",
+      "source": "history",
+      "idea_id": "20261026-064250-01",
+      "hook": "Forget time travel; what if your future is already decided?",
+      "duration_target": 42,
+      "generator": "llm:gemini-2.5-flash",
+      "source_topic": "The Science Behind TENET Explained | Time Travel, Block Universe Theory And Entropy",
+      "tags": [
+        "Tenet",
+        "Time Travel",
+        "Block Universe",
+        "Entropy",
+        "Physics Facts",
+        "Science Explained",
+        "Christopher Nolan",
+        "Future Is Fixed",
+        "Mind Blown",
+        "Amazing Facts"
+      ]
+    },
+    "hhMDQwvzpF8": {
+      "title": "Venus Has a Bizarre Time Anomaly",
+      "published_at": "2026-10-26T18:48:50Z",
+      "source": "history",
+      "idea_id": "20261026-184721-01",
+      "hook": "On Venus, a single day lasts longer than its entire year.",
+      "duration_target": 38,
+      "generator": "llm:gemini-2.5-flash",
+      "source_topic": "Everything You Want to Know About Planets | How the Universe Works | Science Channel",
+      "tags": [
+        "planets",
+        "space",
+        "Venus",
+        "solar system",
+        "astronomy",
+        "facts",
+        "amazing facts",
+        "science",
+        "universe",
+        "planet facts",
+        "space facts",
+        "weird planets"
+      ]
+    },
+    "KrvwcAGXALU": {
+      "title": "Satellites Don't Fall Because of This Shocking Truth",
+      "published_at": "2026-10-26T19:07:41Z",
+      "source": "history",
+      "idea_id": "20261026-190616-01",
+      "hook": "Satellites are always falling. Here's why.",
+      "duration_target": 35,
+      "generator": "llm:gemini-2.5-flash",
+      "source_topic": "ROCKET SCIENCE explained in 15 minutes! And How do satellites work?",
+      "tags": [
+        "rocket science",
+        "satellites",
+        "space",
+        "orbit",
+        "gravity",
+        "freefall",
+        "amazing facts",
+        "science explained",
+        "physics",
+        "space exploration",
+        "Earth",
+        "NASA"
+      ]
+    },
+    "ndlAI7qvVyA": {
+      "title": "AP Dhillon's Success Hides a Global Music Shift",
+      "published_at": "2026-10-26T19:32:36Z",
+      "source": "history",
+      "idea_id": "20261026-193104-01",
+      "hook": "The music industry is undergoing a silent revolution.",
+      "duration_target": 40,
+      "generator": "llm:gemini-2.5-flash",
+      "source_topic": "True Stories -  AP Dhillon | Shinda Kahlon (Official Music Video)",
+      "tags": [
+        "AP Dhillon",
+        "True Stories",
+        "Shinda Kahlon",
+        "music industry facts",
+        "amazing facts",
+        "global music",
+        "Punjabi music",
+        "independent artist",
+        "music revolution",
+        "music trends",
+        "YouTube Shorts",
+        "music facts"
+      ]
+    },
+    "829nzzVVXtc": {
+      "title": "Mo3's True Story: The Brutal Truth Nobody Talks About",
+      "published_at": "2026-10-27T00:44:45Z",
+      "source": "history",
+      "idea_id": "20261027-004333-01",
+      "hook": "The untold truth behind Mo3's 'True Story' will shock you.",
+      "duration_target": 42,
+      "generator": "llm:gemini-2.5-flash",
+      "source_topic": "Mo3 - True Story (Prod. by Hood Beatz) (Jeff Adair Filmz)",
+      "tags": [
+        "Mo3",
+        "True Story",
+        "Mo3 True Story",
+        "Badazz Mo3",
+        "Melvin Noble",
+        "Dallas rap",
+        "hip hop",
+        "rap music",
+        "amazing facts",
+        "music facts",
+        "hidden truths",
+        "untold story"
+      ]
+    }
+  },
+  "updated": "2026-10-29T20:33:01"
+}
