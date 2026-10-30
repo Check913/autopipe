@@ -1,53 +1,64 @@
 {
-  "date": "2026-10-30T00:40:06.131562",
+  "date": "2026-10-30T23:51:58.450610",
   "region": "US",
   "language": "en",
   "keywords": [
-    "amazing facts",
-    "true story",
-    "science explained"
+    "quiz",
+    "trivia",
+    "general knowledge",
+    "brain teaser",
+    "quiz time",
+    "test your knowledge"
   ],
   "min_views": 500000,
-  "max_duration": 75,
-  "total_found": 48,
-  "rejected": 44,
+  "max_duration": 90,
+  "total_found": 89,
+  "rejected": 79,
   "hits": [
     {
-      "id": "FqkyMSDm-HY",
-      "title": "ANTIMATTER — explained in 60sec #Shorts #Science",
-      "channel": "ABC Science",
-      "views": 8557,
-      "duration": 61.0,
-      "url": "https://www.youtube.com/watch?v=FqkyMSDm-HY",
-      "query": "ytsearch10:science explained shorts"
+      "id": "q16JX5kT0Ls",
+      "title": "QUIZ Time with Intellipaat | Answer & Win Vouchers | Quiz - 2 | Intellipaat #Shorts",
+      "channel": "Intellipaat",
+      "views": 1704,
+      "duration": 31.0,
+      "url": "https://www.youtube.com/watch?v=q16JX5kT0Ls",
+      "query": "ytsearch10:quiz time #shorts"
     },
     {
-      "id": "yTZxqJjxciE",
-      "title": "बच्चे ना देखे 🫢 ये 18 + 🔥💯",
-      "channel": "X Ahha",
-      "views": 7629,
-      "duration": 37.0,
-      "url": "https://www.youtube.com/watch?v=yTZxqJjxciE",
-      "query": "radar:youtube",
-      "score": 76.3
+      "id": "8GzHtEWXdI4",
+      "title": "Quiz / Trivia - Test your knowledge #shorts #quiz #trivia #challenge",
+      "channel": "DY-VideoLand",
+      "views": 918,
+      "duration": 71.0,
+      "url": "https://www.youtube.com/watch?v=8GzHtEWXdI4",
+      "query": "ytsearch10:test your knowledge shorts"
     },
     {
-      "id": "C7wVga8Qj9A",
-      "title": "Growing in Christ | Amazing Facts (Doug Batchelor)",
-      "channel": "AmazingFacts",
-      "views": 3518,
-      "duration": 61.0,
-      "url": "https://www.youtube.com/watch?v=C7wVga8Qj9A",
-      "query": "ytsearch10:amazing facts #shorts"
+      "id": "uQ81h8Mjwcw",
+      "title": "General Knowledge Quiz – Human Body Quiz",
+      "channel": "GH Quiz ",
+      "views": 72,
+      "duration": 90.0,
+      "url": "https://www.youtube.com/watch?v=uQ81h8Mjwcw",
+      "query": "ytsearch10:general knowledge #shorts"
     },
     {
-      "id": "9sueQEfMzJ4",
-      "title": "A Priceless Pearl 2026 | Amazing Facts",
-      "channel": "AmazingFacts",
-      "views": 3380,
-      "duration": 61.0,
-      "url": "https://www.youtube.com/watch?v=9sueQEfMzJ4",
-      "query": "ytsearch10:amazing facts shorts"
+      "id": "uaWbJExYEbE",
+      "title": "Test Your Knowledge #shorts",
+      "channel": "know youtube",
+      "views": 60,
+      "duration": 31.0,
+      "url": "https://www.youtube.com/watch?v=uaWbJExYEbE",
+      "query": "ytsearch10:test your knowledge #shorts"
+    },
+    {
+      "id": "5Ia2nuHj-N4",
+      "title": "Test Your Knowledge!! Short Quiz 1",
+      "channel": "Idea Voyager",
+      "views": 40,
+      "duration": 77.0,
+      "url": "https://www.youtube.com/watch?v=5Ia2nuHj-N4",
+      "query": "ytsearch10:test your knowledge shorts"
     }
   ]
 }

@@ -1,27 +1,27 @@
 {
   "status": "ok",
-  "pairs": 18,
+  "pairs": 21,
   "joined": 0,
   "variants": {
     "A": {
-      "assigned": 9,
+      "assigned": 11,
       "measured": 0,
       "mean_engagement": null,
       "mean_views": null,
       "families": {
-        "statement": 6,
+        "statement": 7,
         "question": 1,
-        "number": 2
+        "number": 3
       }
     },
     "B": {
-      "assigned": 9,
+      "assigned": 10,
       "measured": 0,
       "mean_engagement": null,
       "mean_views": null,
       "families": {
         "question": 7,
-        "number": 1,
+        "number": 2,
         "negation": 1
       }
     }
@@ -278,7 +278,49 @@
       "video_id": null,
       "engagement": null,
       "views": null
+    },
+    {
+      "ts": "2026-10-30T00:40:20",
+      "pair_id": "pair_20261030_0019",
+      "topic": "ALL OF PHYSICS explained in 14 Minutes",
+      "variant": "A",
+      "hook": "All of physics, explained in just 14 minutes.",
+      "family": "number",
+      "family_other": "negation",
+      "hook_a": "All of physics, explained in just 14 minutes.",
+      "hook_b": "Nobody warned you about ALL OF PHYSICS explained in",
+      "video_id": "2NL5J9xXNQU",
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-10-30T00:40:30",
+      "pair_id": "pair_20261030_0020",
+      "topic": "Human Body - Science for Kids - Rock 'N Learn",
+      "variant": "B",
+      "hook": "3 Human Body Science for Kids facts they never teach you",
+      "family": "number",
+      "family_other": "statement",
+      "hook_a": "Your body makes enough saliva to fill two swimming pools!",
+      "hook_b": "3 Human Body Science for Kids facts they never teach you",
+      "video_id": null,
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-10-30T00:40:40",
+      "pair_id": "pair_20261030_0021",
+      "topic": "Quantum Mechanics Explained in Ridiculously Simple Words",
+      "variant": "A",
+      "hook": "The universe literally changes the moment you observe it.",
+      "family": "statement",
+      "family_other": "number",
+      "hook_a": "The universe literally changes the moment you observe it.",
+      "hook_b": "3 Quantum Mechanics Explained facts they never teach you",
+      "video_id": null,
+      "engagement": null,
+      "views": null
     }
   ],
-  "fetched": "2026-10-30T00:39:59"
+  "fetched": "2026-10-30T23:51:46"
 }

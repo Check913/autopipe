@@ -1,23 +1,180 @@
 {
-  "idea": "20261030-004040-01",
-  "title": "Can You Really Learn All Physics in 14 Mins?",
-  "video": "/home/runner/work/autopipe/autopipe/output/20261030-004040-01/video.mp4",
-  "description": "Discover how one video attempts the impossible: explaining *all* of physics in just 14 minutes! From quantum mechanics to cosmic laws, this challenge reveals the amazing facts behind our universe.\n#PhysicsFacts #ScienceExplained #AmazingScience",
+  "idea": "20261030-235229-01",
+  "title": "9 Question Quiz. Can You Score 9/9?",
+  "video": "/home/runner/work/autopipe/autopipe/output/20261030-235229-01/video.mp4",
+  "description": "Quick general quiz: 9 questions, 3 seconds each. Comment your score out of 9! #shorts #quiz #trivia #quiztime #generalknowledge",
   "tags": [
-    "physics",
-    "amazing facts",
-    "science",
-    "explanation",
-    "quantum",
-    "relativity",
-    "universe",
-    "fundamental laws",
-    "spacetime",
-    "big bang",
-    "science facts",
-    "educational"
+    "quiz",
+    "trivia",
+    "quiz time",
+    "quiz questions",
+    "general knowledge",
+    "test your knowledge",
+    "general"
   ],
-  "comment": "Which fact surprised you the most? Drop it in the comments 👇 and subscribe for a new Short every day!",
-  "pair_id": "pair_20261030_0019",
-  "youtube_id": "2NL5J9xXNQU"
+  "comment": "Score check: how many did you get right out of 9? Comment your score and which question tricked you.",
+  "pair_id": "pair_20261030_0022",
+  "quiz": {
+    "enabled": true,
+    "rounds": 9,
+    "countdown_s": 3
+  },
+  "idea_full": {
+    "topic": "quiz",
+    "source_topic": "quiz:general",
+    "title": "9 Question Quiz. Can You Score 9/9?",
+    "hook": "Getting them all right means elite memory.",
+    "density": 4,
+    "duration_format": "long",
+    "duration_target": 80,
+    "duration_range": [
+      74,
+      88
+    ],
+    "script": "Getting them all right means elite memory.\nQuestion 1: What is the capital city of Canada?\nLock in your answer: Three. Two. One.\nThe answer is C: Ottawa.\nQuestion 2: Which gas do plants primarily absorb from the atmosphere for photosynthesis?\nLock in your answer: Three. Two. One.\nThe answer is C: Carbon Dioxide.\nQuestion 3: Who was the first person to walk on the moon?\nLock in your answer: Three. Two. One.\nThe answer is C: Neil Armstrong.\nIf you got the first three right, like the video right now.\nQuestion 4: Which classic 1982 Steven Spielberg film features a friendly alien who wants to 'phone home'?\nLock in your answer: Three. Two. One.\nThe answer is B: E.T. the Extra-Terrestrial.\nQuestion 5: On which continent is the vast Sahara Desert primarily located?\nLock in your answer: Three. Two. One.\nThe answer is B: Africa.\nScore check: comment SHARP if you are still perfect, RUSTY if you already missed one.\nQuestion 6: What is the largest ocean on Earth?\nLock in your answer: Three. Two. One.\nThe answer is D: Pacific Ocean.\nQuestion 7: What is the chemical symbol for water?\nLock in your answer: Three. Two. One.\nThe answer is B: H2O.\nAre you ready for the last question?\nDon't forget to follow and comment your score to be on the weekly leaderboard of the top performers.\nQuestion 8: In which year did the RMS Titanic sink after hitting an iceberg?\nLock in your answer: Three. Two. One.\nThe answer is B: 1912.\nQuestion 9: Who directed the groundbreaking 1993 science fiction film 'Jurassic Park'?\nLock in your answer: Three. Two. One.\nThe answer is C: Steven Spielberg.\nComment your score out of 9, and follow for a new quiz every day.",
+    "generator": "quiz:llm",
+    "quiz": {
+      "enabled": true,
+      "rounds": 9,
+      "countdown_s": 3,
+      "cards": true,
+      "items": [
+        {
+          "question": "What is the capital city of Canada?",
+          "options": [
+            "Toronto",
+            "Vancouver",
+            "Ottawa",
+            "Montreal"
+          ],
+          "answer_index": 2,
+          "explanation": "Ottawa is located in Ontario and is the political center of Canada.",
+          "category": "general"
+        },
+        {
+          "question": "Which gas do plants primarily absorb from the atmosphere for photosynthesis?",
+          "options": [
+            "Oxygen",
+            "Nitrogen",
+            "Carbon Dioxide",
+            "Hydrogen"
+          ],
+          "answer_index": 2,
+          "explanation": "Plants use carbon dioxide, water, and sunlight to create their own food.",
+          "category": "general"
+        },
+        {
+          "question": "Who was the first person to walk on the moon?",
+          "options": [
+            "Buzz Aldrin",
+            "Yuri Gagarin",
+            "Neil Armstrong",
+            "Michael Collins"
+          ],
+          "answer_index": 2,
+          "explanation": "Neil Armstrong made history on July 20, 1969, as part of the Apollo 11 mission.",
+          "category": "general"
+        },
+        {
+          "question": "Which classic 1982 Steven Spielberg film features a friendly alien who wants to 'phone home'?",
+          "options": [
+            "Close Encounters of the Third Kind",
+            "E.T. the Extra-Terrestrial",
+            "Alien",
+            "Cocoon"
+          ],
+          "answer_index": 1,
+          "explanation": "E.T. is a beloved character who befriends a young boy named Elliott.",
+          "category": "general"
+        },
+        {
+          "question": "On which continent is the vast Sahara Desert primarily located?",
+          "options": [
+            "Asia",
+            "Africa",
+            "South America",
+            "Australia"
+          ],
+          "answer_index": 1,
+          "explanation": "The Sahara is the largest hot desert in the world, covering much of North Africa.",
+          "category": "general"
+        },
+        {
+          "question": "What is the largest ocean on Earth?",
+          "options": [
+            "Atlantic Ocean",
+            "Indian Ocean",
+            "Southern Ocean",
+            "Pacific Ocean"
+          ],
+          "answer_index": 3,
+          "explanation": "The Pacific Ocean covers about one-third of the surface of the Earth.",
+          "category": "general"
+        },
+        {
+          "question": "What is the chemical symbol for water?",
+          "options": [
+            "WO",
+            "H2O",
+            "OH",
+            "HO2"
+          ],
+          "answer_index": 1,
+          "explanation": "Water is composed of two hydrogen atoms and one oxygen atom.",
+          "category": "general"
+        },
+        {
+          "question": "In which year did the RMS Titanic sink after hitting an iceberg?",
+          "options": [
+            "1905",
+            "1912",
+            "1923",
+            "1931"
+          ],
+          "answer_index": 1,
+          "explanation": "The tragic sinking of the Titanic occurred on its maiden voyage across the Atlantic.",
+          "category": "general"
+        },
+        {
+          "question": "Who directed the groundbreaking 1993 science fiction film 'Jurassic Park'?",
+          "options": [
+            "James Cameron",
+            "George Lucas",
+            "Steven Spielberg",
+            "Ridley Scott"
+          ],
+          "answer_index": 2,
+          "explanation": "Spielberg's direction brought dinosaurs to life with revolutionary visual effects.",
+          "category": "general"
+        }
+      ]
+    },
+    "comment": "Score check: how many did you get right out of 9? Comment your score and which question tricked you.",
+    "description": "Quick general quiz: 9 questions, 3 seconds each. Comment your score out of 9! #shorts #quiz #trivia #quiztime #generalknowledge",
+    "tags": [
+      "quiz",
+      "trivia",
+      "quiz time",
+      "quiz questions",
+      "general knowledge",
+      "test your knowledge",
+      "general"
+    ],
+    "pair_id": "pair_20261030_0022",
+    "hook_variant": "B",
+    "hook_variants": [
+      {
+        "variant": "A",
+        "family": "question",
+        "hook": "Are you smarter than most people?"
+      },
+      {
+        "variant": "B",
+        "family": "identity",
+        "hook": "Getting them all right means elite memory."
+      }
+    ],
+    "id": "20261030-235229-01"
+  },
+  "youtube_id": "gEtui7O33o0"
 }

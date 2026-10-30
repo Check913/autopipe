@@ -1,113 +1,113 @@
 {
-  "fetched": "2026-10-30T00:39:53",
+  "fetched": "2026-10-30T23:51:46",
   "geo": "",
   "topics": [
     {
-      "query": "permanent time observation in the united states",
-      "traffic": 2000.0,
-      "rise": 10.0,
-      "saturation_views": 38533.0,
-      "momentum": 2.7887
-    },
-    {
-      "query": "barry trotz",
-      "traffic": 500.0,
-      "rise": 10.0,
-      "saturation_views": 86599.0,
-      "momentum": 2.5396
-    },
-    {
-      "query": "micah parsons",
-      "traffic": 5000.0,
-      "rise": 10.0,
-      "saturation_views": 205520.0,
-      "momentum": 2.3186
-    },
-    {
-      "query": "ebola outbreak",
-      "traffic": 500.0,
-      "rise": 10.0,
-      "saturation_views": 231279.0,
-      "momentum": 2.2914
-    },
-    {
-      "query": "cam newton",
+      "query": "daron payne",
       "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 1316735.0,
-      "momentum": 1.9533
+      "saturation_views": 58917.0,
+      "momentum": 2.6523
     },
     {
-      "query": "panthers qb",
-      "traffic": 500.0,
-      "rise": 10.0,
-      "saturation_views": 1357152.0,
-      "momentum": 1.9483
-    },
-    {
-      "query": "miikka muurinen",
-      "traffic": 200.0,
-      "rise": 10.0,
-      "saturation_views": 1544828.0,
-      "momentum": 1.9272
-    },
-    {
-      "query": "american idol",
-      "traffic": 200.0,
-      "rise": 10.0,
-      "saturation_views": 60382399.0,
-      "momentum": 1.4747
-    },
-    {
-      "query": "suicide squad",
+      "query": "pike",
       "traffic": 1000.0,
       "rise": 10.0,
-      "saturation_views": 346111645.0,
-      "momentum": 1.3264
+      "saturation_views": 160042.0,
+      "momentum": 2.3785
     },
     {
-      "query": "wednesday",
+      "query": "what is the nba cup",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 738898240.0,
-      "momentum": 1.2709
+      "saturation_views": 297317.0,
+      "momentum": 2.2355
+    },
+    {
+      "query": "jordon hudson",
+      "traffic": 2000.0,
+      "rise": 10.0,
+      "saturation_views": 299509.0,
+      "momentum": 2.2339
+    },
+    {
+      "query": "heidi klum",
+      "traffic": 1000.0,
+      "rise": 10.0,
+      "saturation_views": 346149.0,
+      "momentum": 2.203
+    },
+    {
+      "query": "blake griffin",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 962395.0,
+      "momentum": 2.0067
+    },
+    {
+      "query": "steve nash",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 5411307.0,
+      "momentum": 1.7442
+    },
+    {
+      "query": "pacers vs heat",
+      "traffic": 5000.0,
+      "rise": 10.0,
+      "saturation_views": 5948635.0,
+      "momentum": 1.7318
+    },
+    {
+      "query": "colin farrell",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 15076398.0,
+      "momentum": 1.6186
+    },
+    {
+      "query": "wreck it ralph",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 21373481.0,
+      "momentum": 1.5798
     }
   ],
   "top": [
     {
-      "query": "permanent time observation in the united states",
-      "traffic": 2000.0,
-      "rise": 10.0,
-      "saturation_views": 38533.0,
-      "momentum": 2.7887
-    },
-    {
-      "query": "barry trotz",
-      "traffic": 500.0,
-      "rise": 10.0,
-      "saturation_views": 86599.0,
-      "momentum": 2.5396
-    },
-    {
-      "query": "micah parsons",
-      "traffic": 5000.0,
-      "rise": 10.0,
-      "saturation_views": 205520.0,
-      "momentum": 2.3186
-    },
-    {
-      "query": "ebola outbreak",
-      "traffic": 500.0,
-      "rise": 10.0,
-      "saturation_views": 231279.0,
-      "momentum": 2.2914
-    },
-    {
-      "query": "cam newton",
+      "query": "daron payne",
       "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 1316735.0,
-      "momentum": 1.9533
+      "saturation_views": 58917.0,
+      "momentum": 2.6523
+    },
+    {
+      "query": "pike",
+      "traffic": 1000.0,
+      "rise": 10.0,
+      "saturation_views": 160042.0,
+      "momentum": 2.3785
+    },
+    {
+      "query": "what is the nba cup",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 297317.0,
+      "momentum": 2.2355
+    },
+    {
+      "query": "jordon hudson",
+      "traffic": 2000.0,
+      "rise": 10.0,
+      "saturation_views": 299509.0,
+      "momentum": 2.2339
+    },
+    {
+      "query": "heidi klum",
+      "traffic": 1000.0,
+      "rise": 10.0,
+      "saturation_views": 346149.0,
+      "momentum": 2.203
     }
   ]
 }
