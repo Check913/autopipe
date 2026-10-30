@@ -222,12 +222,17 @@ def upload_video(video_path, title, description, tags=None, cfg=None, privacy=No
         },
     }
     from googleapiclient.http import MediaFileUpload
+    # Fix 2026-10-30 : upload 48 Mo interrompu par ssl.SSLEOFError (TLS ferme
+    # en pleine transaction -> aucun video_id). Chunks de 1 Mo (fenetre TLS
+    # plus courte) + num_retries=10 sur next_chunk : googleapiclient retente
+    # avec backoff exponentiel et reprend depuis la derniere reponse 308 au
+    # lieu d'abandonner tout l'upload.
     media = MediaFileUpload(str(video_path), mimetype="video/mp4",
-                            chunksize=8 * 1024 * 1024, resumable=True)
+                            chunksize=1024 * 1024, resumable=True)
     request = yt.videos().insert(part="snippet,status", body=body, media_body=media)
     response = None
     while response is None:
-        status, response = request.next_chunk()
+        status, response = request.next_chunk(num_retries=10)
         if status:
             log.info("Upload: %.0f%%", status.progress() * 100)
     video_id = response.get("id")
