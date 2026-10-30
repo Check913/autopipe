@@ -1,0 +1,46 @@
+{
+  "title": "Can You Really Learn All Physics in 14 Mins?",
+  "hook": "All of physics, explained in just 14 minutes.",
+  "script": "One video promises to explain *all* of physics in just 14 minutes. From the immense cosmos governed by relativity to the bizarre quantum world, physics encompasses everything. Condensing centuries of discovery, from Newton's laws to black holes and string theory, into such a short time is an incredible feat. It means simplifying complex ideas, using powerful analogies, and getting straight to the core principles that define our universe. Think about it: covering energy, matter, forces, and the very fabric of spacetime in less time than it takes to brew a coffee. This kind of summary highlights the interconnectedness of physics, revealing how seemingly disparate concepts actually build upon each other. It's a masterclass in distillation, proving that even the most profound sciences can be made accessible. So, if you're curious about the fundamental rules governing existence, this incredible claim, explaining all of physics in just 14 minutes, will completely blow your mind.",
+  "comment": "What's the most mind-blowing physics fact you know?",
+  "description": "Discover how one video attempts the impossible: explaining *all* of physics in just 14 minutes! From quantum mechanics to cosmic laws, this challenge reveals the amazing facts behind our universe.\n#PhysicsFacts #ScienceExplained #AmazingScience",
+  "tags": [
+    "physics",
+    "amazing facts",
+    "science",
+    "explanation",
+    "quantum",
+    "relativity",
+    "universe",
+    "fundamental laws",
+    "spacetime",
+    "big bang",
+    "science facts",
+    "educational"
+  ],
+  "density": 4,
+  "duration_format": "long",
+  "duration_target": 60,
+  "duration_range": [
+    50,
+    60
+  ],
+  "source_topic": "ALL OF PHYSICS explained in 14 Minutes",
+  "generator": "llm:gemini-2.5-flash",
+  "score": 13642.6,
+  "pair_id": "pair_20261030_0019",
+  "hook_variant": "A",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "All of physics, explained in just 14 minutes.",
+      "family": "number"
+    },
+    {
+      "variant": "B",
+      "hook": "Nobody warned you about ALL OF PHYSICS explained in",
+      "family": "negation"
+    }
+  ],
+  "id": "20261030-004040-01"
+}

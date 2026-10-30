@@ -1,0 +1,45 @@
+{
+  "title": "Your Body Produces 2 Pools of Saliva?",
+  "hook": "3 Human Body Science for Kids facts they never teach you",
+  "script": "Did you know your body produces enough saliva in your lifetime to fill two swimming pools? That's just one mind-blowing fact about your incredible human body! Every single day, your heart beats about 100,000 times, pumping blood through a network of vessels over 60,000 miles long – enough to wrap around the Earth more than twice! Your brain, though only 2% of your body weight, consumes a whopping 20% of your body's oxygen and calories. It's constantly working, even when you sleep, processing dreams and consolidating memories. And get this: your body replaces its entire outer layer of skin every 27 days! That means you're literally a new you, skin-wise, nearly every month. Your bones are stronger than steel, yet remarkably light. They're constantly rebuilding themselves, a process that takes about 10 years for a complete skeleton turnover. These are just a few of the incredible feats your body performs without you even noticing, making you wonder: did you know your body produces enough saliva in your lifetime to fill two swimming pools?",
+  "comment": "What's the most amazing human body fact you know?",
+  "description": "Your body is a true marvel! Discover the incredible, hidden superpowers your human body performs every single day. From a beating heart to regenerating skin, prepare to be amazed by these scientific facts.\n#HumanBodyFacts #AmazingScience #BodySecrets",
+  "tags": [
+    "human body facts",
+    "amazing facts",
+    "science facts",
+    "body secrets",
+    "human body",
+    "mind blowing facts",
+    "science explained",
+    "anatomy",
+    "biology",
+    "human body science",
+    "curiosity"
+  ],
+  "density": 4,
+  "duration_format": "long",
+  "duration_target": 60,
+  "duration_range": [
+    50,
+    60
+  ],
+  "source_topic": "Human Body - Science for Kids - Rock 'N Learn",
+  "generator": "llm:gemini-2.5-flash",
+  "score": 3302.5,
+  "pair_id": "pair_20261030_0020",
+  "hook_variant": "B",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "Your body makes enough saliva to fill two swimming pools!",
+      "family": "statement"
+    },
+    {
+      "variant": "B",
+      "hook": "3 Human Body Science for Kids facts they never teach you",
+      "family": "number"
+    }
+  ],
+  "id": "20261030-004040-02"
+}

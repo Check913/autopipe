@@ -1,0 +1,46 @@
+{
+  "title": "Your Reality Changes When You Look At It?",
+  "hook": "The universe literally changes the moment you observe it.",
+  "script": "The universe literally changes the moment you observe it. This isn't science fiction; it's quantum physics, and it’s mind-blowing. Imagine firing tiny particles, like electrons, at a screen with two slits. If you don't watch them, they act like waves, creating an interference pattern on the other side. But the instant you place a detector to see which slit they go through, they stop acting like waves and suddenly behave like individual particles, creating two distinct lines. It’s called the observer effect. Before observation, a particle exists in multiple states at once – a \"superposition\" of possibilities. But your act of looking forces it to choose just one state. Your consciousness, or even just a measurement, collapses all those possibilities into a single reality. Every single atom in your body, and everything around you, operates under these same bizarre rules. This means the very act of perceiving the world plays a role in shaping it, suggesting that the universe literally changes the moment you observe it.",
+  "comment": "Does this mean our thoughts actually shape reality?",
+  "description": "Ever wondered if your perception shapes reality? Quantum mechanics says yes!\nDive into the mind-bending observer effect and discover why simply looking at something changes it.\n#QuantumPhysics #AmazingFacts #ScienceExplained",
+  "tags": [
+    "quantum physics",
+    "quantum mechanics",
+    "observer effect",
+    "science facts",
+    "amazing facts",
+    "reality",
+    "consciousness",
+    "double-slit experiment",
+    "physics explained",
+    "particles",
+    "universe",
+    "mind-blowing facts"
+  ],
+  "density": 4,
+  "duration_format": "long",
+  "duration_target": 60,
+  "duration_range": [
+    50,
+    60
+  ],
+  "source_topic": "Quantum Mechanics Explained in Ridiculously Simple Words",
+  "generator": "llm:gemini-2.5-flash",
+  "score": 2463.7,
+  "pair_id": "pair_20261030_0021",
+  "hook_variant": "A",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "The universe literally changes the moment you observe it.",
+      "family": "statement"
+    },
+    {
+      "variant": "B",
+      "hook": "3 Quantum Mechanics Explained facts they never teach you",
+      "family": "number"
+    }
+  ],
+  "id": "20261030-004040-03"
+}

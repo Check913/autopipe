@@ -1,0 +1,45 @@
+{
+  "generated_at": "2026-10-30T00:39:59",
+  "n_scraped": 45,
+  "n_winners": 20,
+  "duration_median_s": 133.5,
+  "duration_p25_s": 126.8,
+  "duration_p75_s": 140.2,
+  "title_len_median": 48.0,
+  "pct_number_title": 40.0,
+  "pct_question_title": 10.0,
+  "hook_families_pct": {
+    "statement": 50.0,
+    "number": 40.0,
+    "question": 10.0
+  },
+  "velocity_median_vpd": null,
+  "top_titles": [
+    {
+      "title": "Based On A True Story | Official Trailer | Peacock Original",
+      "views": 28312581,
+      "duration": 129.0
+    },
+    {
+      "title": "String Theory Explained – What is The True Nature of Reality?",
+      "views": 26762703,
+      "duration": 480.0
+    },
+    {
+      "title": "Top 3 stories that sound fake but are 100% real | Part 10",
+      "views": 12967993,
+      "duration": 1032.0
+    },
+    {
+      "title": "ALL OF PHYSICS explained in 14 Minutes",
+      "views": 11732679,
+      "duration": 860.0
+    },
+    {
+      "title": "The True Science of Parallel Universes",
+      "views": 10486568,
+      "duration": 296.0
+    }
+  ],
+  "sources_ok": 3
+}

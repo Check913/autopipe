@@ -1,26 +1,26 @@
 {
   "status": "ok",
-  "pairs": 15,
+  "pairs": 18,
   "joined": 0,
   "variants": {
     "A": {
-      "assigned": 8,
+      "assigned": 9,
       "measured": 0,
       "mean_engagement": null,
       "mean_views": null,
       "families": {
         "statement": 6,
         "question": 1,
-        "number": 1
+        "number": 2
       }
     },
     "B": {
-      "assigned": 7,
+      "assigned": 9,
       "measured": 0,
       "mean_engagement": null,
       "mean_views": null,
       "families": {
-        "question": 5,
+        "question": 7,
         "number": 1,
         "negation": 1
       }
@@ -236,7 +236,49 @@
       "video_id": null,
       "engagement": null,
       "views": null
+    },
+    {
+      "ts": "2026-10-29T20:01:53",
+      "pair_id": "pair_20261029_0016",
+      "topic": "Zombie Biology Explained | The Science of Zombism",
+      "variant": "B",
+      "hook": "Why does nobody explain Zombie Biology Explained like this?",
+      "family": "question",
+      "family_other": "statement",
+      "hook_a": "Ophiocordyceps unilateralis, commonly known as zombie-ant",
+      "hook_b": "Why does nobody explain Zombie Biology Explained like this?",
+      "video_id": "2rplet7RjXs",
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-10-29T20:01:55",
+      "pair_id": "pair_20261029_0017",
+      "topic": "Killswitch x 88thagang - True Story | shot by @TheKitchen4k",
+      "variant": "A",
+      "hook": "Nobody talks about Killswitch x 88thagang - True Story |",
+      "family": "number",
+      "family_other": "question",
+      "hook_a": "Nobody talks about Killswitch x 88thagang - True Story |",
+      "hook_b": "Why does nobody explain Killswitch 88thagang True like this?",
+      "video_id": null,
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-10-29T20:02:05",
+      "pair_id": "pair_20261029_0018",
+      "topic": "बच्चे ना देखे 🫢 ये 18 + 🔥💯",
+      "variant": "B",
+      "hook": "Why does nobody explain बच्चे ना देखे ये 18 🔥💯 like this?",
+      "family": "question",
+      "family_other": "number",
+      "hook_a": "Nobody talks about बच्चे ना देखे 🫢 ये 18 + 🔥💯",
+      "hook_b": "Why does nobody explain बच्चे ना देखे ये 18 🔥💯 like this?",
+      "video_id": null,
+      "engagement": null,
+      "views": null
     }
   ],
-  "fetched": "2026-10-29T20:01:36"
+  "fetched": "2026-10-30T00:39:59"
 }

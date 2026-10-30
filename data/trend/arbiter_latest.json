@@ -1,113 +1,113 @@
 {
-  "fetched": "2026-10-29T20:01:36",
+  "fetched": "2026-10-30T00:39:53",
   "geo": "",
   "topics": [
     {
-      "query": "poké ball pattern vivillon distribution",
-      "traffic": 500.0,
-      "rise": 10.0,
-      "saturation_views": 5643.0,
-      "momentum": 3.6334
-    },
-    {
-      "query": "fiorentina vs atalanta",
-      "traffic": 1000.0,
-      "rise": 10.0,
-      "saturation_views": 14404.0,
-      "momentum": 3.1658
-    },
-    {
-      "query": "ford fathom",
-      "traffic": 500.0,
-      "rise": 10.0,
-      "saturation_views": 22277.0,
-      "momentum": 2.9868
-    },
-    {
-      "query": "fiorentina - atalanta",
-      "traffic": 1000.0,
-      "rise": 10.0,
-      "saturation_views": 179650.0,
-      "momentum": 2.3505
-    },
-    {
-      "query": "joe buck",
-      "traffic": 1000.0,
-      "rise": 10.0,
-      "saturation_views": 923677.0,
-      "momentum": 2.0139
-    },
-    {
-      "query": "copa del rey",
-      "traffic": 500.0,
-      "rise": 10.0,
-      "saturation_views": 2603164.0,
-      "momentum": 1.8466
-    },
-    {
-      "query": "knights will be knights",
-      "traffic": 200.0,
-      "rise": 10.0,
-      "saturation_views": 3469785.0,
-      "momentum": 1.805
-    },
-    {
-      "query": "patrick stewart",
-      "traffic": 50000.0,
-      "rise": 10.0,
-      "saturation_views": 5237545.0,
-      "momentum": 1.7485
-    },
-    {
-      "query": "mark cuban",
-      "traffic": 1000.0,
-      "rise": 10.0,
-      "saturation_views": 12046403.0,
-      "momentum": 1.6445
-    },
-    {
-      "query": "halle berry",
+      "query": "permanent time observation in the united states",
       "traffic": 2000.0,
       "rise": 10.0,
-      "saturation_views": 16502085.0,
-      "momentum": 1.6084
+      "saturation_views": 38533.0,
+      "momentum": 2.7887
+    },
+    {
+      "query": "barry trotz",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 86599.0,
+      "momentum": 2.5396
+    },
+    {
+      "query": "micah parsons",
+      "traffic": 5000.0,
+      "rise": 10.0,
+      "saturation_views": 205520.0,
+      "momentum": 2.3186
+    },
+    {
+      "query": "ebola outbreak",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 231279.0,
+      "momentum": 2.2914
+    },
+    {
+      "query": "cam newton",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 1316735.0,
+      "momentum": 1.9533
+    },
+    {
+      "query": "panthers qb",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 1357152.0,
+      "momentum": 1.9483
+    },
+    {
+      "query": "miikka muurinen",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 1544828.0,
+      "momentum": 1.9272
+    },
+    {
+      "query": "american idol",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 60382399.0,
+      "momentum": 1.4747
+    },
+    {
+      "query": "suicide squad",
+      "traffic": 1000.0,
+      "rise": 10.0,
+      "saturation_views": 346111645.0,
+      "momentum": 1.3264
+    },
+    {
+      "query": "wednesday",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 738898240.0,
+      "momentum": 1.2709
     }
   ],
   "top": [
     {
-      "query": "poké ball pattern vivillon distribution",
+      "query": "permanent time observation in the united states",
+      "traffic": 2000.0,
+      "rise": 10.0,
+      "saturation_views": 38533.0,
+      "momentum": 2.7887
+    },
+    {
+      "query": "barry trotz",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 5643.0,
-      "momentum": 3.6334
+      "saturation_views": 86599.0,
+      "momentum": 2.5396
     },
     {
-      "query": "fiorentina vs atalanta",
-      "traffic": 1000.0,
+      "query": "micah parsons",
+      "traffic": 5000.0,
       "rise": 10.0,
-      "saturation_views": 14404.0,
-      "momentum": 3.1658
+      "saturation_views": 205520.0,
+      "momentum": 2.3186
     },
     {
-      "query": "ford fathom",
+      "query": "ebola outbreak",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 22277.0,
-      "momentum": 2.9868
+      "saturation_views": 231279.0,
+      "momentum": 2.2914
     },
     {
-      "query": "fiorentina - atalanta",
-      "traffic": 1000.0,
+      "query": "cam newton",
+      "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 179650.0,
-      "momentum": 2.3505
-    },
-    {
-      "query": "joe buck",
-      "traffic": 1000.0,
-      "rise": 10.0,
-      "saturation_views": 923677.0,
-      "momentum": 2.0139
+      "saturation_views": 1316735.0,
+      "momentum": 1.9533
     }
   ]
 }

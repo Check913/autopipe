@@ -1,0 +1,62 @@
+{
+  "generated_at": "2026-10-30T00:39:59",
+  "errors": [],
+  "warnings": [],
+  "targets": {
+    "subs": 1000,
+    "shorts_views_90d": 10000000,
+    "watch_hours_12m": 4000.0,
+    "rpm_shorts_usd": 0.08
+  },
+  "channel": {
+    "channel_id": "UC-o7pf9tdkrfLYMZzjgKZhw",
+    "title": "ghostshort",
+    "channel_created_at": "2026-10-03T11:14:32.965168Z",
+    "hidden_subs": false,
+    "video_count": 18
+  },
+  "total_views": 344,
+  "subs": 1,
+  "shorts_views_90d": 276,
+  "n_shorts_90d": 16,
+  "watch_hours_12m": null,
+  "ypp": {
+    "checks": {
+      "subs": {
+        "current": 1,
+        "target": 1000,
+        "ok": false,
+        "pct": 0.1
+      },
+      "watch_hours": {
+        "current": null,
+        "target": 4000.0,
+        "ok": false,
+        "pct": 0.0
+      },
+      "shorts_views": {
+        "current": 276,
+        "target": 10000000,
+        "ok": false,
+        "pct": 0.0
+      }
+    },
+    "routes_available": [
+      "shorts_views"
+    ],
+    "eligible": false,
+    "requirement": "1000 abonnes ET (4000 h visionnage / 12 mois OU 10M vues Shorts / 90 jours)"
+  },
+  "velocities_per_day": {
+    "subs": null,
+    "shorts_views_90d": null,
+    "watch_hours_12m": null
+  },
+  "eta_days": {
+    "subs": null,
+    "shorts_views_90d": null,
+    "watch_hours_12m": null
+  },
+  "est_monthly_revenue_usd": 0.01,
+  "revenue_note": "estimation 0.01 USD/mois (RPM Shorts 0.08 USD/1000 vues) — payable uniquement une fois le YPP actif"
+}

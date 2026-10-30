@@ -1,12 +1,16 @@
 {
-  "fetched": "2026-10-29T20:01:36",
+  "fetched": "2026-10-30T00:39:59",
   "status": "pending",
   "min_samples": 3,
-  "n_samples": 0,
+  "n_samples": 1,
   "patterns": [],
   "stats": {
-    "n_samples": 0
+    "n_samples": 1,
+    "mean_engagement": 0.0,
+    "engagement_min": 0.0,
+    "engagement_max": 0.0
   },
+  "lessons": 1,
   "kill_switch": {
     "banned_families": {},
     "niche_alert": false,
@@ -14,7 +18,7 @@
   },
   "baseline": {
     "locked": false,
-    "n": 0,
+    "n": 1,
     "target": 10
   },
   "active_patterns": 0

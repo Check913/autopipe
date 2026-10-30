@@ -1,7 +1,14 @@
 {
   "locked": false,
   "target": 10,
-  "samples": [],
-  "n": 0,
-  "updated": "2026-10-29T20:01:36"
+  "samples": [
+    {
+      "id": "20261029-200205-01",
+      "engagement": 0.0,
+      "avg_view_pct": null,
+      "hook_type": "question"
+    }
+  ],
+  "n": 1,
+  "updated": "2026-10-30T00:39:59"
 }
