@@ -196,3 +196,68 @@ def write_checkpoint_ass(text, out_ass, at_seconds, duration=2.5,
     log.info("Checkpoint visuel: '%s' a %.1fs (%.1fs) -> %s",
              " / ".join(lines)[:60], at_seconds, duration, out_ass)
     return out_ass
+
+
+_ASS_QUIZ_TEMPLATE = """[Script Info]
+ScriptType: v4.00+
+PlayResX: {width}
+PlayResY: {height}
+WrapStyle: 0
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Quiz,Arial,{font_size},&H00FFFFFF,&H000000FF,&H00000000,&H70000000,-1,0,0,0,100,100,0,0,3,3,0,5,40,40,30,1
+Style: QuizAns,Arial,{font_size},&H0000FF00,&H000000FF,&H00000000,&H70000000,-1,0,0,0,100,100,0,0,3,3,0,5,40,40,30,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,{start},{end},{style},,0,0,0,,{text}
+"""
+
+
+def write_quiz_card_ass(text_lines, out_ass, at_seconds, duration=4.0,
+                        kind="question", width=1080, height=1920,
+                        font_size=None, wrap_chars=24, max_lines=7):
+    """Carte question/reponse du mode quiz : bloc CENTRE, boite noire
+    semi-transparente, texte blanc (question) ou vert (reponse).
+
+    Contrairement aux hooks/checkpoints : PAS de mise en majuscules (les
+    questions et les options doivent rester lisibles telles quelles), texte
+    centre (alignment 5) au lieu du bas d'ecran. Accepte une chaine ou une
+    liste de lignes (question + options). Renvoie None si la fenetre est
+    invalide ou si tout le texte est vide.
+    """
+    import textwrap
+    from pathlib import Path
+    at_seconds = float(at_seconds)
+    duration = float(duration)
+    if at_seconds < 0.5 or duration <= 0:
+        return None
+    style = "QuizAns" if str(kind) == "answer" else "Quiz"
+    if font_size is None:
+        font_size = 54 if style == "QuizAns" else 58
+    if text_lines is None:
+        return None
+    if isinstance(text_lines, str):
+        text_lines = [text_lines]
+    lines = []
+    for line in text_lines:
+        raw = _ass_escape(line).strip()
+        if not raw:
+            continue
+        # textwrap ne rend jamais [] pour une chaine non vide, mais le
+        # fallback garde les mots tres longs intacts si ca change un jour.
+        wrapped = textwrap.wrap(raw, width=wrap_chars)[:max_lines] or [raw]
+        lines.extend(wrapped)
+    lines = lines[:max_lines]
+    if not lines:
+        return None
+    content = _ASS_QUIZ_TEMPLATE.format(
+        width=int(width), height=int(height), font_size=int(font_size),
+        start=_ass_ts(at_seconds), end=_ass_ts(at_seconds + duration),
+        style=style, text="\\N".join(lines))
+    out_ass = Path(out_ass)
+    out_ass.write_text(content, encoding="utf-8")
+    log.info("Carte quiz (%s): %d lignes a %.1fs (%.1fs) -> %s",
+             style, len(lines), at_seconds, duration, out_ass)
+    return out_ass

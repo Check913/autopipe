@@ -192,9 +192,20 @@ def run_pipeline_once(config=None, do_upload=True, idea=None):
     # (publication differee a l'heure exacte) a besoin de tout pour uploader
     # plus tard sans regenerer l'idee.
     comment = pinned_comment_text(idea, cfg)
+    if (idea.get("quiz") or {}).get("enabled") and idea.get("comment"):
+        # Mode quiz : le commentaire score est construit par quiz.build_idea.
+        comment = idea["comment"]
     result = {"idea": idea["id"], "title": idea.get("title"), "video": str(final),
               "description": idea.get("description", ""), "tags": idea.get("tags", []),
               "comment": comment, "pair_id": idea.get("pair_id")}
+    if (idea.get("quiz") or {}).get("enabled"):
+        # Pivot quiz (2026-10-30) : l'idee COMPLETE voyage avec la pre-gen
+        # (idea_full -> pending -> quiz.on_published a la publication) ; les
+        # extras restent dans le contrat publie pour compatibilite.
+        result["quiz"] = {"enabled": True,
+                          "rounds": int((idea.get("quiz") or {}).get("rounds") or 0),
+                          "countdown_s": int((idea.get("quiz") or {}).get("countdown_s") or 10)}
+        result["idea_full"] = idea
 
     # 7. Upload + stats
     if do_upload:
@@ -223,6 +234,17 @@ def run_pipeline_once(config=None, do_upload=True, idea=None):
                 attach_video(idea["pair_id"], video_id, cfg)
             except Exception as exc:
                 log.warning("Hook A/B attach impossible: %s", exc)
+        # Pivot quiz (2026-10-30) : publication directe -> verrouille les
+        # questions de cette video (dedup longue duree dans
+        # data/quiz/state.json). Idea quiz uniquement : pas de pollution de
+        # l'etat quiz par les idees non-quiz.
+        if (idea.get("quiz") or {}).get("enabled"):
+            try:
+                from .quiz import on_published as quiz_on_published
+                quiz_on_published(idea, video_id, cfg)
+            except Exception:
+                log.warning("quiz.on_published a echoue (non fatal):\n%s",
+                            traceback.format_exc())
 
     save_json(paths.data / "last_run.json", result)
     log.info("=== AutoPipe: pipeline finished: %s ===", result)
@@ -391,6 +413,16 @@ def publish_pending_video(cfg, paths, pending, pending_file=None):
             attach_video(pair_id, video_id, cfg)
         except Exception as exc:
             log.warning("Hook A/B attach impossible: %s", exc)
+    # Pivot quiz (2026-10-30) : publication differee -> meme contrat que
+    # run_pipeline_once : les questions de la video publiee sont verrouillees
+    # (quiz.on_published est idempotent par video_id). idea_full voyage avec
+    # la pre-gen via pending ; sinon fallback sur pending["idea"].
+    if ((pending.get("idea_full") or idea).get("quiz") or {}).get("enabled"):
+        try:
+            from .quiz import on_published as quiz_on_published
+            quiz_on_published(pending.get("idea_full") or idea, video_id, cfg)
+        except Exception as exc:
+            log.warning("quiz.on_published (pending) echoue: %s", exc)
     return {"published": True, "youtube_id": video_id,
             "video": str(video_path)}
 
@@ -601,6 +633,11 @@ def run_loop(config=None, once=False):
                     "tags": result.get("tags"),
                     "comment": result.get("comment"),
                     "pair_id": result.get("pair_id"),
+                    # Pivot quiz (2026-10-30) : l'idee COMPLETE voyage avec la
+                    # pre-gen pour que quiz.on_published puisse verrouiller les
+                    # questions a la publication exacte.
+                    "quiz": result.get("quiz"),
+                    "idea_full": result.get("idea_full"),
                     "created": now.isoformat(),
                 }
                 save_json(pending_file, pending)

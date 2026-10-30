@@ -1,6 +1,7 @@
 # AutoPipe 24/7 sur GitHub Actions :
-#   - 2 executions planifiees par jour aux heures de pic US (15h et 21h UTC,
-#     soit 11h et 17h heure de l'Est), matching upload.post_hours_utc.
+#   - 4 executions planifiees par jour (14h, 18h, 22h, 2h UTC, soit 10h, 14h,
+#     18h, 22h heure de l'Est), matching upload.post_hours_utc (pivot quiz :
+#     volume double pour accelerer les conditions de monetisation).
 #   - workflow_dispatch = declenchement manuel depuis l'onglet "Actions".
 #   - Les secrets (config avec cles, token OAuth YouTube, client_secret) sont
 #     injectes depuis les secrets chiffres du depot : rien de sensible dans
@@ -11,8 +12,10 @@ name: autopipe
 
 on:
   schedule:
-    - cron: "0 15 * * *"
-    - cron: "0 21 * * *"
+    - cron: "0 14 * * *"
+    - cron: "0 18 * * *"
+    - cron: "0 22 * * *"
+    - cron: "0 2 * * *"
   workflow_dispatch:
 
 # Le run commite l'etat (data/) a la fin -> droit d'ecriture requis.

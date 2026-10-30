@@ -180,6 +180,158 @@ def assemble(track, audio, srt, out_path, cfg=None, music=None, hook_ass=None,
     return out_path
 
 
+def _quiz_fold(text):
+    """Copie alignee (1 caractere -> 1 caractere) pour reperer les positions
+    des questions/reponses dans le script sans casser les offsets."""
+    return "".join(ch.lower() if (ch.isalnum() or ch.isspace()) else " "
+                   for ch in str(text or ""))
+
+
+def _quiz_pos_to_time(pos, total_chars, words, audio_dur):
+    """Offset caractere -> secondes, via l'index de mot TTS equivalent.
+
+    Les timings edge-tts donnent le rythme reel (nombres epelles, pause du
+    compte a rebours) ; la fraction de caracteres du script sert d'index
+    dans la liste de mots. Fallback : fraction * duree audio.
+    """
+    frac = min(1.0, max(0.0, pos / float(max(1, total_chars))))
+    if words:
+        idx = min(len(words) - 1, int(round(frac * (len(words) - 1))))
+        try:
+            t = float((words[idx] or {}).get("start") or 0.0)
+        except (TypeError, ValueError, IndexError):
+            t = 0.0
+        return max(0.0, min(t, max(0.0, audio_dur)))
+    return frac * max(0.0, audio_dur)
+
+
+def _quiz_card_overlays(idea, audio_dur, timings_json, out_dir, cfg):
+    """Cartes ASS question/reponse du mode quiz (rounds de quiz.py).
+
+    Positionnement : l'offset de chaque question (et de sa bonne reponse)
+    dans le script est converti en temps via les timings de mots edge-tts
+    (fallback proportionnel sur la duree). La question s'affiche des son
+    debut jusqu'a la revelation ; la reponse (carte verte) tient jusqu'a la
+    question suivante. Ancre introuvable -> position au prorata des rounds.
+    Aucun echec n'est fatal : la video sort sans carte plutot que sans rendu.
+    """
+    meta = idea.get("quiz") or {}
+    items = meta.get("items") or []
+    script = str(idea.get("script") or "")
+    if not items or not script:
+        return []
+    qcfg = cfg.get("quiz") or {}
+    if qcfg.get("cards") is False:
+        return []
+    from .subs import write_quiz_card_ass
+    from .util import load_json
+    words = (load_json(timings_json, {}) or {}).get("words") or []
+    folded = _quiz_fold(script)
+    total = max(1, len(folded))
+    vcfg = cfg.get("video") or {}
+    width = int(vcfg.get("width", 1080))
+    height = int(vcfg.get("height", 1920))
+    try:
+        cd = float(qcfg.get("countdown_s") or meta.get("countdown_s") or 10)
+    except (TypeError, ValueError):
+        cd = 10.0
+
+    def t_of(pos):
+        return _quiz_pos_to_time(pos, total, words, audio_dur)
+
+    marks = []  # (pos_question, pos_reponse|None) par round
+    for it in items:
+        if not isinstance(it, dict) or not str(it.get("question") or "").strip():
+            marks.append(None)
+            continue
+        qpos = folded.find(_quiz_fold(it["question"]))
+        apos = None
+        opts = [str(o) for o in (it.get("options") or [])]
+        try:
+            idx = int(it.get("answer_index"))
+        except (TypeError, ValueError):
+            idx = 0
+        correct = opts[idx] if 0 <= idx < len(opts) else ""
+        if qpos >= 0 and correct:
+            # Revelation, pas l'option : la bonne reponse est deja citee dans
+            # la ligne de la question ("B: Saturn"). On cherche donc sa
+            # DERNIERE occurrence APRES cette ligne, sinon la carte verte
+            # s'afficherait pendant le compte a rebours et spoilerait la
+            # reponse. Jamais repetee apres -> apos = None et la fenetre
+            # degrade t_ans = t_q + cd * 0.8.
+            line_end = folded.find("\n", qpos)
+            if line_end < 0:
+                line_end = len(folded)
+            apos = folded.rfind(_quiz_fold(correct), line_end + 1)
+            if apos < 0:
+                apos = None
+        if qpos < 0:
+            # ancrage degrade : position attendue au prorata des rounds
+            k = len(marks)
+            qpos = int(total * (0.08 + 0.80 * k / max(1, len(items))))
+            apos = None
+        marks.append((qpos, apos))
+
+    cards = []
+    letters = ("A", "B", "C", "D")
+    for i, mark in enumerate(marks):
+        if not mark:
+            continue
+        it = items[i]
+        opts = [str(o) for o in (it.get("options") or [])]
+        try:
+            idx = min(max(int(it.get("answer_index")), 0), max(len(opts) - 1, 0))
+        except (TypeError, ValueError):
+            idx = 0
+        correct = opts[idx] if 0 <= idx < len(opts) else ""
+        t_q = t_of(mark[0])
+        if mark[1]:
+            t_ans = t_of(mark[1])
+        else:
+            t_ans = t_q + cd * 0.8
+        q_start = max(0.5, t_q - 0.3)
+        a_start = max(q_start + 2.0, t_ans - 1.2)
+        if i + 1 < len(marks) and marks[i + 1]:
+            next_q = t_of(marks[i + 1][0])
+        else:
+            next_q = audio_dur - 2.0
+        a_end = min(max(a_start + 2.0, next_q - 0.2), audio_dur - 0.5,
+                    a_start + 12.0)
+        if q_start >= a_start or a_start >= a_end:
+            continue
+        q_lines = ["Question %d" % (i + 1), str(it["question"])]
+        q_lines += ["%s) %s" % (letters[j], o) for j, o in enumerate(opts[:4])]
+        try:
+            qa = write_quiz_card_ass(
+                q_lines, out_dir / ("quiz_q_%d.ass" % i),
+                at_seconds=q_start, duration=a_start - q_start,
+                kind="question", width=width, height=height,
+                wrap_chars=30, max_lines=9)
+            if qa:
+                cards.append(qa)
+        except Exception as exc:
+            log.warning("Carte question ignoree (round %d): %s", i + 1, exc)
+        if not correct:
+            continue
+        a_lines = ["Answer: %s" % letters[min(idx, len(letters) - 1)], correct]
+        if str(it.get("explanation") or "").strip():
+            a_lines.append(str(it["explanation"]))
+        try:
+            aa = write_quiz_card_ass(
+                a_lines, out_dir / ("quiz_a_%d.ass" % i),
+                at_seconds=a_start, duration=a_end - a_start,
+                kind="answer", width=width, height=height,
+                wrap_chars=30, max_lines=6)
+            if aa:
+                cards.append(aa)
+        except Exception as exc:
+            log.warning("Carte reponse ignoree (round %d): %s", i + 1, exc)
+    if cards:
+        log.info("Mode quiz: %d cartes ASS generees pour %s", len(cards),
+                 idea.get("id"))
+    return cards
+
+
 def run_video(idea, audio, timings_json, clips, config=None):
     """Pipeline video complet pour une idee -> output/<id>/video.mp4."""
     cfg = config or get_config()
@@ -242,9 +394,21 @@ def run_video(idea, audio, timings_json, clips, config=None):
     # Deduplication : deux checkpoints a moins de 1.5 s d'ecart sont
     # fusionnes (sur un 13 s, le dernier tiers ~10 s tombe pres du 8 s).
     extra_ass = []
+    quiz_meta = idea.get("quiz") if isinstance(idea.get("quiz"), dict) else {}
+    is_quiz = bool(quiz_meta.get("items")) \
+        and bool((cfg.get("quiz") or {}).get("enabled", True))
     is_long = (str(idea.get("duration_format") or "") == "long"
                or audio_dur > 30.0)
-    if vcfg.get("checkpoint_enabled", True):
+    if is_quiz:
+        # Mode quiz : cartes question/reponse a la place des checkpoints
+        # generiques (voir quiz.py : revelation dans la meme video).
+        try:
+            extra_ass = _quiz_card_overlays(idea, audio_dur, timings_json,
+                                            out_dir, cfg)
+        except Exception as exc:
+            log.warning("Cartes quiz ignorees (non fatal): %s", exc)
+            extra_ass = []
+    elif vcfg.get("checkpoint_enabled", True):
         try:
             base_times = [float(t) for t in
                           (vcfg.get("checkpoint_times_s") or [2.0, 8.0])]

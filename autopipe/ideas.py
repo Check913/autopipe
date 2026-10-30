@@ -1,6 +1,7 @@
 """Idea + script generation (LLM if configured, otherwise local templates)."""
 import datetime as dt
 import re
+import traceback
 import urllib.parse
 from pathlib import Path
 
@@ -319,6 +320,29 @@ def llm_idea(llm, topic, cfg):
 def run_ideas(config=None, count=5):
     cfg = config or get_config()
     paths = get_paths(cfg)
+    # Pivot quiz (2026-10-30) : [quiz].enabled remplace les faits passifs
+    # par une idee quiz complete (rounds, hook A/B quiz, script parle).
+    # Une seule idee quiz par run ; tout echec retombe sur le flux standard.
+    if (cfg.get("quiz") or {}).get("enabled"):
+        try:
+            from . import quiz as quiz_mod
+            llm = LLMClient(base_url=cfg["llm"].get("base_url", ""),
+                            api_key=cfg["llm"].get("api_key", ""),
+                            model=cfg["llm"].get("model", "gpt-4o-mini"))
+            idea = quiz_mod.build_idea(llm, cfg)
+            stamp = dt.datetime.now().strftime("%Y%m%d-%H%M%S")
+            idea["id"] = "%s-01" % stamp
+            path = paths.ideas / ("%s-%s.json"
+                                  % (idea["id"], slugify(idea["title"])))
+            save_json(path, idea)
+            save_json(paths.ideas / "latest.json",
+                      {"date": stamp, "ideas": [str(path)]})
+            log.info("Idee quiz generee: %s (%s)", idea["title"],
+                     idea.get("generator"))
+            return [idea], [path]
+        except Exception:
+            log.warning("Mode quiz a echoue, fallback idees standard:\n%s",
+                        traceback.format_exc())
     scout_data = load_json(paths.scout / "latest.json", {"top": []})
     # On demande plus de sujets que necessaire: le dedup inter-runs va en
     # eliminer (les 3 runs du 23/10 avaient produit 3x le meme sujet).
