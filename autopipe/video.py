@@ -92,6 +92,32 @@ def build_video_track(clips, audio_dur, work_dir, width=1080, height=1920, fps=3
         except Exception as exc:
             log.warning("Boucle de fin ignoree: %s", exc)
 
+    # Remplissage (fix 2026-10-30) : la somme des segments doit couvrir la
+    # duree de la voix. Cas quiz : Pixabay renvoie souvent 1-2 clips pour
+    # "quiz"/"trivia" alors que la voix dure ~80-113 s -> sans remplissage,
+    # la piste s'arretait a ~12 s et le mux tronquait la video ET l'audio.
+    # Le concat peut repeter les fichiers : on boucle les segments jusqu'a
+    # couvrir audio_dur (meme codec/params via normalize_clip).
+    def _seg_dur(path):
+        try:
+            return float(media_duration(path))
+        except Exception:
+            return 0.0
+
+    total = sum(_seg_dur(s) for s in segs)
+    if total > 0 and total < audio_dur - 0.5:
+        filled = []
+        acc = 0.0
+        while acc < audio_dur:
+            for seg in segs:
+                filled.append(seg)
+                acc += _seg_dur(seg)
+                if acc >= audio_dur:
+                    break
+        log.info("Remplissage boucle: %.1fs de segments x%d -> %.1fs (voix %.1fs)",
+                 total, len(filled) // max(1, len(segs)), acc, audio_dur)
+        segs = filled
+
     listfile = work_dir / "concat.txt"
     listfile.write_text(
         "".join("file '%s'\n" % s.resolve().as_posix() for s in segs), encoding="utf-8")
