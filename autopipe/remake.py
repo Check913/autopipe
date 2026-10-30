@@ -43,11 +43,21 @@ HARD_PROMPT = (
     "outcome - vague hooks ('you won't believe this') lose about 4x more "
     "viewers. "
     "(3) ULTRA-SHORT sentences, one idea per line, spoken rhythm 150-170 wpm. "
-    "(3-d) DURATION: pick EXACTLY ONE of two formats - NEVER in between: "
+    "(3-d) DURATION: pick EXACTLY ONE of three formats - NEVER in between: "
     "'short' = 13-second ultra-dense punch (one shocking fact, 31-36 words, "
-    "density 1-2) OR 'long' = 60-second full story (145-165 words, setup + "
-    "payoff arc, density 3-5). Output 'density' (int 1-5) and "
-    "'duration_format' ('short' or 'long'). "
+    "density 1-2); 'long' = 60-second full story (145-165 words, setup + "
+    "payoff arc, density 3-5); OR 'quiz' = 80-second interactive quiz "
+    "(74-88 s, density 4-5) built like the niche leader: an identity-filter "
+    "hook ('Only X can score 9/9...'), then 8-10 items - each item is one "
+    "self-contained question line ('Question N: ...', NEVER speak the "
+    "answer options), followed by 'Lock in your answer: Five. Four. Three. "
+    "Two. One.' then 'The answer is <letter>: <correct answer>.'. Insert a "
+    "like-bait line right after item 3 ('If you got the first three right, "
+    "like the video right now.'), a score-check interaction beat right "
+    "after item 5, and right before the last question the tease 'Are you "
+    "ready for the last question?' plus the weekly-leaderboard follow "
+    "bait. Output 'density' (int 1-5) and "
+    "'duration_format' ('short', 'long' or 'quiz'). "
     "(3b) PATTERN INTERRUPTS: no flat stretch longer than 10 seconds - every "
     "7-10 seconds of script (about every 2-3 lines) insert a micro-turn: a "
     "shock question, a reversal, or a change of visual focus for the editor. "
@@ -56,17 +66,24 @@ HARD_PROMPT = (
     "number) and, when available, answer one real unanswered viewer question. "
     "(4) FACTS: better documented than the original - concrete and checkable, "
     "no invented statistics. "
-    "(5) LOOP ENDING: the last line flows back into the opening line. "
+    "(5) LOOP ENDING: the last line flows back into the opening line - "
+    "except for 'quiz', which must end on the final answer followed by the "
+    "score/follow CTA. "
     "(6) Add ONE upgrade the original did not have: a sharper fact, a "
     "counter-intuitive twist, or a stronger visual cue for the editor. "
-    "(7) No subscribe begging, no channel intro, no filler words. "
+    "(7) No subscribe begging, no channel intro, no filler words - the "
+    "only exception is the 'quiz' format's closing follow/leaderboard "
+    "CTA, which is part of the formula. "
     "You reply ONLY with valid JSON with keys: title (max 60 chars, curiosity "
     "gap, keyword in the first 3 words), hook (max 60 chars, on-screen text, "
     "question preferred), script (a SINGLE multi-line plain-text STRING, "
-    "never an array: ONE ultra-short sentence per line, 6-12 lines), comment "
+    "never an array: ONE ultra-short sentence per line, 6-12 lines; for "
+    "'quiz', one 'Question N: ...' line per item each followed by the "
+    "countdown and answer lines, 25-35 lines), comment "
     "(one short pinned question), description "
     "(2-3 lines ending with 3 hashtags), tags (list of 8-12 lowercase "
-    "keywords), density (int 1-5), duration_format ('short' or 'long')."
+    "keywords), density (int 1-5), duration_format ('short', 'long' or "
+    "'quiz')."
 )
 
 STOPWORDS = frozenset((
@@ -161,7 +178,7 @@ def discover_hits(cfg=None, keywords=None, limit=None):
     language = str(cfg["general"].get("language", "en"))
     region = str(cfg["general"].get("region", "US"))
     min_views = max(1, int(cfg["remake"].get("min_views", 500000)))
-    max_duration = max(1, int(cfg["remake"].get("max_duration", 75)))
+    max_duration = max(1, int(cfg["remake"].get("max_duration", 85)))
     limit = max(1, int(limit or cfg["remake"].get("limit", 5)))
     per_query = max(5, int(cfg["remake"].get("search_per_keyword", 10)))
     words = list(keywords or cfg["remake"].get("keywords")
@@ -635,7 +652,8 @@ def _normalize_idea(data, defaults_source, cfg, analysis):
     subject = " ".join(str(a.get("subject") or analysis.get("title") or "").split())
     # V2 : duree via duration_plan (13 s OU 60 s, jamais un milieu
     # arbitraire type 40 s). Remake d'un recit viral -> densite 4 (format
-    # long) par defaut, sauf si le LLM a pose duration_format lui-meme.
+    # long) par defaut, sauf si le LLM a pose duration_format lui-meme
+    # ('quiz' = profil conquerant 80 s, jamais ecrase par duration_plan).
     try:
         density = int(data.get("density"))
     except (TypeError, ValueError):
@@ -645,7 +663,15 @@ def _normalize_idea(data, defaults_source, cfg, analysis):
         density = 1
     elif fmt == "long":
         density = max(density, 3)
-    plan = duration_plan(density, cfg=cfg)
+    if fmt == "quiz":
+        # Formule conquerant : le format quiz a son propre profil de duree
+        # (80 s, 74-88) ; duration_plan ne connait que short/long et
+        # l'ecraserait. Lazy import sans cycle (quiz n'importe pas remake).
+        from .quiz import _quiz_duration_plan
+        plan = _quiz_duration_plan(cfg)
+        plan["format"] = "quiz"
+    else:
+        plan = duration_plan(density, cfg=cfg)
     data["density"] = density
     data["duration_format"] = plan["format"]
     data["duration_target"] = plan["target"]
@@ -817,7 +843,7 @@ def run_remake(config=None, count=None):
             continue
         # La duree vue en recherche flat peut manquer ou mentir: on re-verifie
         # avec les vraies metadonnees avant de remaker.
-        if float(analysis.get("duration") or 0.0) > float(scout_data.get("max_duration", 75)):
+        if float(analysis.get("duration") or 0.0) > float(scout_data.get("max_duration", 85)):
             log.info("Short %s trop long (%.0fs) -> ignore", analysis["id"],
                      float(analysis.get("duration") or 0.0))
             continue

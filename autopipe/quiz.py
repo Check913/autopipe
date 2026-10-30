@@ -4,10 +4,19 @@ Pourquoi : 344 vues en 90 jours ne peuvent pas atteindre le YPP vite ; un quiz
 interactif (question -> compte a rebours -> reponse) retient mieux et coute
 moins a produire que les faits "amazing". Revelation de la reponse DANS LA
 MEME VIDEO (pas de chaine cross-video). Hooks A/B quiz-specific (familles
-question / challenge) via hook_ab.assign — les gabarits identity.hook_variants
+question / identity) via hook_ab.assign — les gabarits identity.hook_variants
 cassent la grammaire d'un hook quiz. Cartes ASS rendues par subs.
 write_quiz_card_ass (question puis reponse), checkpoints generiques ignores
 en mode quiz.
+
+Formule conquerant (2026-10-30, mesuree sur @TriviawithIbiza : 10/10 top
+shorts scrapees, 79-81 s, items mediane 9 fourchette 8-11, like-bait ~27 %,
+beat d'interaction ~42-45 %, tease ~80 %, leaderboard ~85-89 %, CTA final
+~97-99 %, artefact cache/hydrate_top_20261030-202259.json) appliquee au
+format MCQ du bot : la question SEULE est lue a voix haute (les options
+vivent sur la carte ASS, jamais lues), compte a rebours epelle, revelation,
+beats d'engagement aux positions mesurees. Profil duree :
+[ideas].duration_profiles.quiz (defaut 80 s, fourchette 74-88).
 
 Chaque idea porte idea["quiz"]["items"] = rounds complets {question, options,
 answer_index, explanation, category} rendus par video.py ; le scheduler
@@ -27,13 +36,15 @@ from .util import as_script_text, get_logger, load_json, save_json
 
 log = get_logger("quiz")
 
-# rounds=3 / countdown=5 : budget parole long (145-165 mots pour 60 s,
-# cf. identity.script_word_budget) -> hook + 3 rounds + outro ~ 165 mots.
-# 5 rounds donnaient ~80 s de voix, hors cible Short.
+# Formule conquerant (mesures 2026-10-30 sur @TriviawithIbiza, n=40 shorts,
+# top3 3.0M/2.4M/2.0M vues) : 9 items (mediane mesuree, fourchette 8-11)
+# et un compte a rebours court (3 s) pour tenir ~80 s. Les options ne sont
+# plus lues a voix haute (elles sont sur la carte ASS) : question + reponse
+# seulement, ~16 mots/round -> hook + 9 rounds + beats ~ 216 mots ~ 80 s.
 DEFAULTS = {
     "enabled": True,
-    "rounds": 3,
-    "countdown_s": 5,
+    "rounds": 9,
+    "countdown_s": 3,
     "categories": ["general", "geography", "science", "history", "movies"],
     "hooks_a": [
         "How many of these can you get right?",
@@ -41,15 +52,53 @@ DEFAULTS = {
         "Are you smarter than most people?",
         "How high can you score?",
     ],
-    # hooks_b sans chiffre de secondes : le compte a rebours reel est
-    # configurable (countdown_s), un hook ne doit pas le contredire.
+    # hooks_b = famille 'identity' (la famille dominante mesuree chez le
+    # conquerant : 'Only X can...', consequence si echec). Sans chiffre de
+    # secondes : le compte a rebours reel est configurable (countdown_s),
+    # un hook ne doit pas le contredire.
     "hooks_b": [
-        "Every second counts. No cheating.",
-        "Most people fail question 4.",
-        "Beat the average score if you can.",
-        "Your time starts now.",
+        "Only top 1% brains get every single one right.",
+        "If you miss three, you are officially average.",
+        "Most adults cannot get all of these right.",
+        "Getting them all right means elite memory.",
     ],
 }
+
+# Profil duree du mode quiz : le conquerant mesure 79-81 s (10/10), pas
+# 60 s. [ideas].duration_profiles.quiz permet d'ajuster (cible/min/max).
+_QUIZ_PROFILE_DEFAULT = {"target": 80, "min": 74, "max": 88}
+
+# Beats d'engagement de la formule conquerant, aux positions mesurees
+# (10/10 shorts : like ~27 % apres l'item 3, interaction ~42-45 % apres
+# l'item 5, tease ~80 % puis leaderboard ~85-89 % avant la derniere
+# reponse, CTA final ~97-99 %). Le 'scare' Ibiza (instructions UI absurdes
+# 'blue radar app') est remplace par un score-check honnete : meme
+# fonction (pattern interrupt + generateur de commentaires), sans contenu
+# trompeur.
+_BEAT_LIKE = "If you got the first three right, like the video right now."
+_BEAT_SCORE_CHECK = ("Score check: comment SHARP if you are still perfect, "
+                     "RUSTY if you already missed one.")
+_BEAT_TEASE = "Are you ready for the last question?"
+_BEAT_LEADERBOARD = ("Don't forget to follow and comment your score to be "
+                     "on the weekly leaderboard of the top performers.")
+
+
+def _quiz_duration_plan(cfg):
+    """Plan de duree du mode quiz : profil 'quiz' de
+    [ideas].duration_profiles, defaut = mesures du conquerant (80 s,
+    74-88). 'format' reste 'long' pour la compatibilite pipeline
+    (duration_plan ne connait que short/long)."""
+    profiles = ((cfg or {}).get("ideas") or {}).get("duration_profiles") or {}
+    prof = profiles.get("quiz") if isinstance(profiles, dict) else None
+    prof = prof if isinstance(prof, dict) else {}
+    out = {}
+    for key, fallback in (("target", 80), ("min", 74), ("max", 88)):
+        try:
+            out[key] = int(float(prof.get(key, fallback)))
+        except (TypeError, ValueError):
+            out[key] = fallback
+    out["format"] = "long"
+    return out
 
 _STATE_MAX_USED = 300
 _STATE_MAX_GENERATED = 24
@@ -279,7 +328,7 @@ def next_rounds(llm, cfg, count=None):
         want = int(count or qcfg.get("rounds") or DEFAULTS["rounds"])
     except (TypeError, ValueError):
         want = DEFAULTS["rounds"]
-    want = max(1, min(want, 8))
+    want = max(1, min(want, 10))  # cap 10 : items 8-11 mesures (conquerant)
     cats = [str(c).lower() for c in
             (qcfg.get("categories") or DEFAULTS["categories"])]
     state = _load_state(cfg)
@@ -325,7 +374,9 @@ def next_rounds(llm, cfg, count=None):
 
 
 def hook_variants(category, cfg):
-    """Deux variantes quiz pour l'A/B : famille 'question' vs 'challenge'.
+    """Deux variantes quiz pour l'A/B : famille 'question' vs 'identity'.
+
+    'identity' = famille dominante mesuree chez le conquerant (2026-10-30).
 
     Rotation deterministe (somme d'octets de la categorie, plus seq pour B)
     pour varier sans hasard. Clippées a [ideas].hook_max_chars (60).
@@ -341,7 +392,7 @@ def hook_variants(category, cfg):
     ib = (sum(ord(c) for c in cat) + seq) % len(hooks_b)
     return [
         {"variant": "A", "family": "question", "hook": hooks_a[ia][:max_chars]},
-        {"variant": "B", "family": "challenge", "hook": hooks_b[ib][:max_chars]},
+        {"variant": "B", "family": "identity", "hook": hooks_b[ib][:max_chars]},
     ]
 
 
@@ -355,8 +406,11 @@ def _countdown_words(seconds):
 
 
 def local_script(rounds, hook, cfg):
-    """Script deterministe : hook, question + options, compte a rebours
-    (secondes epellees), revelation, outro score en commentaire."""
+    """Script deterministe, formule conquerant : question SEULE (les options
+    sont sur la carte ASS, jamais lues), compte a rebours epelle, revelation,
+    beats d'engagement aux positions mesurees quand il y a la place
+    (n >= 7) : like apres la reponse 3, score-check apres la reponse 5,
+    tease + leaderboard juste avant la derniere question, CTA final."""
     qcfg = _quiz_cfg(cfg)
     try:
         cd_plain = int(qcfg.get("countdown_s") or DEFAULTS["countdown_s"])
@@ -365,33 +419,38 @@ def local_script(rounds, hook, cfg):
     cd_plain = max(1, min(10, cd_plain))
     cd = _countdown_words(cd_plain)
     letters = ("A", "B", "C", "D")
+    n = len(rounds)
     lines = [str(hook or "").strip()]
     for i, r in enumerate(rounds, 1):
-        opts = r["options"]
-        opts_text = " ".join("%s: %s" % (letters[j], o)
-                             for j, o in enumerate(opts))
-        lines.append("Question %d: %s %s" % (i, r["question"], opts_text))
-        lines.append("Lock in your answer, your %d seconds start now: %s"
-                     % (cd_plain, cd))
-        correct = opts[r["answer_index"]]
+        if i == n - 1 and n >= 7:
+            lines.append(_BEAT_TEASE)
+            lines.append(_BEAT_LEADERBOARD)
+        lines.append("Question %d: %s" % (i, r["question"]))
+        lines.append("Lock in your answer: %s" % cd)
+        correct = r["options"][r["answer_index"]]
         letter = letters[min(r["answer_index"], len(letters) - 1)]
-        lines.append("Time's up! The answer is %s: %s. %s"
-                     % (letter, correct, r.get("explanation") or ""))
-    n = len(rounds)
-    lines.append("That was all %d questions." % n)
-    lines.append("Comment your score out of %d, and subscribe for a new quiz "
+        lines.append("The answer is %s: %s." % (letter, correct))
+        if i == 3 and n >= 7:
+            lines.append(_BEAT_LIKE)
+        if i == 5 and n >= 7:
+            lines.append(_BEAT_SCORE_CHECK)
+    lines.append("Comment your score out of %d, and follow for a new quiz "
                  "every day." % n)
     return "\n".join(lines)
 
 
 def _llm_script(llm, rounds, hook, cfg):
     """Script LLM sous contrat strict : premiere ligne = hook verbatim,
-    budget de mots [script_word_budget x 75% plancher], et chaque question +
-    bonne reponse doivent etre presentes (normalisees). Sinon None."""
+    budget de mots calibre sur le profil quiz (defaut 80 s, mesures du
+    conquerant), chaque question + bonne reponse presentes (normalisees),
+    beats d'engagement obligatoires. Sinon None."""
     if llm is None or not getattr(llm, "enabled", False):
         return None
     qcfg = _quiz_cfg(cfg)
-    lo, _hi = script_word_budget("long", cfg=cfg)
+    plan = _quiz_duration_plan(cfg)
+    lo_ref, hi_ref = script_word_budget("long", cfg=cfg)
+    lo = max(1, int(lo_ref * plan["target"] / 60.0))
+    hi = max(lo + 1, int(hi_ref * plan["target"] / 60.0))
     floor = int(lo * 0.75)
     try:
         cd_plain = int(qcfg.get("countdown_s") or DEFAULTS["countdown_s"])
@@ -407,14 +466,22 @@ def _llm_script(llm, rounds, hook, cfg):
                     "explanation": r.get("explanation", "")}
                    for r in rounds],
     }
+    cd = _countdown_words(cd_plain)
     user = (
-        "Write the spoken script of a quiz short. The FIRST LINE must be the "
-        "hook verbatim. For each round: read the question and the options "
-        "A/B/C, tell viewers they have %(cd)d seconds to lock in, then "
-        "reveal the answer with a one-line explanation. Close by asking "
-        "viewers to comment their score out of %(total)d and to subscribe. "
-        "Rounds JSON: %(json)s"
-    ) % {"cd": cd_plain, "total": len(rounds),
+        "Write the spoken script of a quiz short, about %(lo)d-%(hi)d words "
+        "(target %(target)d seconds). The FIRST LINE must be the hook "
+        "verbatim. For each round say exactly: 'Question N: <question>' - "
+        "do NOT read the options aloud, the on-screen card shows them - "
+        "then 'Lock in your answer: %(cd)s' then 'The answer is <letter>: "
+        "<correct answer>.' Insert these engagement beats: after the 3rd "
+        "answer '%(like)s' ; after the 5th answer '%(scare)s' ; right "
+        "before the last question '%(tease)s %(leaderboard)s'. Close with: "
+        "'Comment your score out of %(total)d, and follow for a new quiz "
+        "every day.' No channel intro, no filler. Rounds JSON: %(json)s"
+    ) % {"lo": lo, "hi": hi, "target": plan["target"], "cd": cd,
+         "like": _BEAT_LIKE, "scare": _BEAT_SCORE_CHECK,
+         "tease": _BEAT_TEASE, "leaderboard": _BEAT_LEADERBOARD,
+         "total": len(rounds),
          "json": json.dumps(payload, ensure_ascii=False)}
     try:
         data = llm.chat_json(SCRIPT_SYSTEM, user)
@@ -448,9 +515,9 @@ def build_idea(llm, cfg):
     """Une idee quiz complete : titre, hook A/B quiz, rounds, script.
 
     LLM optionnel (None ou non configure -> banque de secours). L'idea
-    renvoyee est prete pour la pipeline standard : duration_format long
-    (density 4), quiz.items requis par video.py, source_topic dedup
-    'quiz:<categorie>'.
+    renvoyee est prete pour la pipeline standard : duration_format long,
+    cible de duree = profil quiz (80 s mesures, conquerant), quiz.items
+    requis par video.py, source_topic dedup 'quiz:<categorie>'.
     """
     qcfg = _quiz_cfg(cfg)
     state = _load_state(cfg)
@@ -474,7 +541,7 @@ def build_idea(llm, cfg):
     hook = str((ab or {}).get("hook") or variants[0]["hook"]).strip()
     script = _llm_script(llm, rounds, hook, cfg) \
         or local_script(rounds, hook, cfg)
-    plan = duration_plan(4, cfg=cfg)
+    plan = _quiz_duration_plan(cfg)
     title = _TITLES[cursor % len(_TITLES)].format(n=n, cd=cd_plain)[:50]
     idea = {
         "topic": "quiz",

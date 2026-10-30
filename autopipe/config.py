@@ -56,6 +56,11 @@ DEFAULTS = {
         "duration_profiles": {
             "short": {"target": 13, "min": 12, "max": 18},
             "long": {"target": 60, "min": 50, "max": 60},
+            # Mode quiz (conquerant mesure 2026-10-30, @TriviawithIbiza) :
+            # 79-81 s sur 10/10 shorts -> cible 80 s, fourchette 74-88.
+            # Consomme par quiz._quiz_duration_plan (format force "long"
+            # pour la compatibilite pipeline).
+            "quiz": {"target": 80, "min": 74, "max": 88},
         },
     },
     "scout": {
@@ -107,7 +112,9 @@ DEFAULTS = {
         "count": 2,
         "keywords": [],           # vide -> fallback sur scout.keywords
         "min_views": 500000,
-        "max_duration": 75,
+        # 85 s : les Shorts viraux durent jusqu'a ~90 s (2026) ; la formule
+        # conquerant quiz mesuree fait 79-81 s. 75 s excluait ces gagnants.
+        "max_duration": 85,
         "limit": 5,
         "search_per_keyword": 10,
         "hydrate_count": 15,
@@ -235,6 +242,10 @@ DEFAULTS = {
         "competitor_max": 20,     # Shorts recents analyses par concurrent
         "min_views": 100000,      # seuil "gagnant" pour l'analyse
         "top_n": 20,              # taille de l'echantillon gagnant analyse
+        # Filtre anti long-form : un "Short" yt-dlp peut en fait etre une
+        # video longue (27M vues mais 133 s). Tout item dont la duree
+        # depasse max_duration est exclu des gagnants analyses.
+        "max_duration": 120,
         "cache_hours": 12,        # re-scrape apres ce delai
         "pacing_seconds": 0.6,    # pause entre requetes (respect des cibles)
     },

@@ -165,19 +165,48 @@ def _entry_ts(e):
     return None
 
 
+def _max_duration(cfg):
+    """Plafond (s) d'un 'short' pour la recherche : au-dela, c'est du
+    long-form (l'onglet /shorts accepte des videos de 3 minutes ; obs.
+    2026-10 : une virale de 133 s polluait la mediane des insights)."""
+    rc = cfg.get("research", {}) or {}
+    try:
+        return float(rc.get("max_duration", 120) or 120)
+    except (TypeError, ValueError):
+        return 120.0
+
+
 def _winners(entries, cfg):
-    """Echantillon 'gagnant' : vues >= min_views, sinon top_n par vues."""
+    """Echantillon 'gagnant' : vues >= min_views, sinon top_n par vues.
+
+    Anti long-form : les entrees plus longues que research.max_duration
+    (defaut 120 s) sont exclues de l'echantillon (dedup AVANT le filtre).
+    """
     rc = cfg.get("research", {}) or {}
     min_views = int(rc.get("min_views", 100000) or 100000)
     top_n = int(rc.get("top_n", 20) or 20)
+    max_dur = _max_duration(cfg)
     seen = set()
     unique = []
+    n_long = 0
     for e in entries:
         eid = str(e.get("id") or "")
         if not eid or eid in seen or not e.get("views"):
             continue
+        # Dedup AVANT le filtre duree : une entree longue recontree ne
+        # repasse pas par le filtre et n'est pas comptee deux fois.
         seen.add(eid)
+        try:
+            dur = float(e.get("duration") or 0.0)
+        except (TypeError, ValueError):
+            dur = 0.0
+        if max_dur > 0 and dur > max_dur:
+            n_long += 1
+            continue
         unique.append(e)
+    if n_long:
+        log.info("Research: %s entrees long-form (> %.0fs) exclues de "
+                 "l'echantillon", n_long, max_dur)
     winners = [e for e in unique if int(e["views"]) >= min_views]
     if not winners:
         # Petite niche au demarrage (AUCUN gagnant qualifie) : top_n par
@@ -229,10 +258,12 @@ def _analyze(entries, cfg):
         age_days = max(0.5, (now_ts - ts) / 86400.0)
         velocities.append(int(e["views"]) / age_days)
 
+    max_dur_cfg = _max_duration(cfg)
     doc = {
         "generated_at": dt.datetime.now().isoformat(timespec="seconds"),
         "n_scraped": len(entries),
         "n_winners": len(winners),
+        "max_duration_s": max_dur_cfg if max_dur_cfg > 0 else None,
         "duration_median_s": _median(durations),
         "duration_p25_s": _pct(durations, 25),
         "duration_p75_s": _pct(durations, 75),
@@ -399,6 +430,9 @@ def report(cfg=None):
                      % (doc["duration_median_s"],
                         doc.get("duration_p25_s") or 0,
                         doc.get("duration_p75_s") or 0))
+    if doc.get("max_duration_s"):
+        lines.append("- filtre anti long-form: gagnants <= %.0fs seulement"
+                     % doc["max_duration_s"])
     if doc.get("hook_families_pct"):
         lines.append("- familles de hooks: %s" % doc["hook_families_pct"])
     if doc.get("velocity_median_vpd"):

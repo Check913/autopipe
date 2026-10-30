@@ -59,7 +59,9 @@ enabled = false
 count = 2                        # remakes par iteration du pipeline
 keywords = []                    # vide = reprend scout.keywords
 min_views = 500000               # seuil "viral" en vues
-max_duration = 75                # vrais Shorts seulement (secondes)
+max_duration = 85                # vrais Shorts seulement (secondes) ; les
+                                 # gagnants 2026 montent a ~90 s et la formule
+                                 # quiz du conquerant mesuree fait 79-81 s
 limit = 5                        # Shorts conserves par scan
 search_per_keyword = 10          # resultats yt-dlp par mot-cle
 hydrate_count = 15               # candidats a verifier si les vues sont inconnues
@@ -217,6 +219,9 @@ off_niche_penalty = 1.5
 # complete. Le LLM choisit selon la densite du sujet.
 short = { target = 13, min = 12, max = 18 }
 long = { target = 60, min = 50, max = 60 }
+# Mode quiz : cible mesuree chez le conquerant de la niche (79-81 s sur
+# 10/10 tops shorts, mediane 9 items). Le format pipeline reste "long".
+quiz = { target = 80, min = 74, max = 88 }
 
 [analytics]
 # V2 : vrai proxy de retention Shorts = engagedViews / views (YouTube
@@ -235,3 +240,40 @@ loop_min_pct = 80                # sous 80 % -> alerte CRITICAL dans le hook
 # V2 : A/B de hook - deux variantes par sujet, tracker variant -> retention
 # (data/hook_ab/assignments.jsonl). Voir README-analytics.md.
 enabled = true
+
+[research]
+# MODULE 4 : benchmark quantitatif continu de la niche (Shorts gagnants +
+# canaux rivaux) -> chiffres reels injectes dans les prompts.
+enabled = true
+keywords = []                    # vide = scout.keywords
+competitors = []                 # handles (@x) des canaux a espionner
+min_views = 100000
+top_n = 20
+# Filtre anti long-form : les "Shorts" yt-dlp dont la duree depasse cette
+# valeur sont exclus des gagnants analyses (le second de la niche affiche
+# 27M de vues mais en long-form non-Short, pas un modele a copier).
+max_duration = 120
+cache_hours = 12
+
+[quiz]
+# Mode quiz "conquerant" : formule mesuree le 2026-10-30 sur le top 10 des
+# shorts du leader de la niche (@TriviawithIbiza) - 9 items (8-11),
+# countdown 3 s, hook filtre d'identite, beats d'engagement (like ~27 %,
+# score-check ~42-45 %, tease ~80 %, leaderboard ~85-89 %), cible ~80 s
+# (voir [ideas.duration_profiles.quiz]). Les options sont montrees sur la
+# carte ASS, jamais lues a voix haute.
+rounds = 9
+countdown_s = 3
+categories = ["general", "geography", "science", "history", "movies"]
+hooks_a = [
+  "How many of these can you get right?",
+  "Can you beat the average score?",
+  "Are you smarter than most people?",
+  "How high can you score?",
+]
+hooks_b = [
+  "Only top 1% brains get every single one right.",
+  "If you miss three, you are officially average.",
+  "Most adults cannot get all of these right.",
+  "Getting them all right means elite memory.",
+]

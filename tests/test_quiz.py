@@ -84,7 +84,7 @@ def test_next_rounds_dedup_generated_et_used(tmp_path, make_cfg):
 def test_next_rounds_count_borne(tmp_path, make_cfg):
     cfg = _make(make_cfg)
     assert len(quiz.next_rounds(None, cfg, count=1)) == 1
-    assert len(quiz.next_rounds(None, cfg, count=99)) == 8  # cap dur 8
+    assert len(quiz.next_rounds(None, cfg, count=99)) == 10  # cap dur 10 (items 8-11 mesures chez le conquerant)
     assert len(quiz.next_rounds(None, cfg, count=0)) == 3   # fallback cfg
 
 
@@ -98,23 +98,64 @@ def test_local_script_structure(tmp_path, make_cfg):
     lines = script.splitlines()
     assert lines[0] == hook
     assert "Question 1:" in script and "Question 2:" in script
-    assert "Lock in your answer, your 5 seconds start now:" in script
-    assert "Five. Four. Three. Two. One." in script
+    assert "Lock in your answer: Five. Four. Three. Two. One." in script
     r0 = rounds[0]
     letter = "ABCD"[r0["answer_index"]]
     assert "The answer is %s: %s." % (letter, r0["options"][r0["answer_index"]]) \
         in script
-    assert "That was all 2 questions." in script
-    assert "Comment your score out of 2" in script
-    assert "subscribe" in script
+    # formule conquerant : les options ne sont jamais lues (carte ASS
+    # uniquement) et pas de recap final.
+    q1 = [ln for ln in lines if ln.startswith("Question 1:")][0]
+    lock1 = [ln for ln in lines if ln.startswith("Lock in your answer:")][0]
+    for opt in rounds[0]["options"]:
+        assert opt not in q1 and opt not in lock1
+    assert "That was all" not in script
+    assert ("Comment your score out of 2, and follow for a new quiz "
+            "every day.") in script
 
 
 def test_local_script_countdown_clamp(tmp_path, make_cfg):
     cfg = _make(make_cfg, quiz={"enabled": True, "countdown_s": 99})
     rounds = [r for r in _bank_rounds(1) if r]
     script = quiz.local_script(rounds, "Hook here.", cfg)
-    assert "your 10 seconds start now" in script  # clamp 1..10
-    assert "Ten. Nine." in script
+    assert "Lock in your answer: Ten. Nine." in script  # clamp 1..10
+
+
+def test_local_script_beats_conquerant(tmp_path, make_cfg):
+    """9 rounds (mediane conquerant) : like apres l'item 3, score-check
+    apres l'item 5, tease + leaderboard juste avant la derniere question."""
+    cfg = _make(make_cfg)
+    rounds = [r for r in _bank_rounds(9) if r]
+    script = quiz.local_script(rounds, "Only top 1% brains.", cfg)
+    lines = script.splitlines()
+    assert lines[0] == "Only top 1% brains."
+    like_idx = lines.index(quiz._BEAT_LIKE)
+    score_idx = lines.index(quiz._BEAT_SCORE_CHECK)
+    tease_idx = lines.index(quiz._BEAT_TEASE)
+    lb_idx = lines.index(quiz._BEAT_LEADERBOARD)
+    # like colle a la revelation 3, score-check a la revelation 5
+    assert lines[like_idx - 1].startswith("The answer is")
+    assert lines[like_idx - 1].endswith(
+        "%s." % rounds[2]["options"][rounds[2]["answer_index"]])
+    assert lines[score_idx - 1].startswith("The answer is")
+    assert lines[score_idx - 1].endswith(
+        "%s." % rounds[4]["options"][rounds[4]["answer_index"]])
+    # tease + leaderboard dos a dos, juste avant la question 8 (avant-derniere)
+    assert tease_idx + 1 == lb_idx
+    assert lines[lb_idx + 1] == "Question 8: %s" % rounds[7]["question"]
+    assert ("Comment your score out of 9, and follow for a new quiz "
+            "every day.") in script
+
+
+def test_local_script_sans_beats_si_moins_de_7_rounds(tmp_path, make_cfg):
+    cfg = _make(make_cfg)
+    rounds = [r for r in _bank_rounds(6) if r]
+    script = quiz.local_script(rounds, "Hook.", cfg)
+    assert quiz._BEAT_LIKE not in script
+    assert quiz._BEAT_SCORE_CHECK not in script
+    assert quiz._BEAT_TEASE not in script
+    assert quiz._BEAT_LEADERBOARD not in script
+    assert "Question 6:" in script
 
 
 # ---------------------------------------------------------------- build_idea
@@ -136,11 +177,33 @@ def test_build_idea_offline(tmp_path, make_cfg):
     assert "Question 3:" in idea["script"]
     assert idea["generator"] == "quiz:bank"
     assert idea["source_topic"].startswith("quiz:")
-    assert idea["duration_target"] > 0
-    assert idea["duration_format"] in ("short", "long")
+    # profil duree quiz : cible conquerant 80 s (74-88), format long
+    assert idea["duration_target"] == 80
+    assert idea["duration_range"] == [74, 88]
+    assert idea["duration_format"] == "long"
     # A/B quiz actif : paire rattachee, variante tracee.
     assert idea.get("pair_id")
     assert idea.get("hook_variant") in ("A", "B")
+
+
+def test_profil_duree_quiz_configurable(tmp_path, make_cfg):
+    """[ideas].duration_profiles.quiz surcharge le profil conquerant."""
+    cfg = _make(make_cfg, ideas={"hook_max_chars": 60,
+                                 "duration_profiles":
+                                     {"quiz": {"target": 90, "min": 80,
+                                               "max": 100}}})
+    idea = quiz.build_idea(None, cfg)
+    assert idea["duration_target"] == 90
+    assert idea["duration_range"] == [80, 100]
+    assert idea["duration_format"] == "long"
+    assert quiz._quiz_duration_plan(cfg) == {"target": 90, "min": 80,
+                                             "max": 100, "format": "long"}
+    # profil invalide -> fallback conquerant, jamais de crash
+    cfg_bad = _make(make_cfg, ideas={"hook_max_chars": 60,
+                                     "duration_profiles": {"quiz": "oops"}})
+    plan = quiz._quiz_duration_plan(cfg_bad)
+    assert (plan["target"], plan["min"], plan["max"], plan["format"]) == \
+        (80, 74, 88, "long")
 
 
 def test_build_idea_rounds_dedup_entre_ideas(tmp_path, make_cfg):
@@ -292,6 +355,6 @@ def test_hook_variants_quiz(tmp_path, make_cfg):
     cfg = _make(make_cfg)
     variants = quiz.hook_variants("geography", cfg)
     assert [v["variant"] for v in variants] == ["A", "B"]
-    assert [v["family"] for v in variants] == ["question", "challenge"]
+    assert [v["family"] for v in variants] == ["question", "identity"]
     for v in variants:
         assert v["hook"] and len(v["hook"]) <= 60

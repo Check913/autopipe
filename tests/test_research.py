@@ -181,3 +181,73 @@ def test_report_readability(make_cfg):
     from autopipe import research
     cfg = make_cfg()
     assert "Aucun insight" in research.report(cfg)
+
+
+# --------------------------------------------------- filtre anti long-form
+def test_winners_max_duration_filters_longform(make_cfg):
+    """Edit D : au-dela de research.max_duration, ce n'est PAS un short.
+
+    Obs. 2026-10 : la video virale du 2e canal de la niche est du
+    long-form (133 s) et polluait la mediane des insights (133 s au lieu
+    des ~40 s des vrais shorts).
+    """
+    from autopipe import research
+    cfg = make_cfg(research={"min_views": 100000, "top_n": 20,
+                             "max_duration": 120})
+    entries = [_entry("a", 200000, "Number one fact", 35),
+               _entry("long", 900000, "long form viral", 133),
+               _entry("edge", 800000, "exactly at limit", 120)]
+    winners = research._winners(entries, cfg)
+    ids = [w["id"] for w in winners]
+    assert "long" not in ids          # 133 s > 120 s -> exclu
+    assert "edge" in ids              # 120 s == plafond -> garde
+    assert "a" in ids
+
+
+def test_winners_longform_dedup_no_bypass(make_cfg):
+    """Dedup AVANT le filtre : un doublon 'court' du meme id long ne
+    recontourne pas le filtre (l'entree est marquee vue avant l'exclusion)."""
+    from autopipe import research
+    cfg = make_cfg(research={"min_views": 100000, "top_n": 20,
+                             "max_duration": 120})
+    long_first = _entry("long", 900000, "long form viral", 133)
+    short_dup = {"id": "long", "views": 900000, "duration": 30,
+                 "title": "dup court", "channel": "x", "upload_date": "",
+                 "timestamp": time.time()}
+    winners = research._winners([long_first, short_dup], cfg)
+    assert winners == []
+
+
+def test_analyze_records_max_duration(make_cfg):
+    """_analyze trace le plafond applique + l'echantillon n'a plus de
+    long-form (mediane non polluee)."""
+    from autopipe import research
+    cfg = make_cfg(research={"min_views": 100000, "max_duration": 120})
+    entries = [
+        _entry("a", 300000, "10 secrets you did not know", 35, 2),
+        _entry("b", 250000, "Why do we dream?", 42, 3),
+        _entry("c", 150000, "Scientists found this", 50, 4),
+        _entry("d", 120000, "5 minute rule works", 33, 1),
+        _entry("e", 110000, "Nobody expected this", 44, 5),
+        _entry("long", 900000, "long form viral", 133, 1),
+    ]
+    doc, winners = research._analyze(entries, cfg)
+    assert doc["max_duration_s"] == 120
+    assert doc["n_winners"] == 5      # le long-form est exclu
+    assert all(float(w["duration"]) <= 120 for w in winners)
+    assert doc["duration_median_s"] == 42.0  # mediane [33,35,42,44,50]
+
+
+def test_report_shows_longform_filter(make_cfg):
+    from autopipe import research
+    cfg = make_cfg(research={"cache_hours": 12})
+    doc = {"generated_at": "2026-10-29T00:00:00", "n_winners": 8,
+           "duration_median_s": 40, "duration_p25_s": 30,
+           "duration_p75_s": 50, "max_duration_s": 120,
+           "hook_families_pct": {"question": 55.0},
+           "pct_number_title": 40.0, "velocity_median_vpd": 25000,
+           "top_titles": []}
+    research.save_json(research._insights_file(cfg), doc)
+    out = research.report(cfg)
+    assert "long-form" in out
+    assert "120s" in out
