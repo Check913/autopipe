@@ -80,15 +80,51 @@ def build_srt_from_timings(timings_json, out_srt, cfg=None):
     return write_srt(cues, out_srt)
 
 
+def safe_margin_top_px(cfg=None, height=1920):
+    """Marge verticale haute (hook, align 8) : libere la bande d'UI
+    YouTube du haut du Short (~234 px mesures en 2026). Surcharge via
+    [subs].safe_margin_top_px ; 0 = auto."""
+    cfg = cfg or {}
+    h = int(height)
+    v = int((cfg.get("subs") or {}).get("safe_margin_top_px", 0) or 0)
+    if v > 0:
+        return v
+    return max(int(round(h * 0.13)), 250)
+
+
+def safe_margin_bottom_px(cfg=None, height=1920):
+    """Marge verticale basse (sous-titres, align 2) : reste au-dessus de
+    l'UI YouTube du bas (~345 px) et de l'abonnement (~y1480-1560). Bas de
+    bande texte vise : y <= 1575 sur 1080x1920. Surcharge via
+    [subs].safe_margin_bottom_px ; 0 = auto."""
+    cfg = cfg or {}
+    h = int(height)
+    v = int((cfg.get("subs") or {}).get("safe_margin_bottom_px", 0) or 0)
+    if v > 0:
+        return v
+    return max(int(round(h * 0.18)), 200)
+
+
+def checkpoint_margin_v_px(cfg=None, height=1920):
+    """Marge du checkpoint (align 2) : strictement entre le bloc hook
+    (haut, zone safe) et la bande sous-titres (bas), avec >= 60 px d'air
+    de chaque cote et au plus 0.55*h de marge."""
+    bottom = safe_margin_bottom_px(cfg, height)
+    h = int(height)
+    target = bottom + int(round(h * 0.075)) + 60
+    return min(max(target, 0), int(round(h * 0.55)))
+
+
 _ASS_HOOK_TEMPLATE = """[Script Info]
 ScriptType: v4.00+
 PlayResX: {width}
 PlayResY: {height}
 WrapStyle: 0
+ScaledBorderAndShadow: yes
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Hook,Arial,{font_size},&H0000FFFF,&H000000FF,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,5,2,8,50,50,190,1
+Style: Hook,Arial,{font_size},&H0000FFFF,&H000000FF,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,5,2,8,50,50,{margin_v},1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
@@ -117,7 +153,8 @@ def _ass_ts(seconds):
 
 
 def write_hook_ass(hook_text, out_ass, duration=3.0, width=1080, height=1920,
-                   font_size=84, wrap_chars=18, max_lines=3):
+                   font_size=84, wrap_chars=18, max_lines=3, margin_v=None,
+                   cfg=None):
     """Ecrit un fichier ASS: texte choc jaune en haut de l'ecran (hook visuel).
 
     Affiche pendant les `duration` premieres secondes, gros caractere,
@@ -134,8 +171,11 @@ def write_hook_ass(hook_text, out_ass, duration=3.0, width=1080, height=1920,
     if not lines:
         return None
     lines = lines[:max_lines]
+    if margin_v is None:
+        margin_v = safe_margin_top_px(cfg, height)
     content = _ASS_HOOK_TEMPLATE.format(
         width=int(width), height=int(height), font_size=int(font_size),
+        margin_v=int(margin_v),
         start=_ass_ts(0.0), end=_ass_ts(duration), text="\\N".join(lines))
     out_ass = Path(out_ass)
     out_ass.write_text(content, encoding="utf-8")
@@ -148,10 +188,14 @@ ScriptType: v4.00+
 PlayResX: {width}
 PlayResY: {height}
 WrapStyle: 0
+ScaledBorderAndShadow: yes
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Ckpt,Arial,{font_size},&H00FFFFFF,&H000000FF,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,4,1,2,50,50,110,1
+# Fix "texte colle" : MarginV calcule par checkpoint_margin_v_px() pour
+# rester strictement entre le hook (haut, zone safe) et les sous-titres
+# graves au bas d'ecran, sans chevaucher ni l'un ni l'autre.
+Style: Ckpt,Arial,{font_size},&H00FFFFFF,&H000000FF,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,4,1,2,50,50,{margin_v},1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
@@ -161,7 +205,8 @@ Dialogue: 0,{start},{end},Ckpt,,0,0,0,,{text}
 
 def write_checkpoint_ass(text, out_ass, at_seconds, duration=2.5,
                          width=1080, height=1920, font_size=64,
-                         wrap_chars=24, max_lines=2):
+                         wrap_chars=24, max_lines=2, margin_v=None,
+                         cfg=None):
     """Checkpoint mi-video : rappel de curiosite affiche a `at_seconds`.
 
     Vise la chute de retention du milieu de Short (formats 60 s) : un texte
@@ -187,8 +232,11 @@ def write_checkpoint_ass(text, out_ass, at_seconds, duration=2.5,
     lines = textwrap.wrap(raw, width=wrap_chars)[:max_lines]
     if not lines:
         return None
+    if margin_v is None:
+        margin_v = checkpoint_margin_v_px(cfg, height)
     content = _ASS_CHECKPOINT_TEMPLATE.format(
         width=int(width), height=int(height), font_size=int(font_size),
+        margin_v=int(margin_v),
         start=_ass_ts(at_seconds), end=_ass_ts(at_seconds + duration),
         text="\\N".join(lines))
     out_ass = Path(out_ass)
@@ -203,6 +251,7 @@ ScriptType: v4.00+
 PlayResX: {width}
 PlayResY: {height}
 WrapStyle: 0
+ScaledBorderAndShadow: yes
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
@@ -211,13 +260,18 @@ Style: QuizAns,Arial,{font_size},&H0000FF00,&H000000FF,&H00000000,&H70000000,-1,
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
-Dialogue: 0,{start},{end},{style},,0,0,0,,{text}
+Dialogue: 0,{start},{end},{style},,0,0,0,,{anchor}{text}
 """
+
+# Standard vertical concurrence (analyse Shorts viraux) : lignes courtes,
+# bloc ancore a une hauteur STABLE, marge laterale confortable dans la boite.
+QUIZ_ANCHOR_FRAC = 0.40  # centre vertical du bloc = 40 % de la hauteur
 
 
 def write_quiz_card_ass(text_lines, out_ass, at_seconds, duration=4.0,
                         kind="question", width=1080, height=1920,
-                        font_size=None, wrap_chars=24, max_lines=7):
+                        font_size=None, wrap_chars=24, max_lines=7,
+                        anchor_y_frac=None):
     """Carte question/reponse du mode quiz : bloc CENTRE, boite noire
     semi-transparente, texte blanc (question) ou vert (reponse).
 
@@ -252,12 +306,158 @@ def write_quiz_card_ass(text_lines, out_ass, at_seconds, duration=4.0,
     lines = lines[:max_lines]
     if not lines:
         return None
+    # Fix "texte colle" (2026-10-31) : la carte est ANCOREE a une hauteur
+    # stable (an5 + \pos) au lieu d'etre centree par defaut au milieu de
+    # l'ecran : un bloc de 7-9 lignes descendait jusqu'a ~y1160 et touchait
+    # la 1re ligne de sous-titres (collage mesure a ~3px). Ancre a 40 % de la
+    # hauteur, quel que soit le nombre de lignes : le bloc reste au-dessus de
+    # la zone sous-titres (bas d'ecran) et sous le hook (haut d'ecran).
+    frac = QUIZ_ANCHOR_FRAC if anchor_y_frac is None else float(anchor_y_frac)
+    anchor = "{\\an5\\pos(%d,%d)}" % (int(width) // 2,
+                                      int(round(int(height) * frac)))
     content = _ASS_QUIZ_TEMPLATE.format(
         width=int(width), height=int(height), font_size=int(font_size),
         start=_ass_ts(at_seconds), end=_ass_ts(at_seconds + duration),
-        style=style, text="\\N".join(lines))
+        style=style, anchor=anchor, text="\\N".join(lines))
     out_ass = Path(out_ass)
     out_ass.write_text(content, encoding="utf-8")
-    log.info("Carte quiz (%s): %d lignes a %.1fs (%.1fs) -> %s",
-             style, len(lines), at_seconds, duration, out_ass)
+    log.info("Carte quiz (%s): %d lignes a %.1fs (%.1fs) ancre y=%d -> %s",
+             style, len(lines), at_seconds, duration,
+             int(round(int(height) * frac)), out_ass)
+    return out_ass
+
+
+# -------------------------------------------------------------- sous-titres
+# Pipeline natif (fix "texte colle" 2026-10-31) : l'SRT brule via
+# `subtitles=...:force_style` est rendu par ffmpeg dans un espace PlayRes
+# 384x288 : FontSize=14 y equivaut a ~93px reels (x1920/288) et chaque cue
+# se re-wrape en 3-4 lignes -> un mur de texte qui mange le tiers bas de
+# l'ecran et colle aux cartes quiz. On convertit donc l'SRT en ASS avec
+# PlayRes NATIF (1080x1920) : taille, marges et contour y sont exacts.
+
+_ASS_SUBS_TEMPLATE = """[Script Info]
+ScriptType: v4.00+
+PlayResX: {width}
+PlayResY: {height}
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Subs,Arial,{font_size},&H00FFFFFF,&H000000FF,&H00000000,&H90000000,-1,0,0,0,100,100,0,0,1,{outline},0,2,{margin_l},{margin_r},{margin_v},1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+"""
+
+
+def parse_srt(path):
+    """Parse un SRT -> [{start, end, text}]. Parser minimal mais complet :
+    index numerique ignore, timing 'hh:mm:ss,mmm --> hh:mm:ss,mmm' (espaces
+    et -- ou -> acceptes), texte multi-lignes joint par espace. Fichier
+    absent -> liste vide (le fallback force_style de assemble() prend le
+    relais, et ffmpeg echouera alors a un endroit parlant)."""
+    try:
+        text = Path(path).read_text(encoding="utf-8", errors="replace")
+    except FileNotFoundError:
+        log.warning("SRT introuvable: %s", path)
+        return []
+    cues = []
+    cur_start = cur_end = None
+    cur_lines = []
+
+    def flush():
+        if cur_start is not None and cur_lines:
+            cues.append({"start": cur_start, "end": cur_end,
+                         "text": " ".join(cur_lines).strip()})
+
+    for line in text.splitlines():
+        line = line.strip()
+        if not line:
+            if cur_lines:
+                flush()
+                cur_start = cur_end = None
+                cur_lines = []
+            continue
+        if "-->" in line:
+            try:
+                a, b = line.split("-->")
+                cur_start = _srt_ts(a)
+                cur_end = _srt_ts(b)
+                cur_lines = []
+                continue
+            except (ValueError, AttributeError):
+                continue
+        if cur_start is None:
+            continue  # ligne d'index ou texte orphelin : ignore
+        cur_lines.append(line)
+    if cur_lines:
+        flush()
+    return [c for c in cues if c["text"]]
+
+
+def _srt_ts(stamp):
+    """hh:mm:ss,mmm (ou .mmm, optionnellement h:mm) -> secondes."""
+    stamp = stamp.strip().replace(",", ".")
+    parts = stamp.split(":")
+    if len(parts) == 1:
+        return float(parts[0])
+    if len(parts) == 2:
+        parts = ["0"] + parts
+    h, m, rest = parts[0], parts[1], parts[2]
+    return int(h) * 3600 + int(m) * 60 + float(rest)
+
+
+def build_subs_ass(srt_path, out_ass, cfg=None, width=1080, height=1920):
+    """Convertit l'SRT en ASS grave PlayRes natif : taille, marges et
+    contour EXACTS en pixels 1080x1920 (plus d'espace 384x288 ou FontSize=14
+    rendait ~93px). Standard vertical : fonte ~2.7%% de la hauteur (52px en
+    1920), marges laterales >= 5%%, marge basse = zone safe Shorts
+    (safe_margin_bottom_px : au-dessus de l'UI YouTube, ~0.18*h), outline
+    ~8%% de la fonte, cues re-wrapees a max_chars (<= 2 lignes). Retourne
+    out_ass, ou None si aucune cue."""
+    import textwrap
+    cfg = cfg or {}
+    subs_cfg = (cfg.get("subs") or {})
+    cues = parse_srt(srt_path)
+    if not cues:
+        return None
+    height = int(height)
+    width = int(width)
+    scale = height / 1920.0
+    font_size = int(round(float(subs_cfg.get("burn_font_px", 52)) * scale))
+    font_size = max(12, font_size)
+    outline = max(2, int(round(font_size * 0.08)))
+    margin_l = margin_r = max(int(round(width * 0.05)), 60)
+    margin_v = safe_margin_bottom_px(cfg, height)
+    wrap_chars = int(subs_cfg.get("max_chars", 42))
+    max_lines = int(subs_cfg.get("max_lines", 2))
+    events = []
+    for cue in cues:
+        lines = []
+        for seg in str(cue["text"]).split("\n"):
+            raw = _ass_escape(seg).strip()
+            if raw:
+                lines.extend(textwrap.wrap(raw, width=wrap_chars) or [raw])
+        lines = lines[:max_lines]
+        if not lines:
+            continue
+        events.append((cue["start"], cue["end"], "\\N".join(lines)))
+    if not events:
+        return None
+    # pas de Dialogue en dehors de l'ordre chronologique (libass lit tout,
+    # mais un tri stable evite tout re-wrapping imprevisible en bord de cue)
+    events.sort(key=lambda e: (e[0], e[1]))
+    body = []
+    for start, end, text in events:
+        body.append("Dialogue: 0,%s,%s,Subs,,0,0,0,,%s" % (
+            _ass_ts(start), _ass_ts(max(end, start + 0.1)), text))
+    content = _ASS_SUBS_TEMPLATE.format(
+        width=width, height=height, font_size=font_size, outline=outline,
+        margin_l=margin_l, margin_r=margin_r, margin_v=margin_v,
+    ) + "\n".join(body) + "\n"
+    out_ass = Path(out_ass)
+    out_ass.write_text(content, encoding="utf-8")
+    log.info("Sous-titres ASS natifs: %d cues, font %dpx, marges L%d/V%d "
+             "-> %s", len(events), font_size, margin_l, margin_v, out_ass)
     return out_ass

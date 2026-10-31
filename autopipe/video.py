@@ -3,7 +3,7 @@ import random
 from pathlib import Path
 
 from .config import get_config, get_paths
-from .subs import build_srt_from_timings
+from .subs import build_srt_from_timings, build_subs_ass
 from .util import get_logger, media_duration, run_ffmpeg
 
 log = get_logger("video")
@@ -92,6 +92,32 @@ def build_video_track(clips, audio_dur, work_dir, width=1080, height=1920, fps=3
         except Exception as exc:
             log.warning("Boucle de fin ignoree: %s", exc)
 
+    # Remplissage (fix 2026-10-30) : la somme des segments doit couvrir la
+    # duree de la voix. Cas quiz : Pixabay renvoie souvent 1-2 clips pour
+    # "quiz"/"trivia" alors que la voix dure ~80-113 s -> sans remplissage,
+    # la piste s'arretait a ~12 s et le mux tronquait la video ET l'audio.
+    # Le concat peut repeter les fichiers : on boucle les segments jusqu'a
+    # couvrir audio_dur (meme codec/params via normalize_clip).
+    def _seg_dur(path):
+        try:
+            return float(media_duration(path))
+        except Exception:
+            return 0.0
+
+    total = sum(_seg_dur(s) for s in segs)
+    if total > 0 and total < audio_dur - 0.5:
+        filled = []
+        acc = 0.0
+        while acc < audio_dur:
+            for seg in segs:
+                filled.append(seg)
+                acc += _seg_dur(seg)
+                if acc >= audio_dur:
+                    break
+        log.info("Remplissage boucle: %.1fs de segments x%d -> %.1fs (voix %.1fs)",
+                 total, len(filled) // max(1, len(segs)), acc, audio_dur)
+        segs = filled
+
     listfile = work_dir / "concat.txt"
     listfile.write_text(
         "".join("file '%s'\n" % s.resolve().as_posix() for s in segs), encoding="utf-8")
@@ -101,20 +127,40 @@ def build_video_track(clips, audio_dur, work_dir, width=1080, height=1920, fps=3
 
 
 def _sub_style(cfg):
-    fs = int(cfg["subs"].get("font_size", 14) or 14)
+    """force_style de secours pour l'SRT brut (fallback si l'ASS natif
+    echoue). ATTENTION (fix "texte colle") : l'SRT grave via `subtitles=`
+    est rendu dans l'espace PlayRes 384x288 implicite de ffmpeg -> toute
+    taille y est x6.67 (1920/288). On convertit donc les PIXELS reels en
+    espace 288 au lieu d'utiliser la valeur brute."""
+    scfg = cfg.get("subs", {}) or {}
+    vcfg = cfg.get("video", {}) or {}
+    try:
+        width = int(vcfg.get("width", 1080) or 1080)
+        height = int(vcfg.get("height", 1920) or 1920)
+    except (TypeError, ValueError):
+        width, height = 1080, 1920
+    px = float(scfg.get("burn_font_px", 52) or 52)
+    scale = height / 288.0          # ~6.67 pour 1080x1920
+    fs288 = max(3.0, px / scale)    # 52px reels -> ~7.8 en 288-space
+    outline288 = max(1.0, round(px * 0.08 / scale))
     # MODULE 1 : zone de sous-titres apprise des Shorts viraux
-    # (video.subtitle_position, issue de visual_pattern). Alignement ASS :
-    # 2 = bas-centre (comportement historique), 5 = milieu-centre, 8 = haut-centre.
-    pos = (cfg.get("video", {}) or {}).get("subtitle_position", "bottom") or "bottom"
+    # (video.subtitle_position). Alignement ASS : 2 = bas-centre (defaut),
+    # 5 = milieu-centre, 8 = haut-centre. Marge en PIXELS puis convertie.
+    pos = vcfg.get("subtitle_position", "bottom") or "bottom"
+    # Zones safe Shorts (rech. 2026-10-31) : haut sous l'overlay UI (~234px),
+    # bas au-dessus de l'overlay UI (~345px) au lieu des 3%/5.5% historiques
+    # qui laissaient le texte DANS les zones UI.
+    from .subs import safe_margin_bottom_px, safe_margin_top_px
     if pos == "top":
-        align, margin_v = 8, 60
+        align, margin_px = 8, safe_margin_top_px(cfg, height)
     elif pos == "middle":
-        align, margin_v = 5, 0
+        align, margin_px = 5, 0
     else:
-        align, margin_v = 2, 60
-    return ("FontName=Arial,FontSize=%d,Bold=1,"
+        align, margin_px = 2, safe_margin_bottom_px(cfg, height)
+    return ("FontName=Arial,FontSize=%.1f,Bold=1,"
             "PrimaryColour=&H00FFFFFF&,OutlineColour=&H00000000&,"
-            "Outline=2,Shadow=0,Alignment=%d,MarginV=%d" % (fs, align, margin_v))
+            "Outline=%.0f,Shadow=0,Alignment=%d,MarginV=%.0f"
+            % (fs288, outline288, align, margin_px / scale))
 
 
 def assemble(track, audio, srt, out_path, cfg=None, music=None, hook_ass=None,
@@ -142,8 +188,26 @@ def assemble(track, audio, srt, out_path, cfg=None, music=None, hook_ass=None,
     else:
         afilter += ";[voice]anull[aout]"
 
-    style = _sub_style(cfg)
-    vfilter = "subtitles=%s:force_style='%s'" % (srt_r, style)
+    # Fix "texte colle" (2026-10-31) : on grave l'ASS NATIF (PlayRes
+    # 1080x1920, tailles/marges exactes en pixels) genere depuis l'SRT ;
+    # force_style n'est plus qu'un fallback si l'ASS natif echoue.
+    v_w = int((cfg.get("video", {}) or {}).get("width", 1080) or 1080)
+    v_h = int((cfg.get("video", {}) or {}).get("height", 1920) or 1920)
+    native_ass = None
+    try:
+        native_ass = build_subs_ass(srt, out_dir / "subs_burn.ass", cfg,
+                                    width=v_w, height=v_h)
+    except Exception as exc:
+        log.warning("ASS natif des sous-titres echoue, fallback SRT: %s", exc)
+    if native_ass is not None:
+        na = Path(native_ass).resolve()
+        na_r = na.relative_to(out_dir.resolve()).as_posix() \
+            if na.is_relative_to(out_dir.resolve()) else na.as_posix()
+        vfilter = "subtitles=%s" % na_r
+        log.info("Sous-titres graves: ASS natif PlayRes %dx%d -> %s", v_w, v_h, na_r)
+    else:
+        style = _sub_style(cfg)
+        vfilter = "subtitles=%s:force_style='%s'" % (srt_r, style)
     if hook_ass:
         vfilter += ",subtitles=%s" % Path(hook_ass).name
     for extra in (extra_ass or []):
@@ -306,7 +370,7 @@ def _quiz_card_overlays(idea, audio_dur, timings_json, out_dir, cfg):
                 q_lines, out_dir / ("quiz_q_%d.ass" % i),
                 at_seconds=q_start, duration=a_start - q_start,
                 kind="question", width=width, height=height,
-                wrap_chars=30, max_lines=9)
+                wrap_chars=26, max_lines=9)
             if qa:
                 cards.append(qa)
         except Exception as exc:
@@ -321,7 +385,7 @@ def _quiz_card_overlays(idea, audio_dur, timings_json, out_dir, cfg):
                 a_lines, out_dir / ("quiz_a_%d.ass" % i),
                 at_seconds=a_start, duration=a_end - a_start,
                 kind="answer", width=width, height=height,
-                wrap_chars=30, max_lines=6)
+                wrap_chars=26, max_lines=6)
             if aa:
                 cards.append(aa)
         except Exception as exc:
@@ -381,7 +445,8 @@ def run_video(idea, audio, timings_json, clips, config=None):
                                       duration=float(vcfg.get("hook_duration", 3.0)),
                                       width=int(vcfg.get("width", 1080)),
                                       height=int(vcfg.get("height", 1920)),
-                                      font_size=int(vcfg.get("hook_font_size", 84)))
+                                      font_size=int(vcfg.get("hook_font_size", 84)),
+                                      cfg=cfg)
         except Exception as exc:
             log.warning("Hook visuel ignore: %s", exc)
 
@@ -432,7 +497,7 @@ def run_video(idea, audio, timings_json, clips, config=None):
                 ckpt = write_checkpoint_ass(
                     text, out_dir / ("checkpoint_%d.ass" % k), at_seconds=at,
                     width=int(vcfg.get("width", 1080)),
-                    height=int(vcfg.get("height", 1920)))
+                    height=int(vcfg.get("height", 1920)), cfg=cfg)
                 if ckpt:
                     extra_ass.append(ckpt)
             except Exception as exc:

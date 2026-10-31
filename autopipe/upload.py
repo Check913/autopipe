@@ -2,7 +2,7 @@
 from pathlib import Path
 
 from .config import get_config, get_paths
-from .util import get_logger
+from .util import apply_upload_proxy, get_logger
 
 log = get_logger("upload")
 SCOPES = [
@@ -18,20 +18,29 @@ def _missing_scopes(creds):
     return sorted(set(SCOPES) - have)
 
 
-def _build_service(creds, mode="direct"):
-    """Construit le client YouTube avec un httplib2 maitrise (pas de proxy).
+def _build_service(creds, mode="direct", upload_proxy=None):
+    """Construit le client YouTube avec un httplib2 maitrise.
 
     build() refuse credentials + http ensemble : on fabrique donc nous-meme
     le http autorise (google_auth_httplib2.AuthorizedHttp). En mode 'direct',
     le proxy_info explicite a None garantit que l'upload et l'OAuth via
     httplib2 ignorent tout proxy systeme, cause racine du ProxyError
     WRONG_VERSION_NUMBER observe le 2026-10-23 (voir util.fix_proxy_env).
+
+    upload_proxy (localisation US a la publication) a la PRIORITE : les
+    variables d'env ont ete positionnees par util.apply_upload_proxy avant
+    tout appel reseau, on les consomme donc ici (OAuth refresh via requests
+    + upload resumable via httplib2 passent par le meme tunnel).
     """
     import httplib2
     from google_auth_httplib2 import AuthorizedHttp
     from googleapiclient.discovery import build
 
-    if mode == "direct":
+    if upload_proxy:
+        # Sortie US explicite : les variables d'env sont deja positionnees
+        # (apply_upload_proxy) et correctes (schema http:// verifie).
+        proxy_info = httplib2.proxy_info_from_environment
+    elif mode == "direct":
         # httplib2 appelle proxy_info(method) ; None retourne -> aucun proxy.
         proxy_info = lambda *args, **kwargs: None  # noqa: E731
     else:
@@ -59,7 +68,14 @@ def get_service(cfg=None):
     paths = get_paths(cfg)
     secrets = paths.root / cfg["upload"].get("client_secrets", "client_secret.json")
     token_file = paths.root / cfg["upload"].get("token_file", "token.json")
-    mode = cfg.get("network", {}).get("proxy_mode", "direct")
+    net = cfg.get("network", {}) or {}
+    mode = net.get("proxy_mode", "direct")
+    # Localisation US a la publication : si [network].upload_proxy est
+    # defini, TOUT le trafic de publication (refresh OAuth, autorisation
+    # navigateur, upload resumable, pays de la chaine) est route par cette
+    # sortie AVANT tout appel reseau. Aucun effet sur le rendu/generation.
+    upload_proxy = apply_upload_proxy(net.get("upload_proxy")) \
+        if str(net.get("upload_proxy") or "").strip() else None
 
     creds = None
     if token_file.exists():
@@ -92,7 +108,7 @@ def get_service(cfg=None):
             creds = flow.run_local_server(open_browser=True, port=0)
         token_file.write_text(creds.to_json(), encoding="utf-8")
         log.info("OAuth token saved -> %s", token_file)
-    return _build_service(creds, mode)
+    return _build_service(creds, mode, upload_proxy=upload_proxy)
 
 
 DEFAULT_COMMENT = ("Which fact surprised you the most? Drop it in the comments 👇 "
@@ -207,14 +223,19 @@ def upload_video(video_path, title, description, tags=None, cfg=None, privacy=No
     cfg = cfg or get_config()
     yt = get_service(cfg)
     tags = [str(t)[:100] for t in (tags or [])][:30]
+    # Localisation US (a tout prix) : metadata_language en BCP-47 "en-US"
+    # dit a YouTube que la video est en anglais americain (decouverte,
+    # sous-titres auto, recommandations). Fallback : general.language.
+    lang = str(cfg["upload"].get("metadata_language")
+               or cfg["general"].get("language", "en"))
     body = {
         "snippet": {
             "title": str(title)[:100],
             "description": str(description)[:4900],
             "tags": tags,
             "categoryId": str(cfg["upload"].get("category_id", "24")),
-            "defaultLanguage": str(cfg["general"].get("language", "en")),
-            "defaultAudioLanguage": str(cfg["general"].get("language", "en")),
+            "defaultLanguage": lang,
+            "defaultAudioLanguage": lang,
         },
         "status": {
             "privacyStatus": privacy or cfg["upload"].get("privacy", "public"),

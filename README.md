@@ -322,3 +322,42 @@ Correctifs appliques dans `autopipe/ideas.py` (verifies le 2026-10-24) :
 - Serve relance (PID 25084, demarrage 08:35:44) : il a recharge la config avec
   la nouvelle cle. Prochaine fenetre de publication : 15:00 UTC — la video sera
   generee par le LLM.
+## 2026-10-31 : Zones safe Shorts + geo US (upload)
+
+- **Zones safe Shorts** (recherche web 2026-10-31) : YouTube ne publie aucune
+  spec pixel officielle. Reperes communaux en 1080x1920 : overlay UI haut
+  ~234 px, UI bas ~345 px, bouton "S'abonner" y~1480-1560 (cote gauche), rail
+  boutons (like/comment/partage) a partir de x~936. Zone texte sure :
+  environ x 90-926, au-dessus de y~1575.
+- **Nouveau `autopipe/subs.py`** : helpers de marges :
+  - `safe_margin_top_px(cfg,h) = max(round(0.13*h), 250)` (hook sous l'UI haut) ;
+  - `safe_margin_bottom_px(cfg,h) = max(round(0.18*h), 200)` = 346 px en
+    1920 -> sous-titres finissant a y~1574, au-dessus du bouton S'abonner ;
+  - `checkpoint_margin_v_px(cfg,h)` : derive du bottom + gap (min 550 px en
+    1920) pour garder la carte checkpoint au-dessus des sous-titres.
+  Les anciens hardcodes (`MarginV 190`/`300`, `max(round(h*0.055),100)`)
+  sont supprimes. `video.py` (`_sub_style`, ASS checkpoints l.449/500)
+  utilise les memes helpers.
+- **Overrides manuels** dans `[subs]` des TOMLs :
+  `safe_margin_top_px` / `safe_margin_bottom_px` (>0 = pixels reels ;
+  0 = auto). Verifie : les 2 TOMLs correspondent exactement au code
+  (checkpoint n'a pas de cle propre, il derive du bottom).
+- **Preuve pixel** : 22 frames du render historique
+  `20261030-213627-01` brulees avec les nouveaux ASS, comparees par diff
+  numpy a une baseline ASS vide (le contenu video declenche des faux
+  positifs en analyse couleur brute). Resultat : `SZ BAND CHECK OK
+  (22 frames)` - sous-titres top>=1360 / bottom<=1585 (contenu reel
+  jusqu'a 1574), gap overlays->sous-titres >=150 px, bande checkpoint
+  1150-1390. Scaling verifie en 2560 px (top 333 / bottom 461).
+- **Geo US upload** (FAQ officielle YouTube) : le pays/region de la chaine
+  est deduit de l'IP au moment de l'upload. Nouvelle config :
+  - `[network].upload_proxy = ""` (defaut sur = pas de proxy ; URL
+    `http(s)://host:port` pour forcer une IP US propre pendant l'upload,
+    via `apply_upload_proxy()` dans `util.py` + `upload.py`) ;
+  - `[upload].metadata_language = "en-US"` -> `snippet.defaultLanguage` +
+    `defaultAudioLanguage` (fallback `[general].language`).
+- **Recommandation** : VPS US 24/7 a IP dediee/propre plutot que VPN
+  partage/datacenter (risque de flag). Les profils de chaine utilisent
+  aussi l'historique de creation/connexion du compte.
+- **Important** : le bot 24/7 en cours d'execution doit etre relance pour
+  charger le nouveau code (marges safe zones).

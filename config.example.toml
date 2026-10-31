@@ -97,6 +97,13 @@ volume = "+0%"
 max_chars = 42
 max_lines = 2
 min_duration = 0.7
+# Zones safe Shorts (rech. 2026-10-31) : overlay UI haut ~234px, overlay bas
+# ~345px (S'abonner y~1480-1560) -> contenu lisible entre y~240 et y~1575.
+# 0 = auto : haut max(13% h, 250px), bas max(18% h, 200px) = 346px en 1920
+# (sous-titres finissant a y~1574, checkpoint remonte au-dessus, hook descendu
+# sous l'UI). Valeur > 0 = override manuel en pixels reels.
+safe_margin_top_px = 0
+safe_margin_bottom_px = 0
 
 [fetch_media]
 provider = "auto"                # auto (pixabay si une cle pixabay existe, sinon pexels) / pixabay / pexels
@@ -134,6 +141,7 @@ daily_limit = 6                  # safety (YouTube quota ~6 uploads/day)
 post_hours_utc = [15, 21]        # US peak hours: 15 UTC = 11am ET, 21 UTC = 5pm ET
 auto_comment = true              # commentaire engageant publie automatiquement sous chaque video
 comment_template = ""            # vide = template par defaut ({title} / {hook} / {tags} disponibles)
+metadata_language = "en-US"     # Localisation US a la publication (BCP-47)
 
 [scheduler]
 interval_hours = 4               # 24/7 mode frequency (fallback without post_hours_utc)
@@ -152,6 +160,10 @@ publish_lead_s = 120
 #   fix    = reecrit https:// en http:// pour le proxy declare
 #   keep   = ne modifie rien
 proxy_mode = "direct"
+# Localisation US a la publication : proxy de sortie dedie (US) routant tout
+# le trafic de publication. Vide = IP locale. Exemple :
+#   upload_proxy = "http://user:pass@us-proxy.example.com:8080"
+upload_proxy = ""
 [visual]
 # Module 1 : analyse OpenCV des premieres secondes des hits viraux ->
 # rythme des coupes, zooms, palette, zone des sous-titres, appliques

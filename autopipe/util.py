@@ -250,3 +250,32 @@ def fix_proxy_env(mode="direct"):
         return mode
     log.warning("Mode proxy inconnu '%s' (attendu: direct/fix/keep) -> 'direct'", mode)
     return fix_proxy_env("direct")
+
+
+def apply_upload_proxy(url):
+    """Force un proxy de sortie SPECIFIQUE pour la publication (sortie US).
+
+    Le pays suppose d'un upload YouTube est deduit de l'IP de sortie (la
+    geolocalisation par video recordingDetails est deprecated depuis 2017).
+    Pour publier "comme depuis les Etats-Unis" depuis n'importe quelle
+    machine : on route le refresh OAuth ET l'upload resumable via ce proxy.
+    Le schema https:// est reecrit en http:// (meme bug WRONG_VERSION_NUMBER
+    que fix_proxy_env : un proxy HTTP pur ne parle pas TLS). Les NO_PROXY
+    sont retires pour ne pas court-circuiter googleapis.com.
+    Positionne les variables d'env AVANT tout appel reseau : requests
+    (OAuth refresh) et httplib2 (upload, proxy_info_from_environment)
+    les consomment tous les deux.
+    """
+    log = get_logger("network")
+    url = str(url or "").strip()
+    if not url:
+        return None
+    if url.lower().startswith("https://"):
+        url = "http://" + url[len("https://"):]
+        log.info("upload_proxy: schema https:// corrige en http://")
+    for var in _PROXY_VARS:
+        os.environ[var] = url
+    for var in ("NO_PROXY", "no_proxy"):
+        os.environ.pop(var, None)
+    log.info("upload_proxy: OAuth + upload routes via %s", url)
+    return url
