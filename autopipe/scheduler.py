@@ -480,6 +480,335 @@ def publish_pending_video(cfg, paths, pending, pending_file=None):
             "video": str(video_path)}
 
 
+def _wait_until(target, chunk_s=30.0, log_every_s=300.0):
+    """Dort jusqu'a `target` (datetime UTC aware) SANS derive.
+
+    Un time.sleep(long) unique derive et masque les pannes ; on re-evalue
+    l'horloge toutes les `chunk_s` secondes et on journalise l'avancement
+    toutes les `log_every_s` (runner Actions vivant et lisible).
+    """
+    last_log = time.time()
+    while True:
+        wait = (target - _utcnow()).total_seconds()
+        if wait <= 0:
+            return
+        time.sleep(min(chunk_s, max(0.5, wait)))
+        if time.time() - last_log >= log_every_s:
+            remaining = max(0.0, (target - _utcnow()).total_seconds())
+            log.info("Attente publication: %s restant (cible %s UTC)",
+                     dt.timedelta(seconds=int(remaining)),
+                     target.strftime("%Y-%m-%d %H:%M:%S"))
+            last_log = time.time()
+
+
+def _parse_hour(value):
+    """'14' | '14:00' | 14 -> 14 (heure UTC entiere, 0-23)."""
+    text = str(value if value is not None else "").strip()
+    if not text:
+        raise ValueError("heure vide")
+    hour = int(text.replace(":", " ").split()[0])
+    if not 0 <= hour <= 23:
+        raise ValueError("heure hors plage 0-23: %r" % value)
+    return hour
+
+
+def run_window_once(config=None, at_hour=None, horizon_min=None):
+    """Une execution CI = UNE fenetre de publication a l'heure EXACTE.
+
+    MAX 2026-10-31 : `serve --once` publie immediatement, donc quand le cron
+    GitHub derive (voire est rate : 14:00Z du 2026-10-31), la video sort en
+    retard. Cette fonction realise le cycle complet d'UNE fenetre dans un
+    seul job Actions, avec les memes garantis que run_loop :
+      1. reutilise le contrat existant (data/pending_publish.json) s'il
+         correspond a la fenetre ;
+      2. sinon PRE-GENERATION immediate (le job patiente ensuite jusqu'a la
+         cible : publication a l'heure meme si le cron a derive de ±30 min) ;
+      3. sinon (fenetre active sans contrat) generation + publication
+         immediates (fallback, jamais annule) ;
+      4. attente sans derive jusqu'a `cible - publish_lead_s` ;
+      5. preuve geo US EN DIRECT (force=True, fail-closed) AVANT l'upload ;
+      6. upload PRIVE puis bascule public PILE a l'heure cible.
+
+    [scheduler].window_horizon_minutes (defaut 75) : une fenetre ciblee a
+    plus de cet horizon (en retard OU en avance) est ignoree sans publier
+    (ponctualite > volume) ; 0 desactive la limite.
+
+    Retourne un dict {ok, published, reason, target, ...} interprete par
+    cli.cmd_window : raisons non-bloquantes (exit 0) = already_served,
+    outside_horizon, quota, pending_mismatch, claimed_by_other, no_windows ;
+    echecs reels (exit != 0 -> job rouge + notify-failure) = pregen_failed,
+    geo_blocked, flip_failed, no_video_id, publish_failed, regen_failed.
+    """
+    cfg = config or get_config()
+    paths = get_paths(cfg)
+    sched = cfg.get("scheduler", {}) or {}
+    state_file = paths.root / sched.get("state_file", "data/scheduler_state.json")
+    posts_per_day = int(cfg["upload"].get("posts_per_day", 0))
+    daily_limit = (posts_per_day if posts_per_day > 0
+                   else int(cfg["upload"].get("daily_limit", 6)))
+    try:
+        post_hours = [int(h) % 24 for h in cfg["upload"].get("post_hours_utc", [])]
+    except (TypeError, ValueError):
+        post_hours = []
+        log.warning("Invalid upload.post_hours_utc -> UTC windows disabled")
+    if horizon_min is None:
+        horizon_min = int(sched.get("window_horizon_minutes", 75))
+    lead = int(sched.get("publish_lead_s", 120))
+    pregen_min = int(sched.get("pregen_minutes", 20))
+
+    now = _utcnow()
+    today = now.date().isoformat()
+    state = load_json(state_file, {}) or {}
+    if state.get("day") != today:
+        state = {"day": today, "uploads": 0}
+    can_upload = state.get("uploads", 0) < daily_limit
+    served = {str(w) for w in (state.get("served_windows") or [])
+              if str(w).startswith(today)}
+
+    # --- 1) Fenetre cible ---
+    if at_hour is None:
+        if not post_hours:
+            return {"ok": False, "reason": "no_windows"}
+        at_hour = _next_window_start(now, post_hours, served=served).hour
+    else:
+        at_hour = _parse_hour(at_hour)
+    target = now.replace(hour=int(at_hour) % 24,
+                         minute=0, second=0, microsecond=0)
+
+    # --- 2) Contrat de publication existant ---
+    pending_file = _pending_path(paths)
+    pending = load_json(pending_file, None)
+    if not isinstance(pending, dict):
+        pending = None
+    pending_at = None
+    if pending is not None:
+        try:
+            pending_at = dt.datetime.fromisoformat(str(pending.get("publish_at")))
+        except (TypeError, ValueError):
+            log.error("pending_publish.json corrompu (publish_at=%r) -> ignore",
+                      pending.get("publish_at"))
+            _clear_pending(pending_file)
+            pending = None
+        if pending_at is not None:
+            if pending_at.tzinfo is None:
+                pending_at = pending_at.replace(tzinfo=dt.timezone.utc)
+            if pending_at <= now:
+                # Contrat perime : une video PRIVEE deja uploadee n'est jamais
+                # abandonnee -> bascule public de sauvetage, puis repart propre.
+                if pending.get("youtube_id"):
+                    log.warning("Contrat perime %s avec video privee %s -> "
+                                "bascule public de sauvetage",
+                                pending_at.isoformat(), pending["youtube_id"])
+                    try:
+                        publish_pending_video(cfg, paths, pending,
+                                              pending_file=pending_file)
+                    except Exception:
+                        log.error("Sauvetage de la video privee impossible:\n%s",
+                                  traceback.format_exc())
+                _clear_pending(pending_file)
+                pending = None
+                pending_at = None
+            elif pending_at != target:
+                # Contrat pour une AUTRE fenetre future : on ne le detruit pas.
+                return {"ok": False, "published": False,
+                        "reason": "pending_mismatch",
+                        "target": target.isoformat(),
+                        "pending_publish_at": pending_at.isoformat()}
+    pending_match = pending is not None
+
+    def _finish_published(pend, video_id):
+        state["uploads"] = state.get("uploads", 0) + 1
+        _mark_window_served(state, target.isoformat(), today)
+        save_json(state_file, state)
+        save_json(paths.data / "last_run.json", {
+            "idea": pend.get("idea_id"),
+            "title": pend.get("title"),
+            "video": pend.get("video"),
+            "youtube_id": video_id})
+        _clear_pending(pending_file)
+        late_s = max(0, int((_utcnow() - target).total_seconds()))
+        log.info("Fenetre %s UTC servie (retard %s s) -> %s",
+                 target.strftime("%H:%M"), late_s, video_id)
+        return {"ok": True, "published": True, "target": target.isoformat(),
+                "youtube_id": video_id, "late_s": late_s}
+
+    def _fallback_publish():
+        """Fenetre active sans contrat : generation + publication immediaate."""
+        log.warning("Fenetre %s UTC active sans contrat -> generation + "
+                    "publication immediates (retard assume)",
+                    target.strftime("%H:%M"))
+        try:
+            result = run_pipeline_once(cfg, do_upload=True)
+        except Exception:
+            log.error("Pipeline failed:\n%s", traceback.format_exc())
+            return {"ok": False, "published": False,
+                    "reason": "publish_failed", "target": target.isoformat()}
+        if not result.get("youtube_id"):
+            return {"ok": False, "published": False,
+                    "reason": "no_video_id", "target": target.isoformat()}
+        return _finish_published(
+            {"idea_id": result.get("idea"), "title": result.get("title"),
+             "video": result.get("video")}, result.get("youtube_id"))
+
+    # --- 3) Fenetre deja servie aujourd'hui : JAMAIS de duplication ---
+    if target.isoformat() in served:
+        if pending is not None:
+            _clear_pending(pending_file)
+        return {"ok": True, "published": False, "reason": "already_served",
+                "target": target.isoformat()}
+
+    # --- 4) Horizon : fenetre hors plage (tardive OU trop lointaine) ignoree
+    lateness_s = (now - target).total_seconds()
+    if horizon_min > 0 and abs(lateness_s) > horizon_min * 60:
+        log.warning("Fenetre %s UTC %s de %.0f min (horizon %s min) -> ignoree",
+                    target.strftime("%Y-%m-%d %H:%M"),
+                    "depassee" if lateness_s > 0 else "trop lointaine",
+                    abs(lateness_s) / 60.0, horizon_min)
+        return {"ok": False, "published": False, "reason": "outside_horizon",
+                "target": target.isoformat(),
+                "delta_min": round(lateness_s / 60.0, 1)}
+
+    if not pending_match and not can_upload:
+        log.info("Quota journalier atteint (%s/%s) et aucun contrat -> "
+                 "fenetre %s ignoree", state.get("uploads"), daily_limit,
+                 target.strftime("%H:%M"))
+        return {"ok": False, "published": False, "reason": "quota",
+                "target": target.isoformat()}
+
+    # --- 5) Pre-generation (fenetre future sans contrat) ---
+    if not pending_match and now < target:
+        log.info("Pre-generation pour la fenetre %s UTC (avance %s)",
+                 target.strftime("%H:%M:%S"),
+                 dt.timedelta(seconds=int((target - now).total_seconds())))
+        try:
+            result = run_pipeline_once(cfg, do_upload=False)
+        except Exception:
+            log.error("Pre-generation echouee:\n%s", traceback.format_exc())
+            return {"ok": False, "published": False, "reason": "pregen_failed",
+                    "target": target.isoformat()}
+        pending = {
+            "publish_at": target.isoformat(),
+            "video": result.get("video"),
+            "idea_id": result.get("idea"),
+            "title": result.get("title"),
+            "description": result.get("description"),
+            "tags": result.get("tags"),
+            "comment": result.get("comment"),
+            "pair_id": result.get("pair_id"),
+            "quiz": result.get("quiz"),
+            "idea_full": result.get("idea_full"),
+            "created": now.isoformat(),
+        }
+        save_json(pending_file, pending)
+        log.info("Video pre-generee -> publication programme a %s UTC: %s",
+                 target.strftime("%Y-%m-%d %H:%M:%S"), pending.get("title"))
+        pending_match = True
+        now = _utcnow()
+
+    # --- 6) Anti-doublon multi-jobs : contrat fraichement revendique par un
+    # autre job -> sortie (SAUF bascule d'une video privee deja uploadee).
+    if pending_match:
+        claim = str(pending.get("claimed_at") or "")
+        c_age = None
+        if claim:
+            try:
+                claimed = dt.datetime.fromisoformat(claim)
+                if claimed.tzinfo is None:
+                    claimed = claimed.replace(tzinfo=dt.timezone.utc)
+                c_age = (now - claimed).total_seconds()
+            except (TypeError, ValueError):
+                c_age = None
+        if (c_age is not None and 0 <= c_age < 600
+                and not pending.get("youtube_id")):
+            log.info("Contrat %s deja revendique il y a %s s par un autre job "
+                     "-> sortie sans duplication", target.strftime("%H:%M"),
+                     int(c_age))
+            return {"ok": True, "published": False,
+                    "reason": "claimed_by_other", "target": target.isoformat()}
+    elif now >= target:
+        # --- Fenetre active sans contrat : fallback immediat ---
+        return _fallback_publish()
+
+    # --- 7) Attente exacte, preuve geo EN DIRECT, publication a l'heure ---
+    from .geo import check_exit_country
+    upload_at = target - dt.timedelta(seconds=lead)
+    if now < upload_at:
+        log.info("Attente exacte: upload prive a %s UTC (dans %s), bascule "
+                 "public a %s UTC", upload_at.strftime("%H:%M:%S"),
+                 dt.timedelta(seconds=int((upload_at - now).total_seconds())),
+                 target.strftime("%H:%M:%S"))
+        _wait_until(upload_at)
+        now = _utcnow()
+    geo = check_exit_country(cfg, force=True)
+    if geo.get("ok") is False:
+        _alert(cfg, "AutoPipe: publication bloquee (sortie US non confirmee)",
+               "Fenetre %s UTC : verification geo EN DIRECT echouee "
+               "(pays=%s, ip=%s, raison=%s). Publication annulee ; le cron de "
+               "secours retentera." % (target.strftime("%H:%M"),
+                                       geo.get("country"), geo.get("ip"),
+                                       geo.get("reason")))
+        log.error("Verrou geo US (controle live) ECHOUE: %s", geo.get("reason"))
+        return {"ok": False, "published": False, "reason": "geo_blocked",
+                "target": target.isoformat(),
+                "geo": {k: geo.get(k) for k in
+                        ("country", "ip", "egress", "reason")}}
+    pending["claimed_at"] = now.isoformat()
+    save_json(pending_file, pending)
+    res = publish_pending_video(cfg, paths, pending, pending_file=pending_file)
+    if res.get("published"):
+        return _finish_published(pending, res.get("youtube_id"))
+    if res.get("reason") == "flip_failed":
+        # Video privee existante : contrat conserve avec son id, le cron de
+        # secours rebasculera SANS re-upload.
+        pending["youtube_id"] = res.get("youtube_id")
+        save_json(pending_file, pending)
+        return {"ok": False, "published": False, "reason": "flip_failed",
+                "target": target.isoformat(),
+                "youtube_id": res.get("youtube_id")}
+    if res.get("reason") == "missing_video":
+        # Fichier disparu : regeneration + publication (jamais annule).
+        _clear_pending(pending_file)
+        _alert(cfg, "AutoPipe: video pre-generee perdue",
+               "pending_publish.json pointait vers un fichier introuvable "
+               "(%s). Regeneration + publication." % res.get("video"))
+        if _utcnow() >= target - dt.timedelta(seconds=lead):
+            return _fallback_publish()
+        try:
+            result = run_pipeline_once(cfg, do_upload=False)
+        except Exception:
+            log.error("Regeneration du contrat echouee:\n%s",
+                      traceback.format_exc())
+            return {"ok": False, "published": False,
+                    "reason": "pregen_failed", "target": target.isoformat()}
+        pending = {
+            "publish_at": target.isoformat(),
+            "video": result.get("video"),
+            "idea_id": result.get("idea"),
+            "title": result.get("title"),
+            "description": result.get("description"),
+            "tags": result.get("tags"),
+            "comment": result.get("comment"),
+            "pair_id": result.get("pair_id"),
+            "quiz": result.get("quiz"),
+            "idea_full": result.get("idea_full"),
+            "created": now.isoformat(),
+        }
+        save_json(pending_file, pending)
+        res = publish_pending_video(cfg, paths, pending,
+                                    pending_file=pending_file)
+        if res.get("published"):
+            return _finish_published(pending, res.get("youtube_id"))
+        if res.get("reason") == "flip_failed":
+            pending["youtube_id"] = res.get("youtube_id")
+            save_json(pending_file, pending)
+            return {"ok": False, "published": False, "reason": "flip_failed",
+                    "target": target.isoformat(),
+                    "youtube_id": res.get("youtube_id")}
+    return {"ok": False, "published": False,
+            "reason": str(res.get("reason") or "publish_failed"),
+            "target": target.isoformat()}
+
+
 def run_loop(config=None, once=False):
     """Permanent loop with EXACT-time publishing.
 

@@ -1,22 +1,51 @@
-# AutoPipe 24/7 sur GitHub Actions :
-#   - 4 executions planifiees par jour (14h, 18h, 22h, 2h UTC, soit 10h, 14h,
-#     18h, 22h heure de l'Est), matching upload.post_hours_utc (pivot quiz :
-#     volume double pour accelerer les conditions de monetisation).
-#   - workflow_dispatch = declenchement manuel depuis l'onglet "Actions".
+# AutoPipe 24/7 sur GitHub Actions - publication A L'HEURE EXACTE (MAX 2026-10-31).
+#
+# Probleme historique : `serve --once` publie immediatement, donc si le cron
+# GitHub derive (voire est rate : 14:00Z du 2026-10-31), la video sort en
+# retard. Nouveau modele : `serve-window` = UN job = UNE fenetre :
+#   pre-generation -> attente sans derive -> preuve geo US EN DIRECT
+#   (fail-closed) -> upload PRIVE a H-2 min -> bascule public PILE a H:00.
+#
+# 3 couches de cron par fenetre (tolerant au drift de GitHub) :
+#   - pregen  : H-20 min -> pre-genere le contrat puis publie a H:00 ;
+#   - main    : H:00     -> publie la fenetre (no-op si deja servie) ;
+#   - safety  : H+10 min -> rattrape un cron principal rate.
+# La premiere couche qui arrive publie ; les suivantes sortent proprement
+# (already_served / anti-doublon multi-jobs, verrou de revendication 600 s).
+# Fenetres : 14, 18, 22, 2 UTC (= 10h, 14h, 18h, 22h heure de l'Est),
+# matching upload.post_hours_utc.
+#   - workflow_dispatch = declenchement manuel (input at_hour optionnel).
 #   - Les secrets (config avec cles, token OAuth YouTube, client_secret) sont
 #     injectes depuis les secrets chiffres du depot : rien de sensible dans
 #     l'historique git.
-#   - Le dossier data/ (historique anti-repetition, compteur d'uploads) est
-#     commite a la fin de chaque run pour persister d'un jour a l'autre.
+#   - Le dossier data/ (etat, contrat pending_publish.json, compteur) est
+#     commite a la fin de chaque run pour persister d'un job a l'autre.
 name: autopipe
 
 on:
   schedule:
+    # --- Fenetre 14:00 UTC ---
+    - cron: "40 13 * * *"
     - cron: "0 14 * * *"
+    - cron: "10 14 * * *"
+    # --- Fenetre 18:00 UTC ---
+    - cron: "40 17 * * *"
     - cron: "0 18 * * *"
+    - cron: "10 18 * * *"
+    # --- Fenetre 22:00 UTC ---
+    - cron: "40 21 * * *"
     - cron: "0 22 * * *"
+    - cron: "10 22 * * *"
+    # --- Fenetre 02:00 UTC ---
+    - cron: "40 1 * * *"
     - cron: "0 2 * * *"
+    - cron: "10 2 * * *"
   workflow_dispatch:
+    inputs:
+      at_hour:
+        description: "Heure UTC de la fenetre (0-23 ; vide = prochaine fenetre planifiee)"
+        required: false
+        default: ""
 
 # Le run commite l'etat (data/) a la fin -> droit d'ecriture requis.
 permissions:
@@ -29,7 +58,9 @@ concurrency:
 jobs:
   run:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    # La couche pregen attend jusqu'a ~20 min avant la bascule ; un dispatch
+    # manuel tres en avance attend davantage -> marge large.
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
 
@@ -76,26 +107,61 @@ jobs:
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
         run: python -m autopipe.cli check-token
 
-      # Verrou geo US (fail-closed) : prouve que la sortie reseau EFFECTIVE
-      # du runner est americaine AVANT de generer/uploader. YouTube deduit le
-      # pays de publication de l'IP de sortie ; le pool heberge GitHub
-      # (multi-cloud) ne garantit plus les Etats-Unis, donc si la sortie n'est
-      # pas prouvee US le run echoue ICI (email d'alerte) au lieu de publier
-      # mal localise. Remede : upload_proxy = proxy de sortie US dans la
-      # config (self-hosted runner ou larger runner a IP fixe = alternatives).
+      # Verrou geo US (fail-closed) : pre-flight peu couteux AVANT de generer.
+      # La preuve EN DIRECT (force=True, bloquante) est de toute facon refaite
+      # par serve-window juste avant l'upload.
       - name: Verifier la sortie US (verrou geo fail-closed)
         run: python -m autopipe.cli geo-check
 
-      # serve --once = une iteration complete : radar/remake/idees -> TTS ->
-      # clips -> montage -> upload YouTube + commentaire epingle.
-      # (En mode once, la fenetre post_hours_utc n'est pas attendue : le cron
-      # EST la fenetre.)
-      - name: Executer le pipeline
-        run: python -m autopipe.cli serve --once
+      # Quelle fenetre ? github.event.schedule = l'expression cron EXACTE qui a
+      # declenche le run (fiable meme si l'heure reelle a derive) ; en dispatch
+      # manuel, l'input at_hour. Vide -> run_window_once choisit la prochaine
+      # fenetre planifiee.
+      - name: Determiner la fenetre cible
+        id: window
+        env:
+          SCHEDULE: ${{ github.event.schedule }}
+          DISPATCH_HOUR: ${{ github.event.inputs.at_hour }}
+        run: |
+          set -euo pipefail
+          hour=""
+          case "$SCHEDULE" in
+            "40 13 * * *"|"0 14 * * *"|"10 14 * * *") hour=14 ;;
+            "40 17 * * *"|"0 18 * * *"|"10 18 * * *") hour=18 ;;
+            "40 21 * * *"|"0 22 * * *"|"10 22 * * *") hour=22 ;;
+            "40 1 * * *"|"0 2 * * *"|"10 2 * * *")   hour=2 ;;
+          esac
+          if [ -z "$hour" ] && [ -n "${DISPATCH_HOUR:-}" ]; then
+            hour="$DISPATCH_HOUR"
+          fi
+          echo "Fenetre ciblee: ${hour:-auto (prochaine fenetre)}"
+          echo "hour=$hour" >> "$GITHUB_OUTPUT"
+
+      # UN job = UNE fenetre : pre-generation, attente exacte, preuve geo US
+      # en direct, upload prive a H-2 min, bascule public PILE a H:00.
+      # Sortie 0 sans publication (already_served, outside_horizon, quota,
+      # pending_mismatch, claimed_by_other, no_windows) : job vert, pas d'email.
+      # Echec reel -> exit 1 -> job rouge + notify-failure.
+      - name: Publier la fenetre a l'heure exacte
+        env:
+          AT_HOUR: ${{ steps.window.outputs.hour }}
+        run: |
+          if [ -n "$AT_HOUR" ]; then
+            # Fenetre EXPLICITE (cron OU dispatch manuel avec at_hour) :
+            # horizon desactive (0) -> meme declenche tres en avance, le job
+            # attend et publie PILE a l'heure (garde-fou : timeout du job).
+            python -m autopipe.cli serve-window --at-hour "$AT_HOUR" \
+              --horizon-min 0
+          else
+            # Dispatch sans heure : prochaine fenetre planifiee, horizon
+            # par defaut (75 min) -> skip propre si trop loin.
+            python -m autopipe.cli serve-window
+          fi
 
       # Persistance de l'etat (data/) : historique radar/remake, compteur
-      # d'uploads du jour, analytics. Sans ca, le bot oublierait tout a chaque
-      # run et repeterait les memes sujets.
+      # d'uploads, fenetres servies (anti-doublon), contrat de publication.
+      # Races entre jobs : rebase en favorisant NOTRE etat data/ (le plus
+      # frais) puis push, avec retries.
       - name: Commiter l'etat du bot
         if: always()
         run: |
@@ -103,10 +169,22 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data || true
           if git diff --cached --quiet; then
-            echo "Etat inchangé"
+            echo "Etat inchange"
           else
             git commit -m "etat du bot: $(date -u '+%Y-%m-%d %H:%M UTC')"
-            git push
+          fi
+          ok=0
+          for i in 1 2 3 4 5; do
+            if git pull --rebase --autostash -X theirs origin main \
+               && git push origin HEAD:main; then
+              ok=1
+              break
+            fi
+            echo "Race push (essai $i/5) -> nouvelle tentative"
+            sleep $((i * 5))
+          done
+          if [ "$ok" -ne 1 ]; then
+            echo "WARN: push de l'etat echoue apres retries (l'etat reste local au job)"
           fi
 
       # Alerte Gmail si le run echoue : email "re-autorisation" si le token

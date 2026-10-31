@@ -1,5 +1,6 @@
 """Interface en ligne de commande AutoPipe."""
 import argparse
+import json
 import sys
 
 from .config import get_config, get_paths, load_config
@@ -360,6 +361,29 @@ def cmd_serve(a):
         print("\nArrete proprement.")
 
 
+def cmd_window(a):
+    """CI : une execution = UNE fenetre publiee a l'heure exacte (MAX 2026-10-31).
+
+    Delegue a scheduler.run_window_once : pre-generation, attente sans derive,
+    preuve geo US EN DIRECT (fail-closed), upload prive puis bascule public
+    PILE a l'heure cible.
+    Raisons "rien a faire" (exit 0, pas d'email d'echec) : already_served,
+    outside_horizon, quota, pending_mismatch, claimed_by_other, no_windows.
+    Tout le reste est un echec reel -> exit 1 (job rouge + notify-failure).
+    """
+    cfg = _init(a.verbose)
+    from .scheduler import run_window_once
+    result = run_window_once(cfg, at_hour=a.at_hour, horizon_min=a.horizon_min)
+    print("Fenetre: %s" % json.dumps(result, ensure_ascii=False, sort_keys=True,
+                                     default=str))
+    reason = str(result.get("reason") or "")
+    if reason in ("already_served", "outside_horizon", "quota",
+                  "pending_mismatch", "claimed_by_other", "no_windows"):
+        return
+    if not result.get("ok"):
+        sys.exit(1)
+
+
 def cmd_test_tts(a):
     cfg = _init(a.verbose)
     from . import tts
@@ -655,6 +679,18 @@ def main(argv=None):
     p.add_argument("--force", action="store_true",
                    help="ignorer le cache geo (controle live)")
     p.set_defaults(fn=cmd_geo_check)
+
+    p = sub.add_parser("serve-window",
+                       help="CI : une execution = une fenetre publiee a l'heure "
+                            "exacte (pre-gen + attente + geo US live + bascule)")
+    p.add_argument("--at-hour", type=int, default=None,
+                   help="heure UTC de la fenetre (0-23) ; defaut : prochaine "
+                        "fenetre de [upload].post_hours_utc")
+    p.add_argument("--horizon-min", type=int, default=None,
+                   help="ignore les fenetres au-dela de cet horizon en minutes "
+                        "(defaut : [scheduler].window_horizon_minutes = 75) ; "
+                        "0 = illimite")
+    p.set_defaults(fn=cmd_window)
 
     p = sub.add_parser("setup", help="verifier l'installation")
     p.set_defaults(fn=cmd_setup)
