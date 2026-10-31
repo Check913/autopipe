@@ -42,12 +42,49 @@ def _next_window_start(now_utc, post_hours, grace_min=5, served=None):
     return min(candidates)
 
 
+def _next_smart_window(now_utc, cfg, grace_min=5, served=None):
+    """MAX 2026-10-31 : prochaine fenetre INTELLIGENTE (minute precise).
+
+    pub = debut_du_pic_audience_US(ET) - lead ([upload].smart_lead_min,
+    defaut 90) -> les Shorts rentrent dans le flux PENDANT la montee du
+    pic au lieu d'une heure pile arbitraire. Meme contrat que
+    _next_window_start : fenetre dans la grace servie a l'instant exact,
+    fenetres servies jamais re-selectionnees. Renvoie None si aucun pic
+    futur -> l'appelant retombe sur _next_window_start statique.
+    """
+    from . import metas
+    served = served or set()
+    instants = [p for p in metas.publish_instants(cfg, now_utc)
+                if p.isoformat() not in served]
+    future = [p for p in instants
+              if p > now_utc
+              or (now_utc - p).total_seconds() <= grace_min * 60]
+    if future:
+        return min(future)
+    # Tout est passe : on elargit l'horizon (ref +12 h couvre ~2 jours de
+    # plus via publish_instants, offsets -1..+2 autour de la ref).
+    later = [p for p in metas.publish_instants(cfg, now_utc + dt.timedelta(hours=12))
+             if p.isoformat() not in served and p > now_utc]
+    return min(later) if later else None
+
+
 def run_pipeline_once(config=None, do_upload=True, idea=None):
     """Full chain: radar -> scout -> idea -> tts -> srt -> clips -> video -> upload."""
     cfg = config or get_config()
     fix_proxy_env(cfg.get("network", {}).get("proxy_mode", "direct"))
     paths = get_paths(cfg)
     log.info("=== AutoPipe: pipeline started ===")
+
+    # MAX 2026-10-31 : rattrapage engagement (reponses aux commentaires des
+    # dernieres 24 h) - couvre le mode one-shot Actions ou le thread
+    # first_hour meurt avec le process. Idempotent (state), plafonne
+    # (quota journalier), non fatal.
+    if cfg.get("scheduler", {}).get("engage_sweep", True):
+        try:
+            from .engage import sweep
+            sweep(cfg)
+        except Exception as exc:
+            log.warning("engage.sweep echoue (non fatal): %s", exc)
 
     # 0. Radar multi-plateformes (Reddit/Hacker News/Google News/Trends/
     #    YouTube Shorts/TikTok/Instagram) : detecte les contenus viraux du web
@@ -245,6 +282,15 @@ def run_pipeline_once(config=None, do_upload=True, idea=None):
             except Exception:
                 log.warning("quiz.on_published a echoue (non fatal):\n%s",
                             traceback.format_exc())
+        # MAX 2026-10-31 : engagement premiere heure (reponses variees aux
+        # commentaires) - les signaux precoces ponderent la distribution
+        # Shorts. Non fatal, plafonne par [engage].
+        if cfg.get("scheduler", {}).get("engage_first_hour", True):
+            try:
+                from .engage import first_hour
+                first_hour(cfg, video_id)
+            except Exception as exc:
+                log.warning("engage.first_hour echoue (non fatal): %s", exc)
 
     save_json(paths.data / "last_run.json", result)
     log.info("=== AutoPipe: pipeline finished: %s ===", result)
@@ -423,6 +469,13 @@ def publish_pending_video(cfg, paths, pending, pending_file=None):
             quiz_on_published(pending.get("idea_full") or idea, video_id, cfg)
         except Exception as exc:
             log.warning("quiz.on_published (pending) echoue: %s", exc)
+    # MAX 2026-10-31 : engagement premiere heure (idem publication directe).
+    if cfg.get("scheduler", {}).get("engage_first_hour", True):
+        try:
+            from .engage import first_hour
+            first_hour(cfg, video_id)
+        except Exception as exc:
+            log.warning("engage.first_hour echoue (non fatal): %s", exc)
     return {"published": True, "youtube_id": video_id,
             "video": str(video_path)}
 
@@ -458,6 +511,15 @@ def run_loop(config=None, once=False):
     except (TypeError, ValueError):
         post_hours = []
         log.warning("Invalid upload.post_hours_utc -> UTC windows disabled")
+    # MAX 2026-10-31 : fenetres INTELLIGENTES ([scheduler].smart_windows) -
+    # publication = pic_audience_US(ET) - lead au lieu d'heures piles fixes.
+    # La machinerie fenetres (pending/pre-gen/anti-doublon) est reutilisee
+    # telle quelle ; si aucun pic n'est calculable, fallback statique.
+    smart_windows = bool(cfg["scheduler"].get("smart_windows", False))
+    if smart_windows and not post_hours:
+        post_hours = [12]  # placeholder : le vrai target vient de metas
+        log.info("smart_windows actif sans post_hours_utc -> fenetres "
+                 "intelligentes seules")
 
     pending_file = _pending_path(paths)
     lead = int(cfg["scheduler"].get("publish_lead_s", 120))
@@ -592,6 +654,12 @@ def run_loop(config=None, once=False):
             continue
 
         target = _next_window_start(now, post_hours, served=served)
+        if smart_windows:
+            smart = _next_smart_window(now, cfg, served=served)
+            if smart is not None:
+                target = smart
+                log.info("Fenetre intelligente retenue: %s UTC (pic US - "
+                         "lead)", target.strftime("%Y-%m-%d %H:%M"))
         pregen_start = target - dt.timedelta(minutes=pregen_min)
         if now >= pregen_start:
             if now >= target:

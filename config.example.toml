@@ -139,6 +139,9 @@ client_secrets = "client_secret.json"
 token_file = "token.json"
 daily_limit = 6                  # safety (YouTube quota ~6 uploads/day)
 post_hours_utc = [15, 21]        # US peak hours: 15 UTC = 11am ET, 21 UTC = 5pm ET
+# smart_lead_min : avance (minutes) de l'upload prive avant l'heure cible
+# des fenetres intelligentes (metas.publish_instants + scheduler.smart_windows).
+smart_lead_min = 90
 auto_comment = true              # commentaire engageant publie automatiquement sous chaque video
 comment_template = ""            # vide = template par defaut ({title} / {hook} / {tags} disponibles)
 metadata_language = "en-US"     # Localisation US a la publication (BCP-47)
@@ -151,6 +154,9 @@ state_file = "data/scheduler_state.json"
 # public PILE a l'heure cible (voir autopipe/scheduler.py: run_loop).
 pregen_minutes = 20
 publish_lead_s = 120
+# Fenetres INTELLIGENTES : minutes-precises sur le pic d'audience US
+# (metas.smart_post_hours / next_smart_instant) au lieu des heures pleines.
+smart_windows = true
 
 [network]
 # Correctif proxy : si votre machine declare un proxy local avec un mauvais
@@ -293,6 +299,12 @@ cache_hours = 12
 rounds = 9
 countdown_s = 3
 categories = ["general", "geography", "science", "history", "movies"]
+# Apprentissage categories : poids = mediane des vues mesurees (registry x
+# analytics) ; < category_min_samples videos mesurees -> poids neutre.
+# category_explore = part d'exploration cadree (deterministe par seq).
+bonus_tease = true               # beat "double or nothing" avant le CTA final (n >= 7)
+category_min_samples = 3
+category_explore = 0.15
 hooks_a = [
   "How many of these can you get right?",
   "Can you beat the average score?",

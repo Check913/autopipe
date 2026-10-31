@@ -27,8 +27,10 @@ data/quiz/state.json : 'used' = questions deja publiees (dedup longue duree),
 """
 import datetime as dt
 import json
+import random
 import re
 
+from . import metas
 from .config import get_paths
 from .hook_ab import assign as ab_assign
 from .identity import duration_plan, script_word_budget
@@ -62,6 +64,14 @@ DEFAULTS = {
         "Most adults cannot get all of these right.",
         "Getting them all right means elite memory.",
     ],
+    # MAX 2026-10-31 : tease bonus (double or nothing) avant le CTA final
+    # - chaine de questions bonus : cree l'attente de la video suivante.
+    "bonus_tease": True,
+    # Ponduration des categories apprise : lissage bayesien simple sur
+    # l'engagement median par categorie (lecons optimizer x journal quiz),
+    # + exploration deterministe pour continuer a mesurer chaque categorie.
+    "category_min_samples": 3,
+    "category_explore": 0.15,
 }
 
 # Profil duree du mode quiz : le conquerant mesure 79-81 s (10/10), pas
@@ -81,6 +91,11 @@ _BEAT_SCORE_CHECK = ("Score check: comment SHARP if you are still perfect, "
 _BEAT_TEASE = "Are you ready for the last question?"
 _BEAT_LEADERBOARD = ("Don't forget to follow and comment your score to be "
                      "on the weekly leaderboard of the top performers.")
+# MAX 2026-10-31 : chaine bonus (double or nothing) - transforme le score
+# en promesse de revanche -> comment + retour veilleuse vers la prochaine
+# video (signal de fidelisation + seconde vue). Actif via [quiz].bonus_tease.
+_BEAT_BONUS = ("Bonus: double or nothing - keep your score in your head "
+               "and beat it on the next quiz.")
 
 
 def _quiz_duration_plan(cfg):
@@ -106,15 +121,42 @@ _STATE_MAX_GENERATED = 24
 _COUNTDOWN_WORDS = ("Ten.", "Nine.", "Eight.", "Seven.", "Six.", "Five.",
                     "Four.", "Three.", "Two.", "One.")
 
+# MAX 2026-10-31 : banque etendue couvrant les 5 familles mesurees
+# (direct 16.3% / you 14.8% / number 13.3% median 1392 vues / question
+# 12.7% / curiosite 10.8%). Le choix passe par metas.pick_title :
+# score + anti-repetition (titres recents de state['videos']) + tie-break
+# deterministe. Tout gabarit n'utilise que {n} et {cd} (format n, cd).
 _TITLES = (
+    # --- number-led ---
     "{n} Question Quiz. Can You Score {n}/{n}?",
-    "Only 1% Score {n}/{n} On This Quiz",
-    "Can You Beat This {n} Question Quiz?",
     "{n} Questions. {cd} Seconds Each. No Cheating.",
+    "{n} Quick Questions. No Cheating Allowed.",
+    "{n} Questions Only 1% Finish Perfect",
+    "Pass {n} Questions. Prove Your IQ.",
+    # --- question ---
+    "Can You Beat This {n} Question Quiz?",
+    "Can You Score {n}/{n} On This Quiz?",
+    "Which Question Will Break Your Streak?",
+    "Can You Survive All {n} Questions?",
+    # --- direct-statement ---
     "Most People Fail This {n} Question Quiz",
     "This Quiz Gets Harder Every Question",
+    "Almost Nobody Scores {n}/{n} On This",
+    "This {n} Question Quiz Sounds Easy. It's Not.",
+    "Question 4 Is Where Streaks End",
+    "Nobody Finishes This Quiz Without Guessing",
+    # --- you-focused ---
     "If You Score {n}/{n} You Are Above Average",
-    "{n} Quick Questions. No Cheating Allowed.",
+    "You Have {cd} Seconds Per Question. Start.",
+    "Test Yourself: {n} Questions, No Cheating",
+    "Your Score Out Of {n} Says A Lot",
+    "Prove You Can Score {n}/{n}",
+    # --- curiosity-gap ---
+    "Only 1% Score {n}/{n} On This Quiz",
+    "99% Will Miss Question {n}. Prove It.",
+    "The Question Most People Get Wrong Is Next",
+    "1 In 100 Can Score {n}/{n}. Are You One?",
+    "This Quiz Looks Easy Until Question 4",
 )
 
 ROUNDS_SYSTEM = ("You write general-knowledge quiz rounds for short videos. "
@@ -396,6 +438,110 @@ def hook_variants(category, cfg):
     ]
 
 
+def _category_stats(cfg):
+    """Stats {categorie: {n, mean}} mesurees pour les categories quiz.
+
+    Chaine de donnees : registry (source_topic 'quiz:<cat>' direct, sinon
+    idea_id -> fichier idea data/ideas/<id>-*.json) x vues max par video
+    depuis data/analytics/history.jsonl. Toute panne -> {} : poids neutres,
+    la pipeline ne casse jamais pour un apprentissage optionnel.
+    """
+    from .config import get_paths
+    from .util import load_json
+    try:
+        paths = get_paths(cfg)
+        reg = load_json(paths.registry / "published.json") or {}
+        rows = reg.get("videos") or {}
+        views = {}
+        hist = paths.analytics / "history.jsonl"
+        if hist.exists():
+            with open(hist, encoding="utf-8") as fh:
+                for line in fh:
+                    try:
+                        rec = json.loads(line)
+                    except Exception:
+                        continue
+                    vid = str((rec or {}).get("id") or "")
+                    try:
+                        v = int(float((rec or {}).get("views") or 0))
+                    except (TypeError, ValueError):
+                        v = 0
+                    if vid and v > views.get(vid, 0):
+                        views[vid] = v
+        stats = {}
+        for vid, entry in (rows.items() if isinstance(rows, dict) else []):
+            if not isinstance(entry, dict):
+                continue
+            topic = str(entry.get("source_topic") or "")
+            if not topic.startswith("quiz:"):
+                idea_id = str(entry.get("idea_id") or "").strip()
+                idea_file = (next(paths.ideas.glob("%s-*.json" % idea_id),
+                                  None) if idea_id else None)
+                if idea_file is not None:
+                    idea = load_json(idea_file) or {}
+                    topic = str(idea.get("source_topic") or "")
+            if not topic.startswith("quiz:"):
+                continue
+            cat = topic.split(":", 1)[1].strip().lower() or "general"
+            s = stats.setdefault(cat, {"n": 0, "total": 0})
+            s["n"] += 1
+            s["total"] += max(0, views.get(str(vid), 0))
+        return {c: {"n": s["n"], "mean": s["total"] / float(s["n"])}
+                for c, s in stats.items()}
+    except Exception:
+        return {}
+
+
+def _pick_category(state, cfg):
+    """Categorie de la video : exploitation mesuree + exploration cadree.
+
+    - < category_min_samples videos mesurees pour une categorie -> poids
+      booste (exploration prioritaire jusqu'a un echantillon comparable)
+    - sinon poids = vues moyennes reelles par categorie (le meilleur
+      format gagne du temps de diffusion)
+    - fraction category_explore tournee deterministement par seq (aucun
+      hasard externe : resultats reproductibles en test)
+    """
+    qcfg = _quiz_cfg(cfg)
+    cats = [str(c).lower() for c in
+            (qcfg.get("categories") or DEFAULTS["categories"])]
+    if not cats:
+        return "general"
+    try:
+        min_n = int(qcfg.get("category_min_samples")
+                    or DEFAULTS["category_min_samples"])
+    except (TypeError, ValueError):
+        min_n = DEFAULTS["category_min_samples"]
+    try:
+        explore = float(qcfg.get("category_explore")
+                        or DEFAULTS["category_explore"])
+    except (TypeError, ValueError):
+        explore = DEFAULTS["category_explore"]
+    explore = max(0.0, min(0.9, explore))
+    seq = int(state.get("seq") or 0) + len(state.get("videos") or [])
+    if explore > 0.0 and ((seq * 2654435761) % 100) < int(explore * 100.0):
+        return cats[seq % len(cats)]
+    stats = _category_stats(cfg)
+    weights = []
+    for c in cats:
+        s = stats.get(c) or {}
+        n_c, mean = int(s.get("n") or 0), float(s.get("mean") or 0.0)
+        if not n_c:
+            weights.append(1.0)
+        elif n_c < min_n:
+            weights.append(1.0 + mean)
+        else:
+            weights.append(max(0.25, mean))
+    total = sum(weights) or 1.0
+    pick = ((seq * 40503) % 9973) / 9973.0 * total
+    acc = 0.0
+    for c, w in zip(cats, weights):
+        acc += w
+        if pick <= acc:
+            return c
+    return cats[-1]
+
+
 def _countdown_words(seconds):
     try:
         cd = int(seconds)
@@ -434,6 +580,10 @@ def local_script(rounds, hook, cfg):
             lines.append(_BEAT_LIKE)
         if i == 5 and n >= 7:
             lines.append(_BEAT_SCORE_CHECK)
+    # MAX 2026-10-31 : chaine bonus (double or nothing) avant le CTA final
+    # -> le score devient une promesse de revanche (commentaire + retour).
+    if bool(qcfg.get("bonus_tease", DEFAULTS["bonus_tease"])) and n >= 7:
+        lines.append(_BEAT_BONUS)
     lines.append("Comment your score out of %d, and follow for a new quiz "
                  "every day." % n)
     return "\n".join(lines)
@@ -457,6 +607,9 @@ def _llm_script(llm, rounds, hook, cfg):
     except (TypeError, ValueError):
         cd_plain = DEFAULTS["countdown_s"]
     cd_plain = max(1, min(10, cd_plain))
+    bonus = (" Before the final line, insert exactly: '%s'."
+             % _BEAT_BONUS) \
+        if bool(qcfg.get("bonus_tease", DEFAULTS["bonus_tease"])) else ""
     payload = {
         "hook": str(hook or ""),
         "countdown_s": cd_plain,
@@ -475,13 +628,14 @@ def _llm_script(llm, rounds, hook, cfg):
         "then 'Lock in your answer: %(cd)s' then 'The answer is <letter>: "
         "<correct answer>.' Insert these engagement beats: after the 3rd "
         "answer '%(like)s' ; after the 5th answer '%(scare)s' ; right "
-        "before the last question '%(tease)s %(leaderboard)s'. Close with: "
+        "before the last question '%(tease)s %(leaderboard)s'.%(bonus)s "
+        "Close with: "
         "'Comment your score out of %(total)d, and follow for a new quiz "
         "every day.' No channel intro, no filler. Rounds JSON: %(json)s"
     ) % {"lo": lo, "hi": hi, "target": plan["target"], "cd": cd,
          "like": _BEAT_LIKE, "scare": _BEAT_SCORE_CHECK,
          "tease": _BEAT_TEASE, "leaderboard": _BEAT_LEADERBOARD,
-         "total": len(rounds),
+         "bonus": bonus, "total": len(rounds),
          "json": json.dumps(payload, ensure_ascii=False)}
     try:
         data = llm.chat_json(SCRIPT_SYSTEM, user)
@@ -521,15 +675,15 @@ def build_idea(llm, cfg):
     """
     qcfg = _quiz_cfg(cfg)
     state = _load_state(cfg)
-    cats = [str(c).lower() for c in
-            (qcfg.get("categories") or DEFAULTS["categories"])]
     try:
         cd_plain = int(qcfg.get("countdown_s") or DEFAULTS["countdown_s"])
     except (TypeError, ValueError):
         cd_plain = DEFAULTS["countdown_s"]
     cd_plain = max(1, min(10, cd_plain))
     cursor = int(state.get("seq") or 0) + len(state.get("videos") or [])
-    category = cats[cursor % len(cats)]
+    # MAX 2026-10-31 : categorie ponderee par les vues mesurees (registry x
+    # analytics) + exploration cadree - au lieu de la rotation modulo.
+    category = _pick_category(state, cfg)
     rounds = next_rounds(llm, cfg)
     n = len(rounds)
     variants = hook_variants(category, cfg)
@@ -542,7 +696,13 @@ def build_idea(llm, cfg):
     script = _llm_script(llm, rounds, hook, cfg) \
         or local_script(rounds, hook, cfg)
     plan = _quiz_duration_plan(cfg)
-    title = _TITLES[cursor % len(_TITLES)].format(n=n, cd=cd_plain)[:50]
+    # MAX 2026-10-31 : titre choisi par metas.pick_title (score famille
+    # mesuree + forme + anti-repetition sur les titres recents) au lieu de
+    # la rotation modulo ; ex-aequo casses par tie-break deterministe.
+    recent = [str((v or {}).get("title") or "")
+              for v in (state.get("videos") or [])][-12:]
+    candidates = [t.format(n=n, cd=cd_plain) for t in _TITLES]
+    title = metas.pick_title(candidates, recent=recent, seq=cursor)[0][:100]
     idea = {
         "topic": "quiz",
         "source_topic": "quiz:%s" % category,
@@ -565,12 +725,26 @@ def build_idea(llm, cfg):
         },
         "comment": ("Score check: how many did you get right out of %d? "
                     "Comment your score and which question tricked you." % n),
-        "description": ("Quick %s quiz: %d questions, %d seconds each. "
-                        "Comment your score out of %d! "
-                        "#shorts #quiz #trivia #quiztime #generalknowledge"
-                        % (category, n, cd_plain, n)),
-        "tags": ["quiz", "trivia", "quiz time", "quiz questions",
-                 "general knowledge", "test your knowledge", category],
+        # MAX 2026-10-31 : description/CTA/hashtags/tags via metas -> CTA
+        # question ouverte (levier commentaires), hashtags niche-first
+        # (#shorts en dernier), budget tags 500 car. reellement rempli.
+        "description": metas.build_description(
+            ("Quick %s quiz: %d questions, %d seconds each.\n%s\n"
+             "Play along, beat your friends, and come back tomorrow: "
+             "a new quiz every day."
+             % (category, n, cd_plain, metas.open_question_cta(n))),
+            metas.build_hashtags("quiz", ["trivia", "quiztime",
+                                          "generalknowledge", "shorts"])),
+        "tags": metas.fit_tags([
+            "quiz", "trivia", "quiz time", "quiz questions",
+            "general knowledge", "test your knowledge",
+            "%s quiz" % category, "%s trivia" % category,
+            "quiz challenge", "guess the answer", "brain test",
+            "iq test", "fun quiz", "trivia questions and answers",
+            "general knowledge quiz", "pub quiz questions",
+            "quiz for adults", "hard quiz", "are you smart",
+            "only 1 percent", "test your brain", "shorts quiz",
+            "youtube shorts", "shorts"]),
     }
     if ab:
         idea["pair_id"] = ab["pair_id"]

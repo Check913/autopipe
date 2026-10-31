@@ -207,6 +207,10 @@ DEFAULTS = {
         # nombre de Shorts/jour actuel de la chaine, volontairement intact).
         "posts_per_day": 0,
         "post_hours_utc": [15, 21],
+        # smart_lead_min : avance (minutes) de la publication privee avant
+        # l'heure cible des fenetres intelligentes (metas.publish_instants,
+        # scheduler smart_windows) -> temps de indexation avant le pic US.
+        "smart_lead_min": 90,
         "auto_comment": True,
         "comment_template": "",
     },
@@ -262,7 +266,8 @@ DEFAULTS = {
         "rpm_shorts_usd": 0.08,   # RPM Shorts estime ($ / 1000 vues)
     },
     "network": {"proxy_mode": "direct"},
-    "scheduler": {"interval_hours": 4, "state_file": "data/scheduler_state.json"},
+    "scheduler": {"interval_hours": 4, "state_file": "data/scheduler_state.json",
+                  "smart_windows": True},
 }
 
 _ACTIVE = None

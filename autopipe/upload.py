@@ -1,6 +1,7 @@
 """YouTube publishing via the official API (resumable upload + OAuth)."""
 from pathlib import Path
 
+from . import metas
 from .config import get_config, get_paths
 from .geo import enforce_exit_country
 from .util import apply_upload_proxy, get_logger
@@ -228,7 +229,11 @@ def upload_video(video_path, title, description, tags=None, cfg=None, privacy=No
     # (email d'alerte) au lieu d'etre mal localisee chez YouTube.
     enforce_exit_country(cfg)
     yt = get_service(cfg)
-    tags = [str(t)[:100] for t in (tags or [])][:30]
+    # Fix MAX 2026-10-31 : l'ancien code ne tronquait QUE chaque tag a 100
+    # caracteres et le total a 30 tags. Or la vraie limite API = 500
+    # caracteres AU TOTAL, guillemets inclus : au-dela -> tags silencieusement
+    # ignores (ou 400). fit_tags applique le budget reel + dedup + ordre.
+    tags = metas.fit_tags(tags)
     # Localisation US (a tout prix) : metadata_language en BCP-47 "en-US"
     # dit a YouTube que la video est en anglais americain (decouverte,
     # sous-titres auto, recommandations). Fallback : general.language.
@@ -237,7 +242,10 @@ def upload_video(video_path, title, description, tags=None, cfg=None, privacy=No
     body = {
         "snippet": {
             "title": str(title)[:100],
-            "description": str(description)[:4900],
+            # Fix MAX 2026-10-31 : la limite description = 5000 OCTETS (pas
+            # caracteres). L'ancien [:4900] laissait passer un emoji 4 octets
+            # -> 400 invalidDescription. truncate_bytes coupe au caractere.
+            "description": metas.truncate_bytes(description, metas.DESC_MAX_BYTES),
             "tags": tags,
             "categoryId": str(cfg["upload"].get("category_id", "24")),
             "defaultLanguage": lang,
@@ -268,6 +276,108 @@ def upload_video(video_path, title, description, tags=None, cfg=None, privacy=No
         # A chaque publication, re-aligne le pays de la chaine (US par defaut) :
         # idempotent, 1 unite de quota si deja correct, 50 sinon.
         ensure_channel_country(cfg)
+    # MAX 2026-10-31 : sous-titres CC (mots-cles exacts + accessibilite) et
+    # playlist (watch-time cumule) si configures. Jamais bloquants.
+    upload_captions(yt, video_id, video_path, cfg)
+    add_to_playlist(yt, video_id, cfg)
     if pinned_comment:
         post_pinned_comment(video_id, pinned_comment, cfg)
     return video_id
+
+
+# ---------------------------------------------------------------------------
+# MAX 2026-10-31 : captions + playlists (levs qui restent APRES l'upload)
+# ---------------------------------------------------------------------------
+
+_PLAYLIST_CACHE = {}   # titre -> playlistId (resolve 1x par process)
+
+
+def _caption_path_for(video_path):
+    """Fichier de sous-titres jumeau du .mp4, sinon None.
+
+    La pipeline produit <out_dir>/subs.srt a cote de video.mp4 (video.py
+    build_srt_from_timings). captions.insert accepte .srt/.vtt/.sbv/.ttml
+    : on cherche le .vtt puis le .srt du meme stem, puis subs.srt/.vtt
+    dans le meme dossier.
+    """
+    try:
+        p = Path(video_path)
+        for cand in (p.with_suffix(".vtt"), p.with_suffix(".srt"),
+                     p.parent / "subs.vtt", p.parent / "subs.srt"):
+            if cand.exists():
+                return cand
+    except Exception:
+        return None
+    return None
+
+
+def upload_captions(yt, video_id, video_path, cfg=None):
+    """Televerse le .vtt comme sous-titres officiels (captions.insert).
+
+    Pourquoi : les sous-titres televerses donnent a YouTube le TEXTE EXACT
+    (mots-cles, questions) au lieu d'une transcription auto approximative,
+    ameliorent l'acessibilite (recherche + recomendations) et activent le
+    badge CC. Le .vtt est genere par subs.py a cote du .mp4.
+    Echec = warning seulement : l'upload reussi n'est JAMAIS annule.
+    """
+    cfg = cfg or get_config()
+    if not cfg["upload"].get("captions", True):
+        return None
+    vtt = _caption_path_for(video_path)
+    if not vtt:
+        return None
+    lang = (str(cfg["upload"].get("caption_language") or "").strip()
+            or str(cfg["upload"].get("metadata_language") or "").strip()
+            or str(cfg["general"].get("language", "en")).strip() or "en")
+    mime = "text/vtt" if vtt.suffix.lower() == ".vtt" else "application/x-subrip"
+    try:
+        from googleapiclient.http import MediaFileUpload
+        media = MediaFileUpload(str(vtt), mimetype=mime)
+        yt.captions().insert(
+            part="snippet",
+            body={"snippet": {"videoId": video_id, "language": lang,
+                              "name": lang.upper()}},
+            media_body=media).execute()
+        log.info("Sous-titres televerses: %s (%s)", vtt.name, lang)
+        return True
+    except Exception as exc:
+        log.warning("Sous-titres non televerses (%s): %s", vtt.name, exc)
+        return False
+
+
+def add_to_playlist(yt, video_id, cfg=None):
+    """Ajoute la video a la playlist [upload].playlist_title (si definie).
+
+    La playlist allonge la session de visionnage (watch-time cumule, levier
+    de recommandation) et existe deja sur les grosses chaines quiz. L'id
+    est resolu 1x par process via playlists.list(mine=True) (1 unite).
+    playlistItems.insert = 50 unites ; doublon -> 409 ignore. Echec =
+    warning seulement.
+    """
+    cfg = cfg or get_config()
+    title = str(cfg["upload"].get("playlist_title") or "").strip()
+    if not title:
+        return None
+    try:
+        plid = _PLAYLIST_CACHE.get(title)
+        if not plid:
+            resp = yt.playlists().list(part="snippet", mine=True,
+                                       maxResults=50).execute()
+            for item in resp.get("items") or []:
+                _PLAYLIST_CACHE[str(item.get("snippet", {}).get("title"))] = \
+                    item.get("id")
+            plid = _PLAYLIST_CACHE.get(title)
+        if not plid:
+            log.warning("Playlist '%s' introuvable : creez-la dans YouTube "
+                        "Studio, elle sera reutilisee automatiquement", title)
+            return None
+        yt.playlistItems().insert(
+            part="snippet",
+            body={"snippet": {"playlistId": plid,
+                              "resourceId": {"kind": "youtube#video",
+                                             "videoId": video_id}}}).execute()
+        log.info("Ajoutee a la playlist '%s' (%s)", title, plid)
+        return plid
+    except Exception as exc:
+        log.warning("Ajout playlist impossible: %s", exc)
+        return None

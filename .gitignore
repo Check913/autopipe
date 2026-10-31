@@ -18,3 +18,8 @@ deploy247/
 AutoPipe_247_kit.zip
 rebuild_zip_tmp.py
 verify_keys_tmp.py
+
+# Sauvegardes locales de credentials (rotation OAuth 2026-10-30) : JAMAIS
+# dans le depot, comme token.json / client_secret.json.
+token_OLD_*.json
+client_secret_OLD_*.json
