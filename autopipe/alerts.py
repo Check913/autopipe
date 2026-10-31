@@ -5,8 +5,9 @@ et pour un usage local (section [alerts] d'autopipe.toml)."""
 import os
 import time
 
-from .config import get_paths
-from .util import get_logger, load_json, save_json
+from .config import get_paths, get_config
+from .util import (apply_upload_proxy, fix_proxy_env, get_logger,
+                   load_json, save_json)
 
 log = get_logger("alerts")
 
@@ -54,6 +55,17 @@ def token_health(cfg):
     fichier n'est jamais modifie).
     """
     from .upload import SCOPES, _missing_scopes
+    # Localisation US a tout prix : le refresh OAuth teste ici (et son
+    # eventuel appel reseau a oauth2.googleapis.com) passe par le MEME
+    # egress que la publication : upload_proxy (sortie US) si defini, sinon
+    # proxy_mode local. Aucune exception pour check-token.
+    cfg = cfg or get_config()
+    net_cfg = cfg.get("network", {}) or {}
+    upload_proxy = str(net_cfg.get("upload_proxy") or "").strip()
+    if upload_proxy:
+        apply_upload_proxy(upload_proxy)
+    else:
+        fix_proxy_env(str(net_cfg.get("proxy_mode", "direct") or "direct"))
     paths = get_paths(cfg)
     token_file = paths.root / cfg["upload"].get("token_file", "token.json")
     if not token_file.exists():

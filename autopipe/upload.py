@@ -2,6 +2,7 @@
 from pathlib import Path
 
 from .config import get_config, get_paths
+from .geo import enforce_exit_country
 from .util import apply_upload_proxy, get_logger
 
 log = get_logger("upload")
@@ -221,6 +222,11 @@ def upload_video(video_path, title, description, tags=None, cfg=None, privacy=No
                  pinned_comment=None):
     """Resumable upload. Returns the YouTube video ID."""
     cfg = cfg or get_config()
+    # Verrou geo US (fail-closed) au moment EXACT de la publication : on
+    # prouve que la sortie reseau effective (celle vue par YouTube) est
+    # americaine AVANT d'uploader. Sinon la publication est refusee ici
+    # (email d'alerte) au lieu d'etre mal localisee chez YouTube.
+    enforce_exit_country(cfg)
     yt = get_service(cfg)
     tags = [str(t)[:100] for t in (tags or [])][:30]
     # Localisation US (a tout prix) : metadata_language en BCP-47 "en-US"

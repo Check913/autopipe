@@ -361,3 +361,45 @@ Correctifs appliques dans `autopipe/ideas.py` (verifies le 2026-10-24) :
   aussi l'historique de creation/connexion du compte.
 - **Important** : le bot 24/7 en cours d'execution doit etre relance pour
   charger le nouveau code (marges safe zones).
+- **Verrou geo US fail-closed (nouveau, `autopipe/geo.py`)** : la
+  recommandation ci-dessus est desormais APPLIQUEE et VERIFIEE. Les
+  runners GitHub Actions sont multi-cloud (Azure + AWS), donc l'IP de
+  sortie n'est PAS garantie US. Avant CHAQUE publication, le bot prouve
+  le pays de la sortie reseau EFFECTIVE (celle vue par YouTube) :
+  - `upload_video()` appelle `enforce_exit_country(cfg)` AVANT de
+    toucher a l'API : si le pays ne peut pas etre prouve = US, la
+    publication est REFUSEE (echec fail-closed + email d'alerte) au
+    lieu d'etre mal localisee ;
+  - la verification utilise le meme egress que l'upload :
+    `upload_proxy` s'il est defini, sinon `proxy_mode` (direct/fix) —
+    exactement comme `get_service()`/`_build_service()` et
+    `token_health` (le refresh OAuth passe aussi par le meme egress) ;
+  - le resultat est mis en cache `cache/geo_exit.json` (TTL
+    `[network].geo_check_ttl_min`, clee par sortie proxy/direct) : pas
+    de requete superflue pendant l'upload ;
+  - `geo_check = "strict"` par defaut (config) : strict =
+    refuse si pays != US ou verification impossible ; warn = avertissement
+    seulement ; off = desactive. NON recommande en off.
+- **Nouvelles cles `[network]`** (dans les deux TOMLs) :
+  `geo_check = "strict"`, `geo_check_url` (services JSON pays de l'IP,
+  testes dans l'ordre), `geo_check_ttl_min = 30`,
+  `geo_expected_country = "US"`.
+- **Nouvelle commande CLI** : `python -m autopipe.cli geo-check
+  [--force]` — affiche IP + pays de sortie et quitte 1 si ce n'est pas
+  US (--force ignore le cache). Utile avant de lancer un run pour
+  verifier le VPS/proxy.
+- **Workflow GitHub Actions** : nouvelle etape `Verifier la sortie US
+  (verrou geo fail-closed)` qui lance `python -m autopipe.cli
+  geo-check` juste avant `serve --once` — si l'IP du runner n'est pas
+  US, le run echoue AVANT de generer/publier, avec email d'alerte.
+- **Remedes si geo-check echoue** (par ordre de preference) :
+  1. definir `[network].upload_proxy` vers un proxy US prive/IP dediee
+     (le plus simple, fonctionne partout) ;
+  2. passer le bot sur un VPS US (IP dediee) en self-hosted runner ou
+     machine 24/7 ;
+  3. utiliser un GitHub "larger runner" avec IP statique (officielle,
+     payante).
+- **Tests** : `tests/test_geo.py` — pays US -> OK, pays non-US ->
+  refuse en strict / warning en warn, service injoignable -> refuse
+  (fail-closed), cache respecte dans le TTL, `token_health` applique
+  bien le proxy.

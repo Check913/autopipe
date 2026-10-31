@@ -164,6 +164,22 @@ proxy_mode = "direct"
 # le trafic de publication. Vide = IP locale. Exemple :
 #   upload_proxy = "http://user:pass@us-proxy.example.com:8080"
 upload_proxy = ""
+# Verrou geographique US (fail-closed, 2026-10-31) : avant CHAQUE publication
+# le bot prouve le pays de la sortie reseau EFFECTIVE (celle vue par
+# YouTube). Si le pays ne peut pas etre prouve = US, la publication est
+# REFUSEE (email d'alerte) au lieu d'etre mal localisee. La verification
+# passe par le meme egress que l'upload (upload_proxy ou proxy_mode) et le
+# resultat est mis en cache (cache/geo_exit.json).
+#   strict = publication refusee si pays != US ou verification impossible
+#   warn   = avertissement seulement (developpement local)
+#   off    = aucun controle (deconseille)
+geo_check = "strict"
+# Services de verification interroges dans l'ordre (JSON pays de l'IP) :
+geo_check_url = "http://ip-api.com/json/?fields=status,message,country,countryCode,query,proxy,hosting,isp"
+# Resultat mis en cache pendant N minutes, clee par sortie (proxy ou direct).
+geo_check_ttl_min = 30
+# Pays exige (code ISO 2 lettres).
+geo_expected_country = "US"
 [visual]
 # Module 1 : analyse OpenCV des premieres secondes des hits viraux ->
 # rythme des coupes, zooms, palette, zone des sous-titres, appliques

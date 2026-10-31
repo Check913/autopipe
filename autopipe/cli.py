@@ -441,6 +441,31 @@ def cmd_set_country(a):
     print("Effet visible sur la page chaine sous peu (cache YouTube possible).")
 
 
+def cmd_geo_check(a):
+    """Prouve le pays de sortie reseau (US exige) ; echec si non conforme.
+
+    Fail-closed : si le pays n'est pas PROUVE = US, on sort en erreur pour
+    bloquer le run AVANT la generation/upload (meme logique que le verrou
+    geo de upload_video). Mode warn/off : information seule.
+    """
+    cfg = _init(a.verbose)
+    from .geo import check_exit_country
+    state = check_exit_country(cfg, force=bool(getattr(a, "force", False)))
+    if state.get("skipped"):
+        print("Verrou geo desactive ([network].geo_check = off).")
+        return
+    etiket = "cache" if state.get("cached") else "controle live"
+    print("Sortie reseau (%s, egress %s) : pays=%s ip=%s" % (
+        etiket, state.get("egress"), state.get("country"),
+        state.get("ip") or "?"))
+    if not state.get("ok"):
+        print("ECHEC verrou geo US : %s" % state.get("reason"))
+        print("Remedes : definir [network].upload_proxy (proxy de sortie US)")
+        print("ou passer [network].geo_check = warn/off pour ignorer.")
+        sys.exit(1)
+    print("OK : sortie confirmee US (le trafic YouTube est bien localise).")
+
+
 def cmd_setup(a):
     cfg = _init(a.verbose)
     paths = get_paths(cfg)
@@ -624,6 +649,12 @@ def main(argv=None):
     p = sub.add_parser("set-country-us",
                        help="forcer la localisation US de la page YouTube (pays de la chaine)")
     p.set_defaults(fn=cmd_set_country)
+
+    p = sub.add_parser("geo-check",
+                       help="prouver la sortie reseau US (verrou fail-closed avant publication)")
+    p.add_argument("--force", action="store_true",
+                   help="ignorer le cache geo (controle live)")
+    p.set_defaults(fn=cmd_geo_check)
 
     p = sub.add_parser("setup", help="verifier l'installation")
     p.set_defaults(fn=cmd_setup)

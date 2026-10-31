@@ -76,6 +76,16 @@ jobs:
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
         run: python -m autopipe.cli check-token
 
+      # Verrou geo US (fail-closed) : prouve que la sortie reseau EFFECTIVE
+      # du runner est americaine AVANT de generer/uploader. YouTube deduit le
+      # pays de publication de l'IP de sortie ; le pool heberge GitHub
+      # (multi-cloud) ne garantit plus les Etats-Unis, donc si la sortie n'est
+      # pas prouvee US le run echoue ICI (email d'alerte) au lieu de publier
+      # mal localise. Remede : upload_proxy = proxy de sortie US dans la
+      # config (self-hosted runner ou larger runner a IP fixe = alternatives).
+      - name: Verifier la sortie US (verrou geo fail-closed)
+        run: python -m autopipe.cli geo-check
+
       # serve --once = une iteration complete : radar/remake/idees -> TTS ->
       # clips -> montage -> upload YouTube + commentaire epingle.
       # (En mode once, la fenetre post_hours_utc n'est pas attendue : le cron
