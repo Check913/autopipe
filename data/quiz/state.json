@@ -1,5 +1,5 @@
 {
-  "seq": 2,
+  "seq": 3,
   "used": [
     "whatisthecapitalcityofcanada",
     "whichgasdoplantsprimarilyabsorbfromtheatmosphereforphotosynthesis",
@@ -18,12 +18,18 @@
     "whichoceanisthelargestanddeepestonearth",
     "whendidthetitanicsink",
     "whoplayedthecharacterofindianajones",
-    "howmanyplanetsareinoursolarsystem"
+    "howmanyplanetsareinoursolarsystem",
+    "whatisthelargestmammalonearth",
+    "whichcountryisknownasthelandoftherisingsun",
+    "whowasthefirstwomantoflysoloacrosstheatlanticocean",
+    "whichmoviefeaturesthelinemaytheforcebewithyou",
+    "whatisthecapitalcityofaustralia",
+    "whichmountainrangeisthehighestintheworld",
+    "whatisthechemicalsymbolforgold",
+    "inwhatyeardidthetitanicsink",
+    "whodirectedthefilmjurassicpark"
   ],
   "generated": [
-    "whatisthecapitalcityofcanada",
-    "whichgasdoplantsprimarilyabsorbfromtheatmosphereforphotosynthesis",
-    "whowasthefirstpersontowalkonthemoon",
     "whichclassic1982stevenspielbergfilmfeaturesafriendlyalienwhowantstophonehome",
     "onwhichcontinentisthevastsaharadesertprimarilylocated",
     "whatisthelargestoceanonearth",
@@ -38,7 +44,16 @@
     "whichoceanisthelargestanddeepestonearth",
     "whendidthetitanicsink",
     "whoplayedthecharacterofindianajones",
-    "howmanyplanetsareinoursolarsystem"
+    "howmanyplanetsareinoursolarsystem",
+    "whatisthelargestmammalonearth",
+    "whichcountryisknownasthelandoftherisingsun",
+    "whowasthefirstwomantoflysoloacrosstheatlanticocean",
+    "whichmoviefeaturesthelinemaytheforcebewithyou",
+    "whatisthecapitalcityofaustralia",
+    "whichmountainrangeisthehighestintheworld",
+    "whatisthechemicalsymbolforgold",
+    "inwhatyeardidthetitanicsink",
+    "whodirectedthefilmjurassicpark"
   ],
   "videos": [
     {
@@ -52,6 +67,12 @@
       "idea_id": "20261031-074352-01",
       "title": "Can You Beat This 9 Question Quiz?",
       "ts": "2026-10-31T07:47:12Z"
+    },
+    {
+      "video_id": "cy3aSg9ujT4",
+      "idea_id": "20261031-124545-01",
+      "title": "Most People Fail This 9 Question Quiz",
+      "ts": "2026-10-31T12:49:13Z"
     }
   ]
 }

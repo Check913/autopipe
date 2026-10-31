@@ -1755,5 +1755,135 @@
         10000.0
       ]
     ]
+  },
+  "criminal defense lawyer": {
+    "traffic": 500.0,
+    "first_seen": "2026-10-31T12:44:40",
+    "last_seen": "2026-10-31T12:44:40",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-31T12:44:40",
+        500.0
+      ]
+    ]
+  },
+  "tucker carlson": {
+    "traffic": 200.0,
+    "first_seen": "2026-10-31T12:44:40",
+    "last_seen": "2026-10-31T12:44:40",
+    "delta": 200.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-31T12:44:40",
+        200.0
+      ]
+    ]
+  },
+  "gamecocks football": {
+    "traffic": 200.0,
+    "first_seen": "2026-10-31T12:44:40",
+    "last_seen": "2026-10-31T12:44:40",
+    "delta": 200.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-31T12:44:40",
+        200.0
+      ]
+    ]
+  },
+  "frank miller": {
+    "traffic": 200.0,
+    "first_seen": "2026-10-31T12:44:40",
+    "last_seen": "2026-10-31T12:44:40",
+    "delta": 200.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-31T12:44:40",
+        200.0
+      ]
+    ]
+  },
+  "lincoln city vs birmingham": {
+    "traffic": 200.0,
+    "first_seen": "2026-10-31T12:44:40",
+    "last_seen": "2026-10-31T12:44:40",
+    "delta": 200.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-31T12:44:40",
+        200.0
+      ]
+    ]
+  },
+  "josh jacobs news": {
+    "traffic": 200.0,
+    "first_seen": "2026-10-31T12:44:40",
+    "last_seen": "2026-10-31T12:44:40",
+    "delta": 200.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-31T12:44:40",
+        200.0
+      ]
+    ]
+  },
+  "deontay wilder": {
+    "traffic": 100.0,
+    "first_seen": "2026-10-31T12:44:40",
+    "last_seen": "2026-10-31T12:44:40",
+    "delta": 100.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-31T12:44:40",
+        100.0
+      ]
+    ]
+  },
+  "crimson desert dlc": {
+    "traffic": 100.0,
+    "first_seen": "2026-10-31T12:44:40",
+    "last_seen": "2026-10-31T12:44:40",
+    "delta": 100.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-31T12:44:40",
+        100.0
+      ]
+    ]
+  },
+  "estêvão willian": {
+    "traffic": 200.0,
+    "first_seen": "2026-10-31T12:44:40",
+    "last_seen": "2026-10-31T12:44:40",
+    "delta": 200.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-31T12:44:40",
+        200.0
+      ]
+    ]
+  },
+  "avión": {
+    "traffic": 200.0,
+    "first_seen": "2026-10-31T12:44:40",
+    "last_seen": "2026-10-31T12:44:40",
+    "delta": 200.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-31T12:44:40",
+        200.0
+      ]
+    ]
   }
 }

@@ -1,16 +1,16 @@
 {
   "status": "ok",
-  "pairs": 22,
+  "pairs": 23,
   "joined": 0,
   "variants": {
     "A": {
-      "assigned": 11,
+      "assigned": 12,
       "measured": 0,
       "mean_engagement": null,
       "mean_views": null,
       "families": {
         "statement": 7,
-        "question": 1,
+        "question": 2,
         "number": 3
       }
     },
@@ -335,7 +335,21 @@
       "video_id": "gEtui7O33o0",
       "engagement": null,
       "views": null
+    },
+    {
+      "ts": "2026-10-31T07:43:39",
+      "pair_id": "pair_20261031_0023",
+      "topic": "quiz:science",
+      "variant": "A",
+      "hook": "Are you smarter than most people?",
+      "family": "question",
+      "family_other": "identity",
+      "hook_a": "Are you smarter than most people?",
+      "hook_b": "Only top 1% brains get every single one right.",
+      "video_id": "fNh2NGFifGQ",
+      "engagement": null,
+      "views": null
     }
   ],
-  "fetched": "2026-10-31T07:43:18"
+  "fetched": "2026-10-31T12:45:05"
 }

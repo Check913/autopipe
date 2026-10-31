@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-31T07:43:27.157618",
+  "date": "2026-10-31T12:45:15.745933",
   "region": "US",
   "language": "en",
   "keywords": [
@@ -12,16 +12,34 @@
   ],
   "min_views": 500000,
   "max_duration": 90,
-  "total_found": 86,
-  "rejected": 76,
+  "total_found": 88,
+  "rejected": 78,
   "hits": [
     {
       "id": "3OuQ_bzpWZQ",
       "title": "1-Minute Countdown - Quiz Time - Suspense Music ⏱️",
       "channel": "SonarPlay",
-      "views": 38274,
+      "views": 38301,
       "duration": 61.0,
       "url": "https://www.youtube.com/watch?v=3OuQ_bzpWZQ",
+      "query": "ytsearch10:quiz time #shorts"
+    },
+    {
+      "id": "D_0U3l_HCmA",
+      "title": "✅ TEST YOUR KNOWLEDGE! - Short Mixed Trivia Quiz Questions #quiz #trivia #trivianight #learning",
+      "channel": "Brain Teaser Titans",
+      "views": 2481,
+      "duration": 80.0,
+      "url": "https://www.youtube.com/watch?v=D_0U3l_HCmA",
+      "query": "ytsearch10:test your knowledge shorts"
+    },
+    {
+      "id": "q16JX5kT0Ls",
+      "title": "QUIZ Time with Intellipaat | Answer & Win Vouchers | Quiz - 2 | Intellipaat #Shorts",
+      "channel": "Intellipaat",
+      "views": 1704,
+      "duration": 31.0,
+      "url": "https://www.youtube.com/watch?v=q16JX5kT0Ls",
       "query": "ytsearch10:quiz time #shorts"
     },
     {
@@ -40,24 +58,6 @@
       "views": 918,
       "duration": 71.0,
       "url": "https://www.youtube.com/watch?v=8GzHtEWXdI4",
-      "query": "ytsearch10:test your knowledge shorts"
-    },
-    {
-      "id": "aZbrvMznLE4",
-      "title": "Quiz / Trivia - Test your knowledge #shorts #quiz #trivia #challenge",
-      "channel": "DY-VideoLand",
-      "views": 869,
-      "duration": 71.0,
-      "url": "https://www.youtube.com/watch?v=aZbrvMznLE4",
-      "query": "ytsearch10:test your knowledge shorts"
-    },
-    {
-      "id": "uaWbJExYEbE",
-      "title": "Test Your Knowledge #shorts",
-      "channel": "know youtube",
-      "views": 60,
-      "duration": 31.0,
-      "url": "https://www.youtube.com/watch?v=uaWbJExYEbE",
       "query": "ytsearch10:test your knowledge shorts"
     }
   ]
