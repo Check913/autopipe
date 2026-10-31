@@ -1,6 +1,6 @@
 {
   "status": "ok",
-  "pairs": 23,
+  "pairs": 24,
   "joined": 0,
   "variants": {
     "A": {
@@ -15,7 +15,7 @@
       }
     },
     "B": {
-      "assigned": 11,
+      "assigned": 12,
       "measured": 0,
       "mean_engagement": null,
       "mean_views": null,
@@ -23,7 +23,7 @@
         "question": 7,
         "number": 2,
         "negation": 1,
-        "identity": 1
+        "identity": 2
       }
     }
   },
@@ -349,7 +349,21 @@
       "video_id": "fNh2NGFifGQ",
       "engagement": null,
       "views": null
+    },
+    {
+      "ts": "2026-10-31T12:45:29",
+      "pair_id": "pair_20261031_0024",
+      "topic": "quiz:movies",
+      "variant": "B",
+      "hook": "Most adults cannot get all of these right.",
+      "family": "identity",
+      "family_other": "question",
+      "hook_a": "How high can you score?",
+      "hook_b": "Most adults cannot get all of these right.",
+      "video_id": "cy3aSg9ujT4",
+      "engagement": null,
+      "views": null
     }
   ],
-  "fetched": "2026-10-31T12:45:05"
+  "fetched": "2026-10-31T15:50:32"
 }

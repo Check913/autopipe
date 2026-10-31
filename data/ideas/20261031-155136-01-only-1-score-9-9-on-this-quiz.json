@@ -1,0 +1,174 @@
+{
+  "topic": "quiz",
+  "source_topic": "quiz:geography",
+  "title": "Only 1% Score 9/9 On This Quiz",
+  "hook": "Are you smarter than most people?",
+  "density": 4,
+  "duration_format": "long",
+  "duration_target": 80,
+  "duration_range": [
+    74,
+    88
+  ],
+  "script": "Are you smarter than most people?\nQuestion 1: What is the largest animal on Earth?\nLock in your answer: Three. Two. One.\nThe answer is B: Blue Whale.\nQuestion 2: On which continent is the Sahara Desert located?\nLock in your answer: Three. Two. One.\nThe answer is C: Africa.\nQuestion 3: What gas do plants primarily absorb from the atmosphere for photosynthesis?\nLock in your answer: Three. Two. One.\nThe answer is C: Carbon Dioxide.\nIf you got the first three right, like the video right now.\nQuestion 4: Who was the first Roman Emperor?\nLock in your answer: Three. Two. One.\nThe answer is C: Augustus.\nQuestion 5: Which movie features a character named Frodo Baggins?\nLock in your answer: Three. Two. One.\nThe answer is C: The Lord of the Rings: The Fellowship of the Ring.\nScore check: comment SHARP if you are still perfect, RUSTY if you already missed one.\nQuestion 6: Which planet is known as the 'Red Planet'?\nLock in your answer: Three. Two. One.\nThe answer is B: Mars.\nQuestion 7: What is the longest river in the world by discharge volume?\nLock in your answer: Three. Two. One.\nThe answer is B: Amazon River.\nAre you ready for the last question?\nDon't forget to follow and comment your score to be on the weekly leaderboard of the top performers.\nQuestion 8: In which year did the Titanic sink?\nLock in your answer: Three. Two. One.\nThe answer is B: 1912.\nQuestion 9: Who directed the iconic film 'Pulp Fiction'?\nLock in your answer: Three. Two. One.\nThe answer is B: Quentin Tarantino.\nBonus: double or nothing - keep your score in your head and beat it on the next quiz.\nComment your score out of 9, and follow for a new quiz every day.",
+  "generator": "quiz:llm",
+  "quiz": {
+    "enabled": true,
+    "rounds": 9,
+    "countdown_s": 3,
+    "cards": true,
+    "items": [
+      {
+        "question": "What is the largest animal on Earth?",
+        "options": [
+          "African Elephant",
+          "Blue Whale",
+          "Giraffe",
+          "Polar Bear"
+        ],
+        "answer_index": 1,
+        "explanation": "The blue whale is the largest animal known to have ever existed, reaching up to 30 meters in length.",
+        "category": "general"
+      },
+      {
+        "question": "On which continent is the Sahara Desert located?",
+        "options": [
+          "Asia",
+          "South America",
+          "Africa",
+          "Australia"
+        ],
+        "answer_index": 2,
+        "explanation": "The Sahara is the largest hot desert in the world, covering a vast area of North Africa.",
+        "category": "general"
+      },
+      {
+        "question": "What gas do plants primarily absorb from the atmosphere for photosynthesis?",
+        "options": [
+          "Oxygen",
+          "Nitrogen",
+          "Carbon Dioxide",
+          "Hydrogen"
+        ],
+        "answer_index": 2,
+        "explanation": "Plants use carbon dioxide during photosynthesis to create their food and release oxygen.",
+        "category": "general"
+      },
+      {
+        "question": "Who was the first Roman Emperor?",
+        "options": [
+          "Julius Caesar",
+          "Nero",
+          "Augustus",
+          "Constantine"
+        ],
+        "answer_index": 2,
+        "explanation": "Augustus, born Octavian, established the Roman Empire and was its first emperor.",
+        "category": "general"
+      },
+      {
+        "question": "Which movie features a character named Frodo Baggins?",
+        "options": [
+          "Harry Potter and the Sorcerer's Stone",
+          "The Hobbit: An Unexpected Journey",
+          "The Lord of the Rings: The Fellowship of the Ring",
+          "The Chronicles of Narnia: The Lion, the Witch and the Wardrobe"
+        ],
+        "answer_index": 2,
+        "explanation": "Frodo Baggins is the central protagonist in J.R.R. Tolkien's epic fantasy novel, 'The Lord of the Rings'.",
+        "category": "general"
+      },
+      {
+        "question": "Which planet is known as the 'Red Planet'?",
+        "options": [
+          "Venus",
+          "Mars",
+          "Jupiter",
+          "Saturn"
+        ],
+        "answer_index": 1,
+        "explanation": "Mars gets its reddish hue from iron oxide dust on its surface.",
+        "category": "general"
+      },
+      {
+        "question": "What is the longest river in the world by discharge volume?",
+        "options": [
+          "Nile River",
+          "Amazon River",
+          "Yangtze River",
+          "Mississippi River"
+        ],
+        "answer_index": 1,
+        "explanation": "The Amazon River is the longest river by discharge volume and is widely considered the longest by length as well.",
+        "category": "general"
+      },
+      {
+        "question": "In which year did the Titanic sink?",
+        "options": [
+          "1905",
+          "1912",
+          "1923",
+          "1931"
+        ],
+        "answer_index": 1,
+        "explanation": "The RMS Titanic sank on its maiden voyage in the North Atlantic Ocean on April 15, 1912.",
+        "category": "general"
+      },
+      {
+        "question": "Who directed the iconic film 'Pulp Fiction'?",
+        "options": [
+          "Steven Spielberg",
+          "Quentin Tarantino",
+          "Martin Scorsese",
+          "Alfred Hitchcock"
+        ],
+        "answer_index": 1,
+        "explanation": "Quentin Tarantino is celebrated for his unique directorial style, evident in 'Pulp Fiction'.",
+        "category": "general"
+      }
+    ]
+  },
+  "comment": "Score check: how many did you get right out of 9? Comment your score and which question tricked you.",
+  "description": "Quick geography quiz: 9 questions, 3 seconds each.\nScore check: how many did you get out of 9? 0 is a valid answer.\nPlay along, beat your friends, and come back tomorrow: a new quiz every day.\n\n#quiz #trivia #quiztime #generalknowledge #shorts",
+  "tags": [
+    "quiz",
+    "trivia",
+    "quiz time",
+    "quiz questions",
+    "general knowledge",
+    "test your knowledge",
+    "geography quiz",
+    "geography trivia",
+    "quiz challenge",
+    "guess the answer",
+    "brain test",
+    "iq test",
+    "fun quiz",
+    "trivia questions and answers",
+    "general knowledge quiz",
+    "pub quiz questions",
+    "quiz for adults",
+    "hard quiz",
+    "are you smart",
+    "only 1 percent",
+    "test your brain",
+    "shorts quiz",
+    "youtube shorts",
+    "shorts"
+  ],
+  "pair_id": "pair_20261031_0025",
+  "hook_variant": "A",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "family": "question",
+      "hook": "Are you smarter than most people?"
+    },
+    {
+      "variant": "B",
+      "family": "identity",
+      "hook": "Most adults cannot get all of these right."
+    }
+  ],
+  "id": "20261031-155136-01"
+}

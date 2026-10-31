@@ -12,6 +12,7 @@
         "Why Is Space So Quiet?",
         "Why Is Space So Quiet?",
         "Why Is Space So Quiet?",
+        "Why Is Space So Quiet?",
         "Why Is Space So Quiet?"
       ]
     },
@@ -22,6 +23,7 @@
       "pair_id": "pair_20261027_0004",
       "source_topic": "How Decision Making is Actually Science: Game Theory Explained",
       "alt_titles": [
+        "You Won't Believe How Decision Making is Did This",
         "You Won't Believe How Decision Making is Did This",
         "You Won't Believe How Decision Making is Did This",
         "You Won't Believe How Decision Making is Did This",
@@ -42,6 +44,7 @@
         "Kolkata's Bridge Has NO Nuts OR Bolts?",
         "Kolkata's Bridge Has NO Nuts OR Bolts?",
         "Kolkata's Bridge Has NO Nuts OR Bolts?",
+        "Kolkata's Bridge Has NO Nuts OR Bolts?",
         "Kolkata's Bridge Has NO Nuts OR Bolts?"
       ]
     },
@@ -52,6 +55,7 @@
       "pair_id": "pair_20261028_0010",
       "source_topic": "The Scientific Method",
       "alt_titles": [
+        "This Scientific Method Secret Changes Everything",
         "This Scientific Method Secret Changes Everything",
         "This Scientific Method Secret Changes Everything",
         "This Scientific Method Secret Changes Everything",
@@ -72,6 +76,7 @@
         "Rome's Catacombs Hid YOUR Ancient Faith",
         "Rome's Catacombs Hid YOUR Ancient Faith",
         "Rome's Catacombs Hid YOUR Ancient Faith",
+        "Rome's Catacombs Hid YOUR Ancient Faith",
         "Rome's Catacombs Hid YOUR Ancient Faith"
       ]
     },
@@ -82,6 +87,7 @@
       "pair_id": "pair_20261029_0016",
       "source_topic": "Zombie Biology Explained | The Science of Zombism",
       "alt_titles": [
+        "How Zombie Biology Explained Took Over So Fast",
         "How Zombie Biology Explained Took Over So Fast",
         "How Zombie Biology Explained Took Over So Fast",
         "How Zombie Biology Explained Took Over So Fast",
@@ -365,6 +371,7 @@
       "alt_titles": [
         "ALL OF PHYSICS explained in 14 Minutes",
         "ALL OF PHYSICS explained in 14 Minutes",
+        "ALL OF PHYSICS explained in 14 Minutes",
         "ALL OF PHYSICS explained in 14 Minutes"
       ]
     },
@@ -395,6 +402,7 @@
       "source": "runtime",
       "alt_titles": [
         "quiz:general",
+        "quiz:general",
         "quiz:general"
       ]
     },
@@ -424,6 +432,7 @@
       "video_id": "fNh2NGFifGQ",
       "source": "runtime",
       "alt_titles": [
+        "quiz:science",
         "quiz:science"
       ]
     },
@@ -451,8 +460,42 @@
       ],
       "published_at": "2026-10-31T12:49:12.617150+00:00",
       "video_id": "cy3aSg9ujT4",
+      "source": "runtime",
+      "alt_titles": [
+        "quiz:movies"
+      ]
+    },
+    "uBK8AeCn1LM": {
+      "idea_id": "20261031-155136-01",
+      "title": "Only 1% Score 9/9 On This Quiz",
+      "hook": "Are you smarter than most people?",
+      "hook_variant": "A",
+      "pair_id": "pair_20261031_0025",
+      "duration_format": "long",
+      "density": 4,
+      "duration_target": 80,
+      "generator": "quiz:llm",
+      "source_topic": "quiz:geography",
+      "source_short_id": null,
+      "originality_max_jaccard": null,
+      "tags": [
+        "quiz",
+        "trivia",
+        "quiz time",
+        "quiz questions",
+        "general knowledge",
+        "test your knowledge",
+        "geography quiz",
+        "geography trivia",
+        "quiz challenge",
+        "guess the answer",
+        "brain test",
+        "iq test"
+      ],
+      "published_at": "2026-10-31T15:53:55.049809+00:00",
+      "video_id": "uBK8AeCn1LM",
       "source": "runtime"
     }
   },
-  "updated": "2026-10-31T12:49:12"
+  "updated": "2026-10-31T15:53:55"
 }

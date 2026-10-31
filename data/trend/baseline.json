@@ -1885,5 +1885,135 @@
         200.0
       ]
     ]
+  },
+  "josh jacobs": {
+    "traffic": 5000.0,
+    "first_seen": "2026-10-31T15:50:04",
+    "last_seen": "2026-10-31T15:50:04",
+    "delta": 5000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-31T15:50:04",
+        5000.0
+      ]
+    ]
+  },
+  "valentin vacherot": {
+    "traffic": 200.0,
+    "first_seen": "2026-10-31T15:50:04",
+    "last_seen": "2026-10-31T15:50:04",
+    "delta": 200.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-31T15:50:04",
+        200.0
+      ]
+    ]
+  },
+  "thomas castellanos": {
+    "traffic": 200.0,
+    "first_seen": "2026-10-31T15:50:04",
+    "last_seen": "2026-10-31T15:50:04",
+    "delta": 200.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-31T15:50:04",
+        200.0
+      ]
+    ]
+  },
+  "cornell vs princeton": {
+    "traffic": 200.0,
+    "first_seen": "2026-10-31T15:50:04",
+    "last_seen": "2026-10-31T15:50:04",
+    "delta": 200.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-31T15:50:04",
+        200.0
+      ]
+    ]
+  },
+  "michigan vs rutgers": {
+    "traffic": 2000.0,
+    "first_seen": "2026-10-31T15:50:04",
+    "last_seen": "2026-10-31T15:50:04",
+    "delta": 2000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-31T15:50:04",
+        2000.0
+      ]
+    ]
+  },
+  "manchester city fc": {
+    "traffic": 500.0,
+    "first_seen": "2026-10-31T15:50:04",
+    "last_seen": "2026-10-31T15:50:04",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-31T15:50:04",
+        500.0
+      ]
+    ]
+  },
+  "illinois vs maryland": {
+    "traffic": 2000.0,
+    "first_seen": "2026-10-31T15:50:04",
+    "last_seen": "2026-10-31T15:50:04",
+    "delta": 2000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-31T15:50:04",
+        2000.0
+      ]
+    ]
+  },
+  "california vs nc state": {
+    "traffic": 2000.0,
+    "first_seen": "2026-10-31T15:50:04",
+    "last_seen": "2026-10-31T15:50:04",
+    "delta": 2000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-31T15:50:04",
+        2000.0
+      ]
+    ]
+  },
+  "boston college vs duke": {
+    "traffic": 2000.0,
+    "first_seen": "2026-10-31T15:50:04",
+    "last_seen": "2026-10-31T15:50:04",
+    "delta": 2000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-31T15:50:04",
+        2000.0
+      ]
+    ]
+  },
+  "bowling green vs wmu": {
+    "traffic": 1000.0,
+    "first_seen": "2026-10-31T15:50:04",
+    "last_seen": "2026-10-31T15:50:04",
+    "delta": 1000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-31T15:50:04",
+        1000.0
+      ]
+    ]
   }
 }

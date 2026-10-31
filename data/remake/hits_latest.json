@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-31T12:45:15.745933",
+  "date": "2026-10-31T15:50:44.361023",
   "region": "US",
   "language": "en",
   "keywords": [
@@ -12,26 +12,26 @@
   ],
   "min_views": 500000,
   "max_duration": 90,
-  "total_found": 88,
-  "rejected": 78,
+  "total_found": 85,
+  "rejected": 75,
   "hits": [
+    {
+      "id": "r8WyWt9oZv4",
+      "title": "Metal Puzzle Brain Teaser: Double E - How To Solve",
+      "channel": "Jono Beckwith",
+      "views": 94184,
+      "duration": 24.0,
+      "url": "https://www.youtube.com/watch?v=r8WyWt9oZv4",
+      "query": "ytsearch10:brain teaser #shorts"
+    },
     {
       "id": "3OuQ_bzpWZQ",
       "title": "1-Minute Countdown - Quiz Time - Suspense Music ⏱️",
       "channel": "SonarPlay",
-      "views": 38301,
+      "views": 38327,
       "duration": 61.0,
       "url": "https://www.youtube.com/watch?v=3OuQ_bzpWZQ",
       "query": "ytsearch10:quiz time #shorts"
-    },
-    {
-      "id": "D_0U3l_HCmA",
-      "title": "✅ TEST YOUR KNOWLEDGE! - Short Mixed Trivia Quiz Questions #quiz #trivia #trivianight #learning",
-      "channel": "Brain Teaser Titans",
-      "views": 2481,
-      "duration": 80.0,
-      "url": "https://www.youtube.com/watch?v=D_0U3l_HCmA",
-      "query": "ytsearch10:test your knowledge shorts"
     },
     {
       "id": "q16JX5kT0Ls",
@@ -43,21 +43,21 @@
       "query": "ytsearch10:quiz time #shorts"
     },
     {
-      "id": "DRWiXfVGs7Y",
-      "title": "QUIZ Time with Intellipaat | Answer & Win Vouchers | Quiz - 1 | Intellipaat #Shorts",
-      "channel": "Intellipaat",
-      "views": 1412,
-      "duration": 55.0,
-      "url": "https://www.youtube.com/watch?v=DRWiXfVGs7Y",
-      "query": "ytsearch10:quiz time #shorts"
-    },
-    {
       "id": "8GzHtEWXdI4",
       "title": "Quiz / Trivia - Test your knowledge #shorts #quiz #trivia #challenge",
       "channel": "DY-VideoLand",
       "views": 918,
       "duration": 71.0,
       "url": "https://www.youtube.com/watch?v=8GzHtEWXdI4",
+      "query": "ytsearch10:test your knowledge #shorts"
+    },
+    {
+      "id": "uaWbJExYEbE",
+      "title": "Test Your Knowledge #shorts",
+      "channel": "know youtube",
+      "views": 60,
+      "duration": 31.0,
+      "url": "https://www.youtube.com/watch?v=uaWbJExYEbE",
       "query": "ytsearch10:test your knowledge shorts"
     }
   ]

@@ -1,5 +1,5 @@
 {
-  "seq": 3,
+  "seq": 4,
   "used": [
     "whatisthecapitalcityofcanada",
     "whichgasdoplantsprimarilyabsorbfromtheatmosphereforphotosynthesis",
@@ -27,18 +27,18 @@
     "whichmountainrangeisthehighestintheworld",
     "whatisthechemicalsymbolforgold",
     "inwhatyeardidthetitanicsink",
-    "whodirectedthefilmjurassicpark"
+    "whodirectedthefilmjurassicpark",
+    "whatisthelargestanimalonearth",
+    "onwhichcontinentisthesaharadesertlocated",
+    "whatgasdoplantsprimarilyabsorbfromtheatmosphereforphotosynthesis",
+    "whowasthefirstromanemperor",
+    "whichmoviefeaturesacharacternamedfrodobaggins",
+    "whichplanetisknownastheredplanet",
+    "whatisthelongestriverintheworldbydischargevolume",
+    "inwhichyeardidthetitanicsink",
+    "whodirectedtheiconicfilmpulpfiction"
   ],
   "generated": [
-    "whichclassic1982stevenspielbergfilmfeaturesafriendlyalienwhowantstophonehome",
-    "onwhichcontinentisthevastsaharadesertprimarilylocated",
-    "whatisthelargestoceanonearth",
-    "whatisthechemicalsymbolforwater",
-    "inwhichyeardidthermstitanicsinkafterhittinganiceberg",
-    "whodirectedthegroundbreaking1993sciencefictionfilmjurassicpark",
-    "whatisthelargestlandanimal",
-    "whichcontinentisthesaharadesertlocatedon",
-    "whatgasdoplantsabsorbfromtheatmosphere",
     "whowasthefirstemperorofrome",
     "whichmoviefeaturesatalkinggreenogrenamedshrek",
     "whichoceanisthelargestanddeepestonearth",
@@ -53,7 +53,16 @@
     "whichmountainrangeisthehighestintheworld",
     "whatisthechemicalsymbolforgold",
     "inwhatyeardidthetitanicsink",
-    "whodirectedthefilmjurassicpark"
+    "whodirectedthefilmjurassicpark",
+    "whatisthelargestanimalonearth",
+    "onwhichcontinentisthesaharadesertlocated",
+    "whatgasdoplantsprimarilyabsorbfromtheatmosphereforphotosynthesis",
+    "whowasthefirstromanemperor",
+    "whichmoviefeaturesacharacternamedfrodobaggins",
+    "whichplanetisknownastheredplanet",
+    "whatisthelongestriverintheworldbydischargevolume",
+    "inwhichyeardidthetitanicsink",
+    "whodirectedtheiconicfilmpulpfiction"
   ],
   "videos": [
     {
@@ -73,6 +82,12 @@
       "idea_id": "20261031-124545-01",
       "title": "Most People Fail This 9 Question Quiz",
       "ts": "2026-10-31T12:49:13Z"
+    },
+    {
+      "video_id": "uBK8AeCn1LM",
+      "idea_id": "20261031-155136-01",
+      "title": "Only 1% Score 9/9 On This Quiz",
+      "ts": "2026-10-31T15:53:55Z"
     }
   ]
 }
