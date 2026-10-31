@@ -882,6 +882,21 @@ def run_remake(config=None, count=None):
             idea["pair_id"] = ab["pair_id"]
             idea["hook_variant"] = ab["variant"]
         idea["hook_variants"] = variants
+        # MODULE 6 (2026-10-31) : garde conformite anti-demoetisation
+        # en plus de enforce_originality (qui protege deja vs la video
+        # SOURCE) : ici originalite croisee intra-chaine, fatigue de
+        # format, policy guard. Non-fatal, apres A/B, AVANT sauvegarde.
+        try:
+            from .compliance import enforce_compliance
+            r_ok, r_rep = enforce_compliance(idea, cfg)
+        except Exception as exc:
+            log.warning("Compliance remake indisponible: %s", exc)
+            r_ok, r_rep = True, {}
+        if not r_ok:
+            log.warning("REJETE (conformite) : remake de %s -> %s",
+                        idea.get("source_topic", "?")[:50],
+                        "; ".join((r_rep or {}).get("reasons") or []))
+            continue
         idea["id"] = "%s-remake-%02d" % (stamp, len(ideas) + 1)
         path = paths.remake / ("remake_%s_%s.json" % (idea["id"], slugify(idea["title"], 40)))
         save_json(path, idea)

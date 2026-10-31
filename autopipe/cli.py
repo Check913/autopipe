@@ -335,6 +335,24 @@ def cmd_monetize(a):
     print(monetization.report(cfg))
 
 
+def cmd_weekly(a):
+    """MODULE 7 : rapport hebdo winner amplification (tops, dead shorts,
+    CTA manquants, patterns gagnants, rejets conformite, directives).
+    Rien n'est modifie sans --apply (opt-in : ban des familles des dead
+    shorts dans le kill switch, schema optimizer.identique)."""
+    cfg = _init(a.verbose)
+    from . import weekly
+    out = weekly.run_weekly(cfg, apply=bool(getattr(a, "apply", False)),
+                            days=getattr(a, "days", None))
+    print(weekly.render(out["report"]))
+    if out["applied"]:
+        print("\n--apply : familles bannies dans le kill switch : %s"
+              % ", ".join(out["applied"]))
+    else:
+        print("\nRapport : %s (aucune modification -- pas de --apply)"
+              % out["file"])
+
+
 def cmd_brain(a):
     """Memoire de publication : registre idea_id <-> youtube_id."""
     cfg = _init(a.verbose)
@@ -639,6 +657,17 @@ def main(argv=None):
     p = sub.add_parser("monetize",
                        help="MODULE 5: suivi YPP + ETA + revenus estimes")
     p.set_defaults(fn=cmd_monetize)
+
+    p = sub.add_parser("weekly",
+                       help="MODULE 7: rapport hebdo winner amplification "
+                            "(tops a repliquer, dead shorts, directives)")
+    p.add_argument("--days", type=int, default=None,
+                   help="fenetre du rapport en jours (defaut [weekly].days "
+                        "= 7)")
+    p.add_argument("--apply", action="store_true",
+                   help="OPT-IN : bannir les familles des dead shorts dans "
+                        "le kill switch (schema optimizer, jamais d'ecrasement)")
+    p.set_defaults(fn=cmd_weekly)
 
     p = sub.add_parser("brain",
                        help="registre memoire: video <-> idee + rapport")

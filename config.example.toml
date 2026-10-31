@@ -145,6 +145,13 @@ smart_lead_min = 90
 auto_comment = true              # commentaire engageant publie automatiquement sous chaque video
 comment_template = ""            # vide = template par defaut ({title} / {hook} / {tags} disponibles)
 metadata_language = "en-US"     # Localisation US a la publication (BCP-47)
+# MODULE 6 (2026-10-31) : divulgation "Altered Content" (IA) -> champ
+# officiel status.containsSyntheticMedia dans videos.insert (et
+# videos.update). true/false = declare ; absent = champ omis (comportement
+# historique). Pour ce bot (TTS + scripts IA + stock clips), false est le
+# declaratif correct : la video n'est pas un "contenu reel modifie pour
+# paraitre reel" (pas de visage clone, pas d'evenement factice).
+altered_content = false
 
 [scheduler]
 interval_hours = 4               # 24/7 mode frequency (fallback without post_hours_utc)
@@ -317,3 +324,37 @@ hooks_b = [
   "Most adults cannot get all of these right.",
   "Getting them all right means elite memory.",
 ]
+
+[compliance]
+# MODULE 6 (2026-10-31) : garde anti-demoetisation AVANT sauvegarde des
+# idees (ideas + remake). mode = "block" (rejet, defaut) / "warn" (marque
+# sans bloquer) / "off". Rapports : data/compliance/rejected.jsonl et
+# defects.jsonl. Aucune exception ne remonte (fail-open), contrairement
+# au geo-lock US (fail-closed).
+mode = "block"
+# Originalite croisee intra-chaine : Jaccard max (titre+hook) et script
+# vs les idees deja produites (data/ideas + data/remake). Au-dela des
+# seuils = deux Shorts quasi interchangeables -> risque "reused content".
+originality_max = 0.60
+script_originality_max = 0.65
+# Fatigue : nb d'idees CONSECUTIVES les plus recentes de la meme famille
+# de hook (question/number/negation/statement) avant rejet de la nouvelle.
+fatigue_max_consecutive = 3
+# Taille max du corpus scanne (les plus recents d'abord) et seuil
+# insuffisance (sous ce nombre, un defaut INSUFFICIENT_DATA est journalise).
+corpus_max = 120
+corpus_min = 3
+# Patterns interdits supplementaires (regex, non sensible a la casse).
+banned_patterns = []
+
+[weekly]
+# MODULE 7 (2026-10-31) : rapport hebdo winner amplification
+# (python -m autopipe.cli weekly). Join SANS reseau : analytics latest +
+# retention + registre + patterns + kill switch + rejets conformite.
+# Rien n'est modifie sans --apply (opt-in : ban des familles des dead
+# shorts dans le kill switch, schema optimizer identique).
+days = 7               # fenetre du rapport en jours
+top_n = 5              # nb de top performers a repliquer
+dead_days = 60         # seuil d'age d'un dead short (0 vue)
+dead_views = 0         # nb de vues consideres comme "mort"
+max_ban_families = 3   # limite de bans manuels par --apply

@@ -213,6 +213,11 @@ DEFAULTS = {
         "smart_lead_min": 90,
         "auto_comment": True,
         "comment_template": "",
+        # MODULE 6 (2026-10-31) : divulgation Altered Content (AI) ->
+        # status.containsSyntheticMedia dans videos.insert. None/absent =
+        # champ omis (comportement historique). Pour ce bot (TTS + scripts
+        # IA + stock clips), false est le declaratif correct et auditable.
+        "altered_content": False,
     },
     "analytics": {
         # V2/V3 : vrai proxy de retention = engagedViews/views. Une "engaged
@@ -252,6 +257,39 @@ DEFAULTS = {
         "max_duration": 120,
         "cache_hours": 12,        # re-scrape apres ce delai
         "pacing_seconds": 0.6,    # pause entre requetes (respect des cibles)
+    },
+    "compliance": {
+        # MODULE 6 (2026-10-31) : garde anti-demoetisation AVANT sauvegarde
+        # des idees. mode = "block" (rejet, defaut) / "warn" (marque sans
+        # bloquer) / "off". Aucune exception ne remonte : echec interne
+        # -> journal data/compliance/defects.jsonl et l'idee passe
+        # (fail-open) - contrairement au geo-lock qui est fail-closed.
+        "mode": "block",
+        # Originalite croisee : Jaccard max (titre+hook) vs les idees deja
+        # produites (data/ideas + data/remake). 0.60 = deux Shorts quasi
+        # interchangeables -> risque "reused content" (YouTube policy).
+        "originality_max": 0.60,
+        "script_originality_max": 0.65,
+        # Fatigue : nb d'idees CONSECUTIVES les plus recentes partageant la
+        # meme famille de hook avant rejet de la nouvelle idee (0 desactive).
+        "fatigue_max_consecutive": 3,
+        # Taille du corpus scanne (les plus recents d'abord) et seuil sous
+        # lequel l'originalite est declar INSUFFICIENT_DATA (defects.jsonl).
+        "corpus_max": 120,
+        "corpus_min": 3,
+        # Patterns interdits supplementaires (regex, non case-sensitive).
+        "banned_patterns": [],
+    },
+    "weekly": {
+        # MODULE 7 (2026-10-31) : rapport hebdo winner amplification.
+        # Aucun reseau : join analytics + registre + retention + patterns
+        # + kill switch + rejets conformite. Rien n'est modifie sans
+        # --apply (opt-in explicite dans le CLI).
+        "days": 7,               # fenetre du rapport en jours
+        "top_n": 5,              # nb de top performers a repliquer
+        "dead_days": 60,         # seuil d'age d'un dead short (0 vue)
+        "dead_views": 0,         # nb de vues consideres comme "mort"
+        "max_ban_families": 3,   # limite de bans manuels par --apply
     },
     "monetization": {
         # MODULE 5 (2026-10-29) : suivi YPP (Programme Partenaire YouTube)
@@ -344,6 +382,8 @@ class Paths:
         self.registry = self.data / "registry"
         self.research = self.data / "research"
         self.monetization = self.data / "monetization"
+        self.compliance = self.data / "compliance"
+        self.weekly = self.data / "weekly"
         self.audio_cache = self.cache / "audio"
         self.video_cache = self.cache / "pexels"
 
@@ -352,6 +392,7 @@ class Paths:
                   self.ideas, self.remake, self.radar, self.analytics,
                   self.visual, self.trend, self.optimizer, self.hook_ab,
                   self.registry, self.research, self.monetization,
+                  self.compliance, self.weekly,
                   self.audio_cache, self.video_cache):
             d.mkdir(parents=True, exist_ok=True)
         return self

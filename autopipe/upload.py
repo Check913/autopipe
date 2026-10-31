@@ -219,6 +219,29 @@ def ensure_channel_country(cfg=None):
         return None
 
 
+def status_payload(cfg, privacy=None):
+    """Bloc "status" de videos.insert (MODULE 6, 2026-10-31).
+
+    Divulgation Altered Content : [upload].altered_content ->
+    status.containsSyntheticMedia (champ officiel de l'API, appliquable
+    a l'insert ET retroactivement via videos.update). absent/None -> champ
+    omis (comportement historique) ; true/false -> declare. Pour ce bot
+    (TTS + scripts IA + stock clips), false est le declaratif correct :
+    la video n'est pas un "contenu reel modifie pour paraitre reel".
+    """
+    # Import local : compliance n'importe pas upload, mais eviter tout
+    # risque d'import circulaire au demarrage.
+    from .compliance import ai_disclosure_value
+    disclosure, configured = ai_disclosure_value(cfg)
+    payload = {
+        "privacyStatus": privacy or cfg["upload"].get("privacy", "public"),
+        "selfDeclaredMadeForKids": bool(cfg["upload"].get("made_for_kids", False)),
+    }
+    if configured and disclosure is not None:
+        payload["containsSyntheticMedia"] = bool(disclosure)
+    return payload
+
+
 def upload_video(video_path, title, description, tags=None, cfg=None, privacy=None,
                  pinned_comment=None):
     """Resumable upload. Returns the YouTube video ID."""
@@ -251,10 +274,9 @@ def upload_video(video_path, title, description, tags=None, cfg=None, privacy=No
             "defaultLanguage": lang,
             "defaultAudioLanguage": lang,
         },
-        "status": {
-            "privacyStatus": privacy or cfg["upload"].get("privacy", "public"),
-            "selfDeclaredMadeForKids": bool(cfg["upload"].get("made_for_kids", False)),
-        },
+        # MODULE 6 (2026-10-31) : statut centralise dans status_payload()
+        # (divulgation Altered Content -> containsSyntheticMedia).
+        "status": status_payload(cfg, privacy),
     }
     from googleapiclient.http import MediaFileUpload
     # Fix 2026-10-30 : upload 48 Mo interrompu par ssl.SSLEOFError (TLS ferme

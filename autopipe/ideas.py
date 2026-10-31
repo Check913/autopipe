@@ -330,6 +330,18 @@ def run_ideas(config=None, count=5):
                             api_key=cfg["llm"].get("api_key", ""),
                             model=cfg["llm"].get("model", "gpt-4o-mini"))
             idea = quiz_mod.build_idea(llm, cfg)
+            # MODULE 6 : l'idee quiz subit la meme garde conformite
+            # (originalite croisee + fatigue + policy). Non-fatal.
+            try:
+                from .compliance import enforce_compliance
+                q_ok, _q_rep = enforce_compliance(idea, cfg)
+            except Exception as exc:
+                log.warning("Compliance quiz indisponible: %s", exc)
+                q_ok = True
+            if not q_ok:
+                log.warning("Idee quiz rejetee par la garde conformite, "
+                            "fallback idees standard.")
+                raise RuntimeError("compliance_block_quiz")
             stamp = dt.datetime.now().strftime("%Y%m%d-%H%M%S")
             idea["id"] = "%s-01" % stamp
             path = paths.ideas / ("%s-%s.json"
@@ -391,6 +403,7 @@ def run_ideas(config=None, count=5):
         log.info("LLM not configured -> local templates (see config.llm)")
 
     ideas = []
+    rejected = []  # MODULE 6 : pistes refusees par la garde conformite
     for t in topics:
         topic = t["topic"]
         idea = None
@@ -413,6 +426,20 @@ def run_ideas(config=None, count=5):
             idea["pair_id"] = ab["pair_id"]
             idea["hook_variant"] = ab["variant"]
         idea["hook_variants"] = variants
+        # MODULE 6 (2026-10-31) : garde conformite anti-demoetisation -
+        # originalite croisee vs idees deja produites, fatigue de format,
+        # policy guard, divulgation AI. A la fin de la conception (apres
+        # A/B, AVANT sauvegarde). Non-fatal, mode block par defaut.
+        try:
+            from .compliance import enforce_compliance
+            ok, report = enforce_compliance(idea, cfg)
+        except Exception as exc:
+            log.warning("Compliance indisponible pour '%s': %s",
+                        topic[:60], exc)
+            ok, report = True, {}
+        if not ok:
+            rejected.append((str(topic)[:60], report.get("reasons")))
+            continue
         ideas.append(idea)
 
     stamp = dt.datetime.now().strftime("%Y%m%d-%H%M%S")
@@ -425,6 +452,13 @@ def run_ideas(config=None, count=5):
     save_json(paths.ideas / "latest.json",
               {"date": stamp, "ideas": [str(p) for p in saved]})
     log.info("Ideas generated: %s", len(ideas))
+    if rejected:
+        # MODULE 6 : visibilite du gate (audit complet dans
+        # data/compliance/rejected.jsonl).
+        log.warning("Compliance: %d idee(s) rejetee(s) avant sauvegarde.",
+                    len(rejected))
+        for t, reasons in rejected:
+            log.warning("  - [%s] %s", t, "; ".join(reasons or []))
     return ideas, saved
 
 
