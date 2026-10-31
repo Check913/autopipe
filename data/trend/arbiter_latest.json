@@ -1,113 +1,113 @@
 {
-  "fetched": "2026-10-31T07:43:18",
+  "fetched": "2026-10-31T12:44:48",
   "geo": "",
   "topics": [
     {
-      "query": "when does the time change",
-      "traffic": 10000.0,
-      "rise": 10.0,
-      "saturation_views": 83226.0,
-      "momentum": 2.5508
-    },
-    {
-      "query": "las vegas flash flooding",
-      "traffic": 2000.0,
-      "rise": 10.0,
-      "saturation_views": 115608.0,
-      "momentum": 2.4612
-    },
-    {
-      "query": "sanjay gupta",
+      "query": "lincoln city vs birmingham",
       "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 177971.0,
-      "momentum": 2.3527
+      "saturation_views": 98.0,
+      "momentum": 9.6766
     },
     {
-      "query": "mia pohankova",
+      "query": "josh jacobs news",
       "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 318881.0,
-      "momentum": 2.2204
+      "saturation_views": 38740.0,
+      "momentum": 2.7869
     },
     {
-      "query": "hong kong vs pakistan",
-      "traffic": 1000.0,
-      "rise": 10.0,
-      "saturation_views": 1634555.0,
-      "momentum": 1.9181
-    },
-    {
-      "query": "loans",
-      "traffic": 500.0,
-      "rise": 10.0,
-      "saturation_views": 2455483.0,
-      "momentum": 1.8552
-    },
-    {
-      "query": "jeffrey epstein",
+      "query": "crimson desert dlc",
       "traffic": 100.0,
       "rise": 10.0,
-      "saturation_views": 10333090.0,
-      "momentum": 1.6627
+      "saturation_views": 164522.0,
+      "momentum": 2.3718
     },
     {
-      "query": "beer",
-      "traffic": 10000.0,
-      "rise": 10.0,
-      "saturation_views": 43146744.0,
-      "momentum": 1.5072
-    },
-    {
-      "query": "stylist",
+      "query": "estêvão willian",
       "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 223866940.0,
-      "momentum": 1.3605
+      "saturation_views": 265203.0,
+      "momentum": 2.2606
     },
     {
-      "query": "my chemical romance",
+      "query": "criminal defense lawyer",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 432262.0,
+      "momentum": 2.1571
+    },
+    {
+      "query": "gamecocks football",
       "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 880262421.0,
-      "momentum": 1.2587
+      "saturation_views": 974962.0,
+      "momentum": 2.0044
+    },
+    {
+      "query": "tucker carlson",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 1516590.0,
+      "momentum": 1.9302
+    },
+    {
+      "query": "deontay wilder",
+      "traffic": 100.0,
+      "rise": 10.0,
+      "saturation_views": 1641044.0,
+      "momentum": 1.9175
+    },
+    {
+      "query": "frank miller",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 2704620.0,
+      "momentum": 1.8409
+    },
+    {
+      "query": "avión",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 50444057.0,
+      "momentum": 1.4919
     }
   ],
   "top": [
     {
-      "query": "when does the time change",
-      "traffic": 10000.0,
-      "rise": 10.0,
-      "saturation_views": 83226.0,
-      "momentum": 2.5508
-    },
-    {
-      "query": "las vegas flash flooding",
-      "traffic": 2000.0,
-      "rise": 10.0,
-      "saturation_views": 115608.0,
-      "momentum": 2.4612
-    },
-    {
-      "query": "sanjay gupta",
+      "query": "lincoln city vs birmingham",
       "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 177971.0,
-      "momentum": 2.3527
+      "saturation_views": 98.0,
+      "momentum": 9.6766
     },
     {
-      "query": "mia pohankova",
+      "query": "josh jacobs news",
       "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 318881.0,
-      "momentum": 2.2204
+      "saturation_views": 38740.0,
+      "momentum": 2.7869
     },
     {
-      "query": "hong kong vs pakistan",
-      "traffic": 1000.0,
+      "query": "crimson desert dlc",
+      "traffic": 100.0,
       "rise": 10.0,
-      "saturation_views": 1634555.0,
-      "momentum": 1.9181
+      "saturation_views": 164522.0,
+      "momentum": 2.3718
+    },
+    {
+      "query": "estêvão willian",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 265203.0,
+      "momentum": 2.2606
+    },
+    {
+      "query": "criminal defense lawyer",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 432262.0,
+      "momentum": 2.1571
     }
   ]
 }

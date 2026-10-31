@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-31T07:43:05.087742",
-  "duration_s": 26.1,
+  "date": "2026-10-31T12:44:34.519882",
+  "duration_s": 26.6,
   "sources": {
     "reddit": {
       "items": 25,
@@ -11,7 +11,7 @@
       "error": null
     },
     "google_news": {
-      "items": 58,
+      "items": 59,
       "error": null
     },
     "google_trends": {
@@ -19,7 +19,7 @@
       "error": null
     },
     "youtube": {
-      "items": 74,
+      "items": 70,
       "error": null
     }
   },
@@ -29,140 +29,196 @@
       "platform": "youtube",
       "title": "RRB NTPC 2026 | WANT TO SCORE GOOD IN GK ? DO THIS !!",
       "url": "https://www.youtube.com/watch?v=QymJ9saulHM",
-      "views": 393346,
+      "views": 396674,
       "duration": 529.0,
       "comments": 0,
       "author": "PARMAR SSC and PARMAR RAILWAY",
       "source": "yt:general knowledge shorts",
-      "score": 743.6,
-      "novelty": "vu x2",
-      "rank": 446.2
+      "score": 749.9,
+      "novelty": "vu x3",
+      "rank": 300.0
     },
     {
       "id": "vl6OoyT7KdI",
       "platform": "youtube",
       "title": "100 People vs General Knowledge Quiz",
       "url": "https://www.youtube.com/watch?v=vl6OoyT7KdI",
-      "views": 474392,
+      "views": 478149,
       "duration": 2600.0,
       "comments": 0,
       "author": "Extra Medium Stuff",
       "source": "yt:quiz shorts",
-      "score": 182.5,
-      "novelty": "vu x2",
-      "rank": 109.5
+      "score": 183.9,
+      "novelty": "vu x3",
+      "rank": 73.6
     },
     {
       "id": "ZtChrEz6apk",
       "platform": "youtube",
       "title": "GK Question || GK In Hindi || GK Question and Answer || GK Quiz ||",
       "url": "https://www.youtube.com/watch?v=ZtChrEz6apk",
-      "views": 83648,
+      "views": 84106,
       "duration": 574.0,
       "comments": 0,
       "author": "BR GK STUDY",
       "source": "yt:quiz shorts",
-      "score": 145.7,
-      "novelty": "vu x2",
-      "rank": 87.4
+      "score": 146.5,
+      "novelty": "vu x3",
+      "rank": 58.6
+    },
+    {
+      "id": "XlQfaKHkb1w",
+      "platform": "youtube",
+      "title": "Islamic Sawal Jawab | Islamic Quiz | Deeni Maloomat | Urdu Islamic Questions",
+      "url": "https://www.youtube.com/watch?v=XlQfaKHkb1w",
+      "views": 8446,
+      "duration": 219.0,
+      "comments": 0,
+      "author": "Haya Quiz",
+      "source": "yt:quiz shorts",
+      "score": 38.6,
+      "novelty": "nouveau",
+      "rank": 57.9
     },
     {
       "id": "781cNLWqsZA",
       "platform": "youtube",
       "title": "Marathi Gk Question | General knowledge Question | Current Affairs Question",
       "url": "https://www.youtube.com/watch?v=781cNLWqsZA",
-      "views": 13224,
+      "views": 14038,
       "duration": 101.0,
       "comments": 0,
       "author": "PR GK Marathi ",
       "source": "yt:general knowledge shorts",
-      "score": 130.9,
-      "novelty": "vu x2",
-      "rank": 78.5
+      "score": 139.0,
+      "novelty": "vu x3",
+      "rank": 55.6
+    },
+    {
+      "id": "f_r9pnbf-js",
+      "platform": "youtube",
+      "title": "Name 5 Countries 😱 | Fun Hindi Riddle 🧠 | GK Quiz #Shorts",
+      "url": "https://www.youtube.com/watch?v=f_r9pnbf-js",
+      "views": 6334,
+      "duration": 186.0,
+      "comments": 0,
+      "author": "Mr & Mrs RJ and 5 more",
+      "source": "yt:quiz shorts",
+      "score": 34.1,
+      "novelty": "nouveau",
+      "rank": 51.2
     },
     {
       "id": "AGgP4BAXcVs",
       "platform": "youtube",
       "title": "Assamese GK Questions || 22 টা সাধাৰণ জ্ঞানৰ প্ৰশ্ন আৰু উত্তৰ || GK In Assamese || Assamese GK || GK",
       "url": "https://www.youtube.com/watch?v=AGgP4BAXcVs",
-      "views": 43533,
+      "views": 44884,
       "duration": 495.0,
       "comments": 0,
       "author": "Ajijul Education ",
       "source": "yt:general knowledge viral shorts",
-      "score": 87.9,
-      "novelty": "vu x2",
-      "rank": 52.7
+      "score": 90.7,
+      "novelty": "vu x3",
+      "rank": 36.3
+    },
+    {
+      "id": "orqmSur675w",
+      "platform": "youtube",
+      "title": "Urdu Islamic Quiz | Top Sawal Jawab | Sawal jawab | Islamic Question Answer | interview video",
+      "url": "https://www.youtube.com/watch?v=orqmSur675w",
+      "views": 8578,
+      "duration": 418.0,
+      "comments": 0,
+      "author": "Kashif Quiz",
+      "source": "yt:quiz shorts",
+      "score": 20.5,
+      "novelty": "nouveau",
+      "rank": 30.8
     },
     {
       "id": "Wv19AtXwXBI",
       "platform": "youtube",
       "title": "சுவாரஷ்ய தகவல்கள் | Interesting questions தமிழ் | Gk in tamil | பொது அறிவு | General knowledge tamil",
       "url": "https://www.youtube.com/watch?v=Wv19AtXwXBI",
-      "views": 26534,
+      "views": 26539,
       "duration": 377.0,
       "comments": 0,
       "author": "Anu karthi study point",
       "source": "yt:general knowledge shorts",
       "score": 70.4,
-      "novelty": "vu x2",
-      "rank": 42.2
+      "novelty": "vu x3",
+      "rank": 28.2
+    },
+    {
+      "id": "eCVQUzTKalM",
+      "platform": "youtube",
+      "title": "Urdu Islamic Quiz | Islamic Sawal Jawab | Islamic GK | Quran Quiz | Rehan Quiz",
+      "url": "https://www.youtube.com/watch?v=eCVQUzTKalM",
+      "views": 5053,
+      "duration": 361.0,
+      "comments": 0,
+      "author": "Rehan Quiz",
+      "source": "yt:general knowledge viral shorts",
+      "score": 14.0,
+      "novelty": "nouveau",
+      "rank": 21.0
     },
     {
       "id": "zdZonmDkTYU",
       "platform": "youtube",
       "title": "Ronaldo vs Messi: FootyMind Football Quiz 🧠⚽ #shorts",
       "url": "https://www.youtube.com/watch?v=zdZonmDkTYU",
-      "views": 234739,
+      "views": 234703,
       "duration": 4895.0,
       "comments": 0,
       "author": "GOAT Battle Live",
       "source": "yt:quiz shorts",
-      "score": 48.0,
-      "novelty": "vu x2",
-      "rank": 28.8
+      "score": 47.9,
+      "novelty": "vu x3",
+      "rank": 19.2
     },
     {
-      "id": "XzmLUV9Gkr0",
+      "id": "GbN4berSk1U",
       "platform": "youtube",
-      "title": "Hania Quiz | Islamic Quiz in Urdu | Islami Sawal Jawab | Islami maloomat & GK Questions in Hindi",
-      "url": "https://www.youtube.com/watch?v=XzmLUV9Gkr0",
-      "views": 6401,
-      "duration": 347.0,
+      "title": "Urdu Islamic Quiz | Top Sawal Jawab | Sawal jawab | Islamic Question Answer | interview video",
+      "url": "https://www.youtube.com/watch?v=GbN4berSk1U",
+      "views": 5423,
+      "duration": 474.0,
       "comments": 0,
-      "author": "Hania Quiz",
-      "source": "yt:general knowledge viral shorts",
-      "score": 18.4,
+      "author": "Kashif Quiz",
+      "source": "yt:quiz shorts",
+      "score": 11.4,
       "novelty": "nouveau",
-      "rank": 27.6
+      "rank": 17.1
     },
     {
       "id": "lIjTTbKyhdc",
       "platform": "youtube",
       "title": "Urdu Islamic Quiz | Top Sawal Jawab | Islamic GK | Urdu Quiz",
       "url": "https://www.youtube.com/watch?v=lIjTTbKyhdc",
-      "views": 22115,
+      "views": 24460,
       "duration": 625.0,
       "comments": 0,
       "author": "Islamic Zahra",
-      "source": "yt:quiz shorts",
-      "score": 35.4,
-      "novelty": "vu x2",
-      "rank": 21.2
+      "source": "yt:general knowledge viral shorts",
+      "score": 39.1,
+      "novelty": "vu x3",
+      "rank": 15.6
     },
     {
       "id": "9E1SQmxqHy8",
       "platform": "youtube",
       "title": "Urdu Islamic Quiz | Top Sawal Jawab | Islamic GK | Urdu Quiz",
       "url": "https://www.youtube.com/watch?v=9E1SQmxqHy8",
-      "views": 9214,
+      "views": 9272,
       "duration": 300.0,
       "comments": 0,
       "author": "Islamic Zahra",
       "source": "yt:quiz viral shorts",
-      "score": 30.7,
-      "novelty": "vu x2",
-      "rank": 18.4
+      "score": 30.9,
+      "novelty": "vu x3",
+      "rank": 12.4
     },
     {
       "id": "YwnBHUnrSVM",
@@ -175,50 +231,50 @@
       "author": "GOAT Battle Live",
       "source": "yt:quiz shorts",
       "score": 28.8,
-      "novelty": "vu x2",
-      "rank": 17.3
+      "novelty": "vu x3",
+      "rank": 11.5
     },
     {
       "id": "2AVT4y1VsEY",
       "platform": "youtube",
       "title": "Age gap loyalty test 🔥🔥#viral #trending #shorts #viralvideo",
       "url": "https://www.youtube.com/watch?v=2AVT4y1VsEY",
-      "views": 13145,
+      "views": 13354,
       "duration": 469.0,
       "comments": 0,
       "author": "Kobir Loyalty and prank",
       "source": "yt:quiz viral shorts",
-      "score": 28.0,
-      "novelty": "vu x2",
-      "rank": 16.8
+      "score": 28.5,
+      "novelty": "vu x3",
+      "rank": 11.4
     },
     {
-      "id": "V1CvYB9JnaY",
+      "id": "XzmLUV9Gkr0",
       "platform": "youtube",
-      "title": "SouRicks Live Stream",
-      "url": "https://www.youtube.com/watch?v=V1CvYB9JnaY",
-      "views": 54612,
-      "duration": 4903.0,
+      "title": "Hania Quiz | Islamic Quiz in Urdu | Islami Sawal Jawab | Islami maloomat & GK Questions in Hindi",
+      "url": "https://www.youtube.com/watch?v=XzmLUV9Gkr0",
+      "views": 6415,
+      "duration": 347.0,
       "comments": 0,
-      "author": "SouRicks",
-      "source": "yt:trivia shorts",
-      "score": 11.1,
-      "novelty": "nouveau",
-      "rank": 16.6
+      "author": "Hania Quiz",
+      "source": "yt:quiz shorts",
+      "score": 18.5,
+      "novelty": "vu x2",
+      "rank": 11.1
     },
     {
       "id": "dIRBsgoFKbU",
       "platform": "youtube",
       "title": "Fix These 5 Incorrect Hindi Words 😱 | Hindi Spelling Quiz Challenge #Shorts",
       "url": "https://www.youtube.com/watch?v=dIRBsgoFKbU",
-      "views": 4990,
+      "views": 5070,
       "duration": 189.0,
       "comments": 0,
       "author": "Rishabh shorts  and 5 more",
       "source": "yt:trivia shorts",
-      "score": 26.4,
-      "novelty": "vu x2",
-      "rank": 15.8
+      "score": 26.8,
+      "novelty": "vu x3",
+      "rank": 10.7
     },
     {
       "id": "o0Y6T6lB81M",
@@ -231,246 +287,204 @@
       "author": "GOAT Battle Live",
       "source": "yt:quiz shorts",
       "score": 24.4,
-      "novelty": "vu x2",
-      "rank": 14.6
+      "novelty": "vu x3",
+      "rank": 9.8
     },
     {
       "id": "iMavYjqnXfM",
       "platform": "youtube",
       "title": "Ronaldo vs Messi: Can You Pass This Football Trivia Quiz? 🔥 #shorts",
       "url": "https://www.youtube.com/watch?v=iMavYjqnXfM",
-      "views": 137705,
+      "views": 137709,
       "duration": 5646.0,
       "comments": 0,
       "author": "GOAT Battle Live",
       "source": "yt:quiz shorts",
       "score": 24.4,
-      "novelty": "vu x2",
-      "rank": 14.6
-    },
-    {
-      "id": "sWAK-TRo-9c",
-      "platform": "youtube",
-      "title": "Gk in Assamese/ General knowledge question in Assamese / অসমীয়া gk / gkquiz #gk #assamgk #viral",
-      "url": "https://www.youtube.com/watch?v=sWAK-TRo-9c",
-      "views": 7449,
-      "duration": 337.0,
-      "comments": 0,
-      "author": "Let's Read",
-      "source": "yt:general knowledge viral shorts",
-      "score": 22.1,
-      "novelty": "vu x2",
-      "rank": 13.3
-    },
-    {
-      "id": "Oooa-TlvTOk",
-      "platform": "youtube",
-      "title": "Interesting Question Answer 😱 | Odia General Knowledge | Odia Quiz | General knowledge For Odia",
-      "url": "https://www.youtube.com/watch?v=Oooa-TlvTOk",
-      "views": 11103,
-      "duration": 514.0,
-      "comments": 0,
-      "author": "SG BOOKS EDUCATION",
-      "source": "yt:general knowledge shorts",
-      "score": 21.6,
-      "novelty": "vu x2",
-      "rank": 13.0
-    },
-    {
-      "id": "4wOsXPfP7m8",
-      "platform": "youtube",
-      "title": "Current Affairs Today | 27 October 2026  | Daily Current Affairs | By Ashish Gautam",
-      "url": "https://www.youtube.com/watch?v=4wOsXPfP7m8",
-      "views": 65906,
-      "duration": 3093.0,
-      "comments": 0,
-      "author": "Adda247 Banking Exams",
-      "source": "yt:general knowledge shorts",
-      "score": 21.3,
-      "novelty": "vu x2",
-      "rank": 12.8
+      "novelty": "vu x3",
+      "rank": 9.8
     },
     {
       "id": "xT_KedM_QxM",
       "platform": "youtube",
       "title": "Interesting Question Answer 😱| Odia General knowledge | Odia Quiz",
       "url": "https://www.youtube.com/watch?v=xT_KedM_QxM",
-      "views": 10560,
+      "views": 11191,
       "duration": 501.0,
       "comments": 0,
       "author": "SG BOOKS EDUCATION",
+      "source": "yt:quiz shorts",
+      "score": 22.3,
+      "novelty": "vu x3",
+      "rank": 8.9
+    },
+    {
+      "id": "sWAK-TRo-9c",
+      "platform": "youtube",
+      "title": "Gk in Assamese/ General knowledge question in Assamese / অসমীয়া gk / gkquiz #gk #assamgk #viral",
+      "url": "https://www.youtube.com/watch?v=sWAK-TRo-9c",
+      "views": 7502,
+      "duration": 337.0,
+      "comments": 0,
+      "author": "Let's Read",
+      "source": "yt:general knowledge viral shorts",
+      "score": 22.3,
+      "novelty": "vu x3",
+      "rank": 8.9
+    },
+    {
+      "id": "Oooa-TlvTOk",
+      "platform": "youtube",
+      "title": "Interesting Question Answer 😱 | Odia General Knowledge | Odia Quiz | General knowledge For Odia",
+      "url": "https://www.youtube.com/watch?v=Oooa-TlvTOk",
+      "views": 11245,
+      "duration": 514.0,
+      "comments": 0,
+      "author": "SG BOOKS EDUCATION",
       "source": "yt:general knowledge shorts",
-      "score": 21.1,
-      "novelty": "vu x2",
-      "rank": 12.7
+      "score": 21.9,
+      "novelty": "vu x3",
+      "rank": 8.8
+    },
+    {
+      "id": "4wOsXPfP7m8",
+      "platform": "youtube",
+      "title": "Current Affairs Today | 27 October 2026  | Daily Current Affairs | By Ashish Gautam",
+      "url": "https://www.youtube.com/watch?v=4wOsXPfP7m8",
+      "views": 66229,
+      "duration": 3093.0,
+      "comments": 0,
+      "author": "Adda247 Banking Exams",
+      "source": "yt:general knowledge shorts",
+      "score": 21.4,
+      "novelty": "vu x3",
+      "rank": 8.6
     },
     {
       "id": "gct3XUQ66H4",
       "platform": "youtube",
       "title": "Urdu Islamic Quiz | Top Sawal Jawab | Islamic GK | Urdu Quiz | general knowledge | Rehan Quiz",
       "url": "https://www.youtube.com/watch?v=gct3XUQ66H4",
-      "views": 6673,
+      "views": 6779,
       "duration": 347.0,
       "comments": 0,
       "author": "Rehan Quiz",
       "source": "yt:general knowledge viral shorts",
-      "score": 19.2,
-      "novelty": "vu x2",
-      "rank": 11.5
+      "score": 19.5,
+      "novelty": "vu x3",
+      "rank": 7.8
     },
     {
       "id": "fGUV2wHTs84",
       "platform": "youtube",
       "title": "Do these Overwatch Trivia questions get harder?",
       "url": "https://www.youtube.com/watch?v=fGUV2wHTs84",
-      "views": 13116,
+      "views": 13139,
       "duration": 726.0,
       "comments": 0,
       "author": "KarQ Archives",
       "source": "yt:trivia shorts",
       "score": 18.1,
-      "novelty": "vu x2",
-      "rank": 10.9
-    },
-    {
-      "id": "pOqVC1tWAFM",
-      "platform": "youtube",
-      "title": "Z Zork Live Stream Growing in theForest #outdoors #camping #forest #grow  #shorts",
-      "url": "https://www.youtube.com/watch?v=pOqVC1tWAFM",
-      "views": 212846,
-      "duration": 29289.0,
-      "comments": 0,
-      "author": "Z Zork",
-      "source": "yt:quiz viral shorts",
-      "score": 7.3,
-      "novelty": "nouveau",
-      "rank": 10.9
+      "novelty": "vu x3",
+      "rank": 7.2
     },
     {
       "id": "f1W1D738FVY",
       "platform": "youtube",
       "title": "Hania Quiz | Islamic Quiz in Urdu | Islami Sawal Jawab | Islami maloomat & GK Questions in Hindi",
       "url": "https://www.youtube.com/watch?v=f1W1D738FVY",
-      "views": 6988,
+      "views": 7073,
       "duration": 392.0,
       "comments": 0,
       "author": "Hania Quiz",
-      "source": "yt:general knowledge viral shorts",
-      "score": 17.8,
+      "source": "yt:quiz shorts",
+      "score": 18.0,
+      "novelty": "vu x3",
+      "rank": 7.2
+    },
+    {
+      "id": "V1CvYB9JnaY",
+      "platform": "youtube",
+      "title": "SouRicks Live Stream",
+      "url": "https://www.youtube.com/watch?v=V1CvYB9JnaY",
+      "views": 54612,
+      "duration": 4903.0,
+      "comments": 0,
+      "author": "SouRicks",
+      "source": "yt:trivia shorts",
+      "score": 11.1,
       "novelty": "vu x2",
-      "rank": 10.7
+      "rank": 6.7
     },
     {
       "id": "Lo35ZJrv2ns",
       "platform": "youtube",
       "title": "Urdu Riddles | Riddles | Riddles in Urdu | Islamic Questions | Islamic Quiz | Islamic Q&A",
       "url": "https://www.youtube.com/watch?v=Lo35ZJrv2ns",
-      "views": 20312,
+      "views": 20745,
       "duration": 1282.0,
       "comments": 0,
       "author": "Nazo Voice",
-      "source": "yt:quiz shorts",
-      "score": 15.8,
-      "novelty": "vu x2",
-      "rank": 9.5
+      "source": "yt:general knowledge shorts",
+      "score": 16.2,
+      "novelty": "vu x3",
+      "rank": 6.5
     },
     {
       "id": "7dskVNvAq0U",
       "platform": "youtube",
       "title": "General knowledge Trivia questions for💰🤣🤣🤣",
       "url": "https://www.youtube.com/watch?v=7dskVNvAq0U",
-      "views": 4919,
+      "views": 4985,
       "duration": 360.0,
       "comments": 0,
       "author": "TB FunnyASF",
       "source": "yt:trivia shorts",
-      "score": 13.7,
-      "novelty": "vu x2",
-      "rank": 8.2
-    },
-    {
-      "id": "VNoog4d6y5c",
-      "platform": "youtube",
-      "title": "🦁 The Lion Challenge! 🇬🇧🏴 Can You Answer All the Questions? 🤔🔥 #Shorts",
-      "url": "https://www.youtube.com/watch?v=VNoog4d6y5c",
-      "views": 1256,
-      "duration": 257.0,
-      "comments": 0,
-      "author": "Lion Challenges",
-      "source": "yt:trivia shorts",
-      "score": 4.9,
-      "novelty": "nouveau",
-      "rank": 7.4
-    },
-    {
-      "id": "D157D-oDK2I",
-      "platform": "youtube",
-      "title": "upsssc pet 2026 modal paper ! upsssc pet 2026 modal paper | pet practice set  ! PET ka paper",
-      "url": "https://www.youtube.com/watch?v=D157D-oDK2I",
-      "views": 32260,
-      "duration": 7035.0,
-      "comments": 0,
-      "author": "Dev gk tricks",
-      "source": "yt:general knowledge viral shorts",
-      "score": 4.6,
-      "novelty": "nouveau",
-      "rank": 6.9
-    },
-    {
-      "id": "wZOSHClmIns",
-      "platform": "youtube",
-      "title": "दिमाग लगाओ 🤔 | 5 मजेदार हिंदी पहेलियाँ 🧠🔥 | Mind Test Quiz #shorts",
-      "url": "https://www.youtube.com/watch?v=wZOSHClmIns",
-      "views": 56714,
-      "duration": 13219.0,
-      "comments": 0,
-      "author": "APNA GURU VIGGO ",
-      "source": "yt:quiz shorts",
-      "score": 4.3,
-      "novelty": "nouveau",
-      "rank": 6.4
+      "score": 13.8,
+      "novelty": "vu x3",
+      "rank": 5.5
     },
     {
       "id": "199kzUsLWo4",
       "platform": "youtube",
       "title": "NFL Trivia: 4 Downs with Cam Jordan 🏈 | Nickelodeon",
       "url": "https://www.youtube.com/watch?v=199kzUsLWo4",
-      "views": 6283,
+      "views": 6439,
       "duration": 605.0,
       "comments": 0,
       "author": "Nickelodeon",
       "source": "yt:trivia moments caught on camera",
-      "score": 10.4,
-      "novelty": "vu x2",
-      "rank": 6.2
+      "score": 10.6,
+      "novelty": "vu x3",
+      "rank": 4.2
     },
     {
       "id": "2aEeALItFAU",
       "platform": "youtube",
       "title": "Urdu Islamic Quiz | Top Sawal Jawab | Islamic GK | Urdu Quiz",
       "url": "https://www.youtube.com/watch?v=2aEeALItFAU",
-      "views": 2925,
+      "views": 2929,
       "duration": 299.0,
       "comments": 0,
       "author": "Islamic Zahra",
       "source": "yt:trivia viral shorts",
       "score": 9.8,
-      "novelty": "vu x2",
-      "rank": 5.9
+      "novelty": "vu x3",
+      "rank": 3.9
     },
     {
       "id": "XvlAZY6o25c",
       "platform": "youtube",
       "title": "🎤 Who’s Singing? 💜 Guess the KPop Demon Hunters Characters by Their Voices! 😈",
       "url": "https://www.youtube.com/watch?v=XvlAZY6o25c",
-      "views": 3866,
+      "views": 3988,
       "duration": 528.0,
       "comments": 0,
       "author": "Guess It Right Trivia",
       "source": "yt:trivia shorts",
-      "score": 7.3,
-      "novelty": "vu x2",
-      "rank": 4.4
+      "score": 7.6,
+      "novelty": "vu x3",
+      "rank": 3.0
     },
     {
       "id": "ZmbK4oPO1u8",
@@ -483,120 +497,358 @@
       "author": "Dollykiduniya05",
       "source": "yt:general knowledge shorts",
       "score": 7.3,
+      "novelty": "vu x3",
+      "rank": 2.9
+    },
+    {
+      "id": "VNoog4d6y5c",
+      "platform": "youtube",
+      "title": "🦁 The Lion Challenge! 🇬🇧🏴 Can You Answer All the Questions? 🤔🔥 #Shorts",
+      "url": "https://www.youtube.com/watch?v=VNoog4d6y5c",
+      "views": 1268,
+      "duration": 257.0,
+      "comments": 0,
+      "author": "Lion Challenges",
+      "source": "yt:trivia shorts",
+      "score": 4.9,
       "novelty": "vu x2",
-      "rank": 4.4
+      "rank": 2.9
+    },
+    {
+      "id": "D157D-oDK2I",
+      "platform": "youtube",
+      "title": "upsssc pet 2026 modal paper ! upsssc pet 2026 modal paper | pet practice set  ! PET ka paper",
+      "url": "https://www.youtube.com/watch?v=D157D-oDK2I",
+      "views": 32302,
+      "duration": 7035.0,
+      "comments": 0,
+      "author": "Dev gk tricks",
+      "source": "yt:general knowledge viral shorts",
+      "score": 4.6,
+      "novelty": "vu x2",
+      "rank": 2.8
     },
     {
       "id": "I1GZq5KyTCQ",
       "platform": "youtube",
       "title": "RRB JE General Awareness Marathon Class 🔥 | JE Current Affairs | Shashank Sir",
       "url": "https://www.youtube.com/watch?v=I1GZq5KyTCQ",
-      "views": 38366,
+      "views": 38435,
       "duration": 5678.0,
       "comments": 0,
       "author": "Quick Tricks By Sahil Sir",
       "source": "yt:general knowledge shorts",
       "score": 6.8,
-      "novelty": "vu x2",
-      "rank": 4.1
+      "novelty": "vu x3",
+      "rank": 2.7
     },
     {
       "id": "5JJVCDOO51I",
       "platform": "youtube",
       "title": "Gk Question | Marathi Gk Question | General knowledge Question | Current Affairs Question",
       "url": "https://www.youtube.com/watch?v=5JJVCDOO51I",
-      "views": 6086,
+      "views": 6142,
       "duration": 957.0,
       "comments": 0,
       "author": "RG-GK (Marathi)",
-      "source": "yt:general knowledge viral shorts",
+      "source": "yt:general knowledge shorts",
       "score": 6.4,
-      "novelty": "vu x2",
-      "rank": 3.8
+      "novelty": "vu x3",
+      "rank": 2.6
     },
     {
       "id": "-aqAaCJXc3E",
       "platform": "youtube",
       "title": "SouRicks LIVE",
       "url": "https://www.youtube.com/watch?v=-aqAaCJXc3E",
-      "views": 16286,
+      "views": 16287,
       "duration": 3040.0,
       "comments": 0,
       "author": "SouRicks",
       "source": "yt:trivia shorts",
       "score": 5.4,
-      "novelty": "vu x2",
-      "rank": 3.2
+      "novelty": "vu x3",
+      "rank": 2.2
     },
     {
       "id": "rUUkU7w0LcE",
       "platform": "youtube",
       "title": "THE DLES / Tape to Tape - 26 Oct 2026 - Unofficial Northernlion VOD",
       "url": "https://www.youtube.com/watch?v=rUUkU7w0LcE",
-      "views": 95635,
+      "views": 97846,
       "duration": 20458.0,
       "comments": 0,
       "author": "Unofficial NL VODs",
       "source": "yt:trivia moments caught on camera",
-      "score": 4.7,
-      "novelty": "vu x2",
-      "rank": 2.8
+      "score": 4.8,
+      "novelty": "vu x3",
+      "rank": 1.9
     },
     {
-      "id": "oHc-mm6ItY8",
-      "platform": "youtube",
-      "title": "💰 वायरल GK Quiz LIVE 🔴 क्या आप इन सवालों के जवाब जानते हैं? #HindiGK",
-      "url": "https://www.youtube.com/watch?v=oHc-mm6ItY8",
-      "views": 111037,
-      "duration": 24660.0,
-      "comments": 0,
-      "author": "Dollykiduniya05",
-      "source": "yt:quiz shorts",
-      "score": 4.5,
-      "novelty": "vu x2",
-      "rank": 2.7
-    },
-    {
-      "id": "TJW_BwAF5tg",
-      "platform": "youtube",
-      "title": "ONLY 1% CAN SOLVE THIS! 🧠🔥 | Mystery Quiz LIVE #Shorts",
-      "url": "https://www.youtube.com/watch?v=TJW_BwAF5tg",
-      "views": 120543,
-      "duration": 28353.0,
-      "comments": 0,
-      "author": "ZAYRO MUSIC",
-      "source": "yt:quiz shorts",
-      "score": 4.3,
-      "novelty": "vu x2",
-      "rank": 2.6
-    },
-    {
-      "id": "djPTmDslHbg",
-      "platform": "youtube",
-      "title": "99% Fail This Puzzle Live Quiz 2026 | Daily Puzzle #BrainTeaser #IQTest #LiveQuiz #DailyPuzzle",
-      "url": "https://www.youtube.com/watch?v=djPTmDslHbg",
-      "views": 13582,
-      "duration": 3650.0,
-      "comments": 0,
-      "author": "VJ Shorts hub.",
-      "source": "yt:general knowledge shorts",
-      "score": 3.7,
-      "novelty": "vu x2",
-      "rank": 2.2
-    },
-    {
-      "id": "",
-      "platform": "trends",
-      "title": "when does the time change",
-      "url": "",
-      "views": 10000,
+      "id": "1xk5ljq",
+      "platform": "reddit",
+      "title": "Twin sisters skate in Halloween theme",
+      "url": "https://www.reddit.com/r/interestingasfuck/comments/1xk5ljq/twin_sisters_skate_in_halloween_theme/",
+      "views": 0,
       "duration": 0.0,
       "comments": 0,
       "author": "",
-      "source": "gtrends:US",
-      "score": 10000.0,
+      "source": "reddit:r/interestingasfuck",
+      "score": 2000.0,
       "novelty": "nouveau",
-      "rank": 15000.0
+      "rank": 3000.0
+    },
+    {
+      "id": "1xk52tt",
+      "platform": "reddit",
+      "title": "An American aircraft engineer who served in Vietnam reunites years later with the Vietnamese guerrilla who took him prisoner",
+      "url": "https://www.reddit.com/r/interestingasfuck/comments/1xk52tt/an_american_aircraft_engineer_who_served_in/",
+      "views": 0,
+      "duration": 0.0,
+      "comments": 0,
+      "author": "",
+      "source": "reddit:r/interestingasfuck",
+      "score": 2000.0,
+      "novelty": "nouveau",
+      "rank": 3000.0
+    },
+    {
+      "id": "1xk6wmv",
+      "platform": "reddit",
+      "title": "Man barely suvives crab attack",
+      "url": "https://www.reddit.com/r/interestingasfuck/comments/1xk6wmv/man_barely_suvives_crab_attack/",
+      "views": 0,
+      "duration": 0.0,
+      "comments": 0,
+      "author": "",
+      "source": "reddit:r/interestingasfuck",
+      "score": 2000.0,
+      "novelty": "nouveau",
+      "rank": 3000.0
+    },
+    {
+      "id": "1xk47zr",
+      "platform": "reddit",
+      "title": "Raven asks for water in scorching heat.",
+      "url": "https://www.reddit.com/r/interestingasfuck/comments/1xk47zr/raven_asks_for_water_in_scorching_heat/",
+      "views": 0,
+      "duration": 0.0,
+      "comments": 0,
+      "author": "",
+      "source": "reddit:r/interestingasfuck",
+      "score": 2000.0,
+      "novelty": "nouveau",
+      "rank": 3000.0
+    },
+    {
+      "id": "1xk8nng",
+      "platform": "reddit",
+      "title": "In 2008, Travis Pastrana jumped out of a plane without a parachute and trusted his friends to catch him in mid-air",
+      "url": "https://www.reddit.com/r/interestingasfuck/comments/1xk8nng/in_2008_travis_pastrana_jumped_out_of_a_plane/",
+      "views": 0,
+      "duration": 0.0,
+      "comments": 0,
+      "author": "",
+      "source": "reddit:r/interestingasfuck",
+      "score": 2000.0,
+      "novelty": "nouveau",
+      "rank": 3000.0
+    },
+    {
+      "id": "1xk5n2t",
+      "platform": "reddit",
+      "title": "Microscopic squatters you can never evict!",
+      "url": "https://www.reddit.com/r/interestingasfuck/comments/1xk5n2t/microscopic_squatters_you_can_never_evict/",
+      "views": 0,
+      "duration": 0.0,
+      "comments": 0,
+      "author": "",
+      "source": "reddit:r/interestingasfuck",
+      "score": 2000.0,
+      "novelty": "nouveau",
+      "rank": 3000.0
+    },
+    {
+      "id": "1xk7w1m",
+      "platform": "reddit",
+      "title": "Bee does its business on a jacket",
+      "url": "https://www.reddit.com/r/interestingasfuck/comments/1xk7w1m/bee_does_its_business_on_a_jacket/",
+      "views": 0,
+      "duration": 0.0,
+      "comments": 0,
+      "author": "",
+      "source": "reddit:r/interestingasfuck",
+      "score": 2000.0,
+      "novelty": "nouveau",
+      "rank": 3000.0
+    },
+    {
+      "id": "",
+      "platform": "news",
+      "title": "A first-time World Series winner, and a luxury cruise goes horribly wrong: The news quiz - NBC News",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPLVM2amhNNTIzdi1NbThTREl3NjY1VExENU5iQWNIOE10VGJWSk9xckhWcTVmZ0NoTFlSNGVtbnd6RVdIZm5LYzk3cWtLVHYyQ3lkbFhQT3VPazNKQnhacmhxT3JsR0tIMWlxWTdqajQ1cm16bzdoSVdKdUlFT05mUWFHOFBvV1JodFQ2dw?oc=5",
+      "views": 0,
+      "duration": 0.0,
+      "comments": 0,
+      "author": "",
+      "source": "gnews:quiz",
+      "score": 2000.0,
+      "novelty": "nouveau",
+      "rank": 3000.0
+    },
+    {
+      "id": "",
+      "platform": "news",
+      "title": "News Quiz for October 31, 2026 - WSJ",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1wRGtNVFVwYUY4REZHM2lNdFhlbWxJUzJJRC1PYW1RUVNkSGVQTVQza0psLVZEX0djN2I0dVFkY2JRQjQxV0pPcWlvZ29VZk5aVVdvM2FYb2g1TVVWamFvZ24wRExrWGpGMWYzMlprbkpXTHQ2RVl6WjlaYUsyQQ?oc=5",
+      "views": 0,
+      "duration": 0.0,
+      "comments": 0,
+      "author": "",
+      "source": "gnews:quiz",
+      "score": 2000.0,
+      "novelty": "nouveau",
+      "rank": 3000.0
+    },
+    {
+      "id": "",
+      "platform": "news",
+      "title": "Think you know your college football conferences? Take our quiz - AP News",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5YYi1uTGlMZ3pGS241ZndTY2JZTGo3SEdrX3Q5VXIwWGZ6bjVYa3VvUnVEdEpQdDY2QTByRVdxdDQ0cjNRX2lfaVhoV1dUZDhQU21rWmRwV0o5eFZub0ZHVG9YdXpYUmhGTVpPSUxwMUo?oc=5",
+      "views": 0,
+      "duration": 0.0,
+      "comments": 0,
+      "author": "",
+      "source": "gnews:quiz",
+      "score": 2000.0,
+      "novelty": "nouveau",
+      "rank": 3000.0
+    },
+    {
+      "id": "",
+      "platform": "news",
+      "title": "The News Quiz - The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5RbFRfRmVGZ1FsTGxIckY2bjI0T0NOOUtqUVlMTUdtMHN6VlRVdkstakc3OHJUblVubnVfakFXaGFtSWpDMGlkbUFkQ3YwcWhhUk9iS29tcmVfZldQRXVtdURXc25NdzY1bXQxbzUwajI5Wkt0NXo2QlRR?oc=5",
+      "views": 0,
+      "duration": 0.0,
+      "comments": 0,
+      "author": "",
+      "source": "gnews:quiz",
+      "score": 2000.0,
+      "novelty": "nouveau",
+      "rank": 3000.0
+    },
+    {
+      "id": "",
+      "platform": "news",
+      "title": "Cobb County news quiz: Transit, jail technology and puppets - Cobb Courier",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOYnhEd3ZITlRtdVprSTNpZkp6STMwTThCWWFXSDFPNlg2QTVRal9PVnBkajBoa1V5Z3M3RzNfU2xhd00zOEFxMml1VFJnd3d4SUxfS2ZCOUlJWHFvZ09VWWJZZnRPRGdzNmZHU3doNE5nYjRyN2J4dFRNZzd3ZnJYaWthMTlZY1FiYWRNcmh6WUtDeVE3ZlAwNVlpajA?oc=5",
+      "views": 0,
+      "duration": 0.0,
+      "comments": 0,
+      "author": "",
+      "source": "gnews:quiz",
+      "score": 2000.0,
+      "novelty": "nouveau",
+      "rank": 3000.0
+    },
+    {
+      "id": "",
+      "platform": "news",
+      "title": "The Atlanta News Quiz for October 31 - roughdraftatlanta.com",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQVWFhcWFwS051LUY5c1FoRnFmTFBEYVFPelMxWWhXLVYxMFV3VkZ2SFNTY0J5SmNobGphOTNRZE42US03TUZDeWE5RkNfRzNZSzNCMkFXUFpSdVJsLTZjeFI5LXNmcV9pVGhvMUlRdzJUN0NHNmh5c21MSEFCNC1JeW42cUI?oc=5",
+      "views": 0,
+      "duration": 0.0,
+      "comments": 0,
+      "author": "",
+      "source": "gnews:quiz",
+      "score": 2000.0,
+      "novelty": "nouveau",
+      "rank": 3000.0
+    },
+    {
+      "id": "",
+      "platform": "news",
+      "title": "Great PA News Quiz: Garrity’s Cash Influx, Derailment Prompts Questions, and a Major Merger Proposal - StateCollege.com",
+      "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPeDZhZ01SckFiTlNuM1R6aTJlY0dGN01GN0VEb1hIVGp1cU1HYkdQOXlQZ1ZlZS1ZNTdqN28zOEVhZTVYaG5NTnczSW9qNm5CaXV3WUlvUDg0TTA0VS04T2FVTWRGZkFKY01Rc21WMjItY1Y5c1dEbGdsdlVkdGJoQ0ZCblVyVUVUWGxDNS02dzR6M3FuQnRyeXlVNGE2MWdjNUM5M0l3US1ucmZob1E5eU1PLUg5cERaeVhwQ2s3Sk11eTRrWWR2Si12QjNYYV9Iejd5YmpNdXZjamxMajhoT2l3?oc=5",
+      "views": 0,
+      "duration": 0.0,
+      "comments": 0,
+      "author": "",
+      "source": "gnews:quiz",
+      "score": 2000.0,
+      "novelty": "nouveau",
+      "rank": 3000.0
+    },
+    {
+      "id": "",
+      "platform": "news",
+      "title": "29 TV Trivia Nuggets We Traded All of Our Tokens for Down at the Arcade - Yahoo",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOcEYzWElrT01lZlFsdGNwNk1Nb1YzdEVxX1BlSmJVNE9YS2JjNDR2YzBSSXc1YWxDVV94X21sVUppbUtoaEFwX1lHSF9kTWdKTldxWmtuNHl5LTBPTDRpQkVOZUZFU3E2RzZ2M3hEMVF0eUFhZnFRdWVndWI2X0JqSG96VkpmY3VLY0MySXpRSGF3RXJm?oc=5",
+      "views": 0,
+      "duration": 0.0,
+      "comments": 0,
+      "author": "",
+      "source": "gnews:trivia",
+      "score": 2000.0,
+      "novelty": "nouveau",
+      "rank": 3000.0
+    },
+    {
+      "id": "",
+      "platform": "news",
+      "title": "Rotary Trivia Night Nov. 14 - The Fayette Advertiser",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQMkd4MlFQMnJDcXVhb0dZdkltV1p6VnB0YjBrODN4MDd0WmN3OURoQmE5QlVPRURJMXhHT0VOd1o0Ylo3ZHFCdVlTYU1vRFhycmFRRWZPenBldEVHZFk4RWhSTThTMFZMSzJrd091cjN2TnBxZ3cxeTJuTFJnWUYtTA?oc=5",
+      "views": 0,
+      "duration": 0.0,
+      "comments": 0,
+      "author": "",
+      "source": "gnews:trivia",
+      "score": 2000.0,
+      "novelty": "nouveau",
+      "rank": 3000.0
+    },
+    {
+      "id": "",
+      "platform": "news",
+      "title": "Pennsylvania trivia event raises $22,000 for Spotlight PA State College’s investigative, public-service journalism - Spotlight PA",
+      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOUkxPT3dFc0lULXVlMGNpMEZlOWZhOXo4QUNYYVlHQUZWNXdrS3ZydXZrWWh0UXpjZVV2T2tCejRxTlhhbUkzNGczWmY5QWZ5b0Vzb0RWUFdUcGhsMk1rRmh4dzRXSmpUUks5Rk5MYXRITzRxZ05QQm50Sk54bFZ5U3lUM0NlalNoZk95enJ3Znl1T2ppVEJhUmxvajROOF9DdUlReHpsUC1ib1psaWdGbkhjdzRFMWJfajNVVnMwSHlMZVF1UzhQT1VHakNWend1UEljbDktQnRkZw?oc=5",
+      "views": 0,
+      "duration": 0.0,
+      "comments": 0,
+      "author": "",
+      "source": "gnews:trivia",
+      "score": 2000.0,
+      "novelty": "nouveau",
+      "rank": 3000.0
+    },
+    {
+      "id": "",
+      "platform": "news",
+      "title": "English Majors Association hosts Trivia Night – November 4 - Vanderbilt University",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPWkdrYlRyRlI1OHA3MXpZdHQ3WmVDMzZkQXpOYzNKR2hUS1dJU2M5TWt3RkVCcjlRT3ZHMDFFT2IyN1hHWFVneXJhdnlhb2preVZIMHBhWXlkNllTZExGdkZnWmFRNVBxQThucTh6dF8xNzdRWDhIOTk1eXc4WEplcVJqOVpFaTVnemJIa2lWX2syWm43S0tvOFhzY3AxZE0?oc=5",
+      "views": 0,
+      "duration": 0.0,
+      "comments": 0,
+      "author": "",
+      "source": "gnews:trivia",
+      "score": 2000.0,
+      "novelty": "nouveau",
+      "rank": 3000.0
+    },
+    {
+      "id": "",
+      "platform": "news",
+      "title": "Today’s Daily Trivia Is Halloween-Themed — Can You Get 5/5? - BuzzFeed",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE4tdFdrUjdYLXhTdGN5dTFVSnEyaEk0N0JEYi02YVdwZ01pMlhKdGp1VjZNdlpJd2EwaEgybDczUk56LUhheDFuc0d3S2plZE5NaUtadEU5Y2ZjbVJlQXAxNG5sTl9SaHFxYzc4VHBVMUVNWWZNdUVN?oc=5",
+      "views": 0,
+      "duration": 0.0,
+      "comments": 0,
+      "author": "",
+      "source": "gnews:general knowledge",
+      "score": 2000.0,
+      "novelty": "nouveau",
+      "rank": 3000.0
     },
     {
       "id": "1xjw85o",
@@ -609,8 +861,8 @@
       "author": "",
       "source": "reddit:r/interestingasfuck",
       "score": 2000.0,
-      "novelty": "nouveau",
-      "rank": 3000.0
+      "novelty": "vu x2",
+      "rank": 1200.0
     },
     {
       "id": "1xjx6e6",
@@ -623,8 +875,8 @@
       "author": "",
       "source": "reddit:r/interestingasfuck",
       "score": 2000.0,
-      "novelty": "nouveau",
-      "rank": 3000.0
+      "novelty": "vu x2",
+      "rank": 1200.0
     },
     {
       "id": "1xjv23j",
@@ -637,8 +889,8 @@
       "author": "",
       "source": "reddit:r/interestingasfuck",
       "score": 2000.0,
-      "novelty": "nouveau",
-      "rank": 3000.0
+      "novelty": "vu x2",
+      "rank": 1200.0
     },
     {
       "id": "1xk1192",
@@ -651,8 +903,8 @@
       "author": "",
       "source": "reddit:r/interestingasfuck",
       "score": 2000.0,
-      "novelty": "nouveau",
-      "rank": 3000.0
+      "novelty": "vu x2",
+      "rank": 1200.0
     },
     {
       "id": "1xjv63q",
@@ -665,8 +917,8 @@
       "author": "",
       "source": "reddit:r/interestingasfuck",
       "score": 2000.0,
-      "novelty": "nouveau",
-      "rank": 3000.0
+      "novelty": "vu x2",
+      "rank": 1200.0
     },
     {
       "id": "1xjztoi",
@@ -679,50 +931,8 @@
       "author": "",
       "source": "reddit:r/interestingasfuck",
       "score": 2000.0,
-      "novelty": "nouveau",
-      "rank": 3000.0
-    },
-    {
-      "id": "1xjvdae",
-      "platform": "reddit",
-      "title": "Incredible handcrafting skills",
-      "url": "https://www.reddit.com/r/interestingasfuck/comments/1xjvdae/incredible_handcrafting_skills/",
-      "views": 0,
-      "duration": 0.0,
-      "comments": 0,
-      "author": "",
-      "source": "reddit:r/interestingasfuck",
-      "score": 2000.0,
-      "novelty": "nouveau",
-      "rank": 3000.0
-    },
-    {
-      "id": "1xjv604",
-      "platform": "reddit",
-      "title": "Around 150 ponies filmed running in Exmoor, Devon",
-      "url": "https://www.reddit.com/r/interestingasfuck/comments/1xjv604/around_150_ponies_filmed_running_in_exmoor_devon/",
-      "views": 0,
-      "duration": 0.0,
-      "comments": 0,
-      "author": "",
-      "source": "reddit:r/interestingasfuck",
-      "score": 2000.0,
-      "novelty": "nouveau",
-      "rank": 3000.0
-    },
-    {
-      "id": "1xk0c6l",
-      "platform": "reddit",
-      "title": "How your phone knows exactly where you are using sattilites and quasars",
-      "url": "https://www.reddit.com/r/interestingasfuck/comments/1xk0c6l/how_your_phone_knows_exactly_where_you_are_using/",
-      "views": 0,
-      "duration": 0.0,
-      "comments": 0,
-      "author": "",
-      "source": "reddit:r/interestingasfuck",
-      "score": 2000.0,
-      "novelty": "nouveau",
-      "rank": 3000.0
+      "novelty": "vu x2",
+      "rank": 1200.0
     },
     {
       "id": "",
@@ -735,64 +945,22 @@
       "author": "",
       "source": "gnews:quiz",
       "score": 2000.0,
-      "novelty": "nouveau",
-      "rank": 3000.0
+      "novelty": "vu x2",
+      "rank": 1200.0
     },
     {
       "id": "",
       "platform": "news",
-      "title": "Yorkshire news quiz of the week - test your knowledge - BBC",
-      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFAwZjYxSUkzcHRnbmx3elBNX2VXSzhoNDB3c1kzTFpYZTdYOXJ1a0ozRVhjRTVOdmlpcEkwNDBRUlFFWjVSQ2pHVUxaTFJ2R29Qbkc4WDZFOTVTYmc?oc=5",
+      "title": "Take the Axios Boston news quiz - Axios",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1Tc0RNWWNySHd2ektIX3h0TTRzNVpqT0hSYnVYWlR5Yks2R3FFd1llRXRTenFiQlBocGh0Ry1PbFZzWk5taW5rWDQ3Q0wzSmVJdmZrRk11blZGM1BLbVZBSmhEOVFiZmQ3MkVEblRlcw?oc=5",
       "views": 0,
       "duration": 0.0,
       "comments": 0,
       "author": "",
       "source": "gnews:quiz",
       "score": 2000.0,
-      "novelty": "nouveau",
-      "rank": 3000.0
-    },
-    {
-      "id": "",
-      "platform": "news",
-      "title": "Brainteaser No 72: Will you get today's answer? - BBC",
-      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE82bFJxMUgyQjd3ZUk0VUF0OURlZ3pJRmotMjB2VEhhRjgxNk1kRjBOSXk1aDFid0pBN1Q3YXJwbEozTXFuQ0ZoWDRiNlRKQVV1b3dxNUlMYlpPempFQkJ3QU5zVUpjVi0x?oc=5",
-      "views": 0,
-      "duration": 0.0,
-      "comments": 0,
-      "author": "",
-      "source": "gnews:quiz",
-      "score": 2000.0,
-      "novelty": "nouveau",
-      "rank": 3000.0
-    },
-    {
-      "id": "",
-      "platform": "news",
-      "title": "Do You Remember the Standout Quotes of the Midterms? Take Our Quiz - WSJ",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPNTI5OW5DUHBOZ3gteGpHSHZmdmR4WmVvelhOTmRqZXBMcEQxV0QtRXg2bG1xM0xWNUt5aEdJRlpfeUhsLUdTb2I5VGtBcVJmU3JFekJLRXg3WUNlZ0IyMDZYc0JWQnNhdkxWdkM1b3hRWjNlNEFaV1Zyay1la2dDZXZnSEVVRFJlYlNfMnRtWXA5V0JVRmdkM3NtRVpmczA5QmNUY1l3?oc=5",
-      "views": 0,
-      "duration": 0.0,
-      "comments": 0,
-      "author": "",
-      "source": "gnews:quiz",
-      "score": 2000.0,
-      "novelty": "nouveau",
-      "rank": 3000.0
-    },
-    {
-      "id": "",
-      "platform": "news",
-      "title": "Quiz: Can You Match These Halloween Candy Bars to Their Fillings? - Mental Floss",
-      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1MazEtZmk5TUNmNHFOTnBicG54OXNpVEdHOFRZWGdvQldHcTdIWDhWMVNsZkNySHJqOTUtckhVelVfX0wxVzdNNjc0eF9kdlAzWFYwd0hSOHV6Nzlkb0k0OGQtWmVTSTA0SVh1SjZUakJKSzJKOGVPMw?oc=5",
-      "views": 0,
-      "duration": 0.0,
-      "comments": 0,
-      "author": "",
-      "source": "gnews:quiz",
-      "score": 2000.0,
-      "novelty": "nouveau",
-      "rank": 3000.0
+      "novelty": "vu x2",
+      "rank": 1200.0
     },
     {
       "id": "",
@@ -805,8 +973,8 @@
       "author": "",
       "source": "gnews:quiz",
       "score": 2000.0,
-      "novelty": "nouveau",
-      "rank": 3000.0
+      "novelty": "vu x2",
+      "rank": 1200.0
     },
     {
       "id": "",
@@ -819,8 +987,8 @@
       "author": "",
       "source": "gnews:quiz",
       "score": 2000.0,
-      "novelty": "nouveau",
-      "rank": 3000.0
+      "novelty": "vu x2",
+      "rank": 1200.0
     },
     {
       "id": "",
@@ -833,8 +1001,8 @@
       "author": "",
       "source": "gnews:quiz",
       "score": 2000.0,
-      "novelty": "nouveau",
-      "rank": 3000.0
+      "novelty": "vu x2",
+      "rank": 1200.0
     },
     {
       "id": "",
@@ -847,8 +1015,8 @@
       "author": "",
       "source": "gnews:quiz",
       "score": 2000.0,
-      "novelty": "nouveau",
-      "rank": 3000.0
+      "novelty": "vu x2",
+      "rank": 1200.0
     },
     {
       "id": "",
@@ -861,64 +1029,8 @@
       "author": "",
       "source": "gnews:trivia",
       "score": 2000.0,
-      "novelty": "nouveau",
-      "rank": 3000.0
-    },
-    {
-      "id": "",
-      "platform": "news",
-      "title": "Record attendance marks sixth annual Winnersville Battle of the Brains Trivia Night - Valdosta Daily Times",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOcUloR1RaU01uaEZ1Q0VWUjhfNFRsbVo5aUxfVWtuMTZpTDgwMEFPWXNKcUpjVHBXZDVBOGhlTFY4dUpvaDdTV3FlaXZ4MHBTVUJ3VmhnRDhFT0lDdUFEbEowS1VCUjRGRU4wMnRJWndfU2t3SVdDUHhrdUlXZ2J1OEZhUmc3YmVtZVRpbUVEaGpweDMya0N4b0o1UGVhTk1CUVBRcm5LRXRWMEw3WW9NblRzcDc3dGNKWFFUSkl6Ml9HSTNQ?oc=5",
-      "views": 0,
-      "duration": 0.0,
-      "comments": 0,
-      "author": "",
-      "source": "gnews:trivia",
-      "score": 2000.0,
-      "novelty": "nouveau",
-      "rank": 3000.0
-    },
-    {
-      "id": "",
-      "platform": "news",
-      "title": "Students compete in trivia night, taking a break from studies - The Vidette",
-      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPYlZpTFpXRDg5X3lhZVU4OG9mYzkyVWZKXzAtN3B3UjZ0MmxKM1I5M0dkLWU0R3l1TFJDemNQMEYyMURreXFOUlhyeFEzSTNZNEd1YUZRWEh3SUFZeElWcDdNMWpoUWhjRGVyTFhldno3U1Y5LWJlT3puZ2JGcnJPQmxDandxUkpIMmUxTUwxV3hIOUlMbWlVbXRzR3ktaXlMWTUyM3JYMlRJc0JrVlVaRzhQa2l5Wm0wTjFDTDV5dHBxRXpHUTdLZ1JUbUswZzNob2VPSlBOSlFYVFJnenc?oc=5",
-      "views": 0,
-      "duration": 0.0,
-      "comments": 0,
-      "author": "",
-      "source": "gnews:trivia",
-      "score": 2000.0,
-      "novelty": "nouveau",
-      "rank": 3000.0
-    },
-    {
-      "id": "",
-      "platform": "news",
-      "title": "This General Knowledge Quiz Has 35 Questions That Every Adult Should Know - BuzzFeed",
-      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5oamhCdnVmZjhabnRIbFRuQmt2d1pia1JIbDRPRUh3WjdWbDhiMVVOaUJGUUdoS25DRFBYZ0k2QV80TTFQZHJoZmx4am1KWEVZM2w2Q3owMEhfcl9YMXJ1MF9YYmMybmVkdnVNOFVVMHhNX3R1VVE4b2d1Unk?oc=5",
-      "views": 0,
-      "duration": 0.0,
-      "comments": 0,
-      "author": "",
-      "source": "gnews:general knowledge",
-      "score": 2000.0,
-      "novelty": "nouveau",
-      "rank": 3000.0
-    },
-    {
-      "id": "",
-      "platform": "news",
-      "title": "Here Are 16 Random Photos — Can You Identify Them Without Missing A Single One? - BuzzFeed",
-      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE41YlExZGIzam9kU3FZeV80VDZYQXpIVGFjdFJlNVBicnJSNjhBNk9BVXpjckNjNENfZGxQV1psQUtfdnU0RmYzdFp1WEl1VzZSWjZJNHhFbXVweURiZzlUMy11d2hveUFiLUd3VnNoUVh5OHpkdHFj?oc=5",
-      "views": 0,
-      "duration": 0.0,
-      "comments": 0,
-      "author": "",
-      "source": "gnews:general knowledge",
-      "score": 2000.0,
-      "novelty": "nouveau",
-      "rank": 3000.0
+      "novelty": "vu x2",
+      "rank": 1200.0
     },
     {
       "id": "",
@@ -931,8 +1043,8 @@
       "author": "",
       "source": "gnews:general knowledge",
       "score": 2000.0,
-      "novelty": "nouveau",
-      "rank": 3000.0
+      "novelty": "vu x2",
+      "rank": 1200.0
     },
     {
       "id": "",
@@ -945,36 +1057,22 @@
       "author": "",
       "source": "gnews:general knowledge",
       "score": 2000.0,
-      "novelty": "nouveau",
-      "rank": 3000.0
+      "novelty": "vu x2",
+      "rank": 1200.0
     },
     {
       "id": "",
-      "platform": "trends",
-      "title": "las vegas flash flooding",
-      "url": "",
-      "views": 2000,
+      "platform": "news",
+      "title": "Here Are 16 Random Photos — Can You Identify Them Without Missing A Single One? - BuzzFeed",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE41YlExZGIzam9kU3FZeV80VDZYQXpIVGFjdFJlNVBicnJSNjhBNk9BVXpjckNjNENfZGxQV1psQUtfdnU0RmYzdFp1WEl1VzZSWjZJNHhFbXVweURiZzlUMy11d2hveUFiLUd3VnNoUVh5OHpkdHFj?oc=5",
+      "views": 0,
       "duration": 0.0,
       "comments": 0,
       "author": "",
-      "source": "gtrends:US",
+      "source": "gnews:general knowledge",
       "score": 2000.0,
-      "novelty": "nouveau",
-      "rank": 3000.0
-    },
-    {
-      "id": "",
-      "platform": "trends",
-      "title": "hong kong vs pakistan",
-      "url": "",
-      "views": 1000,
-      "duration": 0.0,
-      "comments": 0,
-      "author": "",
-      "source": "gtrends:US",
-      "score": 1000.0,
-      "novelty": "nouveau",
-      "rank": 1500.0
+      "novelty": "vu x2",
+      "rank": 1200.0
     },
     {
       "id": "1xjsicb",
@@ -987,8 +1085,8 @@
       "author": "",
       "source": "reddit:r/interestingasfuck",
       "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
+      "novelty": "vu x3",
+      "rank": 800.0
     },
     {
       "id": "1xjj84l",
@@ -1001,8 +1099,8 @@
       "author": "",
       "source": "reddit:r/interestingasfuck",
       "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
+      "novelty": "vu x3",
+      "rank": 800.0
     },
     {
       "id": "1xjgu45",
@@ -1015,8 +1113,8 @@
       "author": "",
       "source": "reddit:r/interestingasfuck",
       "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
+      "novelty": "vu x3",
+      "rank": 800.0
     },
     {
       "id": "1xjffxx",
@@ -1029,8 +1127,8 @@
       "author": "",
       "source": "reddit:r/interestingasfuck",
       "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
+      "novelty": "vu x3",
+      "rank": 800.0
     },
     {
       "id": "1xjfp54",
@@ -1043,8 +1141,8 @@
       "author": "",
       "source": "reddit:r/interestingasfuck",
       "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
+      "novelty": "vu x3",
+      "rank": 800.0
     },
     {
       "id": "1xjcvcf",
@@ -1057,8 +1155,8 @@
       "author": "",
       "source": "reddit:r/interestingasfuck",
       "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
+      "novelty": "vu x3",
+      "rank": 800.0
     },
     {
       "id": "1xjgae8",
@@ -1071,8 +1169,8 @@
       "author": "",
       "source": "reddit:r/interestingasfuck",
       "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
+      "novelty": "vu x3",
+      "rank": 800.0
     },
     {
       "id": "1xjtvon",
@@ -1085,8 +1183,8 @@
       "author": "",
       "source": "reddit:r/interestingasfuck",
       "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
+      "novelty": "vu x3",
+      "rank": 800.0
     },
     {
       "id": "1xji67s",
@@ -1099,8 +1197,8 @@
       "author": "",
       "source": "reddit:r/interestingasfuck",
       "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
+      "novelty": "vu x3",
+      "rank": 800.0
     },
     {
       "id": "1xjlx9q",
@@ -1113,8 +1211,8 @@
       "author": "",
       "source": "reddit:r/interestingasfuck",
       "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
+      "novelty": "vu x3",
+      "rank": 800.0
     },
     {
       "id": "1xjf2fe",
@@ -1127,8 +1225,8 @@
       "author": "",
       "source": "reddit:r/interestingasfuck",
       "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
+      "novelty": "vu x3",
+      "rank": 800.0
     },
     {
       "id": "1xjc0jb",
@@ -1141,64 +1239,8 @@
       "author": "",
       "source": "reddit:r/interestingasfuck",
       "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
-    },
-    {
-      "id": "1xjj6jj",
-      "platform": "reddit",
-      "title": "Finnish study has found out that middle-aged men with higher plant protein intake have higher testosterone levels than men with higher animal protein intake. The study does not establish direct causation, average middle-aged men who eat a lot of meat might just be unhealthier in general.",
-      "url": "https://www.reddit.com/r/interestingasfuck/comments/1xjj6jj/finnish_study_has_found_out_that_middleaged_men/",
-      "views": 0,
-      "duration": 0.0,
-      "comments": 0,
-      "author": "",
-      "source": "reddit:r/interestingasfuck",
-      "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
-    },
-    {
-      "id": "1xjndsi",
-      "platform": "reddit",
-      "title": "The moment when the silo gave up",
-      "url": "https://www.reddit.com/r/interestingasfuck/comments/1xjndsi/the_moment_when_the_silo_gave_up/",
-      "views": 0,
-      "duration": 0.0,
-      "comments": 0,
-      "author": "",
-      "source": "reddit:r/interestingasfuck",
-      "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
-    },
-    {
-      "id": "1xjmbf1",
-      "platform": "reddit",
-      "title": "The Boirault No.1 was a massive French 1917 WWI war machine built to crush barbed wire, looking like a scifi monster but never used in battle.",
-      "url": "https://www.reddit.com/r/interestingasfuck/comments/1xjmbf1/the_boirault_no1_was_a_massive_french_1917_wwi/",
-      "views": 0,
-      "duration": 0.0,
-      "comments": 0,
-      "author": "",
-      "source": "reddit:r/interestingasfuck",
-      "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
-    },
-    {
-      "id": "1xjjwt1",
-      "platform": "reddit",
-      "title": "fluidart（by@fozia_creations）",
-      "url": "https://www.reddit.com/r/interestingasfuck/comments/1xjjwt1/fluidartbyfozia_creations/",
-      "views": 0,
-      "duration": 0.0,
-      "comments": 0,
-      "author": "",
-      "source": "reddit:r/interestingasfuck",
-      "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
+      "novelty": "vu x3",
+      "rank": 800.0
     },
     {
       "id": "",
@@ -1211,8 +1253,8 @@
       "author": "",
       "source": "gnews:quiz",
       "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
+      "novelty": "vu x3",
+      "rank": 800.0
     },
     {
       "id": "",
@@ -1225,50 +1267,8 @@
       "author": "",
       "source": "gnews:quiz",
       "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
-    },
-    {
-      "id": "",
-      "platform": "news",
-      "title": "On what anatomical feature was Trump fixated this week? The quiz knows — do you? - NPR",
-      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQQk1RVUNiVkNYNkFXbFEtV1hLalRlRkNENVZ6WVJpek52eVVqQlA2a1cta0ZmREUzOGdLck53bUkwcFRrLUgtSE96ZjNTQnBKZEk1eTEtLVo0aUlHbm80SUI5U2FTV095SGlscnJBbmFJMVhXNjhTbF9CX3dMYUVHMXlLWFF1S3hhVkRHQnN2bllkNmcw?oc=5",
-      "views": 0,
-      "duration": 0.0,
-      "comments": 0,
-      "author": "",
-      "source": "gnews:quiz",
-      "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
-    },
-    {
-      "id": "",
-      "platform": "news",
-      "title": "The New York Times News Quiz, October 30, 2026 - The New York Times",
-      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5RbFRfRmVGZ1FsTGxIckY2bjI0T0NOOUtqUVlMTUdtMHN6VlRVdkstakc3OHJUblVubnVfakFXaGFtSWpDMGlkbUFkQ3YwcWhhUk9iS29tcmVfZldQRXVtdURXc25NdzY1bXQxbzUwajI5Wkt0NXo2QlRR?oc=5",
-      "views": 0,
-      "duration": 0.0,
-      "comments": 0,
-      "author": "",
-      "source": "gnews:quiz",
-      "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
-    },
-    {
-      "id": "",
-      "platform": "news",
-      "title": "Fox News Digital's News Quiz: October 30, 2026 - Fox News",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQQ0VFVmFLWXRRYXVLRFdpSXJ2NDJJWWtnc09VbVM2UGRLZVEtS1dZXzd2ZEVNZDVzVjNzR1VZNEVOUTdYdmVkRnBqR0xEdzNna2lhMnVLZjJvNkhYVndEb29CYU1POVVUblJKdUZCZEJrNlFDemdmd3Z2RWVrd1dTODVB?oc=5",
-      "views": 0,
-      "duration": 0.0,
-      "comments": 0,
-      "author": "",
-      "source": "gnews:quiz",
-      "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
+      "novelty": "vu x3",
+      "rank": 800.0
     },
     {
       "id": "",
@@ -1281,22 +1281,36 @@
       "author": "",
       "source": "gnews:quiz",
       "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
+      "novelty": "vu x3",
+      "rank": 800.0
     },
     {
       "id": "",
       "platform": "news",
-      "title": "The Columbia News Quiz: October 2026 - Columbia University",
-      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBteUU3ODh2QjNFVkJzNkd6cXN3QS1PbW0taEtiMVpfbjByN21jcmFfUHFITXRJUGRZMTdzMVl1T0N3bmREN0gwLTNwWV9GUXJjNndrVTFIR1dKc0FqRlZvVUNVd1FacUROZUhoU3psbw?oc=5",
+      "title": "On what anatomical feature was Trump fixated this week? The quiz knows — do you? - NPR",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQQk1RVUNiVkNYNkFXbFEtV1hLalRlRkNENVZ6WVJpek52eVVqQlA2a1cta0ZmREUzOGdLck53bUkwcFRrLUgtSE96ZjNTQnBKZEk1eTEtLVo0aUlHbm80SUI5U2FTV095SGlscnJBbmFJMVhXNjhTbF9CX3dMYUVHMXlLWFF1S3hhVkRHQnN2bllkNmcw?oc=5",
       "views": 0,
       "duration": 0.0,
       "comments": 0,
       "author": "",
       "source": "gnews:quiz",
       "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
+      "novelty": "vu x3",
+      "rank": 800.0
+    },
+    {
+      "id": "",
+      "platform": "news",
+      "title": "Fox News Digital's News Quiz: October 30, 2026 - Fox News",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQQ0VFVmFLWXRRYXVLRFdpSXJ2NDJJWWtnc09VbVM2UGRLZVEtS1dZXzd2ZEVNZDVzVjNzR1VZNEVOUTdYdmVkRnBqR0xEdzNna2lhMnVLZjJvNkhYVndEb29CYU1POVVUblJKdUZCZEJrNlFDemdmd3Z2RWVrd1dTODVB?oc=5",
+      "views": 0,
+      "duration": 0.0,
+      "comments": 0,
+      "author": "",
+      "source": "gnews:quiz",
+      "score": 2000.0,
+      "novelty": "vu x3",
+      "rank": 800.0
     },
     {
       "id": "",
@@ -1309,50 +1323,22 @@
       "author": "",
       "source": "gnews:quiz",
       "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
+      "novelty": "vu x3",
+      "rank": 800.0
     },
     {
       "id": "",
       "platform": "news",
-      "title": "The Nieman Lab News-About-News Quiz: October 30, 2026 - Nieman Lab",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxORU9hczlUNzc1NzFSTmk0V3dlSGVXV2xScS1ZSU01VWVUNm9mZW1la2RRdVFtUkRCVXQ2UFVHWWx5SHRITFlWbHdCY0VvWjRCbS14bl9lLXEwV1lPMXhleXRGNkh5WXctbFRQUzI4TlZZTTdPekxIRDJCRndESk55UFk5MnU0TkpnRzR2M1BYSQ?oc=5",
+      "title": "The Columbia News Quiz: October 2026 - Columbia University",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBteUU3ODh2QjNFVkJzNkd6cXN3QS1PbW0taEtiMVpfbjByN21jcmFfUHFITXRJUGRZMTdzMVl1T0N3bmREN0gwLTNwWV9GUXJjNndrVTFIR1dKc0FqRlZvVUNVd1FacUROZUhoU3psbw?oc=5",
       "views": 0,
       "duration": 0.0,
       "comments": 0,
       "author": "",
       "source": "gnews:quiz",
       "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
-    },
-    {
-      "id": "",
-      "platform": "news",
-      "title": "Bridge Michigan News Quiz, Oct. 30: Trick-or-trivia - Bridge Michigan",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNVXMwVWZfZmFRelBZbEtrUV9WblBtTVdjSDVtWk1DT0p5Ql9RNVdjRkY0UkpGZkItbGdGWnFITUY0elV6b0ppX0Jxc0xlc1NtVWF3dW9PRTY4WERUc0pHTGNPNU1aNGVvVW1ncmwxb2VQWFZ0ekdwMjJQM3A2cFVvWGE5R25Ybk0?oc=5",
-      "views": 0,
-      "duration": 0.0,
-      "comments": 0,
-      "author": "",
-      "source": "gnews:quiz",
-      "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
-    },
-    {
-      "id": "",
-      "platform": "news",
-      "title": "OncLive Weekly News Quiz (10/30/2026): Did You Miss Crucial Prostate, HNSCC, and Hematologic Cancer Updates? - OncLive",
-      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNQW1TZzk3YlJIOEF0a1ZzMG1LSUZsaUs1MFFlbmE0X1MyWFI5ZE9oRldGbGtCODVQNkstaWRCMDhLb0hxRUlWa1VRVjg1NVZrTmlubzlseklLZFNpUFo0OXkyZk00QmRuS252ejhTQUhScTFSb2JHYXVQSllpR2cwV3NuNlMyd1AwdmktUkpKeGFTbURKR3ZvYjZnclhCNkVVRnF6MEY0ZE5ITzZlbW5mNjhnSHVDcGs2ckN1czV6U1NzMkxJTnZBTG40eTg?oc=5",
-      "views": 0,
-      "duration": 0.0,
-      "comments": 0,
-      "author": "",
-      "source": "gnews:quiz",
-      "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
+      "novelty": "vu x3",
+      "rank": 800.0
     },
     {
       "id": "",
@@ -1365,8 +1351,8 @@
       "author": "",
       "source": "gnews:trivia",
       "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
+      "novelty": "vu x3",
+      "rank": 800.0
     },
     {
       "id": "",
@@ -1379,8 +1365,8 @@
       "author": "",
       "source": "gnews:trivia",
       "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
+      "novelty": "vu x3",
+      "rank": 800.0
     },
     {
       "id": "",
@@ -1393,8 +1379,8 @@
       "author": "",
       "source": "gnews:trivia",
       "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
+      "novelty": "vu x3",
+      "rank": 800.0
     },
     {
       "id": "",
@@ -1407,22 +1393,8 @@
       "author": "",
       "source": "gnews:trivia",
       "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
-    },
-    {
-      "id": "",
-      "platform": "news",
-      "title": "Puzzles, Beats, and Trivia: Dive into New Playables on YouTube - YouTube Official Blog",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQR0JiY3VoT1o4MGFTZVJqOFhHVUc5dUZRaHFoNmkyc3ZUUDQtbkhDdm96RG1YUV81OW9xXzdwQ3V1MENYVDJkTEdRVzNYNFZGMnNwOFI1MExHa3ZRUUxaZE8zVFV1NFUyRkpwR1lqUVdLek51QWx0RUR5TWZONDNiWGxBT2xibGc?oc=5",
-      "views": 0,
-      "duration": 0.0,
-      "comments": 0,
-      "author": "",
-      "source": "gnews:trivia",
-      "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
+      "novelty": "vu x3",
+      "rank": 800.0
     },
     {
       "id": "",
@@ -1435,22 +1407,22 @@
       "author": "",
       "source": "gnews:trivia",
       "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
+      "novelty": "vu x3",
+      "rank": 800.0
     },
     {
       "id": "",
       "platform": "news",
-      "title": "Gentlemanly Trivia Tidbits About Sir Patrick Stewart and The Many Great Works He Left Us With - Yahoo",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPbVMta3ptR3ZNR2UzemJIWE0xamt1SllJMXhNS254STNuMlNHQjJuZm5ndmtxSjFXalUzWXJwd043Ync2TTk3WFZYOHpwZjVXczZhdXRNOFRfcU9tNnh2a3ZycE1vZ3NCLThVcVB6c2cxWUV0VE1QSFdDcEEwbGd2LVhOUjBUa3VVSF9RQTRHcXB1M1VNMDdkQ0dURU5Xc3ljalBVREFn?oc=5",
+      "title": "Puzzles, Beats, and Trivia: Dive into New Playables on YouTube - YouTube Official Blog",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQR0JiY3VoT1o4MGFTZVJqOFhHVUc5dUZRaHFoNmkyc3ZUUDQtbkhDdm96RG1YUV81OW9xXzdwQ3V1MENYVDJkTEdRVzNYNFZGMnNwOFI1MExHa3ZRUUxaZE8zVFV1NFUyRkpwR1lqUVdLek51QWx0RUR5TWZONDNiWGxBT2xibGc?oc=5",
       "views": 0,
       "duration": 0.0,
       "comments": 0,
       "author": "",
       "source": "gnews:trivia",
       "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
+      "novelty": "vu x3",
+      "rank": 800.0
     },
     {
       "id": "",
@@ -1463,8 +1435,8 @@
       "author": "",
       "source": "gnews:trivia",
       "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
+      "novelty": "vu x3",
+      "rank": 800.0
     },
     {
       "id": "",
@@ -1477,8 +1449,8 @@
       "author": "",
       "source": "gnews:trivia",
       "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
+      "novelty": "vu x3",
+      "rank": 800.0
     },
     {
       "id": "",
@@ -1491,8 +1463,8 @@
       "author": "",
       "source": "gnews:trivia",
       "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
+      "novelty": "vu x3",
+      "rank": 800.0
     },
     {
       "id": "",
@@ -1505,22 +1477,36 @@
       "author": "",
       "source": "gnews:trivia",
       "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
+      "novelty": "vu x3",
+      "rank": 800.0
     },
     {
       "id": "",
       "platform": "news",
-      "title": "Halloween Trivia with Sammy Sanchez - KCTV",
-      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9lQTNiVDBsemNaOGRZbi1neldmUVV4Y0hhVkZIRjBWOUppMDhfVHQwTDdhWmVTa2JjM0V4MlhaSDFHN280QW11c2hSWFM2V0R5OTZIbUh2TWYyWEIxaTdOYzZwRXQtbVp3b000TmFJSjNVd2p3dV9KedIBjAFBVV95cUxNcW9xaVdvWWxTUks2YlhvcDdkWmNBX2tVejlWc28xUDVncTlhYkFBUEdvaVZqXzM2b0U3N3JCdmVQQzBTR3JocTl4OTY5TnNCSVRlUTZjRTBqYlBfUTh0YVZvUDFQZkJlaVpqMzZTS0tVaU5qTjJaZmpBdGhzaGttNHFKZVRFeUw4Tk9nQg?oc=5",
+      "title": "Bridge Michigan News Quiz, Oct. 30: Trick-or-trivia - Bridge Michigan",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNVXMwVWZfZmFRelBZbEtrUV9WblBtTVdjSDVtWk1DT0p5Ql9RNVdjRkY0UkpGZkItbGdGWnFITUY0elV6b0ppX0Jxc0xlc1NtVWF3dW9PRTY4WERUc0pHTGNPNU1aNGVvVW1ncmwxb2VQWFZ0ekdwMjJQM3A2cFVvWGE5R25Ybk0?oc=5",
       "views": 0,
       "duration": 0.0,
       "comments": 0,
       "author": "",
       "source": "gnews:trivia",
       "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
+      "novelty": "vu x3",
+      "rank": 800.0
+    },
+    {
+      "id": "",
+      "platform": "news",
+      "title": "Halloween Trivia with Sammy Sanchez - KCTV",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQV2JaV0dYSjNKbzJ6NlZQY1l1U0JiV01zWlN1SlpsYWRhXzRPLWFpQTluWHgxM3FTVWhNc1h6THIweTdxUHpDb09hWkI4dDN5QW1qd3Q1QUNTMUk2bmlhSDFFS0pTd3ZDU09qb01uYTBWeVVHOFB3UHhKdDdKWmdGbQ?oc=5",
+      "views": 0,
+      "duration": 0.0,
+      "comments": 0,
+      "author": "",
+      "source": "gnews:trivia",
+      "score": 2000.0,
+      "novelty": "vu x3",
+      "rank": 800.0
     },
     {
       "id": "",
@@ -1533,22 +1519,8 @@
       "author": "",
       "source": "gnews:trivia",
       "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
-    },
-    {
-      "id": "",
-      "platform": "news",
-      "title": "TODAY Anchors Test NBC Knowledge in Halloween Trivia Game - TODAY.com",
-      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQVjZXY2I5Y3NsSE9fVG5qQjN6X3g1clc1aFJBTU1ZMF9nVENobm85R1pIU0FBa0JFckJnSFdQR1B5bVRwSGtTZW5Ca1UwcmdMV05SVmJCdkcxdV9SaUdFaUp4Ri01MkpYVkYxZWdpVjFabmhBSWJFTFg5YUVIS3FjdXVpZzF5TWFfNTM1cmJURGY4Y1lhbVZfWHkxUlVzVlU?oc=5",
-      "views": 0,
-      "duration": 0.0,
-      "comments": 0,
-      "author": "",
-      "source": "gnews:trivia",
-      "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
+      "novelty": "vu x3",
+      "rank": 800.0
     },
     {
       "id": "",
@@ -1561,50 +1533,8 @@
       "author": "",
       "source": "gnews:trivia",
       "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
-    },
-    {
-      "id": "",
-      "platform": "news",
-      "title": "Le Grand Concours on TF1: Arthur’s 18 guests take on general knowledge questions - Sortir à Paris",
-      "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxPeVdBcmluNG9lYlJOR1k3VElodWlOdVlHU0haNnZjUTE0VHV1eXNvUDNObWEtSUlWNUJzZU93UURJNWhjY0o3RVVNc1pBSjUyN0R4b2JZOUJlbDN6VkhHZ0UwbjFaTDBqQjVmUzhjRkN3X0lqQmNQODllMkthZWo0anNnTmQ5b1JpelBvNTJVSEZkSU1ad09NZi1XLWx3ZG5taGVpeDlpa3dIV0luSjdYYktzV09uUGFKN1JGWXlXamt3NHJZWjV1QnR0Z3pSQ3BGeE02aVlQM2dONHhxeHlGZmhMbXRuNmxjMFRpR3lrWQ?oc=5",
-      "views": 0,
-      "duration": 0.0,
-      "comments": 0,
-      "author": "",
-      "source": "gnews:general knowledge",
-      "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
-    },
-    {
-      "id": "",
-      "platform": "news",
-      "title": "Thursday news quiz: Election news, puppy views, and a very chaotic goose - The Guardian",
-      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQMnpLMTF1WmZiWVVjd1d4dXhKcEwzNm5SVzV2ZjBjOS1SQkxzVjlmSDM3ZEpkbnUwV1J5ZmoxQm00cUZWSFk4aml5cFdNWlM0dGoteS1kQThITUhRWlZXa0RPUC1GRE95WjZfUmZaVGJ0NnpVblMtTGVsZWpiNHdaRHJHanAzYllYQm9ZdWMxWGpXV2JRQmJCWkF4MG5USjh0cEE?oc=5",
-      "views": 0,
-      "duration": 0.0,
-      "comments": 0,
-      "author": "",
-      "source": "gnews:general knowledge",
-      "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
-    },
-    {
-      "id": "",
-      "platform": "news",
-      "title": "This General Knowledge Quiz Has 35 Questions, And I Guarantee You’ll Get 7 Incorrect - BuzzFeed",
-      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9WTk00QkYxWlJYSnYxbU8wQTRxZ3FGYkc0VFd4R0JtallZSVc2VnV0VjFhNm9HYlJVbUFuamdETmhuOE45SHlQMzhtY01qQXJybzNOdkhuZ0lYVVFRa1FCcmxFTVBvTGdlaWVYdlM3Y29uWS03NlQ0bEJzQ3o?oc=5",
-      "views": 0,
-      "duration": 0.0,
-      "comments": 0,
-      "author": "",
-      "source": "gnews:general knowledge",
-      "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
+      "novelty": "vu x3",
+      "rank": 800.0
     },
     {
       "id": "",
@@ -1617,8 +1547,50 @@
       "author": "",
       "source": "gnews:general knowledge",
       "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
+      "novelty": "vu x3",
+      "rank": 800.0
+    },
+    {
+      "id": "",
+      "platform": "news",
+      "title": "This General Knowledge Quiz Has 35 Questions, And I Guarantee You’ll Get 7 Incorrect - BuzzFeed",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9WTk00QkYxWlJYSnYxbU8wQTRxZ3FGYkc0VFd4R0JtallZSVc2VnV0VjFhNm9HYlJVbUFuamdETmhuOE45SHlQMzhtY01qQXJybzNOdkhuZ0lYVVFRa1FCcmxFTVBvTGdlaWVYdlM3Y29uWS03NlQ0bEJzQ3o?oc=5",
+      "views": 0,
+      "duration": 0.0,
+      "comments": 0,
+      "author": "",
+      "source": "gnews:general knowledge",
+      "score": 2000.0,
+      "novelty": "vu x3",
+      "rank": 800.0
+    },
+    {
+      "id": "",
+      "platform": "news",
+      "title": "Le Grand Concours on TF1: Arthur’s 18 guests take on general knowledge questions - Sortir à Paris",
+      "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxPeVdBcmluNG9lYlJOR1k3VElodWlOdVlHU0haNnZjUTE0VHV1eXNvUDNObWEtSUlWNUJzZU93UURJNWhjY0o3RVVNc1pBSjUyN0R4b2JZOUJlbDN6VkhHZ0UwbjFaTDBqQjVmUzhjRkN3X0lqQmNQODllMkthZWo0anNnTmQ5b1JpelBvNTJVSEZkSU1ad09NZi1XLWx3ZG5taGVpeDlpa3dIV0luSjdYYktzV09uUGFKN1JGWXlXamt3NHJZWjV1QnR0Z3pSQ3BGeE02aVlQM2dONHhxeHlGZmhMbXRuNmxjMFRpR3lrWQ?oc=5",
+      "views": 0,
+      "duration": 0.0,
+      "comments": 0,
+      "author": "",
+      "source": "gnews:general knowledge",
+      "score": 2000.0,
+      "novelty": "vu x3",
+      "rank": 800.0
+    },
+    {
+      "id": "",
+      "platform": "news",
+      "title": "Thursday news quiz: Election news, puppy views, and a very chaotic goose - The Guardian",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQMnpLMTF1WmZiWVVjd1d4dXhKcEwzNm5SVzV2ZjBjOS1SQkxzVjlmSDM3ZEpkbnUwV1J5ZmoxQm00cUZWSFk4aml5cFdNWlM0dGoteS1kQThITUhRWlZXa0RPUC1GRE95WjZfUmZaVGJ0NnpVblMtTGVsZWpiNHdaRHJHanAzYllYQm9ZdWMxWGpXV2JRQmJCWkF4MG5USjh0cEE?oc=5",
+      "views": 0,
+      "duration": 0.0,
+      "comments": 0,
+      "author": "",
+      "source": "gnews:general knowledge",
+      "score": 2000.0,
+      "novelty": "vu x3",
+      "rank": 800.0
     },
     {
       "id": "",
@@ -1631,8 +1603,8 @@
       "author": "",
       "source": "gnews:general knowledge",
       "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
+      "novelty": "vu x3",
+      "rank": 800.0
     },
     {
       "id": "",
@@ -1645,8 +1617,8 @@
       "author": "",
       "source": "gnews:general knowledge",
       "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
+      "novelty": "vu x3",
+      "rank": 800.0
     },
     {
       "id": "",
@@ -1659,8 +1631,8 @@
       "author": "",
       "source": "gnews:general knowledge",
       "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
+      "novelty": "vu x3",
+      "rank": 800.0
     },
     {
       "id": "",
@@ -1673,8 +1645,8 @@
       "author": "",
       "source": "gnews:general knowledge",
       "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
+      "novelty": "vu x3",
+      "rank": 800.0
     },
     {
       "id": "",
@@ -1687,8 +1659,8 @@
       "author": "",
       "source": "gnews:general knowledge",
       "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
+      "novelty": "vu x3",
+      "rank": 800.0
     },
     {
       "id": "",
@@ -1701,8 +1673,8 @@
       "author": "",
       "source": "gnews:general knowledge",
       "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
+      "novelty": "vu x3",
+      "rank": 800.0
     },
     {
       "id": "",
@@ -1715,8 +1687,8 @@
       "author": "",
       "source": "gnews:general knowledge",
       "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
+      "novelty": "vu x3",
+      "rank": 800.0
     },
     {
       "id": "",
@@ -1729,22 +1701,8 @@
       "author": "",
       "source": "gnews:general knowledge",
       "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
-    },
-    {
-      "id": "",
-      "platform": "news",
-      "title": "This Trivia Game Took Over My Entire Afternoon Because I Refused To Let A Yeti Outsmart Me - BuzzFeed",
-      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5Na09FZUdveWUyQ2RsUEpvMGxWZFpadS1pTC0xMnhuaWdlQWp6WjZsMThfNEhrYXFMcW92RnBqaDg1NFNvcmpHckIyc0twOWRzakxESHJ6ckNlTllYV21WRnlocXVZT2lNMUFmRC04T1M2UlRSYzJoYkNDX3M?oc=5",
-      "views": 0,
-      "duration": 0.0,
-      "comments": 0,
-      "author": "",
-      "source": "gnews:general knowledge",
-      "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
+      "novelty": "vu x3",
+      "rank": 800.0
     },
     {
       "id": "",
@@ -1757,8 +1715,8 @@
       "author": "",
       "source": "gnews:general knowledge",
       "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
+      "novelty": "vu x3",
+      "rank": 800.0
     },
     {
       "id": "",
@@ -1771,8 +1729,22 @@
       "author": "",
       "source": "gnews:general knowledge",
       "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
+      "novelty": "vu x3",
+      "rank": 800.0
+    },
+    {
+      "id": "",
+      "platform": "news",
+      "title": "This Trivia Game Took Over My Entire Afternoon Because I Refused To Let A Yeti Outsmart Me - BuzzFeed",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5Na09FZUdveWUyQ2RsUEpvMGxWZFpadS1pTC0xMnhuaWdlQWp6WjZsMThfNEhrYXFMcW92RnBqaDg1NFNvcmpHckIyc0twOWRzakxESHJ6ckNlTllYV21WRnlocXVZT2lNMUFmRC04T1M2UlRSYzJoYkNDX3M?oc=5",
+      "views": 0,
+      "duration": 0.0,
+      "comments": 0,
+      "author": "",
+      "source": "gnews:general knowledge",
+      "score": 2000.0,
+      "novelty": "vu x3",
+      "rank": 800.0
     },
     {
       "id": "",
@@ -1785,27 +1757,13 @@
       "author": "",
       "source": "gnews:general knowledge",
       "score": 2000.0,
-      "novelty": "vu x2",
-      "rank": 1200.0
-    },
-    {
-      "id": "50303172",
-      "platform": "hackernews",
-      "title": "The $6.3B Binance hack was pulled off in just 20 minutes",
-      "url": "https://www.wired.com/story/the-dollar63-billion-binance-hack-was-pulled-off-in-just-20-minutes/",
-      "views": 422,
-      "duration": 0.0,
-      "comments": 286,
-      "author": "domhudson",
-      "source": "hn:front_page",
-      "score": 565.0,
-      "novelty": "nouveau",
-      "rank": 847.5
+      "novelty": "vu x3",
+      "rank": 800.0
     },
     {
       "id": "",
       "platform": "trends",
-      "title": "loans",
+      "title": "criminal defense lawyer",
       "url": "",
       "views": 500,
       "duration": 0.0,
@@ -1817,32 +1775,144 @@
       "rank": 750.0
     },
     {
+      "id": "50314654",
+      "platform": "hackernews",
+      "title": "Serbia just elected the world's brainiest parliament",
+      "url": "https://www.science.org/content/article/serbia-just-elected-world-s-brainiest-parliament",
+      "views": 284,
+      "duration": 0.0,
+      "comments": 176,
+      "author": "input_sh",
+      "source": "hn:front_page",
+      "score": 372.0,
+      "novelty": "nouveau",
+      "rank": 558.0
+    },
+    {
       "id": "50300683",
       "platform": "hackernews",
       "title": "Backdoor in Claude Code for VS Code extension on the Cursor Marketplace",
       "url": "https://phorion.io/blog/offical-claude-code-vsx-compromise/",
-      "views": 873,
+      "views": 917,
       "duration": 0.0,
-      "comments": 514,
+      "comments": 535,
       "author": "_chall",
       "source": "hn:front_page",
-      "score": 1130.0,
-      "novelty": "vu x2",
-      "rank": 678.0
+      "score": 1184.5,
+      "novelty": "vu x3",
+      "rank": 473.8
     },
     {
-      "id": "50305693",
+      "id": "50303172",
       "platform": "hackernews",
-      "title": "AI isn't replacing SREs, it's deskilling them",
-      "url": "https://newsletter.signoz.io/p/ai-isnt-replacing-sres-its-deskilling",
-      "views": 569,
+      "title": "The $6.3B Binance hack was pulled off in just 20 minutes",
+      "url": "https://www.wired.com/story/the-dollar63-billion-binance-hack-was-pulled-off-in-just-20-minutes/",
+      "views": 485,
       "duration": 0.0,
-      "comments": 419,
-      "author": "dorianniemiec",
+      "comments": 337,
+      "author": "domhudson",
       "source": "hn:front_page",
-      "score": 778.5,
+      "score": 653.5,
       "novelty": "vu x2",
-      "rank": 467.1
+      "rank": 392.1
+    },
+    {
+      "id": "",
+      "platform": "trends",
+      "title": "tucker carlson",
+      "url": "",
+      "views": 200,
+      "duration": 0.0,
+      "comments": 0,
+      "author": "",
+      "source": "gtrends:US",
+      "score": 200.0,
+      "novelty": "nouveau",
+      "rank": 300.0
+    },
+    {
+      "id": "",
+      "platform": "trends",
+      "title": "gamecocks football",
+      "url": "",
+      "views": 200,
+      "duration": 0.0,
+      "comments": 0,
+      "author": "",
+      "source": "gtrends:US",
+      "score": 200.0,
+      "novelty": "nouveau",
+      "rank": 300.0
+    },
+    {
+      "id": "",
+      "platform": "trends",
+      "title": "frank miller",
+      "url": "",
+      "views": 200,
+      "duration": 0.0,
+      "comments": 0,
+      "author": "",
+      "source": "gtrends:US",
+      "score": 200.0,
+      "novelty": "nouveau",
+      "rank": 300.0
+    },
+    {
+      "id": "",
+      "platform": "trends",
+      "title": "lincoln city vs birmingham",
+      "url": "",
+      "views": 200,
+      "duration": 0.0,
+      "comments": 0,
+      "author": "",
+      "source": "gtrends:US",
+      "score": 200.0,
+      "novelty": "nouveau",
+      "rank": 300.0
+    },
+    {
+      "id": "",
+      "platform": "trends",
+      "title": "josh jacobs news",
+      "url": "",
+      "views": 200,
+      "duration": 0.0,
+      "comments": 0,
+      "author": "",
+      "source": "gtrends:US",
+      "score": 200.0,
+      "novelty": "nouveau",
+      "rank": 300.0
+    },
+    {
+      "id": "",
+      "platform": "trends",
+      "title": "estêvão willian",
+      "url": "",
+      "views": 200,
+      "duration": 0.0,
+      "comments": 0,
+      "author": "",
+      "source": "gtrends:US",
+      "score": 200.0,
+      "novelty": "nouveau",
+      "rank": 300.0
+    },
+    {
+      "id": "",
+      "platform": "trends",
+      "title": "avión",
+      "url": "",
+      "views": 200,
+      "duration": 0.0,
+      "comments": 0,
+      "author": "",
+      "source": "gtrends:US",
+      "score": 200.0,
+      "novelty": "nouveau",
+      "rank": 300.0
     },
     {
       "id": "17697366",
@@ -1855,120 +1925,50 @@
       "author": "elfakyn",
       "source": "hn:quiz",
       "score": 672.5,
-      "novelty": "vu x2",
-      "rank": 403.5
+      "novelty": "vu x3",
+      "rank": 269.0
     },
     {
       "id": "50305025",
       "platform": "hackernews",
       "title": "Northflank Breached",
       "url": "https://status.northflank.com",
-      "views": 416,
+      "views": 449,
       "duration": 0.0,
-      "comments": 306,
+      "comments": 322,
       "author": "js4ever",
       "source": "hn:front_page",
-      "score": 569.0,
-      "novelty": "vu x2",
-      "rank": 341.4
+      "score": 610.0,
+      "novelty": "vu x3",
+      "rank": 244.0
     },
     {
-      "id": "",
-      "platform": "trends",
-      "title": "stylist",
-      "url": "",
-      "views": 200,
-      "duration": 0.0,
-      "comments": 0,
-      "author": "",
-      "source": "gtrends:US",
-      "score": 200.0,
-      "novelty": "nouveau",
-      "rank": 300.0
-    },
-    {
-      "id": "",
-      "platform": "trends",
-      "title": "sanjay gupta",
-      "url": "",
-      "views": 200,
-      "duration": 0.0,
-      "comments": 0,
-      "author": "",
-      "source": "gtrends:US",
-      "score": 200.0,
-      "novelty": "nouveau",
-      "rank": 300.0
-    },
-    {
-      "id": "",
-      "platform": "trends",
-      "title": "my chemical romance",
-      "url": "",
-      "views": 200,
-      "duration": 0.0,
-      "comments": 0,
-      "author": "",
-      "source": "gtrends:US",
-      "score": 200.0,
-      "novelty": "nouveau",
-      "rank": 300.0
-    },
-    {
-      "id": "",
-      "platform": "trends",
-      "title": "mia pohankova",
-      "url": "",
-      "views": 200,
-      "duration": 0.0,
-      "comments": 0,
-      "author": "",
-      "source": "gtrends:US",
-      "score": 200.0,
-      "novelty": "nouveau",
-      "rank": 300.0
-    },
-    {
-      "id": "",
-      "platform": "trends",
-      "title": "violetta mailyan",
-      "url": "",
-      "views": 200,
-      "duration": 0.0,
-      "comments": 0,
-      "author": "",
-      "source": "gtrends:US",
-      "score": 200.0,
-      "novelty": "nouveau",
-      "rank": 300.0
-    },
-    {
-      "id": "50311686",
+      "id": "50313661",
       "platform": "hackernews",
-      "title": "Show HN: To Honor Sir Patrick Stewart, Enjoy the TNG Episode Guessing Game",
-      "url": "https://tng.episodle.com/",
-      "views": 175,
+      "title": "Digital Minimalism",
+      "url": "https://vitalik.eth.limo/general/2026/10/31/digital_minimalism.html",
+      "views": 95,
       "duration": 0.0,
-      "comments": 48,
-      "author": "francisofascii",
+      "comments": 62,
+      "author": "wilbertliu",
       "source": "hn:front_page",
-      "score": 199.0,
+      "score": 126.0,
       "novelty": "nouveau",
-      "rank": 298.5
+      "rank": 189.0
     },
     {
       "id": "50312756",
       "platform": "hackernews",
       "title": "Tell HN: Scribd Breached",
       "url": "https://news.ycombinator.com/item?id=50312756",
-      "views": 160,
+      "views": 253,
       "duration": 0.0,
-      "comments": 64,
+      "comments": 96,
       "author": "x______________",
       "source": "hn:front_page",
-      "score": 192.0,
-      "novelty": "nouveau",
-      "rank": 288.0
+      "score": 301.0,
+      "novelty": "vu x2",
+      "rank": 180.6
     },
     {
       "id": "13677748",
@@ -1981,8 +1981,8 @@
       "author": "alex_g",
       "source": "hn:quiz",
       "score": 430.5,
-      "novelty": "vu x2",
-      "rank": 258.3
+      "novelty": "vu x3",
+      "rank": 172.2
     },
     {
       "id": "32712017",
@@ -1995,8 +1995,8 @@
       "author": "rwmj",
       "source": "hn:quiz",
       "score": 424.5,
-      "novelty": "vu x2",
-      "rank": 254.7
+      "novelty": "vu x3",
+      "rank": 169.8
     },
     {
       "id": "45549434",
@@ -2009,8 +2009,8 @@
       "author": "skevy",
       "source": "hn:trivia",
       "score": 407.5,
-      "novelty": "vu x2",
-      "rank": 244.5
+      "novelty": "vu x3",
+      "rank": 163.0
     },
     {
       "id": "16805532",
@@ -2023,8 +2023,22 @@
       "author": "sethbannon",
       "source": "hn:quiz",
       "score": 405.5,
-      "novelty": "vu x2",
-      "rank": 243.3
+      "novelty": "vu x3",
+      "rank": 162.2
+    },
+    {
+      "id": "50260753",
+      "platform": "hackernews",
+      "title": "Show HN: Marelleo, an open-source story box I built for my kids using ESP32",
+      "url": "https://zebra.rodeo/en/blog/marelleo/",
+      "views": 93,
+      "duration": 0.0,
+      "comments": 27,
+      "author": "foOg",
+      "source": "hn:front_page",
+      "score": 106.5,
+      "novelty": "nouveau",
+      "rank": 159.8
     },
     {
       "id": "3234123",
@@ -2037,22 +2051,64 @@
       "author": "nextparadigms",
       "source": "hn:trivia",
       "score": 392.0,
-      "novelty": "vu x2",
-      "rank": 235.2
+      "novelty": "vu x3",
+      "rank": 156.8
     },
     {
-      "id": "50309647",
+      "id": "50314085",
       "platform": "hackernews",
-      "title": "Through Captain Jean-Luc Picard, Patrick Stewart taught us the measure of a man",
-      "url": "https://www.bostonglobe.com/2026/10/29/metro/patrick-stewart-picard-star-trek-the-next-generation/",
-      "views": 289,
+      "title": "Switch Lowering in GCC",
+      "url": "https://xoranth.net/gcc-switch/",
+      "views": 93,
       "duration": 0.0,
-      "comments": 161,
-      "author": "apress",
+      "comments": 16,
+      "author": "signa11",
       "source": "hn:front_page",
-      "score": 369.5,
-      "novelty": "vu x2",
-      "rank": 221.7
+      "score": 101.0,
+      "novelty": "nouveau",
+      "rank": 151.5
+    },
+    {
+      "id": "",
+      "platform": "trends",
+      "title": "deontay wilder",
+      "url": "",
+      "views": 100,
+      "duration": 0.0,
+      "comments": 0,
+      "author": "",
+      "source": "gtrends:US",
+      "score": 100.0,
+      "novelty": "nouveau",
+      "rank": 150.0
+    },
+    {
+      "id": "",
+      "platform": "trends",
+      "title": "crimson desert dlc",
+      "url": "",
+      "views": 100,
+      "duration": 0.0,
+      "comments": 0,
+      "author": "",
+      "source": "gtrends:US",
+      "score": 100.0,
+      "novelty": "nouveau",
+      "rank": 150.0
+    },
+    {
+      "id": "50307190",
+      "platform": "hackernews",
+      "title": "My favourite PowerMac is a Nintendo Wii",
+      "url": "https://virtuallyfun.com/2026/10/29/my-favourite-powermac-is-a-nintendo-wii/",
+      "views": 324,
+      "duration": 0.0,
+      "comments": 95,
+      "author": "DHowett",
+      "source": "hn:front_page",
+      "score": 371.5,
+      "novelty": "vu x3",
+      "rank": 148.6
     },
     {
       "id": "29836852",
@@ -2065,64 +2121,8 @@
       "author": "varun_ch",
       "source": "hn:quiz",
       "score": 351.5,
-      "novelty": "vu x2",
-      "rank": 210.9
-    },
-    {
-      "id": "14402738",
-      "platform": "hackernews",
-      "title": "Show HN: 15-question programming quiz with answers",
-      "url": "https://quiz.triplebyte.com/",
-      "views": 227,
-      "duration": 0.0,
-      "comments": 228,
-      "author": "ammon",
-      "source": "hn:quiz",
-      "score": 341.0,
-      "novelty": "vu x2",
-      "rank": 204.6
-    },
-    {
-      "id": "50301854",
-      "platform": "hackernews",
-      "title": "Azure's Weakest Link – Five Full Cross-Tenant Compromises",
-      "url": "https://www.binarysecurity.no/posts/2026/10/one-root-case",
-      "views": 302,
-      "duration": 0.0,
-      "comments": 57,
-      "author": "swq115",
-      "source": "hn:front_page",
-      "score": 330.5,
-      "novelty": "vu x2",
-      "rank": 198.3
-    },
-    {
-      "id": "50307190",
-      "platform": "hackernews",
-      "title": "My favourite PowerMac is a Nintendo Wii",
-      "url": "https://virtuallyfun.com/2026/10/29/my-favourite-powermac-is-a-nintendo-wii/",
-      "views": 289,
-      "duration": 0.0,
-      "comments": 79,
-      "author": "DHowett",
-      "source": "hn:front_page",
-      "score": 328.5,
-      "novelty": "vu x2",
-      "rank": 197.1
-    },
-    {
-      "id": "13453217",
-      "platform": "hackernews",
-      "title": "The Secret Agenda of a Facebook Quiz",
-      "url": "https://www.nytimes.com/2016/11/20/opinion/the-secret-agenda-of-a-facebook-quiz.html?",
-      "views": 268,
-      "duration": 0.0,
-      "comments": 106,
-      "author": "lingben",
-      "source": "hn:quiz",
-      "score": 321.0,
-      "novelty": "vu x2",
-      "rank": 192.6
+      "novelty": "vu x3",
+      "rank": 140.6
     }
   ],
   "topics": [
@@ -2130,176 +2130,176 @@
       "topic": "RRB NTPC 2026 | WANT TO SCORE GOOD IN GK ? DO THIS !!",
       "platform": "youtube",
       "url": "https://www.youtube.com/watch?v=QymJ9saulHM",
-      "views": 393346,
-      "score": 446.2
+      "views": 396674,
+      "score": 300.0
     },
     {
       "topic": "100 People vs General Knowledge Quiz",
       "platform": "youtube",
       "url": "https://www.youtube.com/watch?v=vl6OoyT7KdI",
-      "views": 474392,
-      "score": 109.5
+      "views": 478149,
+      "score": 73.6
     },
     {
       "topic": "GK Question || GK In Hindi || GK Question and Answer || GK Quiz ||",
       "platform": "youtube",
       "url": "https://www.youtube.com/watch?v=ZtChrEz6apk",
-      "views": 83648,
-      "score": 87.4
+      "views": 84106,
+      "score": 58.6
+    },
+    {
+      "topic": "Islamic Sawal Jawab | Islamic Quiz | Deeni Maloomat | Urdu Islamic Questions",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=XlQfaKHkb1w",
+      "views": 8446,
+      "score": 57.9
     },
     {
       "topic": "Marathi Gk Question | General knowledge Question | Current Affairs Question",
       "platform": "youtube",
       "url": "https://www.youtube.com/watch?v=781cNLWqsZA",
-      "views": 13224,
-      "score": 78.5
+      "views": 14038,
+      "score": 55.6
+    },
+    {
+      "topic": "Name 5 Countries 😱 | Fun Hindi Riddle 🧠 | GK Quiz #Shorts",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=f_r9pnbf-js",
+      "views": 6334,
+      "score": 51.2
     },
     {
       "topic": "Assamese GK Questions || 22 টা সাধাৰণ জ্ঞানৰ প্ৰশ্ন আৰু উত্তৰ || GK In Assamese",
       "platform": "youtube",
       "url": "https://www.youtube.com/watch?v=AGgP4BAXcVs",
-      "views": 43533,
-      "score": 52.7
+      "views": 44884,
+      "score": 36.3
+    },
+    {
+      "topic": "Urdu Islamic Quiz | Top Sawal Jawab | Sawal jawab | Islamic Question Answer |",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=orqmSur675w",
+      "views": 8578,
+      "score": 30.8
     },
     {
       "topic": "சுவாரஷ்ய தகவல்கள் | Interesting questions தமிழ் | Gk in tamil | பொது அறிவு |",
       "platform": "youtube",
       "url": "https://www.youtube.com/watch?v=Wv19AtXwXBI",
-      "views": 26534,
-      "score": 42.2
+      "views": 26539,
+      "score": 28.2
+    },
+    {
+      "topic": "Urdu Islamic Quiz | Islamic Sawal Jawab | Islamic GK | Quran Quiz | Rehan Quiz",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=eCVQUzTKalM",
+      "views": 5053,
+      "score": 21.0
     },
     {
       "topic": "Ronaldo vs Messi: FootyMind Football Quiz 🧠⚽ #shorts",
       "platform": "youtube",
       "url": "https://www.youtube.com/watch?v=zdZonmDkTYU",
-      "views": 234739,
-      "score": 28.8
-    },
-    {
-      "topic": "Hania Quiz | Islamic Quiz in Urdu | Islami Sawal Jawab | Islami maloomat & GK",
-      "platform": "youtube",
-      "url": "https://www.youtube.com/watch?v=XzmLUV9Gkr0",
-      "views": 6401,
-      "score": 27.6
+      "views": 234703,
+      "score": 19.2
     },
     {
       "topic": "Urdu Islamic Quiz | Top Sawal Jawab | Islamic GK | Urdu Quiz",
       "platform": "youtube",
       "url": "https://www.youtube.com/watch?v=lIjTTbKyhdc",
-      "views": 22115,
-      "score": 21.2
+      "views": 24460,
+      "score": 15.6
     },
     {
       "topic": "Ronaldo vs Messi: Who Is the Real GOAT? 🐐 | GOAT Quiz #shorts",
       "platform": "youtube",
       "url": "https://www.youtube.com/watch?v=YwnBHUnrSVM",
       "views": 143054,
-      "score": 17.3
+      "score": 11.5
     },
     {
       "topic": "Age gap loyalty test 🔥🔥#viral #trending #shorts #viralvideo",
       "platform": "youtube",
       "url": "https://www.youtube.com/watch?v=2AVT4y1VsEY",
-      "views": 13145,
-      "score": 16.8
+      "views": 13354,
+      "score": 11.4
     },
     {
-      "topic": "SouRicks Live Stream",
+      "topic": "Hania Quiz | Islamic Quiz in Urdu | Islami Sawal Jawab | Islami maloomat & GK",
       "platform": "youtube",
-      "url": "https://www.youtube.com/watch?v=V1CvYB9JnaY",
-      "views": 54612,
-      "score": 16.6
+      "url": "https://www.youtube.com/watch?v=XzmLUV9Gkr0",
+      "views": 6415,
+      "score": 11.1
     },
     {
       "topic": "Fix These 5 Incorrect Hindi Words 😱 | Hindi Spelling Quiz Challenge #Shorts",
       "platform": "youtube",
       "url": "https://www.youtube.com/watch?v=dIRBsgoFKbU",
-      "views": 4990,
-      "score": 15.8
+      "views": 5070,
+      "score": 10.7
     },
     {
       "topic": "Ronaldo vs Messi: futbol quiz 🐐 #shorts",
       "platform": "youtube",
       "url": "https://www.youtube.com/watch?v=o0Y6T6lB81M",
       "views": 152866,
-      "score": 14.6
+      "score": 9.8
     },
     {
       "topic": "Ronaldo vs Messi: Can You Pass This Football Trivia Quiz? 🔥 #shorts",
       "platform": "youtube",
       "url": "https://www.youtube.com/watch?v=iMavYjqnXfM",
-      "views": 137705,
-      "score": 14.6
+      "views": 137709,
+      "score": 9.8
+    },
+    {
+      "topic": "Interesting Question Answer 😱| Odia General knowledge | Odia Quiz",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=xT_KedM_QxM",
+      "views": 11191,
+      "score": 8.9
     },
     {
       "topic": "Gk in Assamese/ General knowledge question in Assamese / অসমীয়া gk / gkquiz",
       "platform": "youtube",
       "url": "https://www.youtube.com/watch?v=sWAK-TRo-9c",
-      "views": 7449,
-      "score": 13.3
-    },
-    {
-      "topic": "Interesting Question Answer 😱 | Odia General Knowledge | Odia Quiz | General",
-      "platform": "youtube",
-      "url": "https://www.youtube.com/watch?v=Oooa-TlvTOk",
-      "views": 11103,
-      "score": 13.0
+      "views": 7502,
+      "score": 8.9
     },
     {
       "topic": "Current Affairs Today | 27 October 2026 | Daily Current Affairs | By Ashish",
       "platform": "youtube",
       "url": "https://www.youtube.com/watch?v=4wOsXPfP7m8",
-      "views": 65906,
-      "score": 12.8
+      "views": 66229,
+      "score": 8.6
     },
     {
       "topic": "Do these Overwatch Trivia questions get harder?",
       "platform": "youtube",
       "url": "https://www.youtube.com/watch?v=fGUV2wHTs84",
-      "views": 13116,
-      "score": 10.9
+      "views": 13139,
+      "score": 7.2
     },
     {
-      "topic": "Z Zork Live Stream Growing in theForest #outdoors #camping #forest #grow #shorts",
+      "topic": "SouRicks Live Stream",
       "platform": "youtube",
-      "url": "https://www.youtube.com/watch?v=pOqVC1tWAFM",
-      "views": 212846,
-      "score": 10.9
+      "url": "https://www.youtube.com/watch?v=V1CvYB9JnaY",
+      "views": 54612,
+      "score": 6.7
     },
     {
       "topic": "Urdu Riddles | Riddles | Riddles in Urdu | Islamic Questions | Islamic Quiz |",
       "platform": "youtube",
       "url": "https://www.youtube.com/watch?v=Lo35ZJrv2ns",
-      "views": 20312,
-      "score": 9.5
+      "views": 20745,
+      "score": 6.5
     },
     {
       "topic": "General knowledge Trivia questions for💰🤣🤣🤣",
       "platform": "youtube",
       "url": "https://www.youtube.com/watch?v=7dskVNvAq0U",
-      "views": 4919,
-      "score": 8.2
-    },
-    {
-      "topic": "🦁 The Lion Challenge! 🇬🇧🏴 Can You Answer All the Questions? 🤔🔥 #Shorts",
-      "platform": "youtube",
-      "url": "https://www.youtube.com/watch?v=VNoog4d6y5c",
-      "views": 1256,
-      "score": 7.4
-    },
-    {
-      "topic": "upsssc pet 2026 modal paper ! upsssc pet 2026 modal paper | pet practice set !",
-      "platform": "youtube",
-      "url": "https://www.youtube.com/watch?v=D157D-oDK2I",
-      "views": 32260,
-      "score": 6.9
-    },
-    {
-      "topic": "दिमाग लगाओ 🤔 | 5 मजेदार हिंदी पहेलियाँ 🧠🔥 | Mind Test Quiz #shorts",
-      "platform": "youtube",
-      "url": "https://www.youtube.com/watch?v=wZOSHClmIns",
-      "views": 56714,
-      "score": 6.4
+      "views": 4985,
+      "score": 5.5
     }
   ]
 }

@@ -1,8 +1,8 @@
 {
-  "idea": "20261031-074352-01",
-  "title": "Can You Beat This 9 Question Quiz?",
-  "video": "/home/runner/work/autopipe/autopipe/output/20261031-074352-01/video.mp4",
-  "description": "Quick science quiz: 9 questions, 3 seconds each. Comment your score out of 9! #shorts #quiz #trivia #quiztime #generalknowledge",
+  "idea": "20261031-124545-01",
+  "title": "Most People Fail This 9 Question Quiz",
+  "video": "/home/runner/work/autopipe/autopipe/output/20261031-124545-01/video.mp4",
+  "description": "Quick movies quiz: 9 questions, 3 seconds each. Comment your score out of 9! #shorts #quiz #trivia #quiztime #generalknowledge",
   "tags": [
     "quiz",
     "trivia",
@@ -10,10 +10,10 @@
     "quiz questions",
     "general knowledge",
     "test your knowledge",
-    "science"
+    "movies"
   ],
   "comment": "Score check: how many did you get right out of 9? Comment your score and which question tricked you.",
-  "pair_id": "pair_20261031_0023",
+  "pair_id": "pair_20261031_0024",
   "quiz": {
     "enabled": true,
     "rounds": 9,
@@ -21,9 +21,9 @@
   },
   "idea_full": {
     "topic": "quiz",
-    "source_topic": "quiz:science",
-    "title": "Can You Beat This 9 Question Quiz?",
-    "hook": "Are you smarter than most people?",
+    "source_topic": "quiz:movies",
+    "title": "Most People Fail This 9 Question Quiz",
+    "hook": "Most adults cannot get all of these right.",
     "density": 4,
     "duration_format": "long",
     "duration_target": 80,
@@ -31,7 +31,7 @@
       74,
       88
     ],
-    "script": "Are you smarter than most people?\nQuestion 1: What is the largest land animal?\nLock in your answer: Three. Two. One.\nThe answer is A: African Elephant.\nQuestion 2: Which continent is the Sahara Desert located on?\nLock in your answer: Three. Two. One.\nThe answer is B: Africa.\nQuestion 3: What gas do plants absorb from the atmosphere?\nLock in your answer: Three. Two. One.\nThe answer is C: Carbon Dioxide.\nIf you got the first three right, like the video right now.\nQuestion 4: Who was the first emperor of Rome?\nLock in your answer: Three. Two. One.\nThe answer is B: Augustus.\nQuestion 5: Which movie features a talking green ogre named Shrek?\nLock in your answer: Three. Two. One.\nThe answer is C: Shrek.\nScore check: comment SHARP if you are still perfect, RUSTY if you already missed one.\nQuestion 6: Which ocean is the largest and deepest on Earth?\nLock in your answer: Three. Two. One.\nThe answer is D: Pacific Ocean.\nQuestion 7: When did the Titanic sink?\nLock in your answer: Three. Two. One.\nThe answer is B: 1912.\nQuestion 8: Who played the character of Indiana Jones?\nLock in your answer: Three. Two. One.\nThe answer is A: Harrison Ford.\nAre you ready for the last question? Don't forget to follow and comment your score to be on the weekly leaderboard of the top performers.\nQuestion 9: How many planets are in our solar system?\nLock in your answer: Three. Two. One.\nThe answer is B: 8.\nComment your score out of 9, and follow for a new quiz every day.",
+    "script": "Most adults cannot get all of these right.\nQuestion 1: What is the largest mammal on Earth?\nLock in your answer: Three. Two. One.\nThe answer is B: Blue Whale.\nQuestion 2: Which country is known as the Land of the Rising Sun?\nLock in your answer: Three. Two. One.\nThe answer is B: Japan.\nQuestion 3: Who was the first woman to fly solo across the Atlantic Ocean?\nLock in your answer: Three. Two. One.\nThe answer is A: Amelia Earhart.\nIf you got the first three right, like the video right now.\nQuestion 4: Which movie features the line 'May the Force be with you'?\nLock in your answer: Three. Two. One.\nThe answer is C: Star Wars.\nQuestion 5: What is the capital city of Australia?\nLock in your answer: Three. Two. One.\nThe answer is C: Canberra.\nScore check: comment SHARP if you are still perfect, RUSTY if you already missed one.\nQuestion 6: Which mountain range is the highest in the world?\nLock in your answer: Three. Two. One.\nThe answer is C: Himalayas.\nQuestion 7: What is the chemical symbol for gold?\nLock in your answer: Three. Two. One.\nThe answer is B: Au.\nAre you ready for the last question?\nDon't forget to follow and comment your score to be on the weekly leaderboard of the top performers.\nQuestion 8: In what year did the Titanic sink?\nLock in your answer: Three. Two. One.\nThe answer is B: 1912.\nQuestion 9: Who directed the film 'Jurassic Park'?\nLock in your answer: Three. Two. One.\nThe answer is C: Steven Spielberg.\nComment your score out of 9, and follow for a new quiz every day.",
     "generator": "quiz:llm",
     "quiz": {
       "enabled": true,
@@ -40,117 +40,117 @@
       "cards": true,
       "items": [
         {
-          "question": "What is the largest land animal?",
+          "question": "What is the largest mammal on Earth?",
           "options": [
-            "African Elephant",
+            "Elephant",
             "Blue Whale",
             "Giraffe",
-            "Rhinoceros"
+            "Polar Bear"
+          ],
+          "answer_index": 1,
+          "explanation": "The blue whale is the largest animal known to have ever lived, reaching up to 30 meters in length.",
+          "category": "general"
+        },
+        {
+          "question": "Which country is known as the Land of the Rising Sun?",
+          "options": [
+            "China",
+            "Japan",
+            "Thailand",
+            "Korea"
+          ],
+          "answer_index": 1,
+          "explanation": "Japan's name in Japanese, 'Nihon' or 'Nippon', literally means 'the sun's origin'.",
+          "category": "general"
+        },
+        {
+          "question": "Who was the first woman to fly solo across the Atlantic Ocean?",
+          "options": [
+            "Amelia Earhart",
+            "Bessie Coleman",
+            "Harriet Quimby",
+            "Jacqueline Cochran"
           ],
           "answer_index": 0,
-          "explanation": "The African elephant is the largest living land animal by mass.",
+          "explanation": "Amelia Earhart completed her historic solo transatlantic flight in 1932.",
           "category": "general"
         },
         {
-          "question": "Which continent is the Sahara Desert located on?",
+          "question": "Which movie features the line 'May the Force be with you'?",
           "options": [
-            "Asia",
-            "Africa",
-            "South America",
-            "Australia"
-          ],
-          "answer_index": 1,
-          "explanation": "The Sahara is the largest hot desert in the world, covering much of North Africa.",
-          "category": "general"
-        },
-        {
-          "question": "What gas do plants absorb from the atmosphere?",
-          "options": [
-            "Oxygen",
-            "Nitrogen",
-            "Carbon Dioxide",
-            "Hydrogen"
+            "Star Trek",
+            "Avatar",
+            "Star Wars",
+            "The Matrix"
           ],
           "answer_index": 2,
-          "explanation": "Plants use carbon dioxide during photosynthesis to create energy.",
+          "explanation": "This iconic phrase is a well-known blessing and farewell in the Star Wars universe.",
           "category": "general"
         },
         {
-          "question": "Who was the first emperor of Rome?",
+          "question": "What is the capital city of Australia?",
           "options": [
-            "Julius Caesar",
-            "Augustus",
-            "Nero",
-            "Constantine"
-          ],
-          "answer_index": 1,
-          "explanation": "Augustus, born Octavian, was the founder of the Roman Principate and considered the first Roman emperor.",
-          "category": "general"
-        },
-        {
-          "question": "Which movie features a talking green ogre named Shrek?",
-          "options": [
-            "Toy Story",
-            "Monsters, Inc.",
-            "Shrek",
-            "Finding Nemo"
+            "Sydney",
+            "Melbourne",
+            "Canberra",
+            "Perth"
           ],
           "answer_index": 2,
-          "explanation": "Shrek is a beloved animated film from DreamWorks Animation, first released in 2001.",
+          "explanation": "Canberra was chosen as the capital in 1908 to resolve the rivalry between Sydney and Melbourne.",
           "category": "general"
         },
         {
-          "question": "Which ocean is the largest and deepest on Earth?",
+          "question": "Which mountain range is the highest in the world?",
           "options": [
-            "Atlantic Ocean",
-            "Indian Ocean",
-            "Arctic Ocean",
-            "Pacific Ocean"
+            "Andes",
+            "Rockies",
+            "Himalayas",
+            "Alps"
           ],
-          "answer_index": 3,
-          "explanation": "The Pacific Ocean covers about one-third of the surface of the Earth.",
+          "answer_index": 2,
+          "explanation": "The Himalayas contain the world's highest peaks, including Mount Everest.",
           "category": "general"
         },
         {
-          "question": "When did the Titanic sink?",
+          "question": "What is the chemical symbol for gold?",
+          "options": [
+            "Ag",
+            "Au",
+            "Fe",
+            "Pb"
+          ],
+          "answer_index": 1,
+          "explanation": "'Au' comes from the Latin word 'aurum', meaning gold.",
+          "category": "general"
+        },
+        {
+          "question": "In what year did the Titanic sink?",
           "options": [
             "1905",
             "1912",
-            "1923",
-            "1931"
+            "1918",
+            "1923"
           ],
           "answer_index": 1,
-          "explanation": "The RMS Titanic sank in the North Atlantic Ocean on April 15, 1912, after striking an iceberg.",
+          "explanation": "The RMS Titanic sank on its maiden voyage on April 15, 1912, after hitting an iceberg.",
           "category": "general"
         },
         {
-          "question": "Who played the character of Indiana Jones?",
+          "question": "Who directed the film 'Jurassic Park'?",
           "options": [
-            "Harrison Ford",
-            "Sean Connery",
-            "Mark Hamill",
-            "Tom Hanks"
+            "George Lucas",
+            "James Cameron",
+            "Steven Spielberg",
+            "Peter Jackson"
           ],
-          "answer_index": 0,
-          "explanation": "Harrison Ford portrayed the iconic archaeologist in all four Indiana Jones films.",
-          "category": "general"
-        },
-        {
-          "question": "How many planets are in our solar system?",
-          "options": [
-            "7",
-            "8",
-            "9",
-            "10"
-          ],
-          "answer_index": 1,
-          "explanation": "The eight planets in our solar system are Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune.",
+          "answer_index": 2,
+          "explanation": "Steven Spielberg directed the groundbreaking dinosaur film 'Jurassic Park' in 1993.",
           "category": "general"
         }
       ]
     },
     "comment": "Score check: how many did you get right out of 9? Comment your score and which question tricked you.",
-    "description": "Quick science quiz: 9 questions, 3 seconds each. Comment your score out of 9! #shorts #quiz #trivia #quiztime #generalknowledge",
+    "description": "Quick movies quiz: 9 questions, 3 seconds each. Comment your score out of 9! #shorts #quiz #trivia #quiztime #generalknowledge",
     "tags": [
       "quiz",
       "trivia",
@@ -158,23 +158,23 @@
       "quiz questions",
       "general knowledge",
       "test your knowledge",
-      "science"
+      "movies"
     ],
-    "pair_id": "pair_20261031_0023",
-    "hook_variant": "A",
+    "pair_id": "pair_20261031_0024",
+    "hook_variant": "B",
     "hook_variants": [
       {
         "variant": "A",
         "family": "question",
-        "hook": "Are you smarter than most people?"
+        "hook": "How high can you score?"
       },
       {
         "variant": "B",
         "family": "identity",
-        "hook": "Only top 1% brains get every single one right."
+        "hook": "Most adults cannot get all of these right."
       }
     ],
-    "id": "20261031-074352-01"
+    "id": "20261031-124545-01"
   },
-  "youtube_id": "fNh2NGFifGQ"
+  "youtube_id": "cy3aSg9ujT4"
 }

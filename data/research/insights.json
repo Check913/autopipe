@@ -1,45 +1,45 @@
 {
-  "generated_at": "2026-10-30T21:14:40",
-  "n_scraped": 36,
-  "n_winners": 10,
-  "max_duration_s": 120.0,
-  "duration_median_s": 79.5,
-  "duration_p25_s": 79.0,
-  "duration_p75_s": 80.0,
+  "generated_at": "2026-10-31T12:45:05",
+  "n_scraped": 214,
+  "n_winners": 7,
+  "max_duration_s": 90.0,
+  "duration_median_s": null,
+  "duration_p25_s": null,
+  "duration_p75_s": null,
   "title_len_median": 69.0,
-  "pct_number_title": 30.0,
+  "pct_number_title": 14.3,
   "pct_question_title": 0.0,
   "hook_families_pct": {
-    "statement": 70.0,
-    "number": 30.0
+    "statement": 85.7,
+    "number": 14.3
   },
   "velocity_median_vpd": null,
   "top_titles": [
     {
-      "title": "Start a diet if you can name 8 chocolates!#chocolate #yummy #quiz #diet",
-      "views": 3002927,
-      "duration": 80
-    },
-    {
-      "title": "Can you name these animals by picture?#animal #nature #quiz #animals",
-      "views": 2436343,
-      "duration": 80
-    },
-    {
       "title": "Can you name the animal by picture?#picture #animals #animal #quiz",
-      "views": 2031466,
-      "duration": 80
-    },
-    {
-      "title": "Can you name the subjects of school in seconds?#school #study #quiz #knowledge",
-      "views": 1588746,
-      "duration": 81
+      "views": 2000000,
+      "duration": null
     },
     {
       "title": "Only girls can name these 10!#girl #logo #quiz #challenge",
-      "views": 972975,
-      "duration": 80
+      "views": 972000,
+      "duration": null
+    },
+    {
+      "title": "If you’re a girl can you name these brands?#quiz #girl #lady #challenge",
+      "views": 939000,
+      "duration": null
+    },
+    {
+      "title": "Guess the soccer players in seconds!#soccer  #player #quiz #challenge",
+      "views": 569000,
+      "duration": null
+    },
+    {
+      "title": "Can healthy people name these fruits?#fruits #healthy #fruit #quiz",
+      "views": 399000,
+      "duration": null
     }
   ],
-  "sources_ok": 2
+  "sources_ok": 13
 }
