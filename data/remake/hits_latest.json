@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-30T23:51:58.450610",
+  "date": "2026-10-31T07:43:27.157618",
   "region": "US",
   "language": "en",
   "keywords": [
@@ -12,16 +12,25 @@
   ],
   "min_views": 500000,
   "max_duration": 90,
-  "total_found": 89,
-  "rejected": 79,
+  "total_found": 86,
+  "rejected": 76,
   "hits": [
     {
-      "id": "q16JX5kT0Ls",
-      "title": "QUIZ Time with Intellipaat | Answer & Win Vouchers | Quiz - 2 | Intellipaat #Shorts",
+      "id": "3OuQ_bzpWZQ",
+      "title": "1-Minute Countdown - Quiz Time - Suspense Music ⏱️",
+      "channel": "SonarPlay",
+      "views": 38274,
+      "duration": 61.0,
+      "url": "https://www.youtube.com/watch?v=3OuQ_bzpWZQ",
+      "query": "ytsearch10:quiz time #shorts"
+    },
+    {
+      "id": "DRWiXfVGs7Y",
+      "title": "QUIZ Time with Intellipaat | Answer & Win Vouchers | Quiz - 1 | Intellipaat #Shorts",
       "channel": "Intellipaat",
-      "views": 1704,
-      "duration": 31.0,
-      "url": "https://www.youtube.com/watch?v=q16JX5kT0Ls",
+      "views": 1412,
+      "duration": 55.0,
+      "url": "https://www.youtube.com/watch?v=DRWiXfVGs7Y",
       "query": "ytsearch10:quiz time #shorts"
     },
     {
@@ -34,13 +43,13 @@
       "query": "ytsearch10:test your knowledge shorts"
     },
     {
-      "id": "uQ81h8Mjwcw",
-      "title": "General Knowledge Quiz – Human Body Quiz",
-      "channel": "GH Quiz ",
-      "views": 72,
-      "duration": 90.0,
-      "url": "https://www.youtube.com/watch?v=uQ81h8Mjwcw",
-      "query": "ytsearch10:general knowledge #shorts"
+      "id": "aZbrvMznLE4",
+      "title": "Quiz / Trivia - Test your knowledge #shorts #quiz #trivia #challenge",
+      "channel": "DY-VideoLand",
+      "views": 869,
+      "duration": 71.0,
+      "url": "https://www.youtube.com/watch?v=aZbrvMznLE4",
+      "query": "ytsearch10:test your knowledge shorts"
     },
     {
       "id": "uaWbJExYEbE",
@@ -49,15 +58,6 @@
       "views": 60,
       "duration": 31.0,
       "url": "https://www.youtube.com/watch?v=uaWbJExYEbE",
-      "query": "ytsearch10:test your knowledge #shorts"
-    },
-    {
-      "id": "5Ia2nuHj-N4",
-      "title": "Test Your Knowledge!! Short Quiz 1",
-      "channel": "Idea Voyager",
-      "views": 40,
-      "duration": 77.0,
-      "url": "https://www.youtube.com/watch?v=5Ia2nuHj-N4",
       "query": "ytsearch10:test your knowledge shorts"
     }
   ]

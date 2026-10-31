@@ -10,6 +10,7 @@
         "Why Is Space So Quiet?",
         "Why Is Space So Quiet?",
         "Why Is Space So Quiet?",
+        "Why Is Space So Quiet?",
         "Why Is Space So Quiet?"
       ]
     },
@@ -20,6 +21,7 @@
       "pair_id": "pair_20261027_0004",
       "source_topic": "How Decision Making is Actually Science: Game Theory Explained",
       "alt_titles": [
+        "You Won't Believe How Decision Making is Did This",
         "You Won't Believe How Decision Making is Did This",
         "You Won't Believe How Decision Making is Did This",
         "You Won't Believe How Decision Making is Did This",
@@ -36,6 +38,7 @@
         "Kolkata's Bridge Has NO Nuts OR Bolts?",
         "Kolkata's Bridge Has NO Nuts OR Bolts?",
         "Kolkata's Bridge Has NO Nuts OR Bolts?",
+        "Kolkata's Bridge Has NO Nuts OR Bolts?",
         "Kolkata's Bridge Has NO Nuts OR Bolts?"
       ]
     },
@@ -46,6 +49,7 @@
       "pair_id": "pair_20261028_0010",
       "source_topic": "The Scientific Method",
       "alt_titles": [
+        "This Scientific Method Secret Changes Everything",
         "This Scientific Method Secret Changes Everything",
         "This Scientific Method Secret Changes Everything",
         "This Scientific Method Secret Changes Everything",
@@ -62,6 +66,7 @@
         "Rome's Catacombs Hid YOUR Ancient Faith",
         "Rome's Catacombs Hid YOUR Ancient Faith",
         "Rome's Catacombs Hid YOUR Ancient Faith",
+        "Rome's Catacombs Hid YOUR Ancient Faith",
         "Rome's Catacombs Hid YOUR Ancient Faith"
       ]
     },
@@ -72,6 +77,7 @@
       "pair_id": "pair_20261029_0016",
       "source_topic": "Zombie Biology Explained | The Science of Zombism",
       "alt_titles": [
+        "How Zombie Biology Explained Took Over So Fast",
         "How Zombie Biology Explained Took Over So Fast",
         "How Zombie Biology Explained Took Over So Fast",
         "How Zombie Biology Explained Took Over So Fast",
@@ -351,6 +357,7 @@
       "video_id": "2NL5J9xXNQU",
       "source": "runtime",
       "alt_titles": [
+        "ALL OF PHYSICS explained in 14 Minutes",
         "ALL OF PHYSICS explained in 14 Minutes"
       ]
     },
@@ -378,8 +385,37 @@
       ],
       "published_at": "2026-10-30T23:56:02.670737+00:00",
       "video_id": "gEtui7O33o0",
+      "source": "runtime",
+      "alt_titles": [
+        "quiz:general"
+      ]
+    },
+    "fNh2NGFifGQ": {
+      "idea_id": "20261031-074352-01",
+      "title": "Can You Beat This 9 Question Quiz?",
+      "hook": "Are you smarter than most people?",
+      "hook_variant": "A",
+      "pair_id": "pair_20261031_0023",
+      "duration_format": "long",
+      "density": 4,
+      "duration_target": 80,
+      "generator": "quiz:llm",
+      "source_topic": "quiz:science",
+      "source_short_id": null,
+      "originality_max_jaccard": null,
+      "tags": [
+        "quiz",
+        "trivia",
+        "quiz time",
+        "quiz questions",
+        "general knowledge",
+        "test your knowledge",
+        "science"
+      ],
+      "published_at": "2026-10-31T07:47:11.990282+00:00",
+      "video_id": "fNh2NGFifGQ",
       "source": "runtime"
     }
   },
-  "updated": "2026-10-30T23:56:02"
+  "updated": "2026-10-31T07:47:11"
 }
