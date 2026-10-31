@@ -1,25 +1,16 @@
 {
-  "fetched": "2026-10-31T15:50:32",
+  "fetched": "2026-10-31T16:15:17",
   "status": "learned",
   "min_samples": 3,
-  "n_samples": 3,
-  "patterns": [
-    {
-      "dimension": "hook_variant",
-      "value": "B",
-      "n": 2,
-      "mean_engagement": 22.58,
-      "relative_delta": -0.273,
-      "label": "hook A/B=B -> -27% d'engagement"
-    }
-  ],
+  "n_samples": 4,
+  "patterns": [],
   "stats": {
-    "n_samples": 3,
-    "mean_engagement": 31.04,
+    "n_samples": 4,
+    "mean_engagement": 27.3,
     "engagement_min": 0.0,
-    "engagement_max": 47.96
+    "engagement_max": 58.43
   },
-  "lessons": 15,
+  "lessons": 16,
   "kill_switch": {
     "banned_families": {},
     "niche_alert": false,
@@ -32,7 +23,7 @@
   },
   "baseline_delta": {
     "status": "ok",
-    "n_after": 3,
+    "n_after": 4,
     "target": 10,
     "baseline": {
       "n": 10,
@@ -41,13 +32,13 @@
       "by_family": {}
     },
     "current": {
-      "n": 3,
-      "engagement_mean": 31.04,
+      "n": 4,
+      "engagement_mean": 27.3,
       "avg_view_pct_mean": null,
       "by_family": {}
     },
     "delta": {
-      "engagement_mean": 9.82,
+      "engagement_mean": 6.08,
       "avg_view_pct_mean": null
     }
   },

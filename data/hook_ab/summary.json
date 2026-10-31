@@ -1,16 +1,16 @@
 {
   "status": "ok",
-  "pairs": 24,
+  "pairs": 25,
   "joined": 0,
   "variants": {
     "A": {
-      "assigned": 12,
+      "assigned": 13,
       "measured": 0,
       "mean_engagement": null,
       "mean_views": null,
       "families": {
         "statement": 7,
-        "question": 2,
+        "question": 3,
         "number": 3
       }
     },
@@ -363,7 +363,21 @@
       "video_id": "cy3aSg9ujT4",
       "engagement": null,
       "views": null
+    },
+    {
+      "ts": "2026-10-31T15:51:21",
+      "pair_id": "pair_20261031_0025",
+      "topic": "quiz:geography",
+      "variant": "A",
+      "hook": "Are you smarter than most people?",
+      "family": "question",
+      "family_other": "identity",
+      "hook_a": "Are you smarter than most people?",
+      "hook_b": "Most adults cannot get all of these right.",
+      "video_id": "uBK8AeCn1LM",
+      "engagement": null,
+      "views": null
     }
   ],
-  "fetched": "2026-10-31T15:50:32"
+  "fetched": "2026-10-31T16:15:17"
 }

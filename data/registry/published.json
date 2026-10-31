@@ -13,6 +13,7 @@
         "Why Is Space So Quiet?",
         "Why Is Space So Quiet?",
         "Why Is Space So Quiet?",
+        "Why Is Space So Quiet?",
         "Why Is Space So Quiet?"
       ]
     },
@@ -23,6 +24,7 @@
       "pair_id": "pair_20261027_0004",
       "source_topic": "How Decision Making is Actually Science: Game Theory Explained",
       "alt_titles": [
+        "You Won't Believe How Decision Making is Did This",
         "You Won't Believe How Decision Making is Did This",
         "You Won't Believe How Decision Making is Did This",
         "You Won't Believe How Decision Making is Did This",
@@ -45,6 +47,7 @@
         "Kolkata's Bridge Has NO Nuts OR Bolts?",
         "Kolkata's Bridge Has NO Nuts OR Bolts?",
         "Kolkata's Bridge Has NO Nuts OR Bolts?",
+        "Kolkata's Bridge Has NO Nuts OR Bolts?",
         "Kolkata's Bridge Has NO Nuts OR Bolts?"
       ]
     },
@@ -55,6 +58,7 @@
       "pair_id": "pair_20261028_0010",
       "source_topic": "The Scientific Method",
       "alt_titles": [
+        "This Scientific Method Secret Changes Everything",
         "This Scientific Method Secret Changes Everything",
         "This Scientific Method Secret Changes Everything",
         "This Scientific Method Secret Changes Everything",
@@ -77,6 +81,7 @@
         "Rome's Catacombs Hid YOUR Ancient Faith",
         "Rome's Catacombs Hid YOUR Ancient Faith",
         "Rome's Catacombs Hid YOUR Ancient Faith",
+        "Rome's Catacombs Hid YOUR Ancient Faith",
         "Rome's Catacombs Hid YOUR Ancient Faith"
       ]
     },
@@ -87,6 +92,7 @@
       "pair_id": "pair_20261029_0016",
       "source_topic": "Zombie Biology Explained | The Science of Zombism",
       "alt_titles": [
+        "How Zombie Biology Explained Took Over So Fast",
         "How Zombie Biology Explained Took Over So Fast",
         "How Zombie Biology Explained Took Over So Fast",
         "How Zombie Biology Explained Took Over So Fast",
@@ -372,6 +378,7 @@
         "ALL OF PHYSICS explained in 14 Minutes",
         "ALL OF PHYSICS explained in 14 Minutes",
         "ALL OF PHYSICS explained in 14 Minutes",
+        "ALL OF PHYSICS explained in 14 Minutes",
         "ALL OF PHYSICS explained in 14 Minutes"
       ]
     },
@@ -401,6 +408,7 @@
       "video_id": "gEtui7O33o0",
       "source": "runtime",
       "alt_titles": [
+        "quiz:general",
         "quiz:general",
         "quiz:general",
         "quiz:general"
@@ -433,6 +441,7 @@
       "source": "runtime",
       "alt_titles": [
         "quiz:science",
+        "quiz:science",
         "quiz:science"
       ]
     },
@@ -462,6 +471,7 @@
       "video_id": "cy3aSg9ujT4",
       "source": "runtime",
       "alt_titles": [
+        "quiz:movies",
         "quiz:movies"
       ]
     },
@@ -494,8 +504,11 @@
       ],
       "published_at": "2026-10-31T15:53:55.049809+00:00",
       "video_id": "uBK8AeCn1LM",
-      "source": "runtime"
+      "source": "runtime",
+      "alt_titles": [
+        "quiz:geography"
+      ]
     }
   },
-  "updated": "2026-10-31T15:53:55"
+  "updated": "2026-10-31T16:15:17"
 }
