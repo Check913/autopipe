@@ -1,5 +1,5 @@
 {
-  "seq": 6,
+  "seq": 7,
   "used": [
     "whatisthecapitalcityofcanada",
     "whichgasdoplantsprimarilyabsorbfromtheatmosphereforphotosynthesis",
@@ -45,18 +45,18 @@
     "whichmetalisliquidatroomtemperature",
     "whichfilmwonthefirstbestanimatedfeatureoscar",
     "whichletterismissingfromallusstatenames",
-    "howlongcanagiraffestonguebe"
+    "howlongcanagiraffestonguebe",
+    "whatisthelargestorganinthehumanbody",
+    "whichcountryishometothegreatbarrierreef",
+    "whatplanetisknownastheredplanet",
+    "whichclassicfilmfeaturesthelinehereslookingatyoukid",
+    "mounteverestislocatedinwhichmountainrange",
+    "inwhatyeardidtheberlinwallfall",
+    "whocomposedthemusicforthestarwarsfilmseries",
+    "howmanydaysareinaleapyear",
+    "whichcountryhasthemosttimezones"
   ],
   "generated": [
-    "whowasthefirstromanemperor",
-    "whichmoviefeaturesacharacternamedfrodobaggins",
-    "whichplanetisknownastheredplanet",
-    "whatisthelongestriverintheworldbydischargevolume",
-    "inwhichyeardidthetitanicsink",
-    "whodirectedtheiconicfilmpulpfiction",
-    "whichplanetiscommonlyknownastheredplanet",
-    "whichclassicfilmfeaturestheiconiclinehereslookingatyoukid",
-    "howmanycontinentsaretraditionallyrecognizedonearth",
     "whatgasdoplantsabsorbfromtheatmosphereforphotosynthesis",
     "inwhichyeardidthetitanicsinkonitsmaidenvoyage",
     "whodirectedthecriticallyacclaimed1994filmpulpfiction",
@@ -71,7 +71,16 @@
     "whichmetalisliquidatroomtemperature",
     "whichfilmwonthefirstbestanimatedfeatureoscar",
     "whichletterismissingfromallusstatenames",
-    "howlongcanagiraffestonguebe"
+    "howlongcanagiraffestonguebe",
+    "whatisthelargestorganinthehumanbody",
+    "whichcountryishometothegreatbarrierreef",
+    "whatplanetisknownastheredplanet",
+    "whichclassicfilmfeaturesthelinehereslookingatyoukid",
+    "mounteverestislocatedinwhichmountainrange",
+    "inwhatyeardidtheberlinwallfall",
+    "whocomposedthemusicforthestarwarsfilmseries",
+    "howmanydaysareinaleapyear",
+    "whichcountryhasthemosttimezones"
   ],
   "videos": [
     {
@@ -103,6 +112,12 @@
       "idea_id": "20261031-175926-01",
       "title": "Test Yourself: 9 Questions, No Cheating",
       "ts": "2026-10-31T18:01:38Z"
+    },
+    {
+      "video_id": "kzoLfpuh6lY",
+      "idea_id": "20261031-181041-01",
+      "title": "This Quiz Looks Easy Until Question 4",
+      "ts": "2026-10-31T18:14:47Z"
     }
   ]
 }

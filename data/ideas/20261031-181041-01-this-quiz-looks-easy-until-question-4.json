@@ -1,0 +1,174 @@
+{
+  "topic": "quiz",
+  "source_topic": "quiz:history",
+  "title": "This Quiz Looks Easy Until Question 4",
+  "hook": "If you miss three, you are officially average.",
+  "density": 4,
+  "duration_format": "long",
+  "duration_target": 80,
+  "duration_range": [
+    74,
+    88
+  ],
+  "script": "If you miss three, you are officially average.\nQuestion 1: What is the largest organ in the human body?\nLock in your answer: Three. Two. One.\nThe answer is C: Skin.\nQuestion 2: Which country is home to the Great Barrier Reef?\nLock in your answer: Three. Two. One.\nThe answer is B: Australia.\nQuestion 3: What planet is known as the 'Red Planet'?\nLock in your answer: Three. Two. One.\nThe answer is C: Mars.\nIf you got the first three right, like the video right now.\nQuestion 4: Which classic film features the line, 'Here's looking at you, kid'?\nLock in your answer: Three. Two. One.\nThe answer is B: Casablanca.\nQuestion 5: Mount Everest is located in which mountain range?\nLock in your answer: Three. Two. One.\nThe answer is C: Himalayas.\nScore check: comment SHARP if you are still perfect, RUSTY if you already missed one.\nQuestion 6: In what year did the Berlin Wall fall?\nLock in your answer: Three. Two. One.\nThe answer is B: 1989.\nQuestion 7: Who composed the music for the 'Star Wars' film series?\nLock in your answer: Three. Two. One.\nThe answer is C: John Williams.\nAre you ready for the last question?\nDon't forget to follow and comment your score to be on the weekly leaderboard of the top performers.\nQuestion 8: How many days are in a leap year?\nLock in your answer: Three. Two. One.\nThe answer is B: 366.\nQuestion 9: Which country has the most time zones?\nLock in your answer: Three. Two. One.\nThe answer is C: France.\nBonus: double or nothing - keep your score in your head and beat it on the next quiz.\nComment your score out of 9, and follow for a new quiz every day.",
+  "generator": "quiz:llm",
+  "quiz": {
+    "enabled": true,
+    "rounds": 9,
+    "countdown_s": 3,
+    "cards": true,
+    "items": [
+      {
+        "question": "What is the largest organ in the human body?",
+        "options": [
+          "Heart",
+          "Brain",
+          "Skin",
+          "Liver"
+        ],
+        "answer_index": 2,
+        "explanation": "The skin is the body's largest organ, protecting us from the outside world.",
+        "category": "general"
+      },
+      {
+        "question": "Which country is home to the Great Barrier Reef?",
+        "options": [
+          "Brazil",
+          "Australia",
+          "Mexico",
+          "Egypt"
+        ],
+        "answer_index": 1,
+        "explanation": "The Great Barrier Reef is the world's largest coral reef system, located off the coast of Queensland, Australia.",
+        "category": "general"
+      },
+      {
+        "question": "What planet is known as the 'Red Planet'?",
+        "options": [
+          "Venus",
+          "Jupiter",
+          "Mars",
+          "Saturn"
+        ],
+        "answer_index": 2,
+        "explanation": "Mars gets its reddish hue from iron oxide, commonly known as rust, on its surface.",
+        "category": "general"
+      },
+      {
+        "question": "Which classic film features the line, 'Here's looking at you, kid'?",
+        "options": [
+          "Gone with the Wind",
+          "Casablanca",
+          "The Maltese Falcon",
+          "Citizen Kane"
+        ],
+        "answer_index": 1,
+        "explanation": "This iconic line is spoken by Humphrey Bogart's character, Rick Blaine, in the romantic drama 'Casablanca'.",
+        "category": "general"
+      },
+      {
+        "question": "Mount Everest is located in which mountain range?",
+        "options": [
+          "Andes",
+          "Rocky Mountains",
+          "Himalayas",
+          "Alps"
+        ],
+        "answer_index": 2,
+        "explanation": "Mount Everest, the world's highest peak, is part of the Himalayan mountain range between Nepal and China.",
+        "category": "general"
+      },
+      {
+        "question": "In what year did the Berlin Wall fall?",
+        "options": [
+          "1985",
+          "1989",
+          "1991",
+          "1993"
+        ],
+        "answer_index": 1,
+        "explanation": "The fall of the Berlin Wall on November 9, 1989, marked a pivotal moment in world history, leading to German reunification.",
+        "category": "general"
+      },
+      {
+        "question": "Who composed the music for the 'Star Wars' film series?",
+        "options": [
+          "Hans Zimmer",
+          "Ennio Morricone",
+          "John Williams",
+          "Danny Elfman"
+        ],
+        "answer_index": 2,
+        "explanation": "John Williams created the iconic scores for the 'Star Wars' saga and many other famous films.",
+        "category": "general"
+      },
+      {
+        "question": "How many days are in a leap year?",
+        "options": [
+          "365",
+          "366",
+          "364",
+          "367"
+        ],
+        "answer_index": 1,
+        "explanation": "A leap year occurs every four years, adding an extra day (February 29th) to keep our calendar aligned with Earth's orbit.",
+        "category": "general"
+      },
+      {
+        "question": "Which country has the most time zones?",
+        "options": [
+          "Russia",
+          "USA",
+          "France",
+          "China"
+        ],
+        "answer_index": 2,
+        "explanation": "France has twelve zones counting its territories.",
+        "category": "geography"
+      }
+    ]
+  },
+  "comment": "Score check: how many did you get right out of 9? Comment your score and which question tricked you.",
+  "description": "Quick history quiz: 9 questions, 3 seconds each.\nScore check: how many did you get out of 9? 0 is a valid answer.\nPlay along, beat your friends, and come back tomorrow: a new quiz every day.\n\n#quiz #trivia #quiztime #generalknowledge #shorts",
+  "tags": [
+    "quiz",
+    "trivia",
+    "quiz time",
+    "quiz questions",
+    "general knowledge",
+    "test your knowledge",
+    "history quiz",
+    "history trivia",
+    "quiz challenge",
+    "guess the answer",
+    "brain test",
+    "iq test",
+    "fun quiz",
+    "trivia questions and answers",
+    "general knowledge quiz",
+    "pub quiz questions",
+    "quiz for adults",
+    "hard quiz",
+    "are you smart",
+    "only 1 percent",
+    "test your brain",
+    "shorts quiz",
+    "youtube shorts",
+    "shorts"
+  ],
+  "pair_id": "pair_20261031_0028",
+  "hook_variant": "B",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "family": "question",
+      "hook": "Are you smarter than most people?"
+    },
+    {
+      "variant": "B",
+      "family": "identity",
+      "hook": "If you miss three, you are officially average."
+    }
+  ],
+  "id": "20261031-181041-01"
+}

@@ -1,16 +1,41 @@
 {
-  "fetched": "2026-10-31T17:58:43",
+  "fetched": "2026-10-31T18:10:02",
   "status": "learned",
   "min_samples": 3,
-  "n_samples": 4,
-  "patterns": [],
+  "n_samples": 5,
+  "patterns": [
+    {
+      "dimension": "hook_variant",
+      "value": "B",
+      "n": 2,
+      "mean_engagement": 25.84,
+      "relative_delta": -0.273,
+      "label": "hook A/B=B -> -27% d'engagement"
+    },
+    {
+      "dimension": "hook_type",
+      "value": "question",
+      "n": 3,
+      "mean_engagement": 42.0,
+      "relative_delta": 0.182,
+      "label": "hook type=question -> +18% d'engagement"
+    },
+    {
+      "dimension": "hook_variant",
+      "value": "A",
+      "n": 3,
+      "mean_engagement": 42.0,
+      "relative_delta": 0.182,
+      "label": "hook A/B=A -> +18% d'engagement"
+    }
+  ],
   "stats": {
-    "n_samples": 4,
-    "mean_engagement": 27.3,
+    "n_samples": 5,
+    "mean_engagement": 35.54,
     "engagement_min": 0.0,
-    "engagement_max": 58.43
+    "engagement_max": 67.16
   },
-  "lessons": 16,
+  "lessons": 17,
   "kill_switch": {
     "banned_families": {},
     "niche_alert": false,
@@ -23,7 +48,7 @@
   },
   "baseline_delta": {
     "status": "ok",
-    "n_after": 4,
+    "n_after": 5,
     "target": 10,
     "baseline": {
       "n": 10,
@@ -32,13 +57,13 @@
       "by_family": {}
     },
     "current": {
-      "n": 4,
-      "engagement_mean": 27.3,
+      "n": 5,
+      "engagement_mean": 35.54,
       "avg_view_pct_mean": null,
       "by_family": {}
     },
     "delta": {
-      "engagement_mean": 6.08,
+      "engagement_mean": 14.32,
       "avg_view_pct_mean": null
     }
   },
