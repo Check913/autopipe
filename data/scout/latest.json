@@ -1,818 +1,1094 @@
 {
-  "date": "2026-10-30T00:39:41.255221",
+  "date": "2026-10-31T07:43:05.091202",
   "region": "US",
   "language": "en",
   "trending": [],
   "keywords": {
-    "amazing facts": [
+    "quiz": [
       {
-        "id": "9spifqMjZCE",
-        "title": "Amazing Facts TV",
-        "channel": "AmazingFacts",
-        "views": null,
-        "duration": null,
-        "url": "https://www.youtube.com/watch?v=9spifqMjZCE",
-        "source": "keyword:amazing facts"
+        "id": "N-HgoImPsmY",
+        "title": "Can YOU Score Over 35 On This General Knowledge Trivia Quiz?",
+        "channel": "The Pub Quiz",
+        "views": 3366,
+        "duration": 1185,
+        "url": "https://www.youtube.com/watch?v=N-HgoImPsmY",
+        "source": "keyword:quiz"
       },
       {
-        "id": "xTlj4dN3KE0",
-        "title": "When You Cry in Secret, God Is Listening",
-        "channel": "Amazing Facts Oceania",
-        "views": 86734,
-        "duration": 2699,
-        "url": "https://www.youtube.com/watch?v=xTlj4dN3KE0",
-        "source": "keyword:amazing facts"
+        "id": "7yGKqmChJEg",
+        "title": "The Ultimate Pub Quiz #11 🧠 | 50 Questions, 5 Rounds – Can You Score 40/50?",
+        "channel": "A-Z Quiz",
+        "views": 5446,
+        "duration": 1012,
+        "url": "https://www.youtube.com/watch?v=7yGKqmChJEg",
+        "source": "keyword:quiz"
       },
       {
-        "id": "4uA1l-yTk7I",
-        "title": "Jesus Warned: \"As It Was in the Days of Noah\" (It’s Happening NOW)",
-        "channel": "Amazing Facts Oceania",
-        "views": 235458,
-        "duration": 3706,
-        "url": "https://www.youtube.com/watch?v=4uA1l-yTk7I",
-        "source": "keyword:amazing facts"
+        "id": "Q1jWPbE3cmI",
+        "title": "Guess the Song Jeopardy Style | Quiz #140",
+        "channel": "Madmartigan's Music Trivia",
+        "views": 7214,
+        "duration": 625,
+        "url": "https://www.youtube.com/watch?v=Q1jWPbE3cmI",
+        "source": "keyword:quiz"
       },
       {
-        "id": "0kU9K3G-Fg4",
-        "title": "If You Fear God, You Will Fear Nothing Else",
-        "channel": "Amazing Facts Oceania",
-        "views": 26623,
-        "duration": 2660,
-        "url": "https://www.youtube.com/watch?v=0kU9K3G-Fg4",
-        "source": "keyword:amazing facts"
+        "id": "shXUfZ6bC4w",
+        "title": "Are You SMARTER Than a High School Student? 🎓 General Knowledge Quiz 🤔",
+        "channel": "Fun Quiz Questions",
+        "views": 5267959,
+        "duration": 867,
+        "url": "https://www.youtube.com/watch?v=shXUfZ6bC4w",
+        "source": "keyword:quiz"
       },
       {
-        "id": "b8p2v0uXAFk",
-        "title": "Bible Answers Live | Doug Batchelor & Jëan Ross | Ep. 26 (11/16/2025)",
-        "channel": "AmazingFacts",
-        "views": 4472,
-        "duration": 3544,
-        "url": "https://www.youtube.com/watch?v=b8p2v0uXAFk",
-        "source": "keyword:amazing facts"
+        "id": "Q4RxB967epA",
+        "title": "100 Questions EVERYONE Should Know 🧠❌ 99% Will Fail This General Knowledge Quiz!",
+        "channel": "Quiz Blitz",
+        "views": 116049,
+        "duration": 1764,
+        "url": "https://www.youtube.com/watch?v=Q4RxB967epA",
+        "source": "keyword:quiz"
       },
       {
-        "id": "p2eKxXHNOCU",
-        "title": "The End-Time Prophecy Millions Of Christians Misunderstand!",
-        "channel": "Amazing Facts Oceania",
-        "views": 75870,
-        "duration": 2698,
-        "url": "https://www.youtube.com/watch?v=p2eKxXHNOCU",
-        "source": "keyword:amazing facts"
+        "id": "vl6OoyT7KdI",
+        "title": "100 People vs General Knowledge Quiz",
+        "channel": "Extra Medium Stuff",
+        "views": 474392,
+        "duration": 2600,
+        "url": "https://www.youtube.com/watch?v=vl6OoyT7KdI",
+        "source": "keyword:quiz"
       },
       {
-        "id": "n2lLDZXxs9E",
-        "title": "Walking with God in a wicked world | Doug Batchelor",
-        "channel": "AmazingFacts",
-        "views": 365197,
-        "duration": 2805,
-        "url": "https://www.youtube.com/watch?v=n2lLDZXxs9E",
-        "source": "keyword:amazing facts"
+        "id": "U9TgiwFsHt4",
+        "title": "Guess the 2010-2020 Movies by the 4 Pictures",
+        "channel": "The Quiz Channel",
+        "views": 17275,
+        "duration": 1368,
+        "url": "https://www.youtube.com/watch?v=U9TgiwFsHt4",
+        "source": "keyword:quiz"
       },
       {
-        "id": "mck2kNMvLvs",
-        "title": "Armageddon and the Final Events of Bible Prophecy | Doug Batchelor (Amazing Facts)",
-        "channel": "AmazingFacts",
-        "views": 3112881,
-        "duration": 3816,
-        "url": "https://www.youtube.com/watch?v=mck2kNMvLvs",
-        "source": "keyword:amazing facts"
+        "id": "EDEGpZUFEGE",
+        "title": "General Knowledge Trivia Quiz #10 🧠 | 100 Questions EVERYONE Should Know",
+        "channel": "Fun Quiz Questions",
+        "views": 195737,
+        "duration": 1587,
+        "url": "https://www.youtube.com/watch?v=EDEGpZUFEGE",
+        "source": "keyword:quiz"
       },
       {
-        "id": "ZXgpvdvX77U",
-        "title": "Amazing Facts TV (AFTV) Live Stream",
-        "channel": "Amazing Facts TV AFTV",
-        "views": 50495,
-        "duration": 36992,
-        "url": "https://www.youtube.com/watch?v=ZXgpvdvX77U",
-        "source": "keyword:amazing facts"
+        "id": "m6EmergTOqo",
+        "title": "15 Tricky Riddles That Will Test Your IQ🧠 | Only Geniuses Can Solve All 15!🔥",
+        "channel": "M-Quiz",
+        "views": 1065038,
+        "duration": 529,
+        "url": "https://www.youtube.com/watch?v=m6EmergTOqo",
+        "source": "keyword:quiz"
       },
       {
-        "id": "LkaxL65vlb8",
-        "title": "Amazing Facts of Faith - The Catacombs with Doug Batchelor",
-        "channel": "AmazingFacts",
-        "views": 28635,
-        "duration": 224,
-        "url": "https://www.youtube.com/watch?v=LkaxL65vlb8",
-        "source": "keyword:amazing facts"
+        "id": "HcuhU-4P8J4",
+        "title": "50 Questions Everyone Should Know! | General Knowledge Trivia Quiz 🧠🔥",
+        "channel": "Quiz Blitz",
+        "views": 1604160,
+        "duration": 902,
+        "url": "https://www.youtube.com/watch?v=HcuhU-4P8J4",
+        "source": "keyword:quiz"
       }
     ],
-    "true story": [
+    "trivia": [
       {
-        "id": "im4Ryx4d8N4",
-        "title": "HER TRUE STORY FROM ATLANTA My Daughter Said: \"Mom, You Don't Need to Come. Kevin Thinks It's Bette…",
-        "channel": "Spirit Tales",
-        "views": 382322,
-        "duration": 1752,
-        "url": "https://www.youtube.com/watch?v=im4Ryx4d8N4",
-        "source": "keyword:true story"
+        "id": "6za9PGdSsJY",
+        "title": "OG Geniuses vs. New Geniuses",
+        "channel": "BradyYourTutor",
+        "views": 284693,
+        "duration": 1894,
+        "url": "https://www.youtube.com/watch?v=6za9PGdSsJY",
+        "source": "keyword:trivia"
       },
       {
-        "id": "PyhoEHjUQiw",
-        "title": "🎬This is the most shocking TRUE STORY you’ve ever seen! 😱 Watch and see for yourself",
-        "channel": "Kinopower",
-        "views": 722505,
-        "duration": 5975,
-        "url": "https://www.youtube.com/watch?v=PyhoEHjUQiw",
-        "source": "keyword:true story"
+        "id": "7yGKqmChJEg",
+        "title": "The Ultimate Pub Quiz #11 🧠 | 50 Questions, 5 Rounds – Can You Score 40/50?",
+        "channel": "A-Z Quiz",
+        "views": 5446,
+        "duration": 1012,
+        "url": "https://www.youtube.com/watch?v=7yGKqmChJEg",
+        "source": "keyword:trivia"
       },
       {
-        "id": "1A-gdQK47gs",
-        "title": "His True Story | They Forgot Him For 10 Years So He Vanished With Millions And...",
-        "channel": "DAD'S SWEET REVENGE",
-        "views": 378190,
-        "duration": 1988,
-        "url": "https://www.youtube.com/watch?v=1A-gdQK47gs",
-        "source": "keyword:true story"
+        "id": "3ShqXh5tI1s",
+        "title": "General Knowledge Trivia Quiz! 🧠 | 100 Questions Everyone Should Know – Do You?",
+        "channel": "Fun Quiz Questions",
+        "views": 5011276,
+        "duration": 1425,
+        "url": "https://www.youtube.com/watch?v=3ShqXh5tI1s",
+        "source": "keyword:trivia"
       },
       {
-        "id": "Bwanfh9wBWI",
-        "title": "A TRUE STORY That Will Shake You to Your Core | Based On True Story 2026 | Drama Thriller Movie 2026",
-        "channel": "Best Drama TV",
-        "views": 484440,
-        "duration": 5029,
-        "url": "https://www.youtube.com/watch?v=Bwanfh9wBWI",
-        "source": "keyword:true story"
+        "id": "yLgS5aA_SCU",
+        "title": "Take a Brain Break With This Easy Quiz!",
+        "channel": "Detormentis",
+        "views": 7862,
+        "duration": 1542,
+        "url": "https://www.youtube.com/watch?v=yLgS5aA_SCU",
+        "source": "keyword:trivia"
       },
       {
-        "id": "SI2-FfzgfhI",
-        "title": "Powerful drama based on a true story! | Where Is Good? | Full movie",
-        "channel": "Filmaxia",
-        "views": 315018,
-        "duration": 7757,
-        "url": "https://www.youtube.com/watch?v=SI2-FfzgfhI",
-        "source": "keyword:true story"
+        "id": "vl6OoyT7KdI",
+        "title": "100 People vs General Knowledge Quiz",
+        "channel": "Extra Medium Stuff",
+        "views": 474392,
+        "duration": 2600,
+        "url": "https://www.youtube.com/watch?v=vl6OoyT7KdI",
+        "source": "keyword:trivia"
       },
       {
-        "id": "6FEvblq6jzA",
-        "title": "Ariana Grande - true story (lyric visualizer)",
-        "channel": "Ariana Grande",
-        "views": 13683646,
-        "duration": 164,
-        "url": "https://www.youtube.com/watch?v=6FEvblq6jzA",
-        "source": "keyword:true story"
+        "id": "9gcPxBNrhLc",
+        "title": "8 Round Pub Quiz | 100 General Knowledge Trivia Questions",
+        "channel": "Trivia Quiz Rush | General Knowledge Quizzes",
+        "views": 9018,
+        "duration": 2075,
+        "url": "https://www.youtube.com/watch?v=9gcPxBNrhLc",
+        "source": "keyword:trivia"
       },
       {
-        "id": "aCGeMUrHZaQ",
-        "title": "Based on a True Story, A Poor Farmer's Family Struggled to Survive Against All Odds!! | English",
-        "channel": "Golden Heights",
-        "views": 1493,
-        "duration": 6246,
-        "url": "https://www.youtube.com/watch?v=aCGeMUrHZaQ",
-        "source": "keyword:true story"
+        "id": "V-SctcyZ17Y",
+        "title": "20 People vs General Knowledge Quiz",
+        "channel": "Extra Medium Stuff",
+        "views": 567991,
+        "duration": 2008,
+        "url": "https://www.youtube.com/watch?v=V-SctcyZ17Y",
+        "source": "keyword:trivia"
       },
       {
-        "id": "9mTVKbk9-RQ",
-        "title": "This Harrowing True Story Shocked the World! Mockingbird Don't Sing | Drama",
-        "channel": "FilmVaultX",
-        "views": 7605,
-        "duration": 5619,
-        "url": "https://www.youtube.com/watch?v=9mTVKbk9-RQ",
-        "source": "keyword:true story"
+        "id": "788VZLBHu_I",
+        "title": "The Ultimate General Knowledge Trivia Quiz 🧠 One Hour of Trivia (160 Questions)",
+        "channel": "The Quiz Channel",
+        "views": 19378,
+        "duration": 3719,
+        "url": "https://www.youtube.com/watch?v=788VZLBHu_I",
+        "source": "keyword:trivia"
       },
       {
-        "id": "xnod59t61w4",
-        "title": "A TRUE STORY That Will Stay With You Forever | Based On True Story 2026 | Drama Thriller Movie 2026",
-        "channel": "Best Drama TV",
-        "views": 103996,
-        "duration": 5413,
-        "url": "https://www.youtube.com/watch?v=xnod59t61w4",
-        "source": "keyword:true story"
+        "id": "EDEGpZUFEGE",
+        "title": "General Knowledge Trivia Quiz #10 🧠 | 100 Questions EVERYONE Should Know",
+        "channel": "Fun Quiz Questions",
+        "views": 195737,
+        "duration": 1587,
+        "url": "https://www.youtube.com/watch?v=EDEGpZUFEGE",
+        "source": "keyword:trivia"
       },
       {
-        "id": "TgoFKm1v1vg",
-        "title": "Rod Wave - Tru Story (Official Music Video) Prod. Gloden.Tae",
-        "channel": "RodWave",
-        "views": 6896208,
-        "duration": 228,
-        "url": "https://www.youtube.com/watch?v=TgoFKm1v1vg",
-        "source": "keyword:true story"
+        "id": "Q1jWPbE3cmI",
+        "title": "Guess the Song Jeopardy Style | Quiz #140",
+        "channel": "Madmartigan's Music Trivia",
+        "views": 7214,
+        "duration": 625,
+        "url": "https://www.youtube.com/watch?v=Q1jWPbE3cmI",
+        "source": "keyword:trivia"
       }
     ],
-    "science explained": [
+    "general knowledge": [
       {
-        "id": "Da-2h2B4faU",
-        "title": "String Theory Explained – What is The True Nature of Reality?",
-        "channel": "Kurzgesagt – In a Nutshell",
-        "views": 26762703,
-        "duration": 480,
-        "url": "https://www.youtube.com/watch?v=Da-2h2B4faU",
-        "source": "keyword:science explained"
+        "id": "V-SctcyZ17Y",
+        "title": "20 People vs General Knowledge Quiz",
+        "channel": "Extra Medium Stuff",
+        "views": 567991,
+        "duration": 2008,
+        "url": "https://www.youtube.com/watch?v=V-SctcyZ17Y",
+        "source": "keyword:general knowledge"
       },
       {
-        "id": "mgJNUdcTiMM",
-        "title": "101 Facts About Space, Explained Slowly | Science for Sleep",
-        "channel": "The Sleepy Scientist ",
-        "views": 130747,
-        "duration": 10075,
-        "url": "https://www.youtube.com/watch?v=mgJNUdcTiMM",
-        "source": "keyword:science explained"
+        "id": "4wv0SY2Gi58",
+        "title": "20 People vs General Knowledge Quiz",
+        "channel": "Extra Medium Stuff",
+        "views": 1577983,
+        "duration": 2040,
+        "url": "https://www.youtube.com/watch?v=4wv0SY2Gi58",
+        "source": "keyword:general knowledge"
       },
       {
-        "id": "aHlXhTZwo7Q",
-        "title": "The Nervous System, Explained Slowly | Science for Sleep",
-        "channel": "The Sleepy Scientist ",
-        "views": 566377,
-        "duration": 10927,
-        "url": "https://www.youtube.com/watch?v=aHlXhTZwo7Q",
-        "source": "keyword:science explained"
+        "id": "N-HgoImPsmY",
+        "title": "Can YOU Score Over 35 On This General Knowledge Trivia Quiz?",
+        "channel": "The Pub Quiz",
+        "views": 3366,
+        "duration": 1185,
+        "url": "https://www.youtube.com/watch?v=N-HgoImPsmY",
+        "source": "keyword:general knowledge"
       },
       {
-        "id": "ZAqIoDhornk",
-        "title": "ALL OF PHYSICS explained in 14 Minutes",
-        "channel": "Wacky Science",
-        "views": 11732679,
-        "duration": 860,
-        "url": "https://www.youtube.com/watch?v=ZAqIoDhornk",
-        "source": "keyword:science explained"
+        "id": "EDEGpZUFEGE",
+        "title": "General Knowledge Trivia Quiz #10 🧠 | 100 Questions EVERYONE Should Know",
+        "channel": "Fun Quiz Questions",
+        "views": 195737,
+        "duration": 1587,
+        "url": "https://www.youtube.com/watch?v=EDEGpZUFEGE",
+        "source": "keyword:general knowledge"
       },
       {
-        "id": "AHQGNb0zBgg",
-        "title": "Human Body - Science for Kids - Rock 'N Learn",
-        "channel": "Rock 'N Learn",
-        "views": 7529754,
-        "duration": 2280,
-        "url": "https://www.youtube.com/watch?v=AHQGNb0zBgg",
-        "source": "keyword:science explained"
+        "id": "BIY8sZJz_fM",
+        "title": "20 People vs General Knowledge Quiz",
+        "channel": "Extra Medium Stuff",
+        "views": 1289612,
+        "duration": 2220,
+        "url": "https://www.youtube.com/watch?v=BIY8sZJz_fM",
+        "source": "keyword:general knowledge"
       },
       {
-        "id": "nnVV2v5LQh8",
-        "title": "Every Confusing Thing About Materials Science Explained Slowly (For Sleep)",
-        "channel": "Cosmo Explains",
-        "views": 5965,
-        "duration": 8157,
-        "url": "https://www.youtube.com/watch?v=nnVV2v5LQh8",
-        "source": "keyword:science explained"
+        "id": "3ShqXh5tI1s",
+        "title": "General Knowledge Trivia Quiz! 🧠 | 100 Questions Everyone Should Know – Do You?",
+        "channel": "Fun Quiz Questions",
+        "views": 5011276,
+        "duration": 1425,
+        "url": "https://www.youtube.com/watch?v=3ShqXh5tI1s",
+        "source": "keyword:general knowledge"
       },
       {
-        "id": "p9pPjASnnxw",
-        "title": "Quantum Mechanics Explained in Ridiculously Simple Words",
-        "channel": "Science ABC",
-        "views": 1150561,
-        "duration": 467,
-        "url": "https://www.youtube.com/watch?v=p9pPjASnnxw",
-        "source": "keyword:science explained"
+        "id": "13KB4gviA6Y",
+        "title": "Ages 1 - 80 vs General Knowledge Quiz",
+        "channel": "Extra Medium Stuff",
+        "views": 1002216,
+        "duration": 1749,
+        "url": "https://www.youtube.com/watch?v=13KB4gviA6Y",
+        "source": "keyword:general knowledge"
       },
       {
-        "id": "Zn4oVE7W_0M",
-        "title": "100 Mysteries That Science HAS Explained — Fall Asleep to Science",
-        "channel": "Sleepy Science Channel",
-        "views": 117043,
-        "duration": 7974,
-        "url": "https://www.youtube.com/watch?v=Zn4oVE7W_0M",
-        "source": "keyword:science explained"
+        "id": "o0Nxycn8mLE",
+        "title": "9 Teams vs General Knowledge Quiz",
+        "channel": "Extra Medium Stuff",
+        "views": 384615,
+        "duration": 1576,
+        "url": "https://www.youtube.com/watch?v=o0Nxycn8mLE",
+        "source": "keyword:general knowledge"
       },
       {
-        "id": "3nAETHZTObk",
-        "title": "Nature of Science",
-        "channel": "Amoeba Sisters",
-        "views": 2855306,
-        "duration": 592,
-        "url": "https://www.youtube.com/watch?v=3nAETHZTObk",
-        "source": "keyword:science explained"
+        "id": "gzFTwbRGtxg",
+        "title": "20 People vs General Knowledge Quiz",
+        "channel": "Extra Medium Stuff",
+        "views": 1794948,
+        "duration": 2340,
+        "url": "https://www.youtube.com/watch?v=gzFTwbRGtxg",
+        "source": "keyword:general knowledge"
       },
       {
-        "id": "gmq4gqCytlY",
-        "title": "Every Confusing Thing About The Theory of Relativity Explained Slowly (For Sleep)",
-        "channel": "Cosmo Explains",
-        "views": 356203,
-        "duration": 7603,
-        "url": "https://www.youtube.com/watch?v=gmq4gqCytlY",
-        "source": "keyword:science explained"
+        "id": "5IH59-IeTsk",
+        "title": "19 People vs General Knowledge Quiz",
+        "channel": "Extra Medium Stuff",
+        "views": 2793335,
+        "duration": 1742,
+        "url": "https://www.youtube.com/watch?v=5IH59-IeTsk",
+        "source": "keyword:general knowledge"
+      }
+    ],
+    "brain teaser": [
+      {
+        "id": "A39PcJvP2vE",
+        "title": "ONLY A GENIUS CAN SOLVE THESE RIDDLES 🧠✅ Brain Teasers & Riddle Quiz 🧩",
+        "channel": "Quiz Blitz",
+        "views": 4953128,
+        "duration": 785,
+        "url": "https://www.youtube.com/watch?v=A39PcJvP2vE",
+        "source": "keyword:brain teaser"
+      },
+      {
+        "id": "TLiqzpl_Z4Q",
+        "title": "10 brain teasers that will test your critical thinking!",
+        "channel": "Learn with TJ",
+        "views": 67302,
+        "duration": 352,
+        "url": "https://www.youtube.com/watch?v=TLiqzpl_Z4Q",
+        "source": "keyword:brain teaser"
+      },
+      {
+        "id": "xZz2l5gCD5g",
+        "title": "Top 5 BRAINTEASER Interview Questions (With Answers)",
+        "channel": "Listpedia",
+        "views": 24763,
+        "duration": 367,
+        "url": "https://www.youtube.com/watch?v=xZz2l5gCD5g",
+        "source": "keyword:brain teaser"
+      },
+      {
+        "id": "Px0laKwBKmA",
+        "title": "Spot the Difference Brain Teasers You Can’t Resist (A Bit Tricky)",
+        "channel": "Captain Brain",
+        "views": 52227,
+        "duration": 617,
+        "url": "https://www.youtube.com/watch?v=Px0laKwBKmA",
+        "source": "keyword:brain teaser"
+      },
+      {
+        "id": "LeQAty0cwU8",
+        "title": "13 Riddles That Will Test Your Brain Speed",
+        "channel": "BRIGHT SIDE",
+        "views": 11060448,
+        "duration": 561,
+        "url": "https://www.youtube.com/watch?v=LeQAty0cwU8",
+        "source": "keyword:brain teaser"
+      },
+      {
+        "id": "nYyNIAJfL9M",
+        "title": "10 FUN Brain Teasers | Riddles for Kids | Classroom Brain Breaks OR Family Fun",
+        "channel": "Cleverlot Kids",
+        "views": 86819,
+        "duration": 361,
+        "url": "https://www.youtube.com/watch?v=nYyNIAJfL9M",
+        "source": "keyword:brain teaser"
+      },
+      {
+        "id": "yP9-fdHD9YU",
+        "title": "Detective Riddles Challenge: Further You Get, the Smarter You Are",
+        "channel": "BRIGHT SIDE",
+        "views": 15279338,
+        "duration": 2705,
+        "url": "https://www.youtube.com/watch?v=yP9-fdHD9YU",
+        "source": "keyword:brain teaser"
+      },
+      {
+        "id": "rpOwwCDeOa8",
+        "title": "25 Fun Brain Teasers 🧠 | Riddles for Kids and Family",
+        "channel": "Quiz Iconic",
+        "views": 3518,
+        "duration": 376,
+        "url": "https://www.youtube.com/watch?v=rpOwwCDeOa8",
+        "source": "keyword:brain teaser"
+      },
+      {
+        "id": "E8J0lbZSkeE",
+        "title": "20 mind-bending riddles that only highly intelligent people can solve… are you one of them? 😏🔥",
+        "channel": "M-Quiz",
+        "views": 1972300,
+        "duration": 406,
+        "url": "https://www.youtube.com/watch?v=E8J0lbZSkeE",
+        "source": "keyword:brain teaser"
+      },
+      {
+        "id": "4_QU62yJUU0",
+        "title": "Can You Spot All 15 Differences? 5 Brain Teaser Puzzles!  (A Bit Tricky)",
+        "channel": "Captain Brain",
+        "views": 27843,
+        "duration": 622,
+        "url": "https://www.youtube.com/watch?v=4_QU62yJUU0",
+        "source": "keyword:brain teaser"
+      }
+    ],
+    "quiz time": [
+      {
+        "id": "XrBFLAG0_gk",
+        "title": "Let's Play - It's Quiz Time",
+        "channel": "LetsPlay",
+        "views": 677165,
+        "duration": 3392,
+        "url": "https://www.youtube.com/watch?v=XrBFLAG0_gk",
+        "source": "keyword:quiz time"
+      },
+      {
+        "id": "qUS15fKFCww",
+        "title": "TV Quiz For Seniors! Can You Get 10 Old Ad Slogans? Take A Trip Down Memory Lane!",
+        "channel": "Quiz Time",
+        "views": 47532,
+        "duration": 1862,
+        "url": "https://www.youtube.com/watch?v=qUS15fKFCww",
+        "source": "keyword:quiz time"
+      },
+      {
+        "id": "7f9fvIybXo0",
+        "title": "Most Seniors Above 60 Miss 10! Can You Do Better?",
+        "channel": "Quiz Time",
+        "views": 378773,
+        "duration": 1869,
+        "url": "https://www.youtube.com/watch?v=7f9fvIybXo0",
+        "source": "keyword:quiz time"
+      },
+      {
+        "id": "3-77UvRYvTE",
+        "title": "Getting 10 Correct Answers For This '60s to '70s TRIVIA Is Super Hard! Can You?",
+        "channel": "Quiz Time",
+        "views": 67916,
+        "duration": 1880,
+        "url": "https://www.youtube.com/watch?v=3-77UvRYvTE",
+        "source": "keyword:quiz time"
+      },
+      {
+        "id": "1b1uxUZ49Ls",
+        "title": "Would You Rather – Build Your 2026 Fancy MILLIONAIRE Mansion 🏰💖🍀💎 Quiz Time",
+        "channel": "Quiz Time",
+        "views": 398619,
+        "duration": 1721,
+        "url": "https://www.youtube.com/watch?v=1b1uxUZ49Ls",
+        "source": "keyword:quiz time"
+      },
+      {
+        "id": "8Pa1pWTOIAw",
+        "title": "Old Slang Quiz - Do You Remember These Classic Phrases? Bet You Can't Get Half Of These!",
+        "channel": "Quiz Time",
+        "views": 537189,
+        "duration": 1869,
+        "url": "https://www.youtube.com/watch?v=8Pa1pWTOIAw",
+        "source": "keyword:quiz time"
+      },
+      {
+        "id": "DsVywAc-UNo",
+        "title": "Can You Name These Old Items From Your Grandparent's House?",
+        "channel": "Quiz Time",
+        "views": 924661,
+        "duration": 1910,
+        "url": "https://www.youtube.com/watch?v=DsVywAc-UNo",
+        "source": "keyword:quiz time"
+      },
+      {
+        "id": "WtPspz-vrN4",
+        "title": "It’s Quiz Time - Announcement Trailer | PS4",
+        "channel": "PlayStation",
+        "views": 55342,
+        "duration": 96,
+        "url": "https://www.youtube.com/watch?v=WtPspz-vrN4",
+        "source": "keyword:quiz time"
+      },
+      {
+        "id": "vFxoKGZlBo0",
+        "title": "1970's Quiz For Seniors! How Much Can You Remember? Enough To Score 10?",
+        "channel": "Quiz Time",
+        "views": 105698,
+        "duration": 1899,
+        "url": "https://www.youtube.com/watch?v=vFxoKGZlBo0",
+        "source": "keyword:quiz time"
+      },
+      {
+        "id": "eBpVciEBsQ0",
+        "title": "WHAT TIME IS IT? - O'clock and half past - Quiz Academy",
+        "channel": "Quiz Academy",
+        "views": 15243,
+        "duration": 384,
+        "url": "https://www.youtube.com/watch?v=eBpVciEBsQ0",
+        "source": "keyword:quiz time"
+      }
+    ],
+    "test your knowledge": [
+      {
+        "id": "3ShqXh5tI1s",
+        "title": "General Knowledge Trivia Quiz! 🧠 | 100 Questions Everyone Should Know – Do You?",
+        "channel": "Fun Quiz Questions",
+        "views": 5011276,
+        "duration": 1425,
+        "url": "https://www.youtube.com/watch?v=3ShqXh5tI1s",
+        "source": "keyword:test your knowledge"
+      },
+      {
+        "id": "HcuhU-4P8J4",
+        "title": "50 Questions Everyone Should Know! | General Knowledge Trivia Quiz 🧠🔥",
+        "channel": "Quiz Blitz",
+        "views": 1604160,
+        "duration": 902,
+        "url": "https://www.youtube.com/watch?v=HcuhU-4P8J4",
+        "source": "keyword:test your knowledge"
+      },
+      {
+        "id": "EDEGpZUFEGE",
+        "title": "General Knowledge Trivia Quiz #10 🧠 | 100 Questions EVERYONE Should Know",
+        "channel": "Fun Quiz Questions",
+        "views": 195737,
+        "duration": 1587,
+        "url": "https://www.youtube.com/watch?v=EDEGpZUFEGE",
+        "source": "keyword:test your knowledge"
+      },
+      {
+        "id": "xwkIODBT_fc",
+        "title": "General Knowledge Trivia Quiz #9 🧠 | 100 Questions Everyone Should Know",
+        "channel": "Fun Quiz Questions",
+        "views": 391215,
+        "duration": 1524,
+        "url": "https://www.youtube.com/watch?v=xwkIODBT_fc",
+        "source": "keyword:test your knowledge"
+      },
+      {
+        "id": "shXUfZ6bC4w",
+        "title": "Are You SMARTER Than a High School Student? 🎓 General Knowledge Quiz 🤔",
+        "channel": "Fun Quiz Questions",
+        "views": 5267959,
+        "duration": 867,
+        "url": "https://www.youtube.com/watch?v=shXUfZ6bC4w",
+        "source": "keyword:test your knowledge"
+      },
+      {
+        "id": "HqAtOdCQ5rI",
+        "title": "General Knowledge Trivia Quiz! 😏🎯 | 101 Questions EVERYONE Should Know!",
+        "channel": "Guessers",
+        "views": 492574,
+        "duration": 1982,
+        "url": "https://www.youtube.com/watch?v=HqAtOdCQ5rI",
+        "source": "keyword:test your knowledge"
+      },
+      {
+        "id": "FEWJiV4Sayc",
+        "title": "Are You SMARTER Than a 5th Grader? 📚🤓🧠 | General Knowledge Quiz",
+        "channel": "Quiz Blitz",
+        "views": 2657671,
+        "duration": 754,
+        "url": "https://www.youtube.com/watch?v=FEWJiV4Sayc",
+        "source": "keyword:test your knowledge"
+      },
+      {
+        "id": "CZiJtt2qqWo",
+        "title": "🧠 How Good Is Your Knowledge of ANIMALS? 🦁🐘✅ 50 Animals Knowledge Trivia Quiz",
+        "channel": "Quiz Blitz",
+        "views": 4348554,
+        "duration": 907,
+        "url": "https://www.youtube.com/watch?v=CZiJtt2qqWo",
+        "source": "keyword:test your knowledge"
+      },
+      {
+        "id": "wmwwuCi7gx0",
+        "title": "Can You Score 50/100 on This General Knowledge Quiz? 🧠 Ultimate Trivia Challenge! 📚",
+        "channel": "Wisdom Time",
+        "views": 1128783,
+        "duration": 2202,
+        "url": "https://www.youtube.com/watch?v=wmwwuCi7gx0",
+        "source": "keyword:test your knowledge"
+      },
+      {
+        "id": "Myht0xy0h6k",
+        "title": "General Knowledge Trivia Quiz #4 🧠 | 100 New Questions Everyone Should Know",
+        "channel": "Fun Quiz Questions",
+        "views": 515889,
+        "duration": 1699,
+        "url": "https://www.youtube.com/watch?v=Myht0xy0h6k",
+        "source": "keyword:test your knowledge"
       }
     ]
   },
   "top": [
     {
-      "id": "6FEvblq6jzA",
-      "title": "Ariana Grande - true story (lyric visualizer)",
-      "channel": "Ariana Grande",
-      "views": 13683646,
-      "duration": 164,
-      "url": "https://www.youtube.com/watch?v=6FEvblq6jzA",
-      "source": "keyword:true story"
+      "id": "LeQAty0cwU8",
+      "title": "13 Riddles That Will Test Your Brain Speed",
+      "channel": "BRIGHT SIDE",
+      "views": 11060448,
+      "duration": 561,
+      "url": "https://www.youtube.com/watch?v=LeQAty0cwU8",
+      "source": "keyword:brain teaser"
     },
     {
-      "id": "Da-2h2B4faU",
-      "title": "String Theory Explained – What is The True Nature of Reality?",
-      "channel": "Kurzgesagt – In a Nutshell",
-      "views": 26762703,
-      "duration": 480,
-      "url": "https://www.youtube.com/watch?v=Da-2h2B4faU",
-      "source": "keyword:science explained"
+      "id": "A39PcJvP2vE",
+      "title": "ONLY A GENIUS CAN SOLVE THESE RIDDLES 🧠✅ Brain Teasers & Riddle Quiz 🧩",
+      "channel": "Quiz Blitz",
+      "views": 4953128,
+      "duration": 785,
+      "url": "https://www.youtube.com/watch?v=A39PcJvP2vE",
+      "source": "keyword:brain teaser"
     },
     {
-      "id": "TgoFKm1v1vg",
-      "title": "Rod Wave - Tru Story (Official Music Video) Prod. Gloden.Tae",
-      "channel": "RodWave",
-      "views": 6896208,
-      "duration": 228,
-      "url": "https://www.youtube.com/watch?v=TgoFKm1v1vg",
-      "source": "keyword:true story"
+      "id": "shXUfZ6bC4w",
+      "title": "Are You SMARTER Than a High School Student? 🎓 General Knowledge Quiz 🤔",
+      "channel": "Fun Quiz Questions",
+      "views": 5267959,
+      "duration": 867,
+      "url": "https://www.youtube.com/watch?v=shXUfZ6bC4w",
+      "source": "keyword:quiz"
     },
     {
-      "id": "ZAqIoDhornk",
-      "title": "ALL OF PHYSICS explained in 14 Minutes",
-      "channel": "Wacky Science",
-      "views": 11732679,
-      "duration": 860,
-      "url": "https://www.youtube.com/watch?v=ZAqIoDhornk",
-      "source": "keyword:science explained"
+      "id": "shXUfZ6bC4w",
+      "title": "Are You SMARTER Than a High School Student? 🎓 General Knowledge Quiz 🤔",
+      "channel": "Fun Quiz Questions",
+      "views": 5267959,
+      "duration": 867,
+      "url": "https://www.youtube.com/watch?v=shXUfZ6bC4w",
+      "source": "keyword:test your knowledge"
     },
     {
-      "id": "3nAETHZTObk",
-      "title": "Nature of Science",
-      "channel": "Amoeba Sisters",
-      "views": 2855306,
-      "duration": 592,
-      "url": "https://www.youtube.com/watch?v=3nAETHZTObk",
-      "source": "keyword:science explained"
+      "id": "yP9-fdHD9YU",
+      "title": "Detective Riddles Challenge: Further You Get, the Smarter You Are",
+      "channel": "BRIGHT SIDE",
+      "views": 15279338,
+      "duration": 2705,
+      "url": "https://www.youtube.com/watch?v=yP9-fdHD9YU",
+      "source": "keyword:brain teaser"
     },
     {
-      "id": "AHQGNb0zBgg",
-      "title": "Human Body - Science for Kids - Rock 'N Learn",
-      "channel": "Rock 'N Learn",
-      "views": 7529754,
-      "duration": 2280,
-      "url": "https://www.youtube.com/watch?v=AHQGNb0zBgg",
-      "source": "keyword:science explained"
+      "id": "E8J0lbZSkeE",
+      "title": "20 mind-bending riddles that only highly intelligent people can solve… are you one of them? 😏🔥",
+      "channel": "M-Quiz",
+      "views": 1972300,
+      "duration": 406,
+      "url": "https://www.youtube.com/watch?v=E8J0lbZSkeE",
+      "source": "keyword:brain teaser"
     },
     {
-      "id": "p9pPjASnnxw",
-      "title": "Quantum Mechanics Explained in Ridiculously Simple Words",
-      "channel": "Science ABC",
-      "views": 1150561,
-      "duration": 467,
-      "url": "https://www.youtube.com/watch?v=p9pPjASnnxw",
-      "source": "keyword:science explained"
+      "id": "CZiJtt2qqWo",
+      "title": "🧠 How Good Is Your Knowledge of ANIMALS? 🦁🐘✅ 50 Animals Knowledge Trivia Quiz",
+      "channel": "Quiz Blitz",
+      "views": 4348554,
+      "duration": 907,
+      "url": "https://www.youtube.com/watch?v=CZiJtt2qqWo",
+      "source": "keyword:test your knowledge"
     },
     {
-      "id": "mck2kNMvLvs",
-      "title": "Armageddon and the Final Events of Bible Prophecy | Doug Batchelor (Amazing Facts)",
-      "channel": "AmazingFacts",
-      "views": 3112881,
-      "duration": 3816,
-      "url": "https://www.youtube.com/watch?v=mck2kNMvLvs",
-      "source": "keyword:amazing facts"
+      "id": "FEWJiV4Sayc",
+      "title": "Are You SMARTER Than a 5th Grader? 📚🤓🧠 | General Knowledge Quiz",
+      "channel": "Quiz Blitz",
+      "views": 2657671,
+      "duration": 754,
+      "url": "https://www.youtube.com/watch?v=FEWJiV4Sayc",
+      "source": "keyword:test your knowledge"
     },
     {
-      "id": "im4Ryx4d8N4",
-      "title": "HER TRUE STORY FROM ATLANTA My Daughter Said: \"Mom, You Don't Need to Come. Kevin Thinks It's Bette…",
-      "channel": "Spirit Tales",
-      "views": 382322,
-      "duration": 1752,
-      "url": "https://www.youtube.com/watch?v=im4Ryx4d8N4",
-      "source": "keyword:true story"
+      "id": "3ShqXh5tI1s",
+      "title": "General Knowledge Trivia Quiz! 🧠 | 100 Questions Everyone Should Know – Do You?",
+      "channel": "Fun Quiz Questions",
+      "views": 5011276,
+      "duration": 1425,
+      "url": "https://www.youtube.com/watch?v=3ShqXh5tI1s",
+      "source": "keyword:trivia"
     },
     {
-      "id": "1A-gdQK47gs",
-      "title": "His True Story | They Forgot Him For 10 Years So He Vanished With Millions And...",
-      "channel": "DAD'S SWEET REVENGE",
-      "views": 378190,
-      "duration": 1988,
-      "url": "https://www.youtube.com/watch?v=1A-gdQK47gs",
-      "source": "keyword:true story"
+      "id": "3ShqXh5tI1s",
+      "title": "General Knowledge Trivia Quiz! 🧠 | 100 Questions Everyone Should Know – Do You?",
+      "channel": "Fun Quiz Questions",
+      "views": 5011276,
+      "duration": 1425,
+      "url": "https://www.youtube.com/watch?v=3ShqXh5tI1s",
+      "source": "keyword:general knowledge"
     },
     {
-      "id": "n2lLDZXxs9E",
-      "title": "Walking with God in a wicked world | Doug Batchelor",
-      "channel": "AmazingFacts",
-      "views": 365197,
-      "duration": 2805,
-      "url": "https://www.youtube.com/watch?v=n2lLDZXxs9E",
-      "source": "keyword:amazing facts"
+      "id": "3ShqXh5tI1s",
+      "title": "General Knowledge Trivia Quiz! 🧠 | 100 Questions Everyone Should Know – Do You?",
+      "channel": "Fun Quiz Questions",
+      "views": 5011276,
+      "duration": 1425,
+      "url": "https://www.youtube.com/watch?v=3ShqXh5tI1s",
+      "source": "keyword:test your knowledge"
     },
     {
-      "id": "LkaxL65vlb8",
-      "title": "Amazing Facts of Faith - The Catacombs with Doug Batchelor",
-      "channel": "AmazingFacts",
-      "views": 28635,
-      "duration": 224,
-      "url": "https://www.youtube.com/watch?v=LkaxL65vlb8",
-      "source": "keyword:amazing facts"
+      "id": "m6EmergTOqo",
+      "title": "15 Tricky Riddles That Will Test Your IQ🧠 | Only Geniuses Can Solve All 15!🔥",
+      "channel": "M-Quiz",
+      "views": 1065038,
+      "duration": 529,
+      "url": "https://www.youtube.com/watch?v=m6EmergTOqo",
+      "source": "keyword:quiz"
     },
     {
-      "id": "PyhoEHjUQiw",
-      "title": "🎬This is the most shocking TRUE STORY you’ve ever seen! 😱 Watch and see for yourself",
-      "channel": "Kinopower",
-      "views": 722505,
-      "duration": 5975,
-      "url": "https://www.youtube.com/watch?v=PyhoEHjUQiw",
-      "source": "keyword:true story"
+      "id": "HcuhU-4P8J4",
+      "title": "50 Questions Everyone Should Know! | General Knowledge Trivia Quiz 🧠🔥",
+      "channel": "Quiz Blitz",
+      "views": 1604160,
+      "duration": 902,
+      "url": "https://www.youtube.com/watch?v=HcuhU-4P8J4",
+      "source": "keyword:quiz"
     },
     {
-      "id": "Bwanfh9wBWI",
-      "title": "A TRUE STORY That Will Shake You to Your Core | Based On True Story 2026 | Drama Thriller Movie 2026",
-      "channel": "Best Drama TV",
-      "views": 484440,
-      "duration": 5029,
-      "url": "https://www.youtube.com/watch?v=Bwanfh9wBWI",
-      "source": "keyword:true story"
+      "id": "HcuhU-4P8J4",
+      "title": "50 Questions Everyone Should Know! | General Knowledge Trivia Quiz 🧠🔥",
+      "channel": "Quiz Blitz",
+      "views": 1604160,
+      "duration": 902,
+      "url": "https://www.youtube.com/watch?v=HcuhU-4P8J4",
+      "source": "keyword:test your knowledge"
     },
     {
-      "id": "4uA1l-yTk7I",
-      "title": "Jesus Warned: \"As It Was in the Days of Noah\" (It’s Happening NOW)",
-      "channel": "Amazing Facts Oceania",
-      "views": 235458,
-      "duration": 3706,
-      "url": "https://www.youtube.com/watch?v=4uA1l-yTk7I",
-      "source": "keyword:amazing facts"
+      "id": "5IH59-IeTsk",
+      "title": "19 People vs General Knowledge Quiz",
+      "channel": "Extra Medium Stuff",
+      "views": 2793335,
+      "duration": 1742,
+      "url": "https://www.youtube.com/watch?v=5IH59-IeTsk",
+      "source": "keyword:general knowledge"
     },
     {
-      "id": "aHlXhTZwo7Q",
-      "title": "The Nervous System, Explained Slowly | Science for Sleep",
-      "channel": "The Sleepy Scientist ",
-      "views": 566377,
-      "duration": 10927,
-      "url": "https://www.youtube.com/watch?v=aHlXhTZwo7Q",
-      "source": "keyword:science explained"
+      "id": "4wv0SY2Gi58",
+      "title": "20 People vs General Knowledge Quiz",
+      "channel": "Extra Medium Stuff",
+      "views": 1577983,
+      "duration": 2040,
+      "url": "https://www.youtube.com/watch?v=4wv0SY2Gi58",
+      "source": "keyword:general knowledge"
     },
     {
-      "id": "gmq4gqCytlY",
-      "title": "Every Confusing Thing About The Theory of Relativity Explained Slowly (For Sleep)",
-      "channel": "Cosmo Explains",
-      "views": 356203,
-      "duration": 7603,
-      "url": "https://www.youtube.com/watch?v=gmq4gqCytlY",
-      "source": "keyword:science explained"
+      "id": "gzFTwbRGtxg",
+      "title": "20 People vs General Knowledge Quiz",
+      "channel": "Extra Medium Stuff",
+      "views": 1794948,
+      "duration": 2340,
+      "url": "https://www.youtube.com/watch?v=gzFTwbRGtxg",
+      "source": "keyword:general knowledge"
     },
     {
-      "id": "SI2-FfzgfhI",
-      "title": "Powerful drama based on a true story! | Where Is Good? | Full movie",
-      "channel": "Filmaxia",
-      "views": 315018,
-      "duration": 7757,
-      "url": "https://www.youtube.com/watch?v=SI2-FfzgfhI",
-      "source": "keyword:true story"
+      "id": "BIY8sZJz_fM",
+      "title": "20 People vs General Knowledge Quiz",
+      "channel": "Extra Medium Stuff",
+      "views": 1289612,
+      "duration": 2220,
+      "url": "https://www.youtube.com/watch?v=BIY8sZJz_fM",
+      "source": "keyword:general knowledge"
     },
     {
-      "id": "xTlj4dN3KE0",
-      "title": "When You Cry in Secret, God Is Listening",
-      "channel": "Amazing Facts Oceania",
-      "views": 86734,
-      "duration": 2699,
-      "url": "https://www.youtube.com/watch?v=xTlj4dN3KE0",
-      "source": "keyword:amazing facts"
+      "id": "WtPspz-vrN4",
+      "title": "It’s Quiz Time - Announcement Trailer | PS4",
+      "channel": "PlayStation",
+      "views": 55342,
+      "duration": 96,
+      "url": "https://www.youtube.com/watch?v=WtPspz-vrN4",
+      "source": "keyword:quiz time"
     },
     {
-      "id": "p2eKxXHNOCU",
-      "title": "The End-Time Prophecy Millions Of Christians Misunderstand!",
-      "channel": "Amazing Facts Oceania",
-      "views": 75870,
-      "duration": 2698,
-      "url": "https://www.youtube.com/watch?v=p2eKxXHNOCU",
-      "source": "keyword:amazing facts"
+      "id": "13KB4gviA6Y",
+      "title": "Ages 1 - 80 vs General Knowledge Quiz",
+      "channel": "Extra Medium Stuff",
+      "views": 1002216,
+      "duration": 1749,
+      "url": "https://www.youtube.com/watch?v=13KB4gviA6Y",
+      "source": "keyword:general knowledge"
     },
     {
-      "id": "xnod59t61w4",
-      "title": "A TRUE STORY That Will Stay With You Forever | Based On True Story 2026 | Drama Thriller Movie 2026",
-      "channel": "Best Drama TV",
-      "views": 103996,
-      "duration": 5413,
-      "url": "https://www.youtube.com/watch?v=xnod59t61w4",
-      "source": "keyword:true story"
+      "id": "wmwwuCi7gx0",
+      "title": "Can You Score 50/100 on This General Knowledge Quiz? 🧠 Ultimate Trivia Challenge! 📚",
+      "channel": "Wisdom Time",
+      "views": 1128783,
+      "duration": 2202,
+      "url": "https://www.youtube.com/watch?v=wmwwuCi7gx0",
+      "source": "keyword:test your knowledge"
     },
     {
-      "id": "Zn4oVE7W_0M",
-      "title": "100 Mysteries That Science HAS Explained — Fall Asleep to Science",
-      "channel": "Sleepy Science Channel",
-      "views": 117043,
-      "duration": 7974,
-      "url": "https://www.youtube.com/watch?v=Zn4oVE7W_0M",
-      "source": "keyword:science explained"
+      "id": "DsVywAc-UNo",
+      "title": "Can You Name These Old Items From Your Grandparent's House?",
+      "channel": "Quiz Time",
+      "views": 924661,
+      "duration": 1910,
+      "url": "https://www.youtube.com/watch?v=DsVywAc-UNo",
+      "source": "keyword:quiz time"
     },
     {
-      "id": "mgJNUdcTiMM",
-      "title": "101 Facts About Space, Explained Slowly | Science for Sleep",
-      "channel": "The Sleepy Scientist ",
-      "views": 130747,
-      "duration": 10075,
-      "url": "https://www.youtube.com/watch?v=mgJNUdcTiMM",
-      "source": "keyword:science explained"
+      "id": "Myht0xy0h6k",
+      "title": "General Knowledge Trivia Quiz #4 🧠 | 100 New Questions Everyone Should Know",
+      "channel": "Fun Quiz Questions",
+      "views": 515889,
+      "duration": 1699,
+      "url": "https://www.youtube.com/watch?v=Myht0xy0h6k",
+      "source": "keyword:test your knowledge"
     },
     {
-      "id": "0kU9K3G-Fg4",
-      "title": "If You Fear God, You Will Fear Nothing Else",
-      "channel": "Amazing Facts Oceania",
-      "views": 26623,
-      "duration": 2660,
-      "url": "https://www.youtube.com/watch?v=0kU9K3G-Fg4",
-      "source": "keyword:amazing facts"
+      "id": "8Pa1pWTOIAw",
+      "title": "Old Slang Quiz - Do You Remember These Classic Phrases? Bet You Can't Get Half Of These!",
+      "channel": "Quiz Time",
+      "views": 537189,
+      "duration": 1869,
+      "url": "https://www.youtube.com/watch?v=8Pa1pWTOIAw",
+      "source": "keyword:quiz time"
     },
     {
-      "id": "ZXgpvdvX77U",
-      "title": "Amazing Facts TV (AFTV) Live Stream",
-      "channel": "Amazing Facts TV AFTV",
-      "views": 50495,
-      "duration": 36992,
-      "url": "https://www.youtube.com/watch?v=ZXgpvdvX77U",
-      "source": "keyword:amazing facts"
+      "id": "V-SctcyZ17Y",
+      "title": "20 People vs General Knowledge Quiz",
+      "channel": "Extra Medium Stuff",
+      "views": 567991,
+      "duration": 2008,
+      "url": "https://www.youtube.com/watch?v=V-SctcyZ17Y",
+      "source": "keyword:trivia"
     },
     {
-      "id": "9mTVKbk9-RQ",
-      "title": "This Harrowing True Story Shocked the World! Mockingbird Don't Sing | Drama",
-      "channel": "FilmVaultX",
-      "views": 7605,
-      "duration": 5619,
-      "url": "https://www.youtube.com/watch?v=9mTVKbk9-RQ",
-      "source": "keyword:true story"
+      "id": "V-SctcyZ17Y",
+      "title": "20 People vs General Knowledge Quiz",
+      "channel": "Extra Medium Stuff",
+      "views": 567991,
+      "duration": 2008,
+      "url": "https://www.youtube.com/watch?v=V-SctcyZ17Y",
+      "source": "keyword:general knowledge"
     },
     {
-      "id": "b8p2v0uXAFk",
-      "title": "Bible Answers Live | Doug Batchelor & Jëan Ross | Ep. 26 (11/16/2025)",
-      "channel": "AmazingFacts",
-      "views": 4472,
-      "duration": 3544,
-      "url": "https://www.youtube.com/watch?v=b8p2v0uXAFk",
-      "source": "keyword:amazing facts"
+      "id": "xwkIODBT_fc",
+      "title": "General Knowledge Trivia Quiz #9 🧠 | 100 Questions Everyone Should Know",
+      "channel": "Fun Quiz Questions",
+      "views": 391215,
+      "duration": 1524,
+      "url": "https://www.youtube.com/watch?v=xwkIODBT_fc",
+      "source": "keyword:test your knowledge"
     },
     {
-      "id": "nnVV2v5LQh8",
-      "title": "Every Confusing Thing About Materials Science Explained Slowly (For Sleep)",
-      "channel": "Cosmo Explains",
-      "views": 5965,
-      "duration": 8157,
-      "url": "https://www.youtube.com/watch?v=nnVV2v5LQh8",
-      "source": "keyword:science explained"
+      "id": "HqAtOdCQ5rI",
+      "title": "General Knowledge Trivia Quiz! 😏🎯 | 101 Questions EVERYONE Should Know!",
+      "channel": "Guessers",
+      "views": 492574,
+      "duration": 1982,
+      "url": "https://www.youtube.com/watch?v=HqAtOdCQ5rI",
+      "source": "keyword:test your knowledge"
     },
     {
-      "id": "aCGeMUrHZaQ",
-      "title": "Based on a True Story, A Poor Farmer's Family Struggled to Survive Against All Odds!! | English",
-      "channel": "Golden Heights",
-      "views": 1493,
-      "duration": 6246,
-      "url": "https://www.youtube.com/watch?v=aCGeMUrHZaQ",
-      "source": "keyword:true story"
+      "id": "o0Nxycn8mLE",
+      "title": "9 Teams vs General Knowledge Quiz",
+      "channel": "Extra Medium Stuff",
+      "views": 384615,
+      "duration": 1576,
+      "url": "https://www.youtube.com/watch?v=o0Nxycn8mLE",
+      "source": "keyword:general knowledge"
     },
     {
-      "id": "9spifqMjZCE",
-      "title": "Amazing Facts TV",
-      "channel": "AmazingFacts",
-      "views": null,
-      "duration": null,
-      "url": "https://www.youtube.com/watch?v=9spifqMjZCE",
-      "source": "keyword:amazing facts"
+      "id": "nYyNIAJfL9M",
+      "title": "10 FUN Brain Teasers | Riddles for Kids | Classroom Brain Breaks OR Family Fun",
+      "channel": "Cleverlot Kids",
+      "views": 86819,
+      "duration": 361,
+      "url": "https://www.youtube.com/watch?v=nYyNIAJfL9M",
+      "source": "keyword:brain teaser"
     }
   ],
   "topics": [
     {
-      "topic": "Ariana Grande - true story (lyric visualizer)",
-      "url": "https://www.youtube.com/watch?v=6FEvblq6jzA",
-      "views": 13683646,
-      "score": 83436.9,
+      "topic": "13 Riddles That Will Test Your Brain Speed",
+      "url": "https://www.youtube.com/watch?v=LeQAty0cwU8",
+      "views": 11060448,
+      "score": 19715.6,
+      "identity_score": 0,
+      "rank_score": 19714.1
+    },
+    {
+      "topic": "ONLY A GENIUS CAN SOLVE THESE RIDDLES 🧠✅ Brain Teasers & Riddle Quiz 🧩",
+      "url": "https://www.youtube.com/watch?v=A39PcJvP2vE",
+      "views": 4953128,
+      "score": 6309.7,
+      "identity_score": 2,
+      "rank_score": 6309.7
+    },
+    {
+      "topic": "Are You SMARTER Than a High School Student? 🎓 General Knowledge Quiz 🤔",
+      "url": "https://www.youtube.com/watch?v=shXUfZ6bC4w",
+      "views": 5267959,
+      "score": 6076.1,
+      "identity_score": 2,
+      "rank_score": 6076.1
+    },
+    {
+      "topic": "Detective Riddles Challenge: Further You Get, the Smarter You Are",
+      "url": "https://www.youtube.com/watch?v=yP9-fdHD9YU",
+      "views": 15279338,
+      "score": 5648.6,
+      "identity_score": 0,
+      "rank_score": 5647.1
+    },
+    {
+      "topic": "20 mind-bending riddles that only highly intelligent people can solve… are you one of them? 😏🔥",
+      "url": "https://www.youtube.com/watch?v=E8J0lbZSkeE",
+      "views": 1972300,
+      "score": 4857.9,
+      "identity_score": 0,
+      "rank_score": 4856.4
+    },
+    {
+      "topic": "RRB NTPC 2026 | WANT TO SCORE GOOD IN GK ? DO THIS !!",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=QymJ9saulHM",
+      "views": 393346,
+      "score": 446.2,
+      "identity_score": 0,
+      "rank_score": 444.7
+    },
+    {
+      "topic": "100 People vs General Knowledge Quiz",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=vl6OoyT7KdI",
+      "views": 474392,
+      "score": 109.5,
+      "identity_score": 2,
+      "rank_score": 109.5
+    },
+    {
+      "topic": "GK Question || GK In Hindi || GK Question and Answer || GK Quiz ||",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=ZtChrEz6apk",
+      "views": 83648,
+      "score": 87.4,
       "identity_score": 1,
-      "rank_score": 83436.9
+      "rank_score": 87.4
     },
     {
-      "topic": "String Theory Explained – What is The True Nature of Reality?",
-      "url": "https://www.youtube.com/watch?v=Da-2h2B4faU",
-      "views": 26762703,
-      "score": 55755.6,
-      "identity_score": 0,
-      "rank_score": 55754.1
-    },
-    {
-      "topic": "Rod Wave - Tru Story (Official Music Video) Prod. Gloden.Tae",
-      "url": "https://www.youtube.com/watch?v=TgoFKm1v1vg",
-      "views": 6896208,
-      "score": 30246.5,
-      "identity_score": 0,
-      "rank_score": 30245.0
-    },
-    {
-      "topic": "ALL OF PHYSICS explained in 14 Minutes",
-      "url": "https://www.youtube.com/watch?v=ZAqIoDhornk",
-      "views": 11732679,
-      "score": 13642.6,
-      "identity_score": 0,
-      "rank_score": 13641.1
-    },
-    {
-      "topic": "Nature of Science",
-      "url": "https://www.youtube.com/watch?v=3nAETHZTObk",
-      "views": 2855306,
-      "score": 4823.2,
-      "identity_score": 0,
-      "rank_score": 4821.7
-    },
-    {
-      "topic": "बच्चे ना देखे 🫢 ये 18 + 🔥💯",
+      "topic": "Marathi Gk Question | General knowledge Question | Current Affairs Question",
       "platform": "youtube",
-      "url": "https://www.youtube.com/watch?v=yTZxqJjxciE",
-      "views": 7629,
-      "score": 76.3,
-      "identity_score": 0,
-      "rank_score": 74.8
-    },
-    {
-      "topic": "Namibia Desert Secrets | 10 Mind-Blowing Mysteries of Africa! | MCR Facts",
-      "platform": "youtube",
-      "url": "https://www.youtube.com/watch?v=aR9G4M_FnuA",
-      "views": 279049,
-      "score": 73.4,
+      "url": "https://www.youtube.com/watch?v=781cNLWqsZA",
+      "views": 13224,
+      "score": 78.5,
       "identity_score": 1,
-      "rank_score": 73.4
+      "rank_score": 78.5
     },
     {
-      "topic": "Someone's Outside In The Field... [Tales Of Fear]",
+      "topic": "Assamese GK Questions || 22 টা সাধাৰণ জ্ঞানৰ প্ৰশ্ন আৰু উত্তৰ || GK In Assamese",
       "platform": "youtube",
-      "url": "https://www.youtube.com/watch?v=bxVDqL26r9Q",
-      "views": 1058669,
-      "score": 57.1,
+      "url": "https://www.youtube.com/watch?v=AGgP4BAXcVs",
+      "views": 43533,
+      "score": 52.7,
       "identity_score": 0,
-      "rank_score": 55.6
+      "rank_score": 51.2
     },
     {
-      "topic": "Donkey Ki mazedaar amazing facts dekhe 👌🐎 Must Watch Donkey Videos 📸🐴",
+      "topic": "சுவாரஷ்ய தகவல்கள் | Interesting questions தமிழ் | Gk in tamil | பொது அறிவு |",
       "platform": "youtube",
-      "url": "https://www.youtube.com/watch?v=8COb-aefyAA",
-      "views": 19019,
-      "score": 37.7,
-      "identity_score": 3,
-      "rank_score": 37.7
-    },
-    {
-      "topic": "Amazing Unknown Facts About Kolkata! 😱 | Kolkata Amazing Facts",
-      "platform": "youtube",
-      "url": "https://www.youtube.com/watch?v=tmAmWTJ9Sbw",
-      "views": 96794,
-      "score": 32.4,
-      "identity_score": 3,
-      "rank_score": 32.4
-    },
-    {
-      "topic": "Inhumane Final Photographs We Should Never Have Seen",
-      "platform": "youtube",
-      "url": "https://www.youtube.com/watch?v=1WP6nmb9rv0",
-      "views": 102326,
-      "score": 19.3,
+      "url": "https://www.youtube.com/watch?v=Wv19AtXwXBI",
+      "views": 26534,
+      "score": 42.2,
       "identity_score": 0,
-      "rank_score": 17.8
+      "rank_score": 40.7
     },
     {
-      "topic": "50 Incredible Wild Animal Encounters Caught on Camera | Facts in Urdu",
+      "topic": "Ronaldo vs Messi: FootyMind Football Quiz 🧠⚽ #shorts",
       "platform": "youtube",
-      "url": "https://www.youtube.com/watch?v=wgUkML6DxqA",
-      "views": 30982,
-      "score": 12.0,
+      "url": "https://www.youtube.com/watch?v=zdZonmDkTYU",
+      "views": 234739,
+      "score": 28.8,
       "identity_score": 1,
-      "rank_score": 12.0
+      "rank_score": 28.8
     },
     {
-      "topic": "My Best Friend Sakura Betrayed Me 💔 My True Story (Short Story) Sakura",
+      "topic": "Hania Quiz | Islamic Quiz in Urdu | Islami Sawal Jawab | Islami maloomat & GK",
       "platform": "youtube",
-      "url": "https://www.youtube.com/watch?v=1emG5OTgAmc",
-      "views": 2707,
-      "score": 4.3,
+      "url": "https://www.youtube.com/watch?v=XzmLUV9Gkr0",
+      "views": 6401,
+      "score": 27.6,
       "identity_score": 1,
-      "rank_score": 4.3
+      "rank_score": 27.6
     },
     {
-      "topic": "Amazing facts #shorts #facts.",
+      "topic": "Urdu Islamic Quiz | Top Sawal Jawab | Islamic GK | Urdu Quiz",
       "platform": "youtube",
-      "url": "https://www.youtube.com/watch?v=bMrsBP9qkCA",
-      "views": 524,
-      "score": 4.2,
-      "identity_score": 3,
-      "rank_score": 4.2
-    },
-    {
-      "topic": "Arnab Cyclone Explained 🌪️| उत्पत्ति, मार्ग और प्रभाव | Geography Shorts |",
-      "platform": "youtube",
-      "url": "https://www.youtube.com/watch?v=1jDz4rotm10",
-      "views": 10194,
-      "score": 4.8,
-      "identity_score": 0,
-      "rank_score": 3.3
-    },
-    {
-      "topic": "Why Are Scientists Burying Thousands of Underwear in Dirt 😱/ Weird Fact",
-      "platform": "youtube",
-      "url": "https://www.youtube.com/watch?v=lkRGO9jxLYk",
-      "views": 1166,
-      "score": 3.6,
-      "identity_score": 0,
-      "rank_score": 2.1
-    },
-    {
-      "topic": "5 SAAL Future mein Teleport Hogya Ye PLANE 🚀⏳ Manifest Sci-fi Series Explained",
-      "platform": "youtube",
-      "url": "https://www.youtube.com/watch?v=D66oFBpRQUY",
-      "views": 35538,
-      "score": 3.1,
-      "identity_score": 0,
-      "rank_score": 1.6
-    },
-    {
-      "topic": "8 Real-Life Ghost Caught On Camera | Paranormal Activity Part 36",
-      "platform": "youtube",
-      "url": "https://www.youtube.com/watch?v=bRqYdjxboIA",
-      "views": 35901,
-      "score": 3.0,
-      "identity_score": 0,
-      "rank_score": 1.5
-    },
-    {
-      "topic": "3 Crazy Facts That Sound Fake! 🤯 #shorts",
-      "platform": "youtube",
-      "url": "https://www.youtube.com/watch?v=LvKtTuTmufM",
-      "views": 406,
-      "score": 1.4,
+      "url": "https://www.youtube.com/watch?v=lIjTTbKyhdc",
+      "views": 22115,
+      "score": 21.2,
       "identity_score": 1,
-      "rank_score": 1.4
+      "rank_score": 21.2
     },
     {
-      "topic": "Paheliyan in Urdu With Answers 🧐 | Urdu & Hindi Riddles | Amazing Facts & Brain",
+      "topic": "Ronaldo vs Messi: Who Is the Real GOAT? 🐐 | GOAT Quiz #shorts",
       "platform": "youtube",
-      "url": "https://www.youtube.com/watch?v=mz7VxrDti98",
-      "views": 178,
-      "score": 1.2,
-      "identity_score": 3,
-      "rank_score": 1.2
+      "url": "https://www.youtube.com/watch?v=YwnBHUnrSVM",
+      "views": 143054,
+      "score": 17.3,
+      "identity_score": 1,
+      "rank_score": 17.3
     },
     {
-      "topic": "ਬੁੱਢੀ ਮਾਂ ਨੂੰ ਧੱਕੇpart 11Buddi maa nu dhake Punjabi short story #viral",
+      "topic": "Fix These 5 Incorrect Hindi Words 😱 | Hindi Spelling Quiz Challenge #Shorts",
       "platform": "youtube",
-      "url": "https://www.youtube.com/watch?v=JVUMaUHB2mY",
-      "views": 10546,
-      "score": 2.6,
+      "url": "https://www.youtube.com/watch?v=dIRBsgoFKbU",
+      "views": 4990,
+      "score": 15.8,
+      "identity_score": 1,
+      "rank_score": 15.8
+    },
+    {
+      "topic": "Age gap loyalty test 🔥🔥#viral #trending #shorts #viralvideo",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=2AVT4y1VsEY",
+      "views": 13145,
+      "score": 16.8,
       "identity_score": 0,
-      "rank_score": 1.1
+      "rank_score": 15.3
     },
     {
-      "topic": "Part 4 Nuvoochhaka Rishi A true Lover. A Beautiful love story . #short #shorts",
+      "topic": "SouRicks Live Stream",
       "platform": "youtube",
-      "url": "https://www.youtube.com/watch?v=I9U7sK3RdE8",
-      "views": 5987,
-      "score": 2.4,
+      "url": "https://www.youtube.com/watch?v=V1CvYB9JnaY",
+      "views": 54612,
+      "score": 16.6,
       "identity_score": 0,
-      "rank_score": 0.8999999999999999
+      "rank_score": 15.100000000000001
     },
     {
-      "topic": "Real price of these things 😱 (you won't believe) | facttrivorayt",
+      "topic": "Ronaldo vs Messi: Can You Pass This Football Trivia Quiz? 🔥 #shorts",
       "platform": "youtube",
-      "url": "https://www.youtube.com/watch?v=vVOP_9s5vOg",
-      "views": 654,
-      "score": 2.3,
-      "identity_score": 0,
-      "rank_score": 0.7999999999999998
+      "url": "https://www.youtube.com/watch?v=iMavYjqnXfM",
+      "views": 137705,
+      "score": 14.6,
+      "identity_score": 2,
+      "rank_score": 14.6
     },
     {
-      "topic": "Situationship Ki Real Story || Shorts Ka Keeda",
+      "topic": "Ronaldo vs Messi: futbol quiz 🐐 #shorts",
       "platform": "youtube",
-      "url": "https://www.youtube.com/watch?v=LRJ_RYUxlkE",
-      "views": 4877,
-      "score": 1.6,
-      "identity_score": 0,
-      "rank_score": 0.10000000000000009
+      "url": "https://www.youtube.com/watch?v=o0Y6T6lB81M",
+      "views": 152866,
+      "score": 14.6,
+      "identity_score": 1,
+      "rank_score": 14.6
     },
     {
-      "topic": "The Real Story of Major Mohit Sharma | Satveer singh",
+      "topic": "Gk in Assamese/ General knowledge question in Assamese / অসমীয়া gk / gkquiz",
       "platform": "youtube",
-      "url": "https://www.youtube.com/watch?v=_Z-j0pit3po",
-      "views": 2314,
-      "score": 1.6,
+      "url": "https://www.youtube.com/watch?v=sWAK-TRo-9c",
+      "views": 7449,
+      "score": 13.3,
+      "identity_score": 1,
+      "rank_score": 13.3
+    },
+    {
+      "topic": "Interesting Question Answer 😱 | Odia General Knowledge | Odia Quiz | General",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=Oooa-TlvTOk",
+      "views": 11103,
+      "score": 13.0,
+      "identity_score": 2,
+      "rank_score": 13.0
+    },
+    {
+      "topic": "Current Affairs Today | 27 October 2026 | Daily Current Affairs | By Ashish",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=4wOsXPfP7m8",
+      "views": 65906,
+      "score": 12.8,
       "identity_score": 0,
-      "rank_score": 0.10000000000000009
+      "rank_score": 11.3
     },
     {
-      "topic": "permanent time observation in the united states",
-      "score": 2.789
+      "topic": "Do these Overwatch Trivia questions get harder?",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=fGUV2wHTs84",
+      "views": 13116,
+      "score": 10.9,
+      "identity_score": 1,
+      "rank_score": 10.9
     },
     {
-      "topic": "barry trotz",
-      "score": 2.54
+      "topic": "Z Zork Live Stream Growing in theForest #outdoors #camping #forest #grow #shorts",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=pOqVC1tWAFM",
+      "views": 212846,
+      "score": 10.9,
+      "identity_score": 0,
+      "rank_score": 9.4
     },
     {
-      "topic": "micah parsons",
-      "score": 2.319
+      "topic": "when does the time change",
+      "score": 2.551
     },
     {
-      "topic": "ebola outbreak",
-      "score": 2.291
+      "topic": "las vegas flash flooding",
+      "score": 2.461
     },
     {
-      "topic": "cam newton",
-      "score": 1.953
+      "topic": "sanjay gupta",
+      "score": 2.353
     },
     {
-      "topic": "panthers qb",
-      "score": 1.948
+      "topic": "mia pohankova",
+      "score": 2.22
     },
     {
-      "topic": "miikka muurinen",
-      "score": 1.927
+      "topic": "hong kong vs pakistan",
+      "score": 1.918
     },
     {
-      "topic": "american idol",
-      "score": 1.475
+      "topic": "loans",
+      "score": 1.855
     },
     {
-      "topic": "suicide squad",
-      "score": 1.326
+      "topic": "jeffrey epstein",
+      "score": 1.663
     },
     {
-      "topic": "wednesday",
-      "score": 1.271
+      "topic": "beer",
+      "score": 1.507
+    },
+    {
+      "topic": "stylist",
+      "score": 1.361
+    },
+    {
+      "topic": "my chemical romance",
+      "score": 1.259
     }
   ]
 }

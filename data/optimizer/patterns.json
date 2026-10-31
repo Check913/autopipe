@@ -1,5 +1,5 @@
 {
-  "fetched": "2026-10-30T00:39:59",
+  "fetched": "2026-10-31T07:43:18",
   "status": "pending",
   "min_samples": 3,
   "n_samples": 1,
@@ -10,16 +10,37 @@
     "engagement_min": 0.0,
     "engagement_max": 0.0
   },
-  "lessons": 1,
+  "lessons": 13,
   "kill_switch": {
     "banned_families": {},
     "niche_alert": false,
     "niche_topic": ""
   },
   "baseline": {
-    "locked": false,
-    "n": 1,
+    "locked": true,
+    "n": 10,
     "target": 10
+  },
+  "baseline_delta": {
+    "status": "ok",
+    "n_after": 1,
+    "target": 10,
+    "baseline": {
+      "n": 10,
+      "engagement_mean": 21.22,
+      "avg_view_pct_mean": null,
+      "by_family": {}
+    },
+    "current": {
+      "n": 1,
+      "engagement_mean": 0.0,
+      "avg_view_pct_mean": null,
+      "by_family": {}
+    },
+    "delta": {
+      "engagement_mean": -21.22,
+      "avg_view_pct_mean": null
+    }
   },
   "active_patterns": 0
 }
