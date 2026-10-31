@@ -1,6 +1,6 @@
 {
   "status": "ok",
-  "pairs": 25,
+  "pairs": 26,
   "joined": 0,
   "variants": {
     "A": {
@@ -15,7 +15,7 @@
       }
     },
     "B": {
-      "assigned": 12,
+      "assigned": 13,
       "measured": 0,
       "mean_engagement": null,
       "mean_views": null,
@@ -23,7 +23,7 @@
         "question": 7,
         "number": 2,
         "negation": 1,
-        "identity": 2
+        "identity": 3
       }
     }
   },
@@ -377,7 +377,21 @@
       "video_id": "uBK8AeCn1LM",
       "engagement": null,
       "views": null
+    },
+    {
+      "ts": "2026-10-31T16:15:53",
+      "pair_id": "pair_20261031_0026",
+      "topic": "quiz:science",
+      "variant": "B",
+      "hook": "Getting them all right means elite memory.",
+      "family": "identity",
+      "family_other": "question",
+      "hook_a": "Are you smarter than most people?",
+      "hook_b": "Getting them all right means elite memory.",
+      "video_id": null,
+      "engagement": null,
+      "views": null
     }
   ],
-  "fetched": "2026-10-31T16:15:17"
+  "fetched": "2026-10-31T17:58:43"
 }

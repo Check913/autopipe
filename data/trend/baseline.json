@@ -2082,5 +2082,135 @@
         1000.0
       ]
     ]
+  },
+  "bayern munich": {
+    "traffic": 5000.0,
+    "first_seen": "2026-10-31T17:58:34",
+    "last_seen": "2026-10-31T17:58:34",
+    "delta": 5000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-31T17:58:34",
+        5000.0
+      ]
+    ]
+  },
+  "nbc news": {
+    "traffic": 1000.0,
+    "first_seen": "2026-10-31T17:58:34",
+    "last_seen": "2026-10-31T17:58:34",
+    "delta": 1000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-31T17:58:34",
+        1000.0
+      ]
+    ]
+  },
+  "eva longoria": {
+    "traffic": 500.0,
+    "first_seen": "2026-10-31T17:58:34",
+    "last_seen": "2026-10-31T17:58:34",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-31T17:58:34",
+        500.0
+      ]
+    ]
+  },
+  "montréal vs new york city": {
+    "traffic": 500.0,
+    "first_seen": "2026-10-31T17:58:34",
+    "last_seen": "2026-10-31T17:58:34",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-31T17:58:34",
+        500.0
+      ]
+    ]
+  },
+  "murray state vs illinois st": {
+    "traffic": 1000.0,
+    "first_seen": "2026-10-31T17:58:34",
+    "last_seen": "2026-10-31T17:58:34",
+    "delta": 1000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-31T17:58:34",
+        1000.0
+      ]
+    ]
+  },
+  "rangers vs aberdeen": {
+    "traffic": 200.0,
+    "first_seen": "2026-10-31T17:58:34",
+    "last_seen": "2026-10-31T17:58:34",
+    "delta": 200.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-31T17:58:34",
+        200.0
+      ]
+    ]
+  },
+  "philadelphia vs cincinnati": {
+    "traffic": 1000.0,
+    "first_seen": "2026-10-31T17:58:34",
+    "last_seen": "2026-10-31T17:58:34",
+    "delta": 1000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-31T17:58:34",
+        1000.0
+      ]
+    ]
+  },
+  "d.c. united vs columbus": {
+    "traffic": 1000.0,
+    "first_seen": "2026-10-31T17:58:34",
+    "last_seen": "2026-10-31T17:58:34",
+    "delta": 1000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-31T17:58:34",
+        1000.0
+      ]
+    ]
+  },
+  "jobe bellingham": {
+    "traffic": 1000.0,
+    "first_seen": "2026-10-31T17:58:34",
+    "last_seen": "2026-10-31T17:58:34",
+    "delta": 1000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-31T17:58:34",
+        1000.0
+      ]
+    ]
+  },
+  "nw state vs uiw": {
+    "traffic": 500.0,
+    "first_seen": "2026-10-31T17:58:34",
+    "last_seen": "2026-10-31T17:58:34",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-10-31T17:58:34",
+        500.0
+      ]
+    ]
   }
 }

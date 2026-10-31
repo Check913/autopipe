@@ -1,0 +1,174 @@
+{
+  "topic": "quiz",
+  "source_topic": "quiz:science",
+  "title": "Test Yourself: 9 Questions, No Cheating",
+  "hook": "Are you smarter than most people?",
+  "density": 4,
+  "duration_format": "long",
+  "duration_target": 80,
+  "duration_range": [
+    74,
+    88
+  ],
+  "script": "Are you smarter than most people?\nQuestion 1: Which gas do plants absorb from the atmosphere for photosynthesis?\nLock in your answer: Three. Two. One.\nThe answer is C: Carbon Dioxide.\nQuestion 2: Who was the first person to step on the Moon?\nLock in your answer: Three. Two. One.\nThe answer is C: Neil Armstrong.\nQuestion 3: What is the name of the wizarding school in the Harry Potter series?\nLock in your answer: Three. Two. One.\nThe answer is C: Hogwarts.\nIf you got the first three right, like the video right now.\nQuestion 4: Which classic film features a great white shark terrorizing a beach town?\nLock in your answer: Three. Two. One.\nThe answer is C: Jaws.\nQuestion 5: Which animal is known as the 'King of the Jungle'?\nLock in your answer: Three. Two. One.\nThe answer is B: Lion.\nScore check: comment SHARP if you are still perfect, RUSTY if you already missed one.\nQuestion 6: Which metal is liquid at room temperature?\nLock in your answer: Three. Two. One.\nThe answer is B: Mercury.\nQuestion 7: Which film won the first Best Animated Feature Oscar?\nLock in your answer: Three. Two. One.\nThe answer is B: Shrek.\nAre you ready for the last question?\nDon't forget to follow and comment your score to be on the weekly leaderboard of the top performers.\nQuestion 8: Which letter is missing from all US state names?\nLock in your answer: Three. Two. One.\nThe answer is A: Q.\nQuestion 9: How long can a giraffe's tongue be?\nLock in your answer: Three. Two. One.\nThe answer is D: 50 cm.\nBonus: double or nothing - keep your score in your head and beat it on the next quiz.\nComment your score out of 9, and follow for a new quiz every day.",
+  "generator": "quiz:llm",
+  "quiz": {
+    "enabled": true,
+    "rounds": 9,
+    "countdown_s": 3,
+    "cards": true,
+    "items": [
+      {
+        "question": "Which gas do plants absorb from the atmosphere for photosynthesis?",
+        "options": [
+          "Oxygen",
+          "Nitrogen",
+          "Carbon Dioxide",
+          "Hydrogen"
+        ],
+        "answer_index": 2,
+        "explanation": "Plants use carbon dioxide, water, and sunlight to create their own food.",
+        "category": "general"
+      },
+      {
+        "question": "Who was the first person to step on the Moon?",
+        "options": [
+          "Buzz Aldrin",
+          "Michael Collins",
+          "Neil Armstrong",
+          "Yuri Gagarin"
+        ],
+        "answer_index": 2,
+        "explanation": "Neil Armstrong made history on July 20, 1969, as part of the Apollo 11 mission.",
+        "category": "general"
+      },
+      {
+        "question": "What is the name of the wizarding school in the Harry Potter series?",
+        "options": [
+          "Beauxbatons",
+          "Durmstrang",
+          "Hogwarts",
+          "Ilvermorny"
+        ],
+        "answer_index": 2,
+        "explanation": "Hogwarts School of Witchcraft and Wizardry is where Harry and his friends learned magic.",
+        "category": "general"
+      },
+      {
+        "question": "Which classic film features a great white shark terrorizing a beach town?",
+        "options": [
+          "The Meg",
+          "Deep Blue Sea",
+          "Jaws",
+          "Open Water"
+        ],
+        "answer_index": 2,
+        "explanation": "Steven Spielberg's 1975 film 'Jaws' is famous for its terrifying shark.",
+        "category": "general"
+      },
+      {
+        "question": "Which animal is known as the 'King of the Jungle'?",
+        "options": [
+          "Tiger",
+          "Lion",
+          "Bear",
+          "Elephant"
+        ],
+        "answer_index": 1,
+        "explanation": "Lions are often referred to as the 'King of the Jungle' due to their majestic appearance and power.",
+        "category": "general"
+      },
+      {
+        "question": "Which metal is liquid at room temperature?",
+        "options": [
+          "Iron",
+          "Mercury",
+          "Lead",
+          "Tin"
+        ],
+        "answer_index": 1,
+        "explanation": "Mercury stays liquid even below zero.",
+        "category": "science"
+      },
+      {
+        "question": "Which film won the first Best Animated Feature Oscar?",
+        "options": [
+          "Toy Story",
+          "Shrek",
+          "Spirited Away",
+          "Finding Nemo"
+        ],
+        "answer_index": 1,
+        "explanation": "Shrek beat the field in 2002.",
+        "category": "movies"
+      },
+      {
+        "question": "Which letter is missing from all US state names?",
+        "options": [
+          "Q",
+          "Z",
+          "X",
+          "J"
+        ],
+        "answer_index": 0,
+        "explanation": "No state name contains the letter Q.",
+        "category": "geography"
+      },
+      {
+        "question": "How long can a giraffe's tongue be?",
+        "options": [
+          "10 cm",
+          "20 cm",
+          "35 cm",
+          "50 cm"
+        ],
+        "answer_index": 3,
+        "explanation": "Up to fifty centimeters, almost twenty inches.",
+        "category": "science"
+      }
+    ]
+  },
+  "comment": "Score check: how many did you get right out of 9? Comment your score and which question tricked you.",
+  "description": "Quick science quiz: 9 questions, 3 seconds each.\nScore check: how many did you get out of 9? 0 is a valid answer.\nPlay along, beat your friends, and come back tomorrow: a new quiz every day.\n\n#quiz #trivia #quiztime #generalknowledge #shorts",
+  "tags": [
+    "quiz",
+    "trivia",
+    "quiz time",
+    "quiz questions",
+    "general knowledge",
+    "test your knowledge",
+    "science quiz",
+    "science trivia",
+    "quiz challenge",
+    "guess the answer",
+    "brain test",
+    "iq test",
+    "fun quiz",
+    "trivia questions and answers",
+    "general knowledge quiz",
+    "pub quiz questions",
+    "quiz for adults",
+    "hard quiz",
+    "are you smart",
+    "only 1 percent",
+    "test your brain",
+    "shorts quiz",
+    "youtube shorts",
+    "shorts"
+  ],
+  "pair_id": "pair_20261031_0027",
+  "hook_variant": "A",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "family": "question",
+      "hook": "Are you smarter than most people?"
+    },
+    {
+      "variant": "B",
+      "family": "identity",
+      "hook": "Only top 1% brains get every single one right."
+    }
+  ],
+  "id": "20261031-175926-01"
+}

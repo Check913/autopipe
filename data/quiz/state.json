@@ -1,5 +1,5 @@
 {
-  "seq": 5,
+  "seq": 6,
   "used": [
     "whatisthecapitalcityofcanada",
     "whichgasdoplantsprimarilyabsorbfromtheatmosphereforphotosynthesis",
@@ -36,18 +36,18 @@
     "whichplanetisknownastheredplanet",
     "whatisthelongestriverintheworldbydischargevolume",
     "inwhichyeardidthetitanicsink",
-    "whodirectedtheiconicfilmpulpfiction"
+    "whodirectedtheiconicfilmpulpfiction",
+    "whichgasdoplantsabsorbfromtheatmosphereforphotosynthesis",
+    "whowasthefirstpersontosteponthemoon",
+    "whatisthenameofthewizardingschoolintheharrypotterseries",
+    "whichclassicfilmfeaturesagreatwhitesharkterrorizingabeachtown",
+    "whichanimalisknownasthekingofthejungle",
+    "whichmetalisliquidatroomtemperature",
+    "whichfilmwonthefirstbestanimatedfeatureoscar",
+    "whichletterismissingfromallusstatenames",
+    "howlongcanagiraffestonguebe"
   ],
   "generated": [
-    "whichmoviefeaturesthelinemaytheforcebewithyou",
-    "whatisthecapitalcityofaustralia",
-    "whichmountainrangeisthehighestintheworld",
-    "whatisthechemicalsymbolforgold",
-    "inwhatyeardidthetitanicsink",
-    "whodirectedthefilmjurassicpark",
-    "whatisthelargestanimalonearth",
-    "onwhichcontinentisthesaharadesertlocated",
-    "whatgasdoplantsprimarilyabsorbfromtheatmosphereforphotosynthesis",
     "whowasthefirstromanemperor",
     "whichmoviefeaturesacharacternamedfrodobaggins",
     "whichplanetisknownastheredplanet",
@@ -62,7 +62,16 @@
     "whodirectedthecriticallyacclaimed1994filmpulpfiction",
     "whichriverisconsideredthelongestintheworldbymostgeographicalmeasures",
     "howmanyheartsdoesanoctopushave",
-    "whatisthelargestislandintheworld"
+    "whatisthelargestislandintheworld",
+    "whichgasdoplantsabsorbfromtheatmosphereforphotosynthesis",
+    "whowasthefirstpersontosteponthemoon",
+    "whatisthenameofthewizardingschoolintheharrypotterseries",
+    "whichclassicfilmfeaturesagreatwhitesharkterrorizingabeachtown",
+    "whichanimalisknownasthekingofthejungle",
+    "whichmetalisliquidatroomtemperature",
+    "whichfilmwonthefirstbestanimatedfeatureoscar",
+    "whichletterismissingfromallusstatenames",
+    "howlongcanagiraffestonguebe"
   ],
   "videos": [
     {
@@ -88,6 +97,12 @@
       "idea_id": "20261031-155136-01",
       "title": "Only 1% Score 9/9 On This Quiz",
       "ts": "2026-10-31T15:53:55Z"
+    },
+    {
+      "video_id": "fXzcJuL7tII",
+      "idea_id": "20261031-175926-01",
+      "title": "Test Yourself: 9 Questions, No Cheating",
+      "ts": "2026-10-31T18:01:38Z"
     }
   ]
 }
