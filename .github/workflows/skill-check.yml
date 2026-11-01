@@ -1,0 +1,36 @@
+# Validation du SKILL hook-generator-upgrade (2026-11-01) - dispatch
+# manuel UNIQUEMENT, aucune publication. Verifie sur le meme Python 3.10
+# que le workflow 24/7 : compileall + import de la chaine scheduler ->
+# hooks + tour en mode degrade de hooks.run dans un rep temporaire.
+name: skill-check
+
+on:
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+      - name: Compileall + import chaine complete (scheduler -> hooks)
+        shell: bash
+        run: |
+          python -m compileall -q autopipe
+          python - <<'PY'
+          import os, sys, tempfile
+          root = tempfile.mkdtemp()
+          os.chdir(root)  # data isolee : aucune ecriture dans le repo
+          sys.path.insert(0, os.environ["GITHUB_WORKSPACE"])
+          import autopipe.scheduler  # chaine d'imports complete
+          from autopipe import hooks
+          from autopipe.config import get_config
+          cfg = get_config()
+          active = hooks.run(cfg)   # mode degrade : 0 video agee
+          assert active is False, "mode degrade attendu (0 video agee)"
+          print("SKILL OK : mode degrade inactif, chaine complete importee")
+          PY
+      - name: Non-regression CLI
+        run: python -m autopipe.cli --help
