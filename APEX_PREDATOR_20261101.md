@@ -4,7 +4,7 @@ Nouveau paquet `autopipe/apex/` : boucle d'apprentissage 24/7 qui mesure le
 veritable engagement des Shorts publies, apprend de ses gagnants et de ses
 perdants, et reinjecte une directive d'apprentissage dans les prochaines
 idees. Totalement additif, non fatal, desactivable, sans aucune ecriture hors
-de `data/apex/` et du cache `cache/apex/`.
+de `data/apex/`.
 
 ## 1. Le cycle en 6 temps (`apex.daemon.run_cycle`, tous non fatals)
 
@@ -17,8 +17,12 @@ de `data/apex/` et du cache `cache/apex/`.
    perdants selon `apex.threshold`, met a jour le bandit de Thompson et la
    base de connaissances, et journalise chaque nouvelle publication apprise
    (JSONL avec rotation).
-4. **Veille** (desactivee par defaut) : scrappage YouTube de nouveaux
-   patterns de hooks gagnants vers la base de connaissances.
+4. **Veille** : recherche yt-dlp multi-requetes de la vraie niche
+   ("{mot-cle} #shorts", derivee de scout/research keywords comme le fait
+   research.py) ; filtres progressifs (vues+duree, puis vues seules, puis
+   aucun) ; cache seulement quand YouTube a repondu (un resultat vide
+   retente au prochain cycle). Desactivee par defaut dans config.py,
+   activee dans autopipe.toml.
 5. **Garde-fou de sante** : si la sante moyenne degrade de plus que
    `apex.degrade_pts` par rapport au record, restauration automatique du
    dernier etat connu bon.
@@ -40,7 +44,7 @@ directive apex doit arriver en dernier.
 | `bandit.py` | Bandit de Thompson : 8 bras en 3 groupes (famille / format / quiz) ; `summary` -> `{"updated", "arms"}` |
 | `knowledge_base.py` | Base de hooks gagnants : `active_patterns`, `add_pattern`, `record_outcome`, `build_directive`, `load`, `save`, `path` |
 | `rollback.py` | Instantanes/restauration : `snapshot`, `restore`, `health`, `maybe_rollback`, `list_snapshots` ; `KEEP = 10` |
-| `scraper.py` | Veille yt-dlp des Shorts viraux, desactivee par defaut ; `maybe_scrape` retourne None si desactivee |
+| `scraper.py` | Veille yt-dlp multi-requetes de niche (`#shorts`), filtres en echelle ; `maybe_scrape` : None si desactivee, cache seulement si resultats |
 
 APIs existantes utilisees (aucune modifiee) : `autopipe.util`
 (`get_logger`, `load_json`, `save_json`), `autopipe.config` (`get_config`,
@@ -60,10 +64,10 @@ APIs existantes utilisees (aucune modifiee) : `autopipe.util`
 | `apex.degrade_pts` | `10.0` | points de sante (%) tolerees avant rollback |
 | `apex.auto_rollback` | `true` | restauration automatique si la sante degrade |
 | `apex.journal_max` | `3000` | rotation du journal (dernieres lignes JSONL) |
-| `apex.scrape.enabled` | `false` | veille YouTube (zero reseau par defaut) |
-| `apex.scrape.query` | `"shorts"` | requete de veille |
+| `apex.scrape.enabled` | `false` (`true` dans autopipe.toml) | veille YouTube planifiee |
+| `apex.scrape.query` | `""` | vide = auto : mots-cles de niche + `#shorts` |
 | `apex.scrape.min_views` | `1000000` | vues minimales du gagnant scrappe |
-| `apex.scrape.max_duration` | `90` | duree maximale (secondes) |
+| `apex.scrape.max_duration` | `120` | duree maximale (secondes) |
 | `apex.scrape.top_n` | `20` | nombre de resultats examines |
 | `apex.scrape.max_patterns` | `10` | patterns max ajoutes par veille |
 | `apex.scrape.cache_hours` | `72` | duree du cache de veille |
@@ -75,11 +79,14 @@ autopipe apex                    # cycle manuel + rapport JSON (passif si aucune
 autopipe apex --force            # force le cycle meme sans donnees reelles
 autopipe apex --scrape           # veille de patterns uniquement (force le cache)
 autopipe apex --rollback NOM     # restaure un instantane (dossier data/apex)
+autopipe apex -v ...             # log detaille (-v accepte aussi avant la sous-commande)
 ```
 
 `--scrape` force la veille dans la copie en memoire de la config (rien n'est
 persiste dans `autopipe.toml`). `--rollback NOM` sans nom utilise le
-snapshot le plus recent.
+snapshot le plus recent. Si `--scrape` ajoute 0 pattern, la commande
+affiche les requetes tentees et les causes possibles ; le log detaille
+(cascade de filtres, erreurs yt-dlp) demande `-v`.
 
 ## 5. Fichiers de donnees
 
@@ -89,7 +96,9 @@ snapshot le plus recent.
 - `data/apex/baseline.json` : record de sante et bandit persiste ;
 - `data/apex/rollback/state.json` : etat du garde-fou (`best`, `restored`) ;
 - `data/apex/rollback/` : instantanes (10 conserves, `KEEP = 10`) ;
-- `cache/apex/` : cache de veille (`cache_hours`).
+- `data/apex/scraper_last.json` : cache de la derniere veille ; une
+  reponse YouTube n'est re-frappee qu'apres `cache_hours`, et un
+  resultat vide n'est jamais mis en cache (retente au prochain cycle).
 
 ## 6. Garde-fous d'apprentissage
 
@@ -111,11 +120,13 @@ snapshot le plus recent.
 
 ## 7. Tests et integration
 
-- `tests/test_apex_predator.py` : 15 tests, sans reseau, couvrant metriques,
+- `tests/test_apex_predator.py` : 18 tests, sans reseau, couvrant metriques,
   post-mortem, bandit (8 bras), base de connaissances, rollback/restauration,
   daemon (`run_cycle`, `inject`, rotation), veille desactivee, CLI et
-  integrite du journal.
-- Etat au 2026-11-01 : `15 passed` (apex) et `185 passed` (suite complete),
+  integrite du journal. Ajoutes le 2026-11-01 : derivation des requetes
+  `"{mot-cle} #shorts"` (`_queries`), echelle de filtres (`_filter_entries`)
+  et veille sans candidat (0 resultat : aucun cache ecrit).
+- Etat au 2026-11-01 : `18 passed` (apex) et `188 passed` (suite complete),
   `python -m compileall` OK.
 - Integration additive : `scheduler.py` (etape 1.99), `cli.py`
   (sous-commande `apex`), `config.py` (cles `apex.*` + dossier `data/apex/`

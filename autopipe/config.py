@@ -279,13 +279,17 @@ DEFAULTS = {
         "journal_max": 3000,
         "scrape": {
             # veille YouTube desactivee par defaut (zero reseau dans
-            # les tests) ; activer avec enabled=True.
+            # les tests) ; activer avec enabled=True. query = "" :
+            # requetes derivees des mots-cles de niche (scout.keywords
+            # puis research.keywords) avec suffixe "#shorts" (le format
+            # prouve par research.py) - une recherche generique "shorts"
+            # ramene surtout des compilations longues.
             "enabled": False,
             "cache_hours": 72,
             "min_views": 1000000,
-            "max_duration": 90,
+            "max_duration": 120,
             "top_n": 20,
-            "query": "shorts",
+            "query": "",
             "max_patterns": 10,
         },
     },

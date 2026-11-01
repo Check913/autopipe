@@ -259,3 +259,65 @@ def test_cli_apex_parse(capsys):
     assert exc.value.code == 0
     out = capsys.readouterr().out
     assert "--rollback" in out and "--scrape" in out and "--force" in out
+
+
+def test_scraper_queries_niche(make_cfg):
+    # Derivation des requetes : la vraie niche (scout/research keywords
+    # + suffixe #shorts, format prouve par research.py) plutot que la
+    # requete generique "shorts" (compilations longues).
+    cfg = make_cfg(scout={"keywords": ["amazing facts", "  ", "quiz"]},
+                   research={"keywords": ["quiz", "trivia"]})
+    scfg = scraper._scrape_cfg(cfg)
+    assert scraper._queries(cfg, scfg) == [
+        "amazing facts #shorts", "quiz #shorts", "trivia #shorts"]
+    # La valeur passee gagne toujours (str ou liste, dedoublonnee).
+    assert scraper._queries(cfg, scfg, "manual") == ["manual"]
+    assert scraper._queries(cfg, scfg, ["a", "a", "b"]) == ["a", "b"]
+    # query = "shorts" (litteral ou vide) retombe sur la niche auto.
+    assert scraper._queries(cfg, scfg, "shorts") == [
+        "amazing facts #shorts", "quiz #shorts", "trivia #shorts"]
+    vide = scraper._scrape_cfg({"apex": {"scrape": {"query": "shorts"}}})
+    cfg_vide = {"scout": {"keywords": []}, "research": {}}
+    assert scraper._queries(cfg_vide, vide, None) == ["shorts"]
+    # Limite _MAX_QUERIES : 4 keywords -> 3 requetes max.
+    cfg4 = make_cfg(scout={"keywords": ["a", "b", "c", "d"]})
+    assert scraper._queries(cfg4, scfg) == ["a #shorts", "b #shorts",
+                                            "c #shorts"]
+
+
+def test_scraper_filter_ladder(make_cfg):
+    # Echelle de filtres : strict (vues+duree), vues seules, aucun.
+    raw = [
+        {"id": "viral", "title": "Why did they stop?",
+         "view_count": 2000000, "duration": 60},
+        {"id": "ok", "title": "Number one secret", "view_count": 900,
+         "duration": 30},
+        {"id": "long", "title": "Top 100 compilation",
+         "view_count": 5000, "duration": 3600},
+        {"id": "nodur", "title": "The truth about X", "view_count": 10},
+        {"id": None, "title": "no id", "view_count": 5},
+        {"id": "empty", "title": "   ", "view_count": 5},
+    ]
+    strict = scraper._filter_entries(raw, 100, 120)
+    assert [e["id"] for e in strict] == ["viral", "ok"]
+    vues = scraper._filter_entries(raw, 100, 0)   # duree desactivee
+    assert [e["id"] for e in vues] == ["viral", "long", "ok"]
+    aucun = scraper._filter_entries(raw, 0, 0)
+    assert [e["id"] for e in aucun] == ["viral", "long", "ok", "nodur"]
+    # Tri par vues decroissantes + url de secours depuis l'id.
+    assert strict[0]["views"] >= strict[1]["views"]
+    assert strict[0]["url"].startswith(
+        "https://www.youtube.com/watch?v=")
+
+
+def test_scraper_cache_non_ecrit_si_vide(make_cfg, monkeypatch):
+    # 0 entree brute : rien n'est mis en cache, le prochain cycle
+    # retente vraiment (pas de cache "0 pattern" bloquant).
+    cfg = make_cfg(apex={"scrape": {"enabled": True, "cache_hours": 72}})
+    calls = []
+    monkeypatch.setattr(scraper, "search",
+                        lambda *a, **k: calls.append(1) or [])
+    assert scraper.maybe_scrape(cfg, force=True) == 0
+    assert not (get_paths(cfg).apex / "scraper_last.json").exists()
+    assert scraper.maybe_scrape(cfg) == 0
+    assert len(calls) == 2

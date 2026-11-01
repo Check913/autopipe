@@ -383,6 +383,17 @@ def cmd_apex(a):
         cfg.setdefault("apex", {}).setdefault("scrape", {})["enabled"] = True
         n = apex.scrape(cfg, force=True)
         print("Patterns ajoutes: %s" % n)
+        if n == 0:
+            # 0 pattern n'est pas forcement une panne : afficher les
+            # requetes tentees pour rester diagnostiquable d'un coup
+            # d'oeil (le log detaille est dans apex.scraper).
+            from .apex import scraper as _sc
+            scfg = _sc._scrape_cfg(cfg)
+            qs = _sc._queries(cfg, scfg, scfg.get("query"))
+            print("Requetes: %s" % (", ".join(qs) if qs else "<aucune>"))
+            print("Causes: yt-dlp echoue / 0 resultat brut / titres"
+                  " sans famille reconnue. Log detaille: -v avant ou"
+                  " apres la sous-commande.")
         return
     res = apex.run(cfg, force=a.force)
     rep = apex.report(cfg)
@@ -717,6 +728,10 @@ def main(argv=None):
                    help="force le cycle meme sans donnees reelles")
     p.add_argument("--scrape", action="store_true",
                    help="veille de patterns uniquement (force le cache)")
+    p.add_argument("-v", "--verbose", action="store_true",
+                   default=argparse.SUPPRESS,
+                   help="log detaille (accepte aussi avant la sous-"
+                        "commande : autopipe -v apex ...)")
     p.add_argument("--rollback", metavar="NOM", default=None,
                    help="restaure un instantane (dossier data/apex)")
     p.set_defaults(fn=cmd_apex)
