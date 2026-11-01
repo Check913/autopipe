@@ -207,7 +207,12 @@ def get_analytics_service(cfg=None, interactive=False):
                 return None
             flow = InstalledAppFlow.from_client_secrets_file(
                 str(secrets), [YT_ANALYTICS_SCOPE])
-            creds = flow.run_local_server(open_browser=True, port=0)
+            # MAX 2026-11-01 : prompt select_account OBLIGATOIRE - sans lui
+            # Google autorise silencieusement le compte par defaut du
+            # navigateur (arrive 00:27 : token valide sur un canal vide ->
+            # boucle retention 0 ligne sans aucun signe d'erreur).
+            creds = flow.run_local_server(open_browser=True, port=0,
+                                          prompt="select_account")
             token_file.write_text(creds.to_json(), encoding="utf-8")
             log.info("OAuth analytics token saved -> %s", token_file)
             import httplib2
