@@ -217,8 +217,14 @@ def get_analytics_service(cfg=None, interactive=False):
             return build("youtubeAnalytics", "v2",
                          http=AuthorizedHttp(creds, http=http),
                          cache_discovery=False)
-        log.info("Boucle retention inactive: autorise une fois avec "
-                 "`autopipe analytics-auth` (ne touche pas au token d'upload).")
+        # MAX 2026-11-01 : ce retour silencieux rendait le bot AVEUGLE en
+        # prod (retention_for -> [], hook_directive -> "") sans aucun signal.
+        log.warning("Boucle retention AVEUGLE ce run: token_analytics.json "
+                    "absent/invalide -> engagedViews jamais mesure, cible "
+                    "engaged_target_pct non evaluee. Fix local: `autopipe "
+                    "analytics-auth` (scope dedie yt-analytics.readonly, ne "
+                    "touche pas au token d'upload); fix CI: `gh secret set "
+                    "ANALYTICS_TOKEN_JSON < token_analytics.json`.")
         return None
     except ImportError as exc:
         log.warning("Dependance Google manquante pour la boucle retention: %s", exc)
@@ -463,6 +469,15 @@ def refresh_retention(cfg=None):
         return {"status": "no_videos"}
     rows = retention_for(ids, cfg)
     if not rows:
+        # MAX 2026-11-01 : diagnostic explicite au lieu du silence (le bot
+        # a publie "a l'aveugle" sans que rien ne le signale jamais).
+        log.warning("RETENTION AVEUGLE: %s ids mais 0 ligne retournee par "
+                    "l'API Analytics (cause frequente: YouTube Analytics API "
+                    "desactivee dans le projet GCP -> 403 accessNotConfigured "
+                    "sur console.developers.google.com/apis/api/"
+                    "youtubeanalytics.googleapis.com). La cible "
+                    "engaged_target_pct n'est JAMAIS evaluee ce run.",
+                    len(ids))
         return {"status": "unauthorized_or_error", "n_ids": len(ids)}
     with open(paths.analytics / "history_retention.jsonl", "a",
               encoding="utf-8") as fh:

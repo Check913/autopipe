@@ -444,6 +444,17 @@ def cmd_check_token(a):
     print("Token YouTube: %s%s" % (
         health["status"],
         "" if health["status"] == "ok" else " (%s)" % health.get("reason", "")))
+    # MAX 2026-11-01 : visibilite retention (NON bloquant) - un run peut
+    # publier correctement tout en restant AVEUGLE (engagedViews jamais
+    # mesure) si le token analytics dedie est absent du workspace.
+    from . import analytics as _an
+    atok = _an._analytics_token_file(cfg)
+    if atok.exists():
+        print("Token analytics: present")
+    else:
+        print("Token analytics: ABSENT -> boucle engagedViews AVEUGLE "
+              "(fix CI: gh secret set ANALYTICS_TOKEN_JSON < "
+              "token_analytics.json)")
     _, sent = notify_if_action_needed(cfg, force=a.force, cause="reauth")
     if sent:
         print("Email d'alerte envoye (re-autorisation requise, voir reauth_247.bat).")

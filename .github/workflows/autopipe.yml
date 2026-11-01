@@ -80,11 +80,14 @@ jobs:
 
       # Restauration de la config + credentials depuis les secrets chiffres.
       # gh secret set AUTOPIPE_TOML < autopipe.toml (cles incluses, chiffrees)
+      # gh secret set ANALYTICS_TOKEN_JSON < token_analytics.json (scope dedie
+      #   yt-analytics.readonly : boucle engagedViews / winner amplification)
       - name: Restaurer la configuration et les credentials
         env:
           AUTOPIPE_TOML: ${{ secrets.AUTOPIPE_TOML }}
           YOUTUBE_TOKEN_JSON: ${{ secrets.YOUTUBE_TOKEN_JSON }}
           CLIENT_SECRET_JSON: ${{ secrets.CLIENT_SECRET_JSON }}
+          ANALYTICS_TOKEN_JSON: ${{ secrets.ANALYTICS_TOKEN_JSON }}
         run: |
           set -euo pipefail
           test -n "$AUTOPIPE_TOML" || { echo "Secret AUTOPIPE_TOML manquant"; exit 1; }
@@ -94,8 +97,16 @@ jobs:
           if [ -n "${CLIENT_SECRET_JSON:-}" ]; then
             printf '%s' "$CLIENT_SECRET_JSON" > client_secret.json
           fi
+          # Token Analytics DEDIE (yt-analytics.readonly, token_analytics.json) :
+          # sans lui, retention_for() renvoie [] et le bot publie A L'AVEUGLE
+          # (aucun signal engagedViews, winner amplification inutilisable).
+          if [ -n "${ANALYTICS_TOKEN_JSON:-}" ]; then
+            printf '%s' "$ANALYTICS_TOKEN_JSON" > token_analytics.json
+          else
+            echo "WARN: secret ANALYTICS_TOKEN_JSON absent -> boucle engagedViews AVEUGLE (fix: gh secret set ANALYTICS_TOKEN_JSON < token_analytics.json)"
+          fi
           mkdir -p data cache output assets
-          chmod 600 token.json client_secret.json 2>/dev/null || true
+          chmod 600 token.json client_secret.json token_analytics.json 2>/dev/null || true
 
       # Sante du token YouTube AVANT de generer la video. Si une
       # re-autorisation est requise, envoie l'alerte Gmail (avec la marche a
