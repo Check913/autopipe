@@ -1,5 +1,5 @@
 {
-  "seq": 8,
+  "seq": 9,
   "used": [
     "whatisthecapitalcityofcanada",
     "whichgasdoplantsprimarilyabsorbfromtheatmosphereforphotosynthesis",
@@ -54,18 +54,18 @@
     "inwhatyeardidtheberlinwallfall",
     "whocomposedthemusicforthestarwarsfilmseries",
     "howmanydaysareinaleapyear",
-    "whichcountryhasthemosttimezones"
+    "whichcountryhasthemosttimezones",
+    "whichlanguagehasthemostnativespeakers",
+    "howmuchdoestheeiffeltowergrowinsummer",
+    "whichfruithasmorevitamincthananorange",
+    "whichplanetwouldfloatinwater",
+    "whichusstateisthelargestbylandarea",
+    "whichplanethastheshortestday",
+    "whatcolorisapolarbearsskin",
+    "whichcountryinventedtea",
+    "howmanyheartsdoesanoctopushave"
   ],
   "generated": [
-    "whichclassicfilmfeaturesagreatwhitesharkterrorizingabeachtown",
-    "whichanimalisknownasthekingofthejungle",
-    "whichmetalisliquidatroomtemperature",
-    "whichfilmwonthefirstbestanimatedfeatureoscar",
-    "whichletterismissingfromallusstatenames",
-    "howlongcanagiraffestonguebe",
-    "whatisthelargestorganinthehumanbody",
-    "whichcountryishometothegreatbarrierreef",
-    "whatplanetisknownastheredplanet",
     "whichclassicfilmfeaturesthelinehereslookingatyoukid",
     "mounteverestislocatedinwhichmountainrange",
     "inwhatyeardidtheberlinwallfall",
@@ -80,7 +80,16 @@
     "whatisthecommonnamefortheauroraborealis",
     "whichbirdcanflybackwards",
     "whichistheonlyflyingmammal",
-    "howmanybonesdoesasharkhave"
+    "howmanybonesdoesasharkhave",
+    "whichlanguagehasthemostnativespeakers",
+    "howmuchdoestheeiffeltowergrowinsummer",
+    "whichfruithasmorevitamincthananorange",
+    "whichplanetwouldfloatinwater",
+    "whichusstateisthelargestbylandarea",
+    "whichplanethastheshortestday",
+    "whatcolorisapolarbearsskin",
+    "whichcountryinventedtea",
+    "howmanyheartsdoesanoctopushave"
   ],
   "videos": [
     {
@@ -118,6 +127,12 @@
       "idea_id": "20261031-181041-01",
       "title": "This Quiz Looks Easy Until Question 4",
       "ts": "2026-10-31T18:14:47Z"
+    },
+    {
+      "video_id": "jVwLSsQx_iE",
+      "idea_id": "20261101-015748-01",
+      "title": "Question 4 Is Where Streaks End",
+      "ts": "2026-11-01T02:01:19Z"
     }
   ]
 }

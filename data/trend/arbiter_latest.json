@@ -1,113 +1,113 @@
 {
-  "fetched": "2026-11-01T00:27:54",
+  "fetched": "2026-11-01T01:57:04",
   "geo": "",
   "topics": [
     {
-      "query": "ohio state football",
-      "traffic": 20000.0,
-      "rise": 10.0,
-      "saturation_views": 5757.0,
-      "momentum": 3.6219
-    },
-    {
-      "query": "kaila charles",
+      "query": "santiago sandoval",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 10353.0,
-      "momentum": 3.3162
+      "saturation_views": 0.0,
+      "momentum": 33.2193
     },
     {
-      "query": "brandon miller",
-      "traffic": 1000.0,
+      "query": "isobel borlase",
+      "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 93353.0,
-      "momentum": 2.5188
+      "saturation_views": 14954.0,
+      "momentum": 3.1496
     },
     {
-      "query": "what happened to julian sayin",
+      "query": "natalie nakase",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 23367.0,
+      "momentum": 2.9684
+    },
+    {
+      "query": "legion field",
       "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 115620.0,
-      "momentum": 2.4612
+      "saturation_views": 71909.0,
+      "momentum": 2.5928
     },
     {
-      "query": "julian sayin injury",
+      "query": "lara trump",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 204729.0,
+      "momentum": 2.3195
+    },
+    {
+      "query": "flash flood warning",
       "traffic": 2000.0,
       "rise": 10.0,
-      "saturation_views": 144122.0,
-      "momentum": 2.4046
+      "saturation_views": 257934.0,
+      "momentum": 2.2668
     },
     {
-      "query": "wnba",
-      "traffic": 20000.0,
+      "query": "chivas game",
+      "traffic": 1000.0,
       "rise": 10.0,
-      "saturation_views": 329769.0,
-      "momentum": 2.2133
+      "saturation_views": 398255.0,
+      "momentum": 2.1738
     },
     {
-      "query": "memphis tigers football",
-      "traffic": 200.0,
-      "rise": 10.0,
-      "saturation_views": 689374.0,
-      "momentum": 2.0668
-    },
-    {
-      "query": "inundación",
-      "traffic": 200.0,
-      "rise": 10.0,
-      "saturation_views": 732497.0,
-      "momentum": 2.0556
-    },
-    {
-      "query": "clarence thomas",
+      "query": "lisa leslie",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 7433957.0,
-      "momentum": 1.7032
+      "saturation_views": 493842.0,
+      "momentum": 2.1306
     },
     {
-      "query": "november",
-      "traffic": 200.0,
+      "query": "stephon castle",
+      "traffic": 1000.0,
       "rise": 10.0,
-      "saturation_views": 2530557226.0,
-      "momentum": 1.19
+      "saturation_views": 502504.0,
+      "momentum": 2.1271
+    },
+    {
+      "query": "verizon",
+      "traffic": 2000.0,
+      "rise": 10.0,
+      "saturation_views": 10098103.0,
+      "momentum": 1.6655
     }
   ],
   "top": [
     {
-      "query": "ohio state football",
-      "traffic": 20000.0,
-      "rise": 10.0,
-      "saturation_views": 5757.0,
-      "momentum": 3.6219
-    },
-    {
-      "query": "kaila charles",
+      "query": "santiago sandoval",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 10353.0,
-      "momentum": 3.3162
+      "saturation_views": 0.0,
+      "momentum": 33.2193
     },
     {
-      "query": "brandon miller",
-      "traffic": 1000.0,
+      "query": "isobel borlase",
+      "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 93353.0,
-      "momentum": 2.5188
+      "saturation_views": 14954.0,
+      "momentum": 3.1496
     },
     {
-      "query": "what happened to julian sayin",
+      "query": "natalie nakase",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 23367.0,
+      "momentum": 2.9684
+    },
+    {
+      "query": "legion field",
       "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 115620.0,
-      "momentum": 2.4612
+      "saturation_views": 71909.0,
+      "momentum": 2.5928
     },
     {
-      "query": "julian sayin injury",
-      "traffic": 2000.0,
+      "query": "lara trump",
+      "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 144122.0,
-      "momentum": 2.4046
+      "saturation_views": 204729.0,
+      "momentum": 2.3195
     }
   ]
 }

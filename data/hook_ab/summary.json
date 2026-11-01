@@ -1,16 +1,16 @@
 {
   "status": "ok",
-  "pairs": 28,
+  "pairs": 29,
   "joined": 0,
   "variants": {
     "A": {
-      "assigned": 14,
+      "assigned": 15,
       "measured": 0,
       "mean_engagement": null,
       "mean_views": null,
       "families": {
         "statement": 7,
-        "question": 4,
+        "question": 5,
         "number": 3
       }
     },
@@ -419,7 +419,21 @@
       "video_id": "kzoLfpuh6lY",
       "engagement": null,
       "views": null
+    },
+    {
+      "ts": "2026-11-01T00:28:19",
+      "pair_id": "pair_20261101_0029",
+      "topic": "quiz:history",
+      "variant": "A",
+      "hook": "Are you smarter than most people?",
+      "family": "question",
+      "family_other": "identity",
+      "hook_a": "Are you smarter than most people?",
+      "hook_b": "Most adults cannot get all of these right.",
+      "video_id": null,
+      "engagement": null,
+      "views": null
     }
   ],
-  "fetched": "2026-11-01T00:27:54"
+  "fetched": "2026-11-01T01:57:22"
 }

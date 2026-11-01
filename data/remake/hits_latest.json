@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-01T00:28:05.790752",
+  "date": "2026-11-01T01:57:33.811194",
   "region": "US",
   "language": "en",
   "keywords": [
@@ -12,8 +12,8 @@
   ],
   "min_views": 500000,
   "max_duration": 90,
-  "total_found": 90,
-  "rejected": 80,
+  "total_found": 88,
+  "rejected": 78,
   "hits": [
     {
       "id": "q16JX5kT0Ls",
@@ -43,21 +43,21 @@
       "query": "ytsearch10:test your knowledge shorts"
     },
     {
+      "id": "uQ81h8Mjwcw",
+      "title": "General Knowledge Quiz – Human Body Quiz",
+      "channel": "GH Quiz ",
+      "views": 72,
+      "duration": 90.0,
+      "url": "https://www.youtube.com/watch?v=uQ81h8Mjwcw",
+      "query": "ytsearch10:general knowledge #shorts"
+    },
+    {
       "id": "uaWbJExYEbE",
       "title": "Test Your Knowledge #shorts",
       "channel": "know youtube",
       "views": 60,
       "duration": 31.0,
       "url": "https://www.youtube.com/watch?v=uaWbJExYEbE",
-      "query": "ytsearch10:test your knowledge shorts"
-    },
-    {
-      "id": "5Ia2nuHj-N4",
-      "title": "Test Your Knowledge!! Short Quiz 1",
-      "channel": "Idea Voyager",
-      "views": 40,
-      "duration": 77.0,
-      "url": "https://www.youtube.com/watch?v=5Ia2nuHj-N4",
       "query": "ytsearch10:test your knowledge shorts"
     }
   ]

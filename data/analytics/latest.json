@@ -1,33 +1,33 @@
 [
   {
-    "id": "kzoLfpuh6lY",
-    "title": "This Quiz Looks Easy Until Question 4",
-    "published": "2026-10-31T18:14:34Z",
+    "id": "jVwLSsQx_iE",
+    "title": "Question 4 Is Where Streaks End",
+    "published": "2026-11-01T02:01:07Z",
     "views": 0,
     "likes": 0,
     "comments": 0,
     "privacy": "public",
-    "fetched": "2026-10-31T18:14:47.516788"
+    "fetched": "2026-11-01T02:01:19.585115"
   },
   {
     "id": "gEtui7O33o0",
     "title": "9 Question Quiz. Can You Score 9/9?",
     "published": "2026-10-30T23:56:25Z",
-    "views": 500,
+    "views": 529,
     "likes": 7,
     "comments": 1,
     "privacy": "public",
-    "fetched": "2026-10-31T18:14:47.920543"
+    "fetched": "2026-11-01T02:01:19.937664"
   },
   {
     "id": "fNh2NGFifGQ",
     "title": "Can You Beat This 9 Question Quiz?",
     "published": "2026-10-31T07:47:42Z",
-    "views": 217,
-    "likes": 2,
+    "views": 306,
+    "likes": 3,
     "comments": 3,
     "privacy": "public",
-    "fetched": "2026-10-31T18:14:47.920554"
+    "fetched": "2026-11-01T02:01:19.937677"
   },
   {
     "id": "cy3aSg9ujT4",
@@ -37,17 +37,17 @@
     "likes": 0,
     "comments": 0,
     "privacy": "private",
-    "fetched": "2026-10-31T18:14:47.920558"
+    "fetched": "2026-11-01T02:01:19.937681"
   },
   {
     "id": "uBK8AeCn1LM",
     "title": "Only 1% Score 9/9 On This Quiz",
     "published": "2026-10-31T15:54:12Z",
-    "views": 197,
-    "likes": 5,
-    "comments": 3,
+    "views": 683,
+    "likes": 14,
+    "comments": 4,
     "privacy": "public",
-    "fetched": "2026-10-31T18:14:47.920568"
+    "fetched": "2026-11-01T02:01:19.937685"
   },
   {
     "id": "fXzcJuL7tII",
@@ -55,8 +55,18 @@
     "published": "2026-10-31T18:02:10Z",
     "views": 1,
     "likes": 0,
-    "comments": 1,
-    "privacy": "public",
-    "fetched": "2026-10-31T18:14:47.920572"
+    "comments": 0,
+    "privacy": "private",
+    "fetched": "2026-11-01T02:01:19.937688"
+  },
+  {
+    "id": "kzoLfpuh6lY",
+    "title": "This Quiz Looks Easy Until Question 4",
+    "published": "2026-10-31T18:15:09Z",
+    "views": 1,
+    "likes": 0,
+    "comments": 0,
+    "privacy": "private",
+    "fetched": "2026-11-01T02:01:19.937691"
   }
 ]
