@@ -291,14 +291,20 @@ def pick_title(candidates, recent=None, family_bonus=None, seq=0):
 
 # Pics d'audience US heure LOCALE (ET), par jour de semaine (Mon=0).
 # Etudes : SocialPilot (301K videos), Buffer (1.8M) - notes section 5.1.
+# Mise a jour 2026-11-01 (sweep best-practices Shorts) : les Shorts
+# performent aussi en fin d'apres-midi en semaine (15-18h ET) et en
+# debut de soiree le week-end (18-21h ET). Avec smart_lead_min=90,
+# un pic (16,19) publie 14:30-17:30 ET (couvre 15-18) et un pic
+# (19,21) publie 17:30-19:30 ET (couvre 18-19h). Fri deja couvert
+# (meilleur jour, pic 16-19 + soiree 19-21).
 US_PEAKS = {
-    0: [(12, 15)],                       # Mon
-    1: [(14, 17)],                       # Tue
-    2: [(12, 15)],                       # Wed
-    3: [(12, 15)],                       # Thu
+    0: [(12, 15), (16, 19)],             # Mon (+ fin d'apres-midi)
+    1: [(14, 17), (16, 19)],             # Tue (+ fin d'apres-midi)
+    2: [(12, 15), (16, 19)],             # Wed (+ fin d'apres-midi)
+    3: [(12, 15), (16, 19)],             # Thu (+ fin d'apres-midi)
     4: [(12, 15), (16, 19), (19, 21)],   # Fri (meilleur jour, pic 16-19)
-    5: [(11, 14)],                       # Sat (week-end : mid-day peak)
-    6: [(11, 14)],                       # Sun
+    5: [(11, 14), (19, 21)],             # Sat (midi + debut de soiree)
+    6: [(11, 14), (19, 21)],             # Sun (midi + debut de soiree)
 }
 
 

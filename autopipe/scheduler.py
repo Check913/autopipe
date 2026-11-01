@@ -472,6 +472,51 @@ def publish_pending_video(cfg, paths, pending, pending_file=None):
                  "https://youtu.be/%s", _utcnow().strftime("%H:%M:%S"),
                  pub_at.strftime("%H:%M:%S"), video_id)
     else:
+        # GATE QUALITE pre-upload (skill hooks 2026-11-01) : repare les
+        # metadata reparables (emoji, prefixes compteur, titre court/long,
+        # description sans hashtags, tags vides) et BLOQUE les metadata
+        # interdites (banned_title_words / anti_topics / ban dur). Fail-open
+        # : toute panne du gate laisse passer la publication telle quelle
+        # (publier a tout prix, mais jamais une metadata interdite si le
+        # gate fonctionne).
+        try:
+            from .hooks import quality as quality_gate
+            title, description, tags, qrep = quality_gate.check_and_repair(
+                title, description, tags, pending=pending, cfg=cfg)
+            if qrep.get("repairs"):
+                pending["title"] = title
+                pending["description"] = description
+                pending["tags"] = list(tags)
+                if pending_file is not None:
+                    save_json(pending_file, pending)
+                log.warning("Gate qualite: %s reparation(s) avant upload: %s",
+                            len(qrep["repairs"]), ", ".join(qrep["repairs"]))
+            if qrep.get("violations"):
+                audit = quality_gate.write_audit(
+                    "quality_gate",
+                    {"title": title, "description": description,
+                     "tags": list(tags), "repairs": qrep.get("repairs") or [],
+                     "violations": qrep["violations"],
+                     "video": str(video_path),
+                     "publish_at": str(pending.get("publish_at") or "")},
+                    cfg=cfg)
+                log.critical("Gate qualite: publication BLOQUEE (%s). "
+                             "Audit: %s", "; ".join(qrep["violations"]),
+                             audit)
+                if pending_file is not None:
+                    _clear_pending(pending_file)
+                _alert(cfg, "AutoPipe: metadata bloquees par le gate qualite",
+                       "La video %s n'a PAS ete publiee (metadata "
+                       "interdites). Le pipeline est relance avec un nouveau "
+                       "sujet.\nViolations: %s\nAudit: %s\nTitre: %s"
+                       % (video_path, "; ".join(qrep["violations"]),
+                          audit or "?", title))
+                return {"published": False, "reason": "quality_gate",
+                        "violations": qrep["violations"], "audit": audit,
+                        "video": str(video_path)}
+        except Exception:
+            log.warning("Gate qualite indisponible (fail-open, publication "
+                        "normale):\n%s", traceback.format_exc())
         now = _utcnow()
         if now < pub_at:
             log.info("Publication a %s UTC: upload PUBLIC direct (dans %s, "

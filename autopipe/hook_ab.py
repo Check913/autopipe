@@ -120,6 +120,35 @@ def attach_video(pair_id, video_id, cfg=None):
     return hit
 
 
+def commit_variant(pair_id, variant, hook=None, family=None, cfg=None):
+    """Reecrit la variante REELLEMENT publiee d'une paire A/B.
+
+    Le gate d'ideation (hooks diversity/exploration) peut choisir une
+    variante differente de l'alternance deterministe de assign() ; sans
+    reecriture, summarize() joindrait la retention a la MAUVAISE variante
+    et biaiserait best_family(). Reecrit la/les ligne(s) de
+    assignments.jsonl correspondant a pair_id (variant/hook/family).
+    """
+    cfg = cfg or get_config()
+    if not pair_id or not variant:
+        return False
+    rows = _load_assignments(cfg)
+    hit = False
+    for r in rows:
+        if r.get("pair_id") == pair_id:
+            r["variant"] = str(variant)
+            if hook is not None:
+                r["hook"] = str(hook)
+            if family is not None:
+                r["family"] = str(family)
+            hit = True
+    if hit:
+        _write_assignments(cfg, rows)
+        log.info("Hook A/B: paire %s reassignee -> variante %s (%s)",
+                 pair_id, variant, str(hook or "")[:50])
+    return hit
+
+
 def _norm(s):
     return " ".join(str(s or "").lower().split())
 

@@ -17,7 +17,7 @@ garde. Aucun appel reseaux ; lecture de hook_memory.json.
 """
 import traceback
 
-from ..identity import hook_variants as identity_variants
+from ..config import get_config
 from ..util import get_logger
 from . import memory
 

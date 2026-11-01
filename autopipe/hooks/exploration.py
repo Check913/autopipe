@@ -14,6 +14,7 @@ Exploration/exploitation sur un cycle de 5 Shorts.
 """
 import random
 
+from ..config import get_config
 from ..util import get_logger
 from . import memory
 from .performance import best_family, min_n

@@ -339,9 +339,16 @@ def test_publish_pending_video_uploads_public_directly(make_cfg, tmp_path,
     pub_at = dt.datetime(2026, 10, 31, 14, 0, tzinfo=UTC)
     pend_file = tmp_path / "data" / "pending_publish.json"
     pend_file.parent.mkdir()
+    # Metadonnees realistes : elles doivent franchir le gate qualite
+    # SANS aucune reparation (titre 15-50 chars sans emoji ni prefixe
+    # compteur ni mot banni, description < 5000 octets, tags non vides
+    # et sous budget).
+    title = "3 Facts No One Tells You About Bees"
+    description = "Bees never sleep and other facts #facts"
+    tags = ["facts"]
     save_json(pend_file, {"publish_at": pub_at.isoformat(),
-                          "video": "out/v.mp4", "title": "T",
-                          "description": "D", "tags": ["a"]})
+                          "video": "out/v.mp4", "title": title,
+                          "description": description, "tags": tags})
     pending = load_json(pend_file)
 
     calls = {"upload": [], "flip": [], "wait": []}
@@ -367,8 +374,8 @@ def test_publish_pending_video_uploads_public_directly(make_cfg, tmp_path,
                    "video": str(Path("out/v.mp4"))}
     # Upload direct en public : AUCUN argument privacy, AUCUNE bascule.
     assert calls["upload"][0]["kwargs"] == {}
-    assert calls["upload"][0]["args"] == (Path("out/v.mp4"), "T", "D",
-                                          ["a"], cfg)
+    assert calls["upload"][0]["args"] == (Path("out/v.mp4"), title,
+                                          description, tags, cfg)
     assert calls["flip"] == []
     # Attente sans derive jusqu'a la cible PILE, puis upload public.
     assert calls["wait"] == [pub_at]

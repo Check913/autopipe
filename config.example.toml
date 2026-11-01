@@ -295,6 +295,24 @@ loop_min_pct = 80                # sous 80 % -> alerte CRITICAL dans le hook
 # (data/hook_ab/assignments.jsonl). Voir README-analytics.md.
 enabled = true
 
+[hooks]
+# SKILL hook-generator-upgrade (2026-11-01) : gates de selection des hooks
+# a l'ideation (diversite 7 j Jaccard + anti-serie de familles, famille
+# gagnante mesuree, cycle exploration 1/5) + gate qualite pre-publication
+# (data/hooks/blocked/). Mode "auto_gated" : les gates s'activent
+# AUTOMATIQUEMENT des que l'API Analytics renvoie de VRAIS engagedViews sur
+# un Short age de 72h+ (prepublication_check lance par le scheduler etape
+# 1.98 ; aucun geste humain). mode "off" = desactive, "always" = bypass
+# du gate (tests locaux).
+enabled = true
+mode = "auto_gated"
+exploration_rate = 0.3           # part de tours d'exploration hors cycle explore_every
+performance_min_n = 3            # Shorts mesures par famille avant gagnante
+explore_every = 5                # 1 Short explore tous les 5 publies
+dup_jaccard = 0.7                # seuil de rejet de doublon de hook
+max_family_consecutive = 3       # anti-serie de memes familles de hooks
+recent_days = 7                  # fenetre memoire anti-doublon (jours)
+
 [research]
 # MODULE 4 : benchmark quantitatif continu de la niche (Shorts gagnants +
 # canaux rivaux) -> chiffres reels injectes dans les prompts.

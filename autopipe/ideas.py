@@ -461,13 +461,49 @@ def run_ideas(config=None, count=5):
                              fam_txt or "?", label_txt or ab["variant"])
                     if reason:
                         log.info("[generator] hook propose remplace : %s", reason)
-                    exploring, fam_best = hooks_exp.is_exploration_turn(cfg), None
+                    # Un SEUL tirage du tour : is_exploration_turn() consomme
+                    # random.random() (exploration_rate), un 2e appel via
+                    # choose_variant() donnerait une reponse differente.
+                    exploring = hooks_exp.is_exploration_turn(cfg)
                     try:
                         fam_best, _ = hooks_perf.best_family(cfg)
                     except Exception:
                         fam_best = None
-                    hook_exp, fam_exp, label_exp, _ = (
-                        hooks_exp.choose_variant(topic_txt, variants, cfg=cfg))
+                    hook_exp = fam_exp = label_exp = None
+                    try:
+                        hook_exp, fam_exp, label_exp, exploring = (
+                            hooks_exp.choose_variant(topic_txt, variants,
+                                                     cfg=cfg,
+                                                     exploring=exploring))
+                    except Exception:
+                        hook_exp = None
+                    if hook_exp and hook_exp != idea["hook"]:
+                        # La variante explore/exploitee ne reecrit le hook
+                        # QUE si elle repasse le gate diversite (pas de
+                        # doublon reintroduit dans la fenetre 7 j).
+                        try:
+                            ok_exp, why_exp = hooks_div.passes(
+                                topic_txt, hook_exp, cfg=cfg)
+                        except Exception:
+                            ok_exp, why_exp = True, None
+                        if ok_exp:
+                            idea["hook"] = hook_exp
+                            for v in variants:
+                                if v.get("hook") == hook_exp:
+                                    ab["variant"] = v["variant"]
+                                    ab["hook"] = v["hook"]
+                                    idea["hook_variant"] = v["variant"]
+                                    fam_exp = fam_exp or v.get("family")
+                                    break
+                            log.info("[exploration] hook reecrit : %s "
+                                     "(famille %s, tour %s)",
+                                     str(hook_exp)[:60], fam_exp or "?",
+                                     "exploration" if exploring
+                                     else "exploitation")
+                        else:
+                            log.info("[exploration] variante choisie rejetee "
+                                     "par diversite (%s) -> hook garde",
+                                     why_exp or "?")
                     if not fam_best:
                         log.info("[exploration] pas assez de mesures pour "
                                  "designer une famille gagnante (le cycle "
@@ -478,6 +514,31 @@ def run_ideas(config=None, count=5):
                     else:
                         log.info("[exploitation] famille gagnante '%s' "
                                  "exploitee pour ce rang", fam_best)
+                    # COMMIT A/B : la variante REELLEMENT publiee doit rester
+                    # coherente avec la paire enregistree, sinon summarize()
+                    # joindrait la retention a la mauvaise variante et
+                    # biaiserait best_family() pour les tours suivants.
+                    try:
+                        from .hook_ab import commit_variant as ab_commit
+                        fam_final = fam_exp if (hook_exp and
+                                                hook_exp == idea["hook"]) \
+                            else None
+                        if not fam_final and idea["hook"] == hook_txt:
+                            fam_final = fam_txt
+                        if not fam_final:
+                            for v in variants:
+                                if v.get("hook") == idea["hook"]:
+                                    fam_final = v.get("family")
+                                    break
+                        ab_commit(pair_id=ab.get("pair_id"),
+                                  variant=ab.get("variant"),
+                                  hook=idea.get("hook"),
+                                  family=fam_final or ab.get("family"),
+                                  cfg=cfg)
+                    except Exception:
+                        log.warning("[generator] commit A/B indisponible "
+                                    "(non fatal):\n%s",
+                                    traceback.format_exc())
             except Exception:
                 log.warning("[generator] gates du skill hooks indisponibles "
                             "(non fatal):\n%s", traceback.format_exc())

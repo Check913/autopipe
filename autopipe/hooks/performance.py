@@ -11,6 +11,7 @@ explique que les decisions restent exploration.
 Aucun appel reseaux ici : performance lit hook_memory.json (alimente
 par prepublication_check chaque run).
 """
+from ..config import get_config
 from ..util import get_logger
 from . import memory
 
