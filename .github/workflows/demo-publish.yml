@@ -1,0 +1,99 @@
+# DEMO AutoPipe - publication IMMEDIATE d'une video pour apercu (LJ 2026-11-01).
+#
+# But : montrer a quoi ressemblent les publications du bot (idee -> TTS ->
+# sous-titres -> clips -> rendu -> upload PUBLIC), sans attendre une fenetre
+# 15h/21h UTC. C'est le MEME pipeline que la production (run_pipeline_once),
+# sur le MEME type de runner (egress US, verrou geo strict honore).
+#
+# Aucun cron : workflow_dispatch UNIQUEMENT (a la demande). Groupe de
+# concurrence DEDIE (jamais autopipe-run) -> ne peut ni bloquer ni annuler
+# les fenetres de production. La video part PUBLIC directement (config
+# [upload].privacy = public), contrairement au mode fenetre (prive a H-2
+# puis public a H:00).
+name: demo-publish
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: demo-publish
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Installer ffmpeg + polices
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg fontconfig fonts-liberation
+          fc-cache -f
+
+      - name: Installer les dependances Python
+        run: pip install --no-cache-dir -r requirements.txt
+
+      - name: Restaurer la configuration et les credentials
+        env:
+          AUTOPIPE_TOML: ${{ secrets.AUTOPIPE_TOML }}
+          YOUTUBE_TOKEN_JSON: ${{ secrets.YOUTUBE_TOKEN_JSON }}
+          CLIENT_SECRET_JSON: ${{ secrets.CLIENT_SECRET_JSON }}
+          ANALYTICS_TOKEN_JSON: ${{ secrets.ANALYTICS_TOKEN_JSON }}
+        run: |
+          set -euo pipefail
+          test -n "$AUTOPIPE_TOML" || { echo "Secret AUTOPIPE_TOML manquant"; exit 1; }
+          test -n "$YOUTUBE_TOKEN_JSON" || { echo "Secret YOUTUBE_TOKEN_JSON manquant"; exit 1; }
+          printf '%s' "$AUTOPIPE_TOML" > autopipe.toml
+          printf '%s' "$YOUTUBE_TOKEN_JSON" > token.json
+          if [ -n "${CLIENT_SECRET_JSON:-}" ]; then
+            printf '%s' "$CLIENT_SECRET_JSON" > client_secret.json
+          fi
+          if [ -n "${ANALYTICS_TOKEN_JSON:-}" ]; then
+            printf '%s' "$ANALYTICS_TOKEN_JSON" > token_analytics.json
+          fi
+          mkdir -p data cache output assets
+          chmod 600 token.json client_secret.json token_analytics.json 2>/dev/null || true
+
+      - name: Verifier le token YouTube
+        run: python -m autopipe.cli check-token
+
+      # Pipeline complet UNE fois : radar -> scout -> idee -> TTS -> SRT ->
+      # clips Pexels -> rendu -> upload PUBLIC. Verrou geo US strict inclus
+      # dans upload_video (fail-closed, egress runner = US).
+      - name: Publier une video de demonstration
+        run: python -m autopipe.cli run
+
+      # Persistance du registre (brain, historique analytics) comme en prod.
+      - name: Commiter l'etat du bot
+        if: always()
+        run: |
+          git config user.name "autopipe-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data || true
+          if git diff --cached --quiet; then
+            echo "Etat inchange"
+          else
+            git commit -m "demo-publish: $(date -u '+%Y-%m-%d %H:%M UTC')"
+          fi
+          ok=0
+          for i in 1 2 3 4 5; do
+            if git pull --rebase --autostash -X theirs origin main \
+               && git push origin HEAD:main; then
+              ok=1
+              break
+            fi
+            echo "Race push (essai $i/5) -> nouvelle tentative"
+            sleep $((i * 5))
+          done
+          if [ "$ok" -ne 1 ]; then
+            echo "WARN: push de l'etat echoue apres retries (l'etat reste local au job)"
+          fi
