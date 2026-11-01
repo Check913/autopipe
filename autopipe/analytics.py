@@ -207,12 +207,16 @@ def get_analytics_service(cfg=None, interactive=False):
                 return None
             flow = InstalledAppFlow.from_client_secrets_file(
                 str(secrets), [YT_ANALYTICS_SCOPE])
-            # MAX 2026-11-01 : prompt select_account OBLIGATOIRE - sans lui
-            # Google autorise silencieusement le compte par defaut du
-            # navigateur (arrive 00:27 : token valide sur un canal vide ->
-            # boucle retention 0 ligne sans aucun signe d'erreur).
+            # MAX 2026-11-01 : prompt consent+select_account OBLIGATOIRE -
+            # 1) select_account : sans lui Google autorise silencieusement
+            #    le compte par defaut du navigateur.
+            # 2) consent : sans lui, si l'app est deja autorisee, Google
+            #    court-circuite l'ecran de consentement ET le selecteur de
+            #    chaine -> token lie a la chaine PERSO VIDE au lieu de
+            #    ScoreNine (arrive 00:27 et 00:42 : token ok mais boucle
+            #    retention 0 ligne a vie, sans aucun signe d'erreur).
             creds = flow.run_local_server(open_browser=True, port=0,
-                                          prompt="select_account")
+                                          prompt="consent select_account")
             token_file.write_text(creds.to_json(), encoding="utf-8")
             log.info("OAuth analytics token saved -> %s", token_file)
             import httplib2
