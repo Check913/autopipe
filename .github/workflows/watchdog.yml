@@ -56,6 +56,10 @@ jobs:
           WINDOWS_UTC: "15 21"
           GRACE_MIN: "20"
           LIMIT_MIN: "45"
+          # Input de test manuel (vide sur les declenchements schedules) ;
+          # github.event.inputs.at_hour vaut vide/absent sur les crons.
+          # UN SEUL bloc env par etape : GitHub refuse les doublons (422).
+          AT_HOUR: ${{ github.event.inputs.at_hour }}
         run: |
           python3 - <<'PY'
           import json, os, subprocess, datetime as dt
@@ -104,5 +108,3 @@ jobs:
 
           print("Dispatch envoyes: %d" % dispatched)
           PY
-        env:
-          AT_HOUR: ${{ github.event.inputs.at_hour }}
