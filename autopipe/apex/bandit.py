@@ -10,6 +10,11 @@ Beta(alpha, beta) mise a jour a chaque publication mesuree :
 L'etat est sauvegarde dans data/apex/bandit.json. Le choix d'un bras
 se fait par echantillonnage de Thompson : on tire un echantillon Gamma
 de chaque bras du groupe et on garde le maximum.
+
+Cold start (exploration forcee) : tant qu'un bras n'a pas ete essaye
+au moins apex.cold_start_pulls fois (3 par defaut), il est retourne
+en priorite par best() - le bandit ne peut pas exploiter un bras
+unique biaise des le premier jour.
 """
 
 import random
@@ -33,6 +38,10 @@ DEFAULT_ARMS = [
 ]
 
 _LABELS = dict(DEFAULT_ARMS)
+
+# Cold start : tirages obligatoires par bras avant exploitation
+# (apex.cold_start_pulls dans la config).
+_COLD_START = 3
 
 
 def _now_iso():
@@ -60,6 +69,7 @@ def load(cfg=None):
             arm = {}
         arm["alpha"] = float(arm.get("alpha", 1.0))
         arm["beta"] = float(arm.get("beta", 1.0))
+        arm["pulls"] = int(arm.get("pulls", 0))
         arms[arm_id] = arm
     doc["arms"] = arms
     return doc
@@ -98,6 +108,8 @@ def update(cfg=None, arm_ids=None, reward=0.0):
             doc["arms"][arm_id] = arm
         arm["alpha"] = float(arm.get("alpha", 1.0)) + reward
         arm["beta"] = float(arm.get("beta", 1.0)) + (1.0 - reward)
+        # Un tirage mesure = un credit de plus pour le cold start.
+        arm["pulls"] = int(arm.get("pulls", 0)) + 1
     save(cfg, doc)
     return doc
 
@@ -126,19 +138,61 @@ def sample_arm(arm):
     return (a / total) if total > 0 else 0.5
 
 
+def cold_start_pulls(cfg=None):
+    """Plancher de tirages par bras avant exploitation (cold start).
+
+    Chaque bras doit etre essaye au moins N fois (apex.cold_start_pulls,
+    3 par defaut) avant que le bandit puisse exploiter son gain
+    posterieur ; 0 desactive l'exploration forcee.
+    """
+    cfg = cfg if cfg is not None else get_config()
+    apex_cfg = (cfg or {}).get("apex", {}) or {}
+    try:
+        return max(0, int(apex_cfg.get("cold_start_pulls", _COLD_START)))
+    except (TypeError, ValueError):
+        return _COLD_START
+
+
+def cold_start(cfg=None, group=None):
+    """Ids des bras encore froids du groupe (moins de tirages que le
+    plancher cold start)."""
+    cfg = cfg if cfg is not None else get_config()
+    doc = load(cfg)
+    prefix = ("%s:" % group) if group else ""
+    floor = cold_start_pulls(cfg)
+    return [arm_id for arm_id, arm in doc["arms"].items()
+            if (not prefix or arm_id.startswith(prefix))
+            and int(arm.get("pulls", 0)) < floor]
+
+
 def best(cfg=None, group=None):
-    """Bras du groupe au meilleur gain posterieur -> (arm_id, moyenne).
+    """Bras du groupe a essayer ensuite -> (arm_id, moyenne).
 
     group = "family" | "format" | "quiz" ; None = tous les bras.
-    Retourne (None, None) si aucun bras ne correspond.
+    Cold start : tant qu'un bras du groupe compte moins de tirages que
+    le plancher (apex.cold_start_pulls), le bras le moins essaye est
+    force (egalite -> id, deterministe), meme face a un gagnant clair ;
+    sinon le bras au meilleur gain posterieur (greedy sur la moyenne
+    Beta). Retourne (None, None) si aucun bras ne correspond.
     """
     cfg = cfg if cfg is not None else get_config()
     doc = load(cfg)
     prefix = ("%s:" % group) if group else ""
+    items = [(arm_id, arm) for arm_id, arm in doc["arms"].items()
+             if not prefix or arm_id.startswith(prefix)]
+    if not items:
+        return None, None
+    floor = cold_start_pulls(cfg)
+    if floor > 0:
+        cold = sorted(((arm_id, int(arm.get("pulls", 0)))
+                       for arm_id, arm in items
+                       if int(arm.get("pulls", 0)) < floor),
+                      key=lambda t: (t[1], t[0]))
+        if cold:
+            arm_id = cold[0][0]
+            return arm_id, mean(doc["arms"][arm_id])
     best_id, best_mean = None, None
-    for arm_id, arm in doc["arms"].items():
-        if prefix and not arm_id.startswith(prefix):
-            continue
+    for arm_id, arm in items:
         m = mean(arm)
         if best_mean is None or m > best_mean:
             best_id, best_mean = arm_id, m
@@ -146,18 +200,27 @@ def best(cfg=None, group=None):
 
 
 def summary(cfg=None):
-    """Etat lisible du bandit pour la CLI et le rapport."""
+    """Etat lisible du bandit pour la CLI et le rapport.
+
+    Chaque bras expose son nb de tirages (pulls) et son statut froid
+    (cold) ; la cle cold_start rappelle le plancher applique.
+    """
     cfg = cfg if cfg is not None else get_config()
     doc = load(cfg)
+    floor = cold_start_pulls(cfg)
     arms = {}
     for arm_id, arm in doc["arms"].items():
+        pulls = int(arm.get("pulls", 0))
         arms[arm_id] = {
             "label": label(arm_id),
             "alpha": round(float(arm.get("alpha", 1.0)), 4),
             "beta": round(float(arm.get("beta", 1.0)), 4),
             "mean": round(mean(arm), 4),
+            "pulls": pulls,
+            "cold": pulls < floor,
         }
-    return {"updated": doc.get("updated"), "arms": arms}
+    return {"updated": doc.get("updated"), "arms": arms,
+            "cold_start": floor}
 
 
 def label(arm_id):

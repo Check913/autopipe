@@ -7,7 +7,7 @@ import json
 
 import pytest
 
-from autopipe import apex
+from autopipe import apex, identity
 from autopipe.apex import bandit, daemon, knowledge_base, metrics, post_mortem
 from autopipe.apex import rollback, scraper
 from autopipe.config import get_paths
@@ -67,7 +67,8 @@ def test_metrics_mode_degrade(make_cfg):
 
 
 def test_bandit_update_et_best(make_cfg):
-    cfg = make_cfg()
+    # Cold start desactive : les assertions de ce test sont greedy.
+    cfg = make_cfg(apex={"cold_start_pulls": 0})
     bandit.update(cfg, ["family:question", "format:short"], 0.9)
     bandit.update(cfg, ["family:number", "format:short"], 0.1)
     doc = bandit.load(cfg)
@@ -88,6 +89,76 @@ def test_bandit_recompense_hors_bornes(make_cfg):
     assert doc["arms"]["family:question"]["alpha"] == pytest.approx(2.0)
     assert doc["arms"]["family:question"]["beta"] == pytest.approx(1.0)
     assert bandit.update(cfg, [], 0.5) is None
+
+
+def test_bandit_cold_start_rotation(make_cfg):
+    # Exploration forcee : tant qu'un bras est froid, le moins essaye
+    # est retourne ; egalite de tirages -> plus petit id d'abord.
+    cfg = make_cfg(apex={"cold_start_pulls": 1})
+    seq = []
+    for _ in range(4):
+        arm, _m = bandit.best(cfg, "family")
+        seq.append(arm)
+        bandit.update(cfg, [arm], 0.6)
+    assert seq == ["family:negation", "family:number",
+                   "family:question", "family:statement"]
+    doc = bandit.load(cfg)
+    assert all(doc["arms"][a]["pulls"] == 1 for a in
+               ("family:question", "family:number", "family:negation",
+                "family:statement"))
+    # Tous les bras sont chauds : best retombe sur le greedy.
+    assert bandit.cold_start(cfg, "family") == []
+    assert bandit.best(cfg, "family")[0] == "family:question"
+
+
+def test_bandit_cold_start_desactive(make_cfg):
+    # Plancher 0 : exploitation greedy pure, meme a l'etat neuf.
+    cfg = make_cfg(apex={"cold_start_pulls": 0})
+    assert bandit.cold_start_pulls(cfg) == 0
+    assert bandit.cold_start(cfg, "family") == []
+    assert bandit.best(cfg, "family")[0] == "family:question"
+    bandit.update(cfg, ["family:statement"], 0.9)
+    assert bandit.best(cfg, "family")[0] == "family:statement"
+
+
+def test_bandit_cold_start_helper(make_cfg):
+    # Sans cle apex : plancher par defaut 3. Valeur None ou invalide
+    # retombe sur le defaut ; valeur negative bornee a 0.
+    cfg = make_cfg()
+    assert bandit.cold_start_pulls(cfg) == 3
+    assert bandit.cold_start_pulls(
+        make_cfg(apex={"cold_start_pulls": None})) == 3
+    assert bandit.cold_start_pulls(
+        make_cfg(apex={"cold_start_pulls": "x"})) == 3
+    assert bandit.cold_start_pulls(
+        make_cfg(apex={"cold_start_pulls": -2})) == 0
+    # Bras froids du groupe, dans l'ordre d'insertion des bras.
+    assert bandit.cold_start(cfg, "family") == [
+        "family:question", "family:number", "family:negation",
+        "family:statement"]
+    assert len(bandit.cold_start(cfg, None)) == 8
+    # Un bras essaye sort du froid (plancher 1).
+    cfg2 = make_cfg(apex={"cold_start_pulls": 1})
+    bandit.update(cfg2, ["family:question"], 0.5)
+    assert bandit.cold_start(cfg2, "family") == [
+        "family:number", "family:negation", "family:statement"]
+
+
+def test_bandit_summary_expose_pulls(make_cfg):
+    cfg = make_cfg()
+    summ = bandit.summary(cfg)
+    assert summ["cold_start"] == 3
+    assert len(summ["arms"]) == 8
+    q = summ["arms"]["family:question"]
+    assert q["pulls"] == 0 and q["cold"] is True
+    assert q["alpha"] == pytest.approx(1.0)
+    bandit.update(cfg, ["family:question"], 0.9)
+    summ = bandit.summary(cfg)
+    q = summ["arms"]["family:question"]
+    assert q["pulls"] == 1 and q["cold"] is True  # 1 < plancher 3
+    assert q["mean"] == pytest.approx(1.9 / 3.0, abs=1e-3)
+    s = summ["arms"]["family:statement"]
+    assert s["pulls"] == 0 and s["cold"] is True
 
 
 def test_kb_patterns_et_directive(make_cfg):
@@ -115,7 +186,7 @@ def test_kb_patterns_et_directive(make_cfg):
 
 
 def test_post_mortem_apprend_gagnant(make_cfg):
-    cfg = _seed(make_cfg())
+    cfg = _seed(make_cfg(apex={"cold_start_pulls": 0}))
     res = post_mortem.analyze(cfg)
     assert res["learned"] == 2
     assert res["winners"]["hook_family"] == {"question": 1}
@@ -140,7 +211,7 @@ def test_post_mortem_pas_de_double_apprentissage(make_cfg):
 
 
 def test_rollback_instantane_et_restauration(make_cfg):
-    cfg = make_cfg()
+    cfg = make_cfg(apex={"cold_start_pulls": 0})
     bandit.update(cfg, ["family:question"], 0.9)
     name = rollback.snapshot(cfg, label="test")
     assert name and rollback.list_snapshots(cfg) == [name]
@@ -308,6 +379,98 @@ def test_scraper_filter_ladder(make_cfg):
     assert strict[0]["views"] >= strict[1]["views"]
     assert strict[0]["url"].startswith(
         "https://www.youtube.com/watch?v=")
+
+
+def test_scraper_synth_question():
+    # Variante question deterministe d'un titre statement.
+    out = scraper._synth_question("General Knowledge Quiz #shorts")
+    assert out == "Can You Answer These General Knowledge Quiz?"
+    assert out.endswith("?")
+    assert identity.hook_family(out) == "question"
+    # Segment avant '|' et ponctuation finale retires.
+    assert scraper._synth_question(
+        "Trivia Night | Channel Officiel") == \
+        "Can You Answer These Trivia Night?"
+    assert scraper._synth_question("Space Facts.") == \
+        "Can You Answer These Space Facts?"
+    # Sujet vide apres nettoyage : "" (l'original est garde tel quel).
+    assert scraper._synth_question("") == ""
+    assert scraper._synth_question(None) == ""
+    assert scraper._synth_question("#shorts") == ""
+
+
+def test_scraper_pick_patterns_diversifie():
+    # 10 titres statement -> 5 originaux (impairs) + 5 variantes
+    # question (pairs) : le scrape alimente plusieurs bras des le
+    # premier passage, la monoculture family:statement est cassee.
+    entries = [{"title": t} for t in [
+        "Fun Facts About The Ocean",
+        "Amazing Quiz For Geniuses",
+        "World Geography Challenge",
+        "History Quiz Hard Mode",
+        "Science Trivia For Experts",
+        "English Grammar Challenge",
+        "Sports Quiz For Champions",
+        "Movie Trivia Night",
+        "Space Facts Explained",
+        "Food Quiz For Foodies"]]
+    assert scraper.pick_patterns(entries) == [
+        ("Fun Facts About The Ocean", "family:statement"),
+        ("Can You Answer These Amazing Quiz For Geniuses?",
+         "family:question"),
+        ("World Geography Challenge", "family:statement"),
+        ("Can You Answer These History Quiz Hard Mode?",
+         "family:question"),
+        ("Science Trivia For Experts", "family:statement"),
+        ("Can You Answer These English Grammar Challenge?",
+         "family:question"),
+        ("Sports Quiz For Champions", "family:statement"),
+        ("Can You Answer These Movie Trivia Night?",
+         "family:question"),
+        ("Space Facts Explained", "family:statement"),
+        ("Can You Answer These Food Quiz For Foodies?",
+         "family:question")]
+    # La limite max_patterns est respectee.
+    assert len(scraper.pick_patterns(entries, max_patterns=4)) == 4
+
+
+def test_scraper_pick_patterns_mixte():
+    # Les familles non statement passent sans transformation ; seul le
+    # deuxieme statement est remplace par sa variante question.
+    entries = [{"title": t} for t in [
+        "Why is the sea salty?",
+        "3 secrets about coral",
+        "Nobody knows this trench",
+        "Deep sea facts for beginners",
+        "Ocean quiz for smart kids"]]
+    assert scraper.pick_patterns(entries) == [
+        ("Why is the sea salty?", "family:question"),
+        ("3 secrets about coral", "family:number"),
+        ("Nobody knows this trench", "family:negation"),
+        ("Deep sea facts for beginners", "family:statement"),
+        ("Can You Answer These Ocean quiz for smart kids?",
+         "family:question")]
+
+
+def test_scraper_maybe_scrape_multi_familles(make_cfg, monkeypatch):
+    # Un scrape 100% statement alimente desormais deux bras : les
+    # originaux statement + les variantes question synthetiques.
+    cfg = make_cfg(apex={"scrape": {"enabled": True, "cache_hours": 72,
+                                    "max_patterns": 10, "query": "q"}})
+    titles = ["Fun Facts About The Ocean", "Amazing Quiz For Geniuses",
+              "World Geography Challenge", "History Quiz Hard Mode",
+              "Science Trivia For Experts", "English Grammar Challenge",
+              "Sports Quiz For Champions", "Movie Trivia Night",
+              "Space Facts Explained", "Food Quiz For Foodies"]
+    entries = [{"id": "v%d" % i, "title": t, "view_count": 1000000,
+                "duration": 30} for i, t in enumerate(titles)]
+    monkeypatch.setattr(scraper, "search",
+                        lambda cfg=None, query=None: entries)
+    assert scraper.maybe_scrape(cfg, force=True) == 10
+    patterns = knowledge_base.load(cfg)["patterns"]
+    assert len(patterns) == 10
+    fams = {p["arm"] for p in patterns}
+    assert fams == {"family:statement", "family:question"}
 
 
 def test_scraper_cache_non_ecrit_si_vide(make_cfg, monkeypatch):

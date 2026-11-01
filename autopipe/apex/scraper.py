@@ -7,11 +7,13 @@ PLUSIEURS requetes de la vraie niche (derivees de scout.keywords avec
 un suffixe "#shorts", comme research.py : une recherche generique
 "shorts" renvoie surtout des compilations longues, jamais filtrees),
 puis les titres dedoublonnes sont classes en familles de hooks et
-ajoutes a la base de connaissances (source "scrape"). Les filtres
-(vues, duree) forment une echelle : si rien ne passe au filtre
-strict, on retient les meilleurs candidats pour ne jamais renvoyer 0
-quand YouTube a repondu. Un cache evite de frapper YouTube a chaque
-cycle (apex.scrape.cache_hours).
+ajoutes a la base de connaissances (source "scrape"). Pour casser la
+monoculture (quiz/trivia/GK classent presque tout en family:statement),
+un titre statement sur deux est transforme en question synthetique.
+Les filtres (vues, duree) forment une echelle : si rien ne passe au
+filtre strict, on retient les meilleurs candidats pour ne jamais
+renvoyer 0 quand YouTube a repondu. Un cache evite de frapper YouTube
+a chaque cycle (apex.scrape.cache_hours).
 """
 
 import datetime
@@ -32,6 +34,13 @@ _SEARCH_COUNT = 50
 
 # Nb max de requetes de niche par veille (3 x 50 resultats).
 _MAX_QUERIES = 3
+
+# Diversification synthetique : les titres de quiz/trivia/GK sont
+# presque tous des "statements" (pas de '?', pas de chiffre, pas de
+# negation) - sans transformation, le scrape ne remplit qu'un seul
+# bras du bandit et le cold start reste biaise des le premier jour.
+# Un titre statement sur deux est donc re-emmielle en question.
+_SYNTH_TEMPLATE = "Can You Answer These %s?"
 
 
 def _scrape_cfg(cfg):
@@ -193,14 +202,36 @@ def _parse_iso(value):
         return None
 
 
+def _synth_question(title):
+    """Variante question deterministe d'un titre statement.
+
+    Garde le premier segment avant '|' (separateur courant des titres
+    quiz/trivia), retire un suffixe "#shorts" et la ponctuation
+    finale, puis enveloppe dans le gabarit question (hook_family la
+    reclasse "question"). Retourne "" si le sujet final est vide : le
+    titre d'origine est alors garde tel quel.
+    """
+    subject = str(title or "").split("|")[0].strip()
+    while subject.lower().endswith("#shorts"):
+        subject = subject[:-7].strip()
+    subject = subject.rstrip(" .!:-")
+    if not subject:
+        return ""
+    return _SYNTH_TEMPLATE % subject
+
+
 def pick_patterns(entries, max_patterns=10):
     """Classe des titres dedoublonnes en familles de hooks.
 
     Retourne [(titre, "family:<famille>")] ; les titres sans famille
-    reconnue sont ignores.
+    reconnue sont ignores. Diversification synthetique : un titre
+    "statement" sur deux est remplace par sa variante question
+    (gabarit "Can You Answer These ... ?") pour que le bandit cold
+    start dispose de plusieurs bras actifs des le premier scrape.
     """
     seen = set()
     out = []
+    stmt_count = 0
     for entry in entries or []:
         if not isinstance(entry, dict):
             continue
@@ -214,6 +245,15 @@ def pick_patterns(entries, max_patterns=10):
         fam = identity.hook_family(title)
         if fam not in _FAMILIES:
             continue
+        if fam == "statement":
+            stmt_count += 1
+            if stmt_count % 2 == 0:
+                variant = _synth_question(title)
+                if variant:
+                    out.append((variant, "family:question"))
+                    if len(out) >= int(max_patterns):
+                        break
+                    continue
         out.append((title, "family:%s" % fam))
         if len(out) >= int(max_patterns):
             break

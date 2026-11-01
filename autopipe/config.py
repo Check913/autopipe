@@ -277,6 +277,10 @@ DEFAULTS = {
         "auto_rollback": True,
         # rotation du journal d'apprentissage (lignes JSONL).
         "journal_max": 3000,
+        # cold start du bandit : chaque bras doit etre essaye au
+        # moins N fois avant que le bandit puisse exploiter
+        # (0 = exploration forcee desactivee).
+        "cold_start_pulls": 3,
         "scrape": {
             # veille YouTube desactivee par defaut (zero reseau dans
             # les tests) ; activer avec enabled=True. query = "" :
