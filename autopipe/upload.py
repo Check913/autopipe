@@ -228,13 +228,26 @@ def status_payload(cfg, privacy=None):
     omis (comportement historique) ; true/false -> declare. Pour ce bot
     (TTS + scripts IA + stock clips), false est le declaratif correct :
     la video n'est pas un "contenu reel modifie pour paraitre reel".
+
+    VERROU "PUBLIC DIRECT" (demande explicite 2026-11-01) : le bot publie
+    AUTOMATIQUEMENT en public et ne passe JAMAIS par un etat prive puis
+    public. [upload].force_public (defaut true) ecrase TOUTE autre valeur
+    demandee ("private", "unlisted"...) en "public", avec un warning
+    explicite : aucun chemin de code ne peut plus uploader en prive.
     """
     # Import local : compliance n'importe pas upload, mais eviter tout
     # risque d'import circulaire au demarrage.
     from .compliance import ai_disclosure_value
     disclosure, configured = ai_disclosure_value(cfg)
+    privacy = privacy or cfg["upload"].get("privacy", "public")
+    if cfg["upload"].get("force_public", True):
+        if privacy != "public":
+            log.warning("force_public actif : privacy %r refuse -> la video "
+                        "est publiee PUBLIC directement (jamais prive puis "
+                        "public)", privacy)
+        privacy = "public"
     payload = {
-        "privacyStatus": privacy or cfg["upload"].get("privacy", "public"),
+        "privacyStatus": privacy,
         "selfDeclaredMadeForKids": bool(cfg["upload"].get("made_for_kids", False)),
     }
     if configured and disclosure is not None:

@@ -6,7 +6,8 @@ from pathlib import Path
 
 from . import analytics, fetch_media, ideas, scout, subs, tts, video
 from .config import get_config, get_paths
-from .upload import get_service, pinned_comment_text, upload_video
+from .upload import (get_service, pinned_comment_text, status_payload,
+                      upload_video)
 from .util import fix_proxy_env, get_logger, load_json, save_json
 
 log = get_logger("scheduler")
@@ -358,17 +359,81 @@ def _alert(cfg, subject, body):
         pass
 
 
-def publish_pending_video(cfg, paths, pending, pending_file=None):
-    """Publie une video pre-generee EXACTEMENT a l'heure prevue.
+def _flip_public_now(cfg, video_id):
+    """Sauvetage : bascule une video DEJA uploadee en public IMMEDIATEMENT.
 
-    pending["publish_at"] : heure cible ISO (UTC). Si l'heure est dans le
-    futur, l'upload demarre en PRIVE `publish_lead_s` avant la cible, puis le
-    statut bascule en "public" pile a l'heure cible (YouTube date la
-    publication publique de la bascule) : ponctualite a la seconde.
-    Si l'heure cible est deja passee, publication directe en public le plus
-    vite possible (jamais de video abandonnee). Si pending contient
-    "youtube_id" (tentative precedente bloquee en prive), on rebascule
-    seulement, sans re-uploader.
+    N'existe que pour les contrats historiques (video uploadee PRIVEE par
+    l'ancienne logique "upload prive + bascule") ou pour confirmer une
+    reprise : le flux normal n'uploade plus jamais en prive. Le statut
+    envoye est le payload COMPLET de status_payload(cfg, "public")
+    (madeForKids / divulgation conserves), pas un body nu qui ecraserait
+    tout le bloc status. Idempotent : une video deja publique n'est pas
+    re-modifiee.
+    """
+    vid = str(video_id)
+    try:
+        st = get_service(cfg).videos().list(part="status", id=vid).execute()
+        items = st.get("items") or []
+        if items and str((items[0].get("status") or {}).get(
+                "privacyStatus")) == "public":
+            log.info("Video %s deja PUBLIC -> aucune bascule necessaire", vid)
+            return True
+        if not items:
+            log.warning("Video %s introuvable via l'API -> bascule tentee "
+                        "quand meme", vid)
+    except Exception as exc:
+        log.warning("Lecture du statut de %s impossible (%s) -> bascule "
+                    "tentee quand meme", vid, exc)
+    body = {"id": vid, "status": status_payload(cfg, "public")}
+    for attempt in range(4):
+        try:
+            get_service(cfg).videos().update(
+                part="status", body=body).execute()
+            return True
+        except Exception as exc:
+            log.warning("Bascule public de %s echouee (%s), tentative %d/4",
+                        vid, exc, attempt + 1)
+            time.sleep(5)
+    return False
+
+
+def _ensure_geo_us(cfg, attempts=3, pause_s=20.0):
+    """Preuve geo US EN DIRECT (fail-closed) avec reessais bornes.
+
+    Localisation US "a tout prix" (demande 2026-11-01) : jusqu'a `attempts`
+    controles live (force=True, jamais le cache), separes de `pause_s`
+    secondes. Le fail-closed est conserve : si AUCUNE tentative ne prouve
+    la sortie US, la publication est refusee (US ou rien).
+    """
+    from .geo import check_exit_country
+    geo = {}
+    for attempt in range(attempts):
+        geo = check_exit_country(cfg, force=True)
+        if geo.get("ok") is not False:
+            return geo
+        log.warning("Verrou geo US: controle live %d/%d echoue (%s)",
+                    attempt + 1, attempts, geo.get("reason"))
+        if attempt + 1 < attempts:
+            time.sleep(pause_s)
+    return geo
+
+
+def publish_pending_video(cfg, paths, pending, pending_file=None):
+    """Publie une video pre-generee EN PUBLIC, DIRECTEMENT (jamais privee).
+
+    VERROU "PUBLIC DIRECT" (demande explicite 2026-11-01) : le bot uploade
+    lui-meme la video en public, sans intermediaire, et ne passe JAMAIS par
+    un etat prive puis public.
+
+    pending["publish_at"] : heure cible ISO (UTC).
+    - Cible future : attente sans derive jusqu'a la cible PILE, puis upload
+      PUBLIC direct (la video est publique des la fin de l'upload : aucune
+      bascule ulterieure, aucun intermediaire).
+    - Cible passee : upload public immediat (en retard, mais jamais
+      annulee).
+    - Contrat historique avec "youtube_id" (video uploadee PRIVEE par
+      l'ancienne logique, ou crash apres un upload) : bascule public
+      IMMEDIATE de sauvetage via _flip_public_now, sans re-uploader.
     """
     video_path = Path(str(pending.get("video") or ""))
     idea = pending.get("idea") or {}
@@ -378,83 +443,58 @@ def publish_pending_video(cfg, paths, pending, pending_file=None):
     comment = pending.get("comment")
     pair_id = pending.get("pair_id") or idea.get("pair_id")
     pub_at = dt.datetime.fromisoformat(str(pending["publish_at"]))
-    lead = int(cfg["scheduler"].get("publish_lead_s", 120))
 
     if not pending.get("youtube_id") and not video_path.exists():
         log.error("Video pre-generee introuvable: %s", video_path)
         return {"published": False, "reason": "missing_video",
                 "video": str(video_path)}
 
-    uploaded_public = False
-    now = _utcnow()
     if pending.get("youtube_id"):
+        # Reprise : une video deja uploadee existe. Le flux historique
+        # l'avait mise PRIVEE -> bascule public IMMEDIATE (sauvetage, sans
+        # re-uploader). Un crash du flux actuel laisse aussi un id ici, mais
+        # la video est deja publique : la bascule la confirme sans update
+        # inutile. JAMAIS de remise en attente : publier a tout prix.
         video_id = str(pending["youtube_id"])
-        log.info("Reprise: video %s deja uploadee en prive -> bascule public", video_id)
-        # La bascule public reste PILE a l'heure cible, meme apres un
-        # redemarrage entre l'upload prive et la bascule.
+        log.info("Reprise: video %s deja uploadee -> bascule public "
+                 "IMMEDIATE (jamais de remise en attente)", video_id)
+        if not _flip_public_now(cfg, video_id):
+            log.critical("Video %s reste PRIVEE: bascule impossible. Action "
+                         "manuelle requise dans YouTube Studio (ou relancer "
+                         "le bot: la bascule sera re tentee).", video_id)
+            _alert(cfg, "AutoPipe: video NON publiee (bascule public echouee)",
+                   "La video %s (%s) est uploadee mais reste PRIVEE.\n"
+                   "Basculez-la manuellement dans YouTube Studio."
+                   % (video_id, title))
+            return {"published": False, "reason": "flip_failed",
+                    "youtube_id": video_id, "video": str(video_path)}
+        log.info("VIDEO PUBLIEE (public) a %s UTC (cible %s): "
+                 "https://youtu.be/%s", _utcnow().strftime("%H:%M:%S"),
+                 pub_at.strftime("%H:%M:%S"), video_id)
+    else:
+        now = _utcnow()
         if now < pub_at:
-            wait = (pub_at - now).total_seconds()
-            log.info("Bascule public a %s UTC (attente %s)",
-                     pub_at.strftime("%H:%M:%S"), dt.timedelta(seconds=int(wait)))
-            time.sleep(max(0.0, wait))
-            now = _utcnow()
-    elif now < pub_at:
-        wait = (pub_at - now).total_seconds() - lead
-        if wait > 0:
-            log.info("Publication exacte a %s UTC: upload prive dans %s",
+            log.info("Publication a %s UTC: upload PUBLIC direct (dans %s, "
+                     "aucun etat prive, aucune bascule)",
                      pub_at.strftime("%Y-%m-%d %H:%M:%S"),
-                     dt.timedelta(seconds=int(wait)))
-            time.sleep(wait)
-        log.info("Upload prive demarre (basculera en public a %s UTC)",
-                 pub_at.strftime("%H:%M:%S"))
-        video_id = upload_video(video_path, title, description, tags, cfg,
-                                privacy="private")
-        # Point de reprise: l'id de la video privee est persiste TOUT DE SUITE,
-        # pour qu'un crash pendant l'attente se resume en bascule simple
-        # (jamais un re-upload / video dupliquee).
+                     dt.timedelta(seconds=int((pub_at - now).total_seconds())))
+            _wait_until(pub_at)
+        late_min = max(0.0, (_utcnow() - pub_at).total_seconds() / 60.0)
+        if late_min > 0:
+            log.warning("Cible %s UTC depassee de %.1f min -> upload public "
+                        "immediat (en retard, mais pas annule)",
+                        pub_at.strftime("%Y-%m-%d %H:%M"), late_min)
+        log.info("Upload PUBLIC direct demarre: la video sera publique des "
+                 "la fin de l'upload (jamais privee, aucune bascule)")
+        video_id = upload_video(video_path, title, description, tags, cfg)
+        # Point de reprise: l'id est persiste TOUT DE SUITE apres l'upload
+        # public, pour qu'un crash apres l'upload ne duplique pas la video.
         if pending_file is not None:
             pending["youtube_id"] = video_id
             save_json(pending_file, pending)
-        now = _utcnow()
-        if now < pub_at:
-            time.sleep(max(0.0, (pub_at - now).total_seconds()))
-            now = _utcnow()
-    else:
-        late_min = (now - pub_at).total_seconds() / 60.0
-        log.warning("Cible %s UTC depassee de %.1f min -> publication publique "
-                    "immediate (en retard, mais pas annulee)",
-                    pub_at.strftime("%Y-%m-%d %H:%M"), late_min)
-        video_id = upload_video(video_path, title, description, tags, cfg,
-                                pinned_comment=comment)
-        comment = None  # deja poste par upload_video
-        uploaded_public = True  # pas de bascule necessaire
-
-    # Bascule en public a l'heure cible exacte (ou immediatement en retard).
-    # En retard pur l'upload est deja public: pas de bascule a faire.
-    flipped = uploaded_public
-    for attempt in range(4):
-        try:
-            get_service(cfg).videos().update(
-                part="status",
-                body={"id": video_id, "status": {"privacyStatus": "public"}}
-            ).execute()
-            flipped = True
-            break
-        except Exception as exc:
-            log.warning("Bascule public echouee (%s), tentative %d/4",
-                        exc, attempt + 1)
-            time.sleep(5)
-    if not flipped:
-        log.critical("Video %s reste PRIVEE: bascule impossible. Action manuelle "
-                     "requise dans YouTube Studio (ou relancer le bot: la "
-                     "bascule sera re tentee).", video_id)
-        _alert(cfg, "AutoPipe: video NON publiee (bascule public echouee)",
-               "La video %s (%s) est uploadee mais reste PRIVEE.\n"
-               "Basculez-la manuellement dans YouTube Studio." % (video_id, title))
-        return {"published": False, "reason": "flip_failed",
-                "youtube_id": video_id, "video": str(video_path)}
-    log.info("VIDEO PUBLIEE (public) a %s UTC (cible %s): https://youtu.be/%s",
-             _utcnow().strftime("%H:%M:%S"), pub_at.strftime("%H:%M:%S"), video_id)
+        log.info("VIDEO PUBLIEE (public) a %s UTC (cible %s): "
+                 "https://youtu.be/%s", _utcnow().strftime("%H:%M:%S"),
+                 pub_at.strftime("%H:%M:%S"), video_id)
 
     if comment:
         try:
@@ -548,9 +588,12 @@ def run_window_once(config=None, at_hour=None, horizon_min=None):
          cible : publication a l'heure meme si le cron a derive de ±30 min) ;
       3. sinon (fenetre active sans contrat) generation + publication
          immediates (fallback, jamais annule) ;
-      4. attente sans derive jusqu'a `cible - publish_lead_s` ;
-      5. preuve geo US EN DIRECT (force=True, fail-closed) AVANT l'upload ;
-      6. upload PRIVE puis bascule public PILE a l'heure cible.
+      4. attente sans derive jusqu'a `cible - publish_lead_s` (reveil anticipe) ;
+      5. preuve geo US EN DIRECT (force=True, fail-closed, 3 essais) AVANT
+         la publication ;
+      6. attente jusqu'a la cible PILE puis upload PUBLIC DIRECT (la video
+         est publique des la fin de l'upload : jamais privee, aucune
+         bascule).
 
     [scheduler].window_horizon_minutes (defaut 75) : une fenetre ciblee a
     plus de cet horizon (en retard OU en avance) est ignoree sans publier
@@ -752,17 +795,23 @@ def run_window_once(config=None, at_hour=None, horizon_min=None):
         # --- Fenetre active sans contrat : fallback immediat ---
         return _fallback_publish()
 
-    # --- 7) Attente exacte, preuve geo EN DIRECT, publication a l'heure ---
-    from .geo import check_exit_country
-    upload_at = target - dt.timedelta(seconds=lead)
-    if now < upload_at:
-        log.info("Attente exacte: upload prive a %s UTC (dans %s), bascule "
-                 "public a %s UTC", upload_at.strftime("%H:%M:%S"),
-                 dt.timedelta(seconds=int((upload_at - now).total_seconds())),
-                 target.strftime("%H:%M:%S"))
-        _wait_until(upload_at)
-        now = _utcnow()
-    geo = check_exit_country(cfg, force=True)
+    # --- 7) Reveil anticipe, preuve geo US en direct, upload PUBLIC a l'heure ---
+    # VERROU "PUBLIC DIRECT" : on se reveille `publish_lead_s` avant la cible
+    # pour lancer la preuve geo (3 essais live), puis publish_pending_video
+    # attend la cible PILE et uploade EN PUBLIC directement. La video n'est
+    # JAMAIS privee puis publique.
+    geo = {}
+    if not pending.get("youtube_id"):
+        upload_at = target - dt.timedelta(seconds=lead)
+        if now < upload_at:
+            log.info("Attente exacte: preuve geo US live a %s UTC (dans %s), "
+                     "upload PUBLIC direct a %s UTC",
+                     upload_at.strftime("%H:%M:%S"),
+                     dt.timedelta(seconds=int((upload_at - now).total_seconds())),
+                     target.strftime("%H:%M:%S"))
+            _wait_until(upload_at)
+            now = _utcnow()
+        geo = _ensure_geo_us(cfg)
     if geo.get("ok") is False:
         _alert(cfg, "AutoPipe: publication bloquee (sortie US non confirmee)",
                "Fenetre %s UTC : verification geo EN DIRECT echouee "
@@ -841,8 +890,9 @@ def run_loop(config=None, once=False):
          `pregen_minutes` before the window, without uploading
          (data/pending_publish.json = contrat de publication, survit aux
          redemarrages du bot) ;
-      2. PUBLICATION A L'HEURE EXACTE: upload prive qui demarre
-         `publish_lead_s` avant la cible, puis bascule public PILE a l'heure.
+      2. PUBLICATION A L'HEURE EXACTE: reveil `publish_lead_s` avant la
+         cible, preuve geo US en direct (3 essais), puis upload PUBLIC
+         DIRECT pile a l'heure (jamais privee, aucune bascule).
     Un bot relance en retard publie la video des que possible (fallback,
     jamais annule). Sans post_hours_utc: une generation+publication par
     scheduler.interval_hours (comportement historique).
@@ -956,6 +1006,17 @@ def run_loop(config=None, once=False):
                          dt.timedelta(seconds=wait))
                 time.sleep(max(1, wait))
                 continue
+            if not pending.get("youtube_id"):
+                # Verrou geo US "a tout prix" (2026-11-01) : 3 essais live
+                # AVANT l'upload ; le controle final reste dans upload_video
+                # (fail-closed). Un contrat avec youtube_id = sauvetage :
+                # bascule public, pas d'upload -> pas de geo.
+                geo = _ensure_geo_us(cfg)
+                if geo.get("ok") is False:
+                    log.warning("Verrou geo US: upload reporte de 60 s (%s)",
+                                geo.get("reason"))
+                    time.sleep(60)
+                    continue
             try:
                 res = publish_pending_video(cfg, paths, pending,
                                             pending_file=pending_file)

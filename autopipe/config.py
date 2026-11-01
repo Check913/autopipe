@@ -198,6 +198,11 @@ DEFAULTS = {
               "checkpoint_text": "STAY - #3 IS WILD"},
     "upload": {
         "privacy": "public",
+        # VERROU "PUBLIC DIRECT" (2026-11-01) : force_public=true ecrase toute
+        # autre valeur demandee -> la video est publiee PUBLIC directement,
+        # JAMAIS privee puis publique. status_payload() applique le verrou
+        # (warning explicite si une valeur non-public etait demandee).
+        "force_public": True,
         "category_id": "24",
         "made_for_kids": False,
         "client_secrets": "client_secret.json",
@@ -207,9 +212,10 @@ DEFAULTS = {
         # nombre de Shorts/jour actuel de la chaine, volontairement intact).
         "posts_per_day": 0,
         "post_hours_utc": [15, 21],
-        # smart_lead_min : avance (minutes) de la publication privee avant
-        # l'heure cible des fenetres intelligentes (metas.publish_instants,
-        # scheduler smart_windows) -> temps de indexation avant le pic US.
+        # smart_lead_min : avance (minutes) des fenetres intelligentes
+        # (metas.publish_instants, scheduler smart_windows) : la cible =
+        # pic_audience_US(ET) - lead, pour que le Short entre dans le flux
+        # PENDANT la montee du pic US.
         "smart_lead_min": 90,
         "auto_comment": True,
         "comment_template": "",
@@ -364,7 +370,12 @@ DEFAULTS = {
     },
     "network": {"proxy_mode": "direct"},
     "scheduler": {"interval_hours": 4, "state_file": "data/scheduler_state.json",
-                  "smart_windows": True},
+                  "smart_windows": True,
+                  # publish_lead_s : reveil anticipe AVANT la cible (preuve
+                  # geo US live en 3 essais + marge). L'upload lui-meme part
+                  # PILE a la cible, en PUBLIC direct (jamais prive puis
+                  # public).
+                  "publish_lead_s": 120},
 }
 
 _ACTIVE = None

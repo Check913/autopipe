@@ -4,9 +4,11 @@
 Contexte : le 2026-10-31 le cron 14:00Z n'a JAMAIS demarre (derive GitHub),
 et `serve --once` publie immediatement -> video en retard. run_window_once
 realise le cycle complet d'UNE fenetre : pre-generation anticipee, attente
-exacte, preuve geo US EN DIRECT, upload prive puis bascule public a l'heure
-pile. Ces tests verrouillent chaque sortie (succes, quota, horizon, doublon,
-claim concurrent, geo bloquee, bascule ratee).
+exacte, preuve geo US EN DIRECT (3 essais live), puis upload PUBLIC DIRECT a
+l'heure pile (jamais privee puis publique, aucune bascule). Ces tests
+verrouillent chaque sortie (succes, quota, horizon, doublon, claim
+concurrent, geo bloquee, bascule de sauvetage ratee) et le verrou "public
+direct" de publish_pending_video / status_payload.
 """
 import copy
 import datetime as dt
@@ -17,7 +19,9 @@ import autopipe.geo
 import autopipe.scheduler as sched
 from autopipe.config import get_paths
 from autopipe.scheduler import _parse_hour, run_window_once
+from autopipe.upload import status_payload
 from autopipe.util import load_json, save_json
+from pathlib import Path
 
 UTC = dt.timezone.utc
 TODAY = "2026-10-31"
@@ -102,6 +106,9 @@ def env(tmp_path, monkeypatch):
     monkeypatch.setattr(sched, "_wait_until", fake_wait)
     monkeypatch.setattr(sched, "_alert", fake_alert)
     monkeypatch.setattr(autopipe.geo, "check_exit_country", fake_geo)
+    # _ensure_geo_us (3 essais, 20 s entre chaque) et _flip_public_now
+    # (4 essais, 5 s) : aucun vrai sleep dans les tests.
+    monkeypatch.setattr(sched.time, "sleep", lambda *_: None)
     # paths.root = cwd (get_paths(cfg)) -> isolate l'etat dans tmp_path.
     monkeypatch.chdir(tmp_path)
     return {"clock": clock, "calls": calls, "tmp": tmp_path}
@@ -195,7 +202,9 @@ def test_future_window_pregen_waits_geo_then_publishes(env, make_cfg):
     # Pre-generation SANS upload, attente exacte jusqu'a target - lead.
     assert env["calls"]["pipeline"] == [{"do_upload": False}]
     assert env["calls"]["wait"] == [T14 - dt.timedelta(seconds=120)]
-    assert env["calls"]["geo"] == [{"force": True}]  # preuve geo EN DIRECT
+    # Preuve geo EN DIRECT (force=True, jamais le cache) : 1 appel car
+    # le 1er essai reussit (les 3 essais ne servent qu'en cas d'echec).
+    assert env["calls"]["geo"] == [{"force": True}]
     assert len(env["calls"]["publish"]) == 1
     # Contrat consomme, fenetre marquee servie, quota +1, dernier run trace.
     assert not (env["tmp"] / "data" / "pending_publish.json").exists()
@@ -273,6 +282,8 @@ def test_geo_blocked_cancels_publish_but_keeps_contract(env, make_cfg,
     assert res["reason"] == "geo_blocked"
     assert res["geo"]["country"] == "FR"
     assert env["calls"]["publish"] == []  # JAMAIS d'upload sans US prouve
+    # 3 essais live avant abandon (fail-closed US ou rien).
+    assert len(env["calls"]["geo"]) == 3
     assert len(env["calls"]["alert"]) == 1
     # Le contrat pre-genere survit pour le cron de secours.
     pend = load_json(env["tmp"] / "data" / "pending_publish.json")
@@ -314,6 +325,123 @@ def test_publish_error_maps_to_reason(env, make_cfg, monkeypatch):
     assert res["ok"] is False
     assert res["reason"] == "upload_failed"
     assert state_of(cfg, env["tmp"]).get("uploads", 0) == 0
+
+
+# --- Verrou "PUBLIC DIRECT" (publish_pending_video + status_payload) ---------
+
+def test_publish_pending_video_uploads_public_directly(make_cfg, tmp_path,
+                                                       monkeypatch):
+    """Le bot uploade LUI-MEME en public : jamais prive, aucune bascule."""
+    cfg = make_cfg(scheduler={"engage_first_hour": False})
+    monkeypatch.chdir(tmp_path)
+    (tmp_path / "out").mkdir()
+    (tmp_path / "out" / "v.mp4").write_bytes(b"vid")
+    pub_at = dt.datetime(2026, 10, 31, 14, 0, tzinfo=UTC)
+    pend_file = tmp_path / "data" / "pending_publish.json"
+    pend_file.parent.mkdir()
+    save_json(pend_file, {"publish_at": pub_at.isoformat(),
+                          "video": "out/v.mp4", "title": "T",
+                          "description": "D", "tags": ["a"]})
+    pending = load_json(pend_file)
+
+    calls = {"upload": [], "flip": [], "wait": []}
+    monkeypatch.setattr(sched, "_utcnow",
+                        lambda: dt.datetime(2026, 10, 31, 13, 40, tzinfo=UTC))
+    monkeypatch.setattr(sched, "_wait_until",
+                        lambda target: calls["wait"].append(target))
+    monkeypatch.setattr(sched, "_flip_public_now",
+                        lambda cfg_, vid: calls["flip"].append(vid))
+
+    def fake_upload(*args, **kwargs):
+        calls["upload"].append({"args": args, "kwargs": kwargs})
+        return "vid_new"
+
+    monkeypatch.setattr(sched, "upload_video", fake_upload)
+    monkeypatch.setattr(sched.analytics, "record", lambda *a, **k: None)
+    import autopipe.registry as registry
+    monkeypatch.setattr(registry, "register", lambda *a, **k: None)
+
+    res = sched.publish_pending_video(cfg, get_paths(cfg, root=tmp_path),
+                                      pending, pending_file=pend_file)
+    assert res == {"published": True, "youtube_id": "vid_new",
+                   "video": str(Path("out/v.mp4"))}
+    # Upload direct en public : AUCUN argument privacy, AUCUNE bascule.
+    assert calls["upload"][0]["kwargs"] == {}
+    assert calls["upload"][0]["args"] == (Path("out/v.mp4"), "T", "D",
+                                          ["a"], cfg)
+    assert calls["flip"] == []
+    # Attente sans derive jusqu'a la cible PILE, puis upload public.
+    assert calls["wait"] == [pub_at]
+    # Point de reprise : l'id persiste TOUT DE SUITE apres l'upload.
+    assert load_json(pend_file)["youtube_id"] == "vid_new"
+
+
+def test_publish_pending_video_legacy_id_rescued_without_reupload(
+        make_cfg, tmp_path, monkeypatch):
+    """Contrat historique avec youtube_id : bascule public IMMEDIATE,
+    JAMAIS de re-upload (et fichier video manquant non bloquant)."""
+    cfg = make_cfg(scheduler={"engage_first_hour": False})
+    monkeypatch.chdir(tmp_path)
+    pending = {"publish_at": T14_ISO, "video": "out/v.mp4",
+               "title": "T", "youtube_id": "priv1"}
+
+    calls = {"upload": [], "flip": []}
+    monkeypatch.setattr(sched, "_utcnow",
+                        lambda: dt.datetime(2026, 10, 31, 14, 5, tzinfo=UTC))
+    monkeypatch.setattr(
+        sched, "_flip_public_now",
+        lambda cfg_, vid: (calls["flip"].append(vid), True)[1])
+    monkeypatch.setattr(
+        sched, "upload_video",
+        lambda *a, **k: calls["upload"].append((a, k)))
+    monkeypatch.setattr(sched.analytics, "record", lambda *a, **k: None)
+    import autopipe.registry as registry
+    monkeypatch.setattr(registry, "register", lambda *a, **k: None)
+
+    res = sched.publish_pending_video(cfg, get_paths(cfg, root=tmp_path),
+                                      pending)
+    assert res == {"published": True, "youtube_id": "priv1",
+                   "video": str(Path("out/v.mp4"))}
+    assert calls["flip"] == ["priv1"]   # bascule IMMEDIATE
+    assert calls["upload"] == []        # JAMAIS de re-upload
+
+
+def test_publish_pending_video_flip_failure_alerts(make_cfg, tmp_path,
+                                                   monkeypatch):
+    """Bascule impossible -> flip_failed + alerte, et re-upload INTERDIT."""
+    cfg = make_cfg(scheduler={"engage_first_hour": False})
+    monkeypatch.chdir(tmp_path)
+    pending = {"publish_at": T14_ISO, "video": "out/v.mp4",
+               "title": "T", "youtube_id": "priv1"}
+    alerts = []
+    monkeypatch.setattr(sched, "_alert",
+                        lambda cfg_, subj, body: alerts.append(subj))
+    monkeypatch.setattr(sched, "_flip_public_now", lambda cfg_, vid: False)
+
+    def forbidden_upload(*args, **kwargs):
+        raise AssertionError("re-upload interdit quand l'id existe deja")
+
+    monkeypatch.setattr(sched, "upload_video", forbidden_upload)
+    monkeypatch.setattr(sched.analytics, "record", lambda *a, **k: None)
+
+    res = sched.publish_pending_video(cfg, get_paths(cfg, root=tmp_path),
+                                      pending)
+    assert res["published"] is False
+    assert res["reason"] == "flip_failed"
+    assert res["youtube_id"] == "priv1"
+    assert len(alerts) == 1  # alerte : action manuelle requise
+
+
+def test_status_payload_forces_public_by_default(make_cfg):
+    # Garde-fou : meme une demande "private" est ecrasee en public.
+    cfg = make_cfg(upload={"privacy": "private", "made_for_kids": False})
+    assert status_payload(cfg)["privacyStatus"] == "public"
+
+
+def test_status_payload_respects_explicit_opt_out(make_cfg):
+    # Seul force_public = False explicite permet une publication non-publique.
+    cfg = make_cfg(upload={"privacy": "private", "force_public": False})
+    assert status_payload(cfg)["privacyStatus"] == "private"
 
 
 # --- _parse_hour ------------------------------------------------------------

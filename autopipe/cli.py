@@ -421,8 +421,8 @@ def cmd_window(a):
     """CI : une execution = UNE fenetre publiee a l'heure exacte (MAX 2026-10-31).
 
     Delegue a scheduler.run_window_once : pre-generation, attente sans derive,
-    preuve geo US EN DIRECT (fail-closed), upload prive puis bascule public
-    PILE a l'heure cible.
+    preuve geo US EN DIRECT (fail-closed, 3 essais), puis upload PUBLIC DIRECT
+    PILE a l'heure cible (jamais privee puis publique, aucune bascule).
     Raisons "rien a faire" (exit 0, pas d'email d'echec) : already_served,
     outside_horizon, quota, pending_mismatch, claimed_by_other, no_windows.
     Tout le reste est un echec reel -> exit 1 (job rouge + notify-failure).
@@ -774,7 +774,8 @@ def main(argv=None):
 
     p = sub.add_parser("serve-window",
                        help="CI : une execution = une fenetre publiee a l'heure "
-                            "exacte (pre-gen + attente + geo US live + bascule)")
+                            "exacte (pre-gen + attente + geo US live + upload "
+                            "PUBLIC direct, aucune bascule)")
     p.add_argument("--at-hour", type=int, default=None,
                    help="heure UTC de la fenetre (0-23) ; defaut : prochaine "
                         "fenetre de [upload].post_hours_utc")

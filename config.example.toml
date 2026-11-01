@@ -133,14 +133,18 @@ checkpoint_text = "STAY - IT GETS WILD"
 
 [upload]
 privacy = "public"               # public / unlisted / private
+# force_public = garde-fou : meme si privacy vaut private/unlisted, l'upload
+# est force en PUBLIC DIRECT (jamais prive puis bascule public). Mettre false
+# seulement si vous voulez vraiment une publication non-publique.
+force_public = true
 category_id = "24"               # 24 = Entertainment
 made_for_kids = false
 client_secrets = "client_secret.json"
 token_file = "token.json"
 daily_limit = 6                  # safety (YouTube quota ~6 uploads/day)
 post_hours_utc = [15, 21]        # US peak hours: 15 UTC = 11am ET, 21 UTC = 5pm ET
-# smart_lead_min : avance (minutes) de l'upload prive avant l'heure cible
-# des fenetres intelligentes (metas.publish_instants + scheduler.smart_windows).
+# smart_lead_min : avance (minutes) du reveil avant l'heure cible des fenetres
+# intelligentes (metas.publish_instants + scheduler.smart_windows).
 smart_lead_min = 90
 auto_comment = true              # commentaire engageant publie automatiquement sous chaque video
 comment_template = ""            # vide = template par defaut ({title} / {hook} / {tags} disponibles)
@@ -156,11 +160,13 @@ altered_content = false
 [scheduler]
 interval_hours = 4               # 24/7 mode frequency (fallback without post_hours_utc)
 state_file = "data/scheduler_state.json"
-# Publication a l'heure EXACTE : pre-generation `pregen_minutes` avant la
-# fenetre, upload prive `publish_lead_s` avant l'heure cible, puis bascule
-# public PILE a l'heure cible (voir autopipe/scheduler.py: run_loop).
+# Publication a l'heure EXACTE, en PUBLIC DIRECT (jamais privee puis
+# publique, aucune bascule) : pre-generation `pregen_minutes` avant la
+# fenetre, reveil `publish_lead_s` AVANT la cible (preuve geo US live en
+# 3 essais), puis upload PUBLIC PILE a l'heure cible (voir
+# autopipe/scheduler.py: run_loop).
 pregen_minutes = 20
-publish_lead_s = 120
+publish_lead_s = 120             # reveil anticipe avant la cible (l'upload part PILE a l'heure)
 # Fenetres INTELLIGENTES : minutes-precises sur le pic d'audience US
 # (metas.smart_post_hours / next_smart_instant) au lieu des heures pleines.
 smart_windows = true
