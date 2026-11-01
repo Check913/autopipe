@@ -1,6 +1,6 @@
 {
   "status": "ok",
-  "pairs": 29,
+  "pairs": 30,
   "joined": 0,
   "variants": {
     "A": {
@@ -15,7 +15,7 @@
       }
     },
     "B": {
-      "assigned": 14,
+      "assigned": 15,
       "measured": 0,
       "mean_engagement": null,
       "mean_views": null,
@@ -23,7 +23,7 @@
         "question": 7,
         "number": 2,
         "negation": 1,
-        "identity": 4
+        "identity": 5
       }
     }
   },
@@ -433,7 +433,21 @@
       "video_id": null,
       "engagement": null,
       "views": null
+    },
+    {
+      "ts": "2026-11-01T01:57:48",
+      "pair_id": "pair_20261101_0030",
+      "topic": "quiz:movies",
+      "variant": "B",
+      "hook": "Only top 1% brains get every single one right.",
+      "family": "identity",
+      "family_other": "question",
+      "hook_a": "How high can you score?",
+      "hook_b": "Only top 1% brains get every single one right.",
+      "video_id": "jVwLSsQx_iE",
+      "engagement": null,
+      "views": null
     }
   ],
-  "fetched": "2026-11-01T01:57:22"
+  "fetched": "2026-11-01T13:35:17"
 }

@@ -2539,5 +2539,135 @@
         500.0
       ]
     ]
+  },
+  "star trek": {
+    "traffic": 5000.0,
+    "first_seen": "2026-11-01T13:35:04",
+    "last_seen": "2026-11-01T13:35:04",
+    "delta": 5000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-01T13:35:04",
+        5000.0
+      ]
+    ]
+  },
+  "servicio de ciudadanía e inmigración de los estados unidos": {
+    "traffic": 1000.0,
+    "first_seen": "2026-11-01T13:35:04",
+    "last_seen": "2026-11-01T13:35:04",
+    "delta": 1000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-01T13:35:04",
+        1000.0
+      ]
+    ]
+  },
+  "alex de minaur": {
+    "traffic": 1000.0,
+    "first_seen": "2026-11-01T13:35:04",
+    "last_seen": "2026-11-01T13:35:04",
+    "delta": 1000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-01T13:35:04",
+        1000.0
+      ]
+    ]
+  },
+  "browns vs steelers": {
+    "traffic": 200.0,
+    "first_seen": "2026-11-01T13:35:04",
+    "last_seen": "2026-11-01T13:35:04",
+    "delta": 200.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-01T13:35:04",
+        200.0
+      ]
+    ]
+  },
+  "is lamar jackson playing today": {
+    "traffic": 200.0,
+    "first_seen": "2026-11-01T13:35:04",
+    "last_seen": "2026-11-01T13:35:04",
+    "delta": 200.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-01T13:35:04",
+        200.0
+      ]
+    ]
+  },
+  "nyc marathon live stream": {
+    "traffic": 200.0,
+    "first_seen": "2026-11-01T13:35:04",
+    "last_seen": "2026-11-01T13:35:04",
+    "delta": 200.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-01T13:35:04",
+        200.0
+      ]
+    ]
+  },
+  "falkirk vs celtic": {
+    "traffic": 200.0,
+    "first_seen": "2026-11-01T13:35:04",
+    "last_seen": "2026-11-01T13:35:04",
+    "delta": 200.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-01T13:35:04",
+        200.0
+      ]
+    ]
+  },
+  "new york marathon tracker": {
+    "traffic": 200.0,
+    "first_seen": "2026-11-01T13:35:04",
+    "last_seen": "2026-11-01T13:35:04",
+    "delta": 200.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-01T13:35:04",
+        200.0
+      ]
+    ]
+  },
+  "election day": {
+    "traffic": 200.0,
+    "first_seen": "2026-11-01T13:35:04",
+    "last_seen": "2026-11-01T13:35:04",
+    "delta": 200.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-01T13:35:04",
+        200.0
+      ]
+    ]
+  },
+  "college basketball": {
+    "traffic": 200.0,
+    "first_seen": "2026-11-01T13:35:04",
+    "last_seen": "2026-11-01T13:35:04",
+    "delta": 200.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-01T13:35:04",
+        200.0
+      ]
+    ]
   }
 }

@@ -1,5 +1,5 @@
 {
-  "seq": 9,
+  "seq": 10,
   "used": [
     "whatisthecapitalcityofcanada",
     "whichgasdoplantsprimarilyabsorbfromtheatmosphereforphotosynthesis",
@@ -63,18 +63,18 @@
     "whichplanethastheshortestday",
     "whatcolorisapolarbearsskin",
     "whichcountryinventedtea",
-    "howmanyheartsdoesanoctopushave"
+    "howmanyheartsdoesanoctopushave",
+    "whopaintedthemonalisa",
+    "inwhichfilmdoesayoungboydiscoveramagicallampcontainingagenie",
+    "whatisthelongestriverinsouthamerica",
+    "whichgasdoplantsabsorbfromtheatmosphere",
+    "whichmoviefeaturesagreatwhitesharkterrorizingabeachtown",
+    "whatisthehighestmountainpeakinnorthamerica",
+    "whatisthelargestislandintheworld",
+    "howlongcanagiraffestonguebe",
+    "whichcountryhasthemosttimezones"
   ],
   "generated": [
-    "whichclassicfilmfeaturesthelinehereslookingatyoukid",
-    "mounteverestislocatedinwhichmountainrange",
-    "inwhatyeardidtheberlinwallfall",
-    "whocomposedthemusicforthestarwarsfilmseries",
-    "howmanydaysareinaleapyear",
-    "whichcountryhasthemosttimezones",
-    "whatisthelongestriverintheworld",
-    "whowasthefirstemperorofancientrome",
-    "whichmoviefeaturesatalkinglionnamedmufasa",
     "whichcountryisfamousforitsfjords",
     "whatisthehardestnaturalsubstanceonearth",
     "whatisthecommonnamefortheauroraborealis",
@@ -89,7 +89,16 @@
     "whichplanethastheshortestday",
     "whatcolorisapolarbearsskin",
     "whichcountryinventedtea",
-    "howmanyheartsdoesanoctopushave"
+    "howmanyheartsdoesanoctopushave",
+    "whopaintedthemonalisa",
+    "inwhichfilmdoesayoungboydiscoveramagicallampcontainingagenie",
+    "whatisthelongestriverinsouthamerica",
+    "whichgasdoplantsabsorbfromtheatmosphere",
+    "whichmoviefeaturesagreatwhitesharkterrorizingabeachtown",
+    "whatisthehighestmountainpeakinnorthamerica",
+    "whatisthelargestislandintheworld",
+    "howlongcanagiraffestonguebe",
+    "whichcountryhasthemosttimezones"
   ],
   "videos": [
     {
@@ -133,6 +142,12 @@
       "idea_id": "20261101-015748-01",
       "title": "Question 4 Is Where Streaks End",
       "ts": "2026-11-01T02:01:19Z"
+    },
+    {
+      "video_id": "o9pVmfwNbek",
+      "idea_id": "20261101-133552-01",
+      "title": "This 9 Question Quiz Sounds Easy. It's Not.",
+      "ts": "2026-11-01T15:00:03Z"
     }
   ]
 }
