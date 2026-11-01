@@ -369,6 +369,27 @@ def cmd_brain(a):
         print("%s: %s" % (key, doc.get(key)))
 
 
+def cmd_apex(a):
+    """APEX-PREDATOR : cycle d'apprentissage manuel + rapport d'etat."""
+    cfg = _init(a.verbose)
+    from . import apex
+    if a.rollback:
+        msg = apex.rollback_cmd(cfg, a.rollback)
+        print("Rollback: %s" % (msg or "aucun instantane restaure"))
+        return
+    if a.scrape:
+        # L'option CLI force la veille meme si elle est desactivee par
+        # defaut (cfg copiee en memoire, rien n'est persiste).
+        cfg.setdefault("apex", {}).setdefault("scrape", {})["enabled"] = True
+        n = apex.scrape(cfg, force=True)
+        print("Patterns ajoutes: %s" % n)
+        return
+    res = apex.run(cfg, force=a.force)
+    rep = apex.report(cfg)
+    rep["cycle"] = res
+    print(json.dumps(rep, indent=2, ensure_ascii=False))
+
+
 def cmd_run(a):
     cfg = _init(a.verbose)
     from .scheduler import run_pipeline_once
@@ -689,6 +710,16 @@ def main(argv=None):
     p = sub.add_parser("brain",
                        help="registre memoire: video <-> idee + rapport")
     p.set_defaults(fn=cmd_brain)
+
+    p = sub.add_parser("apex",
+                       help="APEX-PREDATOR: cycle d'apprentissage + rapport")
+    p.add_argument("--force", action="store_true",
+                   help="force le cycle meme sans donnees reelles")
+    p.add_argument("--scrape", action="store_true",
+                   help="veille de patterns uniquement (force le cache)")
+    p.add_argument("--rollback", metavar="NOM", default=None,
+                   help="restaure un instantane (dossier data/apex)")
+    p.set_defaults(fn=cmd_apex)
 
     p = sub.add_parser("run", help="pipeline complet une fois")
     p.add_argument("--no-upload", action="store_true")

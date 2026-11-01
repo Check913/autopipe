@@ -191,6 +191,17 @@ def run_pipeline_once(config=None, do_upload=True, idea=None):
         log.warning("Skill hooks a echoue (non fatal):\n%s",
                     traceback.format_exc())
 
+    # 1.99 APEX-PREDATOR (2026-11-01) : bot auto-ameliorant. APRES les
+    # directives du lot (optimizer 1.9 / research 1.95) car inject()
+    # CONCATENE la directive apex a style_directive : elle doit arriver
+    # en dernier. Post-mortem + journal + veille + rollback, jamais fatal.
+    try:
+        from . import apex
+        apex.run(cfg)
+    except Exception:
+        log.warning("Apex a echoue (non fatal):\n%s",
+                    traceback.format_exc())
+
     # 2. Idea + script. Si remake.enabled, on part d'un Short viral de la niche
     # (Super-Remake "10%% Better"); tout echec retombe sur les idees standards.
     if idea is None:

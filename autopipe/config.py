@@ -261,6 +261,34 @@ DEFAULTS = {
         # fenetre memoire anti-doublon/familles (jours).
         "recent_days": 7,
     },
+    # APEX-PREDATOR (2026-11-01) : bot auto-ameliorant (apprentissage
+    # continu). Bandit de Thompson (hooks/formats/quiz), base de
+    # connaissances de hooks gagnants, post-mortem a chaque cycle,
+    # veille de patterns optionnelle, rollback si la sante degrade.
+    # Totalement additif, non fatal, desactivable avec enabled=False.
+    "apex": {
+        "enabled": True,
+        # seuil de reussite (%) : Short gagnant si engagement >= seuil.
+        "threshold": 70.0,
+        # echecs consecutifs avant retrait d'un pattern de la base.
+        "retire_failures": 10,
+        # points (%) de degradation de sante declenchant un rollback.
+        "degrade_pts": 10.0,
+        "auto_rollback": True,
+        # rotation du journal d'apprentissage (lignes JSONL).
+        "journal_max": 3000,
+        "scrape": {
+            # veille YouTube desactivee par defaut (zero reseau dans
+            # les tests) ; activer avec enabled=True.
+            "enabled": False,
+            "cache_hours": 72,
+            "min_views": 1000000,
+            "max_duration": 90,
+            "top_n": 20,
+            "query": "shorts",
+            "max_patterns": 10,
+        },
+    },
     "research": {
         # MODULE 4 (2026-10-29) : benchmark quantitatif continu de la niche.
         # Scraping yt-dlp (sans cle) des Shorts qui gagnent + canaux rivaux
@@ -408,6 +436,7 @@ class Paths:
         self.monetization = self.data / "monetization"
         self.compliance = self.data / "compliance"
         self.weekly = self.data / "weekly"
+        self.apex = self.data / "apex"
         self.audio_cache = self.cache / "audio"
         self.video_cache = self.cache / "pexels"
 
@@ -416,7 +445,7 @@ class Paths:
                   self.ideas, self.remake, self.radar, self.analytics,
                   self.visual, self.trend, self.optimizer, self.hook_ab,
                   self.hooks, self.registry, self.research, self.monetization,
-                  self.compliance, self.weekly,
+                  self.compliance, self.weekly, self.apex,
                   self.audio_cache, self.video_cache):
             d.mkdir(parents=True, exist_ok=True)
         return self
