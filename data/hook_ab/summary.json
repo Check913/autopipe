@@ -1,24 +1,24 @@
 {
   "status": "ok",
-  "pairs": 30,
-  "joined": 0,
+  "pairs": 31,
+  "joined": 1,
   "variants": {
     "A": {
-      "assigned": 15,
+      "assigned": 16,
       "measured": 0,
       "mean_engagement": null,
       "mean_views": null,
       "families": {
         "statement": 7,
-        "question": 5,
+        "question": 6,
         "number": 3
       }
     },
     "B": {
       "assigned": 15,
-      "measured": 0,
-      "mean_engagement": null,
-      "mean_views": null,
+      "measured": 1,
+      "mean_engagement": 61.9,
+      "mean_views": 462,
       "families": {
         "question": 7,
         "number": 2,
@@ -333,8 +333,8 @@
       "hook_a": "Are you smarter than most people?",
       "hook_b": "Getting them all right means elite memory.",
       "video_id": "gEtui7O33o0",
-      "engagement": null,
-      "views": null
+      "engagement": 61.9,
+      "views": 462
     },
     {
       "ts": "2026-10-31T07:43:39",
@@ -447,7 +447,21 @@
       "video_id": "jVwLSsQx_iE",
       "engagement": null,
       "views": null
+    },
+    {
+      "ts": "2026-11-01T13:35:39",
+      "pair_id": "pair_20261101_0031",
+      "topic": "quiz:movies",
+      "variant": "A",
+      "hook": "How high can you score?",
+      "family": "question",
+      "family_other": "identity",
+      "hook_a": "How high can you score?",
+      "hook_b": "If you miss three, you are officially average.",
+      "video_id": "o9pVmfwNbek",
+      "engagement": null,
+      "views": null
     }
   ],
-  "fetched": "2026-11-01T13:35:17"
+  "fetched": "2026-11-01T21:08:58"
 }

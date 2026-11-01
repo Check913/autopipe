@@ -19,6 +19,7 @@
         "Why Is Space So Quiet?",
         "Why Is Space So Quiet?",
         "Why Is Space So Quiet?",
+        "Why Is Space So Quiet?",
         "Why Is Space So Quiet?"
       ]
     },
@@ -29,6 +30,7 @@
       "pair_id": "pair_20261027_0004",
       "source_topic": "How Decision Making is Actually Science: Game Theory Explained",
       "alt_titles": [
+        "You Won't Believe How Decision Making is Did This",
         "You Won't Believe How Decision Making is Did This",
         "You Won't Believe How Decision Making is Did This",
         "You Won't Believe How Decision Making is Did This",
@@ -63,6 +65,7 @@
         "Kolkata's Bridge Has NO Nuts OR Bolts?",
         "Kolkata's Bridge Has NO Nuts OR Bolts?",
         "Kolkata's Bridge Has NO Nuts OR Bolts?",
+        "Kolkata's Bridge Has NO Nuts OR Bolts?",
         "Kolkata's Bridge Has NO Nuts OR Bolts?"
       ]
     },
@@ -73,6 +76,7 @@
       "pair_id": "pair_20261028_0010",
       "source_topic": "The Scientific Method",
       "alt_titles": [
+        "This Scientific Method Secret Changes Everything",
         "This Scientific Method Secret Changes Everything",
         "This Scientific Method Secret Changes Everything",
         "This Scientific Method Secret Changes Everything",
@@ -107,6 +111,7 @@
         "Rome's Catacombs Hid YOUR Ancient Faith",
         "Rome's Catacombs Hid YOUR Ancient Faith",
         "Rome's Catacombs Hid YOUR Ancient Faith",
+        "Rome's Catacombs Hid YOUR Ancient Faith",
         "Rome's Catacombs Hid YOUR Ancient Faith"
       ]
     },
@@ -117,6 +122,7 @@
       "pair_id": "pair_20261029_0016",
       "source_topic": "Zombie Biology Explained | The Science of Zombism",
       "alt_titles": [
+        "How Zombie Biology Explained Took Over So Fast",
         "How Zombie Biology Explained Took Over So Fast",
         "How Zombie Biology Explained Took Over So Fast",
         "How Zombie Biology Explained Took Over So Fast",
@@ -414,6 +420,7 @@
         "ALL OF PHYSICS explained in 14 Minutes",
         "ALL OF PHYSICS explained in 14 Minutes",
         "ALL OF PHYSICS explained in 14 Minutes",
+        "ALL OF PHYSICS explained in 14 Minutes",
         "ALL OF PHYSICS explained in 14 Minutes"
       ]
     },
@@ -443,6 +450,7 @@
       "video_id": "gEtui7O33o0",
       "source": "runtime",
       "alt_titles": [
+        "quiz:general",
         "quiz:general",
         "quiz:general",
         "quiz:general",
@@ -487,6 +495,7 @@
         "quiz:science",
         "quiz:science",
         "quiz:science",
+        "quiz:science",
         "quiz:science"
       ]
     },
@@ -516,6 +525,7 @@
       "video_id": "cy3aSg9ujT4",
       "source": "runtime",
       "alt_titles": [
+        "quiz:movies",
         "quiz:movies",
         "quiz:movies",
         "quiz:movies",
@@ -561,6 +571,7 @@
         "quiz:geography",
         "quiz:geography",
         "quiz:geography",
+        "quiz:geography",
         "quiz:geography"
       ]
     },
@@ -595,6 +606,7 @@
       "video_id": "fXzcJuL7tII",
       "source": "runtime",
       "alt_titles": [
+        "quiz:science",
         "quiz:science",
         "quiz:science",
         "quiz:science",
@@ -634,6 +646,7 @@
       "alt_titles": [
         "quiz:history",
         "quiz:history",
+        "quiz:history",
         "quiz:history"
       ]
     },
@@ -668,27 +681,75 @@
       "video_id": "jVwLSsQx_iE",
       "source": "runtime",
       "alt_titles": [
+        "quiz:movies",
         "quiz:movies"
       ]
     },
     "o9pVmfwNbek": {
       "idea_id": "20261101-133552-01",
       "title": "This 9 Question Quiz Sounds Easy. It's Not.",
-      "hook": null,
-      "hook_variant": null,
-      "pair_id": null,
-      "duration_format": null,
-      "density": null,
-      "duration_target": null,
-      "generator": null,
-      "source_topic": null,
+      "hook": "How high can you score?",
+      "hook_variant": "A",
+      "pair_id": "pair_20261101_0031",
+      "duration_format": "long",
+      "density": 4,
+      "duration_target": 80,
+      "generator": "quiz:llm",
+      "source_topic": "quiz:movies",
       "source_short_id": null,
       "originality_max_jaccard": null,
-      "tags": null,
+      "tags": [
+        "quiz",
+        "trivia",
+        "quiz time",
+        "quiz questions",
+        "general knowledge",
+        "test your knowledge",
+        "movies quiz",
+        "movies trivia",
+        "quiz challenge",
+        "guess the answer",
+        "brain test",
+        "iq test"
+      ],
       "published_at": "2026-11-01T15:00:03.212291+00:00",
       "video_id": "o9pVmfwNbek",
+      "source": "runtime",
+      "alt_titles": [
+        "quiz:movies"
+      ]
+    },
+    "DEEnyERlFYg": {
+      "idea_id": "20261101-210948-01",
+      "title": "You Have 3 Seconds Per Question. Start.",
+      "hook": "If you miss three, you are officially average.",
+      "hook_variant": "B",
+      "pair_id": "pair_20261101_0032",
+      "duration_format": "long",
+      "density": 4,
+      "duration_target": 80,
+      "generator": "quiz:llm",
+      "source_topic": "quiz:general",
+      "source_short_id": null,
+      "originality_max_jaccard": null,
+      "tags": [
+        "quiz",
+        "trivia",
+        "quiz time",
+        "quiz questions",
+        "general knowledge",
+        "test your knowledge",
+        "general quiz",
+        "general trivia",
+        "quiz challenge",
+        "guess the answer",
+        "brain test",
+        "iq test"
+      ],
+      "published_at": "2026-11-01T21:13:12.915264+00:00",
+      "video_id": "DEEnyERlFYg",
       "source": "runtime"
     }
   },
-  "updated": "2026-11-01T15:00:03"
+  "updated": "2026-11-01T21:13:12"
 }

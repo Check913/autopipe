@@ -1,0 +1,52 @@
+{
+  "created": "2026-11-01T21:08:59.253925",
+  "label": "cycle",
+  "reason": null,
+  "bandit": {
+    "arms": {
+      "family:question": {
+        "alpha": 1.0,
+        "beta": 1.0,
+        "pulls": 0
+      },
+      "family:number": {
+        "alpha": 1.0,
+        "beta": 1.0,
+        "pulls": 0
+      },
+      "family:negation": {
+        "alpha": 1.0,
+        "beta": 1.0,
+        "pulls": 0
+      },
+      "family:statement": {
+        "alpha": 1.0,
+        "beta": 1.0,
+        "pulls": 0
+      },
+      "format:short": {
+        "alpha": 1.0,
+        "beta": 1.0,
+        "pulls": 0
+      },
+      "format:long": {
+        "alpha": 1.0,
+        "beta": 1.0,
+        "pulls": 0
+      },
+      "quiz:on": {
+        "alpha": 1.0,
+        "beta": 1.0,
+        "pulls": 0
+      },
+      "quiz:off": {
+        "alpha": 1.0,
+        "beta": 1.0,
+        "pulls": 0
+      }
+    }
+  },
+  "knowledge": {
+    "patterns": []
+  }
+}

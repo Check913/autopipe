@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-01T01:57:22",
+  "generated_at": "2026-11-01T21:08:58",
   "errors": [],
   "warnings": [],
   "targets": {
@@ -13,13 +13,13 @@
     "title": "ScoreNine ",
     "channel_created_at": "2023-09-28T13:24:48.974359Z",
     "hidden_subs": false,
-    "video_count": 3
+    "video_count": 4
   },
-  "total_views": 473,
+  "total_views": 1392,
   "subs": 7,
-  "shorts_views_90d": 1509,
-  "n_shorts_90d": 6,
-  "watch_hours_12m": 0.0,
+  "shorts_views_90d": 1911,
+  "n_shorts_90d": 8,
+  "watch_hours_12m": 4.3,
   "ypp": {
     "checks": {
       "subs": {
@@ -29,13 +29,13 @@
         "pct": 0.7
       },
       "watch_hours": {
-        "current": 0.0,
+        "current": 4.3,
         "target": 4000.0,
         "ok": false,
-        "pct": 0.0
+        "pct": 0.11
       },
       "shorts_views": {
-        "current": 1509,
+        "current": 1911,
         "target": 10000000,
         "ok": false,
         "pct": 0.02
@@ -49,15 +49,15 @@
     "requirement": "1000 abonnes ET (4000 h visionnage / 12 mois OU 10M vues Shorts / 90 jours)"
   },
   "velocities_per_day": {
-    "subs": 5.453,
-    "shorts_views_90d": 1643.031,
-    "watch_hours_12m": null
+    "subs": 0.0,
+    "shorts_views_90d": 502.673,
+    "watch_hours_12m": 5.377
   },
   "eta_days": {
-    "subs": 183,
-    "shorts_views_90d": 6086,
-    "watch_hours_12m": null
+    "subs": null,
+    "shorts_views_90d": 19890,
+    "watch_hours_12m": 744
   },
-  "est_monthly_revenue_usd": 0.04,
-  "revenue_note": "estimation 0.04 USD/mois (RPM Shorts 0.08 USD/1000 vues) — payable uniquement une fois le YPP actif"
+  "est_monthly_revenue_usd": 0.05,
+  "revenue_note": "estimation 0.05 USD/mois (RPM Shorts 0.08 USD/1000 vues) — payable uniquement une fois le YPP actif"
 }

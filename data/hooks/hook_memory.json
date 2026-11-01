@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-01T13:35:17+00:00",
+  "updated": "2026-11-01T21:08:58+00:00",
   "publisheds": {
     "PCyc1j7hQ1s": {
       "video_id": "PCyc1j7hQ1s",
@@ -282,12 +282,12 @@
       "pair_id": "pair_20261030_0022",
       "title": "9 Question Quiz. Can You Score 9/9?",
       "topic": "quiz:general",
-      "views": null,
-      "engagedViews": null,
-      "engaged_ratio": null,
-      "engaged_source": null,
-      "avg_view_pct": null,
-      "engagement": null
+      "views": 462,
+      "engagedViews": 286,
+      "engaged_ratio": 61.9,
+      "engaged_source": "engagedViews",
+      "avg_view_pct": 46.1,
+      "engagement": 61.9
     },
     "fNh2NGFifGQ": {
       "video_id": "fNh2NGFifGQ",
@@ -384,7 +384,23 @@
       "engaged_source": null,
       "avg_view_pct": null,
       "engagement": null
+    },
+    "o9pVmfwNbek": {
+      "video_id": "o9pVmfwNbek",
+      "published_at": "2026-11-01T15:00:03.212291+00:00",
+      "hook": "How high can you score?",
+      "family": "question",
+      "hook_variant": "A",
+      "pair_id": "pair_20261101_0031",
+      "title": "This 9 Question Quiz Sounds Easy. It's Not.",
+      "topic": "quiz:movies",
+      "views": null,
+      "engagedViews": null,
+      "engaged_ratio": null,
+      "engaged_source": null,
+      "avg_view_pct": null,
+      "engagement": null
     }
   },
-  "last_checked": "2026-11-01T13:35:17+00:00"
+  "last_checked": "2026-11-01T21:08:59+00:00"
 }

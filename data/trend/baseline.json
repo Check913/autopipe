@@ -2669,5 +2669,135 @@
         200.0
       ]
     ]
+  },
+  "san pedro - municipal": {
+    "traffic": 500.0,
+    "first_seen": "2026-11-01T21:08:32",
+    "last_seen": "2026-11-01T21:08:32",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-01T21:08:32",
+        500.0
+      ]
+    ]
+  },
+  "grêmio vs atlético mineiro": {
+    "traffic": 1000.0,
+    "first_seen": "2026-11-01T21:08:32",
+    "last_seen": "2026-11-01T21:08:32",
+    "delta": 1000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-01T21:08:32",
+        1000.0
+      ]
+    ]
+  },
+  "toronto vs atlanta united": {
+    "traffic": 500.0,
+    "first_seen": "2026-11-01T21:08:32",
+    "last_seen": "2026-11-01T21:08:32",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-01T21:08:32",
+        500.0
+      ]
+    ]
+  },
+  "campbell football": {
+    "traffic": 200.0,
+    "first_seen": "2026-11-01T21:08:32",
+    "last_seen": "2026-11-01T21:08:32",
+    "delta": 200.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-01T21:08:32",
+        200.0
+      ]
+    ]
+  },
+  "vikings game": {
+    "traffic": 10000.0,
+    "first_seen": "2026-11-01T21:08:32",
+    "last_seen": "2026-11-01T21:08:32",
+    "delta": 10000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-01T21:08:32",
+        10000.0
+      ]
+    ]
+  },
+  "damar hamlin": {
+    "traffic": 1000.0,
+    "first_seen": "2026-11-01T21:08:32",
+    "last_seen": "2026-11-01T21:08:32",
+    "delta": 1000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-01T21:08:32",
+        1000.0
+      ]
+    ]
+  },
+  "motor1.com": {
+    "traffic": 500.0,
+    "first_seen": "2026-11-01T21:08:32",
+    "last_seen": "2026-11-01T21:08:32",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-01T21:08:32",
+        500.0
+      ]
+    ]
+  },
+  "joshua groban": {
+    "traffic": 1000.0,
+    "first_seen": "2026-11-01T21:08:32",
+    "last_seen": "2026-11-01T21:08:32",
+    "delta": 1000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-01T21:08:32",
+        1000.0
+      ]
+    ]
+  },
+  "jordan addison": {
+    "traffic": 500.0,
+    "first_seen": "2026-11-01T21:08:32",
+    "last_seen": "2026-11-01T21:08:32",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-01T21:08:32",
+        500.0
+      ]
+    ]
+  },
+  "mn vikings score": {
+    "traffic": 500.0,
+    "first_seen": "2026-11-01T21:08:32",
+    "last_seen": "2026-11-01T21:08:32",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-01T21:08:32",
+        500.0
+      ]
+    ]
   }
 }

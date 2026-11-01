@@ -1,113 +1,113 @@
 {
-  "fetched": "2026-11-01T13:35:16",
+  "fetched": "2026-11-01T21:08:40",
   "geo": "",
   "topics": [
     {
-      "query": "nyc marathon live stream",
-      "traffic": 200.0,
-      "rise": 10.0,
-      "saturation_views": 12345.0,
-      "momentum": 3.2343
-    },
-    {
-      "query": "is lamar jackson playing today",
-      "traffic": 200.0,
-      "rise": 10.0,
-      "saturation_views": 62823.0,
-      "momentum": 2.6328
-    },
-    {
-      "query": "servicio de ciudadanía e inmigración de los estados unidos",
+      "query": "grêmio vs atlético mineiro",
       "traffic": 1000.0,
       "rise": 10.0,
-      "saturation_views": 81584.0,
-      "momentum": 2.5565
+      "saturation_views": 0.0,
+      "momentum": 33.2193
     },
     {
-      "query": "falkirk vs celtic",
+      "query": "vikings game",
+      "traffic": 10000.0,
+      "rise": 10.0,
+      "saturation_views": 10436.0,
+      "momentum": 3.3124
+    },
+    {
+      "query": "campbell football",
       "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 131362.0,
-      "momentum": 2.4281
+      "saturation_views": 19673.0,
+      "momentum": 3.0357
     },
     {
-      "query": "star trek",
-      "traffic": 5000.0,
+      "query": "san pedro - municipal",
+      "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 467763.0,
-      "momentum": 2.1413
+      "saturation_views": 27630.0,
+      "momentum": 2.9057
     },
     {
-      "query": "new york marathon tracker",
-      "traffic": 200.0,
+      "query": "motor1.com",
+      "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 508342.0,
-      "momentum": 2.1249
+      "saturation_views": 64661.0,
+      "momentum": 2.6242
     },
     {
-      "query": "alex de minaur",
+      "query": "joshua groban",
       "traffic": 1000.0,
       "rise": 10.0,
-      "saturation_views": 515216.0,
-      "momentum": 2.1222
+      "saturation_views": 68241.0,
+      "momentum": 2.6082
     },
     {
-      "query": "college basketball",
-      "traffic": 200.0,
+      "query": "jordan addison",
+      "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 708519.0,
-      "momentum": 2.0617
+      "saturation_views": 195659.0,
+      "momentum": 2.3302
     },
     {
-      "query": "election day",
-      "traffic": 200.0,
+      "query": "toronto vs atlanta united",
+      "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 1994667.0,
-      "momentum": 1.8868
+      "saturation_views": 315883.0,
+      "momentum": 2.2224
     },
     {
-      "query": "browns vs steelers",
-      "traffic": 200.0,
+      "query": "mn vikings score",
+      "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 4316393.0,
-      "momentum": 1.7746
+      "saturation_views": 14678082.0,
+      "momentum": 1.6216
+    },
+    {
+      "query": "damar hamlin",
+      "traffic": 1000.0,
+      "rise": 10.0,
+      "saturation_views": 19184089.0,
+      "momentum": 1.5916
     }
   ],
   "top": [
     {
-      "query": "nyc marathon live stream",
-      "traffic": 200.0,
-      "rise": 10.0,
-      "saturation_views": 12345.0,
-      "momentum": 3.2343
-    },
-    {
-      "query": "is lamar jackson playing today",
-      "traffic": 200.0,
-      "rise": 10.0,
-      "saturation_views": 62823.0,
-      "momentum": 2.6328
-    },
-    {
-      "query": "servicio de ciudadanía e inmigración de los estados unidos",
+      "query": "grêmio vs atlético mineiro",
       "traffic": 1000.0,
       "rise": 10.0,
-      "saturation_views": 81584.0,
-      "momentum": 2.5565
+      "saturation_views": 0.0,
+      "momentum": 33.2193
     },
     {
-      "query": "falkirk vs celtic",
+      "query": "vikings game",
+      "traffic": 10000.0,
+      "rise": 10.0,
+      "saturation_views": 10436.0,
+      "momentum": 3.3124
+    },
+    {
+      "query": "campbell football",
       "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 131362.0,
-      "momentum": 2.4281
+      "saturation_views": 19673.0,
+      "momentum": 3.0357
     },
     {
-      "query": "star trek",
-      "traffic": 5000.0,
+      "query": "san pedro - municipal",
+      "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 467763.0,
-      "momentum": 2.1413
+      "saturation_views": 27630.0,
+      "momentum": 2.9057
+    },
+    {
+      "query": "motor1.com",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 64661.0,
+      "momentum": 2.6242
     }
   ]
 }

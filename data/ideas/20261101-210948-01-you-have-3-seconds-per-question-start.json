@@ -1,0 +1,201 @@
+{
+  "topic": "quiz",
+  "source_topic": "quiz:general",
+  "title": "You Have 3 Seconds Per Question. Start.",
+  "hook": "If you miss three, you are officially average.",
+  "density": 4,
+  "duration_format": "long",
+  "duration_target": 80,
+  "duration_range": [
+    74,
+    88
+  ],
+  "script": "If you miss three, you are officially average.\nQuestion 1: Which planet is often called the 'Red Planet'?\nLock in your answer: Three. Two. One.\nThe answer is B: Mars.\nQuestion 2: In which year did the Titanic famously sink?\nLock in your answer: Three. Two. One.\nThe answer is B: 1912.\nQuestion 3: Which is the longest river in South America?\nLock in your answer: Three. Two. One.\nThe answer is C: Amazon River.\nIf you got the first three right, like the video right now.\nQuestion 4: What is the chemical symbol for the element gold?\nLock in your answer: Three. Two. One.\nThe answer is B: Au.\nQuestion 5: Which actor played the lead role of Neo in 'The Matrix' film series?\nLock in your answer: Three. Two. One.\nThe answer is B: Keanu Reeves.\nScore check: comment SHARP if you are still perfect, RUSTY if you already missed one.\nQuestion 6: What is the highest mountain in Africa?\nLock in your answer: Three. Two. One.\nThe answer is B: Mount Kilimanjaro.\nQuestion 7: Which animal is renowned for its ability to change its skin color to match its surroundings?\nLock in your answer: Three. Two. One.\nThe answer is B: Chameleon.\nAre you ready for the last question?\nDon't forget to follow and comment your score to be on the weekly leaderboard of the top performers.\nQuestion 8: Which country has the most time zones?\nLock in your answer: Three. Two. One.\nThe answer is C: France.\nQuestion 9: Which bird can fly backwards?\nLock in your answer: Three. Two. One.\nThe answer is B: Hummingbird.\nBonus: double or nothing - keep your score in your head and beat it on the next quiz.\nComment your score out of 9, and follow for a new quiz every day.",
+  "generator": "quiz:llm",
+  "quiz": {
+    "enabled": true,
+    "rounds": 9,
+    "countdown_s": 3,
+    "cards": true,
+    "items": [
+      {
+        "question": "Which planet is often called the 'Red Planet'?",
+        "options": [
+          "Venus",
+          "Mars",
+          "Jupiter",
+          "Saturn"
+        ],
+        "answer_index": 1,
+        "explanation": "Mars gets its reddish hue from iron oxide on its surface.",
+        "category": "general"
+      },
+      {
+        "question": "In which year did the Titanic famously sink?",
+        "options": [
+          "1905",
+          "1912",
+          "1918",
+          "1923"
+        ],
+        "answer_index": 1,
+        "explanation": "The RMS Titanic sank on its maiden voyage after hitting an iceberg in the North Atlantic Ocean.",
+        "category": "general"
+      },
+      {
+        "question": "Which is the longest river in South America?",
+        "options": [
+          "Paraná River",
+          "Magdalena River",
+          "Amazon River",
+          "Orinoco River"
+        ],
+        "answer_index": 2,
+        "explanation": "The Amazon River is also considered the largest river by discharge volume in the world.",
+        "category": "general"
+      },
+      {
+        "question": "What is the chemical symbol for the element gold?",
+        "options": [
+          "Ag",
+          "Au",
+          "Fe",
+          "Pb"
+        ],
+        "answer_index": 1,
+        "explanation": "'Au' comes from the Latin word 'aurum', meaning gold.",
+        "category": "general"
+      },
+      {
+        "question": "Which actor played the lead role of Neo in 'The Matrix' film series?",
+        "options": [
+          "Tom Cruise",
+          "Keanu Reeves",
+          "Brad Pitt",
+          "Leonardo DiCaprio"
+        ],
+        "answer_index": 1,
+        "explanation": "Keanu Reeves' portrayal of Neo became a defining role of his career.",
+        "category": "general"
+      },
+      {
+        "question": "What is the highest mountain in Africa?",
+        "options": [
+          "Mount Kenya",
+          "Mount Kilimanjaro",
+          "Mount Toubkal",
+          "Ras Dashen"
+        ],
+        "answer_index": 1,
+        "explanation": "Mount Kilimanjaro is a dormant volcano in Tanzania.",
+        "category": "general"
+      },
+      {
+        "question": "Which animal is renowned for its ability to change its skin color to match its surroundings?",
+        "options": [
+          "Octopus",
+          "Chameleon",
+          "Arctic Fox",
+          "Zebra"
+        ],
+        "answer_index": 1,
+        "explanation": "Chameleons change color for camouflage, communication, and temperature regulation.",
+        "category": "general"
+      },
+      {
+        "question": "Which country has the most time zones?",
+        "options": [
+          "Russia",
+          "USA",
+          "France",
+          "China"
+        ],
+        "answer_index": 2,
+        "explanation": "France has twelve zones counting its territories.",
+        "category": "geography"
+      },
+      {
+        "question": "Which bird can fly backwards?",
+        "options": [
+          "Owl",
+          "Hummingbird",
+          "Eagle",
+          "Penguin"
+        ],
+        "answer_index": 1,
+        "explanation": "Hummingbirds can hover and reverse.",
+        "category": "science"
+      }
+    ]
+  },
+  "comment": "Score check: how many did you get right out of 9? Comment your score and which question tricked you.",
+  "description": "Quick general quiz: 9 questions, 3 seconds each.\nScore check: how many did you get out of 9? 0 is a valid answer.\nPlay along, beat your friends, and come back tomorrow: a new quiz every day.\n\n#quiz #trivia #quiztime #generalknowledge #shorts",
+  "tags": [
+    "quiz",
+    "trivia",
+    "quiz time",
+    "quiz questions",
+    "general knowledge",
+    "test your knowledge",
+    "general quiz",
+    "general trivia",
+    "quiz challenge",
+    "guess the answer",
+    "brain test",
+    "iq test",
+    "fun quiz",
+    "trivia questions and answers",
+    "general knowledge quiz",
+    "pub quiz questions",
+    "quiz for adults",
+    "hard quiz",
+    "are you smart",
+    "only 1 percent",
+    "test your brain",
+    "shorts quiz",
+    "youtube shorts",
+    "shorts"
+  ],
+  "pair_id": "pair_20261101_0032",
+  "hook_variant": "B",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "family": "question",
+      "hook": "Are you smarter than most people?"
+    },
+    {
+      "variant": "B",
+      "family": "identity",
+      "hook": "If you miss three, you are officially average."
+    }
+  ],
+  "compliance": {
+    "mode": "block",
+    "ok": true,
+    "reasons": [],
+    "checked_at": "2026-11-01T21:09:48",
+    "originality": {
+      "max_jaccard": 0.4706,
+      "max_script_jaccard": 0.4937,
+      "worst_match_src": "20261031-181041-01-this-quiz-looks-easy-until-question-4.json",
+      "threshold": 0.6,
+      "threshold_script": 0.65,
+      "corpus_size": 72
+    },
+    "fatigue": {
+      "hook_family": "statement",
+      "consecutive_same_family": 0,
+      "max_consecutive": 3,
+      "fatigued": false
+    },
+    "policy": {
+      "violations": []
+    },
+    "ai_disclosure": {
+      "contains_synthetic_media": false,
+      "configured": true
+    }
+  },
+  "id": "20261101-210948-01"
+}
