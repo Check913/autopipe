@@ -238,6 +238,29 @@ DEFAULTS = {
         # variant_id -> retention (data/hook_ab/assignments.jsonl).
         "enabled": True,
     },
+    "hooks": {
+        # SKILL hook-generator-upgrade (2026-11-01) : les 3 gates de
+        # generation (diversite / performance / exploration) s'activent
+        # AUTOMATIQUEMENT des que l'API Analytics renvoie de VRAIS
+        # engagedViews sur un Short age de 72h+ (mode "auto_gated",
+        # prepublication_check run par le scheduler etape 1.98 ; aucun
+        # geste humain a T+72h). mode "off" = desactive, "always" =
+        # bypass du gate (tests locaux).
+        "enabled": True,
+        "mode": "auto_gated",
+        # taux de tours d'exploration hors cycle deterministe.
+        "exploration_rate": 0.3,
+        # nb de Shorts mesures par famille avant de designer une gagnante.
+        "performance_min_n": 3,
+        # cycle deterministe : 1 Short explore tous les 5 publies.
+        "explore_every": 5,
+        # diversite : seuil Jaccard de rejet de doublon + limite de serie
+        # de memes familles consecutives.
+        "dup_jaccard": 0.7,
+        "max_family_consecutive": 3,
+        # fenetre memoire anti-doublon/familles (jours).
+        "recent_days": 7,
+    },
     "research": {
         # MODULE 4 (2026-10-29) : benchmark quantitatif continu de la niche.
         # Scraping yt-dlp (sans cle) des Shorts qui gagnent + canaux rivaux
@@ -379,6 +402,7 @@ class Paths:
         self.trend = self.data / "trend"
         self.optimizer = self.data / "optimizer"
         self.hook_ab = self.data / "hook_ab"
+        self.hooks = self.data / "hooks"
         self.registry = self.data / "registry"
         self.research = self.data / "research"
         self.monetization = self.data / "monetization"
@@ -391,7 +415,7 @@ class Paths:
         for d in (self.data, self.output, self.cache, self.scout,
                   self.ideas, self.remake, self.radar, self.analytics,
                   self.visual, self.trend, self.optimizer, self.hook_ab,
-                  self.registry, self.research, self.monetization,
+                  self.hooks, self.registry, self.research, self.monetization,
                   self.compliance, self.weekly,
                   self.audio_cache, self.video_cache):
             d.mkdir(parents=True, exist_ok=True)

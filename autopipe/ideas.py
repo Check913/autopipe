@@ -426,6 +426,61 @@ def run_ideas(config=None, count=5):
             idea["pair_id"] = ab["pair_id"]
             idea["hook_variant"] = ab["variant"]
         idea["hook_variants"] = variants
+        # SKILL hook-generator-upgrade (2026-11-01) : si prepublication_check
+        # est ACTIF (engagedViews reels arrives a T+72h, activation auto par
+        # le scheduler etape 1.98), les 3 gates prennent le relais :
+        # diversite 7 j (Jaccard) + anti-serie de familles, famille gagnante
+        # (performance), cycle exploration 1/5. Remplace la variante retenue
+        # AVANT la garde conformite. Chaque gate reste non-fatal.
+        if variants and ab:
+            try:
+                from .hooks import prepublication_check as hooks_ppc
+                if hooks_ppc.is_active(cfg):
+                    log.info("[generator] skill hook-generator-upgrade actif "
+                             "-> gates de selection en cours pour '%s'",
+                             topic[:60])
+                    from .hooks import diversity as hooks_div
+                    from .hooks import exploration as hooks_exp
+                    from .hooks import performance as hooks_perf
+                    topic_txt = idea.get("source_topic") or topic
+                    hook_txt, fam_txt, label_txt, reason = (
+                        hooks_div.pick_alternative(topic_txt, variants, cfg=cfg))
+                    if hook_txt:
+                        ab_changed = hook_txt != ab["hook"]
+                        idea["hook"] = hook_txt
+                        if ab_changed:
+                            # on reste dans la paire A/B (le summarize joindra
+                            # la bonne variante via hook_variant/pair_id)
+                            for v in variants:
+                                if v.get("hook") == hook_txt:
+                                    ab["variant"] = v["variant"]
+                                    ab["hook"] = v["hook"]
+                                    idea["hook_variant"] = v["variant"]
+                                    break
+                    log.info("[generator] hook retenu : famille=%s variante=%s",
+                             fam_txt or "?", label_txt or ab["variant"])
+                    if reason:
+                        log.info("[generator] hook propose remplace : %s", reason)
+                    exploring, fam_best = hooks_exp.is_exploration_turn(cfg), None
+                    try:
+                        fam_best, _ = hooks_perf.best_family(cfg)
+                    except Exception:
+                        fam_best = None
+                    hook_exp, fam_exp, label_exp, _ = (
+                        hooks_exp.choose_variant(topic_txt, variants, cfg=cfg))
+                    if not fam_best:
+                        log.info("[exploration] pas assez de mesures pour "
+                                 "designer une famille gagnante (le cycle "
+                                 "continue d'apprendre)")
+                    elif exploring:
+                        log.info("[exploration] tour d'EXPLORATION -> famille "
+                                 "la plus eloignee de '%s' retenue", fam_best)
+                    else:
+                        log.info("[exploitation] famille gagnante '%s' "
+                                 "exploitee pour ce rang", fam_best)
+            except Exception:
+                log.warning("[generator] gates du skill hooks indisponibles "
+                            "(non fatal):\n%s", traceback.format_exc())
         # MODULE 6 (2026-10-31) : garde conformite anti-demoetisation -
         # originalite croisee vs idees deja produites, fatigue de format,
         # policy guard, divulgation AI. A la fin de la conception (apres
