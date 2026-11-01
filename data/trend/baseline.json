@@ -2279,5 +2279,135 @@
         500.0
       ]
     ]
+  },
+  "julian sayin injury": {
+    "traffic": 2000.0,
+    "first_seen": "2026-11-01T00:27:45",
+    "last_seen": "2026-11-01T00:27:45",
+    "delta": 2000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-01T00:27:45",
+        2000.0
+      ]
+    ]
+  },
+  "brandon miller": {
+    "traffic": 1000.0,
+    "first_seen": "2026-11-01T00:27:45",
+    "last_seen": "2026-11-01T00:27:45",
+    "delta": 1000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-01T00:27:45",
+        1000.0
+      ]
+    ]
+  },
+  "kaila charles": {
+    "traffic": 500.0,
+    "first_seen": "2026-11-01T00:27:45",
+    "last_seen": "2026-11-01T00:27:45",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-01T00:27:45",
+        500.0
+      ]
+    ]
+  },
+  "clarence thomas": {
+    "traffic": 500.0,
+    "first_seen": "2026-11-01T00:27:45",
+    "last_seen": "2026-11-01T00:27:45",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-01T00:27:45",
+        500.0
+      ]
+    ]
+  },
+  "november": {
+    "traffic": 200.0,
+    "first_seen": "2026-11-01T00:27:45",
+    "last_seen": "2026-11-01T00:27:45",
+    "delta": 200.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-01T00:27:45",
+        200.0
+      ]
+    ]
+  },
+  "memphis tigers football": {
+    "traffic": 200.0,
+    "first_seen": "2026-11-01T00:27:45",
+    "last_seen": "2026-11-01T00:27:45",
+    "delta": 200.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-01T00:27:45",
+        200.0
+      ]
+    ]
+  },
+  "ohio state football": {
+    "traffic": 20000.0,
+    "first_seen": "2026-11-01T00:27:45",
+    "last_seen": "2026-11-01T00:27:45",
+    "delta": 20000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-01T00:27:45",
+        20000.0
+      ]
+    ]
+  },
+  "wnba": {
+    "traffic": 20000.0,
+    "first_seen": "2026-11-01T00:27:45",
+    "last_seen": "2026-11-01T00:27:45",
+    "delta": 20000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-01T00:27:45",
+        20000.0
+      ]
+    ]
+  },
+  "inundación": {
+    "traffic": 200.0,
+    "first_seen": "2026-11-01T00:27:45",
+    "last_seen": "2026-11-01T00:27:45",
+    "delta": 200.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-01T00:27:45",
+        200.0
+      ]
+    ]
+  },
+  "what happened to julian sayin": {
+    "traffic": 200.0,
+    "first_seen": "2026-11-01T00:27:45",
+    "last_seen": "2026-11-01T00:27:45",
+    "delta": 200.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-01T00:27:45",
+        200.0
+      ]
+    ]
   }
 }

@@ -1,113 +1,113 @@
 {
-  "fetched": "2026-10-31T18:10:02",
+  "fetched": "2026-11-01T00:27:54",
   "geo": "",
   "topics": [
     {
-      "query": "israel elections netanyahu",
-      "traffic": 1000.0,
+      "query": "ohio state football",
+      "traffic": 20000.0,
       "rise": 10.0,
-      "saturation_views": 262398.0,
-      "momentum": 2.263
+      "saturation_views": 5757.0,
+      "momentum": 3.6219
     },
     {
-      "query": "archie gray",
+      "query": "kaila charles",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 383902.0,
-      "momentum": 2.1814
+      "saturation_views": 10353.0,
+      "momentum": 3.3162
     },
     {
-      "query": "jude bellingham",
-      "traffic": 500.0,
+      "query": "brandon miller",
+      "traffic": 1000.0,
       "rise": 10.0,
-      "saturation_views": 2674927.0,
-      "momentum": 1.8425
+      "saturation_views": 93353.0,
+      "momentum": 2.5188
     },
     {
-      "query": "eva longoria",
-      "traffic": 1000.0,
-      "rise": 1.0,
-      "saturation_views": 18724545.0,
-      "momentum": 0.1594
-    },
-    {
-      "query": "nbc news",
-      "traffic": 1000.0,
-      "rise": 0.0,
-      "saturation_views": 1184806.0,
-      "momentum": 0.0
-    },
-    {
-      "query": "montréal vs new york city",
-      "traffic": 500.0,
-      "rise": 0.0,
-      "saturation_views": 54585.0,
-      "momentum": 0.0
-    },
-    {
-      "query": "murray state vs illinois st",
-      "traffic": 1000.0,
-      "rise": 0.0,
-      "saturation_views": 3853.0,
-      "momentum": 0.0
-    },
-    {
-      "query": "rangers vs aberdeen",
+      "query": "what happened to julian sayin",
       "traffic": 200.0,
-      "rise": 0.0,
-      "saturation_views": 9206.0,
-      "momentum": 0.0
+      "rise": 10.0,
+      "saturation_views": 115620.0,
+      "momentum": 2.4612
     },
     {
-      "query": "philadelphia vs cincinnati",
-      "traffic": 1000.0,
-      "rise": 0.0,
-      "saturation_views": 142920.0,
-      "momentum": 0.0
+      "query": "julian sayin injury",
+      "traffic": 2000.0,
+      "rise": 10.0,
+      "saturation_views": 144122.0,
+      "momentum": 2.4046
     },
     {
-      "query": "jobe bellingham",
-      "traffic": 1000.0,
-      "rise": 0.0,
-      "saturation_views": 493986.0,
-      "momentum": 0.0
+      "query": "wnba",
+      "traffic": 20000.0,
+      "rise": 10.0,
+      "saturation_views": 329769.0,
+      "momentum": 2.2133
+    },
+    {
+      "query": "memphis tigers football",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 689374.0,
+      "momentum": 2.0668
+    },
+    {
+      "query": "inundación",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 732497.0,
+      "momentum": 2.0556
+    },
+    {
+      "query": "clarence thomas",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 7433957.0,
+      "momentum": 1.7032
+    },
+    {
+      "query": "november",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 2530557226.0,
+      "momentum": 1.19
     }
   ],
   "top": [
     {
-      "query": "israel elections netanyahu",
-      "traffic": 1000.0,
+      "query": "ohio state football",
+      "traffic": 20000.0,
       "rise": 10.0,
-      "saturation_views": 262398.0,
-      "momentum": 2.263
+      "saturation_views": 5757.0,
+      "momentum": 3.6219
     },
     {
-      "query": "archie gray",
+      "query": "kaila charles",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 383902.0,
-      "momentum": 2.1814
+      "saturation_views": 10353.0,
+      "momentum": 3.3162
     },
     {
-      "query": "jude bellingham",
-      "traffic": 500.0,
+      "query": "brandon miller",
+      "traffic": 1000.0,
       "rise": 10.0,
-      "saturation_views": 2674927.0,
-      "momentum": 1.8425
+      "saturation_views": 93353.0,
+      "momentum": 2.5188
     },
     {
-      "query": "eva longoria",
-      "traffic": 1000.0,
-      "rise": 1.0,
-      "saturation_views": 18724545.0,
-      "momentum": 0.1594
+      "query": "what happened to julian sayin",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 115620.0,
+      "momentum": 2.4612
     },
     {
-      "query": "nbc news",
-      "traffic": 1000.0,
-      "rise": 0.0,
-      "saturation_views": 1184806.0,
-      "momentum": 0.0
+      "query": "julian sayin injury",
+      "traffic": 2000.0,
+      "rise": 10.0,
+      "saturation_views": 144122.0,
+      "momentum": 2.4046
     }
   ]
 }

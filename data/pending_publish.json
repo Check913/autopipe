@@ -1,0 +1,242 @@
+{
+  "publish_at": "2026-11-01T22:00:00+00:00",
+  "video": "/home/runner/work/autopipe/autopipe/output/20261101-002834-01/video.mp4",
+  "idea_id": "20261101-002834-01",
+  "title": "Question 4 Is Where Streaks End",
+  "description": "Quick history quiz: 9 questions, 3 seconds each.\nScore check: how many did you get out of 9? 0 is a valid answer.\nPlay along, beat your friends, and come back tomorrow: a new quiz every day.\n\n#quiz #trivia #quiztime #generalknowledge #shorts",
+  "tags": [
+    "quiz",
+    "trivia",
+    "quiz time",
+    "quiz questions",
+    "general knowledge",
+    "test your knowledge",
+    "history quiz",
+    "history trivia",
+    "quiz challenge",
+    "guess the answer",
+    "brain test",
+    "iq test",
+    "fun quiz",
+    "trivia questions and answers",
+    "general knowledge quiz",
+    "pub quiz questions",
+    "quiz for adults",
+    "hard quiz",
+    "are you smart",
+    "only 1 percent",
+    "test your brain",
+    "shorts quiz",
+    "youtube shorts",
+    "shorts"
+  ],
+  "comment": "Score check: how many did you get right out of 9? Comment your score and which question tricked you.",
+  "pair_id": "pair_20261101_0029",
+  "quiz": {
+    "enabled": true,
+    "rounds": 9,
+    "countdown_s": 3
+  },
+  "idea_full": {
+    "topic": "quiz",
+    "source_topic": "quiz:history",
+    "title": "Question 4 Is Where Streaks End",
+    "hook": "Are you smarter than most people?",
+    "density": 4,
+    "duration_format": "long",
+    "duration_target": 80,
+    "duration_range": [
+      74,
+      88
+    ],
+    "script": "Are you smarter than most people?\nQuestion 1: What is the longest river in the world?\nLock in your answer: Three. Two. One.\nThe answer is B: Nile River.\nQuestion 2: Who was the first emperor of ancient Rome?\nLock in your answer: Three. Two. One.\nThe answer is C: Augustus.\nQuestion 3: Which movie features a talking lion named Mufasa?\nLock in your answer: Three. Two. One.\nThe answer is B: The Lion King.\nIf you got the first three right, like the video right now.\nQuestion 4: Which country is famous for its fjords?\nLock in your answer: Three. Two. One.\nThe answer is C: Norway.\nQuestion 5: What is the hardest natural substance on Earth?\nLock in your answer: Three. Two. One.\nThe answer is C: Diamond.\nScore check: comment SHARP if you are still perfect, RUSTY if you already missed one.\nQuestion 6: What is the common name for the Aurora Borealis?\nLock in your answer: Three. Two. One.\nThe answer is A: Northern Lights.\nQuestion 7: Which bird can fly backwards?\nLock in your answer: Three. Two. One.\nThe answer is B: Hummingbird.\nAre you ready for the last question?\nDon't forget to follow and comment your score to be on the weekly leaderboard of the top performers.\nQuestion 8: Which is the only flying mammal?\nLock in your answer: Three. Two. One.\nThe answer is B: Bat.\nQuestion 9: How many bones does a shark have?\nLock in your answer: Three. Two. One.\nThe answer is D: Zero.\nBonus: double or nothing - keep your score in your head and beat it on the next quiz.\nComment your score out of 9, and follow for a new quiz every day.",
+    "generator": "quiz:llm",
+    "quiz": {
+      "enabled": true,
+      "rounds": 9,
+      "countdown_s": 3,
+      "cards": true,
+      "items": [
+        {
+          "question": "What is the longest river in the world?",
+          "options": [
+            "Amazon River",
+            "Nile River",
+            "Yangtze River",
+            "Mississippi River"
+          ],
+          "answer_index": 1,
+          "explanation": "The Nile flows through eleven countries, primarily Egypt and Sudan.",
+          "category": "general"
+        },
+        {
+          "question": "Who was the first emperor of ancient Rome?",
+          "options": [
+            "Julius Caesar",
+            "Nero",
+            "Augustus",
+            "Constantine"
+          ],
+          "answer_index": 2,
+          "explanation": "Augustus initiated the Pax Romana, a period of relative peace and stability.",
+          "category": "general"
+        },
+        {
+          "question": "Which movie features a talking lion named Mufasa?",
+          "options": [
+            "Madagascar",
+            "The Lion King",
+            "Zootopia",
+            "Narnia"
+          ],
+          "answer_index": 1,
+          "explanation": "This animated Disney classic tells the story of Simba's journey to reclaim his rightful place.",
+          "category": "general"
+        },
+        {
+          "question": "Which country is famous for its fjords?",
+          "options": [
+            "Sweden",
+            "Finland",
+            "Norway",
+            "Denmark"
+          ],
+          "answer_index": 2,
+          "explanation": "Fjords are long, narrow inlets of the sea, typically found between steep cliffs.",
+          "category": "general"
+        },
+        {
+          "question": "What is the hardest natural substance on Earth?",
+          "options": [
+            "Gold",
+            "Iron",
+            "Diamond",
+            "Quartz"
+          ],
+          "answer_index": 2,
+          "explanation": "Diamonds are made of pure carbon atoms arranged in a crystal lattice.",
+          "category": "general"
+        },
+        {
+          "question": "What is the common name for the Aurora Borealis?",
+          "options": [
+            "Northern Lights",
+            "Southern Cross",
+            "Milky Way",
+            "Polar Vortex"
+          ],
+          "answer_index": 0,
+          "explanation": "This natural light display is caused by solar wind particles interacting with Earth's magnetic field.",
+          "category": "general"
+        },
+        {
+          "question": "Which bird can fly backwards?",
+          "options": [
+            "Owl",
+            "Hummingbird",
+            "Eagle",
+            "Penguin"
+          ],
+          "answer_index": 1,
+          "explanation": "Hummingbirds can hover and reverse.",
+          "category": "science"
+        },
+        {
+          "question": "Which is the only flying mammal?",
+          "options": [
+            "Squirrel",
+            "Bat",
+            "Sugar glider",
+            "Opossum"
+          ],
+          "answer_index": 1,
+          "explanation": "Bats have true powered flight.",
+          "category": "science"
+        },
+        {
+          "question": "How many bones does a shark have?",
+          "options": [
+            "206",
+            "100",
+            "25",
+            "Zero"
+          ],
+          "answer_index": 3,
+          "explanation": "A shark's skeleton is all cartilage.",
+          "category": "science"
+        }
+      ]
+    },
+    "comment": "Score check: how many did you get right out of 9? Comment your score and which question tricked you.",
+    "description": "Quick history quiz: 9 questions, 3 seconds each.\nScore check: how many did you get out of 9? 0 is a valid answer.\nPlay along, beat your friends, and come back tomorrow: a new quiz every day.\n\n#quiz #trivia #quiztime #generalknowledge #shorts",
+    "tags": [
+      "quiz",
+      "trivia",
+      "quiz time",
+      "quiz questions",
+      "general knowledge",
+      "test your knowledge",
+      "history quiz",
+      "history trivia",
+      "quiz challenge",
+      "guess the answer",
+      "brain test",
+      "iq test",
+      "fun quiz",
+      "trivia questions and answers",
+      "general knowledge quiz",
+      "pub quiz questions",
+      "quiz for adults",
+      "hard quiz",
+      "are you smart",
+      "only 1 percent",
+      "test your brain",
+      "shorts quiz",
+      "youtube shorts",
+      "shorts"
+    ],
+    "pair_id": "pair_20261101_0029",
+    "hook_variant": "A",
+    "hook_variants": [
+      {
+        "variant": "A",
+        "family": "question",
+        "hook": "Are you smarter than most people?"
+      },
+      {
+        "variant": "B",
+        "family": "identity",
+        "hook": "Most adults cannot get all of these right."
+      }
+    ],
+    "compliance": {
+      "mode": "block",
+      "ok": true,
+      "reasons": [],
+      "checked_at": "2026-11-01T00:28:34",
+      "originality": {
+        "max_jaccard": 0.4667,
+        "max_script_jaccard": 0.4625,
+        "worst_match_src": "20261031-074352-01-can-you-beat-this-9-question-quiz.json",
+        "threshold": 0.6,
+        "threshold_script": 0.65,
+        "corpus_size": 69
+      },
+      "fatigue": {
+        "hook_family": "question",
+        "consecutive_same_family": 0,
+        "max_consecutive": 3,
+        "fatigued": false
+      },
+      "policy": {
+        "violations": []
+      },
+      "ai_disclosure": {
+        "contains_synthetic_media": false,
+        "configured": true
+      }
+    },
+    "id": "20261101-002834-01"
+  },
+  "created": "2026-11-01T00:27:10.352608+00:00"
+}

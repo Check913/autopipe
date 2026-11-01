@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-31T18:10:12.941437",
+  "date": "2026-11-01T00:28:05.790752",
   "region": "US",
   "language": "en",
   "keywords": [
@@ -12,27 +12,9 @@
   ],
   "min_views": 500000,
   "max_duration": 90,
-  "total_found": 85,
-  "rejected": 75,
+  "total_found": 90,
+  "rejected": 80,
   "hits": [
-    {
-      "id": "3OuQ_bzpWZQ",
-      "title": "1-Minute Countdown - Quiz Time - Suspense Music ⏱️",
-      "channel": "SonarPlay",
-      "views": 38340,
-      "duration": 61.0,
-      "url": "https://www.youtube.com/watch?v=3OuQ_bzpWZQ",
-      "query": "ytsearch10:quiz time #shorts"
-    },
-    {
-      "id": "D_0U3l_HCmA",
-      "title": "✅ TEST YOUR KNOWLEDGE! - Short Mixed Trivia Quiz Questions #quiz #trivia #trivianight #learning",
-      "channel": "Brain Teaser Titans",
-      "views": 2481,
-      "duration": 80.0,
-      "url": "https://www.youtube.com/watch?v=D_0U3l_HCmA",
-      "query": "ytsearch10:test your knowledge shorts"
-    },
     {
       "id": "q16JX5kT0Ls",
       "title": "QUIZ Time with Intellipaat | Answer & Win Vouchers | Quiz - 2 | Intellipaat #Shorts",
@@ -58,6 +40,24 @@
       "views": 869,
       "duration": 71.0,
       "url": "https://www.youtube.com/watch?v=aZbrvMznLE4",
+      "query": "ytsearch10:test your knowledge shorts"
+    },
+    {
+      "id": "uaWbJExYEbE",
+      "title": "Test Your Knowledge #shorts",
+      "channel": "know youtube",
+      "views": 60,
+      "duration": 31.0,
+      "url": "https://www.youtube.com/watch?v=uaWbJExYEbE",
+      "query": "ytsearch10:test your knowledge shorts"
+    },
+    {
+      "id": "5Ia2nuHj-N4",
+      "title": "Test Your Knowledge!! Short Quiz 1",
+      "channel": "Idea Voyager",
+      "views": 40,
+      "duration": 77.0,
+      "url": "https://www.youtube.com/watch?v=5Ia2nuHj-N4",
       "query": "ytsearch10:test your knowledge shorts"
     }
   ]

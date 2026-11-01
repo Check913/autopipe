@@ -1,41 +1,49 @@
 {
-  "fetched": "2026-10-31T18:10:02",
+  "fetched": "2026-11-01T00:27:54",
   "status": "learned",
   "min_samples": 3,
-  "n_samples": 5,
+  "n_samples": 6,
   "patterns": [
-    {
-      "dimension": "hook_variant",
-      "value": "B",
-      "n": 2,
-      "mean_engagement": 25.84,
-      "relative_delta": -0.273,
-      "label": "hook A/B=B -> -27% d'engagement"
-    },
     {
       "dimension": "hook_type",
       "value": "question",
       "n": 3,
-      "mean_engagement": 42.0,
-      "relative_delta": 0.182,
-      "label": "hook type=question -> +18% d'engagement"
+      "mean_engagement": 51.33,
+      "relative_delta": 0.497,
+      "label": "hook type=question -> +50% d'engagement"
+    },
+    {
+      "dimension": "hook_variant",
+      "value": "B",
+      "n": 3,
+      "mean_engagement": 17.24,
+      "relative_delta": -0.497,
+      "label": "hook A/B=B -> -50% d'engagement"
     },
     {
       "dimension": "hook_variant",
       "value": "A",
       "n": 3,
-      "mean_engagement": 42.0,
-      "relative_delta": 0.182,
-      "label": "hook A/B=A -> +18% d'engagement"
+      "mean_engagement": 51.33,
+      "relative_delta": 0.497,
+      "label": "hook A/B=A -> +50% d'engagement"
+    },
+    {
+      "dimension": "hook_type",
+      "value": "statement",
+      "n": 2,
+      "mean_engagement": 22.88,
+      "relative_delta": -0.333,
+      "label": "hook type=statement -> -33% d'engagement"
     }
   ],
   "stats": {
-    "n_samples": 5,
-    "mean_engagement": 35.54,
+    "n_samples": 6,
+    "mean_engagement": 34.28,
     "engagement_min": 0.0,
-    "engagement_max": 67.16
+    "engagement_max": 66.4
   },
-  "lessons": 17,
+  "lessons": 18,
   "kill_switch": {
     "banned_families": {},
     "niche_alert": false,
@@ -48,7 +56,7 @@
   },
   "baseline_delta": {
     "status": "ok",
-    "n_after": 5,
+    "n_after": 6,
     "target": 10,
     "baseline": {
       "n": 10,
@@ -57,13 +65,13 @@
       "by_family": {}
     },
     "current": {
-      "n": 5,
-      "engagement_mean": 35.54,
+      "n": 6,
+      "engagement_mean": 34.29,
       "avg_view_pct_mean": null,
       "by_family": {}
     },
     "delta": {
-      "engagement_mean": 14.32,
+      "engagement_mean": 13.07,
       "avg_view_pct_mean": null
     }
   },
