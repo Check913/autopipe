@@ -269,6 +269,13 @@ quiz = { target = 80, min = 74, max = 88 }
 # compte une "vue" des le demarrage depuis 2025). Cible : >= 70 %.
 engaged_target_pct = 70
 
+# MAX 2026-11-01 : canal EXPLICITE pour l'API Analytics (reports().query).
+# Le code utilise par defaut le canal ScoreNine epingle dans
+# autopipe/analytics.py (ANALYTICS_CHANNEL_ID) ; surcharger ici pour un
+# autre canal. Raison : channel==MINE suit le canal actif du token OAuth
+# (piege du selecteur de compte Google) ; un ID explicite ne bouge jamais.
+channel_id = "UCY2jNqtoqVf8gA_FHVficSA"
+
 # V3 : taux de bouclage = views / uniqueViewers. ATTENTION (2026-10-27) :
 # uniqueViewers n'est PAS documente dans l'API YouTube Analytics v2
 # (l'ancienne metrique "uniques" est depresiee depuis 2016) ; le code

@@ -124,7 +124,7 @@ def _views_90d(cfg):
 def _watch_hours_12m(cfg):
     """Heures visionnage 12 derniers mois via Analytics API (None si KO)."""
     try:
-        from .analytics import get_analytics_service
+        from .analytics import _analytics_channel, get_analytics_service
         svc = get_analytics_service(cfg)
         if svc is None:
             log.info("Monetization: pas de token yt-analytics.readonly "
@@ -133,7 +133,7 @@ def _watch_hours_12m(cfg):
         end = dt.date.today()
         start = end - dt.timedelta(days=365)
         resp = svc.reports().query(
-            ids="channel==MINE",
+            ids=_analytics_channel(cfg),
             startDate=start.isoformat(),
             endDate=end.isoformat(),
             metrics="estimatedMinutesWatched",

@@ -155,6 +155,31 @@ LOOP_TARGET_PCT = 100.0   # au-dessus : les viewers re-regardent
 LOOP_MIN_PCT = 80.0       # en-dessous : le loop ne fonctionne pas
 
 
+# MAX 2026-11-01 : id de canal EXPLICITE pour reports().query. Le diag
+# v10 a prouve que le token analytics etait BON (QA1/QA2/QA4/QA5 -> 200
+# avec zeros genuins sur ScoreNine ; QActl -> 403 sur un canal etranger ;
+# channels.list(mine=true) -> UCY2jNqtoqVf8gA_FHVficSA) : les zeros
+# venaient de la LATENCE DE REPORT YouTube Analytics (48-72 h, doc
+# "Data Model") sur une chaine dont les videos ont 1-8 jours. L'ID est
+# epingle quand meme pour rendre la boucle insensible au canal actif du
+# token OAuth (channel==MINE suit le compte/canal du navigateur ; un ID
+# explicite ne bouge jamais). Surchargeable :
+# [analytics] channel_id = "UC...".
+ANALYTICS_CHANNEL_ID = "UCY2jNqtoqVf8gA_FHVficSA"
+
+
+def _analytics_channel(cfg=None):
+    """Clause ids= explicite pour reports().query (canal epingle).
+
+    channel==MINE depend du canal actif du token OAuth (piege du
+    selecteur de compte Google) ; un ID explicite ne bouge jamais.
+    Priorite : cfg [analytics].channel_id > constant ci-dessus.
+    """
+    raw = ((cfg or {}).get("analytics", {}) or {}).get("channel_id")
+    cid = str(raw).strip() if raw and str(raw).strip() else ANALYTICS_CHANNEL_ID
+    return "channel==%s" % cid
+
+
 def _analytics_token_file(cfg):
     return get_paths(cfg).root / (cfg.get("analytics", {}) or {}).get(
         "token_file", "token_analytics.json")
@@ -258,7 +283,7 @@ def loop_thresholds(cfg=None):
     return target, minimum
 
 
-def _loop_uniques(svc, ids, start, end):
+def _loop_uniques(svc, ids, start, end, chan):
     """Tente views+uniqueViewers par video (V3 loop rate).
 
     Renvoie {video_id: unique_viewers} ou {} si la metrique est refusee
@@ -266,7 +291,7 @@ def _loop_uniques(svc, ids, start, end):
     """
     try:
         resp = svc.reports().query(
-            ids="channel==MINE", startDate=start, endDate=end,
+            ids=chan, startDate=start, endDate=end,
             metrics="views,uniqueViewers", dimensions="video",
             filters="video==" + ",".join(ids)).execute()
     except Exception as exc:
@@ -353,14 +378,15 @@ def retention_for(video_ids, cfg=None, days=28):
     for i in range(0, len(ids), 10):
         chunk = ids[i:i + 10]
         if loop_supported and not uniques_by_id:
-            uniques_by_id = _loop_uniques(svc, chunk, start, end)
+            uniques_by_id = _loop_uniques(svc, chunk, start, end,
+                                          _analytics_channel(cfg))
             if not uniques_by_id:
                 loop_supported = False
         metrics = ("views,engagedViews,averageViewDuration,"
                    "averageViewPercentage,likes,comments,shares")
         try:
             resp = svc.reports().query(
-                ids="channel==MINE",
+                ids=_analytics_channel(cfg),
                 startDate=start, endDate=end,
                 metrics=metrics,
                 dimensions="video",
@@ -373,7 +399,7 @@ def retention_for(video_ids, cfg=None, days=28):
                         "%s): %s -> repli sans engagedViews", i, exc)
             try:
                 resp = svc.reports().query(
-                    ids="channel==MINE",
+                    ids=_analytics_channel(cfg),
                     startDate=start, endDate=end,
                     metrics=("views,averageViewDuration,"
                              "averageViewPercentage,likes,comments,shares"),
@@ -478,16 +504,22 @@ def refresh_retention(cfg=None):
         return {"status": "no_videos"}
     rows = retention_for(ids, cfg)
     if not rows:
-        # MAX 2026-11-01 : diagnostic explicite au lieu du silence (le bot
-        # a publie "a l'aveugle" sans que rien ne le signale jamais).
-        log.warning("RETENTION AVEUGLE: %s ids mais 0 ligne retournee par "
-                    "l'API Analytics (cause frequente: YouTube Analytics API "
-                    "desactivee dans le projet GCP -> 403 accessNotConfigured "
-                    "sur console.developers.google.com/apis/api/"
-                    "youtubeanalytics.googleapis.com). La cible "
-                    "engaged_target_pct n'est JAMAIS evaluee ce run.",
+        # MAX 2026-11-01 v2 : les vraies erreurs (403/400) sont deja
+        # loggees par paquet dans retention_for ; ici 0 ligne avec un
+        # token valide = cause PROUVEE par le diag v10 : latence de
+        # report YouTube Analytics de 48-72 h (doc "Data Model") sur
+        # une chaine dont les videos ont 1-8 jours. L'ancien message
+        # "API desactivee -> 403 accessNotConfigured" etait de la
+        # DESINFO : l'API repondait 200 avec des zeros.
+        log.warning("RETENTION SANS DONNEES: %s ids, 0 ligne Analytics "
+                    "-> latence de report YouTube 48-72 h (videos agees "
+                    "de 1 a 8 jours). La boucle engagedViews se remplira "
+                    "TOUTE SEULE des que le reporting rattrapera : ne "
+                    "re-autoriser RIEN avant 72 h apres la 1re pub. Si "
+                    "ca dure au-dela, lire les warnings precedents "
+                    "(erreurs reelles de l'API).",
                     len(ids))
-        return {"status": "unauthorized_or_error", "n_ids": len(ids)}
+        return {"status": "no_data_yet", "n_ids": len(ids)}
     with open(paths.analytics / "history_retention.jsonl", "a",
               encoding="utf-8") as fh:
         for r in rows:

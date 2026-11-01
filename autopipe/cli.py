@@ -135,7 +135,13 @@ def cmd_analytics(a):
         # Necessite `autopipe analytics-auth` une seule fois.
         result = analytics.refresh_retention(cfg)
         status = result.get("status") if isinstance(result, dict) else None
-        if status in ("unauthorized_or_error", "no_videos"):
+        if status == "no_data_yet":
+            # MAX 2026-11-01 : zeros PROUVES = latence de report YouTube
+            # Analytics 48-72 h (diag v10) - PAS un probleme de token.
+            print("Retention: 0 ligne Analytics (latence de report YouTube "
+                  "48-72 h sur videos recentes) -> la boucle engagedViews "
+                  "se remplira toute seule, ne re-autorisez rien.")
+        elif status in ("unauthorized_or_error", "no_videos"):
             print("Retention indisponible (%s) - autorise avec: "
                   "autopipe analytics-auth" % status)
     analytics.print_summary(cfg)
