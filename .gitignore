@@ -3,6 +3,7 @@ autopipe.toml
 client_secret.json
 token.json
 *.token.json
+token_analytics*.json
 
 # === Donnees locales / caches (le dossier data/ EST versionne : historique
 # anti-repetition + compteur d'uploads quotidiens doivent persister) ===

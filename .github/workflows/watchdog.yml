@@ -1,0 +1,108 @@
+# Watchdog AutoPipe (MAX 2026-11-01) : filet de securite du cron GitHub Actions.
+#
+# Constat mesure (2026-10-31) : les crons `schedule` de GitHub sont BEST-EFFORT,
+# retards voire ABANDONNES sous charge (surtout en debut d'heure). Si les 3
+# crons d'une fenetre (H-20 pregen, H:00 main, H+10 safety) sont tous
+# abandonnes, plus personne ne publie ce jour-la.
+#
+# Remede : ce watchdog tourne toutes les 10 minutes PENDANT les heures des
+# fenetres et re-declenche autopipe.yml via workflow_dispatch (les runs
+# dispatches ne subissent PAS l'abandon des crons).
+#   - grace 20 min  : laisse le cron principal + la couche safety (H+10) agir ;
+#   - borne 45 min  : au-dela on n'insiste plus (ponctualite > volume) ;
+#   - 3 chances/fenetre (H+20, H+30, H+40) ;
+#   - AUCUN risque de doublon : groupe de concurrency autopipe-run,
+#     already_served et verrou de revendication 600 s dans run_window_once.
+#
+# IMPORTANT : les heures ci-dessous doivent matcher upload.post_hours_utc
+# (secret AUTOPIPE_TOML). Fenetres 15:00 et 21:00 UTC.
+name: watchdog
+
+on:
+  schedule:
+    # Toutes les 10 min pendant 14h-15h59 et 20h-21h59 UTC seulement
+    # (fenetres 15:00 et 21:00 +/- marge ; limitent la conso de minutes).
+    - cron: "*/10 14-15,20-21 * * *"
+  workflow_dispatch:
+    inputs:
+      at_hour:
+        description: "Test manuel : heure UTC de la fenetre (vide = tout tester)"
+        required: false
+        default: ""
+
+# workflow_dispatch via GITHUB_TOKEN est autorise (exception documentee a la
+# regle anti-recursion) ; il faut le droit actions:write pour dispatcher.
+permissions:
+  actions: write
+  contents: read
+
+# Un nouveau tick annule un watchdog precedent encore actif (jamais l'auto-
+# pipe : groupe de concurrency distinct).
+concurrency:
+  group: autopipe-watchdog
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Re-declencher les fenetres en retard (workflow_dispatch)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Fenetres en heures UTC, separees par espaces (= upload.post_hours_utc).
+          WINDOWS_UTC: "15 21"
+          GRACE_MIN: "20"
+          LIMIT_MIN: "45"
+        run: |
+          python3 - <<'PY'
+          import json, os, subprocess, datetime as dt
+
+          now = dt.datetime.now(dt.timezone.utc)
+          today = now.date().isoformat()
+
+          # Etat persiste par les runs autopipe (commit data/ sur main).
+          try:
+              with open("data/scheduler_state.json") as fh:
+                  state = json.load(fh) or {}
+          except Exception:
+              state = {}
+          served = [str(w) for w in (state.get("served_windows") or [])]
+          if state.get("day") != today:
+              served = []  # pas encore de run aujourd'hui
+
+          grace = int(os.environ["GRACE_MIN"])
+          limit = int(os.environ["LIMIT_MIN"])
+          only = os.environ.get("AT_HOUR") or ""  # input de test manuel
+          hours = [int(x) for x in os.environ["WINDOWS_UTC"].split()]
+
+          dispatched = 0
+          for h in hours:
+              key = "%sT%02d:00" % (today, h)
+              if any(w.startswith(key) for w in served):
+                  print("Fenetre %02d:00 deja servie -> rien a faire" % h)
+                  continue
+              target = now.replace(hour=h, minute=0, second=0, microsecond=0)
+              late = (now - target).total_seconds() / 60.0
+              if not (grace <= late <= limit):
+                  print("Fenetre %02d:00 retard %.0f min hors [%d, %d] -> skip"
+                        % (h, late, grace, limit))
+                  continue
+              if only and int(only) != h:
+                  print("Fenetre %02d:00 filtree (test manuel %s) -> skip"
+                        % (h, only))
+                  continue
+              print("Fenetre %02d:00 en retard de %.0f min -> workflow_dispatch"
+                    % (h, late))
+              subprocess.run(
+                  ["gh", "workflow", "run", "autopipe.yml",
+                   "--ref", "main", "-f", "at_hour=%d" % h],
+                  check=True)
+              dispatched += 1
+
+          print("Dispatch envoyes: %d" % dispatched)
+          PY
+        env:
+          AT_HOUR: ${{ github.event.inputs.at_hour }}

@@ -12,7 +12,8 @@
 #   - safety  : H+10 min -> rattrape un cron principal rate.
 # La premiere couche qui arrive publie ; les suivantes sortent proprement
 # (already_served / anti-doublon multi-jobs, verrou de revendication 600 s).
-# Fenetres : 14, 18, 22, 2 UTC (= 10h, 14h, 18h, 22h heure de l'Est),
+# Fenetres : 15, 21 UTC (2026-11-01 : 2 publications/jour, choix LJ) ->
+#   16h & 22h heure de Paris, 10h & 16h heure de New York.
 # matching upload.post_hours_utc.
 #   - workflow_dispatch = declenchement manuel (input at_hour optionnel).
 #   - Les secrets (config avec cles, token OAuth YouTube, client_secret) sont
@@ -24,22 +25,14 @@ name: autopipe
 
 on:
   schedule:
-    # --- Fenetre 14:00 UTC ---
-    - cron: "40 13 * * *"
-    - cron: "0 14 * * *"
-    - cron: "10 14 * * *"
-    # --- Fenetre 18:00 UTC ---
-    - cron: "40 17 * * *"
-    - cron: "0 18 * * *"
-    - cron: "10 18 * * *"
-    # --- Fenetre 22:00 UTC ---
-    - cron: "40 21 * * *"
-    - cron: "0 22 * * *"
-    - cron: "10 22 * * *"
-    # --- Fenetre 02:00 UTC ---
-    - cron: "40 1 * * *"
-    - cron: "0 2 * * *"
-    - cron: "10 2 * * *"
+    # --- Fenetre 15:00 UTC ---
+    - cron: "40 14 * * *"
+    - cron: "0 15 * * *"
+    - cron: "10 15 * * *"
+    # --- Fenetre 21:00 UTC ---
+    - cron: "40 20 * * *"
+    - cron: "0 21 * * *"
+    - cron: "10 21 * * *"
   workflow_dispatch:
     inputs:
       at_hour:
@@ -137,10 +130,8 @@ jobs:
           set -euo pipefail
           hour=""
           case "$SCHEDULE" in
-            "40 13 * * *"|"0 14 * * *"|"10 14 * * *") hour=14 ;;
-            "40 17 * * *"|"0 18 * * *"|"10 18 * * *") hour=18 ;;
-            "40 21 * * *"|"0 22 * * *"|"10 22 * * *") hour=22 ;;
-            "40 1 * * *"|"0 2 * * *"|"10 2 * * *")   hour=2 ;;
+            "40 14 * * *"|"0 15 * * *"|"10 15 * * *") hour=15 ;;
+            "40 20 * * *"|"0 21 * * *"|"10 21 * * *") hour=21 ;;
           esac
           if [ -z "$hour" ] && [ -n "${DISPATCH_HOUR:-}" ]; then
             hour="$DISPATCH_HOUR"
