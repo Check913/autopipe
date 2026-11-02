@@ -1,0 +1,229 @@
+# Fallback AutoPipe (MAX 2026-11-02) : filet AUTONOME anti-panne des crons.
+#
+# Constat du 2026-11-02 : GitHub n'a cree AUCUN tick schedule du jour
+# (ni les 3 crons autopipe 14:40/15:00/15:10, ni les ticks watchdog
+# 14h-15h59) -> journee sans publication, bien que tous les workflows
+# soient "active". Les crons `schedule` de GitHub sont best-effort :
+# sous charge, des ticks sont retardes, decales ou jamais crees.
+#
+# Remede : ce workflow tourne TOUTES LES 30 MIN, 24 h/24, et est AUTONOME
+# (il ne depend pas d'un dispatch d'un autre workflow, contrairement au
+# watchdog) :
+#   1. il lit data/scheduler_state.json (commite sur main par les runs) ;
+#   2. il liste les fenetres du jour DEJA DUES (H:00 <= maintenant) qui ne
+#      figurent pas dans served_windows ;
+#   3. pour chacune : serve-window --at-hour H --horizon-min 0
+#      (retard assume, publication immediate, jamais annulee).
+#
+# Idempotent : already_served = exit 0 sans publication ; verrou de
+# revendication 600 s ; groupe de concurrency autopipe-run -> les runs
+# sont SERIALISES avec autopipe.yml (pas de course sur data/, pas de
+# doublon). Ticks a H+7 et H+37 : decalages pour ne pas chevaucher les
+# crons autopipe (H-20/H:00/H+10). Un cron principal qui passe sert la
+# fenetre a l'heure ; le tick fallback 7 min plus tard sort en
+# already_served en ~1 min (checkout sans pip install si rien a faire).
+# Retard maximal si TOUS les crons autopipe et watchdog sont abandonnes :
+# 37 minutes.
+#
+# Limite connue : si GitHub ne cree AUCUN tick schedule toute la journee
+# (cas du 2026-11-02), aucun mecanisme interne a GitHub ne peut rattraper.
+# Filet externe recommande : cron-job.org (ou UptimeRobot) -> POST
+# https://api.github.com/repos/Check913/autopipe/actions/workflows/fallback.yml/dispatches
+# avec un PAT fine-grained actions:write, a 15:05 et 21:05 UTC.
+#
+# IMPORTANT : la liste des fenetres est lue dans autopipe.toml
+# (post_hours_utc), pas codee en dur : changer les heures dans la config
+# suffit, aucun edit de ce workflow.
+name: fallback
+
+on:
+  schedule:
+    - cron: "7,37 * * * *"
+  workflow_dispatch:
+    inputs:
+      at_hour:
+        description: "Heure UTC a servir (0-23) ; vide = auto : fenetres du jour en retard"
+        required: false
+        default: ""
+
+# Le run committe l'etat (data/) a la fin -> droit d'ecriture requis.
+permissions:
+  contents: write
+
+# Meme groupe qu'autopipe.yml : serialisation stricte, jamais deux jobs
+# a ecrire data/ en meme temps ; cancel-in-progress: false -> un tick
+# fallback ATTEND son tour au lieu de tuer un autopipe en cours.
+concurrency:
+  group: autopipe-run
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      # Restauration de la config + credentials depuis les secrets chiffres
+      # (memes secrets qu'autopipe.yml ; token analytics inutile ici).
+      - name: Restaurer la configuration et les credentials
+        env:
+          AUTOPIPE_TOML: ${{ secrets.AUTOPIPE_TOML }}
+          YOUTUBE_TOKEN_JSON: ${{ secrets.YOUTUBE_TOKEN_JSON }}
+          CLIENT_SECRET_JSON: ${{ secrets.CLIENT_SECRET_JSON }}
+        run: |
+          set -euo pipefail
+          test -n "$AUTOPIPE_TOML" || { echo "Secret AUTOPIPE_TOML manquant"; exit 1; }
+          test -n "$YOUTUBE_TOKEN_JSON" || { echo "Secret YOUTUBE_TOKEN_JSON manquant"; exit 1; }
+          printf '%s' "$AUTOPIPE_TOML" > autopipe.toml
+          printf '%s' "$YOUTUBE_TOKEN_JSON" > token.json
+          if [ -n "${CLIENT_SECRET_JSON:-}" ]; then
+            printf '%s' "$CLIENT_SECRET_JSON" > client_secret.json
+          fi
+          mkdir -p data cache output assets
+          chmod 600 token.json client_secret.json 2>/dev/null || true
+
+      # Tri en stdlib uniquement (aucun pip install) : si toutes les fenetres
+      # du jour sont servies ou pas encore dues -> no-op et job vert en ~1 min.
+      - name: Lister les fenetres du jour en retard
+        id: due
+        env:
+          DISPATCH_HOUR: ${{ github.event.inputs.at_hour }}
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json, os, re, datetime as dt
+
+          now = dt.datetime.now(dt.timezone.utc)
+
+          # post_hours_utc lu depuis autopipe.toml (stdlib, tolerant).
+          hours = []
+          try:
+              with open("autopipe.toml", encoding="utf-8") as fh:
+                  toml_text = fh.read()
+          except OSError:
+              toml_text = ""
+          m = re.search(r"^\s*post_hours_utc\s*=\s*\[([^\]]*)\]", toml_text, re.M)
+          if m:
+              for tok in m.group(1).split(","):
+                  tok = tok.strip().strip("'\"")
+                  if tok:
+                      try:
+                          hours.append(int(tok) % 24)
+                      except ValueError:
+                          pass
+          if not hours:
+              hours = [15, 21]  # filet si le TOML est illisible
+
+          # Fenetres deja servies (ISO "AAAA-MM-JJTHH:00:00+00:00").
+          try:
+              with open("data/scheduler_state.json", encoding="utf-8") as fh:
+                  state = json.load(fh) or {}
+          except Exception:
+              state = {}
+          served = {str(w) for w in (state.get("served_windows") or [])}
+
+          # Dispatch manuel avec at_hour valide -> force cette fenetre.
+          only_raw = (os.environ.get("DISPATCH_HOUR") or "").strip()
+          only = None
+          if only_raw:
+              try:
+                  only = int(only_raw) % 24
+              except ValueError:
+                  print("WARN: at_hour=%r invalide (entier 0-23 attendu) -> mode auto"
+                        % only_raw)
+              else:
+                  if only not in hours:
+                      hours.append(only)
+
+          due = []
+          for h in sorted(set(hours)):
+              target = now.replace(hour=h, minute=0, second=0, microsecond=0)
+              if target.isoformat() in served:
+                  continue
+              if only is not None and only == h:
+                  due.append(h)  # dispatch manuel : force (horizon 0)
+                  continue
+              # Seulement les fenetres DEJA DUES : jamais de publication en
+              # avance ; pas de borne superieure -> une fenetre oubliee est
+              # rattrapee jusqu'au dernier tick (23:37) du jour.
+              if (now - target).total_seconds() >= 0:
+                  due.append(h)
+
+          out = os.environ["GITHUB_OUTPUT"]
+          with open(out, "a", encoding="utf-8") as fh:
+              fh.write("due=" + " ".join(str(h) for h in due) + "\n")
+          print("Fenetres en retard:", due or "aucune")
+          PY
+
+      # Le reste ne s'execute QUE s'il y a au moins une fenetre a rattraper.
+      - uses: actions/setup-python@v5
+        if: steps.due.outputs.due != ''
+        with:
+          python-version: "3.10"
+
+      - name: Installer les dependances Python
+        if: steps.due.outputs.due != ''
+        run: pip install --no-cache-dir -r requirements.txt
+
+      - name: Verifier le token YouTube (alerte Gmail si action requise)
+        if: steps.due.outputs.due != ''
+        env:
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: python -m autopipe.cli check-token
+
+      # Rattrapage : horizon 0 -> la fenetre depassee est servie immediatement
+      # (generation puis publication, jamais annulee). Boucle tolerant aux
+      # echecs individuels : toutes les fenetres dues sont tentees, le job
+      # est rouge si au moins une a echoue (alerte Gmail en aval).
+      - name: Servir les fenetres en retard (retard assume, jamais annule)
+        if: steps.due.outputs.due != ''
+        env:
+          DUE: ${{ steps.due.outputs.due }}
+        run: |
+          set -uo pipefail
+          failed=0
+          for h in $DUE; do
+            echo "=== Rattrapage fenetre ${h}:00 UTC (retard assume) ==="
+            if ! python -m autopipe.cli serve-window --at-hour "$h" --horizon-min 0; then
+              echo "WARN: fenetre ${h}:00 -> serve-window en echec"
+              failed=1
+            fi
+          done
+          exit $failed
+
+      # Persistance de l'etat (data/) : identique a autopipe.yml (rebase -X
+      # theirs + push, 5 essais) pour que le tick suivant voie l'etat frais.
+      - name: Commiter l'etat du bot
+        if: always()
+        run: |
+          git config user.name "autopipe-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data || true
+          if git diff --cached --quiet; then
+            echo "Etat inchange"
+          else
+            git commit -m "etat du bot: $(date -u '+%Y-%m-%d %H:%M UTC') (fallback)"
+          fi
+          ok=0
+          for i in 1 2 3 4 5; do
+            if git pull --rebase --autostash -X theirs origin main \
+               && git push origin HEAD:main; then
+              ok=1
+              break
+            fi
+            echo "Race push (essai $i/5) -> nouvelle tentative"
+            sleep $((i * 5))
+          done
+          if [ "$ok" -ne 1 ]; then
+            echo "WARN: push de l'etat echoue apres retries (l'etat reste local au job)"
+          fi
+
+      # Alerte Gmail si le run echoue (fenetre non servie).
+      - name: Alerte Gmail en cas d'echec
+        if: failure()
+        env:
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: python -m autopipe.cli notify-failure --force

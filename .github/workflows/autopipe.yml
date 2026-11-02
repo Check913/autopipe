@@ -134,7 +134,21 @@ jobs:
             "40 20 * * *"|"0 21 * * *"|"10 21 * * *") hour=21 ;;
           esac
           if [ -z "$hour" ] && [ -n "${DISPATCH_HOUR:-}" ]; then
-            hour="$DISPATCH_HOUR"
+            # Garde-fou (2026-11-02 : dispatch at_hour="check" -> argparse
+            # exit 2, run rouge + email) : n'accepter qu'un entier 0-23 ;
+            # toute autre valeur est ignoree -> prochaine fenetre auto.
+            case "$DISPATCH_HOUR" in
+              *[!0-9]*|"")
+                echo "WARN: at_hour=$DISPATCH_HOUR invalide (entier 0-23 attendu) -> auto"
+                ;;
+              *)
+                if [ "$DISPATCH_HOUR" -le 23 ]; then
+                  hour="$DISPATCH_HOUR"
+                else
+                  echo "WARN: at_hour=$DISPATCH_HOUR hors 0-23 -> auto"
+                fi
+                ;;
+            esac
           fi
           echo "Fenetre ciblee: ${hour:-auto (prochaine fenetre)}"
           echo "hour=$hour" >> "$GITHUB_OUTPUT"
