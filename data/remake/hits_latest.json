@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-01T21:09:16.046410",
+  "date": "2026-11-02T15:21:38.306848",
   "region": "US",
   "language": "en",
   "keywords": [
@@ -12,9 +12,18 @@
   ],
   "min_views": 500000,
   "max_duration": 90,
-  "total_found": 89,
-  "rejected": 79,
+  "total_found": 85,
+  "rejected": 76,
   "hits": [
+    {
+      "id": "3OuQ_bzpWZQ",
+      "title": "1-Minute Countdown - Quiz Time - Suspense Music ⏱️",
+      "channel": "SonarPlay",
+      "views": 38731,
+      "duration": 61.0,
+      "url": "https://www.youtube.com/watch?v=3OuQ_bzpWZQ",
+      "query": "ytsearch10:quiz time #shorts"
+    },
     {
       "id": "q16JX5kT0Ls",
       "title": "QUIZ Time with Intellipaat | Answer & Win Vouchers | Quiz - 2 | Intellipaat #Shorts",
@@ -22,15 +31,6 @@
       "views": 1704,
       "duration": 31.0,
       "url": "https://www.youtube.com/watch?v=q16JX5kT0Ls",
-      "query": "ytsearch10:quiz time #shorts"
-    },
-    {
-      "id": "DRWiXfVGs7Y",
-      "title": "QUIZ Time with Intellipaat | Answer & Win Vouchers | Quiz - 1 | Intellipaat #Shorts",
-      "channel": "Intellipaat",
-      "views": 1412,
-      "duration": 55.0,
-      "url": "https://www.youtube.com/watch?v=DRWiXfVGs7Y",
       "query": "ytsearch10:quiz time #shorts"
     },
     {
@@ -52,13 +52,13 @@
       "query": "ytsearch10:test your knowledge shorts"
     },
     {
-      "id": "uQ81h8Mjwcw",
-      "title": "General Knowledge Quiz – Human Body Quiz",
-      "channel": "GH Quiz ",
-      "views": 72,
-      "duration": 90.0,
-      "url": "https://www.youtube.com/watch?v=uQ81h8Mjwcw",
-      "query": "ytsearch10:general knowledge #shorts"
+      "id": "JbqBjqImXmg",
+      "title": "The Answer is NOT 12! ❌ | Viral Math Brain Teaser | Short Solutions | Brilliant Math Problem",
+      "channel": "Short Solutions",
+      "views": 116,
+      "duration": 49.0,
+      "url": "https://www.youtube.com/watch?v=JbqBjqImXmg",
+      "query": "ytsearch10:brain teaser #shorts"
     }
   ]
 }

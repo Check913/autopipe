@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-01T21:08:58+00:00",
+  "updated": "2026-11-02T15:21:27+00:00",
   "publisheds": {
     "PCyc1j7hQ1s": {
       "video_id": "PCyc1j7hQ1s",
@@ -400,7 +400,23 @@
       "engaged_source": null,
       "avg_view_pct": null,
       "engagement": null
+    },
+    "DEEnyERlFYg": {
+      "video_id": "DEEnyERlFYg",
+      "published_at": "2026-11-01T21:13:12.915264+00:00",
+      "hook": "If you miss three, you are officially average.",
+      "family": "statement",
+      "hook_variant": "B",
+      "pair_id": "pair_20261101_0032",
+      "title": "You Have 3 Seconds Per Question. Start.",
+      "topic": "quiz:general",
+      "views": null,
+      "engagedViews": null,
+      "engaged_ratio": null,
+      "engaged_source": null,
+      "avg_view_pct": null,
+      "engagement": null
     }
   },
-  "last_checked": "2026-11-01T21:08:59+00:00"
+  "last_checked": "2026-11-02T15:21:28+00:00"
 }

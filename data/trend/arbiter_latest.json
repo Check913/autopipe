@@ -1,113 +1,113 @@
 {
-  "fetched": "2026-11-01T21:08:40",
+  "fetched": "2026-11-02T15:21:08",
   "geo": "",
   "topics": [
     {
-      "query": "grêmio vs atlético mineiro",
-      "traffic": 1000.0,
+      "query": "palantir stock",
+      "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 0.0,
-      "momentum": 33.2193
+      "saturation_views": 51804.0,
+      "momentum": 2.6922
     },
     {
-      "query": "vikings game",
-      "traffic": 10000.0,
-      "rise": 10.0,
-      "saturation_views": 10436.0,
-      "momentum": 3.3124
-    },
-    {
-      "query": "campbell football",
+      "query": "nbis",
       "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 19673.0,
-      "momentum": 3.0357
+      "saturation_views": 54042.0,
+      "momentum": 2.6789
     },
     {
-      "query": "san pedro - municipal",
+      "query": "uber stock",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 55368.0,
+      "momentum": 2.6714
+    },
+    {
+      "query": "intel stock price",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 27630.0,
-      "momentum": 2.9057
+      "saturation_views": 61610.0,
+      "momentum": 2.6387
     },
     {
-      "query": "motor1.com",
+      "query": "schd",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 64661.0,
-      "momentum": 2.6242
+      "saturation_views": 101356.0,
+      "momentum": 2.4963
     },
     {
-      "query": "joshua groban",
-      "traffic": 1000.0,
+      "query": "nhl hometown remix",
+      "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 68241.0,
-      "momentum": 2.6082
+      "saturation_views": 103035.0,
+      "momentum": 2.4919
     },
     {
-      "query": "jordan addison",
+      "query": "hometown remix jerseys nhl",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 195659.0,
-      "momentum": 2.3302
+      "saturation_views": 108885.0,
+      "momentum": 2.4771
     },
     {
-      "query": "toronto vs atlanta united",
-      "traffic": 500.0,
+      "query": "qqq",
+      "traffic": 2000.0,
       "rise": 10.0,
-      "saturation_views": 315883.0,
-      "momentum": 2.2224
+      "saturation_views": 350816.0,
+      "momentum": 2.2002
     },
     {
-      "query": "mn vikings score",
-      "traffic": 500.0,
+      "query": "sp500",
+      "traffic": 2000.0,
       "rise": 10.0,
-      "saturation_views": 14678082.0,
-      "momentum": 1.6216
+      "saturation_views": 690287.0,
+      "momentum": 2.0665
     },
     {
-      "query": "damar hamlin",
-      "traffic": 1000.0,
+      "query": "voo stock",
+      "traffic": 2000.0,
       "rise": 10.0,
-      "saturation_views": 19184089.0,
-      "momentum": 1.5916
+      "saturation_views": 876597.0,
+      "momentum": 2.0231
     }
   ],
   "top": [
     {
-      "query": "grêmio vs atlético mineiro",
-      "traffic": 1000.0,
+      "query": "palantir stock",
+      "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 0.0,
-      "momentum": 33.2193
+      "saturation_views": 51804.0,
+      "momentum": 2.6922
     },
     {
-      "query": "vikings game",
-      "traffic": 10000.0,
-      "rise": 10.0,
-      "saturation_views": 10436.0,
-      "momentum": 3.3124
-    },
-    {
-      "query": "campbell football",
+      "query": "nbis",
       "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 19673.0,
-      "momentum": 3.0357
+      "saturation_views": 54042.0,
+      "momentum": 2.6789
     },
     {
-      "query": "san pedro - municipal",
-      "traffic": 500.0,
+      "query": "uber stock",
+      "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 27630.0,
-      "momentum": 2.9057
+      "saturation_views": 55368.0,
+      "momentum": 2.6714
     },
     {
-      "query": "motor1.com",
+      "query": "intel stock price",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 64661.0,
-      "momentum": 2.6242
+      "saturation_views": 61610.0,
+      "momentum": 2.6387
+    },
+    {
+      "query": "schd",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 101356.0,
+      "momentum": 2.4963
     }
   ]
 }

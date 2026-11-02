@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-01T21:08:58",
+  "generated_at": "2026-11-02T15:21:26",
   "errors": [],
   "warnings": [],
   "targets": {
@@ -15,18 +15,18 @@
     "hidden_subs": false,
     "video_count": 4
   },
-  "total_views": 1392,
-  "subs": 7,
-  "shorts_views_90d": 1911,
-  "n_shorts_90d": 8,
+  "total_views": 1931,
+  "subs": 13,
+  "shorts_views_90d": 3250,
+  "n_shorts_90d": 9,
   "watch_hours_12m": 4.3,
   "ypp": {
     "checks": {
       "subs": {
-        "current": 7,
+        "current": 13,
         "target": 1000,
         "ok": false,
-        "pct": 0.7
+        "pct": 1.3
       },
       "watch_hours": {
         "current": 4.3,
@@ -35,10 +35,10 @@
         "pct": 0.11
       },
       "shorts_views": {
-        "current": 1911,
+        "current": 3250,
         "target": 10000000,
         "ok": false,
-        "pct": 0.02
+        "pct": 0.03
       }
     },
     "routes_available": [
@@ -49,15 +49,15 @@
     "requirement": "1000 abonnes ET (4000 h visionnage / 12 mois OU 10M vues Shorts / 90 jours)"
   },
   "velocities_per_day": {
-    "subs": 0.0,
-    "shorts_views_90d": 502.673,
-    "watch_hours_12m": 5.377
+    "subs": 7.909,
+    "shorts_views_90d": 1764.943,
+    "watch_hours_12m": 0.0
   },
   "eta_days": {
-    "subs": null,
-    "shorts_views_90d": 19890,
-    "watch_hours_12m": 744
+    "subs": 125,
+    "shorts_views_90d": 5665,
+    "watch_hours_12m": null
   },
-  "est_monthly_revenue_usd": 0.05,
-  "revenue_note": "estimation 0.05 USD/mois (RPM Shorts 0.08 USD/1000 vues) — payable uniquement une fois le YPP actif"
+  "est_monthly_revenue_usd": 0.09,
+  "revenue_note": "estimation 0.09 USD/mois (RPM Shorts 0.08 USD/1000 vues) — payable uniquement une fois le YPP actif"
 }

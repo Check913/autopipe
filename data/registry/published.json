@@ -20,6 +20,7 @@
         "Why Is Space So Quiet?",
         "Why Is Space So Quiet?",
         "Why Is Space So Quiet?",
+        "Why Is Space So Quiet?",
         "Why Is Space So Quiet?"
       ]
     },
@@ -30,6 +31,7 @@
       "pair_id": "pair_20261027_0004",
       "source_topic": "How Decision Making is Actually Science: Game Theory Explained",
       "alt_titles": [
+        "You Won't Believe How Decision Making is Did This",
         "You Won't Believe How Decision Making is Did This",
         "You Won't Believe How Decision Making is Did This",
         "You Won't Believe How Decision Making is Did This",
@@ -66,6 +68,7 @@
         "Kolkata's Bridge Has NO Nuts OR Bolts?",
         "Kolkata's Bridge Has NO Nuts OR Bolts?",
         "Kolkata's Bridge Has NO Nuts OR Bolts?",
+        "Kolkata's Bridge Has NO Nuts OR Bolts?",
         "Kolkata's Bridge Has NO Nuts OR Bolts?"
       ]
     },
@@ -76,6 +79,7 @@
       "pair_id": "pair_20261028_0010",
       "source_topic": "The Scientific Method",
       "alt_titles": [
+        "This Scientific Method Secret Changes Everything",
         "This Scientific Method Secret Changes Everything",
         "This Scientific Method Secret Changes Everything",
         "This Scientific Method Secret Changes Everything",
@@ -112,6 +116,7 @@
         "Rome's Catacombs Hid YOUR Ancient Faith",
         "Rome's Catacombs Hid YOUR Ancient Faith",
         "Rome's Catacombs Hid YOUR Ancient Faith",
+        "Rome's Catacombs Hid YOUR Ancient Faith",
         "Rome's Catacombs Hid YOUR Ancient Faith"
       ]
     },
@@ -122,6 +127,7 @@
       "pair_id": "pair_20261029_0016",
       "source_topic": "Zombie Biology Explained | The Science of Zombism",
       "alt_titles": [
+        "How Zombie Biology Explained Took Over So Fast",
         "How Zombie Biology Explained Took Over So Fast",
         "How Zombie Biology Explained Took Over So Fast",
         "How Zombie Biology Explained Took Over So Fast",
@@ -421,6 +427,7 @@
         "ALL OF PHYSICS explained in 14 Minutes",
         "ALL OF PHYSICS explained in 14 Minutes",
         "ALL OF PHYSICS explained in 14 Minutes",
+        "ALL OF PHYSICS explained in 14 Minutes",
         "ALL OF PHYSICS explained in 14 Minutes"
       ]
     },
@@ -450,6 +457,7 @@
       "video_id": "gEtui7O33o0",
       "source": "runtime",
       "alt_titles": [
+        "quiz:general",
         "quiz:general",
         "quiz:general",
         "quiz:general",
@@ -496,6 +504,7 @@
         "quiz:science",
         "quiz:science",
         "quiz:science",
+        "quiz:science",
         "quiz:science"
       ]
     },
@@ -525,6 +534,7 @@
       "video_id": "cy3aSg9ujT4",
       "source": "runtime",
       "alt_titles": [
+        "quiz:movies",
         "quiz:movies",
         "quiz:movies",
         "quiz:movies",
@@ -572,6 +582,7 @@
         "quiz:geography",
         "quiz:geography",
         "quiz:geography",
+        "quiz:geography",
         "quiz:geography"
       ]
     },
@@ -606,6 +617,7 @@
       "video_id": "fXzcJuL7tII",
       "source": "runtime",
       "alt_titles": [
+        "quiz:science",
         "quiz:science",
         "quiz:science",
         "quiz:science",
@@ -647,6 +659,7 @@
         "quiz:history",
         "quiz:history",
         "quiz:history",
+        "quiz:history",
         "quiz:history"
       ]
     },
@@ -682,6 +695,7 @@
       "source": "runtime",
       "alt_titles": [
         "quiz:movies",
+        "quiz:movies",
         "quiz:movies"
       ]
     },
@@ -716,6 +730,7 @@
       "video_id": "o9pVmfwNbek",
       "source": "runtime",
       "alt_titles": [
+        "quiz:movies",
         "quiz:movies"
       ]
     },
@@ -748,8 +763,42 @@
       ],
       "published_at": "2026-11-01T21:13:12.915264+00:00",
       "video_id": "DEEnyERlFYg",
+      "source": "runtime",
+      "alt_titles": [
+        "quiz:general"
+      ]
+    },
+    "4oBjYODEBaw": {
+      "idea_id": "20261102-152206-01",
+      "title": "Pass 9 Questions. Prove Your IQ.",
+      "hook": "Are you smarter than most people?",
+      "hook_variant": "A",
+      "pair_id": "pair_20261102_0033",
+      "duration_format": "long",
+      "density": 4,
+      "duration_target": 80,
+      "generator": "quiz:llm",
+      "source_topic": "quiz:general",
+      "source_short_id": null,
+      "originality_max_jaccard": null,
+      "tags": [
+        "quiz",
+        "trivia",
+        "quiz time",
+        "quiz questions",
+        "general knowledge",
+        "test your knowledge",
+        "general quiz",
+        "general trivia",
+        "quiz challenge",
+        "guess the answer",
+        "brain test",
+        "iq test"
+      ],
+      "published_at": "2026-11-02T15:24:49.569685+00:00",
+      "video_id": "4oBjYODEBaw",
       "source": "runtime"
     }
   },
-  "updated": "2026-11-01T21:13:12"
+  "updated": "2026-11-02T15:24:49"
 }
