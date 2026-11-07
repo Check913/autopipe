@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T15:21:27+00:00",
+  "updated": "2026-11-07T23:27:29+00:00",
   "publisheds": {
     "PCyc1j7hQ1s": {
       "video_id": "PCyc1j7hQ1s",
@@ -416,7 +416,23 @@
       "engaged_source": null,
       "avg_view_pct": null,
       "engagement": null
+    },
+    "4oBjYODEBaw": {
+      "video_id": "4oBjYODEBaw",
+      "published_at": "2026-11-02T15:24:49.569685+00:00",
+      "hook": "Are you smarter than most people?",
+      "family": "question",
+      "hook_variant": "A",
+      "pair_id": "pair_20261102_0033",
+      "title": "Pass 9 Questions. Prove Your IQ.",
+      "topic": "quiz:general",
+      "views": null,
+      "engagedViews": null,
+      "engaged_ratio": null,
+      "engaged_source": null,
+      "avg_view_pct": null,
+      "engagement": null
     }
   },
-  "last_checked": "2026-11-02T15:21:28+00:00"
+  "last_checked": "2026-11-07T23:27:29+00:00"
 }

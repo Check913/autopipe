@@ -1,21 +1,21 @@
 {
   "status": "ok",
-  "pairs": 32,
+  "pairs": 34,
   "joined": 1,
   "variants": {
     "A": {
-      "assigned": 16,
+      "assigned": 17,
       "measured": 0,
       "mean_engagement": null,
       "mean_views": null,
       "families": {
         "statement": 7,
-        "question": 6,
+        "question": 7,
         "number": 3
       }
     },
     "B": {
-      "assigned": 16,
+      "assigned": 17,
       "measured": 1,
       "mean_engagement": 61.9,
       "mean_views": 462,
@@ -23,7 +23,7 @@
         "question": 7,
         "number": 2,
         "negation": 1,
-        "identity": 6
+        "identity": 7
       }
     }
   },
@@ -475,7 +475,35 @@
       "video_id": "DEEnyERlFYg",
       "engagement": null,
       "views": null
+    },
+    {
+      "ts": "2026-11-02T15:21:51",
+      "pair_id": "pair_20261102_0033",
+      "topic": "quiz:general",
+      "variant": "A",
+      "hook": "Are you smarter than most people?",
+      "family": "question",
+      "family_other": "identity",
+      "hook_a": "Are you smarter than most people?",
+      "hook_b": "Most adults cannot get all of these right.",
+      "video_id": "4oBjYODEBaw",
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-07T23:23:34",
+      "pair_id": "pair_20261107_0034",
+      "topic": "quiz:geography",
+      "variant": "B",
+      "hook": "Getting them all right means elite memory.",
+      "family": "identity",
+      "family_other": "question",
+      "hook_a": "Are you smarter than most people?",
+      "hook_b": "Getting them all right means elite memory.",
+      "video_id": null,
+      "engagement": null,
+      "views": null
     }
   ],
-  "fetched": "2026-11-02T15:21:26"
+  "fetched": "2026-11-07T23:27:29"
 }

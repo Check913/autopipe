@@ -1,0 +1,73 @@
+{
+  "title": "Only 1% Solve These 3 Brain Riddles!",
+  "hook": "Why does nobody explain 13 Riddles That Will Test like this?",
+  "script": "Only 1% of people can crack all three of these mind-bending riddles. Are you up to the challenge? Let's find out! Get ready for three quick questions, each with a short timer. Don't blink, and think fast!\n\nRiddle number one: I speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am I?\n[5-second timer]\nTime's up! The answer is an echo. Did you get that one?\n\nRiddle number two: What has to be broken before you can use it?\n[5-second timer]\nPencils down! The answer is an egg. Simple, but tricky, right?\n\nAnd for our final riddle: What is full of holes but still holds water?\n[5-second timer]\nThat's the buzzer! The answer is a sponge.\n\nHow did you do? Did you join the elite 1%? Ready for another round to prove you're in that top 1%?",
+  "comment": "How many riddles did you solve? Let us know your score!",
+  "description": "Test your brain power with these tricky riddles! Only a true genius can solve all three.\nCan you join the elite 1%?\n#Riddles #BrainTeasers #QuizTime",
+  "tags": [
+    "Riddles",
+    "brain teasers",
+    "quiz",
+    "trivia",
+    "general knowledge",
+    "test your brain",
+    "mind games",
+    "puzzle",
+    "logic",
+    "challenge",
+    "scorenine",
+    "only 1 percent"
+  ],
+  "density": 4,
+  "duration_format": "long",
+  "duration_target": 60,
+  "duration_range": [
+    50,
+    60
+  ],
+  "source_topic": "13 Riddles That Will Test Your Brain Speed",
+  "generator": "llm:gemini-2.5-flash",
+  "score": 19777.3,
+  "pair_id": "pair_20261107_0036",
+  "hook_variant": "B",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "Only 1% solve these 3 riddles.",
+      "family": "number"
+    },
+    {
+      "variant": "B",
+      "hook": "Why does nobody explain 13 Riddles That Will Test like this?",
+      "family": "question"
+    }
+  ],
+  "compliance": {
+    "mode": "block",
+    "ok": true,
+    "reasons": [],
+    "checked_at": "2026-11-07T23:28:21",
+    "originality": {
+      "max_jaccard": 0.2857,
+      "max_script_jaccard": 0.1667,
+      "worst_match_src": "20261029-200205-03-you-won-t-believe-18-did-this.json",
+      "threshold": 0.6,
+      "threshold_script": 0.65,
+      "corpus_size": 75
+    },
+    "fatigue": {
+      "hook_family": "question",
+      "consecutive_same_family": 0,
+      "max_consecutive": 3,
+      "fatigued": false
+    },
+    "policy": {
+      "violations": []
+    },
+    "ai_disclosure": {
+      "contains_synthetic_media": false,
+      "configured": true
+    }
+  },
+  "id": "20261107-232836-01"
+}

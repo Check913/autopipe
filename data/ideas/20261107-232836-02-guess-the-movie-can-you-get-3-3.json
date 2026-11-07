@@ -1,0 +1,73 @@
+{
+  "title": "Guess the Movie: Can You Get 3/3?",
+  "hook": "Nobody warned you about Guess the Movie by Emoji 🎬🍿",
+  "script": "Only 1% guess all three of these movie emoji quizzes. Three seconds each! Try: 🕷️👨➡️🌌. Next: 🦁👑. Last: 👻busters. Time! Answers: Spider-Man, Lion King, Ghostbusters. Bet you can't guess all three of these movie emoji quizzes.",
+  "comment": "Which movie emoji was the hardest to guess?",
+  "description": "Test your movie knowledge with these emoji puzzles! Can you beat the 1% and guess all three? Drop your score in the comments!\n#MovieQuiz #EmojiChallenge #QuizTime",
+  "tags": [
+    "quiz",
+    "trivia",
+    "movie quiz",
+    "emoji challenge",
+    "guess the movie",
+    "brain teaser",
+    "test your knowledge",
+    "movie trivia",
+    "fun quiz",
+    "scorenine",
+    "only 1 percent",
+    "entertainment"
+  ],
+  "density": 4,
+  "duration_format": "short",
+  "duration_target": 13,
+  "duration_range": [
+    12,
+    18
+  ],
+  "source_topic": "Guess the Movie by Emoji 🎬🍿 Movie Quiz",
+  "generator": "llm:gemini-2.5-flash",
+  "score": 7754.4,
+  "pair_id": "pair_20261107_0037",
+  "hook_variant": "B",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "Only 1% guess all three movie emoji quizzes.",
+      "family": "number"
+    },
+    {
+      "variant": "B",
+      "hook": "Nobody warned you about Guess the Movie by Emoji 🎬🍿",
+      "family": "negation"
+    }
+  ],
+  "compliance": {
+    "mode": "block",
+    "ok": true,
+    "reasons": [],
+    "checked_at": "2026-11-07T23:28:33",
+    "originality": {
+      "max_jaccard": 0.25,
+      "max_script_jaccard": 0.0787,
+      "worst_match_src": "20261029-004004-02-this-molasses-flood-killed-21-people.json",
+      "threshold": 0.6,
+      "threshold_script": 0.65,
+      "corpus_size": 75
+    },
+    "fatigue": {
+      "hook_family": "negation",
+      "consecutive_same_family": 0,
+      "max_consecutive": 3,
+      "fatigued": false
+    },
+    "policy": {
+      "violations": []
+    },
+    "ai_disclosure": {
+      "contains_synthetic_media": false,
+      "configured": true
+    }
+  },
+  "id": "20261107-232836-02"
+}

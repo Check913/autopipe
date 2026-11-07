@@ -1,113 +1,113 @@
 {
-  "fetched": "2026-11-02T15:21:08",
+  "fetched": "2026-11-07T23:27:29",
   "geo": "",
   "topics": [
     {
-      "query": "palantir stock",
-      "traffic": 500.0,
-      "rise": 10.0,
-      "saturation_views": 51804.0,
-      "momentum": 2.6922
-    },
-    {
-      "query": "nbis",
+      "query": "osu football score",
       "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 54042.0,
-      "momentum": 2.6789
+      "saturation_views": 54025.0,
+      "momentum": 2.679
     },
     {
-      "query": "uber stock",
+      "query": "sam houston vs jax state",
       "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 55368.0,
-      "momentum": 2.6714
+      "saturation_views": 66167.0,
+      "momentum": 2.6173
     },
     {
-      "query": "intel stock price",
+      "query": "devils vs islanders",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 61610.0,
-      "momentum": 2.6387
+      "saturation_views": 229386.0,
+      "momentum": 2.2933
     },
     {
-      "query": "schd",
-      "traffic": 500.0,
-      "rise": 10.0,
-      "saturation_views": 101356.0,
-      "momentum": 2.4963
-    },
-    {
-      "query": "nhl hometown remix",
+      "query": "keiichiro nakamura",
       "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 103035.0,
-      "momentum": 2.4919
+      "saturation_views": 321191.0,
+      "momentum": 2.2189
     },
     {
-      "query": "hometown remix jerseys nhl",
+      "query": "canadiens vs maple leafs",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 108885.0,
-      "momentum": 2.4771
+      "saturation_views": 1387089.0,
+      "momentum": 1.9447
     },
     {
-      "query": "qqq",
-      "traffic": 2000.0,
+      "query": "hunger games movies",
+      "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 350816.0,
-      "momentum": 2.2002
+      "saturation_views": 2013639.0,
+      "momentum": 1.8854
     },
     {
-      "query": "sp500",
-      "traffic": 2000.0,
-      "rise": 10.0,
-      "saturation_views": 690287.0,
-      "momentum": 2.0665
+      "query": "mls standings",
+      "traffic": 5000.0,
+      "rise": 0.0,
+      "saturation_views": 24230.0,
+      "momentum": 0.0
     },
     {
-      "query": "voo stock",
+      "query": "marcos degli",
+      "traffic": 500.0,
+      "rise": 0.0,
+      "saturation_views": 31391.0,
+      "momentum": 0.0
+    },
+    {
+      "query": "dan lanning",
+      "traffic": 500.0,
+      "rise": 0.0,
+      "saturation_views": 0.0,
+      "momentum": 0.0
+    },
+    {
+      "query": "dwayne johnson",
       "traffic": 2000.0,
-      "rise": 10.0,
-      "saturation_views": 876597.0,
-      "momentum": 2.0231
+      "rise": 0.0,
+      "saturation_views": 96645818.0,
+      "momentum": 0.0
     }
   ],
   "top": [
     {
-      "query": "palantir stock",
-      "traffic": 500.0,
-      "rise": 10.0,
-      "saturation_views": 51804.0,
-      "momentum": 2.6922
-    },
-    {
-      "query": "nbis",
+      "query": "osu football score",
       "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 54042.0,
-      "momentum": 2.6789
+      "saturation_views": 54025.0,
+      "momentum": 2.679
     },
     {
-      "query": "uber stock",
+      "query": "sam houston vs jax state",
       "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 55368.0,
-      "momentum": 2.6714
+      "saturation_views": 66167.0,
+      "momentum": 2.6173
     },
     {
-      "query": "intel stock price",
+      "query": "devils vs islanders",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 61610.0,
-      "momentum": 2.6387
+      "saturation_views": 229386.0,
+      "momentum": 2.2933
     },
     {
-      "query": "schd",
+      "query": "keiichiro nakamura",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 321191.0,
+      "momentum": 2.2189
+    },
+    {
+      "query": "canadiens vs maple leafs",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 101356.0,
-      "momentum": 2.4963
+      "saturation_views": 1387089.0,
+      "momentum": 1.9447
     }
   ]
 }
