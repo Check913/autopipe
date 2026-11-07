@@ -166,6 +166,17 @@ jobs:
         if: steps.due.outputs.due != ''
         run: pip install --no-cache-dir -r requirements.txt
 
+      # ffmpeg (+ libass pour les sous-titres) et polices equivalentes Arial :
+      # le rattrapage fait un rendu COMPLET (ffprobe/ffmpeg requis). Fix du
+      # 2026-11-07 : echec FileNotFoundError 'ffprobe' lors du premier
+      # rattrapage reel (fenetres 15/21 du 2026-11-07).
+      - name: Installer ffmpeg + polices
+        if: steps.due.outputs.due != ''
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg fontconfig fonts-liberation
+          fc-cache -f
+
       - name: Verifier le token YouTube (alerte Gmail si action requise)
         if: steps.due.outputs.due != ''
         env:
