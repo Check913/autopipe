@@ -23,6 +23,8 @@
         "Why Is Space So Quiet?",
         "Why Is Space So Quiet?",
         "Why Is Space So Quiet?",
+        "Why Is Space So Quiet?",
+        "Why Is Space So Quiet?",
         "Why Is Space So Quiet?"
       ]
     },
@@ -33,6 +35,8 @@
       "pair_id": "pair_20261027_0004",
       "source_topic": "How Decision Making is Actually Science: Game Theory Explained",
       "alt_titles": [
+        "You Won't Believe How Decision Making is Did This",
+        "You Won't Believe How Decision Making is Did This",
         "You Won't Believe How Decision Making is Did This",
         "You Won't Believe How Decision Making is Did This",
         "You Won't Believe How Decision Making is Did This",
@@ -75,6 +79,8 @@
         "Kolkata's Bridge Has NO Nuts OR Bolts?",
         "Kolkata's Bridge Has NO Nuts OR Bolts?",
         "Kolkata's Bridge Has NO Nuts OR Bolts?",
+        "Kolkata's Bridge Has NO Nuts OR Bolts?",
+        "Kolkata's Bridge Has NO Nuts OR Bolts?",
         "Kolkata's Bridge Has NO Nuts OR Bolts?"
       ]
     },
@@ -85,6 +91,8 @@
       "pair_id": "pair_20261028_0010",
       "source_topic": "The Scientific Method",
       "alt_titles": [
+        "This Scientific Method Secret Changes Everything",
+        "This Scientific Method Secret Changes Everything",
         "This Scientific Method Secret Changes Everything",
         "This Scientific Method Secret Changes Everything",
         "This Scientific Method Secret Changes Everything",
@@ -127,6 +135,8 @@
         "Rome's Catacombs Hid YOUR Ancient Faith",
         "Rome's Catacombs Hid YOUR Ancient Faith",
         "Rome's Catacombs Hid YOUR Ancient Faith",
+        "Rome's Catacombs Hid YOUR Ancient Faith",
+        "Rome's Catacombs Hid YOUR Ancient Faith",
         "Rome's Catacombs Hid YOUR Ancient Faith"
       ]
     },
@@ -137,6 +147,8 @@
       "pair_id": "pair_20261029_0016",
       "source_topic": "Zombie Biology Explained | The Science of Zombism",
       "alt_titles": [
+        "How Zombie Biology Explained Took Over So Fast",
+        "How Zombie Biology Explained Took Over So Fast",
         "How Zombie Biology Explained Took Over So Fast",
         "How Zombie Biology Explained Took Over So Fast",
         "How Zombie Biology Explained Took Over So Fast",
@@ -442,6 +454,8 @@
         "ALL OF PHYSICS explained in 14 Minutes",
         "ALL OF PHYSICS explained in 14 Minutes",
         "ALL OF PHYSICS explained in 14 Minutes",
+        "ALL OF PHYSICS explained in 14 Minutes",
+        "ALL OF PHYSICS explained in 14 Minutes",
         "ALL OF PHYSICS explained in 14 Minutes"
       ]
     },
@@ -471,6 +485,8 @@
       "video_id": "gEtui7O33o0",
       "source": "runtime",
       "alt_titles": [
+        "quiz:general",
+        "quiz:general",
         "quiz:general",
         "quiz:general",
         "quiz:general",
@@ -523,6 +539,8 @@
         "quiz:science",
         "quiz:science",
         "quiz:science",
+        "quiz:science",
+        "quiz:science",
         "quiz:science"
       ]
     },
@@ -552,6 +570,8 @@
       "video_id": "cy3aSg9ujT4",
       "source": "runtime",
       "alt_titles": [
+        "quiz:movies",
+        "quiz:movies",
         "quiz:movies",
         "quiz:movies",
         "quiz:movies",
@@ -605,6 +625,8 @@
         "quiz:geography",
         "quiz:geography",
         "quiz:geography",
+        "quiz:geography",
+        "quiz:geography",
         "quiz:geography"
       ]
     },
@@ -639,6 +661,8 @@
       "video_id": "fXzcJuL7tII",
       "source": "runtime",
       "alt_titles": [
+        "quiz:science",
+        "quiz:science",
         "quiz:science",
         "quiz:science",
         "quiz:science",
@@ -686,6 +710,8 @@
         "quiz:history",
         "quiz:history",
         "quiz:history",
+        "quiz:history",
+        "quiz:history",
         "quiz:history"
       ]
     },
@@ -720,6 +746,8 @@
       "video_id": "jVwLSsQx_iE",
       "source": "runtime",
       "alt_titles": [
+        "quiz:movies",
+        "quiz:movies",
         "quiz:movies",
         "quiz:movies",
         "quiz:movies",
@@ -761,6 +789,8 @@
         "quiz:movies",
         "quiz:movies",
         "quiz:movies",
+        "quiz:movies",
+        "quiz:movies",
         "quiz:movies"
       ]
     },
@@ -795,6 +825,8 @@
       "video_id": "DEEnyERlFYg",
       "source": "runtime",
       "alt_titles": [
+        "quiz:general",
+        "quiz:general",
         "quiz:general",
         "quiz:general",
         "quiz:general"
@@ -832,9 +864,76 @@
       "source": "runtime",
       "alt_titles": [
         "quiz:general",
+        "quiz:general",
+        "quiz:general",
         "quiz:general"
       ]
+    },
+    "aVpV9HBZw10": {
+      "idea_id": "20261107-233755-01",
+      "title": "Are You a Genius? Solve These 3 Riddles!",
+      "hook": "3 ONLY GENIUS CAN SOLVE THESE facts they never teach you",
+      "hook_variant": "B",
+      "pair_id": "pair_20261107_0040",
+      "duration_format": "long",
+      "density": 4,
+      "duration_target": 60,
+      "generator": "llm:gemini-2.5-flash",
+      "source_topic": "ONLY A GENIUS CAN SOLVE THESE RIDDLES 🧠✅ Brain Teasers & Riddle Quiz 🧩",
+      "source_short_id": null,
+      "originality_max_jaccard": null,
+      "tags": [
+        "quiz",
+        "trivia",
+        "riddles",
+        "brain teasers",
+        "general knowledge",
+        "test your knowledge",
+        "genius test",
+        "only 1 percent",
+        "mind games",
+        "puzzle",
+        "scorenine",
+        "challenge"
+      ],
+      "published_at": "2026-11-07T23:39:51.085879+00:00",
+      "video_id": "aVpV9HBZw10",
+      "source": "runtime",
+      "alt_titles": [
+        "ONLY A GENIUS CAN SOLVE THESE RIDDLES 🧠✅ Brain Teasers & Riddle Quiz 🧩"
+      ]
+    },
+    "moXl_JttSmU": {
+      "idea_id": "20261107-234138-01",
+      "title": "Quiz Time: You Only Get 3 Seconds Per Question",
+      "hook": "Why does nobody explain General Knowledge Trivia like this?",
+      "hook_variant": "B",
+      "pair_id": "pair_20261107_0046",
+      "duration_format": "short",
+      "density": 4,
+      "duration_target": 13,
+      "generator": "llm:gemini-2.5-flash",
+      "source_topic": "General Knowledge Trivia Quiz! 🧠 | 100 Questions Everyone Should Know – Do You?",
+      "source_short_id": null,
+      "originality_max_jaccard": null,
+      "tags": [
+        "quiz",
+        "trivia",
+        "general knowledge",
+        "brain teaser",
+        "quiz time",
+        "test your knowledge",
+        "challenge",
+        "iq test",
+        "scorenine",
+        "facts",
+        "education",
+        "fun quiz"
+      ],
+      "published_at": "2026-11-07T23:42:47.933029+00:00",
+      "video_id": "moXl_JttSmU",
+      "source": "runtime"
     }
   },
-  "updated": "2026-11-07T23:27:29"
+  "updated": "2026-11-07T23:42:47"
 }

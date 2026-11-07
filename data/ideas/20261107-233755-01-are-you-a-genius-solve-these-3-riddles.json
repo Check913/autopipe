@@ -1,0 +1,73 @@
+{
+  "title": "Are You a Genius? Solve These 3 Riddles!",
+  "hook": "3 ONLY GENIUS CAN SOLVE THESE facts they never teach you",
+  "script": "Only a genius solves these three tricky riddles. You get just ten seconds for each. Think fast, the clock starts now! First: What has an eye but cannot see? Your time is ticking! Five... four... three... two... one... Time's up! The answer is: a needle. Did you get that?\n\nRiddle number two! What question can you never answer yes to? This brain teaser requires quick thinking. Ten seconds, starting now! Five... four... three... two... one... Stop! The correct answer: 'Are you asleep yet?' Clever, right?\n\nFinally, for the ultimate test: What is full of holes but still holds water? This last one separates the true geniuses. Your final ten seconds begin now! Three... two... one... Time's up! The answer: a sponge. How many of these three tricky riddles did you solve correctly?",
+  "comment": "Which riddle was the trickiest for you?",
+  "description": "Test your brainpower with ScoreNine! Can you solve all three of these classic riddles under pressure? Prove you're a genius!\n#RiddleQuiz #BrainTeasers #GeniusTest",
+  "tags": [
+    "quiz",
+    "trivia",
+    "riddles",
+    "brain teasers",
+    "general knowledge",
+    "test your knowledge",
+    "genius test",
+    "only 1 percent",
+    "mind games",
+    "puzzle",
+    "scorenine",
+    "challenge"
+  ],
+  "density": 4,
+  "duration_format": "long",
+  "duration_target": 60,
+  "duration_range": [
+    50,
+    60
+  ],
+  "source_topic": "ONLY A GENIUS CAN SOLVE THESE RIDDLES 🧠✅ Brain Teasers & Riddle Quiz 🧩",
+  "generator": "llm:gemini-2.5-flash",
+  "score": 6382.9,
+  "pair_id": "pair_20261107_0040",
+  "hook_variant": "B",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "Only a genius solves these riddles.",
+      "family": "statement"
+    },
+    {
+      "variant": "B",
+      "hook": "3 ONLY GENIUS CAN SOLVE THESE facts they never teach you",
+      "family": "number"
+    }
+  ],
+  "compliance": {
+    "mode": "block",
+    "ok": true,
+    "reasons": [],
+    "checked_at": "2026-11-07T23:37:25",
+    "originality": {
+      "max_jaccard": 0.2381,
+      "max_script_jaccard": 0.3008,
+      "worst_match_src": "20261027-200041-03-how-donkey-ki-mazedaar-amazing-took-over-so-fast.json",
+      "threshold": 0.6,
+      "threshold_script": 0.65,
+      "corpus_size": 77
+    },
+    "fatigue": {
+      "hook_family": "number",
+      "consecutive_same_family": 0,
+      "max_consecutive": 3,
+      "fatigued": false
+    },
+    "policy": {
+      "violations": []
+    },
+    "ai_disclosure": {
+      "contains_synthetic_media": false,
+      "configured": true
+    }
+  },
+  "id": "20261107-233755-01"
+}

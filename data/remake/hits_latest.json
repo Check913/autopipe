@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-07T23:27:42.329416",
+  "date": "2026-11-07T23:40:20.465945",
   "region": "US",
   "language": "en",
   "keywords": [
@@ -12,9 +12,18 @@
   ],
   "min_views": 500000,
   "max_duration": 90,
-  "total_found": 89,
-  "rejected": 79,
+  "total_found": 85,
+  "rejected": 75,
   "hits": [
+    {
+      "id": "3OuQ_bzpWZQ",
+      "title": "1-Minute Countdown - Quiz Time - Suspense Music ⏱️",
+      "channel": "SonarPlay",
+      "views": 39929,
+      "duration": 61.0,
+      "url": "https://www.youtube.com/watch?v=3OuQ_bzpWZQ",
+      "query": "ytsearch10:quiz time #shorts"
+    },
     {
       "id": "q16JX5kT0Ls",
       "title": "QUIZ Time with Intellipaat | Answer & Win Vouchers | Quiz - 2 | Intellipaat #Shorts",
@@ -43,21 +52,12 @@
       "query": "ytsearch10:test your knowledge shorts"
     },
     {
-      "id": "uQ81h8Mjwcw",
-      "title": "General Knowledge Quiz – Human Body Quiz",
-      "channel": "GH Quiz ",
-      "views": 72,
-      "duration": 90.0,
-      "url": "https://www.youtube.com/watch?v=uQ81h8Mjwcw",
-      "query": "ytsearch10:general knowledge #shorts"
-    },
-    {
-      "id": "uaWbJExYEbE",
-      "title": "Test Your Knowledge #shorts",
-      "channel": "know youtube",
-      "views": 60,
-      "duration": 31.0,
-      "url": "https://www.youtube.com/watch?v=uaWbJExYEbE",
+      "id": "rHIs7aZDCyI",
+      "title": "Trivia Questions Part 8 YT #shorts #TriviaChallenge #FunFacts #QuizTime #TestYourKnowledge",
+      "channel": "Quirky Quizzes",
+      "views": 407,
+      "duration": 61.0,
+      "url": "https://www.youtube.com/watch?v=rHIs7aZDCyI",
       "query": "ytsearch10:test your knowledge shorts"
     }
   ]

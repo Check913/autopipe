@@ -1,0 +1,72 @@
+{
+  "title": "Quiz Time: Can You Beat High Schoolers?",
+  "hook": "Why does nobody explain Are You SMARTER Than High like this?",
+  "script": "Only 1% pass this tough high school quiz! Largest ocean? (Pause) Pacific. Mona Lisa painter? (Pause) Da Vinci. Canada's capital? (Pause) Ottawa. Think you can pass this tough high school quiz?",
+  "comment": "What was your score out of 3?",
+  "description": "Test your general knowledge with this quick high school quiz! Can you answer all three questions correctly? Find out if you're smarter than a high schooler! #QuizTime #TriviaChallenge #GeneralKnowledge",
+  "tags": [
+    "quiz",
+    "trivia",
+    "general knowledge",
+    "brain teaser",
+    "quiz time",
+    "test your knowledge",
+    "high school quiz",
+    "challenge",
+    "scorenine",
+    "education",
+    "mind game"
+  ],
+  "density": 2,
+  "duration_format": "short",
+  "duration_target": 13,
+  "duration_range": [
+    12,
+    18
+  ],
+  "source_topic": "Are You SMARTER Than a High School Student? 🎓 General Knowledge Quiz 🤔",
+  "generator": "llm:gemini-2.5-flash",
+  "score": 6146.0,
+  "pair_id": "pair_20261107_0041",
+  "hook_variant": "B",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "Only 1% Pass This Quiz!",
+      "family": "number"
+    },
+    {
+      "variant": "B",
+      "hook": "Why does nobody explain Are You SMARTER Than High like this?",
+      "family": "question"
+    }
+  ],
+  "compliance": {
+    "mode": "block",
+    "ok": true,
+    "reasons": [],
+    "checked_at": "2026-11-07T23:37:38",
+    "originality": {
+      "max_jaccard": 0.5,
+      "max_script_jaccard": 0.0682,
+      "worst_match_src": "20261028-001856-02-why-you-think-you-re-smarter-than-you-are.json",
+      "threshold": 0.6,
+      "threshold_script": 0.65,
+      "corpus_size": 77
+    },
+    "fatigue": {
+      "hook_family": "question",
+      "consecutive_same_family": 2,
+      "max_consecutive": 3,
+      "fatigued": false
+    },
+    "policy": {
+      "violations": []
+    },
+    "ai_disclosure": {
+      "contains_synthetic_media": false,
+      "configured": true
+    }
+  },
+  "id": "20261107-233755-02"
+}

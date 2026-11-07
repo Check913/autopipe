@@ -1,28 +1,29 @@
 {
   "status": "ok",
-  "pairs": 34,
+  "pairs": 42,
   "joined": 1,
   "variants": {
     "A": {
-      "assigned": 17,
+      "assigned": 20,
       "measured": 0,
       "mean_engagement": null,
       "mean_views": null,
       "families": {
         "statement": 7,
-        "question": 7,
-        "number": 3
+        "question": 9,
+        "number": 3,
+        "negation": 1
       }
     },
     "B": {
-      "assigned": 17,
+      "assigned": 22,
       "measured": 1,
       "mean_engagement": 61.9,
       "mean_views": 462,
       "families": {
-        "question": 7,
-        "number": 2,
-        "negation": 1,
+        "question": 10,
+        "number": 3,
+        "negation": 2,
         "identity": 7
       }
     }
@@ -503,7 +504,119 @@
       "video_id": null,
       "engagement": null,
       "views": null
+    },
+    {
+      "ts": "2026-11-07T23:27:55",
+      "pair_id": "pair_20261107_0035",
+      "topic": "quiz:history",
+      "variant": "A",
+      "hook": "Are you smarter than most people?",
+      "family": "question",
+      "family_other": "identity",
+      "hook_a": "Are you smarter than most people?",
+      "hook_b": "Only top 1% brains get every single one right.",
+      "video_id": null,
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-07T23:28:21",
+      "pair_id": "pair_20261107_0036",
+      "topic": "13 Riddles That Will Test Your Brain Speed",
+      "variant": "B",
+      "hook": "Why does nobody explain 13 Riddles That Will Test like this?",
+      "family": "question",
+      "family_other": "number",
+      "hook_a": "Only 1% solve these 3 riddles.",
+      "hook_b": "Why does nobody explain 13 Riddles That Will Test like this?",
+      "video_id": null,
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-07T23:28:33",
+      "pair_id": "pair_20261107_0037",
+      "topic": "Guess the Movie by Emoji 🎬🍿 Movie Quiz",
+      "variant": "B",
+      "hook": "Nobody warned you about Guess the Movie by Emoji 🎬🍿",
+      "family": "negation",
+      "family_other": "negation",
+      "hook_a": "Only 1% guess all three movie emoji quizzes.",
+      "hook_b": "Nobody warned you about Guess the Movie by Emoji 🎬🍿",
+      "video_id": null,
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-07T23:28:36",
+      "pair_id": "pair_20261107_0038",
+      "topic": "ONLY A GENIUS CAN SOLVE THESE RIDDLES 🧠✅ Brain Teasers & Riddle Quiz 🧩",
+      "variant": "A",
+      "hook": "Nobody talks about ONLY A GENIUS CAN SOLVE THESE RIDDLES 🧠✅",
+      "family": "negation",
+      "family_other": "negation",
+      "hook_a": "Nobody talks about ONLY A GENIUS CAN SOLVE THESE RIDDLES 🧠✅",
+      "hook_b": "3 ONLY GENIUS CAN SOLVE THESE facts they never teach you",
+      "video_id": null,
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-07T23:36:54",
+      "pair_id": "pair_20261107_0039",
+      "topic": "quiz:science",
+      "variant": "A",
+      "hook": "Are you smarter than most people?",
+      "family": "question",
+      "family_other": "identity",
+      "hook_a": "Are you smarter than most people?",
+      "hook_b": "If you miss three, you are officially average.",
+      "video_id": null,
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-07T23:37:25",
+      "pair_id": "pair_20261107_0040",
+      "topic": "ONLY A GENIUS CAN SOLVE THESE RIDDLES 🧠✅ Brain Teasers & Riddle Quiz 🧩",
+      "variant": "B",
+      "hook": "3 ONLY GENIUS CAN SOLVE THESE facts they never teach you",
+      "family": "number",
+      "family_other": "statement",
+      "hook_a": "Only a genius solves these riddles.",
+      "hook_b": "3 ONLY GENIUS CAN SOLVE THESE facts they never teach you",
+      "video_id": "aVpV9HBZw10",
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-07T23:37:38",
+      "pair_id": "pair_20261107_0041",
+      "topic": "Are You SMARTER Than a High School Student? 🎓 General Knowledge Quiz 🤔",
+      "variant": "B",
+      "hook": "Why does nobody explain Are You SMARTER Than High like this?",
+      "family": "question",
+      "family_other": "question",
+      "hook_a": "Only 1% Pass This Quiz!",
+      "hook_b": "Why does nobody explain Are You SMARTER Than High like this?",
+      "video_id": null,
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-07T23:37:55",
+      "pair_id": "pair_20261107_0042",
+      "topic": "Detective Riddles Challenge: Further You Get, the Smarter You Are",
+      "variant": "B",
+      "hook": "Why does nobody explain Detective Riddles like this?",
+      "family": "question",
+      "family_other": "number",
+      "hook_a": "Only 1% solve these riddles.",
+      "hook_b": "Why does nobody explain Detective Riddles like this?",
+      "video_id": null,
+      "engagement": null,
+      "views": null
     }
   ],
-  "fetched": "2026-11-07T23:27:29"
+  "fetched": "2026-11-07T23:40:08"
 }

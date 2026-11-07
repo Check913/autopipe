@@ -1,0 +1,73 @@
+{
+  "title": "Can YOU Solve These 3 Detective Riddles?",
+  "hook": "Why does nobody explain Detective Riddles like this?",
+  "script": "Only 1% of people can solve all three of these tricky detective riddles. Can you prove them wrong? Get ready to test your brain! You'll have just five seconds per question. Let's begin!\n\nQuestion 1: A man lives on the 10th floor. Every morning, he takes the elevator to the ground. In the evening, he takes the elevator to the 7th floor and walks the rest of the way up. Why? \n\nAnswer: He's too short to reach the 10th-floor button unless someone else is in the elevator! Did you get it?\n\nQuestion 2: I have cities, but no houses; forests, but no trees; and water, but no fish. What am I? \n\nAnswer: A map! That one's a classic brain-teaser. Two for two?\n\nQuestion 3: A woman shoots her husband. Then she holds him underwater for five minutes. Finally, she hangs him. Five minutes later, they enjoy a wonderful dinner together. How? \n\nAnswer: She took a picture of him, developed it in a darkroom, and hung it to dry! Bet you didn't see that coming!\n\nHow many did you solve? If you got all three, you're a true riddle master! Think you're part of that elite 1% who can solve all three of these tricky detective riddles?",
+  "comment": "How many detective riddles did you solve?",
+  "description": "Test your brain with 3 challenging detective riddles! Only a small percentage can solve all of them. How many can you get right?\n#QuizTime #BrainTeaser #DetectiveRiddles",
+  "tags": [
+    "quiz",
+    "trivia",
+    "brain teaser",
+    "riddles",
+    "detective riddles",
+    "test your knowledge",
+    "challenge",
+    "puzzle",
+    "only 1 percent",
+    "score nine",
+    "general knowledge",
+    "fun quiz"
+  ],
+  "density": 4,
+  "duration_format": "long",
+  "duration_target": 60,
+  "duration_range": [
+    50,
+    60
+  ],
+  "source_topic": "Detective Riddles Challenge: Further You Get, the Smarter You Are",
+  "generator": "llm:gemini-2.5-flash",
+  "score": 5655.5,
+  "pair_id": "pair_20261107_0042",
+  "hook_variant": "B",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "Only 1% solve these riddles.",
+      "family": "number"
+    },
+    {
+      "variant": "B",
+      "hook": "Why does nobody explain Detective Riddles like this?",
+      "family": "question"
+    }
+  ],
+  "compliance": {
+    "mode": "block",
+    "ok": true,
+    "reasons": [],
+    "checked_at": "2026-11-07T23:37:55",
+    "originality": {
+      "max_jaccard": 0.5,
+      "max_script_jaccard": 0.2353,
+      "worst_match_src": "20261107-232836-01-only-1-solve-these-3-brain-riddles.json",
+      "threshold": 0.6,
+      "threshold_script": 0.65,
+      "corpus_size": 77
+    },
+    "fatigue": {
+      "hook_family": "question",
+      "consecutive_same_family": 2,
+      "max_consecutive": 3,
+      "fatigued": false
+    },
+    "policy": {
+      "violations": []
+    },
+    "ai_disclosure": {
+      "contains_synthetic_media": false,
+      "configured": true
+    }
+  },
+  "id": "20261107-233755-03"
+}

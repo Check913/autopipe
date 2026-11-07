@@ -1,0 +1,73 @@
+{
+  "title": "Quiz Time: You Only Get 3 Seconds Per Question",
+  "hook": "Why does nobody explain General Knowledge Trivia like this?",
+  "script": "You have 3 seconds per question. Start! What's Canada's capital? Time. Ottawa. Next: Red Planet? Time. Mars. Last: Largest ocean? Time. Pacific. Did you pass? Challenge yourself again: you have 3 seconds per question. Start!",
+  "comment": "How many did you get right? Let me know!",
+  "description": "Test your general knowledge with these quick-fire questions! You only get 3 seconds to answer each one. Can you get a perfect score?\n#GeneralKnowledge #TriviaQuiz #BrainTeaser",
+  "tags": [
+    "quiz",
+    "trivia",
+    "general knowledge",
+    "brain teaser",
+    "quiz time",
+    "test your knowledge",
+    "challenge",
+    "iq test",
+    "scorenine",
+    "facts",
+    "education",
+    "fun quiz"
+  ],
+  "density": 4,
+  "duration_format": "short",
+  "duration_target": 13,
+  "duration_range": [
+    12,
+    18
+  ],
+  "source_topic": "General Knowledge Trivia Quiz! 🧠 | 100 Questions Everyone Should Know – Do You?",
+  "generator": "llm:gemini-2.5-flash",
+  "score": 3568.4,
+  "pair_id": "pair_20261107_0046",
+  "hook_variant": "B",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "3 Seconds Per Question. Start.",
+      "family": "number"
+    },
+    {
+      "variant": "B",
+      "hook": "Why does nobody explain General Knowledge Trivia like this?",
+      "family": "question"
+    }
+  ],
+  "compliance": {
+    "mode": "block",
+    "ok": true,
+    "reasons": [],
+    "checked_at": "2026-11-07T23:41:38",
+    "originality": {
+      "max_jaccard": 0.375,
+      "max_script_jaccard": 0.2105,
+      "worst_match_src": "20261107-233755-02-quiz-time-can-you-beat-high-schoolers.json",
+      "threshold": 0.6,
+      "threshold_script": 0.65,
+      "corpus_size": 80
+    },
+    "fatigue": {
+      "hook_family": "question",
+      "consecutive_same_family": 2,
+      "max_consecutive": 3,
+      "fatigued": false
+    },
+    "policy": {
+      "violations": []
+    },
+    "ai_disclosure": {
+      "contains_synthetic_media": false,
+      "configured": true
+    }
+  },
+  "id": "20261107-234138-01"
+}

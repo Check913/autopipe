@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-07T23:27:29+00:00",
+  "updated": "2026-11-07T23:40:08+00:00",
   "publisheds": {
     "PCyc1j7hQ1s": {
       "video_id": "PCyc1j7hQ1s",
@@ -432,7 +432,23 @@
       "engaged_source": null,
       "avg_view_pct": null,
       "engagement": null
+    },
+    "aVpV9HBZw10": {
+      "video_id": "aVpV9HBZw10",
+      "published_at": "2026-11-07T23:39:51.085879+00:00",
+      "hook": "3 ONLY GENIUS CAN SOLVE THESE facts they never teach you",
+      "family": "number",
+      "hook_variant": "B",
+      "pair_id": "pair_20261107_0040",
+      "title": "Are You a Genius? Solve These 3 Riddles!",
+      "topic": "ONLY A GENIUS CAN SOLVE THESE RIDDLES 🧠✅ Brain Teasers & Riddle Quiz 🧩",
+      "views": null,
+      "engagedViews": null,
+      "engaged_ratio": null,
+      "engaged_source": null,
+      "avg_view_pct": null,
+      "engagement": null
     }
   },
-  "last_checked": "2026-11-07T23:27:29+00:00"
+  "last_checked": "2026-11-07T23:40:08+00:00"
 }
