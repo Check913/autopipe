@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-07T23:40:20.465945",
+  "date": "2026-11-07T23:46:49.669609",
   "region": "US",
   "language": "en",
   "keywords": [
@@ -12,8 +12,8 @@
   ],
   "min_views": 500000,
   "max_duration": 90,
-  "total_found": 85,
-  "rejected": 75,
+  "total_found": 84,
+  "rejected": 74,
   "hits": [
     {
       "id": "3OuQ_bzpWZQ",
@@ -40,7 +40,7 @@
       "views": 918,
       "duration": 71.0,
       "url": "https://www.youtube.com/watch?v=8GzHtEWXdI4",
-      "query": "ytsearch10:test your knowledge #shorts"
+      "query": "ytsearch10:test your knowledge shorts"
     },
     {
       "id": "aZbrvMznLE4",

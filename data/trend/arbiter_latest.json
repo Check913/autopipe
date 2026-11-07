@@ -1,112 +1,112 @@
 {
-  "fetched": "2026-11-07T23:40:08",
+  "fetched": "2026-11-07T23:46:38",
   "geo": "",
   "topics": [
     {
-      "query": "julian sayin",
-      "traffic": 2000.0,
-      "rise": 0.0,
-      "saturation_views": 82206.0,
-      "momentum": 0.0
-    },
-    {
-      "query": "marcel reed",
-      "traffic": 500.0,
-      "rise": 0.0,
-      "saturation_views": 187979.0,
-      "momentum": 0.0
-    },
-    {
-      "query": "st. louis vs houston dynamo",
-      "traffic": 500.0,
-      "rise": 0.0,
-      "saturation_views": 53460.0,
-      "momentum": 0.0
-    },
-    {
-      "query": "lafc vs seattle sounders",
-      "traffic": 200.0,
-      "rise": 0.0,
-      "saturation_views": 623559.0,
-      "momentum": 0.0
-    },
-    {
-      "query": "utah tech vs uc davis",
-      "traffic": 200.0,
-      "rise": 0.0,
-      "saturation_views": 5041.0,
-      "momentum": 0.0
-    },
-    {
-      "query": "devils vs islanders",
+      "query": "colorado vs arizona state",
       "traffic": 1000.0,
       "rise": 0.0,
-      "saturation_views": 210728.0,
+      "saturation_views": 6769.0,
       "momentum": 0.0
     },
     {
-      "query": "canadiens vs maple leafs",
+      "query": "la galaxy vs salt lake",
       "traffic": 500.0,
       "rise": 0.0,
-      "saturation_views": 1077000.0,
+      "saturation_views": 285337.0,
       "momentum": 0.0
     },
     {
-      "query": "alan ritchson motor city streaming",
-      "traffic": 1000.0,
-      "rise": 0.0,
-      "saturation_views": 4354038.0,
-      "momentum": 0.0
-    },
-    {
-      "query": "sam houston vs jax state",
+      "query": "fahey ohio state",
       "traffic": 500.0,
       "rise": 0.0,
-      "saturation_views": 66168.0,
+      "saturation_views": 29485.0,
       "momentum": 0.0
     },
     {
-      "query": "hunger games movies",
+      "query": "unt football",
       "traffic": 500.0,
       "rise": 0.0,
-      "saturation_views": 2013679.0,
+      "saturation_views": 192400.0,
+      "momentum": 0.0
+    },
+    {
+      "query": "lsu coach",
+      "traffic": 200.0,
+      "rise": 0.0,
+      "saturation_views": 264343.0,
+      "momentum": 0.0
+    },
+    {
+      "query": "louisville vs georgia tech",
+      "traffic": 200.0,
+      "rise": 0.0,
+      "saturation_views": 65869.0,
+      "momentum": 0.0
+    },
+    {
+      "query": "colorado vs dallas",
+      "traffic": 200.0,
+      "rise": 0.0,
+      "saturation_views": 448732.0,
+      "momentum": 0.0
+    },
+    {
+      "query": "nets vs hawks",
+      "traffic": 5000.0,
+      "rise": 0.0,
+      "saturation_views": 955064.0,
+      "momentum": 0.0
+    },
+    {
+      "query": "san jose vs minnesota",
+      "traffic": 200.0,
+      "rise": 0.0,
+      "saturation_views": 0.0,
+      "momentum": 0.0
+    },
+    {
+      "query": "nor'easter",
+      "traffic": 200.0,
+      "rise": 0.0,
+      "saturation_views": 458515.0,
       "momentum": 0.0
     }
   ],
   "top": [
     {
-      "query": "julian sayin",
-      "traffic": 2000.0,
+      "query": "colorado vs arizona state",
+      "traffic": 1000.0,
       "rise": 0.0,
-      "saturation_views": 82206.0,
+      "saturation_views": 6769.0,
       "momentum": 0.0
     },
     {
-      "query": "marcel reed",
+      "query": "la galaxy vs salt lake",
       "traffic": 500.0,
       "rise": 0.0,
-      "saturation_views": 187979.0,
+      "saturation_views": 285337.0,
       "momentum": 0.0
     },
     {
-      "query": "st. louis vs houston dynamo",
+      "query": "fahey ohio state",
       "traffic": 500.0,
       "rise": 0.0,
-      "saturation_views": 53460.0,
+      "saturation_views": 29485.0,
       "momentum": 0.0
     },
     {
-      "query": "lafc vs seattle sounders",
-      "traffic": 200.0,
+      "query": "unt football",
+      "traffic": 500.0,
       "rise": 0.0,
-      "saturation_views": 623559.0,
+      "saturation_views": 192400.0,
       "momentum": 0.0
     },
     {
-      "query": "utah tech vs uc davis",
+      "query": "lsu coach",
       "traffic": 200.0,
       "rise": 0.0,
-      "saturation_views": 5041.0,
+      "saturation_views": 264343.0,
       "momentum": 0.0
     }
   ]

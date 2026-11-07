@@ -1,125 +1,134 @@
 {
-  "date": "2026-11-07T23:39:52.153405",
+  "date": "2026-11-07T23:46:22.509904",
   "region": "US",
   "language": "en",
   "trending": [],
   "keywords": {
     "quiz": [
       {
-        "id": "tLrOCFwijrA",
-        "title": "Weekend Pub Quiz - 10 rounds of pictures, puzzles & trivia - #67",
-        "channel": "Quiz me baby one more time!",
-        "views": 1705,
-        "duration": 1241,
-        "url": "https://www.youtube.com/watch?v=tLrOCFwijrA",
-        "source": "keyword:quiz"
-      },
-      {
         "id": "6uQfIKspIZY",
         "title": "100 Easy General Knowledge Questions Everyone Should Know! (Can You Pass?)",
         "channel": "Quiz Madness",
-        "views": 1963,
+        "views": 2042,
         "duration": 1451,
         "url": "https://www.youtube.com/watch?v=6uQfIKspIZY",
         "source": "keyword:quiz"
       },
       {
-        "id": "FEWJiV4Sayc",
-        "title": "Are You SMARTER Than a 5th Grader? 📚🤓🧠 | General Knowledge Quiz",
-        "channel": "Quiz Blitz",
-        "views": 2678280,
-        "duration": 754,
-        "url": "https://www.youtube.com/watch?v=FEWJiV4Sayc",
+        "id": "tLrOCFwijrA",
+        "title": "Weekend Pub Quiz - 10 rounds of pictures, puzzles & trivia - #67",
+        "channel": "Quiz me baby one more time!",
+        "views": 1741,
+        "duration": 1241,
+        "url": "https://www.youtube.com/watch?v=tLrOCFwijrA",
         "source": "keyword:quiz"
       },
       {
-        "id": "6i3sRhcpxUs",
-        "title": "How Strong Is Your General Knowledge? 🧠 Only 1% Get All Right! 😱📚 General Knowledge Quiz",
-        "channel": "Quiz Blitz",
-        "views": 33918,
-        "duration": 956,
-        "url": "https://www.youtube.com/watch?v=6i3sRhcpxUs",
+        "id": "MK887rSEQhM",
+        "title": "GENERAL KNOWLEDGE TRIVIA FOR SENIORS - Do You Think You Can Score 5 Correct Answers? Let us know!",
+        "channel": "Quiz Class",
+        "views": 859403,
+        "duration": 1882,
+        "url": "https://www.youtube.com/watch?v=MK887rSEQhM",
         "source": "keyword:quiz"
       },
       {
-        "id": "A2_KVysc0u4",
-        "title": "❌ Avoid Saying The Same Thing As Me 🤫 Only 5% Reach the End!",
-        "channel": "Quiz Blitz",
-        "views": 306767,
-        "duration": 922,
-        "url": "https://www.youtube.com/watch?v=A2_KVysc0u4",
-        "source": "keyword:quiz"
-      },
-      {
-        "id": "yihaT3CckJM",
-        "title": "Guess the Fast Food Restaurant by Emoji? 🌮🍔 Daily Quiz",
-        "channel": "Daily Quiz and Quiz Bubble",
-        "views": 2335619,
-        "duration": 1267,
-        "url": "https://www.youtube.com/watch?v=yihaT3CckJM",
-        "source": "keyword:quiz"
-      },
-      {
-        "id": "wjsmX-R4Taw",
-        "title": "Guess the Movie by Emoji 🎬🍿 Movie Quiz",
-        "channel": "Mouse Quiz",
-        "views": 9793874,
-        "duration": 1263,
-        "url": "https://www.youtube.com/watch?v=wjsmX-R4Taw",
-        "source": "keyword:quiz"
-      },
-      {
-        "id": "hsg8wuLrxyg",
-        "title": "Geography Quiz 🌎 | 100 Questions Everyone Should Know 🧠",
-        "channel": "Fun Quiz Questions",
-        "views": 2301,
-        "duration": 1522,
-        "url": "https://www.youtube.com/watch?v=hsg8wuLrxyg",
-        "source": "keyword:quiz"
-      },
-      {
-        "id": "shXUfZ6bC4w",
-        "title": "Are You SMARTER Than a High School Student? 🎓 General Knowledge Quiz 🤔",
-        "channel": "Fun Quiz Questions",
-        "views": 5328645,
-        "duration": 867,
-        "url": "https://www.youtube.com/watch?v=shXUfZ6bC4w",
+        "id": "m6EmergTOqo",
+        "title": "15 Tricky Riddles That Will Test Your IQ🧠 | Only Geniuses Can Solve All 15!🔥",
+        "channel": "M-Quiz",
+        "views": 1131912,
+        "duration": 529,
+        "url": "https://www.youtube.com/watch?v=m6EmergTOqo",
         "source": "keyword:quiz"
       },
       {
         "id": "grl6Q88GXOc",
         "title": "How Good Is Your Knowledge of ANIMALS? 🦗🕷️🤔 | Animals Knowledge Trivia Quiz",
         "channel": "Quiz Blitz",
-        "views": 531368,
+        "views": 531385,
         "duration": 888,
         "url": "https://www.youtube.com/watch?v=grl6Q88GXOc",
+        "source": "keyword:quiz"
+      },
+      {
+        "id": "A2_KVysc0u4",
+        "title": "❌ Avoid Saying The Same Thing As Me 🤫 Only 5% Reach the End!",
+        "channel": "Quiz Blitz",
+        "views": 306778,
+        "duration": 922,
+        "url": "https://www.youtube.com/watch?v=A2_KVysc0u4",
+        "source": "keyword:quiz"
+      },
+      {
+        "id": "FEWJiV4Sayc",
+        "title": "Are You SMARTER Than a 5th Grader? 📚🤓🧠 | General Knowledge Quiz",
+        "channel": "Quiz Blitz",
+        "views": 2678293,
+        "duration": 754,
+        "url": "https://www.youtube.com/watch?v=FEWJiV4Sayc",
+        "source": "keyword:quiz"
+      },
+      {
+        "id": "E8J0lbZSkeE",
+        "title": "20 mind-bending riddles that only highly intelligent people can solve… are you one of them? 😏🔥",
+        "channel": "M-Quiz",
+        "views": 2051393,
+        "duration": 406,
+        "url": "https://www.youtube.com/watch?v=E8J0lbZSkeE",
+        "source": "keyword:quiz"
+      },
+      {
+        "id": "shXUfZ6bC4w",
+        "title": "Are You SMARTER Than a High School Student? 🎓 General Knowledge Quiz 🤔",
+        "channel": "Fun Quiz Questions",
+        "views": 5328686,
+        "duration": 867,
+        "url": "https://www.youtube.com/watch?v=shXUfZ6bC4w",
+        "source": "keyword:quiz"
+      },
+      {
+        "id": "JcKt9BituWA",
+        "title": "Choose One Button - YES or NO or MAYBE or NEVER! 🤔💭✅ Quiz Dino",
+        "channel": "Quiz Dino",
+        "views": 6729978,
+        "duration": 1386,
+        "url": "https://www.youtube.com/watch?v=JcKt9BituWA",
         "source": "keyword:quiz"
       }
     ],
     "trivia": [
       {
+        "id": "3ShqXh5tI1s",
+        "title": "General Knowledge Trivia Quiz! 🧠 | 100 Questions Everyone Should Know – Do You?",
+        "channel": "Fun Quiz Questions",
+        "views": 5085134,
+        "duration": 1425,
+        "url": "https://www.youtube.com/watch?v=3ShqXh5tI1s",
+        "source": "keyword:trivia"
+      },
+      {
         "id": "6uQfIKspIZY",
         "title": "General Knowledge Trivia Quiz | 100 Questions YOU SHOULD Know! 🤔🧠",
         "channel": "Quiz Madness",
-        "views": 1963,
+        "views": 2042,
         "duration": 1451,
         "url": "https://www.youtube.com/watch?v=6uQfIKspIZY",
         "source": "keyword:trivia"
       },
       {
-        "id": "3ShqXh5tI1s",
-        "title": "General Knowledge Trivia Quiz! 🧠 | 100 Questions Everyone Should Know – Do You?",
-        "channel": "Fun Quiz Questions",
-        "views": 5085041,
-        "duration": 1425,
-        "url": "https://www.youtube.com/watch?v=3ShqXh5tI1s",
+        "id": "Xm6JQc0hFKk",
+        "title": "Trivia All-Stars vs. Impossible Quiz",
+        "channel": "BradyYourTutor",
+        "views": 449394,
+        "duration": 1687,
+        "url": "https://www.youtube.com/watch?v=Xm6JQc0hFKk",
         "source": "keyword:trivia"
       },
       {
         "id": "0QQmcqMQxDQ",
         "title": "The Ultimate Pub Quiz #12 🧠 | 50 Questions, 5 Rounds – Can You Score 40/50?",
         "channel": "A-Z Quiz",
-        "views": 7480,
+        "views": 7549,
         "duration": 1139,
         "url": "https://www.youtube.com/watch?v=0QQmcqMQxDQ",
         "source": "keyword:trivia"
@@ -128,7 +137,7 @@
         "id": "V-SctcyZ17Y",
         "title": "20 People vs General Knowledge Quiz",
         "channel": "Extra Medium Stuff",
-        "views": 629090,
+        "views": 629146,
         "duration": 2008,
         "url": "https://www.youtube.com/watch?v=V-SctcyZ17Y",
         "source": "keyword:trivia"
@@ -137,54 +146,45 @@
         "id": "17rNKUUTvTY",
         "title": "27 College Students vs General Knowledge Quiz",
         "channel": "Extra Medium Games",
-        "views": 81849,
+        "views": 81920,
         "duration": 761,
         "url": "https://www.youtube.com/watch?v=17rNKUUTvTY",
-        "source": "keyword:trivia"
-      },
-      {
-        "id": "Xm6JQc0hFKk",
-        "title": "Trivia All-Stars vs. My Hardest Quiz",
-        "channel": "BradyYourTutor",
-        "views": 448930,
-        "duration": 1687,
-        "url": "https://www.youtube.com/watch?v=Xm6JQc0hFKk",
-        "source": "keyword:trivia"
-      },
-      {
-        "id": "shXUfZ6bC4w",
-        "title": "Are You SMARTER Than a High School Student? 🎓 General Knowledge Quiz 🤔",
-        "channel": "Fun Quiz Questions",
-        "views": 5328645,
-        "duration": 867,
-        "url": "https://www.youtube.com/watch?v=shXUfZ6bC4w",
-        "source": "keyword:trivia"
-      },
-      {
-        "id": "6i3sRhcpxUs",
-        "title": "How Strong Is Your General Knowledge? 🧠 Only 1% Get All Right! 😱📚 General Knowledge Quiz",
-        "channel": "Quiz Blitz",
-        "views": 33918,
-        "duration": 956,
-        "url": "https://www.youtube.com/watch?v=6i3sRhcpxUs",
         "source": "keyword:trivia"
       },
       {
         "id": "EDEGpZUFEGE",
         "title": "General Knowledge Trivia Quiz #10 🧠 | 100 Questions EVERYONE Should Know",
         "channel": "Fun Quiz Questions",
-        "views": 240170,
+        "views": 240215,
         "duration": 1587,
         "url": "https://www.youtube.com/watch?v=EDEGpZUFEGE",
+        "source": "keyword:trivia"
+      },
+      {
+        "id": "D3OzHLE2GwE",
+        "title": "7 Firefighters vs Impossible Quiz",
+        "channel": "Extra Medium Stuff",
+        "views": 351263,
+        "duration": 1560,
+        "url": "https://www.youtube.com/watch?v=D3OzHLE2GwE",
         "source": "keyword:trivia"
       },
       {
         "id": "vl6OoyT7KdI",
         "title": "100 People vs General Knowledge Quiz",
         "channel": "Extra Medium Stuff",
-        "views": 586647,
+        "views": 586699,
         "duration": 2600,
         "url": "https://www.youtube.com/watch?v=vl6OoyT7KdI",
+        "source": "keyword:trivia"
+      },
+      {
+        "id": "6i3sRhcpxUs",
+        "title": "How Strong Is Your General Knowledge? 🧠 Only 1% Get All Right! 😱📚 General Knowledge Quiz",
+        "channel": "Quiz Blitz",
+        "views": 33971,
+        "duration": 956,
+        "url": "https://www.youtube.com/watch?v=6i3sRhcpxUs",
         "source": "keyword:trivia"
       }
     ],
@@ -193,61 +193,70 @@
         "id": "6i3sRhcpxUs",
         "title": "How Strong Is Your General Knowledge? 🧠 Only 1% Get All Right! 😱📚 General Knowledge Quiz",
         "channel": "Quiz Blitz",
-        "views": 33918,
+        "views": 33971,
         "duration": 956,
         "url": "https://www.youtube.com/watch?v=6i3sRhcpxUs",
+        "source": "keyword:general knowledge"
+      },
+      {
+        "id": "hsg8wuLrxyg",
+        "title": "Geography Quiz 🌎 | 100 Questions Everyone Should Know 🧠",
+        "channel": "Fun Quiz Questions",
+        "views": 2347,
+        "duration": 1522,
+        "url": "https://www.youtube.com/watch?v=hsg8wuLrxyg",
         "source": "keyword:general knowledge"
       },
       {
         "id": "6uQfIKspIZY",
         "title": "100 Easy General Knowledge Questions Everyone Should Know! (Can You Pass?)",
         "channel": "Quiz Madness",
-        "views": 1963,
+        "views": 2042,
         "duration": 1451,
         "url": "https://www.youtube.com/watch?v=6uQfIKspIZY",
-        "source": "keyword:general knowledge"
-      },
-      {
-        "id": "17rNKUUTvTY",
-        "title": "27 College Students vs General Knowledge Quiz",
-        "channel": "Extra Medium Games",
-        "views": 81849,
-        "duration": 761,
-        "url": "https://www.youtube.com/watch?v=17rNKUUTvTY",
-        "source": "keyword:general knowledge"
-      },
-      {
-        "id": "5lZBzx2yKMM",
-        "title": "A to Z General Knowledge Quiz 363rd Edition - Do You Think You Can Get Full Marks? Do you?",
-        "channel": "A to Z Trivia",
-        "views": 2886,
-        "duration": 543,
-        "url": "https://www.youtube.com/watch?v=5lZBzx2yKMM",
-        "source": "keyword:general knowledge"
-      },
-      {
-        "id": "bspw4_yxuzU",
-        "title": "11 Adults vs General Knowledge Quiz",
-        "channel": "Extra Medium Stuff",
-        "views": 1768699,
-        "duration": 1453,
-        "url": "https://www.youtube.com/watch?v=bspw4_yxuzU",
         "source": "keyword:general knowledge"
       },
       {
         "id": "29pWe21-sVM",
         "title": "The General Knowledge Quiz #84 ¦ 50 Trivia Questions - Pub Quiz",
         "channel": "A-Z Quiz",
-        "views": 14443,
+        "views": 14412,
         "duration": 1119,
         "url": "https://www.youtube.com/watch?v=29pWe21-sVM",
         "source": "keyword:general knowledge"
       },
       {
+        "id": "QMz1R7nUdqk",
+        "title": "100 FUN Trivia Quiz Questions | 8 Rounds General Knowledge Pub Quiz",
+        "channel": "Trivia Quiz Rush | General Knowledge Quizzes",
+        "views": 9941,
+        "duration": 1942,
+        "url": "https://www.youtube.com/watch?v=QMz1R7nUdqk",
+        "source": "keyword:general knowledge"
+      },
+      {
+        "id": "bspw4_yxuzU",
+        "title": "11 Adults vs General Knowledge Quiz",
+        "channel": "Extra Medium Stuff",
+        "views": 1768643,
+        "duration": 1453,
+        "url": "https://www.youtube.com/watch?v=bspw4_yxuzU",
+        "source": "keyword:general knowledge"
+      },
+      {
+        "id": "V-SctcyZ17Y",
+        "title": "20 People vs General Knowledge Quiz",
+        "channel": "Extra Medium Stuff",
+        "views": 629146,
+        "duration": 2008,
+        "url": "https://www.youtube.com/watch?v=V-SctcyZ17Y",
+        "source": "keyword:general knowledge"
+      },
+      {
         "id": "5vbY-O4iBxE",
-        "title": "Can You Pass This General Knowledge Test? 📚 Find Out with These 40 Trivia Questions! 🧠",
+        "title": "Ready to Test Your Trivia Skills? 🧠 Try These 40 General Knowledge Questions! 📚",
         "channel": "Wisdom Time",
-        "views": 4613,
+        "views": 4627,
         "duration": 842,
         "url": "https://www.youtube.com/watch?v=5vbY-O4iBxE",
         "source": "keyword:general knowledge"
@@ -265,18 +274,18 @@
         "id": "vl6OoyT7KdI",
         "title": "100 People vs General Knowledge Quiz",
         "channel": "Extra Medium Stuff",
-        "views": 586647,
+        "views": 586699,
         "duration": 2600,
         "url": "https://www.youtube.com/watch?v=vl6OoyT7KdI",
         "source": "keyword:general knowledge"
       },
       {
-        "id": "V-SctcyZ17Y",
-        "title": "20 People vs General Knowledge Quiz",
-        "channel": "Extra Medium Stuff",
-        "views": 629090,
-        "duration": 2008,
-        "url": "https://www.youtube.com/watch?v=V-SctcyZ17Y",
+        "id": "nuyDo75G5d8",
+        "title": "Pub Quiz  Picture, Entertainment, Which Two, Fireworks, 54321 General Knowledge No.203",
+        "channel": "Quiz Master Dale",
+        "views": 3439,
+        "duration": 2172,
+        "url": "https://www.youtube.com/watch?v=nuyDo75G5d8",
         "source": "keyword:general knowledge"
       }
     ],
@@ -285,34 +294,16 @@
         "id": "A39PcJvP2vE",
         "title": "ONLY A GENIUS CAN SOLVE THESE RIDDLES 🧠✅ Brain Teasers & Riddle Quiz 🧩",
         "channel": "Quiz Blitz",
-        "views": 5010582,
+        "views": 5010617,
         "duration": 785,
         "url": "https://www.youtube.com/watch?v=A39PcJvP2vE",
-        "source": "keyword:brain teaser"
-      },
-      {
-        "id": "TLiqzpl_Z4Q",
-        "title": "10 brain teasers that will test your critical thinking!",
-        "channel": "Learn with TJ",
-        "views": 67546,
-        "duration": 352,
-        "url": "https://www.youtube.com/watch?v=TLiqzpl_Z4Q",
-        "source": "keyword:brain teaser"
-      },
-      {
-        "id": "xZz2l5gCD5g",
-        "title": "Top 5 BRAINTEASER Interview Questions (With Answers)",
-        "channel": "Listpedia",
-        "views": 24822,
-        "duration": 367,
-        "url": "https://www.youtube.com/watch?v=xZz2l5gCD5g",
         "source": "keyword:brain teaser"
       },
       {
         "id": "LeQAty0cwU8",
         "title": "13 Riddles That Will Test Your Brain Speed",
         "channel": "BRIGHT SIDE",
-        "views": 11095128,
+        "views": 11095143,
         "duration": 561,
         "url": "https://www.youtube.com/watch?v=LeQAty0cwU8",
         "source": "keyword:brain teaser"
@@ -330,45 +321,72 @@
         "id": "Px0laKwBKmA",
         "title": "Spot the Difference Brain Teasers You Can’t Resist (A Bit Tricky)",
         "channel": "Captain Brain",
-        "views": 52954,
+        "views": 52951,
         "duration": 617,
         "url": "https://www.youtube.com/watch?v=Px0laKwBKmA",
         "source": "keyword:brain teaser"
       },
       {
-        "id": "nYyNIAJfL9M",
-        "title": "10 FUN Brain Teasers | Riddles for Kids | Classroom Brain Breaks OR Family Fun",
-        "channel": "Cleverlot Kids",
-        "views": 87393,
-        "duration": 361,
-        "url": "https://www.youtube.com/watch?v=nYyNIAJfL9M",
+        "id": "J6M92a82RJQ",
+        "title": "15 Hidden Objects Challenge!🔍| Can You Find Them All? | Brain Teaser",
+        "channel": "Quiz Box",
+        "views": 1808,
+        "duration": 425,
+        "url": "https://www.youtube.com/watch?v=J6M92a82RJQ",
         "source": "keyword:brain teaser"
       },
       {
-        "id": "6D81BW2CzOU",
-        "title": "Brain Teasers | Brain Games",
-        "channel": "National Geographic",
-        "views": 648276,
-        "duration": 168,
-        "url": "https://www.youtube.com/watch?v=6D81BW2CzOU",
+        "id": "lO-r9okI1nE",
+        "title": "9 Students vs Brainteaser Puzzle Quiz",
+        "channel": "Extra Medium Games",
+        "views": 192743,
+        "duration": 1005,
+        "url": "https://www.youtube.com/watch?v=lO-r9okI1nE",
+        "source": "keyword:brain teaser"
+      },
+      {
+        "id": "TLiqzpl_Z4Q",
+        "title": "10 brain teasers that will test your critical thinking!",
+        "channel": "Learn with TJ",
+        "views": 67547,
+        "duration": 352,
+        "url": "https://www.youtube.com/watch?v=TLiqzpl_Z4Q",
+        "source": "keyword:brain teaser"
+      },
+      {
+        "id": "HX-rOL73mSk",
+        "title": "51+ Short Riddles Only The Real Brainteaser Pros Can Solve In A Heartbeat",
+        "channel": "BRIGHT SIDE",
+        "views": 22113,
+        "duration": 3369,
+        "url": "https://www.youtube.com/watch?v=HX-rOL73mSk",
+        "source": "keyword:brain teaser"
+      },
+      {
+        "id": "wnHsbxfxAIE",
+        "title": "🧠 BRAIN TEASER CHALLENGE LIVE! | Test Your Intelligence",
+        "channel": "Prisci tales",
+        "views": null,
+        "duration": null,
+        "url": "https://www.youtube.com/watch?v=wnHsbxfxAIE",
         "source": "keyword:brain teaser"
       },
       {
         "id": "E8J0lbZSkeE",
         "title": "20 mind-bending riddles that only highly intelligent people can solve… are you one of them? 😏🔥",
         "channel": "M-Quiz",
-        "views": 2051379,
+        "views": 2051393,
         "duration": 406,
         "url": "https://www.youtube.com/watch?v=E8J0lbZSkeE",
         "source": "keyword:brain teaser"
       },
       {
-        "id": "I_YuJwpxXZI",
-        "title": "9 People vs Brainteaser Puzzle Quiz",
-        "channel": "Extra Medium Games",
-        "views": 139719,
-        "duration": 1657,
-        "url": "https://www.youtube.com/watch?v=I_YuJwpxXZI",
+        "id": "rAJv_pn14mA",
+        "title": "20 HARD RIDDLES 🔥 Only Geniuses Can Solve Them All!",
+        "channel": "M-Quiz",
+        "views": 519398,
+        "duration": 484,
+        "url": "https://www.youtube.com/watch?v=rAJv_pn14mA",
         "source": "keyword:brain teaser"
       }
     ],
@@ -377,7 +395,7 @@
         "id": "qUS15fKFCww",
         "title": "TV Quiz For Seniors! Can You Get 10 Old Ad Slogans? Take A Trip Down Memory Lane!",
         "channel": "Quiz Time",
-        "views": 48614,
+        "views": 48613,
         "duration": 1862,
         "url": "https://www.youtube.com/watch?v=qUS15fKFCww",
         "source": "keyword:quiz time"
@@ -386,16 +404,25 @@
         "id": "9oQc7wWL_t0",
         "title": "1950's to 1960's Trivia! How Much Do You Know Of The Golden Age?",
         "channel": "Quiz Time",
-        "views": 23126,
+        "views": 23123,
         "duration": 1884,
         "url": "https://www.youtube.com/watch?v=9oQc7wWL_t0",
+        "source": "keyword:quiz time"
+      },
+      {
+        "id": "1b1uxUZ49Ls",
+        "title": "Would You Rather – Build Your 2026 Fancy MILLIONAIRE Mansion 🏰💖🍀💎 Quiz Time",
+        "channel": "Quiz Time",
+        "views": 407282,
+        "duration": 1721,
+        "url": "https://www.youtube.com/watch?v=1b1uxUZ49Ls",
         "source": "keyword:quiz time"
       },
       {
         "id": "m8v3suk9Yis",
         "title": "Would You Rather - Build Your CRAZY $100,000,000 HOUSE 🏠🎢✨🤑💸 Dream Futuristic House 🚀",
         "channel": "Quiz Time",
-        "views": 1413035,
+        "views": 1413046,
         "duration": 1670,
         "url": "https://www.youtube.com/watch?v=m8v3suk9Yis",
         "source": "keyword:quiz time"
@@ -404,63 +431,54 @@
         "id": "WO2FDxAnGp8",
         "title": "Guess The Word | Ultimate Food & Drink Emoji Quiz Challenge! 🥞🥤🧠",
         "channel": "Quiz Dino",
-        "views": 10543,
+        "views": 10631,
         "duration": 1363,
         "url": "https://www.youtube.com/watch?v=WO2FDxAnGp8",
-        "source": "keyword:quiz time"
-      },
-      {
-        "id": "1b1uxUZ49Ls",
-        "title": "Would You Rather – Build Your 2026 Fancy MILLIONAIRE Mansion 🏰💖🍀💎 Quiz Time",
-        "channel": "Quiz Time",
-        "views": 407280,
-        "duration": 1721,
-        "url": "https://www.youtube.com/watch?v=1b1uxUZ49Ls",
         "source": "keyword:quiz time"
       },
       {
         "id": "Kr7cqB_EjGA",
         "title": "Would You Rather - Build Your VIP Fantasy House 🏡🤑💖🐵👑",
         "channel": "Quiz Time",
-        "views": 1071402,
+        "views": 1071455,
         "duration": 1634,
         "url": "https://www.youtube.com/watch?v=Kr7cqB_EjGA",
         "source": "keyword:quiz time"
       },
       {
-        "id": "3ShqXh5tI1s",
-        "title": "General Knowledge Trivia Quiz! 🧠 | 100 Questions Everyone Should Know – Do You?",
-        "channel": "Fun Quiz Questions",
-        "views": 5085041,
-        "duration": 1425,
-        "url": "https://www.youtube.com/watch?v=3ShqXh5tI1s",
+        "id": "K8mqa1HKd40",
+        "title": "Would You Rather...? DOGS Edition 🐶🐾 Which Dog is Cuter? ❤️✨",
+        "channel": "Quiz Time",
+        "views": 897513,
+        "duration": 1206,
+        "url": "https://www.youtube.com/watch?v=K8mqa1HKd40",
         "source": "keyword:quiz time"
       },
       {
-        "id": "vFxoKGZlBo0",
-        "title": "1970's Quiz For Seniors! How Much Can You Remember? Enough To Score 10?",
+        "id": "fSHGAhrN0JY",
+        "title": "Would You Rather...? Build Your ANIMAL Dream House 🐶🐱🏠🌈",
         "channel": "Quiz Time",
-        "views": 108387,
-        "duration": 1899,
-        "url": "https://www.youtube.com/watch?v=vFxoKGZlBo0",
+        "views": 214930,
+        "duration": 1550,
+        "url": "https://www.youtube.com/watch?v=fSHGAhrN0JY",
         "source": "keyword:quiz time"
       },
       {
-        "id": "MQ3zV_Qu278",
-        "title": "Would You Rather...? Build Your Fantasy Animal World 🐯🦄🌈✨",
+        "id": "fSKpgS5xC8I",
+        "title": "Would You Rather - Build Your $100,000,000 Luxury Mansion 🏡✨💖💎",
         "channel": "Quiz Time",
-        "views": 93327,
-        "duration": 1820,
-        "url": "https://www.youtube.com/watch?v=MQ3zV_Qu278",
+        "views": 433662,
+        "duration": 1670,
+        "url": "https://www.youtube.com/watch?v=fSKpgS5xC8I",
         "source": "keyword:quiz time"
       },
       {
-        "id": "DsVywAc-UNo",
-        "title": "Can You Name These Old Items From Your Grandparent's House?",
+        "id": "JCKn6C1G_rc",
+        "title": "Would You Rather - Build Your Super COOL Dream House 💖🏡🌈💸",
         "channel": "Quiz Time",
-        "views": 929794,
-        "duration": 1910,
-        "url": "https://www.youtube.com/watch?v=DsVywAc-UNo",
+        "views": 150051,
+        "duration": 1523,
+        "url": "https://www.youtube.com/watch?v=JCKn6C1G_rc",
         "source": "keyword:quiz time"
       }
     ],
@@ -469,7 +487,7 @@
         "id": "3ShqXh5tI1s",
         "title": "General Knowledge Trivia Quiz! 🧠 | 100 Questions Everyone Should Know – Do You?",
         "channel": "Fun Quiz Questions",
-        "views": 5085041,
+        "views": 5085134,
         "duration": 1425,
         "url": "https://www.youtube.com/watch?v=3ShqXh5tI1s",
         "source": "keyword:test your knowledge"
@@ -478,7 +496,7 @@
         "id": "shXUfZ6bC4w",
         "title": "Are You SMARTER Than a High School Student? 🎓 General Knowledge Quiz 🤔",
         "channel": "Fun Quiz Questions",
-        "views": 5328645,
+        "views": 5328686,
         "duration": 867,
         "url": "https://www.youtube.com/watch?v=shXUfZ6bC4w",
         "source": "keyword:test your knowledge"
@@ -487,7 +505,7 @@
         "id": "HcuhU-4P8J4",
         "title": "50 Questions Everyone Should Know! | General Knowledge Trivia Quiz 🧠🔥",
         "channel": "Quiz Blitz",
-        "views": 1673233,
+        "views": 1673285,
         "duration": 902,
         "url": "https://www.youtube.com/watch?v=HcuhU-4P8J4",
         "source": "keyword:test your knowledge"
@@ -496,7 +514,7 @@
         "id": "EDEGpZUFEGE",
         "title": "General Knowledge Trivia Quiz #10 🧠 | 100 Questions EVERYONE Should Know",
         "channel": "Fun Quiz Questions",
-        "views": 240170,
+        "views": 240215,
         "duration": 1587,
         "url": "https://www.youtube.com/watch?v=EDEGpZUFEGE",
         "source": "keyword:test your knowledge"
@@ -514,34 +532,43 @@
         "id": "xwkIODBT_fc",
         "title": "General Knowledge Trivia Quiz #9 🧠 | 100 Questions Everyone Should Know",
         "channel": "Fun Quiz Questions",
-        "views": 397966,
+        "views": 397982,
         "duration": 1524,
         "url": "https://www.youtube.com/watch?v=xwkIODBT_fc",
-        "source": "keyword:test your knowledge"
-      },
-      {
-        "id": "FEWJiV4Sayc",
-        "title": "Are You SMARTER Than a 5th Grader? 📚🤓🧠 | General Knowledge Quiz",
-        "channel": "Quiz Blitz",
-        "views": 2678280,
-        "duration": 754,
-        "url": "https://www.youtube.com/watch?v=FEWJiV4Sayc",
         "source": "keyword:test your knowledge"
       },
       {
         "id": "Jdzg38YakcU",
         "title": "Your IQ Is Impressive If You Pass This General Knowledge Quiz 🧠🔥",
         "channel": "Wisdom Time",
-        "views": 2028352,
+        "views": 2028355,
         "duration": 1117,
         "url": "https://www.youtube.com/watch?v=Jdzg38YakcU",
+        "source": "keyword:test your knowledge"
+      },
+      {
+        "id": "5vbY-O4iBxE",
+        "title": "Your Trivia Skills Are Excellent If You Get 20 Right! 🏆 Try This 40-Question Knowledge Quiz! 📚",
+        "channel": "Wisdom Time",
+        "views": 4627,
+        "duration": 842,
+        "url": "https://www.youtube.com/watch?v=5vbY-O4iBxE",
+        "source": "keyword:test your knowledge"
+      },
+      {
+        "id": "Nqvu0lfbV8E",
+        "title": "How Good Is Your General Knowledge? Take This 55-Question Quiz To Find Out! #challenge 245",
+        "channel": "English Tests and Logical Reasoning",
+        "views": 470904,
+        "duration": 821,
+        "url": "https://www.youtube.com/watch?v=Nqvu0lfbV8E",
         "source": "keyword:test your knowledge"
       },
       {
         "id": "HqAtOdCQ5rI",
         "title": "General Knowledge Trivia Quiz! 😏🎯 | 101 Questions EVERYONE Should Know!",
         "channel": "Guessers",
-        "views": 506734,
+        "views": 506757,
         "duration": 1982,
         "url": "https://www.youtube.com/watch?v=HqAtOdCQ5rI",
         "source": "keyword:test your knowledge"
@@ -550,7 +577,7 @@
         "id": "Myht0xy0h6k",
         "title": "General Knowledge Trivia Quiz #4 🧠 | 100 New Questions Everyone Should Know",
         "channel": "Fun Quiz Questions",
-        "views": 529711,
+        "views": 529721,
         "duration": 1699,
         "url": "https://www.youtube.com/watch?v=Myht0xy0h6k",
         "source": "keyword:test your knowledge"
@@ -562,25 +589,16 @@
       "id": "LeQAty0cwU8",
       "title": "13 Riddles That Will Test Your Brain Speed",
       "channel": "BRIGHT SIDE",
-      "views": 11095128,
+      "views": 11095143,
       "duration": 561,
       "url": "https://www.youtube.com/watch?v=LeQAty0cwU8",
       "source": "keyword:brain teaser"
     },
     {
-      "id": "wjsmX-R4Taw",
-      "title": "Guess the Movie by Emoji 🎬🍿 Movie Quiz",
-      "channel": "Mouse Quiz",
-      "views": 9793874,
-      "duration": 1263,
-      "url": "https://www.youtube.com/watch?v=wjsmX-R4Taw",
-      "source": "keyword:quiz"
-    },
-    {
       "id": "A39PcJvP2vE",
       "title": "ONLY A GENIUS CAN SOLVE THESE RIDDLES 🧠✅ Brain Teasers & Riddle Quiz 🧩",
       "channel": "Quiz Blitz",
-      "views": 5010582,
+      "views": 5010617,
       "duration": 785,
       "url": "https://www.youtube.com/watch?v=A39PcJvP2vE",
       "source": "keyword:brain teaser"
@@ -589,7 +607,7 @@
       "id": "shXUfZ6bC4w",
       "title": "Are You SMARTER Than a High School Student? 🎓 General Knowledge Quiz 🤔",
       "channel": "Fun Quiz Questions",
-      "views": 5328645,
+      "views": 5328686,
       "duration": 867,
       "url": "https://www.youtube.com/watch?v=shXUfZ6bC4w",
       "source": "keyword:quiz"
@@ -598,52 +616,43 @@
       "id": "shXUfZ6bC4w",
       "title": "Are You SMARTER Than a High School Student? 🎓 General Knowledge Quiz 🤔",
       "channel": "Fun Quiz Questions",
-      "views": 5328645,
-      "duration": 867,
-      "url": "https://www.youtube.com/watch?v=shXUfZ6bC4w",
-      "source": "keyword:trivia"
-    },
-    {
-      "id": "shXUfZ6bC4w",
-      "title": "Are You SMARTER Than a High School Student? 🎓 General Knowledge Quiz 🤔",
-      "channel": "Fun Quiz Questions",
-      "views": 5328645,
+      "views": 5328686,
       "duration": 867,
       "url": "https://www.youtube.com/watch?v=shXUfZ6bC4w",
       "source": "keyword:test your knowledge"
-    },
-    {
-      "id": "yP9-fdHD9YU",
-      "title": "Detective Riddles Challenge: Further You Get, the Smarter You Are",
-      "channel": "BRIGHT SIDE",
-      "views": 15298105,
-      "duration": 2705,
-      "url": "https://www.youtube.com/watch?v=yP9-fdHD9YU",
-      "source": "keyword:brain teaser"
     },
     {
       "id": "E8J0lbZSkeE",
       "title": "20 mind-bending riddles that only highly intelligent people can solve… are you one of them? 😏🔥",
       "channel": "M-Quiz",
-      "views": 2051379,
+      "views": 2051393,
+      "duration": 406,
+      "url": "https://www.youtube.com/watch?v=E8J0lbZSkeE",
+      "source": "keyword:quiz"
+    },
+    {
+      "id": "E8J0lbZSkeE",
+      "title": "20 mind-bending riddles that only highly intelligent people can solve… are you one of them? 😏🔥",
+      "channel": "M-Quiz",
+      "views": 2051393,
       "duration": 406,
       "url": "https://www.youtube.com/watch?v=E8J0lbZSkeE",
       "source": "keyword:brain teaser"
     },
     {
-      "id": "6D81BW2CzOU",
-      "title": "Brain Teasers | Brain Games",
-      "channel": "National Geographic",
-      "views": 648276,
-      "duration": 168,
-      "url": "https://www.youtube.com/watch?v=6D81BW2CzOU",
-      "source": "keyword:brain teaser"
+      "id": "JcKt9BituWA",
+      "title": "Choose One Button - YES or NO or MAYBE or NEVER! 🤔💭✅ Quiz Dino",
+      "channel": "Quiz Dino",
+      "views": 6729978,
+      "duration": 1386,
+      "url": "https://www.youtube.com/watch?v=JcKt9BituWA",
+      "source": "keyword:quiz"
     },
     {
       "id": "3ShqXh5tI1s",
       "title": "General Knowledge Trivia Quiz! 🧠 | 100 Questions Everyone Should Know – Do You?",
       "channel": "Fun Quiz Questions",
-      "views": 5085041,
+      "views": 5085134,
       "duration": 1425,
       "url": "https://www.youtube.com/watch?v=3ShqXh5tI1s",
       "source": "keyword:trivia"
@@ -652,16 +661,7 @@
       "id": "3ShqXh5tI1s",
       "title": "General Knowledge Trivia Quiz! 🧠 | 100 Questions Everyone Should Know – Do You?",
       "channel": "Fun Quiz Questions",
-      "views": 5085041,
-      "duration": 1425,
-      "url": "https://www.youtube.com/watch?v=3ShqXh5tI1s",
-      "source": "keyword:quiz time"
-    },
-    {
-      "id": "3ShqXh5tI1s",
-      "title": "General Knowledge Trivia Quiz! 🧠 | 100 Questions Everyone Should Know – Do You?",
-      "channel": "Fun Quiz Questions",
-      "views": 5085041,
+      "views": 5085134,
       "duration": 1425,
       "url": "https://www.youtube.com/watch?v=3ShqXh5tI1s",
       "source": "keyword:test your knowledge"
@@ -670,43 +670,34 @@
       "id": "FEWJiV4Sayc",
       "title": "Are You SMARTER Than a 5th Grader? 📚🤓🧠 | General Knowledge Quiz",
       "channel": "Quiz Blitz",
-      "views": 2678280,
+      "views": 2678293,
       "duration": 754,
       "url": "https://www.youtube.com/watch?v=FEWJiV4Sayc",
       "source": "keyword:quiz"
     },
     {
-      "id": "FEWJiV4Sayc",
-      "title": "Are You SMARTER Than a 5th Grader? 📚🤓🧠 | General Knowledge Quiz",
-      "channel": "Quiz Blitz",
-      "views": 2678280,
-      "duration": 754,
-      "url": "https://www.youtube.com/watch?v=FEWJiV4Sayc",
-      "source": "keyword:test your knowledge"
+      "id": "m6EmergTOqo",
+      "title": "15 Tricky Riddles That Will Test Your IQ🧠 | Only Geniuses Can Solve All 15!🔥",
+      "channel": "M-Quiz",
+      "views": 1131912,
+      "duration": 529,
+      "url": "https://www.youtube.com/watch?v=m6EmergTOqo",
+      "source": "keyword:quiz"
     },
     {
       "id": "HcuhU-4P8J4",
       "title": "50 Questions Everyone Should Know! | General Knowledge Trivia Quiz 🧠🔥",
       "channel": "Quiz Blitz",
-      "views": 1673233,
+      "views": 1673285,
       "duration": 902,
       "url": "https://www.youtube.com/watch?v=HcuhU-4P8J4",
       "source": "keyword:test your knowledge"
     },
     {
-      "id": "yihaT3CckJM",
-      "title": "Guess the Fast Food Restaurant by Emoji? 🌮🍔 Daily Quiz",
-      "channel": "Daily Quiz and Quiz Bubble",
-      "views": 2335619,
-      "duration": 1267,
-      "url": "https://www.youtube.com/watch?v=yihaT3CckJM",
-      "source": "keyword:quiz"
-    },
-    {
       "id": "Jdzg38YakcU",
       "title": "Your IQ Is Impressive If You Pass This General Knowledge Quiz 🧠🔥",
       "channel": "Wisdom Time",
-      "views": 2028352,
+      "views": 2028355,
       "duration": 1117,
       "url": "https://www.youtube.com/watch?v=Jdzg38YakcU",
       "source": "keyword:test your knowledge"
@@ -715,34 +706,43 @@
       "id": "bspw4_yxuzU",
       "title": "11 Adults vs General Knowledge Quiz",
       "channel": "Extra Medium Stuff",
-      "views": 1768699,
+      "views": 1768643,
       "duration": 1453,
       "url": "https://www.youtube.com/watch?v=bspw4_yxuzU",
       "source": "keyword:general knowledge"
     },
     {
+      "id": "rAJv_pn14mA",
+      "title": "20 HARD RIDDLES 🔥 Only Geniuses Can Solve Them All!",
+      "channel": "M-Quiz",
+      "views": 519398,
+      "duration": 484,
+      "url": "https://www.youtube.com/watch?v=rAJv_pn14mA",
+      "source": "keyword:brain teaser"
+    },
+    {
       "id": "m8v3suk9Yis",
       "title": "Would You Rather - Build Your CRAZY $100,000,000 HOUSE 🏠🎢✨🤑💸 Dream Futuristic House 🚀",
       "channel": "Quiz Time",
-      "views": 1413035,
+      "views": 1413046,
       "duration": 1670,
       "url": "https://www.youtube.com/watch?v=m8v3suk9Yis",
       "source": "keyword:quiz time"
     },
     {
-      "id": "zUAyp1Iacz8",
-      "title": "Who's Smarter? General Knowledge Quiz",
-      "channel": "Jubilee",
-      "views": 1097424,
-      "duration": 1435,
-      "url": "https://www.youtube.com/watch?v=zUAyp1Iacz8",
-      "source": "keyword:general knowledge"
+      "id": "K8mqa1HKd40",
+      "title": "Would You Rather...? DOGS Edition 🐶🐾 Which Dog is Cuter? ❤️✨",
+      "channel": "Quiz Time",
+      "views": 897513,
+      "duration": 1206,
+      "url": "https://www.youtube.com/watch?v=K8mqa1HKd40",
+      "source": "keyword:quiz time"
     },
     {
       "id": "Kr7cqB_EjGA",
       "title": "Would You Rather - Build Your VIP Fantasy House 🏡🤑💖🐵👑",
       "channel": "Quiz Time",
-      "views": 1071402,
+      "views": 1071455,
       "duration": 1634,
       "url": "https://www.youtube.com/watch?v=Kr7cqB_EjGA",
       "source": "keyword:quiz time"
@@ -751,25 +751,34 @@
       "id": "grl6Q88GXOc",
       "title": "How Good Is Your Knowledge of ANIMALS? 🦗🕷️🤔 | Animals Knowledge Trivia Quiz",
       "channel": "Quiz Blitz",
-      "views": 531368,
+      "views": 531385,
       "duration": 888,
       "url": "https://www.youtube.com/watch?v=grl6Q88GXOc",
       "source": "keyword:quiz"
     },
     {
-      "id": "DsVywAc-UNo",
-      "title": "Can You Name These Old Items From Your Grandparent's House?",
-      "channel": "Quiz Time",
-      "views": 929794,
-      "duration": 1910,
-      "url": "https://www.youtube.com/watch?v=DsVywAc-UNo",
-      "source": "keyword:quiz time"
+      "id": "Nqvu0lfbV8E",
+      "title": "How Good Is Your General Knowledge? Take This 55-Question Quiz To Find Out! #challenge 245",
+      "channel": "English Tests and Logical Reasoning",
+      "views": 470904,
+      "duration": 821,
+      "url": "https://www.youtube.com/watch?v=Nqvu0lfbV8E",
+      "source": "keyword:test your knowledge"
+    },
+    {
+      "id": "MK887rSEQhM",
+      "title": "GENERAL KNOWLEDGE TRIVIA FOR SENIORS - Do You Think You Can Score 5 Correct Answers? Let us know!",
+      "channel": "Quiz Class",
+      "views": 859403,
+      "duration": 1882,
+      "url": "https://www.youtube.com/watch?v=MK887rSEQhM",
+      "source": "keyword:quiz"
     },
     {
       "id": "A2_KVysc0u4",
       "title": "❌ Avoid Saying The Same Thing As Me 🤫 Only 5% Reach the End!",
       "channel": "Quiz Blitz",
-      "views": 306767,
+      "views": 306778,
       "duration": 922,
       "url": "https://www.youtube.com/watch?v=A2_KVysc0u4",
       "source": "keyword:quiz"
@@ -778,7 +787,7 @@
       "id": "V-SctcyZ17Y",
       "title": "20 People vs General Knowledge Quiz",
       "channel": "Extra Medium Stuff",
-      "views": 629090,
+      "views": 629146,
       "duration": 2008,
       "url": "https://www.youtube.com/watch?v=V-SctcyZ17Y",
       "source": "keyword:trivia"
@@ -787,7 +796,7 @@
       "id": "V-SctcyZ17Y",
       "title": "20 People vs General Knowledge Quiz",
       "channel": "Extra Medium Stuff",
-      "views": 629090,
+      "views": 629146,
       "duration": 2008,
       "url": "https://www.youtube.com/watch?v=V-SctcyZ17Y",
       "source": "keyword:general knowledge"
@@ -796,16 +805,16 @@
       "id": "Myht0xy0h6k",
       "title": "General Knowledge Trivia Quiz #4 🧠 | 100 New Questions Everyone Should Know",
       "channel": "Fun Quiz Questions",
-      "views": 529711,
+      "views": 529721,
       "duration": 1699,
       "url": "https://www.youtube.com/watch?v=Myht0xy0h6k",
       "source": "keyword:test your knowledge"
     },
     {
       "id": "Xm6JQc0hFKk",
-      "title": "Trivia All-Stars vs. My Hardest Quiz",
+      "title": "Trivia All-Stars vs. Impossible Quiz",
       "channel": "BradyYourTutor",
-      "views": 448930,
+      "views": 449394,
       "duration": 1687,
       "url": "https://www.youtube.com/watch?v=Xm6JQc0hFKk",
       "source": "keyword:trivia"
@@ -814,7 +823,7 @@
       "id": "xwkIODBT_fc",
       "title": "General Knowledge Trivia Quiz #9 🧠 | 100 Questions Everyone Should Know",
       "channel": "Fun Quiz Questions",
-      "views": 397966,
+      "views": 397982,
       "duration": 1524,
       "url": "https://www.youtube.com/watch?v=xwkIODBT_fc",
       "source": "keyword:test your knowledge"
@@ -823,205 +832,169 @@
       "id": "HqAtOdCQ5rI",
       "title": "General Knowledge Trivia Quiz! 😏🎯 | 101 Questions EVERYONE Should Know!",
       "channel": "Guessers",
-      "views": 506734,
+      "views": 506757,
       "duration": 1982,
       "url": "https://www.youtube.com/watch?v=HqAtOdCQ5rI",
       "source": "keyword:test your knowledge"
+    },
+    {
+      "id": "1b1uxUZ49Ls",
+      "title": "Would You Rather – Build Your 2026 Fancy MILLIONAIRE Mansion 🏰💖🍀💎 Quiz Time",
+      "channel": "Quiz Time",
+      "views": 407282,
+      "duration": 1721,
+      "url": "https://www.youtube.com/watch?v=1b1uxUZ49Ls",
+      "source": "keyword:quiz time"
     }
   ],
   "topics": [
     {
       "topic": "13 Riddles That Will Test Your Brain Speed",
       "url": "https://www.youtube.com/watch?v=LeQAty0cwU8",
-      "views": 11095128,
+      "views": 11095143,
       "score": 19777.4,
       "identity_score": 0,
       "rank_score": 19775.9
     },
     {
-      "topic": "Guess the Movie by Emoji 🎬🍿 Movie Quiz",
-      "url": "https://www.youtube.com/watch?v=wjsmX-R4Taw",
-      "views": 9793874,
-      "score": 7754.5,
-      "identity_score": 1,
-      "rank_score": 7754.5
-    },
-    {
       "topic": "ONLY A GENIUS CAN SOLVE THESE RIDDLES 🧠✅ Brain Teasers & Riddle Quiz 🧩",
       "url": "https://www.youtube.com/watch?v=A39PcJvP2vE",
-      "views": 5010582,
-      "score": 6382.9,
+      "views": 5010617,
+      "score": 6383.0,
       "identity_score": 2,
-      "rank_score": 6382.9
+      "rank_score": 6383.0
     },
     {
       "topic": "Are You SMARTER Than a High School Student? 🎓 General Knowledge Quiz 🤔",
       "url": "https://www.youtube.com/watch?v=shXUfZ6bC4w",
-      "views": 5328645,
+      "views": 5328686,
       "score": 6146.1,
       "identity_score": 2,
       "rank_score": 6146.1
     },
     {
-      "topic": "Detective Riddles Challenge: Further You Get, the Smarter You Are",
-      "url": "https://www.youtube.com/watch?v=yP9-fdHD9YU",
-      "views": 15298105,
-      "score": 5655.5,
+      "topic": "20 mind-bending riddles that only highly intelligent people can solve… are you one of them? 😏🔥",
+      "url": "https://www.youtube.com/watch?v=E8J0lbZSkeE",
+      "views": 2051393,
+      "score": 5052.7,
       "identity_score": 0,
-      "rank_score": 5654.0
+      "rank_score": 5051.2
+    },
+    {
+      "topic": "Choose One Button - YES or NO or MAYBE or NEVER! 🤔💭✅ Quiz Dino",
+      "url": "https://www.youtube.com/watch?v=JcKt9BituWA",
+      "views": 6729978,
+      "score": 4855.7,
+      "identity_score": 1,
+      "rank_score": 4855.7
+    },
+    {
+      "topic": "Nation Wants To Guess S2 | EP1 @AnirbanDasgupta5 @ShreejaChaturvedi",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=R2MK5oikbVI",
+      "views": 2069414,
+      "score": 505.3,
+      "identity_score": 0,
+      "rank_score": 503.8
     },
     {
       "topic": "GK Question || GK In Hindi || GK Question and Answer || GK Quiz ||",
       "platform": "youtube",
       "url": "https://www.youtube.com/watch?v=Uuh822UknvQ",
-      "views": 58470,
-      "score": 150.1,
+      "views": 58472,
+      "score": 60.1,
       "identity_score": 1,
-      "rank_score": 150.1
+      "rank_score": 60.1
     },
     {
       "topic": "Urdu Islamic Quiz | Top Sawal Jawab | Sawal jawab | Islamic Question Answer |",
       "platform": "youtube",
       "url": "https://www.youtube.com/watch?v=Oydp26qlMWI",
-      "views": 21194,
-      "score": 83.7,
+      "views": 21203,
+      "score": 33.5,
       "identity_score": 1,
-      "rank_score": 83.7
-    },
-    {
-      "topic": "Urdu Islamic Quiz | Top Sawal Jawab | Islamic GK | Urdu Quiz / general",
-      "platform": "youtube",
-      "url": "https://www.youtube.com/watch?v=EjIBk5K3WDY",
-      "views": 5009,
-      "score": 41.5,
-      "identity_score": 1,
-      "rank_score": 41.5
-    },
-    {
-      "topic": "morning slide today। morning slide 04 november 2026।gk morning slide lmorning",
-      "platform": "youtube",
-      "url": "https://www.youtube.com/watch?v=FJ9r32NB1KI",
-      "views": 21188,
-      "score": 43.0,
-      "identity_score": 0,
-      "rank_score": 41.5
+      "rank_score": 33.5
     },
     {
       "topic": "Guess the Song | Telugu Songs Quiz 2026 | 10 Seconds Challenge #guessthesong",
       "platform": "youtube",
       "url": "https://www.youtube.com/watch?v=eUkF-sJ59t4",
-      "views": 37469,
-      "score": 40.5,
+      "views": 37482,
+      "score": 27.0,
       "identity_score": 1,
-      "rank_score": 40.5
+      "rank_score": 27.0
+    },
+    {
+      "topic": "Urdu Islamic Quiz | Top Sawal Jawab | Islamic GK | Urdu Quiz / general",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=EjIBk5K3WDY",
+      "views": 4976,
+      "score": 16.5,
+      "identity_score": 1,
+      "rank_score": 16.5
+    },
+    {
+      "topic": "morning slide today। morning slide 04 november 2026।gk morning slide lmorning",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=FJ9r32NB1KI",
+      "views": 21189,
+      "score": 17.2,
+      "identity_score": 0,
+      "rank_score": 15.7
+    },
+    {
+      "topic": "କେଉଁ ଜିନିଷ ଧରିବାକୁ ପୁଅ ମାନଙ୍କୁ ଭଲ ଲାଗିଥାଏ 🔥 Odia GK Question Answer ||",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=39Sd8iRveUE",
+      "views": 18043,
+      "score": 13.4,
+      "identity_score": 0,
+      "rank_score": 11.9
     },
     {
       "topic": "Guess the Song: \"GOLDEN\" in Different Versions 🎤 KPop Demon Hunters Quiz",
       "platform": "youtube",
       "url": "https://www.youtube.com/watch?v=htX410vNviI",
-      "views": 11702,
-      "score": 28.2,
+      "views": 11718,
+      "score": 11.3,
       "identity_score": 1,
-      "rank_score": 28.2
+      "rank_score": 11.3
     },
     {
       "topic": "Urdu Riddles | Riddles | Riddles in Urdu | Islamic Questions | Islamic Quiz |",
       "platform": "youtube",
       "url": "https://www.youtube.com/watch?v=NKG2DgGqKBI",
-      "views": 22672,
-      "score": 27.2,
+      "views": 22758,
+      "score": 10.9,
       "identity_score": 1,
-      "rank_score": 27.2
+      "rank_score": 10.9
     },
     {
       "topic": "[Trivia] Random Facts That Might Come in Handy One Day",
       "platform": "youtube",
       "url": "https://www.youtube.com/watch?v=jhP7BCLiu7w",
       "views": 1682,
-      "score": 26.2,
+      "score": 10.5,
       "identity_score": 1,
-      "rank_score": 26.2
+      "rank_score": 10.5
+    },
+    {
+      "topic": "Hania Quiz | Islamic Quiz in Urdu | Islamic Questions and Answers | Islamic",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=Slo9F5eqWlM",
+      "views": 2355,
+      "score": 9.8,
+      "identity_score": 1,
+      "rank_score": 9.8
     },
     {
       "topic": "BORN BEFORE 1957? 🔥 You Won’t Get 4 Right! | Senior Memory Test",
       "platform": "youtube",
       "url": "https://www.youtube.com/watch?v=eIYVelq0DB8",
-      "views": 8958,
-      "score": 26.1,
+      "views": 8983,
+      "score": 10.5,
       "identity_score": 0,
-      "rank_score": 24.6
-    },
-    {
-      "topic": "କେଉଁ ଜିନିଷ ଧରିବାକୁ ପୁଅ ମାନଙ୍କୁ ଭଲ ଲାଗିଥାଏ 🔥 Odia GK Question Answer ||",
-      "platform": "youtube",
-      "url": "https://www.youtube.com/watch?v=39Sd8iRveUE",
-      "views": 18031,
-      "score": 20.1,
-      "identity_score": 0,
-      "rank_score": 18.6
-    },
-    {
-      "topic": "ଝିଅମାନେ କେଉଁ ଜିନିଷକୁ ଯେତେ ଦେଖନ୍ତି ସେତେ ଖୁସି ହୁଅନ୍ତି 😱😱 Interesting Question",
-      "platform": "youtube",
-      "url": "https://www.youtube.com/watch?v=8PMcwg5KAGg",
-      "views": 6675,
-      "score": 20.1,
-      "identity_score": 0,
-      "rank_score": 18.6
-    },
-    {
-      "topic": "Would You Rather...! Build Your AMAZING Pokémon Dream House 🏰💖🌟⚡ Quiz Buddy",
-      "platform": "youtube",
-      "url": "https://www.youtube.com/watch?v=Hmqjyom3R2E",
-      "views": 13956,
-      "score": 11.7,
-      "identity_score": 1,
-      "rank_score": 11.7
-    },
-    {
-      "topic": "Messi Vs Ronaldo Best Shot #football #shorts #live",
-      "platform": "youtube",
-      "url": "https://www.youtube.com/watch?v=AF0v91tz_pE",
-      "views": 34108,
-      "score": 12.9,
-      "identity_score": 0,
-      "rank_score": 11.4
-    },
-    {
-      "topic": "GK Question | Important GK Questions and Answers | GK in Marathi | Interesting",
-      "platform": "youtube",
-      "url": "https://www.youtube.com/watch?v=EjolXUq6B3Q",
-      "views": 4222,
-      "score": 12.3,
-      "identity_score": 0,
-      "rank_score": 10.8
-    },
-    {
-      "topic": "Name That Tune! | Guess 25 Songs from the 70s–2000s",
-      "platform": "youtube",
-      "url": "https://www.youtube.com/watch?v=fZYnxVZAyK8",
-      "views": 4332,
-      "score": 11.6,
-      "identity_score": 0,
-      "rank_score": 10.1
-    },
-    {
-      "topic": "Guess the Song in 5 Seconds! | 70s–90s Jeopardy Music Quiz #26",
-      "platform": "youtube",
-      "url": "https://www.youtube.com/watch?v=JIkGJXsofPU",
-      "views": 3414,
-      "score": 9.3,
-      "identity_score": 1,
-      "rank_score": 9.3
-    },
-    {
-      "topic": "🔥 कौन सा पत्थर पानी में नहीं डूबता? 🤔 Hindi GK Quiz LIVE #Live #MCQ",
-      "platform": "youtube",
-      "url": "https://www.youtube.com/watch?v=67NWw0zWzRk",
-      "views": 87143,
-      "score": 9.1,
-      "identity_score": 1,
-      "rank_score": 9.1
+      "rank_score": 9.0
     },
     {
       "topic": "Ronaldo vs Messi: Sudden Death Football Quiz 🐐⚽ #ronaldo #messi",
@@ -1033,22 +1006,67 @@
       "rank_score": 8.8
     },
     {
-      "topic": "🎵 Guess The SONG! 🔥 Viral TikTok Hits Quiz | Sigma Boy, Dai Dai, World Cup",
+      "topic": "Would You Rather...! Build Your AMAZING Pokémon Dream House 🏰💖🌟⚡ Quiz Buddy",
       "platform": "youtube",
-      "url": "https://www.youtube.com/watch?v=K549OjGjcus",
-      "views": 2001,
-      "score": 7.8,
+      "url": "https://www.youtube.com/watch?v=Hmqjyom3R2E",
+      "views": 13973,
+      "score": 4.7,
       "identity_score": 1,
-      "rank_score": 7.8
+      "rank_score": 4.7
+    },
+    {
+      "topic": "GK Question | Important GK Questions and Answers | GK in Marathi | Interesting",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=OcVvbrmtCL4",
+      "views": 2110,
+      "score": 5.8,
+      "identity_score": 0,
+      "rank_score": 4.3
+    },
+    {
+      "topic": "Guess the Song in 5 Seconds! | 70s–90s Jeopardy Music Quiz #26",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=JIkGJXsofPU",
+      "views": 3414,
+      "score": 3.7,
+      "identity_score": 1,
+      "rank_score": 3.7
+    },
+    {
+      "topic": "🔥 कौन सा पत्थर पानी में नहीं डूबता? 🤔 Hindi GK Quiz LIVE #Live #MCQ",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=67NWw0zWzRk",
+      "views": 87143,
+      "score": 3.7,
+      "identity_score": 1,
+      "rank_score": 3.7
+    },
+    {
+      "topic": "Messi Vs Ronaldo Best Shot #football #shorts #live",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=AF0v91tz_pE",
+      "views": 34108,
+      "score": 5.2,
+      "identity_score": 0,
+      "rank_score": 3.7
+    },
+    {
+      "topic": "Name That Tune! | Guess 25 Songs from the 70s–2000s",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=fZYnxVZAyK8",
+      "views": 4329,
+      "score": 4.6,
+      "identity_score": 0,
+      "rank_score": 3.0999999999999996
     },
     {
       "topic": "Guess the NFL Team by their Retro Logo!",
       "platform": "youtube",
       "url": "https://www.youtube.com/watch?v=OxqMc6RyBJc",
       "views": 816,
-      "score": 8.4,
+      "score": 3.4,
       "identity_score": 0,
-      "rank_score": 6.9
+      "rank_score": 1.9
     }
   ]
 }

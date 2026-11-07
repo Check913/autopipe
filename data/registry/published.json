@@ -869,71 +869,57 @@
         "quiz:general"
       ]
     },
-    "aVpV9HBZw10": {
-      "idea_id": "20261107-233755-01",
-      "title": "Are You a Genius? Solve These 3 Riddles!",
-      "hook": "3 ONLY GENIUS CAN SOLVE THESE facts they never teach you",
-      "hook_variant": "B",
-      "pair_id": "pair_20261107_0040",
-      "duration_format": "long",
-      "density": 4,
-      "duration_target": 60,
-      "generator": "llm:gemini-2.5-flash",
-      "source_topic": "ONLY A GENIUS CAN SOLVE THESE RIDDLES 🧠✅ Brain Teasers & Riddle Quiz 🧩",
+    "BUubckp4nX0": {
+      "idea_id": "20261107-234456-01",
+      "title": "You Won't Believe Detective Riddles Did This",
+      "hook": "The Riddler, a supervillain in DC Comics and an adversary",
+      "hook_variant": "A",
+      "pair_id": "pair_20261107_0042",
+      "duration_format": "short",
+      "density": 1,
+      "duration_target": 13,
+      "generator": "fallback+wiki",
+      "source_topic": "Detective Riddles Challenge: Further You Get, the Smarter You Are",
       "source_short_id": null,
       "originality_max_jaccard": null,
       "tags": [
-        "quiz",
-        "trivia",
-        "riddles",
-        "brain teasers",
-        "general knowledge",
-        "test your knowledge",
-        "genius test",
-        "only 1 percent",
-        "mind games",
-        "puzzle",
-        "scorenine",
-        "challenge"
+        "shorts",
+        "Detective Riddles Challenge: Further You",
+        "facts",
+        "didyouknow",
+        "mind blowing"
       ],
-      "published_at": "2026-11-07T23:39:51.085879+00:00",
-      "video_id": "aVpV9HBZw10",
+      "published_at": "2026-11-07T23:46:21.237292+00:00",
+      "video_id": "BUubckp4nX0",
       "source": "runtime",
       "alt_titles": [
-        "ONLY A GENIUS CAN SOLVE THESE RIDDLES 🧠✅ Brain Teasers & Riddle Quiz 🧩"
+        "Detective Riddles Challenge: Further You Get, the Smarter You Are"
       ]
     },
-    "moXl_JttSmU": {
-      "idea_id": "20261107-234138-01",
-      "title": "Quiz Time: You Only Get 3 Seconds Per Question",
-      "hook": "Why does nobody explain General Knowledge Trivia like this?",
-      "hook_variant": "B",
+    "mZE0LS3kLdQ": {
+      "idea_id": "20261107-234705-01",
+      "title": "You Won't Believe 20 mind-bending riddles Did This",
+      "hook": "Nobody talks about 20 mind-bending riddles that only highly",
+      "hook_variant": "A",
       "pair_id": "pair_20261107_0046",
       "duration_format": "short",
-      "density": 4,
+      "density": 1,
       "duration_target": 13,
-      "generator": "llm:gemini-2.5-flash",
-      "source_topic": "General Knowledge Trivia Quiz! 🧠 | 100 Questions Everyone Should Know – Do You?",
+      "generator": "fallback",
+      "source_topic": "20 mind-bending riddles that only highly intelligent people can solve… are you one of them? 😏🔥",
       "source_short_id": null,
       "originality_max_jaccard": null,
       "tags": [
-        "quiz",
-        "trivia",
-        "general knowledge",
-        "brain teaser",
-        "quiz time",
-        "test your knowledge",
-        "challenge",
-        "iq test",
-        "scorenine",
+        "shorts",
+        "20 mind-bending riddles that only highly",
         "facts",
-        "education",
-        "fun quiz"
+        "didyouknow",
+        "mind blowing"
       ],
-      "published_at": "2026-11-07T23:42:47.933029+00:00",
-      "video_id": "moXl_JttSmU",
+      "published_at": "2026-11-07T23:48:28.620450+00:00",
+      "video_id": "mZE0LS3kLdQ",
       "source": "runtime"
     }
   },
-  "updated": "2026-11-07T23:42:47"
+  "updated": "2026-11-07T23:48:28"
 }

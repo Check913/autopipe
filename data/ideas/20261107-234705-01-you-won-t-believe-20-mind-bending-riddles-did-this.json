@@ -1,0 +1,62 @@
+{
+  "title": "You Won't Believe 20 mind-bending riddles Did This",
+  "hook": "Nobody talks about 20 mind-bending riddles that only highly",
+  "script": "What nobody tells you about 20 mind-bending riddles that only highly intelligent people can solve… are you one of them? 😏🔥.\nHere is the part almost everyone skips.\nFirst: the basics that actually matter.\nSecond: the classic mistake that costs the most.\nThird: the simple switch that changes everything.\nAnd that is exactly what nobody tells you about 20 mind-bending riddles that only highly intelligent people can solve… are you one of them? 😏🔥.",
+  "comment": "Be honest: did you already know this?",
+  "description": "You Won't Believe 20 mind-bending riddles Did This\nThe real facts, in 30 seconds.\n#shorts #facts #didyouknow",
+  "tags": [
+    "shorts",
+    "20 mind-bending riddles that only highly",
+    "facts",
+    "didyouknow",
+    "mind blowing"
+  ],
+  "duration_target": 13,
+  "duration_format": "short",
+  "density": 1,
+  "source_topic": "20 mind-bending riddles that only highly intelligent people can solve… are you one of them? 😏🔥",
+  "generator": "fallback",
+  "score": 5052.7,
+  "pair_id": "pair_20261107_0046",
+  "hook_variant": "A",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "Nobody talks about 20 mind-bending riddles that only highly",
+      "family": "number"
+    },
+    {
+      "variant": "B",
+      "hook": "Why does nobody explain 20 mind-bending riddles like this?",
+      "family": "question"
+    }
+  ],
+  "compliance": {
+    "mode": "block",
+    "ok": true,
+    "reasons": [],
+    "checked_at": "2026-11-07T23:47:05",
+    "originality": {
+      "max_jaccard": 0.2857,
+      "max_script_jaccard": 0.6444,
+      "worst_match_src": "20261029-200205-03-you-won-t-believe-18-did-this.json",
+      "threshold": 0.6,
+      "threshold_script": 0.65,
+      "corpus_size": 78
+    },
+    "fatigue": {
+      "hook_family": "number",
+      "consecutive_same_family": 0,
+      "max_consecutive": 3,
+      "fatigued": false
+    },
+    "policy": {
+      "violations": []
+    },
+    "ai_disclosure": {
+      "contains_synthetic_media": false,
+      "configured": true
+    }
+  },
+  "id": "20261107-234705-01"
+}

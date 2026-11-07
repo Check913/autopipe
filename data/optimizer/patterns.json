@@ -1,26 +1,9 @@
 {
-  "fetched": "2026-11-07T23:40:08",
+  "fetched": "2026-11-07T23:46:38",
   "status": "learned",
   "min_samples": 3,
   "n_samples": 11,
-  "patterns": [
-    {
-      "dimension": "hook_type",
-      "value": "number",
-      "n": 2,
-      "mean_engagement": 11.33,
-      "relative_delta": -0.51,
-      "label": "hook type=number -> -51% d'engagement"
-    },
-    {
-      "dimension": "hook_type",
-      "value": "statement",
-      "n": 3,
-      "mean_engagement": 30.63,
-      "relative_delta": 0.325,
-      "label": "hook type=statement -> +32% d'engagement"
-    }
-  ],
+  "patterns": [],
   "stats": {
     "n_samples": 11,
     "mean_engagement": 23.12,

@@ -4,24 +4,24 @@
   "joined": 1,
   "variants": {
     "A": {
-      "assigned": 20,
+      "assigned": 22,
       "measured": 0,
       "mean_engagement": null,
       "mean_views": null,
       "families": {
-        "statement": 7,
+        "statement": 8,
         "question": 9,
         "number": 3,
-        "negation": 1
+        "negation": 2
       }
     },
     "B": {
-      "assigned": 22,
+      "assigned": 20,
       "measured": 1,
       "mean_engagement": 61.9,
       "mean_views": 462,
       "families": {
-        "question": 10,
+        "question": 8,
         "number": 3,
         "negation": 2,
         "identity": 7
@@ -562,7 +562,7 @@
       "views": null
     },
     {
-      "ts": "2026-11-07T23:36:54",
+      "ts": "2026-11-07T23:44:52",
       "pair_id": "pair_20261107_0039",
       "topic": "quiz:science",
       "variant": "A",
@@ -576,47 +576,47 @@
       "views": null
     },
     {
-      "ts": "2026-11-07T23:37:25",
+      "ts": "2026-11-07T23:44:53",
       "pair_id": "pair_20261107_0040",
       "topic": "ONLY A GENIUS CAN SOLVE THESE RIDDLES 🧠✅ Brain Teasers & Riddle Quiz 🧩",
       "variant": "B",
       "hook": "3 ONLY GENIUS CAN SOLVE THESE facts they never teach you",
       "family": "number",
-      "family_other": "statement",
-      "hook_a": "Only a genius solves these riddles.",
+      "family_other": "negation",
+      "hook_a": "Nobody talks about ONLY A GENIUS CAN SOLVE THESE RIDDLES 🧠✅",
       "hook_b": "3 ONLY GENIUS CAN SOLVE THESE facts they never teach you",
-      "video_id": "aVpV9HBZw10",
+      "video_id": null,
       "engagement": null,
       "views": null
     },
     {
-      "ts": "2026-11-07T23:37:38",
+      "ts": "2026-11-07T23:44:54",
       "pair_id": "pair_20261107_0041",
       "topic": "Are You SMARTER Than a High School Student? 🎓 General Knowledge Quiz 🤔",
-      "variant": "B",
-      "hook": "Why does nobody explain Are You SMARTER Than High like this?",
-      "family": "question",
+      "variant": "A",
+      "hook": "Nobody talks about Are You SMARTER Than a High School",
+      "family": "negation",
       "family_other": "question",
-      "hook_a": "Only 1% Pass This Quiz!",
+      "hook_a": "Nobody talks about Are You SMARTER Than a High School",
       "hook_b": "Why does nobody explain Are You SMARTER Than High like this?",
       "video_id": null,
       "engagement": null,
       "views": null
     },
     {
-      "ts": "2026-11-07T23:37:55",
+      "ts": "2026-11-07T23:44:56",
       "pair_id": "pair_20261107_0042",
       "topic": "Detective Riddles Challenge: Further You Get, the Smarter You Are",
-      "variant": "B",
-      "hook": "Why does nobody explain Detective Riddles like this?",
-      "family": "question",
-      "family_other": "number",
-      "hook_a": "Only 1% solve these riddles.",
+      "variant": "A",
+      "hook": "The Riddler, a supervillain in DC Comics and an adversary",
+      "family": "statement",
+      "family_other": "statement",
+      "hook_a": "The Riddler, a supervillain in DC Comics and an adversary",
       "hook_b": "Why does nobody explain Detective Riddles like this?",
-      "video_id": null,
+      "video_id": "BUubckp4nX0",
       "engagement": null,
       "views": null
     }
   ],
-  "fetched": "2026-11-07T23:40:08"
+  "fetched": "2026-11-07T23:46:38"
 }

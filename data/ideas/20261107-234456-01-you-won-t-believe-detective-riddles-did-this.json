@@ -1,0 +1,62 @@
+{
+  "title": "You Won't Believe Detective Riddles Did This",
+  "hook": "The Riddler, a supervillain in DC Comics and an adversary",
+  "script": "The Riddler, a supervillain in DC Comics and an adversary of the superhero Batman, has been adapted into numerous forms of media, including feature films, television series, and video games.\nThat is not a guess – it is what the science actually says.\nThe character has been portrayed in live-action by Frank Gorshin and John Astin in the 1960s television series Batman, Jim Carrey in the 1995 film Batman Forever, Cory Michael Smith in the 2014 Fox series Gotham, and Paul Dano in the 2022 film The Batman.\nActors who have voiced the Riddler include John Glover in the DC Animated Universe, Robert Englund in The Batman, and Wally Wingert in the Batman: Arkham video games.\nAnd that is the real story of Detective Riddles Challenge: Further You Get, the Smarter You Are.",
+  "comment": "What should I cover next? Drop your idea in the comments!",
+  "description": "You Won't Believe Detective Riddles Did This\nThe real facts, in 30 seconds.\n#shorts #facts #didyouknow",
+  "tags": [
+    "shorts",
+    "Detective Riddles Challenge: Further You",
+    "facts",
+    "didyouknow",
+    "mind blowing"
+  ],
+  "duration_target": 13,
+  "duration_format": "short",
+  "density": 1,
+  "source_topic": "Detective Riddles Challenge: Further You Get, the Smarter You Are",
+  "generator": "fallback+wiki",
+  "score": 5655.5,
+  "pair_id": "pair_20261107_0042",
+  "hook_variant": "A",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "The Riddler, a supervillain in DC Comics and an adversary",
+      "family": "statement"
+    },
+    {
+      "variant": "B",
+      "hook": "Why does nobody explain Detective Riddles like this?",
+      "family": "question"
+    }
+  ],
+  "compliance": {
+    "mode": "block",
+    "ok": true,
+    "reasons": [],
+    "checked_at": "2026-11-07T23:44:56",
+    "originality": {
+      "max_jaccard": 0.2308,
+      "max_script_jaccard": 0.1681,
+      "worst_match_src": "20261027-200041-02-you-won-t-believe-the-most-amazing-things-did-this.json",
+      "threshold": 0.6,
+      "threshold_script": 0.65,
+      "corpus_size": 77
+    },
+    "fatigue": {
+      "hook_family": "statement",
+      "consecutive_same_family": 0,
+      "max_consecutive": 3,
+      "fatigued": false
+    },
+    "policy": {
+      "violations": []
+    },
+    "ai_disclosure": {
+      "contains_synthetic_media": false,
+      "configured": true
+    }
+  },
+  "id": "20261107-234456-01"
+}
