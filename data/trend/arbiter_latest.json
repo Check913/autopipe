@@ -1,113 +1,113 @@
 {
-  "fetched": "2026-11-07T23:46:38",
+  "fetched": "2026-11-08T00:19:40",
   "geo": "",
   "topics": [
     {
-      "query": "colorado vs arizona state",
-      "traffic": 1000.0,
-      "rise": 0.0,
-      "saturation_views": 6769.0,
-      "momentum": 0.0
+      "query": "oklahoma vs florida",
+      "traffic": 20000.0,
+      "rise": 10.0,
+      "saturation_views": 4075.0,
+      "momentum": 3.8297
     },
     {
-      "query": "la galaxy vs salt lake",
-      "traffic": 500.0,
-      "rise": 0.0,
-      "saturation_views": 285337.0,
-      "momentum": 0.0
-    },
-    {
-      "query": "fahey ohio state",
-      "traffic": 500.0,
-      "rise": 0.0,
-      "saturation_views": 29485.0,
-      "momentum": 0.0
-    },
-    {
-      "query": "unt football",
-      "traffic": 500.0,
-      "rise": 0.0,
-      "saturation_views": 192400.0,
-      "momentum": 0.0
-    },
-    {
-      "query": "lsu coach",
-      "traffic": 200.0,
-      "rise": 0.0,
-      "saturation_views": 264343.0,
-      "momentum": 0.0
-    },
-    {
-      "query": "louisville vs georgia tech",
-      "traffic": 200.0,
-      "rise": 0.0,
-      "saturation_views": 65869.0,
-      "momentum": 0.0
-    },
-    {
-      "query": "colorado vs dallas",
-      "traffic": 200.0,
-      "rise": 0.0,
-      "saturation_views": 448732.0,
-      "momentum": 0.0
-    },
-    {
-      "query": "nets vs hawks",
+      "query": "lsu schedule",
       "traffic": 5000.0,
-      "rise": 0.0,
-      "saturation_views": 955064.0,
-      "momentum": 0.0
+      "rise": 10.0,
+      "saturation_views": 71333.0,
+      "momentum": 2.5951
     },
     {
-      "query": "san jose vs minnesota",
+      "query": "toluca vs monterrey",
       "traffic": 200.0,
-      "rise": 0.0,
-      "saturation_views": 0.0,
-      "momentum": 0.0
+      "rise": 10.0,
+      "saturation_views": 161103.0,
+      "momentum": 2.3769
     },
     {
-      "query": "nor'easter",
+      "query": "svengoolie tonight",
       "traffic": 200.0,
-      "rise": 0.0,
-      "saturation_views": 458515.0,
-      "momentum": 0.0
+      "rise": 10.0,
+      "saturation_views": 193784.0,
+      "momentum": 2.3324
+    },
+    {
+      "query": "nebraska basketball",
+      "traffic": 2000.0,
+      "rise": 9.0,
+      "saturation_views": 109665.0,
+      "momentum": 2.2277
+    },
+    {
+      "query": "uc football",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 602683.0,
+      "momentum": 2.092
+    },
+    {
+      "query": "jeremiah smith",
+      "traffic": 5000.0,
+      "rise": 10.0,
+      "saturation_views": 1144341.0,
+      "momentum": 1.9768
+    },
+    {
+      "query": "miss state football",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 2405823.0,
+      "momentum": 1.8583
+    },
+    {
+      "query": "new movies on netflix",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 2723321.0,
+      "momentum": 1.8399
+    },
+    {
+      "query": "knicks vs cavaliers",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 7970941.0,
+      "momentum": 1.6945
     }
   ],
   "top": [
     {
-      "query": "colorado vs arizona state",
-      "traffic": 1000.0,
-      "rise": 0.0,
-      "saturation_views": 6769.0,
-      "momentum": 0.0
+      "query": "oklahoma vs florida",
+      "traffic": 20000.0,
+      "rise": 10.0,
+      "saturation_views": 4075.0,
+      "momentum": 3.8297
     },
     {
-      "query": "la galaxy vs salt lake",
-      "traffic": 500.0,
-      "rise": 0.0,
-      "saturation_views": 285337.0,
-      "momentum": 0.0
+      "query": "lsu schedule",
+      "traffic": 5000.0,
+      "rise": 10.0,
+      "saturation_views": 71333.0,
+      "momentum": 2.5951
     },
     {
-      "query": "fahey ohio state",
-      "traffic": 500.0,
-      "rise": 0.0,
-      "saturation_views": 29485.0,
-      "momentum": 0.0
-    },
-    {
-      "query": "unt football",
-      "traffic": 500.0,
-      "rise": 0.0,
-      "saturation_views": 192400.0,
-      "momentum": 0.0
-    },
-    {
-      "query": "lsu coach",
+      "query": "toluca vs monterrey",
       "traffic": 200.0,
-      "rise": 0.0,
-      "saturation_views": 264343.0,
-      "momentum": 0.0
+      "rise": 10.0,
+      "saturation_views": 161103.0,
+      "momentum": 2.3769
+    },
+    {
+      "query": "svengoolie tonight",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 193784.0,
+      "momentum": 2.3324
+    },
+    {
+      "query": "nebraska basketball",
+      "traffic": 2000.0,
+      "rise": 9.0,
+      "saturation_views": 109665.0,
+      "momentum": 2.2277
     }
   ]
 }

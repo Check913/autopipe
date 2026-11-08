@@ -1,28 +1,28 @@
 {
   "status": "ok",
-  "pairs": 42,
-  "joined": 1,
+  "pairs": 46,
+  "joined": 9,
   "variants": {
     "A": {
-      "assigned": 22,
-      "measured": 0,
-      "mean_engagement": null,
-      "mean_views": null,
+      "assigned": 25,
+      "measured": 4,
+      "mean_engagement": 73.2,
+      "mean_views": 536,
       "families": {
         "statement": 8,
-        "question": 9,
-        "number": 3,
-        "negation": 2
+        "question": 10,
+        "number": 4,
+        "negation": 3
       }
     },
     "B": {
-      "assigned": 20,
-      "measured": 1,
-      "mean_engagement": 61.9,
-      "mean_views": 462,
+      "assigned": 21,
+      "measured": 5,
+      "mean_engagement": 70.4,
+      "mean_views": 384,
       "families": {
         "question": 8,
-        "number": 3,
+        "number": 4,
         "negation": 2,
         "identity": 7
       }
@@ -334,8 +334,8 @@
       "hook_a": "Are you smarter than most people?",
       "hook_b": "Getting them all right means elite memory.",
       "video_id": "gEtui7O33o0",
-      "engagement": 61.9,
-      "views": 462
+      "engagement": 60.4,
+      "views": 598
     },
     {
       "ts": "2026-10-31T07:43:39",
@@ -348,8 +348,8 @@
       "hook_a": "Are you smarter than most people?",
       "hook_b": "Only top 1% brains get every single one right.",
       "video_id": "fNh2NGFifGQ",
-      "engagement": null,
-      "views": null
+      "engagement": 66.1,
+      "views": 457
     },
     {
       "ts": "2026-10-31T12:45:29",
@@ -362,8 +362,8 @@
       "hook_a": "How high can you score?",
       "hook_b": "Most adults cannot get all of these right.",
       "video_id": "cy3aSg9ujT4",
-      "engagement": null,
-      "views": null
+      "engagement": 66.7,
+      "views": 3
     },
     {
       "ts": "2026-10-31T15:51:21",
@@ -376,8 +376,8 @@
       "hook_a": "Are you smarter than most people?",
       "hook_b": "Most adults cannot get all of these right.",
       "video_id": "uBK8AeCn1LM",
-      "engagement": null,
-      "views": null
+      "engagement": 61.5,
+      "views": 1033
     },
     {
       "ts": "2026-10-31T16:15:53",
@@ -404,8 +404,8 @@
       "hook_a": "Are you smarter than most people?",
       "hook_b": "Only top 1% brains get every single one right.",
       "video_id": "fXzcJuL7tII",
-      "engagement": null,
-      "views": null
+      "engagement": 100.0,
+      "views": 1
     },
     {
       "ts": "2026-10-31T18:10:25",
@@ -418,8 +418,8 @@
       "hook_a": "Are you smarter than most people?",
       "hook_b": "If you miss three, you are officially average.",
       "video_id": "kzoLfpuh6lY",
-      "engagement": null,
-      "views": null
+      "engagement": 100.0,
+      "views": 1
     },
     {
       "ts": "2026-11-01T00:28:19",
@@ -446,8 +446,8 @@
       "hook_a": "How high can you score?",
       "hook_b": "Only top 1% brains get every single one right.",
       "video_id": "jVwLSsQx_iE",
-      "engagement": null,
-      "views": null
+      "engagement": 60.9,
+      "views": 64
     },
     {
       "ts": "2026-11-01T13:35:39",
@@ -474,8 +474,8 @@
       "hook_a": "Are you smarter than most people?",
       "hook_b": "If you miss three, you are officially average.",
       "video_id": "DEEnyERlFYg",
-      "engagement": null,
-      "views": null
+      "engagement": 64.1,
+      "views": 1252
     },
     {
       "ts": "2026-11-02T15:21:51",
@@ -488,8 +488,8 @@
       "hook_a": "Are you smarter than most people?",
       "hook_b": "Most adults cannot get all of these right.",
       "video_id": "4oBjYODEBaw",
-      "engagement": null,
-      "views": null
+      "engagement": 65.2,
+      "views": 655
     },
     {
       "ts": "2026-11-07T23:23:34",
@@ -616,7 +616,63 @@
       "video_id": "BUubckp4nX0",
       "engagement": null,
       "views": null
+    },
+    {
+      "ts": "2026-11-07T23:47:03",
+      "pair_id": "pair_20261107_0043",
+      "topic": "quiz:science",
+      "variant": "A",
+      "hook": "Are you smarter than most people?",
+      "family": "question",
+      "family_other": "identity",
+      "hook_a": "Are you smarter than most people?",
+      "hook_b": "Most adults cannot get all of these right.",
+      "video_id": null,
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-07T23:47:04",
+      "pair_id": "pair_20261107_0044",
+      "topic": "ONLY A GENIUS CAN SOLVE THESE RIDDLES 🧠✅ Brain Teasers & Riddle Quiz 🧩",
+      "variant": "B",
+      "hook": "3 ONLY GENIUS CAN SOLVE THESE facts they never teach you",
+      "family": "number",
+      "family_other": "negation",
+      "hook_a": "Nobody talks about ONLY A GENIUS CAN SOLVE THESE RIDDLES 🧠✅",
+      "hook_b": "3 ONLY GENIUS CAN SOLVE THESE facts they never teach you",
+      "video_id": null,
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-07T23:47:04",
+      "pair_id": "pair_20261107_0045",
+      "topic": "Are You SMARTER Than a High School Student? 🎓 General Knowledge Quiz 🤔",
+      "variant": "A",
+      "hook": "Nobody talks about Are You SMARTER Than a High School",
+      "family": "negation",
+      "family_other": "question",
+      "hook_a": "Nobody talks about Are You SMARTER Than a High School",
+      "hook_b": "Why does nobody explain Are You SMARTER Than High like this?",
+      "video_id": null,
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-07T23:47:05",
+      "pair_id": "pair_20261107_0046",
+      "topic": "20 mind-bending riddles that only highly intelligent people can solve… are you one of them? 😏🔥",
+      "variant": "A",
+      "hook": "Nobody talks about 20 mind-bending riddles that only highly",
+      "family": "number",
+      "family_other": "number",
+      "hook_a": "Nobody talks about 20 mind-bending riddles that only highly",
+      "hook_b": "Why does nobody explain 20 mind-bending riddles like this?",
+      "video_id": "mZE0LS3kLdQ",
+      "engagement": null,
+      "views": null
     }
   ],
-  "fetched": "2026-11-07T23:46:38"
+  "fetched": "2026-11-08T00:19:41"
 }

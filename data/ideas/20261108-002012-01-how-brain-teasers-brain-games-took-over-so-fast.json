@@ -1,0 +1,62 @@
+{
+  "title": "How Brain Teasers Brain Games Took Over So Fast",
+  "hook": "Brain is a 2021 edutainment party video game developed by",
+  "script": "Brain is a 2021 edutainment party video game developed by Nintendo EPD and published by Nintendo.\nThat is not a guess – it is what the science actually says.\nThe game released on December 3, 2021 for the Nintendo Switch.\nIt is the third entry in the Big Brain Academy series, following the release of Big Brain Academy (2005) and Big Brain Academy: Wii Degree (2007) over a decade later.\nAnd that is the real story of Brain Teasers | Brain Games.",
+  "comment": "Which part surprised you the most? Tell me below!",
+  "description": "How Brain Teasers Brain Games Took Over So Fast\nThe real facts, in 30 seconds.\n#shorts #facts #didyouknow",
+  "tags": [
+    "shorts",
+    "Brain Teasers | Brain Games",
+    "facts",
+    "didyouknow",
+    "mind blowing"
+  ],
+  "duration_target": 13,
+  "duration_format": "short",
+  "density": 1,
+  "source_topic": "Brain Teasers | Brain Games",
+  "generator": "fallback+wiki",
+  "score": 3858.8,
+  "pair_id": "pair_20261108_0049",
+  "hook_variant": "A",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "Brain is a 2021 edutainment party video game developed by",
+      "family": "number"
+    },
+    {
+      "variant": "B",
+      "hook": "Why does nobody explain Brain Teasers Brain Games like this?",
+      "family": "question"
+    }
+  ],
+  "compliance": {
+    "mode": "block",
+    "ok": true,
+    "reasons": [],
+    "checked_at": "2026-11-08T00:20:11",
+    "originality": {
+      "max_jaccard": 0.2174,
+      "max_script_jaccard": 0.2273,
+      "worst_match_src": "20261029-200205-02-how-killswitch-88thagang-true-took-over-so-fast.json",
+      "threshold": 0.6,
+      "threshold_script": 0.65,
+      "corpus_size": 83
+    },
+    "fatigue": {
+      "hook_family": "number",
+      "consecutive_same_family": 0,
+      "max_consecutive": 3,
+      "fatigued": false
+    },
+    "policy": {
+      "violations": []
+    },
+    "ai_disclosure": {
+      "contains_synthetic_media": false,
+      "configured": true
+    }
+  },
+  "id": "20261108-002012-01"
+}

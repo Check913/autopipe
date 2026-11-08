@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-07T23:46:49.669609",
+  "date": "2026-11-08T00:19:54.145514",
   "region": "US",
   "language": "en",
   "keywords": [
@@ -12,14 +12,14 @@
   ],
   "min_views": 500000,
   "max_duration": 90,
-  "total_found": 84,
-  "rejected": 74,
+  "total_found": 90,
+  "rejected": 80,
   "hits": [
     {
       "id": "3OuQ_bzpWZQ",
       "title": "1-Minute Countdown - Quiz Time - Suspense Music ⏱️",
       "channel": "SonarPlay",
-      "views": 39929,
+      "views": 39968,
       "duration": 61.0,
       "url": "https://www.youtube.com/watch?v=3OuQ_bzpWZQ",
       "query": "ytsearch10:quiz time #shorts"
@@ -40,7 +40,7 @@
       "views": 918,
       "duration": 71.0,
       "url": "https://www.youtube.com/watch?v=8GzHtEWXdI4",
-      "query": "ytsearch10:test your knowledge shorts"
+      "query": "ytsearch10:test your knowledge #shorts"
     },
     {
       "id": "aZbrvMznLE4",
@@ -52,13 +52,13 @@
       "query": "ytsearch10:test your knowledge shorts"
     },
     {
-      "id": "rHIs7aZDCyI",
-      "title": "Trivia Questions Part 8 YT #shorts #TriviaChallenge #FunFacts #QuizTime #TestYourKnowledge",
-      "channel": "Quirky Quizzes",
-      "views": 407,
-      "duration": 61.0,
-      "url": "https://www.youtube.com/watch?v=rHIs7aZDCyI",
-      "query": "ytsearch10:test your knowledge shorts"
+      "id": "uQ81h8Mjwcw",
+      "title": "General Knowledge Quiz – Human Body Quiz",
+      "channel": "GH Quiz ",
+      "views": 72,
+      "duration": 90.0,
+      "url": "https://www.youtube.com/watch?v=uQ81h8Mjwcw",
+      "query": "ytsearch10:general knowledge #shorts"
     }
   ]
 }

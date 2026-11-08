@@ -6,7 +6,7 @@
       "text": "Idiot Test - 90% fail",
       "norm": "idiot test - 90% fail",
       "wins": 0,
-      "losses": 0,
+      "losses": 1,
       "active": true,
       "source": "scrape",
       "created": "2026-11-01T21:09:05.813220+00:00"
@@ -17,7 +17,7 @@
       "text": "Common Sense Test That 90% of People Fail",
       "norm": "common sense test that 90% of people fail",
       "wins": 0,
-      "losses": 0,
+      "losses": 1,
       "active": true,
       "source": "scrape",
       "created": "2026-11-01T21:09:05.813240+00:00"
@@ -27,8 +27,8 @@
       "arm": "family:statement",
       "text": "Guess the WORD by Emojis? 🤔 Emoji Quiz",
       "norm": "guess the word by emojis? 🤔 emoji quiz",
-      "wins": 0,
-      "losses": 0,
+      "wins": 1,
+      "losses": 1,
       "active": true,
       "source": "scrape",
       "created": "2026-11-01T21:09:05.813253+00:00"
@@ -39,7 +39,7 @@
       "text": "13 Riddles That Will Test Your Brain Speed",
       "norm": "13 riddles that will test your brain speed",
       "wins": 0,
-      "losses": 0,
+      "losses": 1,
       "active": true,
       "source": "scrape",
       "created": "2026-11-01T21:09:05.813263+00:00"
@@ -49,8 +49,8 @@
       "arm": "family:question",
       "text": "IQ Test For Genius Only - How Smart Are You ?",
       "norm": "iq test for genius only - how smart are you ?",
-      "wins": 0,
-      "losses": 0,
+      "wins": 1,
+      "losses": 3,
       "active": true,
       "source": "scrape",
       "created": "2026-11-01T21:09:05.813273+00:00"
@@ -60,8 +60,8 @@
       "arm": "family:question",
       "text": "Can You Answer These How Much Do You Know About India? 🇮🇳 General Knowledge Quiz & Trivia?",
       "norm": "can you answer these how much do you know about india? 🇮🇳 general knowledge quiz & trivia?",
-      "wins": 0,
-      "losses": 0,
+      "wins": 1,
+      "losses": 3,
       "active": true,
       "source": "scrape",
       "created": "2026-11-01T21:09:05.813286+00:00"
@@ -72,7 +72,7 @@
       "text": "Guess The Sonic Hedgehog 3 Movie Characters by Voice ? 🎬🦔💙 fastQUIZ Channel 2026",
       "norm": "guess the sonic hedgehog 3 movie characters by voice ? 🎬🦔💙 fastquiz channel 2026",
       "wins": 0,
-      "losses": 0,
+      "losses": 1,
       "active": true,
       "source": "scrape",
       "created": "2026-11-01T21:09:05.813301+00:00"
@@ -83,7 +83,7 @@
       "text": "General Knowledge Trivia Quiz | 100 Questions Everyone Should Know! 🙂",
       "norm": "general knowledge trivia quiz | 100 questions everyone should know! 🙂",
       "wins": 0,
-      "losses": 0,
+      "losses": 1,
       "active": true,
       "source": "scrape",
       "created": "2026-11-01T21:09:05.813315+00:00"
@@ -93,8 +93,8 @@
       "arm": "family:statement",
       "text": "Guess the Countries by Their Flags | World Flags Quiz",
       "norm": "guess the countries by their flags | world flags quiz",
-      "wins": 0,
-      "losses": 0,
+      "wins": 1,
+      "losses": 1,
       "active": true,
       "source": "scrape",
       "created": "2026-11-01T21:09:05.813330+00:00"
@@ -104,8 +104,8 @@
       "arm": "family:question",
       "text": "Can You Answer These 🧠 Can You Pass This Human Body Quiz? 🧍💪🧬 General Knowledge Quiz?",
       "norm": "can you answer these 🧠 can you pass this human body quiz? 🧍💪🧬 general knowledge quiz?",
-      "wins": 0,
-      "losses": 0,
+      "wins": 1,
+      "losses": 3,
       "active": true,
       "source": "scrape",
       "created": "2026-11-01T21:09:05.813346+00:00"
@@ -115,8 +115,8 @@
       "arm": "family:question",
       "text": "Can You Answer These 🚩 Guess the COUNTRY by Emoji? 🌎 Emoji Quiz?",
       "norm": "can you answer these 🚩 guess the country by emoji? 🌎 emoji quiz?",
-      "wins": 0,
-      "losses": 0,
+      "wins": 1,
+      "losses": 3,
       "active": true,
       "source": "scrape",
       "created": "2026-11-07T23:23:08.833336+00:00"
@@ -126,8 +126,8 @@
       "arm": "family:statement",
       "text": "How Much Do You Know About India? 🇮🇳 General Knowledge Quiz & Trivia",
       "norm": "how much do you know about india? 🇮🇳 general knowledge quiz & trivia",
-      "wins": 0,
-      "losses": 0,
+      "wins": 1,
+      "losses": 1,
       "active": true,
       "source": "scrape",
       "created": "2026-11-07T23:23:08.833387+00:00"
@@ -137,8 +137,8 @@
       "arm": "family:question",
       "text": "Can You Answer These Guess the Game by Emoji?🎮🎲 Daily Quiz?",
       "norm": "can you answer these guess the game by emoji?🎮🎲 daily quiz?",
-      "wins": 0,
-      "losses": 0,
+      "wins": 1,
+      "losses": 3,
       "active": true,
       "source": "scrape",
       "created": "2026-11-07T23:23:08.833427+00:00"
@@ -148,12 +148,34 @@
       "arm": "family:statement",
       "text": "🧠 Can You Pass This Human Body Quiz? 🧍💪🧬 General Knowledge Quiz",
       "norm": "🧠 can you pass this human body quiz? 🧍💪🧬 general knowledge quiz",
-      "wins": 0,
-      "losses": 0,
+      "wins": 1,
+      "losses": 1,
       "active": true,
       "source": "scrape",
       "created": "2026-11-07T23:23:08.833499+00:00"
+    },
+    {
+      "id": "09911686e82d",
+      "arm": "family:question",
+      "text": "Are you smarter than most people?",
+      "norm": "are you smarter than most people?",
+      "wins": 1,
+      "losses": 1,
+      "active": true,
+      "source": "post_mortem",
+      "created": "2026-11-08T00:19:42.371227+00:00"
+    },
+    {
+      "id": "1b7be7c05116",
+      "arm": "family:statement",
+      "text": "If you miss three, you are officially average.",
+      "norm": "if you miss three, you are officially average.",
+      "wins": 1,
+      "losses": 1,
+      "active": true,
+      "source": "post_mortem",
+      "created": "2026-11-08T00:19:42.372735+00:00"
     }
   ],
-  "updated": "2026-11-07T23:46:38.872282+00:00"
+  "updated": "2026-11-08T00:19:42.377800+00:00"
 }

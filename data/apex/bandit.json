@@ -1,24 +1,24 @@
 {
   "arms": {
     "family:question": {
-      "alpha": 1.0,
-      "beta": 1.0,
-      "pulls": 0
+      "alpha": 3.928,
+      "beta": 2.072,
+      "pulls": 4
     },
     "family:number": {
-      "alpha": 1.0,
-      "beta": 1.0,
-      "pulls": 0
+      "alpha": 1.609,
+      "beta": 1.391,
+      "pulls": 1
     },
     "family:negation": {
-      "alpha": 1.0,
-      "beta": 1.0,
-      "pulls": 0
+      "alpha": 1.667,
+      "beta": 1.333,
+      "pulls": 1
     },
     "family:statement": {
-      "alpha": 1.619,
-      "beta": 1.381,
-      "pulls": 1
+      "alpha": 3.26,
+      "beta": 1.7400000000000002,
+      "pulls": 3
     },
     "format:short": {
       "alpha": 1.0,
@@ -26,9 +26,9 @@
       "pulls": 0
     },
     "format:long": {
-      "alpha": 1.619,
-      "beta": 1.381,
-      "pulls": 1
+      "alpha": 7.464,
+      "beta": 3.5359999999999996,
+      "pulls": 9
     },
     "quiz:on": {
       "alpha": 1.0,
@@ -36,10 +36,10 @@
       "pulls": 0
     },
     "quiz:off": {
-      "alpha": 1.619,
-      "beta": 1.381,
-      "pulls": 1
+      "alpha": 7.464,
+      "beta": 3.5359999999999996,
+      "pulls": 9
     }
   },
-  "updated": "2026-11-01T21:08:59.255835+00:00"
+  "updated": "2026-11-08T00:19:42.376657+00:00"
 }

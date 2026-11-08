@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-07T23:46:38+00:00",
+  "updated": "2026-11-08T00:19:41+00:00",
   "publisheds": {
     "PCyc1j7hQ1s": {
       "video_id": "PCyc1j7hQ1s",
@@ -282,12 +282,12 @@
       "pair_id": "pair_20261030_0022",
       "title": "9 Question Quiz. Can You Score 9/9?",
       "topic": "quiz:general",
-      "views": 462,
-      "engagedViews": 286,
-      "engaged_ratio": 61.9,
+      "views": 598,
+      "engagedViews": 361,
+      "engaged_ratio": 60.4,
       "engaged_source": "engagedViews",
-      "avg_view_pct": 46.1,
-      "engagement": 61.9
+      "avg_view_pct": 47.2,
+      "engagement": 60.4
     },
     "fNh2NGFifGQ": {
       "video_id": "fNh2NGFifGQ",
@@ -298,12 +298,12 @@
       "pair_id": "pair_20261031_0023",
       "title": "Can You Beat This 9 Question Quiz?",
       "topic": "quiz:science",
-      "views": null,
-      "engagedViews": null,
-      "engaged_ratio": null,
-      "engaged_source": null,
-      "avg_view_pct": null,
-      "engagement": null
+      "views": 457,
+      "engagedViews": 302,
+      "engaged_ratio": 66.1,
+      "engaged_source": "engagedViews",
+      "avg_view_pct": 57.1,
+      "engagement": 66.1
     },
     "cy3aSg9ujT4": {
       "video_id": "cy3aSg9ujT4",
@@ -314,12 +314,12 @@
       "pair_id": "pair_20261031_0024",
       "title": "Most People Fail This 9 Question Quiz",
       "topic": "quiz:movies",
-      "views": null,
-      "engagedViews": null,
-      "engaged_ratio": null,
-      "engaged_source": null,
-      "avg_view_pct": null,
-      "engagement": null
+      "views": 3,
+      "engagedViews": 2,
+      "engaged_ratio": 66.7,
+      "engaged_source": "engagedViews",
+      "avg_view_pct": 10.3,
+      "engagement": 66.7
     },
     "uBK8AeCn1LM": {
       "video_id": "uBK8AeCn1LM",
@@ -330,12 +330,12 @@
       "pair_id": "pair_20261031_0025",
       "title": "Only 1% Score 9/9 On This Quiz",
       "topic": "quiz:geography",
-      "views": null,
-      "engagedViews": null,
-      "engaged_ratio": null,
-      "engaged_source": null,
-      "avg_view_pct": null,
-      "engagement": null
+      "views": 1033,
+      "engagedViews": 635,
+      "engaged_ratio": 61.5,
+      "engaged_source": "engagedViews",
+      "avg_view_pct": 50.7,
+      "engagement": 61.5
     },
     "fXzcJuL7tII": {
       "video_id": "fXzcJuL7tII",
@@ -346,12 +346,12 @@
       "pair_id": "pair_20261031_0027",
       "title": "Test Yourself: 9 Questions, No Cheating",
       "topic": "quiz:science",
-      "views": null,
-      "engagedViews": null,
-      "engaged_ratio": null,
-      "engaged_source": null,
-      "avg_view_pct": null,
-      "engagement": null
+      "views": 1,
+      "engagedViews": 1,
+      "engaged_ratio": 100.0,
+      "engaged_source": "engagedViews",
+      "avg_view_pct": 6.8,
+      "engagement": 100.0
     },
     "kzoLfpuh6lY": {
       "video_id": "kzoLfpuh6lY",
@@ -362,12 +362,12 @@
       "pair_id": "pair_20261031_0028",
       "title": "This Quiz Looks Easy Until Question 4",
       "topic": "quiz:history",
-      "views": null,
-      "engagedViews": null,
-      "engaged_ratio": null,
-      "engaged_source": null,
-      "avg_view_pct": null,
-      "engagement": null
+      "views": 1,
+      "engagedViews": 1,
+      "engaged_ratio": 100.0,
+      "engaged_source": "engagedViews",
+      "avg_view_pct": 30.7,
+      "engagement": 100.0
     },
     "jVwLSsQx_iE": {
       "video_id": "jVwLSsQx_iE",
@@ -378,12 +378,12 @@
       "pair_id": "pair_20261101_0030",
       "title": "Question 4 Is Where Streaks End",
       "topic": "quiz:movies",
-      "views": null,
-      "engagedViews": null,
-      "engaged_ratio": null,
-      "engaged_source": null,
-      "avg_view_pct": null,
-      "engagement": null
+      "views": 64,
+      "engagedViews": 39,
+      "engaged_ratio": 60.9,
+      "engaged_source": "engagedViews",
+      "avg_view_pct": 43.1,
+      "engagement": 60.9
     },
     "o9pVmfwNbek": {
       "video_id": "o9pVmfwNbek",
@@ -410,12 +410,12 @@
       "pair_id": "pair_20261101_0032",
       "title": "You Have 3 Seconds Per Question. Start.",
       "topic": "quiz:general",
-      "views": null,
-      "engagedViews": null,
-      "engaged_ratio": null,
-      "engaged_source": null,
-      "avg_view_pct": null,
-      "engagement": null
+      "views": 1252,
+      "engagedViews": 803,
+      "engaged_ratio": 64.1,
+      "engaged_source": "engagedViews",
+      "avg_view_pct": 54.9,
+      "engagement": 64.1
     },
     "4oBjYODEBaw": {
       "video_id": "4oBjYODEBaw",
@@ -426,12 +426,12 @@
       "pair_id": "pair_20261102_0033",
       "title": "Pass 9 Questions. Prove Your IQ.",
       "topic": "quiz:general",
-      "views": null,
-      "engagedViews": null,
-      "engaged_ratio": null,
-      "engaged_source": null,
-      "avg_view_pct": null,
-      "engagement": null
+      "views": 655,
+      "engagedViews": 427,
+      "engaged_ratio": 65.2,
+      "engaged_source": "engagedViews",
+      "avg_view_pct": 45.3,
+      "engagement": 65.2
     },
     "BUubckp4nX0": {
       "video_id": "BUubckp4nX0",
@@ -448,7 +448,23 @@
       "engaged_source": null,
       "avg_view_pct": null,
       "engagement": null
+    },
+    "mZE0LS3kLdQ": {
+      "video_id": "mZE0LS3kLdQ",
+      "published_at": "2026-11-07T23:48:28.620450+00:00",
+      "hook": "Nobody talks about 20 mind-bending riddles that only highly",
+      "family": "number",
+      "hook_variant": "A",
+      "pair_id": "pair_20261107_0046",
+      "title": "You Won't Believe 20 mind-bending riddles Did This",
+      "topic": "20 mind-bending riddles that only highly intelligent people can solve… are you one of them? 😏🔥",
+      "views": null,
+      "engagedViews": null,
+      "engaged_ratio": null,
+      "engaged_source": null,
+      "avg_view_pct": null,
+      "engagement": null
     }
   },
-  "last_checked": "2026-11-07T23:46:38+00:00"
+  "last_checked": "2026-11-08T00:19:42+00:00"
 }
