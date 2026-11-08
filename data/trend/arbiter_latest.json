@@ -1,113 +1,113 @@
 {
-  "fetched": "2026-11-08T00:19:40",
+  "fetched": "2026-11-08T02:20:19",
   "geo": "",
   "topics": [
     {
-      "query": "oklahoma vs florida",
-      "traffic": 20000.0,
+      "query": "rob gronkowski",
+      "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 4075.0,
-      "momentum": 3.8297
+      "saturation_views": 118568.0,
+      "momentum": 2.4546
     },
     {
-      "query": "lsu schedule",
+      "query": "aday mara",
+      "traffic": 1000.0,
+      "rise": 10.0,
+      "saturation_views": 294962.0,
+      "momentum": 2.2372
+    },
+    {
+      "query": "derek carr",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 336447.0,
+      "momentum": 2.209
+    },
+    {
+      "query": "matthew schaefer",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 760574.0,
+      "momentum": 2.0487
+    },
+    {
+      "query": "north of north",
+      "traffic": 1000.0,
+      "rise": 10.0,
+      "saturation_views": 1487976.0,
+      "momentum": 1.9333
+    },
+    {
+      "query": "urban meyer",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 1659530.0,
+      "momentum": 1.9157
+    },
+    {
+      "query": "tristan thompson",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 2655930.0,
+      "momentum": 1.8436
+    },
+    {
+      "query": "trae young",
+      "traffic": 1000.0,
+      "rise": 10.0,
+      "saturation_views": 3398972.0,
+      "momentum": 1.8079
+    },
+    {
+      "query": "spurs vs trail blazers",
       "traffic": 5000.0,
       "rise": 10.0,
-      "saturation_views": 71333.0,
-      "momentum": 2.5951
+      "saturation_views": 5012397.0,
+      "momentum": 1.7544
     },
     {
-      "query": "toluca vs monterrey",
-      "traffic": 200.0,
+      "query": "chris hansen",
+      "traffic": 1000.0,
       "rise": 10.0,
-      "saturation_views": 161103.0,
-      "momentum": 2.3769
-    },
-    {
-      "query": "svengoolie tonight",
-      "traffic": 200.0,
-      "rise": 10.0,
-      "saturation_views": 193784.0,
-      "momentum": 2.3324
-    },
-    {
-      "query": "nebraska basketball",
-      "traffic": 2000.0,
-      "rise": 9.0,
-      "saturation_views": 109665.0,
-      "momentum": 2.2277
-    },
-    {
-      "query": "uc football",
-      "traffic": 500.0,
-      "rise": 10.0,
-      "saturation_views": 602683.0,
-      "momentum": 2.092
-    },
-    {
-      "query": "jeremiah smith",
-      "traffic": 5000.0,
-      "rise": 10.0,
-      "saturation_views": 1144341.0,
-      "momentum": 1.9768
-    },
-    {
-      "query": "miss state football",
-      "traffic": 500.0,
-      "rise": 10.0,
-      "saturation_views": 2405823.0,
-      "momentum": 1.8583
-    },
-    {
-      "query": "new movies on netflix",
-      "traffic": 200.0,
-      "rise": 10.0,
-      "saturation_views": 2723321.0,
-      "momentum": 1.8399
-    },
-    {
-      "query": "knicks vs cavaliers",
-      "traffic": 500.0,
-      "rise": 10.0,
-      "saturation_views": 7970941.0,
-      "momentum": 1.6945
+      "saturation_views": 11457077.0,
+      "momentum": 1.6504
     }
   ],
   "top": [
     {
-      "query": "oklahoma vs florida",
-      "traffic": 20000.0,
+      "query": "rob gronkowski",
+      "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 4075.0,
-      "momentum": 3.8297
+      "saturation_views": 118568.0,
+      "momentum": 2.4546
     },
     {
-      "query": "lsu schedule",
-      "traffic": 5000.0,
+      "query": "aday mara",
+      "traffic": 1000.0,
       "rise": 10.0,
-      "saturation_views": 71333.0,
-      "momentum": 2.5951
+      "saturation_views": 294962.0,
+      "momentum": 2.2372
     },
     {
-      "query": "toluca vs monterrey",
+      "query": "derek carr",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 336447.0,
+      "momentum": 2.209
+    },
+    {
+      "query": "matthew schaefer",
       "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 161103.0,
-      "momentum": 2.3769
+      "saturation_views": 760574.0,
+      "momentum": 2.0487
     },
     {
-      "query": "svengoolie tonight",
-      "traffic": 200.0,
+      "query": "north of north",
+      "traffic": 1000.0,
       "rise": 10.0,
-      "saturation_views": 193784.0,
-      "momentum": 2.3324
-    },
-    {
-      "query": "nebraska basketball",
-      "traffic": 2000.0,
-      "rise": 9.0,
-      "saturation_views": 109665.0,
-      "momentum": 2.2277
+      "saturation_views": 1487976.0,
+      "momentum": 1.9333
     }
   ]
 }

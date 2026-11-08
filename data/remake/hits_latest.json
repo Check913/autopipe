@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-08T00:19:54.145514",
+  "date": "2026-11-08T02:20:33.671962",
   "region": "US",
   "language": "en",
   "keywords": [
@@ -12,35 +12,45 @@
   ],
   "min_views": 500000,
   "max_duration": 90,
-  "total_found": 90,
-  "rejected": 80,
+  "total_found": 105,
+  "rejected": 95,
   "hits": [
     {
-      "id": "3OuQ_bzpWZQ",
-      "title": "1-Minute Countdown - Quiz Time - Suspense Music ⏱️",
-      "channel": "SonarPlay",
-      "views": 39968,
-      "duration": 61.0,
-      "url": "https://www.youtube.com/watch?v=3OuQ_bzpWZQ",
-      "query": "ytsearch10:quiz time #shorts"
+      "id": "JPYF2WVSMHU",
+      "title": "QUIZ Busca y Encuentra con Blui | ¿Encontrás las 3 en 10 segundos? | Los Amigurumis #quiz #shorts",
+      "channel": "Los Amigurumis",
+      "views": 24177,
+      "duration": 55.0,
+      "url": "https://www.youtube.com/watch?v=JPYF2WVSMHU",
+      "query": "radar:youtube",
+      "score": 604.3
     },
     {
-      "id": "q16JX5kT0Ls",
-      "title": "QUIZ Time with Intellipaat | Answer & Win Vouchers | Quiz - 2 | Intellipaat #Shorts",
-      "channel": "Intellipaat",
-      "views": 1704,
-      "duration": 31.0,
-      "url": "https://www.youtube.com/watch?v=q16JX5kT0Ls",
-      "query": "ytsearch10:quiz time #shorts"
+      "id": "SPZUYq_fUEY",
+      "title": "You Have 5 Seconds to Outsmart This Question 🤔 #braingames #brainteaser #vidyara",
+      "channel": "Vidyara",
+      "views": 14362,
+      "duration": 26.0,
+      "url": "https://www.youtube.com/watch?v=SPZUYq_fUEY",
+      "query": "ytsearch10:brain teaser #shorts"
     },
     {
-      "id": "8GzHtEWXdI4",
-      "title": "Quiz / Trivia - Test your knowledge #shorts #quiz #trivia #challenge",
-      "channel": "DY-VideoLand",
-      "views": 918,
-      "duration": 71.0,
-      "url": "https://www.youtube.com/watch?v=8GzHtEWXdI4",
-      "query": "ytsearch10:test your knowledge #shorts"
+      "id": "D_0U3l_HCmA",
+      "title": "✅ TEST YOUR KNOWLEDGE! - Short Mixed Trivia Quiz Questions #quiz #trivia #trivianight #learning",
+      "channel": "Brain Teaser Titans",
+      "views": 2481,
+      "duration": 80.0,
+      "url": "https://www.youtube.com/watch?v=D_0U3l_HCmA",
+      "query": "ytsearch10:test your knowledge shorts"
+    },
+    {
+      "id": "E1HbCSEZVWw",
+      "title": "General Knowledge#short#shortvideo #shorts #gkquiz  #trending #viralvideo",
+      "channel": "gk fact",
+      "views": 941,
+      "duration": 65.0,
+      "url": "https://www.youtube.com/watch?v=E1HbCSEZVWw",
+      "query": "ytsearch10:general knowledge shorts"
     },
     {
       "id": "aZbrvMznLE4",
@@ -50,15 +60,6 @@
       "duration": 71.0,
       "url": "https://www.youtube.com/watch?v=aZbrvMznLE4",
       "query": "ytsearch10:test your knowledge shorts"
-    },
-    {
-      "id": "uQ81h8Mjwcw",
-      "title": "General Knowledge Quiz – Human Body Quiz",
-      "channel": "GH Quiz ",
-      "views": 72,
-      "duration": 90.0,
-      "url": "https://www.youtube.com/watch?v=uQ81h8Mjwcw",
-      "query": "ytsearch10:general knowledge #shorts"
     }
   ]
 }

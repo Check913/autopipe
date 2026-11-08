@@ -1,0 +1,73 @@
+{
+  "title": "90% Fail This Common Sense Test. Can You?",
+  "hook": "Only 10% pass this common sense test.",
+  "script": "Only 10% pass this common sense test. Can you? Three questions, three seconds each. What goes in a toaster? What has an eye but cannot see? What gets wetter the more it dries? Did you make the cut? Only 10% pass this common sense test.",
+  "comment": "How many did you get right? Let us know!",
+  "description": "Test your common sense! Only 10% of people can pass this quick quiz. Challenge your brain with three rapid-fire questions and see if you're in the smart minority. #CommonSenseQuiz #BrainTeaser #QuizTime",
+  "tags": [
+    "quiz",
+    "trivia",
+    "common sense",
+    "brain test",
+    "challenge",
+    "knowledge",
+    "only 10 percent",
+    "mind games",
+    "test your IQ",
+    "fun quiz",
+    "quick quiz",
+    "scorenine"
+  ],
+  "density": 3,
+  "duration_format": "short",
+  "duration_target": 13,
+  "duration_range": [
+    12,
+    18
+  ],
+  "source_topic": "Common Sense Test That 90% of People Fail",
+  "generator": "llm:gemini-2.5-flash",
+  "score": 37005.6,
+  "pair_id": "pair_20261108_0048",
+  "hook_variant": "A",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "Only 10% pass this common sense test.",
+      "family": "number"
+    },
+    {
+      "variant": "B",
+      "hook": "Nobody warned you about Common Sense Test That 90%",
+      "family": "number"
+    }
+  ],
+  "compliance": {
+    "mode": "block",
+    "ok": true,
+    "reasons": [],
+    "checked_at": "2026-11-08T02:21:03",
+    "originality": {
+      "max_jaccard": 0.1579,
+      "max_script_jaccard": 0.1753,
+      "worst_match_src": "20261031-074352-01-can-you-beat-this-9-question-quiz.json",
+      "threshold": 0.6,
+      "threshold_script": 0.65,
+      "corpus_size": 83
+    },
+    "fatigue": {
+      "hook_family": "number",
+      "consecutive_same_family": 1,
+      "max_consecutive": 3,
+      "fatigued": false
+    },
+    "policy": {
+      "violations": []
+    },
+    "ai_disclosure": {
+      "contains_synthetic_media": false,
+      "configured": true
+    }
+  },
+  "id": "20261108-022105-01"
+}
