@@ -1,0 +1,62 @@
+{
+  "title": "You Won't Believe Trivia All-Stars vs Did This",
+  "hook": "100 is an American game show that was broadcast by NBC from",
+  "script": "100 is an American game show that was broadcast by NBC from 2006 to 2008 and revived on Game Show Network (GSN) with a new series, which ran from 2010 to 2011.\nThat is not a guess – it is what the science actually says.\nBased on the Dutch game show Eén tegen 100, the game features a single player competing against 100 other contestants in a trivia match, hence the show's title.\nThe One accumulates prize money based on how many Mob members they have eliminated from the game, but loses all winnings with an incorrect answer at any point.\nAnd that is the real story of Trivia All-Stars vs. Impossible Quiz.",
+  "comment": "Which part surprised you the most? Tell me below!",
+  "description": "You Won't Believe Trivia All-Stars vs Did This\nThe real facts, in 30 seconds.\n#shorts #facts #didyouknow",
+  "tags": [
+    "shorts",
+    "Trivia All-Stars vs. Impossible Quiz",
+    "facts",
+    "didyouknow",
+    "mind blowing"
+  ],
+  "duration_target": 13,
+  "duration_format": "short",
+  "density": 1,
+  "source_topic": "Trivia All-Stars vs. Impossible Quiz",
+  "generator": "fallback+wiki",
+  "score": 3531.2,
+  "pair_id": "pair_20261111_0059",
+  "hook_variant": "A",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "100 is an American game show that was broadcast by NBC from",
+      "family": "number"
+    },
+    {
+      "variant": "B",
+      "hook": "Why does nobody explain Trivia All-Stars vs like this?",
+      "family": "question"
+    }
+  ],
+  "compliance": {
+    "mode": "block",
+    "ok": true,
+    "reasons": [],
+    "checked_at": "2026-11-11T00:13:13",
+    "originality": {
+      "max_jaccard": 0.2333,
+      "max_script_jaccard": 0.1966,
+      "worst_match_src": "20261027-200041-02-you-won-t-believe-the-most-amazing-things-did-this.json",
+      "threshold": 0.6,
+      "threshold_script": 0.65,
+      "corpus_size": 87
+    },
+    "fatigue": {
+      "hook_family": "number",
+      "consecutive_same_family": 1,
+      "max_consecutive": 3,
+      "fatigued": false
+    },
+    "policy": {
+      "violations": []
+    },
+    "ai_disclosure": {
+      "contains_synthetic_media": false,
+      "configured": true
+    }
+  },
+  "id": "20261111-001313-01"
+}

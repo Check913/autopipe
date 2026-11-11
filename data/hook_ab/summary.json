@@ -1,29 +1,29 @@
 {
   "status": "ok",
-  "pairs": 50,
+  "pairs": 52,
   "joined": 9,
   "variants": {
     "A": {
-      "assigned": 29,
+      "assigned": 30,
       "measured": 4,
       "mean_engagement": 73.2,
       "mean_views": 536,
       "families": {
         "statement": 8,
-        "question": 11,
+        "question": 12,
         "number": 6,
         "negation": 4
       }
     },
     "B": {
-      "assigned": 21,
+      "assigned": 22,
       "measured": 5,
       "mean_engagement": 70.4,
       "mean_views": 383,
       "families": {
         "question": 8,
         "number": 4,
-        "negation": 2,
+        "negation": 3,
         "identity": 7
       }
     }
@@ -728,7 +728,35 @@
       "video_id": null,
       "engagement": null,
       "views": null
+    },
+    {
+      "ts": "2026-11-10T23:58:23",
+      "pair_id": "pair_20261110_0051",
+      "topic": "Cognitive trick/brain teaser",
+      "variant": "A",
+      "hook": "Why does Cognitive trick/brain teaser break every rule?",
+      "family": "question",
+      "family_other": "number",
+      "hook_a": "Why does Cognitive trick/brain teaser break every rule?",
+      "hook_b": "3 Cognitive trick/brain teaser facts they never teach you",
+      "video_id": "DXTbQ9natE0",
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-10T23:59:04",
+      "pair_id": "pair_20261110_0052",
+      "topic": "Quick math/logic puzzle for engagement.",
+      "variant": "B",
+      "hook": "Nobody warned you about Quick math/logic puzzle for",
+      "family": "negation",
+      "family_other": "number",
+      "hook_a": "Only 7% Pass This Logic Quiz.",
+      "hook_b": "Nobody warned you about Quick math/logic puzzle for",
+      "video_id": null,
+      "engagement": null,
+      "views": null
     }
   ],
-  "fetched": "2026-11-10T23:57:09"
+  "fetched": "2026-11-11T00:08:35"
 }

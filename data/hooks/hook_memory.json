@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-10T23:57:10+00:00",
+  "updated": "2026-11-11T00:08:35+00:00",
   "publisheds": {
     "PCyc1j7hQ1s": {
       "video_id": "PCyc1j7hQ1s",
@@ -464,7 +464,23 @@
       "engaged_source": null,
       "avg_view_pct": null,
       "engagement": null
+    },
+    "DXTbQ9natE0": {
+      "video_id": "DXTbQ9natE0",
+      "published_at": "2026-11-11T00:00:34.431702+00:00",
+      "hook": "Why does Cognitive trick/brain teaser break every rule?",
+      "family": "question",
+      "hook_variant": "A",
+      "pair_id": "pair_20261110_0051",
+      "title": "How What Really Happens With Took Over So Fast",
+      "topic": "Cognitive trick/brain teaser",
+      "views": null,
+      "engagedViews": null,
+      "engaged_ratio": null,
+      "engaged_source": null,
+      "avg_view_pct": null,
+      "engagement": null
     }
   },
-  "last_checked": "2026-11-10T23:57:11+00:00"
+  "last_checked": "2026-11-11T00:08:35+00:00"
 }

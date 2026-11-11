@@ -1,113 +1,113 @@
 {
-  "fetched": "2026-11-10T23:56:50",
+  "fetched": "2026-11-11T00:08:35",
   "geo": "",
   "topics": [
     {
-      "query": "rick van vactor",
+      "query": "unc basketball schedule",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 14305.0,
+      "momentum": 3.1688
+    },
+    {
+      "query": "bronson reed",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 1594964.0,
+      "momentum": 1.9221
+    },
+    {
+      "query": "cfp selection show",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 7719.0,
-      "momentum": 3.4625
+      "saturation_views": 1775440.0,
+      "momentum": 1.905
     },
     {
       "query": "rutgers basketball",
-      "traffic": 200.0,
-      "rise": 10.0,
-      "saturation_views": 11806.0,
-      "momentum": 3.2547
-    },
-    {
-      "query": "western michigan football",
       "traffic": 500.0,
-      "rise": 10.0,
-      "saturation_views": 15228.0,
-      "momentum": 3.1418
+      "rise": 1.5,
+      "saturation_views": 8093.0,
+      "momentum": 0.5157
     },
     {
-      "query": "iowa basketball",
-      "traffic": 500.0,
-      "rise": 10.0,
-      "saturation_views": 16505.0,
-      "momentum": 3.1076
-    },
-    {
-      "query": "duke basketball",
-      "traffic": 5000.0,
-      "rise": 10.0,
-      "saturation_views": 22950.0,
-      "momentum": 2.9753
+      "query": "panthers vs blue jackets",
+      "traffic": 2000.0,
+      "rise": 1.0,
+      "saturation_views": 70076.0,
+      "momentum": 0.26
     },
     {
       "query": "illinois basketball",
       "traffic": 2000.0,
-      "rise": 10.0,
-      "saturation_views": 25859.0,
-      "momentum": 2.9302
-    },
-    {
-      "query": "panthers vs blue jackets",
-      "traffic": 1000.0,
-      "rise": 10.0,
-      "saturation_views": 70103.0,
-      "momentum": 2.6002
-    },
-    {
-      "query": "bucks vs knicks",
-      "traffic": 20000.0,
-      "rise": 10.0,
-      "saturation_views": 290496.0,
-      "momentum": 2.2406
-    },
-    {
-      "query": "steven tyler",
-      "traffic": 500.0,
-      "rise": 10.0,
-      "saturation_views": 179184712.0,
-      "momentum": 1.3787
-    },
-    {
-      "query": "drummer",
-      "traffic": 500.0,
-      "rise": 10.0,
-      "saturation_views": 316717914.0,
-      "momentum": 1.3332
-    }
-  ],
-  "top": [
-    {
-      "query": "rick van vactor",
-      "traffic": 500.0,
-      "rise": 10.0,
-      "saturation_views": 7719.0,
-      "momentum": 3.4625
-    },
-    {
-      "query": "rutgers basketball",
-      "traffic": 200.0,
-      "rise": 10.0,
-      "saturation_views": 11806.0,
-      "momentum": 3.2547
+      "rise": 0.0,
+      "saturation_views": 56958.0,
+      "momentum": 0.0
     },
     {
       "query": "western michigan football",
       "traffic": 500.0,
-      "rise": 10.0,
-      "saturation_views": 15228.0,
-      "momentum": 3.1418
+      "rise": 0.0,
+      "saturation_views": 15642.0,
+      "momentum": 0.0
     },
     {
-      "query": "iowa basketball",
+      "query": "steven tyler",
       "traffic": 500.0,
-      "rise": 10.0,
-      "saturation_views": 16505.0,
-      "momentum": 3.1076
+      "rise": 0.0,
+      "saturation_views": 178930161.0,
+      "momentum": 0.0
+    },
+    {
+      "query": "bucks vs knicks",
+      "traffic": 20000.0,
+      "rise": 0.0,
+      "saturation_views": 265420.0,
+      "momentum": 0.0
     },
     {
       "query": "duke basketball",
       "traffic": 5000.0,
+      "rise": 0.0,
+      "saturation_views": 23257.0,
+      "momentum": 0.0
+    }
+  ],
+  "top": [
+    {
+      "query": "unc basketball schedule",
+      "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 22950.0,
-      "momentum": 2.9753
+      "saturation_views": 14305.0,
+      "momentum": 3.1688
+    },
+    {
+      "query": "bronson reed",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 1594964.0,
+      "momentum": 1.9221
+    },
+    {
+      "query": "cfp selection show",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 1775440.0,
+      "momentum": 1.905
+    },
+    {
+      "query": "rutgers basketball",
+      "traffic": 500.0,
+      "rise": 1.5,
+      "saturation_views": 8093.0,
+      "momentum": 0.5157
+    },
+    {
+      "query": "panthers vs blue jackets",
+      "traffic": 2000.0,
+      "rise": 1.0,
+      "saturation_views": 70076.0,
+      "momentum": 0.26
     }
   ]
 }
