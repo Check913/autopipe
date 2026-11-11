@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-11T00:08:48.255154",
+  "date": "2026-11-11T05:41:46.045387",
   "region": "US",
   "language": "en",
   "keywords": [
@@ -12,18 +12,18 @@
   ],
   "min_views": 500000,
   "max_duration": 90,
-  "total_found": 87,
-  "rejected": 77,
+  "total_found": 83,
+  "rejected": 73,
   "hits": [
     {
       "id": "JPYF2WVSMHU",
       "title": "QUIZ Busca y Encuentra con Blui | ¿Encontrás las 3 en 10 segundos? | Los Amigurumis #quiz #shorts",
       "channel": "Los Amigurumis",
-      "views": 94353,
+      "views": 109234,
       "duration": 55.0,
       "url": "https://www.youtube.com/watch?v=JPYF2WVSMHU",
       "query": "radar:youtube",
-      "score": 943.5
+      "score": 728.2
     },
     {
       "id": "q16JX5kT0Ls",

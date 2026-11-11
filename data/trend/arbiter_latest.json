@@ -1,113 +1,113 @@
 {
-  "fetched": "2026-11-11T00:08:35",
+  "fetched": "2026-11-11T05:41:36",
   "geo": "",
   "topics": [
     {
-      "query": "unc basketball schedule",
+      "query": "department of justice immigrant release lawsuits",
       "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 14305.0,
-      "momentum": 3.1688
+      "saturation_views": 54958.0,
+      "momentum": 2.6737
     },
     {
-      "query": "bronson reed",
+      "query": "charlize theron",
       "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 1594964.0,
-      "momentum": 1.9221
+      "saturation_views": 102686.0,
+      "momentum": 2.4928
     },
     {
-      "query": "cfp selection show",
+      "query": "precious achiuwa",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 121841.0,
+      "momentum": 2.4475
+    },
+    {
+      "query": "bennett stirtz",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 131728.0,
+      "momentum": 2.4274
+    },
+    {
+      "query": "franz wagner",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 1775440.0,
-      "momentum": 1.905
+      "saturation_views": 137850.0,
+      "momentum": 2.4158
     },
     {
-      "query": "rutgers basketball",
+      "query": "donovan mitchell",
       "traffic": 500.0,
-      "rise": 1.5,
-      "saturation_views": 8093.0,
-      "momentum": 0.5157
+      "rise": 10.0,
+      "saturation_views": 210203.0,
+      "momentum": 2.3134
     },
     {
-      "query": "panthers vs blue jackets",
+      "query": "united hijacking",
       "traffic": 2000.0,
-      "rise": 1.0,
-      "saturation_views": 70076.0,
-      "momentum": 0.26
+      "rise": 10.0,
+      "saturation_views": 457622.0,
+      "momentum": 2.1457
     },
     {
-      "query": "illinois basketball",
-      "traffic": 2000.0,
-      "rise": 0.0,
-      "saturation_views": 56958.0,
-      "momentum": 0.0
+      "query": "higgsfield",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 606219.0,
+      "momentum": 2.0909
     },
     {
-      "query": "western michigan football",
-      "traffic": 500.0,
-      "rise": 0.0,
-      "saturation_views": 15642.0,
-      "momentum": 0.0
+      "query": "madden movie",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 10171281.0,
+      "momentum": 1.6646
     },
     {
-      "query": "steven tyler",
-      "traffic": 500.0,
-      "rise": 0.0,
-      "saturation_views": 178930161.0,
-      "momentum": 0.0
-    },
-    {
-      "query": "bucks vs knicks",
-      "traffic": 20000.0,
-      "rise": 0.0,
-      "saturation_views": 265420.0,
-      "momentum": 0.0
-    },
-    {
-      "query": "duke basketball",
-      "traffic": 5000.0,
-      "rise": 0.0,
-      "saturation_views": 23257.0,
-      "momentum": 0.0
+      "query": "joseph zada",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 18351602.0,
+      "momentum": 1.5965
     }
   ],
   "top": [
     {
-      "query": "unc basketball schedule",
+      "query": "department of justice immigrant release lawsuits",
       "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 14305.0,
-      "momentum": 3.1688
+      "saturation_views": 54958.0,
+      "momentum": 2.6737
     },
     {
-      "query": "bronson reed",
+      "query": "charlize theron",
       "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 1594964.0,
-      "momentum": 1.9221
+      "saturation_views": 102686.0,
+      "momentum": 2.4928
     },
     {
-      "query": "cfp selection show",
+      "query": "precious achiuwa",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 121841.0,
+      "momentum": 2.4475
+    },
+    {
+      "query": "bennett stirtz",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 131728.0,
+      "momentum": 2.4274
+    },
+    {
+      "query": "franz wagner",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 1775440.0,
-      "momentum": 1.905
-    },
-    {
-      "query": "rutgers basketball",
-      "traffic": 500.0,
-      "rise": 1.5,
-      "saturation_views": 8093.0,
-      "momentum": 0.5157
-    },
-    {
-      "query": "panthers vs blue jackets",
-      "traffic": 2000.0,
-      "rise": 1.0,
-      "saturation_views": 70076.0,
-      "momentum": 0.26
+      "saturation_views": 137850.0,
+      "momentum": 2.4158
     }
   ]
 }

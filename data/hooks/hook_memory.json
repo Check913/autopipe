@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-11T00:08:35+00:00",
+  "updated": "2026-11-11T05:41:36+00:00",
   "publisheds": {
     "PCyc1j7hQ1s": {
       "video_id": "PCyc1j7hQ1s",
@@ -480,7 +480,23 @@
       "engaged_source": null,
       "avg_view_pct": null,
       "engagement": null
+    },
+    "0hAve-MUuww": {
+      "video_id": "0hAve-MUuww",
+      "published_at": "2026-11-11T00:14:28.739686+00:00",
+      "hook": "100 is an American game show that was broadcast by NBC from",
+      "family": "number",
+      "hook_variant": "A",
+      "pair_id": "pair_20261111_0059",
+      "title": "You Won't Believe Trivia All-Stars vs Did This",
+      "topic": "Trivia All-Stars vs. Impossible Quiz",
+      "views": null,
+      "engagedViews": null,
+      "engaged_ratio": null,
+      "engaged_source": null,
+      "avg_view_pct": null,
+      "engagement": null
     }
   },
-  "last_checked": "2026-11-11T00:08:35+00:00"
+  "last_checked": "2026-11-11T05:41:36+00:00"
 }

@@ -1,30 +1,30 @@
 {
   "status": "ok",
-  "pairs": 52,
+  "pairs": 59,
   "joined": 9,
   "variants": {
     "A": {
-      "assigned": 30,
+      "assigned": 35,
       "measured": 4,
       "mean_engagement": 73.2,
       "mean_views": 536,
       "families": {
         "statement": 8,
-        "question": 12,
-        "number": 6,
-        "negation": 4
+        "question": 14,
+        "number": 8,
+        "negation": 5
       }
     },
     "B": {
-      "assigned": 22,
+      "assigned": 24,
       "measured": 5,
       "mean_engagement": 70.4,
       "mean_views": 383,
       "families": {
         "question": 8,
-        "number": 4,
+        "number": 5,
         "negation": 3,
-        "identity": 7
+        "identity": 8
       }
     }
   },
@@ -756,7 +756,105 @@
       "video_id": null,
       "engagement": null,
       "views": null
+    },
+    {
+      "ts": "2026-11-11T00:09:58",
+      "pair_id": "pair_20261111_0053",
+      "topic": "utf8, toffsetms, ddurationms",
+      "variant": "A",
+      "hook": "Why does utf8, toffsetms, ddurationms break every rule?",
+      "family": "question",
+      "family_other": "number",
+      "hook_a": "Why does utf8, toffsetms, ddurationms break every rule?",
+      "hook_b": "3 Utf8, toffsetms, ddurationms facts they never teach you",
+      "video_id": null,
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-11T00:10:57",
+      "pair_id": "pair_20261111_0054",
+      "topic": "utf8, toffsetms, tstartms",
+      "variant": "B",
+      "hook": "3 Utf8, toffsetms, tstartms facts they never teach you",
+      "family": "number",
+      "family_other": "question",
+      "hook_a": "Why does utf8, toffsetms, tstartms break every rule?",
+      "hook_b": "3 Utf8, toffsetms, tstartms facts they never teach you",
+      "video_id": null,
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-11T00:11:48",
+      "pair_id": "pair_20261111_0055",
+      "topic": "utf8, tstartms, toffsetms",
+      "variant": "A",
+      "hook": "Why does utf8, tstartms, toffsetms break every rule?",
+      "family": "question",
+      "family_other": "number",
+      "hook_a": "Why does utf8, tstartms, toffsetms break every rule?",
+      "hook_b": "3 Utf8, tstartms, toffsetms facts they never teach you",
+      "video_id": null,
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-11T00:11:57",
+      "pair_id": "pair_20261111_0056",
+      "topic": "quiz:history",
+      "variant": "B",
+      "hook": "Only top 1% brains get every single one right.",
+      "family": "identity",
+      "family_other": "question",
+      "hook_a": "Are you smarter than most people?",
+      "hook_b": "Only top 1% brains get every single one right.",
+      "video_id": null,
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-11T00:12:33",
+      "pair_id": "pair_20261111_0057",
+      "topic": "🧠 How Good Is Your Knowledge of ANIMALS? 🦁🐘✅ 50 Animals Knowledge Trivia Quiz",
+      "variant": "A",
+      "hook": "Nobody talks about 🧠 How Good Is Your Knowledge of ANIMALS",
+      "family": "negation",
+      "family_other": "number",
+      "hook_a": "Nobody talks about 🧠 How Good Is Your Knowledge of ANIMALS",
+      "hook_b": "3 How Good Is Your Knowledge facts they never teach you",
+      "video_id": null,
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-11T00:12:54",
+      "pair_id": "pair_20261111_0058",
+      "topic": "Are You SMARTER Than a 5th Grader? 📚🤓🧠 | General Knowledge Quiz",
+      "variant": "A",
+      "hook": "Nobody talks about Are You SMARTER Than a 5th Grader? 📚🤓🧠 |",
+      "family": "number",
+      "family_other": "number",
+      "hook_a": "Nobody talks about Are You SMARTER Than a 5th Grader? 📚🤓🧠 |",
+      "hook_b": "Why does nobody explain Are You SMARTER Than 5th like this?",
+      "video_id": null,
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-11T00:13:13",
+      "pair_id": "pair_20261111_0059",
+      "topic": "Trivia All-Stars vs. Impossible Quiz",
+      "variant": "A",
+      "hook": "100 is an American game show that was broadcast by NBC from",
+      "family": "number",
+      "family_other": "question",
+      "hook_a": "100 is an American game show that was broadcast by NBC from",
+      "hook_b": "Why does nobody explain Trivia All-Stars vs like this?",
+      "video_id": "0hAve-MUuww",
+      "engagement": null,
+      "views": null
     }
   ],
-  "fetched": "2026-11-11T00:08:35"
+  "fetched": "2026-11-11T05:41:36"
 }

@@ -3686,5 +3686,135 @@
         500.0
       ]
     ]
+  },
+  "donovan mitchell": {
+    "traffic": 500.0,
+    "first_seen": "2026-11-11T05:41:28",
+    "last_seen": "2026-11-11T05:41:28",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-11T05:41:28",
+        500.0
+      ]
+    ]
+  },
+  "bennett stirtz": {
+    "traffic": 200.0,
+    "first_seen": "2026-11-11T05:41:28",
+    "last_seen": "2026-11-11T05:41:28",
+    "delta": 200.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-11T05:41:28",
+        200.0
+      ]
+    ]
+  },
+  "precious achiuwa": {
+    "traffic": 200.0,
+    "first_seen": "2026-11-11T05:41:28",
+    "last_seen": "2026-11-11T05:41:28",
+    "delta": 200.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-11T05:41:28",
+        200.0
+      ]
+    ]
+  },
+  "joseph zada": {
+    "traffic": 200.0,
+    "first_seen": "2026-11-11T05:41:28",
+    "last_seen": "2026-11-11T05:41:28",
+    "delta": 200.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-11T05:41:28",
+        200.0
+      ]
+    ]
+  },
+  "franz wagner": {
+    "traffic": 500.0,
+    "first_seen": "2026-11-11T05:41:28",
+    "last_seen": "2026-11-11T05:41:28",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-11T05:41:28",
+        500.0
+      ]
+    ]
+  },
+  "united hijacking": {
+    "traffic": 2000.0,
+    "first_seen": "2026-11-11T05:41:28",
+    "last_seen": "2026-11-11T05:41:28",
+    "delta": 2000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-11T05:41:28",
+        2000.0
+      ]
+    ]
+  },
+  "charlize theron": {
+    "traffic": 200.0,
+    "first_seen": "2026-11-11T05:41:28",
+    "last_seen": "2026-11-11T05:41:28",
+    "delta": 200.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-11T05:41:28",
+        200.0
+      ]
+    ]
+  },
+  "department of justice immigrant release lawsuits": {
+    "traffic": 200.0,
+    "first_seen": "2026-11-11T05:41:28",
+    "last_seen": "2026-11-11T05:41:28",
+    "delta": 200.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-11T05:41:28",
+        200.0
+      ]
+    ]
+  },
+  "higgsfield": {
+    "traffic": 200.0,
+    "first_seen": "2026-11-11T05:41:28",
+    "last_seen": "2026-11-11T05:41:28",
+    "delta": 200.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-11T05:41:28",
+        200.0
+      ]
+    ]
+  },
+  "madden movie": {
+    "traffic": 200.0,
+    "first_seen": "2026-11-11T05:41:28",
+    "last_seen": "2026-11-11T05:41:28",
+    "delta": 200.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-11T05:41:28",
+        200.0
+      ]
+    ]
   }
 }

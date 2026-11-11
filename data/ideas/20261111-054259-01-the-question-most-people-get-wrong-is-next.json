@@ -1,0 +1,201 @@
+{
+  "topic": "quiz",
+  "source_topic": "quiz:history",
+  "title": "The Question Most People Get Wrong Is Next",
+  "hook": "Are you smarter than most people?",
+  "density": 4,
+  "duration_format": "long",
+  "duration_target": 80,
+  "duration_range": [
+    74,
+    88
+  ],
+  "script": "Are you smarter than most people?\nQuestion 1: Which movie features a character named 'Neo'?\nLock in your answer: Three. Two. One.\nThe answer is A: The Matrix.\nQuestion 2: Which of these is not a primary color of light?\nLock in your answer: Three. Two. One.\nThe answer is D: Yellow.\nQuestion 3: Who directed the critically acclaimed film 'Pulp Fiction'?\nLock in your answer: Three. Two. One.\nThe answer is B: Quentin Tarantino.\nIf you got the first three right, like the video right now.\nQuestion 4: How many planets are currently recognized in our solar system?\nLock in your answer: Three. Two. One.\nThe answer is B: 8.\nQuestion 5: Which US state is the largest by land area?\nLock in your answer: Three. Two. One.\nThe answer is B: Alaska.\nScore check: comment SHARP if you are still perfect, RUSTY if you already missed one.\nQuestion 6: Which planet has the shortest day?\nLock in your answer: Three. Two. One.\nThe answer is C: Jupiter.\nQuestion 7: What color is a polar bear's skin?\nLock in your answer: Three. Two. One.\nThe answer is C: Black.\nAre you ready for the last question?\nDon't forget to follow and comment your score to be on the weekly leaderboard of the top performers.\nQuestion 8: Which country invented tea?\nLock in your answer: Three. Two. One.\nThe answer is D: China.\nQuestion 9: How many hearts does an octopus have?\nLock in your answer: Three. Two. One.\nThe answer is C: Three.\nBonus: double or nothing - keep your score in your head and beat it on the next quiz.\nComment your score out of 9, and follow for a new quiz every day.",
+  "generator": "quiz:llm",
+  "quiz": {
+    "enabled": true,
+    "rounds": 9,
+    "countdown_s": 3,
+    "cards": true,
+    "items": [
+      {
+        "question": "Which movie features a character named 'Neo'?",
+        "options": [
+          "The Matrix",
+          "Inception",
+          "Blade Runner",
+          "Star Wars"
+        ],
+        "answer_index": 0,
+        "explanation": "Neo is the protagonist in The Matrix, famously played by Keanu Reeves.",
+        "category": "general"
+      },
+      {
+        "question": "Which of these is not a primary color of light?",
+        "options": [
+          "Red",
+          "Green",
+          "Blue",
+          "Yellow"
+        ],
+        "answer_index": 3,
+        "explanation": "The primary colors of light are Red, Green, and Blue (RGB), which combine to create white light.",
+        "category": "general"
+      },
+      {
+        "question": "Who directed the critically acclaimed film 'Pulp Fiction'?",
+        "options": [
+          "Martin Scorsese",
+          "Quentin Tarantino",
+          "Steven Spielberg",
+          "Christopher Nolan"
+        ],
+        "answer_index": 1,
+        "explanation": "Quentin Tarantino is renowned for his distinct directorial style, prominently featured in 'Pulp Fiction'.",
+        "category": "general"
+      },
+      {
+        "question": "How many planets are currently recognized in our solar system?",
+        "options": [
+          "7",
+          "8",
+          "9",
+          "10"
+        ],
+        "answer_index": 1,
+        "explanation": "Our solar system has eight recognized planets, excluding dwarf planets like Pluto.",
+        "category": "general"
+      },
+      {
+        "question": "Which US state is the largest by land area?",
+        "options": [
+          "Texas",
+          "Alaska",
+          "California",
+          "Montana"
+        ],
+        "answer_index": 1,
+        "explanation": "Alaska is more than twice the size of Texas.",
+        "category": "geography"
+      },
+      {
+        "question": "Which planet has the shortest day?",
+        "options": [
+          "Mercury",
+          "Venus",
+          "Jupiter",
+          "Mars"
+        ],
+        "answer_index": 2,
+        "explanation": "Jupiter spins once in under ten hours.",
+        "category": "science"
+      },
+      {
+        "question": "What color is a polar bear's skin?",
+        "options": [
+          "White",
+          "Pink",
+          "Black",
+          "Gray"
+        ],
+        "answer_index": 2,
+        "explanation": "Black skin absorbs heat under the white fur.",
+        "category": "science"
+      },
+      {
+        "question": "Which country invented tea?",
+        "options": [
+          "India",
+          "Japan",
+          "England",
+          "China"
+        ],
+        "answer_index": 3,
+        "explanation": "Tea was first brewed in ancient China.",
+        "category": "history"
+      },
+      {
+        "question": "How many hearts does an octopus have?",
+        "options": [
+          "One",
+          "Two",
+          "Three",
+          "Four"
+        ],
+        "answer_index": 2,
+        "explanation": "Two pump blood to the gills, one to the body.",
+        "category": "science"
+      }
+    ]
+  },
+  "comment": "Score check: how many did you get right out of 9? Comment your score and which question tricked you.",
+  "description": "Quick history quiz: 9 questions, 3 seconds each.\nScore check: how many did you get out of 9? 0 is a valid answer.\nPlay along, beat your friends, and come back tomorrow: a new quiz every day.\n\n#quiz #trivia #quiztime #generalknowledge #shorts",
+  "tags": [
+    "quiz",
+    "trivia",
+    "quiz time",
+    "quiz questions",
+    "general knowledge",
+    "test your knowledge",
+    "history quiz",
+    "history trivia",
+    "quiz challenge",
+    "guess the answer",
+    "brain test",
+    "iq test",
+    "fun quiz",
+    "trivia questions and answers",
+    "general knowledge quiz",
+    "pub quiz questions",
+    "quiz for adults",
+    "hard quiz",
+    "are you smart",
+    "only 1 percent",
+    "test your brain",
+    "shorts quiz",
+    "youtube shorts",
+    "shorts"
+  ],
+  "pair_id": "pair_20261111_0061",
+  "hook_variant": "A",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "family": "question",
+      "hook": "Are you smarter than most people?"
+    },
+    {
+      "variant": "B",
+      "family": "identity",
+      "hook": "If you miss three, you are officially average."
+    }
+  ],
+  "compliance": {
+    "mode": "block",
+    "ok": true,
+    "reasons": [],
+    "checked_at": "2026-11-11T05:42:59",
+    "originality": {
+      "max_jaccard": 0.5333,
+      "max_script_jaccard": 0.6286,
+      "worst_match_src": "20261101-002834-01-question-4-is-where-streaks-end.json",
+      "threshold": 0.6,
+      "threshold_script": 0.65,
+      "corpus_size": 88
+    },
+    "fatigue": {
+      "hook_family": "question",
+      "consecutive_same_family": 2,
+      "max_consecutive": 3,
+      "fatigued": false
+    },
+    "policy": {
+      "violations": []
+    },
+    "ai_disclosure": {
+      "contains_synthetic_media": false,
+      "configured": true
+    }
+  },
+  "id": "20261111-054259-01"
+}
