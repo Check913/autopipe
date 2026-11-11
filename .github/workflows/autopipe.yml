@@ -12,8 +12,8 @@
 #   - safety  : H+10 min -> rattrape un cron principal rate.
 # La premiere couche qui arrive publie ; les suivantes sortent proprement
 # (already_served / anti-doublon multi-jobs, verrou de revendication 600 s).
-# Fenetres : 15, 21 UTC (2026-11-01 : 2 publications/jour, choix LJ) ->
-#   16h & 22h heure de Paris, 10h & 16h heure de New York.
+# Fenetres : 00, 04, 08, 12, 16, 20 UTC (2026-11-11 : 6 publications/jour,
+#   toutes les 4h — maximum autorise par le quota YouTube API par defaut).
 # matching upload.post_hours_utc.
 #   - workflow_dispatch = declenchement manuel (input at_hour optionnel).
 #   - Les secrets (config avec cles, token OAuth YouTube, client_secret) sont
@@ -25,14 +25,13 @@ name: autopipe
 
 on:
   schedule:
-    # --- Fenetre 15:00 UTC ---
-    - cron: "40 14 * * *"
-    - cron: "0 15 * * *"
-    - cron: "10 15 * * *"
-    # --- Fenetre 21:00 UTC ---
-    - cron: "40 20 * * *"
-    - cron: "0 21 * * *"
-    - cron: "10 21 * * *"
+    # Fenetres 00/04/08/12/16/20 UTC : 6 publications/jour toutes les 4h.
+    # pregen  : H-20 min (heure precedente) -> pre-genere puis publie a H:00
+    # main    : H:00 -> publie la fenetre (no-op si deja servie)
+    # safety  : H+10 -> rattrape un cron principal rate
+    - cron: "40 23,3,7,11,15,19 * * *"
+    - cron: "0 0,4,8,12,16,20 * * *"
+    - cron: "10 0,4,8,12,16,20 * * *"
   workflow_dispatch:
     inputs:
       at_hour:
@@ -126,32 +125,63 @@ jobs:
         env:
           SCHEDULE: ${{ github.event.schedule }}
           DISPATCH_HOUR: ${{ github.event.inputs.at_hour }}
+          # Doit matcher upload.post_hours_utc (secret AUTOPIPE_TOML).
+          WINDOWS_UTC: "0 4 8 12 16 20"
         run: |
           set -euo pipefail
-          hour=""
-          case "$SCHEDULE" in
-            "40 14 * * *"|"0 15 * * *"|"10 15 * * *") hour=15 ;;
-            "40 20 * * *"|"0 21 * * *"|"10 21 * * *") hour=21 ;;
-          esac
-          if [ -z "$hour" ] && [ -n "${DISPATCH_HOUR:-}" ]; then
-            # Garde-fou (2026-11-02 : dispatch at_hour="check" -> argparse
-            # exit 2, run rouge + email) : n'accepter qu'un entier 0-23 ;
-            # toute autre valeur est ignoree -> prochaine fenetre auto.
-            case "$DISPATCH_HOUR" in
-              *[!0-9]*|"")
-                echo "WARN: at_hour=$DISPATCH_HOUR invalide (entier 0-23 attendu) -> auto"
-                ;;
-              *)
-                if [ "$DISPATCH_HOUR" -le 23 ]; then
-                  hour="$DISPATCH_HOUR"
-                else
-                  echo "WARN: at_hour=$DISPATCH_HOUR hors 0-23 -> auto"
-                fi
-                ;;
-            esac
-          fi
-          echo "Fenetre ciblee: ${hour:-auto (prochaine fenetre)}"
-          echo "hour=$hour" >> "$GITHUB_OUTPUT"
+          python3 - <<'PY'
+          import os, datetime as dt
+
+          now = dt.datetime.now(dt.timezone.utc)
+          windows = sorted({int(x) % 24 for x in
+                            os.environ.get('WINDOWS_UTC', '').split()
+                            if x.strip().isdigit()})
+          sched = os.environ.get('SCHEDULE') or ''
+          disp = (os.environ.get('DISPATCH_HOUR') or '').strip()
+          hour = None
+          if disp:
+              # Garde-fou (2026-11-02 : dispatch at_hour='check' -> argparse
+              # exit 2, run rouge + email) : n'accepter qu'un entier 0-23 ;
+              # toute autre valeur est ignoree -> prochaine fenetre auto.
+              if disp.isdigit() and int(disp) <= 23:
+                  hour = int(disp) % 24
+              else:
+                  print('WARN: at_hour=%r invalide (entier 0-23 attendu) -> auto' % disp)
+          elif sched.startswith('40 '):
+              # Couche pregen (crons H-20) : cible = PROCHAINE fenetre dans
+              # [now+10 min, now+30 min] -> tolerant a un demarrage tardif
+              # du runner (0-19 min de retard) sans jamais cibler la mauvaise
+              # fenetre ; au-dela, aucune cible fiable -> pas de publication
+              # ici (le fallback a H+7 rattrapera la fenetre en retard).
+              lo = now + dt.timedelta(minutes=10)
+              hi = now + dt.timedelta(minutes=30)
+              cands = []
+              for h in windows:
+                  t = now.replace(hour=h, minute=0, second=0, microsecond=0)
+                  if lo <= t <= hi:
+                      cands.append(t)
+              if cands:
+                  hour = min(cands).hour
+          else:
+              # Couches main (H:00) / safety (H+10) : la fenetre dont H:00
+              # est dans [now-25 min, now+5 min] (tolere le retard du
+              # runner) ; la plus recente gagne.
+              lo = now - dt.timedelta(minutes=25)
+              hi = now + dt.timedelta(minutes=5)
+              cands = []
+              for h in windows:
+                  t = now.replace(hour=h, minute=0, second=0, microsecond=0)
+                  if lo <= t <= hi:
+                      cands.append(t)
+              if cands:
+                  hour = max(cands).hour
+          if hour is None:
+              print('Fenetre ciblee: auto (prochaine fenetre)')
+          else:
+              print('Fenetre ciblee: %02d:00 UTC' % hour)
+          with open(os.environ['GITHUB_OUTPUT'], 'a', encoding='utf-8') as fh:
+              fh.write('hour=%s\n' % ('' if hour is None else hour))
+          PY
 
       # UN job = UNE fenetre : pre-generation, attente exacte, preuve geo US
       # en direct, upload prive a H-2 min, bascule public PILE a H:00.

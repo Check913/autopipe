@@ -15,14 +15,14 @@
 #     already_served et verrou de revendication 600 s dans run_window_once.
 #
 # IMPORTANT : les heures ci-dessous doivent matcher upload.post_hours_utc
-# (secret AUTOPIPE_TOML). Fenetres 15:00 et 21:00 UTC.
+# (secret AUTOPIPE_TOML). Fenetres 00/04/08/12/16/20 UTC.
 name: watchdog
 
 on:
   schedule:
-    # Toutes les 10 min pendant 14h-15h59 et 20h-21h59 UTC seulement
-    # (fenetres 15:00 et 21:00 +/- marge ; limitent la conso de minutes).
-    - cron: "*/10 14-15,20-21 * * *"
+    # Toutes les 10 min, 24h/24 (repo public = minutes Actions illimites gratuites)
+    # (fenetres 00/04/08/12/16/20 UTC).
+    - cron: "*/10 * * * *"
   workflow_dispatch:
     inputs:
       at_hour:
@@ -53,7 +53,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # Fenetres en heures UTC, separees par espaces (= upload.post_hours_utc).
-          WINDOWS_UTC: "15 21"
+          WINDOWS_UTC: "0 4 8 12 16 20"
           GRACE_MIN: "20"
           LIMIT_MIN: "45"
           # Input de test manuel (vide sur les declenchements schedules) ;
