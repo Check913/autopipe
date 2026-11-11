@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-08T02:20:33.671962",
+  "date": "2026-11-10T23:57:37.762367",
   "region": "US",
   "language": "en",
   "keywords": [
@@ -12,54 +12,54 @@
   ],
   "min_views": 500000,
   "max_duration": 90,
-  "total_found": 105,
-  "rejected": 95,
+  "total_found": 87,
+  "rejected": 77,
   "hits": [
     {
       "id": "JPYF2WVSMHU",
       "title": "QUIZ Busca y Encuentra con Blui | ¿Encontrás las 3 en 10 segundos? | Los Amigurumis #quiz #shorts",
       "channel": "Los Amigurumis",
-      "views": 24177,
+      "views": 94353,
       "duration": 55.0,
       "url": "https://www.youtube.com/watch?v=JPYF2WVSMHU",
       "query": "radar:youtube",
-      "score": 604.3
+      "score": 943.5
     },
     {
-      "id": "SPZUYq_fUEY",
-      "title": "You Have 5 Seconds to Outsmart This Question 🤔 #braingames #brainteaser #vidyara",
-      "channel": "Vidyara",
-      "views": 14362,
-      "duration": 26.0,
-      "url": "https://www.youtube.com/watch?v=SPZUYq_fUEY",
+      "id": "uQ81h8Mjwcw",
+      "title": "General Knowledge Quiz – Human Body Quiz",
+      "channel": "",
+      "views": 0,
+      "duration": 90.0,
+      "url": "https://www.youtube.com/watch?v=uQ81h8Mjwcw",
+      "query": "ytsearch10:general knowledge #shorts"
+    },
+    {
+      "id": "-9dPmOpex-4",
+      "title": "Can You Do The OPPOSITE? 🧠 Brain Teaser That Tricks You #shorts",
+      "channel": "",
+      "views": 0,
+      "duration": 11.0,
+      "url": "https://www.youtube.com/watch?v=-9dPmOpex-4",
       "query": "ytsearch10:brain teaser #shorts"
     },
     {
-      "id": "D_0U3l_HCmA",
-      "title": "✅ TEST YOUR KNOWLEDGE! - Short Mixed Trivia Quiz Questions #quiz #trivia #trivianight #learning",
-      "channel": "Brain Teaser Titans",
-      "views": 2481,
-      "duration": 80.0,
-      "url": "https://www.youtube.com/watch?v=D_0U3l_HCmA",
-      "query": "ytsearch10:test your knowledge shorts"
+      "id": "YBAZot8DDAs",
+      "title": "IComment your answer #maths #shorts #brainteaser #games #mind #solve#problem #solving #puzzle #trend",
+      "channel": "",
+      "views": 0,
+      "duration": 12.0,
+      "url": "https://www.youtube.com/watch?v=YBAZot8DDAs",
+      "query": "ytsearch10:brain teaser #shorts"
     },
     {
-      "id": "E1HbCSEZVWw",
-      "title": "General Knowledge#short#shortvideo #shorts #gkquiz  #trending #viralvideo",
-      "channel": "gk fact",
-      "views": 941,
-      "duration": 65.0,
-      "url": "https://www.youtube.com/watch?v=E1HbCSEZVWw",
-      "query": "ytsearch10:general knowledge shorts"
-    },
-    {
-      "id": "aZbrvMznLE4",
-      "title": "Quiz / Trivia - Test your knowledge #shorts #quiz #trivia #challenge",
-      "channel": "DY-VideoLand",
-      "views": 869,
-      "duration": 71.0,
-      "url": "https://www.youtube.com/watch?v=aZbrvMznLE4",
-      "query": "ytsearch10:test your knowledge shorts"
+      "id": "ykSumXTuvkw",
+      "title": "Only True USA Experts Know These Answers! 🔥#quiz #questions #follow #viral #fy",
+      "channel": "",
+      "views": 0,
+      "duration": 12.0,
+      "url": "https://www.youtube.com/watch?v=ykSumXTuvkw",
+      "query": "ytsearch10:quiz time #shorts"
     }
   ]
 }

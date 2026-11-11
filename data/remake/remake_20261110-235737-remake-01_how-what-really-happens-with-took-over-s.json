@@ -1,0 +1,107 @@
+{
+  "title": "How What Really Happens With Took Over So Fast",
+  "hook": "Why does Cognitive trick/brain teaser break every rule?",
+  "script": "Why does Cognitive trick/brain teaser break every rule?\nNobody warned you about this part.\nFirst fact: the pattern was there the whole time.\nSecond fact: the numbers move the opposite way.\nThird fact: one detail changes the whole picture.\nNow the twist: it only works when nobody is watching.\nAnd that is exactly why Cognitive trick/brain teaser breaks every rule.",
+  "comment": "Which part surprised you the most? Tell me below!",
+  "description": "How What Really Happens With Took Over So Fast\nThe documented version, in 30 seconds.\n#shorts #facts #didyouknow",
+  "tags": [
+    "shorts",
+    "utf8",
+    "toffsetms",
+    "tstartms",
+    "ddurationms",
+    "facts",
+    "mindblowing"
+  ],
+  "duration_target": 60,
+  "duration_format": "long",
+  "density": 4,
+  "source_topic": "Cognitive trick/brain teaser",
+  "source_short_id": "-9dPmOpex-4",
+  "source_short_url": "https://www.youtube.com/watch?v=-9dPmOpex-4",
+  "source_short_title": "Can You Do The OPPOSITE? 🧠 Brain Teaser That Tricks You #shorts",
+  "source_short_views": 2,
+  "analysis": {
+    "core_hook": "Direct challenge to the viewer's cognitive ability to perform a counter-intuitive task.",
+    "psychological_formula": [
+      "Curiosity Gap",
+      "Challenge/Test",
+      "Self-validation/Ego",
+      "Minor Stakes (fear of failure)"
+    ],
+    "pacing": {
+      "words_per_minute": 170,
+      "sentence_style": "Direct, imperative, short sentences",
+      "estimated_hook_seconds": 1
+    },
+    "subject": "Cognitive trick/brain teaser",
+    "rewrite_directive": "Apply Curiosity Gap, Challenge, and Self-validation using a specific, counter-intuitive word association trick that reliably fools people, emphasizing a high failure rate.",
+    "generator": "llm:gemini-2.5-flash",
+    "retention": {
+      "source": null,
+      "n_comments": 0,
+      "kinds": {
+        "question": 0,
+        "reaction": 0,
+        "general": 0
+      },
+      "bucket_s": null,
+      "unlocated": 0,
+      "density": [],
+      "spikes_s": [],
+      "interrupts": [],
+      "hook_triggers": {},
+      "gaps": []
+    }
+  },
+  "generator": "remake:fallback",
+  "originality": {
+    "title_jaccard": 0.0,
+    "script_jaccard": 0.036,
+    "max_jaccard": 0.036,
+    "passed": true
+  },
+  "score": 0,
+  "pair_id": "pair_20261110_0051",
+  "hook_variant": "A",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "Why does Cognitive trick/brain teaser break every rule?",
+      "family": "question"
+    },
+    {
+      "variant": "B",
+      "hook": "3 Cognitive trick/brain teaser facts they never teach you",
+      "family": "number"
+    }
+  ],
+  "compliance": {
+    "mode": "block",
+    "ok": true,
+    "reasons": [],
+    "checked_at": "2026-11-10T23:58:23",
+    "originality": {
+      "max_jaccard": 0.28,
+      "max_script_jaccard": 0.2063,
+      "worst_match_src": "20261029-200205-01-how-zombie-biology-explained-took-over-so-fast.json",
+      "threshold": 0.6,
+      "threshold_script": 0.65,
+      "corpus_size": 85
+    },
+    "fatigue": {
+      "hook_family": "question",
+      "consecutive_same_family": 0,
+      "max_consecutive": 3,
+      "fatigued": false
+    },
+    "policy": {
+      "violations": []
+    },
+    "ai_disclosure": {
+      "contains_synthetic_media": false,
+      "configured": true
+    }
+  },
+  "id": "20261110-235737-remake-01"
+}

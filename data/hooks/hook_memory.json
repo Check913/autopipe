@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-08T02:20:20+00:00",
+  "updated": "2026-11-10T23:57:10+00:00",
   "publisheds": {
     "PCyc1j7hQ1s": {
       "video_id": "PCyc1j7hQ1s",
@@ -410,12 +410,12 @@
       "pair_id": "pair_20261101_0032",
       "title": "You Have 3 Seconds Per Question. Start.",
       "topic": "quiz:general",
-      "views": 1252,
+      "views": 1250,
       "engagedViews": 803,
-      "engaged_ratio": 64.1,
+      "engaged_ratio": 64.2,
       "engaged_source": "engagedViews",
       "avg_view_pct": 54.9,
-      "engagement": 64.1
+      "engagement": 64.2
     },
     "4oBjYODEBaw": {
       "video_id": "4oBjYODEBaw",
@@ -426,12 +426,12 @@
       "pair_id": "pair_20261102_0033",
       "title": "Pass 9 Questions. Prove Your IQ.",
       "topic": "quiz:general",
-      "views": 655,
+      "views": 654,
       "engagedViews": 427,
-      "engaged_ratio": 65.2,
+      "engaged_ratio": 65.3,
       "engaged_source": "engagedViews",
       "avg_view_pct": 45.3,
-      "engagement": 65.2
+      "engagement": 65.3
     },
     "BUubckp4nX0": {
       "video_id": "BUubckp4nX0",
@@ -466,5 +466,5 @@
       "engagement": null
     }
   },
-  "last_checked": "2026-11-08T02:20:21+00:00"
+  "last_checked": "2026-11-10T23:57:11+00:00"
 }

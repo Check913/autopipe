@@ -1,0 +1,115 @@
+{
+  "title": "Logic Test: Can You Score 9/9?",
+  "hook": "Nobody warned you about Quick math/logic puzzle for",
+  "script": "Only 7% of people correctly answer all nine questions on this logic test.\nQuestion 1: What has an eye but cannot see?\nLock in your answer: Five. Four. Three. Two. One.\nThe answer is B: A needle.\nQuestion 2: What is always in front of you but can’t be seen?\nLock in your answer: Five. Four. Three. Two. One.\nThe answer is C: The future.\nQuestion 3: A doctor's son is your father, but the doctor is not your father. Who is the doctor?\nLock in your answer: Five. Four. Three. Two. One.\nThe answer is A: Your mother.\nIf you got the first three right, like the video right now.\nQuestion 4: What has cities, but no houses; forests, but no trees; and water, but no fish?\nLock in your answer: Five. Four. Three. Two. One.\nThe answer is B: A map.\nQuestion 5: Before Mount Everest was discovered, what was the highest mountain in the world?\nLock in your answer: Five. Four. Three. Two. One.\nThe answer is C: Mount Everest.\nHow many did you get right so far? Comment your score.\nQuestion 6: What two things can you never eat for breakfast?\nLock in your answer: Five. Four. Three. Two. One.\nThe answer is B: Lunch and dinner.\nQuestion 7: I speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am I?\nLock in your answer: Five. Four. Three. Two. One.\nThe answer is A: An echo.\nQuestion 8: Which letter of the alphabet has the most water?\nLock in your answer: Five. Four. Three. Two. One.\nThe answer is C: The letter C (sea).\nAre you ready for the last question? Can you join the elite 7%? The leaderboard is updated weekly!\nQuestion 9: If you have a 3-gallon and a 5-gallon jug, how do you measure exactly 4 gallons?\nLock in your answer: Five. Four. Three. Two. One.\nThe answer is B: Fill 5-gallon, pour into 3-gallon (2 left in 5-gallon), empty 3-gallon, pour 2-gallons into 3-gallon, fill 5-gallon, top off 3-gallon (1 gallon to fill), 4 gallons left in 5-gallon.\nShare your final score and follow for more brain teasers!",
+  "comment": "How many questions did you get right? Share your score!",
+  "description": "Challenge your mind with this quick logic quiz. Only a small percentage can ace it!\nProve your critical thinking skills.\n#LogicQuiz #BrainTeaser #MindGames",
+  "tags": [
+    "logic",
+    "quiz",
+    "brainteaser",
+    "riddles",
+    "mindgames",
+    "challenge",
+    "iqtest",
+    "criticalthinking",
+    "puzzles",
+    "trivia"
+  ],
+  "density": 4,
+  "duration_format": "quiz",
+  "duration_target": 80,
+  "duration_range": [
+    74,
+    88
+  ],
+  "source_topic": "Quick math/logic puzzle for engagement.",
+  "source_short_id": "YBAZot8DDAs",
+  "source_short_url": "https://www.youtube.com/watch?v=YBAZot8DDAs",
+  "source_short_title": "IComment your answer #maths #shorts #brainteaser #games #mind #solve#problem #solving #puzzle #trend",
+  "source_short_views": 4,
+  "analysis": {
+    "core_hook": "An immediate, simple math/logic puzzle presented visually, prompting viewers to solve it and comment their answer.",
+    "psychological_formula": [
+      "Curiosity Gap (can I solve it?)",
+      "Challenge/Competition (against others)",
+      "Identity Affirmation (feeling smart)",
+      "Open Loop (until answer is revealed)",
+      "Engagement Prompt (explicit call to action)"
+    ],
+    "pacing": {
+      "words_per_minute": "low (visual-dominant)",
+      "sentence_style": "direct, minimal",
+      "estimated_hook_seconds": 2
+    },
+    "subject": "Quick math/logic puzzle for engagement.",
+    "rewrite_directive": "Create a 'quiz' format Short (80s) using riddles or common sense questions. The hook must be an identity filter. Include 9 questions, each with a countdown and answer reveal. Add a like-bait after question 3, a score-check after question 5, and a leaderboard tease before the final question. The entire interactive structure and specific identity-filter hook will be the upgrade.",
+    "generator": "llm:gemini-2.5-flash",
+    "retention": {
+      "source": null,
+      "n_comments": 0,
+      "kinds": {
+        "question": 0,
+        "reaction": 0,
+        "general": 0
+      },
+      "bucket_s": null,
+      "unlocated": 0,
+      "density": [],
+      "spikes_s": [],
+      "interrupts": [],
+      "hook_triggers": {},
+      "gaps": []
+    }
+  },
+  "generator": "remake:gemini-2.5-flash",
+  "originality": {
+    "title_jaccard": 0.0,
+    "script_jaccard": 0.0,
+    "max_jaccard": 0.0,
+    "passed": true
+  },
+  "score": 0,
+  "pair_id": "pair_20261110_0052",
+  "hook_variant": "B",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "Only 7% Pass This Logic Quiz.",
+      "family": "number"
+    },
+    {
+      "variant": "B",
+      "hook": "Nobody warned you about Quick math/logic puzzle for",
+      "family": "negation"
+    }
+  ],
+  "compliance": {
+    "mode": "block",
+    "ok": true,
+    "reasons": [],
+    "checked_at": "2026-11-10T23:59:04",
+    "originality": {
+      "max_jaccard": 0.2778,
+      "max_script_jaccard": 0.2865,
+      "worst_match_src": "20261107-232836-02-guess-the-movie-can-you-get-3-3.json",
+      "threshold": 0.6,
+      "threshold_script": 0.65,
+      "corpus_size": 86
+    },
+    "fatigue": {
+      "hook_family": "negation",
+      "consecutive_same_family": 1,
+      "max_consecutive": 3,
+      "fatigued": false
+    },
+    "policy": {
+      "violations": []
+    },
+    "ai_disclosure": {
+      "contains_synthetic_media": false,
+      "configured": true
+    }
+  },
+  "id": "20261110-235737-remake-02"
+}

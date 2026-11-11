@@ -1,25 +1,25 @@
 {
   "status": "ok",
-  "pairs": 46,
+  "pairs": 50,
   "joined": 9,
   "variants": {
     "A": {
-      "assigned": 25,
+      "assigned": 29,
       "measured": 4,
       "mean_engagement": 73.2,
       "mean_views": 536,
       "families": {
         "statement": 8,
-        "question": 10,
-        "number": 4,
-        "negation": 3
+        "question": 11,
+        "number": 6,
+        "negation": 4
       }
     },
     "B": {
       "assigned": 21,
       "measured": 5,
       "mean_engagement": 70.4,
-      "mean_views": 384,
+      "mean_views": 383,
       "families": {
         "question": 8,
         "number": 4,
@@ -474,8 +474,8 @@
       "hook_a": "Are you smarter than most people?",
       "hook_b": "If you miss three, you are officially average.",
       "video_id": "DEEnyERlFYg",
-      "engagement": 64.1,
-      "views": 1252
+      "engagement": 64.2,
+      "views": 1250
     },
     {
       "ts": "2026-11-02T15:21:51",
@@ -488,8 +488,8 @@
       "hook_a": "Are you smarter than most people?",
       "hook_b": "Most adults cannot get all of these right.",
       "video_id": "4oBjYODEBaw",
-      "engagement": 65.2,
-      "views": 655
+      "engagement": 65.3,
+      "views": 654
     },
     {
       "ts": "2026-11-07T23:23:34",
@@ -672,7 +672,63 @@
       "video_id": "mZE0LS3kLdQ",
       "engagement": null,
       "views": null
+    },
+    {
+      "ts": "2026-11-08T02:20:48",
+      "pair_id": "pair_20261108_0047",
+      "topic": "quiz:science",
+      "variant": "A",
+      "hook": "Are you smarter than most people?",
+      "family": "question",
+      "family_other": "identity",
+      "hook_a": "Are you smarter than most people?",
+      "hook_b": "Getting them all right means elite memory.",
+      "video_id": null,
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-08T02:21:03",
+      "pair_id": "pair_20261108_0048",
+      "topic": "Common Sense Test That 90% of People Fail",
+      "variant": "A",
+      "hook": "Only 10% pass this common sense test.",
+      "family": "number",
+      "family_other": "number",
+      "hook_a": "Only 10% pass this common sense test.",
+      "hook_b": "Nobody warned you about Common Sense Test That 90%",
+      "video_id": null,
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-08T02:21:04",
+      "pair_id": "pair_20261108_0049",
+      "topic": "Can you solve the jail break riddle? - Dan Finkel",
+      "variant": "A",
+      "hook": "Nobody talks about Can you solve the jail break riddle",
+      "family": "negation",
+      "family_other": "number",
+      "hook_a": "Nobody talks about Can you solve the jail break riddle",
+      "hook_b": "3 Can you solve the jail break facts they never teach you",
+      "video_id": null,
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-08T02:21:05",
+      "pair_id": "pair_20261108_0050",
+      "topic": "Are You SMARTER Than a 5th Grader? 📚🤓🧠 | General Knowledge Quiz",
+      "variant": "A",
+      "hook": "Nobody talks about Are You SMARTER Than a 5th Grader? 📚🤓🧠 |",
+      "family": "number",
+      "family_other": "number",
+      "hook_a": "Nobody talks about Are You SMARTER Than a 5th Grader? 📚🤓🧠 |",
+      "hook_b": "Why does nobody explain Are You SMARTER Than 5th like this?",
+      "video_id": null,
+      "engagement": null,
+      "views": null
     }
   ],
-  "fetched": "2026-11-08T02:20:20"
+  "fetched": "2026-11-10T23:57:09"
 }

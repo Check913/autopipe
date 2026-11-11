@@ -1,113 +1,113 @@
 {
-  "fetched": "2026-11-08T02:20:19",
+  "fetched": "2026-11-10T23:56:50",
   "geo": "",
   "topics": [
     {
-      "query": "rob gronkowski",
+      "query": "rick van vactor",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 118568.0,
-      "momentum": 2.4546
+      "saturation_views": 7719.0,
+      "momentum": 3.4625
     },
     {
-      "query": "aday mara",
-      "traffic": 1000.0,
-      "rise": 10.0,
-      "saturation_views": 294962.0,
-      "momentum": 2.2372
-    },
-    {
-      "query": "derek carr",
-      "traffic": 500.0,
-      "rise": 10.0,
-      "saturation_views": 336447.0,
-      "momentum": 2.209
-    },
-    {
-      "query": "matthew schaefer",
+      "query": "rutgers basketball",
       "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 760574.0,
-      "momentum": 2.0487
+      "saturation_views": 11806.0,
+      "momentum": 3.2547
     },
     {
-      "query": "north of north",
-      "traffic": 1000.0,
-      "rise": 10.0,
-      "saturation_views": 1487976.0,
-      "momentum": 1.9333
-    },
-    {
-      "query": "urban meyer",
+      "query": "western michigan football",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 1659530.0,
-      "momentum": 1.9157
+      "saturation_views": 15228.0,
+      "momentum": 3.1418
     },
     {
-      "query": "tristan thompson",
+      "query": "iowa basketball",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 2655930.0,
-      "momentum": 1.8436
+      "saturation_views": 16505.0,
+      "momentum": 3.1076
     },
     {
-      "query": "trae young",
-      "traffic": 1000.0,
-      "rise": 10.0,
-      "saturation_views": 3398972.0,
-      "momentum": 1.8079
-    },
-    {
-      "query": "spurs vs trail blazers",
+      "query": "duke basketball",
       "traffic": 5000.0,
       "rise": 10.0,
-      "saturation_views": 5012397.0,
-      "momentum": 1.7544
+      "saturation_views": 22950.0,
+      "momentum": 2.9753
     },
     {
-      "query": "chris hansen",
+      "query": "illinois basketball",
+      "traffic": 2000.0,
+      "rise": 10.0,
+      "saturation_views": 25859.0,
+      "momentum": 2.9302
+    },
+    {
+      "query": "panthers vs blue jackets",
       "traffic": 1000.0,
       "rise": 10.0,
-      "saturation_views": 11457077.0,
-      "momentum": 1.6504
+      "saturation_views": 70103.0,
+      "momentum": 2.6002
+    },
+    {
+      "query": "bucks vs knicks",
+      "traffic": 20000.0,
+      "rise": 10.0,
+      "saturation_views": 290496.0,
+      "momentum": 2.2406
+    },
+    {
+      "query": "steven tyler",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 179184712.0,
+      "momentum": 1.3787
+    },
+    {
+      "query": "drummer",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 316717914.0,
+      "momentum": 1.3332
     }
   ],
   "top": [
     {
-      "query": "rob gronkowski",
+      "query": "rick van vactor",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 118568.0,
-      "momentum": 2.4546
+      "saturation_views": 7719.0,
+      "momentum": 3.4625
     },
     {
-      "query": "aday mara",
-      "traffic": 1000.0,
-      "rise": 10.0,
-      "saturation_views": 294962.0,
-      "momentum": 2.2372
-    },
-    {
-      "query": "derek carr",
-      "traffic": 500.0,
-      "rise": 10.0,
-      "saturation_views": 336447.0,
-      "momentum": 2.209
-    },
-    {
-      "query": "matthew schaefer",
+      "query": "rutgers basketball",
       "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 760574.0,
-      "momentum": 2.0487
+      "saturation_views": 11806.0,
+      "momentum": 3.2547
     },
     {
-      "query": "north of north",
-      "traffic": 1000.0,
+      "query": "western michigan football",
+      "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 1487976.0,
-      "momentum": 1.9333
+      "saturation_views": 15228.0,
+      "momentum": 3.1418
+    },
+    {
+      "query": "iowa basketball",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 16505.0,
+      "momentum": 3.1076
+    },
+    {
+      "query": "duke basketball",
+      "traffic": 5000.0,
+      "rise": 10.0,
+      "saturation_views": 22950.0,
+      "momentum": 2.9753
     }
   ]
 }
