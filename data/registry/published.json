@@ -1166,24 +1166,37 @@
         "Guess The Phrase Quiz | Word Puzzle Challenge"
       ]
     },
-    "6h2t_qcMrQ4": {
-      "idea_id": "20261111-185444-01",
-      "title": "Danger Riddles: Can You Escape These 3?",
-      "hook": null,
-      "hook_variant": null,
-      "pair_id": null,
-      "duration_format": null,
-      "density": null,
-      "duration_target": null,
-      "generator": null,
-      "source_topic": null,
+    "1RzlNkHCr_4": {
+      "idea_id": "20261111-200449-01",
+      "title": "Only 1% Can Guess These Food Emojis",
+      "hook": "Only 1% Can Guess These Food Emojis Correctly.",
+      "hook_variant": "A",
+      "pair_id": "pair_20261111_0069",
+      "duration_format": "long",
+      "density": 4,
+      "duration_target": 60,
+      "generator": "llm:gemini-2.5-flash",
+      "source_topic": "Guess The Food By Emoji 🍔🍟 Food And Drink Emoji Quiz | Quiz Alien",
       "source_short_id": null,
       "originality_max_jaccard": null,
-      "tags": null,
-      "published_at": "2026-11-11T20:00:04.797666+00:00",
-      "video_id": "6h2t_qcMrQ4",
+      "tags": [
+        "quiz",
+        "trivia",
+        "general knowledge",
+        "brain teaser",
+        "quiz time",
+        "test your knowledge",
+        "only 1 percent",
+        "did you know",
+        "emoji quiz",
+        "food emoji",
+        "guess the food",
+        "food trivia"
+      ],
+      "published_at": "2026-11-11T20:07:09.498897+00:00",
+      "video_id": "1RzlNkHCr_4",
       "source": "runtime"
     }
   },
-  "updated": "2026-11-11T20:00:04"
+  "updated": "2026-11-11T20:07:09"
 }

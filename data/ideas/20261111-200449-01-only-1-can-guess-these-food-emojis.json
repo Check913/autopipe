@@ -1,0 +1,73 @@
+{
+  "title": "Only 1% Can Guess These Food Emojis",
+  "hook": "Only 1% Can Guess These Food Emojis Correctly.",
+  "script": "Only one percent of people can guess all three of these food emoji combinations correctly. You've got three seconds per question. Ready to test your emoji IQ? Let's start! First up: 🍕+🌳. What famous restaurant is this? Quick! It's Pizza Hut! Next: 🍩+💧. What sweet snack is this? Don't get stumped! That's a Donut Hole! Final challenge: 🍞+🌶️+🧀. What delicious dish? Go! The answer is Chili Cheese Toast! How many did you get? If you nailed all three, you're officially a food emoji master! This quiz is tough, proving only one percent of people can guess all three of these food emoji combinations correctly.",
+  "comment": "How many food emojis did you guess correctly? Share your score!",
+  "description": "Test your knowledge with our quick food emoji quiz! Only the sharpest minds can get all three. Share your score below!\n#EmojiQuiz #FoodTrivia #BrainTeaser",
+  "tags": [
+    "quiz",
+    "trivia",
+    "general knowledge",
+    "brain teaser",
+    "quiz time",
+    "test your knowledge",
+    "only 1 percent",
+    "did you know",
+    "emoji quiz",
+    "food emoji",
+    "guess the food",
+    "food trivia"
+  ],
+  "density": 4,
+  "duration_format": "long",
+  "duration_target": 60,
+  "duration_range": [
+    50,
+    60
+  ],
+  "source_topic": "Guess The Food By Emoji 🍔🍟 Food And Drink Emoji Quiz | Quiz Alien",
+  "generator": "llm:gemini-2.5-flash",
+  "score": 2465.4,
+  "pair_id": "pair_20261111_0069",
+  "hook_variant": "A",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "Only 1% Can Guess These Food Emojis Correctly.",
+      "family": "number"
+    },
+    {
+      "variant": "B",
+      "hook": "Nobody warned you about Guess The Food By Emoji 🍔🍟",
+      "family": "negation"
+    }
+  ],
+  "compliance": {
+    "mode": "block",
+    "ok": true,
+    "reasons": [],
+    "checked_at": "2026-11-11T20:04:48",
+    "originality": {
+      "max_jaccard": 0.2,
+      "max_script_jaccard": 0.2667,
+      "worst_match_src": "20261111-112846-02-only-1-pass-this-animal-quiz.json",
+      "threshold": 0.6,
+      "threshold_script": 0.65,
+      "corpus_size": 91
+    },
+    "fatigue": {
+      "hook_family": "number",
+      "consecutive_same_family": 1,
+      "max_consecutive": 3,
+      "fatigued": false
+    },
+    "policy": {
+      "violations": []
+    },
+    "ai_disclosure": {
+      "contains_synthetic_media": false,
+      "configured": true
+    }
+  },
+  "id": "20261111-200449-01"
+}

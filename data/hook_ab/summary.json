@@ -1,13 +1,13 @@
 {
   "status": "ok",
   "pairs": 65,
-  "joined": 3,
+  "joined": 9,
   "variants": {
     "A": {
       "assigned": 39,
-      "measured": 1,
-      "mean_engagement": 57.1,
-      "mean_views": 457,
+      "measured": 4,
+      "mean_engagement": 73.2,
+      "mean_views": 536,
       "families": {
         "statement": 8,
         "question": 15,
@@ -17,9 +17,9 @@
     },
     "B": {
       "assigned": 26,
-      "measured": 2,
-      "mean_engagement": 28.8,
-      "mean_views": 300,
+      "measured": 5,
+      "mean_engagement": 70.4,
+      "mean_views": 383,
       "families": {
         "question": 8,
         "number": 6,
@@ -940,5 +940,5 @@
       "views": null
     }
   ],
-  "fetched": "2026-11-11T18:53:14"
+  "fetched": "2026-11-11T20:02:24"
 }

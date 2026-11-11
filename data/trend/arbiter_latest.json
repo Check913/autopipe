@@ -1,113 +1,113 @@
 {
-  "fetched": "2026-11-11T18:52:55",
+  "fetched": "2026-11-11T20:02:06",
   "geo": "",
   "topics": [
     {
-      "query": "will scharf",
-      "traffic": 1000.0,
-      "rise": 10.0,
-      "saturation_views": 20645.0,
-      "momentum": 3.0166
-    },
-    {
-      "query": "chipotle tattoo deal",
-      "traffic": 1000.0,
-      "rise": 10.0,
-      "saturation_views": 68638.0,
-      "momentum": 2.6065
-    },
-    {
-      "query": "russian ambassador to us",
-      "traffic": 2000.0,
-      "rise": 10.0,
-      "saturation_views": 134306.0,
-      "momentum": 2.4224
-    },
-    {
-      "query": "vanguard",
-      "traffic": 2000.0,
-      "rise": 10.0,
-      "saturation_views": 189927.0,
-      "momentum": 2.3372
-    },
-    {
-      "query": "los angeles lakers bronny james",
+      "query": "uc davis basketball",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 253219.0,
-      "momentum": 2.2709
+      "saturation_views": 4283.0,
+      "momentum": 3.7983
     },
     {
-      "query": "lauri markkanen",
-      "traffic": 2000.0,
+      "query": "dartmouth basketball",
+      "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 269994.0,
-      "momentum": 2.2566
+      "saturation_views": 6933.0,
+      "momentum": 3.5192
     },
     {
-      "query": "nfl football trade deadline",
-      "traffic": 10000.0,
-      "rise": 10.0,
-      "saturation_views": 407583.0,
-      "momentum": 2.1691
-    },
-    {
-      "query": "casper ruud",
-      "traffic": 1000.0,
-      "rise": 10.0,
-      "saturation_views": 790906.0,
-      "momentum": 2.0416
-    },
-    {
-      "query": "applebees menu",
-      "traffic": 1000.0,
-      "rise": 10.0,
-      "saturation_views": 7488699.0,
-      "momentum": 1.7023
-    },
-    {
-      "query": "landfill",
+      "query": "michael jackson estate value $2 billion",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 15779838.0,
-      "momentum": 1.6134
+      "saturation_views": 130256.0,
+      "momentum": 2.4302
+    },
+    {
+      "query": "lucia gta 6",
+      "traffic": 2000.0,
+      "rise": 10.0,
+      "saturation_views": 291233.0,
+      "momentum": 2.24
+    },
+    {
+      "query": "joao below deck",
+      "traffic": 1000.0,
+      "rise": 10.0,
+      "saturation_views": 482772.0,
+      "momentum": 2.135
+    },
+    {
+      "query": "chase young",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 591513.0,
+      "momentum": 2.0956
+    },
+    {
+      "query": "billy gray",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 1009965.0,
+      "momentum": 1.9983
+    },
+    {
+      "query": "adults season 3",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 1357757.0,
+      "momentum": 1.9482
+    },
+    {
+      "query": "american airlines international route cancellations 2027",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 3662352.0,
+      "momentum": 1.7973
+    },
+    {
+      "query": "pep guardiola",
+      "traffic": 1000.0,
+      "rise": 10.0,
+      "saturation_views": 6079179.0,
+      "momentum": 1.729
     }
   ],
   "top": [
     {
-      "query": "will scharf",
-      "traffic": 1000.0,
-      "rise": 10.0,
-      "saturation_views": 20645.0,
-      "momentum": 3.0166
-    },
-    {
-      "query": "chipotle tattoo deal",
-      "traffic": 1000.0,
-      "rise": 10.0,
-      "saturation_views": 68638.0,
-      "momentum": 2.6065
-    },
-    {
-      "query": "russian ambassador to us",
-      "traffic": 2000.0,
-      "rise": 10.0,
-      "saturation_views": 134306.0,
-      "momentum": 2.4224
-    },
-    {
-      "query": "vanguard",
-      "traffic": 2000.0,
-      "rise": 10.0,
-      "saturation_views": 189927.0,
-      "momentum": 2.3372
-    },
-    {
-      "query": "los angeles lakers bronny james",
+      "query": "uc davis basketball",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 253219.0,
-      "momentum": 2.2709
+      "saturation_views": 4283.0,
+      "momentum": 3.7983
+    },
+    {
+      "query": "dartmouth basketball",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 6933.0,
+      "momentum": 3.5192
+    },
+    {
+      "query": "michael jackson estate value $2 billion",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 130256.0,
+      "momentum": 2.4302
+    },
+    {
+      "query": "lucia gta 6",
+      "traffic": 2000.0,
+      "rise": 10.0,
+      "saturation_views": 291233.0,
+      "momentum": 2.24
+    },
+    {
+      "query": "joao below deck",
+      "traffic": 1000.0,
+      "rise": 10.0,
+      "saturation_views": 482772.0,
+      "momentum": 2.135
     }
   ]
 }
