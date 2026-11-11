@@ -1,113 +1,113 @@
 {
-  "fetched": "2026-11-11T11:27:13",
+  "fetched": "2026-11-11T18:52:55",
   "geo": "",
   "topics": [
     {
-      "query": "chick fil a veterans day",
-      "traffic": 100.0,
+      "query": "will scharf",
+      "traffic": 1000.0,
       "rise": 10.0,
-      "saturation_views": 5743.0,
-      "momentum": 3.6233
+      "saturation_views": 20645.0,
+      "momentum": 3.0166
     },
     {
-      "query": "mega millions",
+      "query": "chipotle tattoo deal",
+      "traffic": 1000.0,
+      "rise": 10.0,
+      "saturation_views": 68638.0,
+      "momentum": 2.6065
+    },
+    {
+      "query": "russian ambassador to us",
       "traffic": 2000.0,
       "rise": 10.0,
-      "saturation_views": 22267.0,
-      "momentum": 2.987
+      "saturation_views": 134306.0,
+      "momentum": 2.4224
     },
     {
-      "query": "holiday today",
+      "query": "vanguard",
       "traffic": 2000.0,
       "rise": 10.0,
-      "saturation_views": 31428.0,
-      "momentum": 2.8592
+      "saturation_views": 189927.0,
+      "momentum": 2.3372
     },
     {
-      "query": "are banks closed today",
-      "traffic": 200.0,
-      "rise": 10.0,
-      "saturation_views": 39310.0,
-      "momentum": 2.7819
-    },
-    {
-      "query": "connor hellebuyck",
-      "traffic": 100.0,
-      "rise": 10.0,
-      "saturation_views": 156404.0,
-      "momentum": 2.3842
-    },
-    {
-      "query": "ga lottery",
-      "traffic": 100.0,
-      "rise": 10.0,
-      "saturation_views": 254618.0,
-      "momentum": 2.2697
-    },
-    {
-      "query": "ohio state buckeyes football",
+      "query": "los angeles lakers bronny james",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 390431.0,
-      "momentum": 2.1779
+      "saturation_views": 253219.0,
+      "momentum": 2.2709
     },
     {
-      "query": "pick 3",
-      "traffic": 100.0,
+      "query": "lauri markkanen",
+      "traffic": 2000.0,
       "rise": 10.0,
-      "saturation_views": 725760.0,
-      "momentum": 2.0573
+      "saturation_views": 269994.0,
+      "momentum": 2.2566
     },
     {
-      "query": "notre dame fighting irish football",
-      "traffic": 200.0,
+      "query": "nfl football trade deadline",
+      "traffic": 10000.0,
       "rise": 10.0,
-      "saturation_views": 1500113.0,
-      "momentum": 1.9319
+      "saturation_views": 407583.0,
+      "momentum": 2.1691
     },
     {
-      "query": "khloé kardashian",
-      "traffic": 100.0,
+      "query": "casper ruud",
+      "traffic": 1000.0,
       "rise": 10.0,
-      "saturation_views": 2290904.0,
-      "momentum": 1.8657
+      "saturation_views": 790906.0,
+      "momentum": 2.0416
+    },
+    {
+      "query": "applebees menu",
+      "traffic": 1000.0,
+      "rise": 10.0,
+      "saturation_views": 7488699.0,
+      "momentum": 1.7023
+    },
+    {
+      "query": "landfill",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 15779838.0,
+      "momentum": 1.6134
     }
   ],
   "top": [
     {
-      "query": "chick fil a veterans day",
-      "traffic": 100.0,
+      "query": "will scharf",
+      "traffic": 1000.0,
       "rise": 10.0,
-      "saturation_views": 5743.0,
-      "momentum": 3.6233
+      "saturation_views": 20645.0,
+      "momentum": 3.0166
     },
     {
-      "query": "mega millions",
+      "query": "chipotle tattoo deal",
+      "traffic": 1000.0,
+      "rise": 10.0,
+      "saturation_views": 68638.0,
+      "momentum": 2.6065
+    },
+    {
+      "query": "russian ambassador to us",
       "traffic": 2000.0,
       "rise": 10.0,
-      "saturation_views": 22267.0,
-      "momentum": 2.987
+      "saturation_views": 134306.0,
+      "momentum": 2.4224
     },
     {
-      "query": "holiday today",
+      "query": "vanguard",
       "traffic": 2000.0,
       "rise": 10.0,
-      "saturation_views": 31428.0,
-      "momentum": 2.8592
+      "saturation_views": 189927.0,
+      "momentum": 2.3372
     },
     {
-      "query": "are banks closed today",
-      "traffic": 200.0,
+      "query": "los angeles lakers bronny james",
+      "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 39310.0,
-      "momentum": 2.7819
-    },
-    {
-      "query": "connor hellebuyck",
-      "traffic": 100.0,
-      "rise": 10.0,
-      "saturation_views": 156404.0,
-      "momentum": 2.3842
+      "saturation_views": 253219.0,
+      "momentum": 2.2709
     }
   ]
 }

@@ -1,0 +1,73 @@
+{
+  "title": "Danger Riddles: Can You Escape These 3?",
+  "hook": "Only 1% Solve These 3?",
+  "script": "Only 1% solve these 3 danger riddles! Quick: Lost in forest, find north? Moss. House fire, escape? Stay low. Shark attack, first move? Punch nose. Can you join the 1% and solve these 3 danger riddles?",
+  "comment": "How many did YOU get right?",
+  "description": "Test your survival skills with these quick danger riddles! Only a genius can solve all three. How many did you get correct?\n#DangerRiddles #SurvivalQuiz #BrainTeaser",
+  "tags": [
+    "quiz",
+    "trivia",
+    "brain teaser",
+    "riddles",
+    "danger",
+    "survival",
+    "challenge",
+    "test your knowledge",
+    "iq test",
+    "scorenine",
+    "only 1 percent",
+    "general knowledge"
+  ],
+  "density": 4,
+  "duration_format": "short",
+  "duration_target": 13,
+  "duration_range": [
+    12,
+    18
+  ],
+  "source_topic": "12 Riddles to Check if You Can Escape from Dangers",
+  "generator": "llm:gemini-2.5-flash",
+  "score": 36883.3,
+  "pair_id": "pair_20261111_0067",
+  "hook_variant": "A",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "Only 1% Solve These 3?",
+      "family": "question"
+    },
+    {
+      "variant": "B",
+      "hook": "3 12 Riddles to Check if You facts they never teach you",
+      "family": "number"
+    }
+  ],
+  "compliance": {
+    "mode": "block",
+    "ok": true,
+    "reasons": [],
+    "checked_at": "2026-11-11T18:54:09",
+    "originality": {
+      "max_jaccard": 0.4286,
+      "max_script_jaccard": 0.127,
+      "worst_match_src": "20261107-233755-01-are-you-a-genius-solve-these-3-riddles.json",
+      "threshold": 0.6,
+      "threshold_script": 0.65,
+      "corpus_size": 91
+    },
+    "fatigue": {
+      "hook_family": "question",
+      "consecutive_same_family": 1,
+      "max_consecutive": 3,
+      "fatigued": false
+    },
+    "policy": {
+      "violations": []
+    },
+    "ai_disclosure": {
+      "contains_synthetic_media": false,
+      "configured": true
+    }
+  },
+  "id": "20261111-185444-01"
+}

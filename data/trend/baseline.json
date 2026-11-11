@@ -3946,5 +3946,135 @@
         100.0
       ]
     ]
+  },
+  "lauri markkanen": {
+    "traffic": 2000.0,
+    "first_seen": "2026-11-11T18:52:46",
+    "last_seen": "2026-11-11T18:52:46",
+    "delta": 2000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-11T18:52:46",
+        2000.0
+      ]
+    ]
+  },
+  "nfl football trade deadline": {
+    "traffic": 10000.0,
+    "first_seen": "2026-11-11T18:52:46",
+    "last_seen": "2026-11-11T18:52:46",
+    "delta": 10000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-11T18:52:46",
+        10000.0
+      ]
+    ]
+  },
+  "los angeles lakers bronny james": {
+    "traffic": 500.0,
+    "first_seen": "2026-11-11T18:52:46",
+    "last_seen": "2026-11-11T18:52:46",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-11T18:52:46",
+        500.0
+      ]
+    ]
+  },
+  "landfill": {
+    "traffic": 500.0,
+    "first_seen": "2026-11-11T18:52:46",
+    "last_seen": "2026-11-11T18:52:46",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-11T18:52:46",
+        500.0
+      ]
+    ]
+  },
+  "casper ruud": {
+    "traffic": 1000.0,
+    "first_seen": "2026-11-11T18:52:46",
+    "last_seen": "2026-11-11T18:52:46",
+    "delta": 1000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-11T18:52:46",
+        1000.0
+      ]
+    ]
+  },
+  "will scharf": {
+    "traffic": 1000.0,
+    "first_seen": "2026-11-11T18:52:46",
+    "last_seen": "2026-11-11T18:52:46",
+    "delta": 1000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-11T18:52:46",
+        1000.0
+      ]
+    ]
+  },
+  "applebees menu": {
+    "traffic": 1000.0,
+    "first_seen": "2026-11-11T18:52:46",
+    "last_seen": "2026-11-11T18:52:46",
+    "delta": 1000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-11T18:52:46",
+        1000.0
+      ]
+    ]
+  },
+  "russian ambassador to us": {
+    "traffic": 2000.0,
+    "first_seen": "2026-11-11T18:52:46",
+    "last_seen": "2026-11-11T18:52:46",
+    "delta": 2000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-11T18:52:46",
+        2000.0
+      ]
+    ]
+  },
+  "chipotle tattoo deal": {
+    "traffic": 1000.0,
+    "first_seen": "2026-11-11T18:52:46",
+    "last_seen": "2026-11-11T18:52:46",
+    "delta": 1000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-11T18:52:46",
+        1000.0
+      ]
+    ]
+  },
+  "vanguard": {
+    "traffic": 2000.0,
+    "first_seen": "2026-11-11T18:52:46",
+    "last_seen": "2026-11-11T18:52:46",
+    "delta": 2000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-11T18:52:46",
+        2000.0
+      ]
+    ]
   }
 }

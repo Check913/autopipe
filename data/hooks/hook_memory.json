@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-11T11:27:14+00:00",
+  "updated": "2026-11-11T18:53:15+00:00",
   "publisheds": {
     "PCyc1j7hQ1s": {
       "video_id": "PCyc1j7hQ1s",
@@ -283,11 +283,11 @@
       "title": "9 Question Quiz. Can You Score 9/9?",
       "topic": "quiz:general",
       "views": 598,
-      "engagedViews": 361,
-      "engaged_ratio": 60.4,
-      "engaged_source": "engagedViews",
+      "engagedViews": 0,
+      "engaged_ratio": 47.2,
+      "engaged_source": "fallback_averageViewPercentage",
       "avg_view_pct": 47.2,
-      "engagement": 60.4
+      "engagement": 47.2
     },
     "fNh2NGFifGQ": {
       "video_id": "fNh2NGFifGQ",
@@ -299,11 +299,11 @@
       "title": "Can You Beat This 9 Question Quiz?",
       "topic": "quiz:science",
       "views": 457,
-      "engagedViews": 302,
-      "engaged_ratio": 66.1,
-      "engaged_source": "engagedViews",
+      "engagedViews": 0,
+      "engaged_ratio": 57.1,
+      "engaged_source": "fallback_averageViewPercentage",
       "avg_view_pct": 57.1,
-      "engagement": 66.1
+      "engagement": 57.1
     },
     "cy3aSg9ujT4": {
       "video_id": "cy3aSg9ujT4",
@@ -315,11 +315,11 @@
       "title": "Most People Fail This 9 Question Quiz",
       "topic": "quiz:movies",
       "views": 3,
-      "engagedViews": 2,
-      "engaged_ratio": 66.7,
-      "engaged_source": "engagedViews",
+      "engagedViews": 0,
+      "engaged_ratio": 10.3,
+      "engaged_source": "fallback_averageViewPercentage",
       "avg_view_pct": 10.3,
-      "engagement": 66.7
+      "engagement": 10.3
     },
     "uBK8AeCn1LM": {
       "video_id": "uBK8AeCn1LM",
@@ -512,7 +512,23 @@
       "engaged_source": null,
       "avg_view_pct": null,
       "engagement": null
+    },
+    "0Zg42HIOslg": {
+      "video_id": "0Zg42HIOslg",
+      "published_at": "2026-11-11T12:00:03.963350+00:00",
+      "hook": "Only 1% score 3/3 on THIS Phrase Quiz.",
+      "family": "number",
+      "hook_variant": "A",
+      "pair_id": "pair_20261111_0063",
+      "title": "Guess The Phrase: Only 1% Get All 3 Right",
+      "topic": "Guess The Phrase Quiz | Word Puzzle Challenge",
+      "views": null,
+      "engagedViews": null,
+      "engaged_ratio": null,
+      "engaged_source": null,
+      "avg_view_pct": null,
+      "engagement": null
     }
   },
-  "last_checked": "2026-11-11T11:27:15+00:00"
+  "last_checked": "2026-11-11T18:53:17+00:00"
 }

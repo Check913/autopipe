@@ -1,0 +1,73 @@
+{
+  "title": "Can YOU Beat a 5th Grader's Quiz?",
+  "hook": "3 Are You SMARTER Than 5th facts they never teach you",
+  "script": "Think you're smarter than a 5th grader? Only 1% of adults can ace this three-question trivia test. First up: What is the largest ocean on Earth? Is it the Atlantic, Indian, or Pacific Ocean? Time's ticking! The answer is… the Pacific Ocean! Did you get that right? One point if you did. Next, which planet is known as the \"Red Planet\"? Is it Mars, Venus, or Jupiter? Don't overthink it! That's Mars, of course! Two questions down, one to go. How are you doing so far? Finally, who wrote \"Romeo and Juliet\"? Was it Charles Dickens, William Shakespeare, or Jane Austen? This one should be easy! The correct answer is William Shakespeare! So, how many did you get right? Did you prove you're smarter than a 5th grader? Think you're smarter than a 5th grader? Only 1% of adults can ace this three-question trivia test.",
+  "comment": "How many questions did YOU get right? Let us know below!",
+  "description": "Test your knowledge with ScoreNine! Can you pass this general knowledge quiz designed for 5th graders? Only the sharpest minds get all three questions correct. Challenge yourself and see if you're smarter! #QuizTime #GeneralKnowledge #TriviaChallenge",
+  "tags": [
+    "quiz",
+    "trivia",
+    "general knowledge",
+    "brain teaser",
+    "test your knowledge",
+    "5th grader quiz",
+    "challenge",
+    "ScoreNine",
+    "educational",
+    "fun quiz",
+    "smart",
+    "IQ test"
+  ],
+  "density": 4,
+  "duration_format": "long",
+  "duration_target": 60,
+  "duration_range": [
+    50,
+    60
+  ],
+  "source_topic": "Are You SMARTER Than a 5th Grader? 📚🤓🧠 | General Knowledge Quiz",
+  "generator": "llm:gemini-2.5-flash",
+  "score": 3566.3,
+  "pair_id": "pair_20261111_0069",
+  "hook_variant": "B",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "Think you're smarter than a 5th grader?",
+      "family": "question"
+    },
+    {
+      "variant": "B",
+      "hook": "3 Are You SMARTER Than 5th facts they never teach you",
+      "family": "number"
+    }
+  ],
+  "compliance": {
+    "mode": "block",
+    "ok": true,
+    "reasons": [],
+    "checked_at": "2026-11-11T18:54:44",
+    "originality": {
+      "max_jaccard": 0.4118,
+      "max_script_jaccard": 0.2388,
+      "worst_match_src": "20261031-074352-01-can-you-beat-this-9-question-quiz.json",
+      "threshold": 0.6,
+      "threshold_script": 0.65,
+      "corpus_size": 91
+    },
+    "fatigue": {
+      "hook_family": "number",
+      "consecutive_same_family": 0,
+      "max_consecutive": 3,
+      "fatigued": false
+    },
+    "policy": {
+      "violations": []
+    },
+    "ai_disclosure": {
+      "contains_synthetic_media": false,
+      "configured": true
+    }
+  },
+  "id": "20261111-185444-02"
+}

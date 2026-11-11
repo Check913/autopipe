@@ -1,30 +1,30 @@
 {
   "status": "ok",
-  "pairs": 61,
-  "joined": 9,
+  "pairs": 65,
+  "joined": 3,
   "variants": {
     "A": {
-      "assigned": 36,
-      "measured": 4,
-      "mean_engagement": 73.2,
-      "mean_views": 536,
+      "assigned": 39,
+      "measured": 1,
+      "mean_engagement": 57.1,
+      "mean_views": 457,
       "families": {
         "statement": 8,
         "question": 15,
-        "number": 8,
-        "negation": 5
+        "number": 10,
+        "negation": 6
       }
     },
     "B": {
-      "assigned": 25,
-      "measured": 5,
-      "mean_engagement": 70.4,
-      "mean_views": 383,
+      "assigned": 26,
+      "measured": 2,
+      "mean_engagement": 28.8,
+      "mean_views": 300,
       "families": {
         "question": 8,
         "number": 6,
         "negation": 3,
-        "identity": 8
+        "identity": 9
       }
     }
   },
@@ -334,7 +334,7 @@
       "hook_a": "Are you smarter than most people?",
       "hook_b": "Getting them all right means elite memory.",
       "video_id": "gEtui7O33o0",
-      "engagement": 60.4,
+      "engagement": 47.2,
       "views": 598
     },
     {
@@ -348,7 +348,7 @@
       "hook_a": "Are you smarter than most people?",
       "hook_b": "Only top 1% brains get every single one right.",
       "video_id": "fNh2NGFifGQ",
-      "engagement": 66.1,
+      "engagement": 57.1,
       "views": 457
     },
     {
@@ -362,7 +362,7 @@
       "hook_a": "How high can you score?",
       "hook_b": "Most adults cannot get all of these right.",
       "video_id": "cy3aSg9ujT4",
-      "engagement": 66.7,
+      "engagement": 10.3,
       "views": 3
     },
     {
@@ -376,8 +376,8 @@
       "hook_a": "Are you smarter than most people?",
       "hook_b": "Most adults cannot get all of these right.",
       "video_id": "uBK8AeCn1LM",
-      "engagement": 61.5,
-      "views": 1033
+      "engagement": null,
+      "views": null
     },
     {
       "ts": "2026-10-31T16:15:53",
@@ -404,8 +404,8 @@
       "hook_a": "Are you smarter than most people?",
       "hook_b": "Only top 1% brains get every single one right.",
       "video_id": "fXzcJuL7tII",
-      "engagement": 100.0,
-      "views": 1
+      "engagement": null,
+      "views": null
     },
     {
       "ts": "2026-10-31T18:10:25",
@@ -418,8 +418,8 @@
       "hook_a": "Are you smarter than most people?",
       "hook_b": "If you miss three, you are officially average.",
       "video_id": "kzoLfpuh6lY",
-      "engagement": 100.0,
-      "views": 1
+      "engagement": null,
+      "views": null
     },
     {
       "ts": "2026-11-01T00:28:19",
@@ -446,8 +446,8 @@
       "hook_a": "How high can you score?",
       "hook_b": "Only top 1% brains get every single one right.",
       "video_id": "jVwLSsQx_iE",
-      "engagement": 60.9,
-      "views": 64
+      "engagement": null,
+      "views": null
     },
     {
       "ts": "2026-11-01T13:35:39",
@@ -474,8 +474,8 @@
       "hook_a": "Are you smarter than most people?",
       "hook_b": "If you miss three, you are officially average.",
       "video_id": "DEEnyERlFYg",
-      "engagement": 64.2,
-      "views": 1250
+      "engagement": null,
+      "views": null
     },
     {
       "ts": "2026-11-02T15:21:51",
@@ -488,8 +488,8 @@
       "hook_a": "Are you smarter than most people?",
       "hook_b": "Most adults cannot get all of these right.",
       "video_id": "4oBjYODEBaw",
-      "engagement": 65.3,
-      "views": 654
+      "engagement": null,
+      "views": null
     },
     {
       "ts": "2026-11-07T23:23:34",
@@ -882,7 +882,63 @@
       "video_id": "IcKndL0Ulfc",
       "engagement": null,
       "views": null
+    },
+    {
+      "ts": "2026-11-11T11:27:38",
+      "pair_id": "pair_20261111_0062",
+      "topic": "quiz:history",
+      "variant": "B",
+      "hook": "Most adults cannot get all of these right.",
+      "family": "identity",
+      "family_other": "question",
+      "hook_a": "Are you smarter than most people?",
+      "hook_b": "Most adults cannot get all of these right.",
+      "video_id": null,
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-11T11:28:10",
+      "pair_id": "pair_20261111_0063",
+      "topic": "Guess The Phrase Quiz | Word Puzzle Challenge",
+      "variant": "A",
+      "hook": "Only 1% score 3/3 on THIS Phrase Quiz.",
+      "family": "number",
+      "family_other": "negation",
+      "hook_a": "Only 1% score 3/3 on THIS Phrase Quiz.",
+      "hook_b": "Nobody warned you about Guess The Phrase Quiz Word",
+      "video_id": "0Zg42HIOslg",
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-11T11:28:28",
+      "pair_id": "pair_20261111_0064",
+      "topic": "Choose One Button - YES or NO or MAYBE or NEVER! 🤔💭✅ Quiz Dino",
+      "variant": "A",
+      "hook": "Nobody talks about Choose One Button - YES or NO or MAYBE",
+      "family": "negation",
+      "family_other": "negation",
+      "hook_a": "Nobody talks about Choose One Button - YES or NO or MAYBE",
+      "hook_b": "3 Choose One Button YES or NO facts they never teach you",
+      "video_id": null,
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-11T11:28:46",
+      "pair_id": "pair_20261111_0065",
+      "topic": "🧠 How Good Is Your Knowledge of ANIMALS? 🦁🐘✅ 50 Animals Knowledge Trivia Quiz",
+      "variant": "A",
+      "hook": "Only 1% of people can name these animals!",
+      "family": "number",
+      "family_other": "negation",
+      "hook_a": "Only 1% of people can name these animals!",
+      "hook_b": "Nobody warned you about How Good Is Your Knowledge",
+      "video_id": null,
+      "engagement": null,
+      "views": null
     }
   ],
-  "fetched": "2026-11-11T11:27:14"
+  "fetched": "2026-11-11T18:53:14"
 }
