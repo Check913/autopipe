@@ -1,28 +1,28 @@
 {
   "status": "ok",
-  "pairs": 59,
+  "pairs": 61,
   "joined": 9,
   "variants": {
     "A": {
-      "assigned": 35,
+      "assigned": 36,
       "measured": 4,
       "mean_engagement": 73.2,
       "mean_views": 536,
       "families": {
         "statement": 8,
-        "question": 14,
+        "question": 15,
         "number": 8,
         "negation": 5
       }
     },
     "B": {
-      "assigned": 24,
+      "assigned": 25,
       "measured": 5,
       "mean_engagement": 70.4,
       "mean_views": 383,
       "families": {
         "question": 8,
-        "number": 5,
+        "number": 6,
         "negation": 3,
         "identity": 8
       }
@@ -854,7 +854,35 @@
       "video_id": "0hAve-MUuww",
       "engagement": null,
       "views": null
+    },
+    {
+      "ts": "2026-11-11T05:42:32",
+      "pair_id": "pair_20261111_0060",
+      "topic": "General trivia knowledge test.",
+      "variant": "B",
+      "hook": "3 General trivia knowledge facts they never teach you",
+      "family": "number",
+      "family_other": "question",
+      "hook_a": "Why does General trivia knowledge test. break every rule?",
+      "hook_b": "3 General trivia knowledge facts they never teach you",
+      "video_id": null,
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-11T05:42:41",
+      "pair_id": "pair_20261111_0061",
+      "topic": "quiz:history",
+      "variant": "A",
+      "hook": "Are you smarter than most people?",
+      "family": "question",
+      "family_other": "identity",
+      "hook_a": "Are you smarter than most people?",
+      "hook_b": "If you miss three, you are officially average.",
+      "video_id": "IcKndL0Ulfc",
+      "engagement": null,
+      "views": null
     }
   ],
-  "fetched": "2026-11-11T05:41:36"
+  "fetched": "2026-11-11T11:27:14"
 }

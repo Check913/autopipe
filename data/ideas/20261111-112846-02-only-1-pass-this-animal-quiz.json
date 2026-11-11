@@ -1,0 +1,72 @@
+{
+  "title": "Only 1% Pass This Animal Quiz!",
+  "hook": "Only 1% of people can name these animals!",
+  "script": "Only 1% of people can name these animals! Think you're an animal expert? Test your knowledge with three rapid-fire questions. You'll have just three seconds for each, so stay sharp! Let's find out if you belong to the elite.\n\nQuestion one: Which incredible animal is renowned for its ability to change color and blend seamlessly into its surroundings? Think fast! (Pause for 3 seconds) Time is up! The correct answer is the Chameleon. What an amazing adaptation!\n\nMoving on to question two: Known as the 'king of the jungle,' what majestic big cat is native to Africa and India, famous for its powerful roar? Three seconds, starting now! (Pause for 3 seconds) Did you get it? It's the mighty Lion!\n\nAnd for the final challenge, question three: What's the largest land animal on Earth, recognized by its enormous ears and long trunk? Your last chance to prove yourself! (Pause for 3 seconds) The answer is the magnificent African Elephant! Truly incredible.\n\nHow did you do? Count up your correct answers. If you scored a perfect three out of three, congratulations! You're truly in that exclusive one percent of animal trivia champions. Now, can you really name these animals?",
+  "comment": "How many animals did you name correctly? Share your score below!",
+  "description": "Test your animal knowledge in this quick quiz! Only the sharpest minds will get all three questions right.\n#AnimalQuiz #TriviaTime #BrainTeaser",
+  "tags": [
+    "animal quiz",
+    "trivia",
+    "animals",
+    "general knowledge",
+    "quiz time",
+    "brain teaser",
+    "test your knowledge",
+    "only 1 percent",
+    "did you know",
+    "animal facts",
+    "challenge"
+  ],
+  "density": 4,
+  "duration_format": "long",
+  "duration_target": 60,
+  "duration_range": [
+    50,
+    60
+  ],
+  "source_topic": "🧠 How Good Is Your Knowledge of ANIMALS? 🦁🐘✅ 50 Animals Knowledge Trivia Quiz",
+  "generator": "llm:gemini-2.5-flash",
+  "score": 4818.0,
+  "pair_id": "pair_20261111_0065",
+  "hook_variant": "A",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "Only 1% of people can name these animals!",
+      "family": "number"
+    },
+    {
+      "variant": "B",
+      "hook": "Nobody warned you about How Good Is Your Knowledge",
+      "family": "negation"
+    }
+  ],
+  "compliance": {
+    "mode": "block",
+    "ok": true,
+    "reasons": [],
+    "checked_at": "2026-11-11T11:28:46",
+    "originality": {
+      "max_jaccard": 0.2632,
+      "max_script_jaccard": 0.2426,
+      "worst_match_src": "20261031-124545-01-most-people-fail-this-9-question-quiz.json",
+      "threshold": 0.6,
+      "threshold_script": 0.65,
+      "corpus_size": 89
+    },
+    "fatigue": {
+      "hook_family": "number",
+      "consecutive_same_family": 0,
+      "max_consecutive": 3,
+      "fatigued": false
+    },
+    "policy": {
+      "violations": []
+    },
+    "ai_disclosure": {
+      "contains_synthetic_media": false,
+      "configured": true
+    }
+  },
+  "id": "20261111-112846-02"
+}

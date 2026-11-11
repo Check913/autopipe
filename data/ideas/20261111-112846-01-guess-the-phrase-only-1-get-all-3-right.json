@@ -1,0 +1,73 @@
+{
+  "title": "Guess The Phrase: Only 1% Get All 3 Right",
+  "hook": "Only 1% score 3/3 on THIS Phrase Quiz.",
+  "script": "Only one percent of people score three out of three on this ultimate Guess The Phrase quiz. Think you're in the top one percent? Let's find out right now. You have exactly ten seconds for each phrase. Your first challenge, question one! What popular phrase is cleverly depicted here? Five seconds left! Don't overthink it! Time's up! The answer is... 'Break a leg!' Did you nail that first one? Next up, question two! Can you decipher this tricky one? This one's a real brain teaser. Hurry! And time! The correct phrase is... 'Bite the bullet!' Were you two for two? Final challenge, question three! This one tricks almost everyone. What's the hidden phrase? Tick-tock! Time is truly running out! And... Pencils down! The answer is... 'See eye to eye!' How many did you perfectly nail? Only one percent of people score three out of three on this ultimate Guess The Phrase quiz.",
+  "comment": "How many phrases did YOU correctly guess? Let me know!",
+  "description": "Test your brainpower with our latest Guess The Phrase quiz! Only the sharpest minds get all three correct. Can you join the elite one percent?\n#GuessThePhrase #WordPuzzle #QuizTime",
+  "tags": [
+    "guess the phrase",
+    "word puzzle",
+    "trivia",
+    "quiz",
+    "brain teaser",
+    "challenge",
+    "idioms",
+    "english phrases",
+    "scorenine",
+    "test your knowledge",
+    "only 1 percent",
+    "mind game"
+  ],
+  "density": 4,
+  "duration_format": "long",
+  "duration_target": 60,
+  "duration_range": [
+    50,
+    60
+  ],
+  "source_topic": "Guess The Phrase Quiz | Word Puzzle Challenge",
+  "generator": "llm:gemini-2.5-flash",
+  "score": 6157.7,
+  "pair_id": "pair_20261111_0063",
+  "hook_variant": "A",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "Only 1% score 3/3 on THIS Phrase Quiz.",
+      "family": "number"
+    },
+    {
+      "variant": "B",
+      "hook": "Nobody warned you about Guess The Phrase Quiz Word",
+      "family": "negation"
+    }
+  ],
+  "compliance": {
+    "mode": "block",
+    "ok": true,
+    "reasons": [],
+    "checked_at": "2026-11-11T11:28:10",
+    "originality": {
+      "max_jaccard": 0.2941,
+      "max_script_jaccard": 0.2969,
+      "worst_match_src": "20261031-155136-01-only-1-score-9-9-on-this-quiz.json",
+      "threshold": 0.6,
+      "threshold_script": 0.65,
+      "corpus_size": 89
+    },
+    "fatigue": {
+      "hook_family": "number",
+      "consecutive_same_family": 0,
+      "max_consecutive": 3,
+      "fatigued": false
+    },
+    "policy": {
+      "violations": []
+    },
+    "ai_disclosure": {
+      "contains_synthetic_media": false,
+      "configured": true
+    }
+  },
+  "id": "20261111-112846-01"
+}

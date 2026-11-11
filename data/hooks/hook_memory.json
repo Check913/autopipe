@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-11T05:41:36+00:00",
+  "updated": "2026-11-11T11:27:14+00:00",
   "publisheds": {
     "PCyc1j7hQ1s": {
       "video_id": "PCyc1j7hQ1s",
@@ -496,7 +496,23 @@
       "engaged_source": null,
       "avg_view_pct": null,
       "engagement": null
+    },
+    "IcKndL0Ulfc": {
+      "video_id": "IcKndL0Ulfc",
+      "published_at": "2026-11-11T05:45:56.975577+00:00",
+      "hook": "Are you smarter than most people?",
+      "family": "question",
+      "hook_variant": "A",
+      "pair_id": "pair_20261111_0061",
+      "title": "The Question Most People Get Wrong Is Next",
+      "topic": "quiz:history",
+      "views": null,
+      "engagedViews": null,
+      "engaged_ratio": null,
+      "engaged_source": null,
+      "avg_view_pct": null,
+      "engagement": null
     }
   },
-  "last_checked": "2026-11-11T05:41:36+00:00"
+  "last_checked": "2026-11-11T11:27:15+00:00"
 }
