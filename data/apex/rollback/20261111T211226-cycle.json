@@ -1,28 +1,28 @@
 {
-  "created": "2026-11-07T23:44:29.640778",
+  "created": "2026-11-11T21:12:26.393730",
   "label": "cycle",
   "reason": null,
   "bandit": {
     "arms": {
       "family:question": {
-        "alpha": 1.0,
-        "beta": 1.0,
-        "pulls": 0
+        "alpha": 3.928,
+        "beta": 2.072,
+        "pulls": 4
       },
       "family:number": {
-        "alpha": 1.0,
-        "beta": 1.0,
-        "pulls": 0
+        "alpha": 1.609,
+        "beta": 1.391,
+        "pulls": 1
       },
       "family:negation": {
-        "alpha": 1.0,
-        "beta": 1.0,
-        "pulls": 0
+        "alpha": 1.667,
+        "beta": 1.333,
+        "pulls": 1
       },
       "family:statement": {
-        "alpha": 1.619,
-        "beta": 1.381,
-        "pulls": 1
+        "alpha": 3.26,
+        "beta": 1.7400000000000002,
+        "pulls": 3
       },
       "format:short": {
         "alpha": 1.0,
@@ -30,9 +30,9 @@
         "pulls": 0
       },
       "format:long": {
-        "alpha": 1.619,
-        "beta": 1.381,
-        "pulls": 1
+        "alpha": 7.464,
+        "beta": 3.5359999999999996,
+        "pulls": 9
       },
       "quiz:on": {
         "alpha": 1.0,
@@ -40,12 +40,12 @@
         "pulls": 0
       },
       "quiz:off": {
-        "alpha": 1.619,
-        "beta": 1.381,
-        "pulls": 1
+        "alpha": 7.464,
+        "beta": 3.5359999999999996,
+        "pulls": 9
       }
     },
-    "updated": "2026-11-01T21:08:59.255835+00:00"
+    "updated": "2026-11-08T02:20:21.100321+00:00"
   },
   "knowledge": {
     "patterns": [
@@ -55,7 +55,7 @@
         "text": "Idiot Test - 90% fail",
         "norm": "idiot test - 90% fail",
         "wins": 0,
-        "losses": 0,
+        "losses": 1,
         "active": true,
         "source": "scrape",
         "created": "2026-11-01T21:09:05.813220+00:00"
@@ -66,7 +66,7 @@
         "text": "Common Sense Test That 90% of People Fail",
         "norm": "common sense test that 90% of people fail",
         "wins": 0,
-        "losses": 0,
+        "losses": 1,
         "active": true,
         "source": "scrape",
         "created": "2026-11-01T21:09:05.813240+00:00"
@@ -76,8 +76,8 @@
         "arm": "family:statement",
         "text": "Guess the WORD by Emojis? 🤔 Emoji Quiz",
         "norm": "guess the word by emojis? 🤔 emoji quiz",
-        "wins": 0,
-        "losses": 0,
+        "wins": 1,
+        "losses": 1,
         "active": true,
         "source": "scrape",
         "created": "2026-11-01T21:09:05.813253+00:00"
@@ -88,7 +88,7 @@
         "text": "13 Riddles That Will Test Your Brain Speed",
         "norm": "13 riddles that will test your brain speed",
         "wins": 0,
-        "losses": 0,
+        "losses": 1,
         "active": true,
         "source": "scrape",
         "created": "2026-11-01T21:09:05.813263+00:00"
@@ -98,8 +98,8 @@
         "arm": "family:question",
         "text": "IQ Test For Genius Only - How Smart Are You ?",
         "norm": "iq test for genius only - how smart are you ?",
-        "wins": 0,
-        "losses": 0,
+        "wins": 1,
+        "losses": 3,
         "active": true,
         "source": "scrape",
         "created": "2026-11-01T21:09:05.813273+00:00"
@@ -109,8 +109,8 @@
         "arm": "family:question",
         "text": "Can You Answer These How Much Do You Know About India? 🇮🇳 General Knowledge Quiz & Trivia?",
         "norm": "can you answer these how much do you know about india? 🇮🇳 general knowledge quiz & trivia?",
-        "wins": 0,
-        "losses": 0,
+        "wins": 1,
+        "losses": 3,
         "active": true,
         "source": "scrape",
         "created": "2026-11-01T21:09:05.813286+00:00"
@@ -121,7 +121,7 @@
         "text": "Guess The Sonic Hedgehog 3 Movie Characters by Voice ? 🎬🦔💙 fastQUIZ Channel 2026",
         "norm": "guess the sonic hedgehog 3 movie characters by voice ? 🎬🦔💙 fastquiz channel 2026",
         "wins": 0,
-        "losses": 0,
+        "losses": 1,
         "active": true,
         "source": "scrape",
         "created": "2026-11-01T21:09:05.813301+00:00"
@@ -132,7 +132,7 @@
         "text": "General Knowledge Trivia Quiz | 100 Questions Everyone Should Know! 🙂",
         "norm": "general knowledge trivia quiz | 100 questions everyone should know! 🙂",
         "wins": 0,
-        "losses": 0,
+        "losses": 1,
         "active": true,
         "source": "scrape",
         "created": "2026-11-01T21:09:05.813315+00:00"
@@ -142,8 +142,8 @@
         "arm": "family:statement",
         "text": "Guess the Countries by Their Flags | World Flags Quiz",
         "norm": "guess the countries by their flags | world flags quiz",
-        "wins": 0,
-        "losses": 0,
+        "wins": 1,
+        "losses": 1,
         "active": true,
         "source": "scrape",
         "created": "2026-11-01T21:09:05.813330+00:00"
@@ -153,8 +153,8 @@
         "arm": "family:question",
         "text": "Can You Answer These 🧠 Can You Pass This Human Body Quiz? 🧍💪🧬 General Knowledge Quiz?",
         "norm": "can you answer these 🧠 can you pass this human body quiz? 🧍💪🧬 general knowledge quiz?",
-        "wins": 0,
-        "losses": 0,
+        "wins": 1,
+        "losses": 3,
         "active": true,
         "source": "scrape",
         "created": "2026-11-01T21:09:05.813346+00:00"
@@ -164,8 +164,8 @@
         "arm": "family:question",
         "text": "Can You Answer These 🚩 Guess the COUNTRY by Emoji? 🌎 Emoji Quiz?",
         "norm": "can you answer these 🚩 guess the country by emoji? 🌎 emoji quiz?",
-        "wins": 0,
-        "losses": 0,
+        "wins": 1,
+        "losses": 3,
         "active": true,
         "source": "scrape",
         "created": "2026-11-07T23:23:08.833336+00:00"
@@ -175,8 +175,8 @@
         "arm": "family:statement",
         "text": "How Much Do You Know About India? 🇮🇳 General Knowledge Quiz & Trivia",
         "norm": "how much do you know about india? 🇮🇳 general knowledge quiz & trivia",
-        "wins": 0,
-        "losses": 0,
+        "wins": 1,
+        "losses": 1,
         "active": true,
         "source": "scrape",
         "created": "2026-11-07T23:23:08.833387+00:00"
@@ -186,8 +186,8 @@
         "arm": "family:question",
         "text": "Can You Answer These Guess the Game by Emoji?🎮🎲 Daily Quiz?",
         "norm": "can you answer these guess the game by emoji?🎮🎲 daily quiz?",
-        "wins": 0,
-        "losses": 0,
+        "wins": 1,
+        "losses": 3,
         "active": true,
         "source": "scrape",
         "created": "2026-11-07T23:23:08.833427+00:00"
@@ -197,13 +197,79 @@
         "arm": "family:statement",
         "text": "🧠 Can You Pass This Human Body Quiz? 🧍💪🧬 General Knowledge Quiz",
         "norm": "🧠 can you pass this human body quiz? 🧍💪🧬 general knowledge quiz",
+        "wins": 1,
+        "losses": 1,
+        "active": true,
+        "source": "scrape",
+        "created": "2026-11-07T23:23:08.833499+00:00"
+      },
+      {
+        "id": "f44c1b91415e",
+        "arm": "family:question",
+        "text": "Are you smarter than most people?",
+        "norm": "are you smarter than most people?",
+        "wins": 1,
+        "losses": 1,
+        "active": true,
+        "source": "post_mortem",
+        "created": "2026-11-08T02:20:21.082001+00:00"
+      },
+      {
+        "id": "edaae8e4c07a",
+        "arm": "family:statement",
+        "text": "If you miss three, you are officially average.",
+        "norm": "if you miss three, you are officially average.",
+        "wins": 1,
+        "losses": 1,
+        "active": true,
+        "source": "post_mortem",
+        "created": "2026-11-08T02:20:21.093230+00:00"
+      },
+      {
+        "id": "7f1181f1768d",
+        "arm": "family:question",
+        "text": "Can You Answer These Guess the Movie by Emoji 🎬🍿 Movie Quiz?",
+        "norm": "can you answer these guess the movie by emoji 🎬🍿 movie quiz?",
         "wins": 0,
         "losses": 0,
         "active": true,
         "source": "scrape",
-        "created": "2026-11-07T23:23:08.833499+00:00"
+        "created": "2026-11-10T23:57:17.912764+00:00"
+      },
+      {
+        "id": "518419b702cc",
+        "arm": "family:question",
+        "text": "Can You Answer These Guess the Countries by Their Flags?",
+        "norm": "can you answer these guess the countries by their flags?",
+        "wins": 0,
+        "losses": 0,
+        "active": true,
+        "source": "scrape",
+        "created": "2026-11-10T23:57:17.912871+00:00"
+      },
+      {
+        "id": "eed96a5850c4",
+        "arm": "family:statement",
+        "text": "Can You Pass This Maths Quiz...? ➗✖️🧠 | Easy, Medium, Hard, Impossible | Quiz Blitz",
+        "norm": "can you pass this maths quiz...? ➗✖️🧠 | easy, medium, hard, impossible | quiz blitz",
+        "wins": 0,
+        "losses": 0,
+        "active": true,
+        "source": "scrape",
+        "created": "2026-11-10T23:57:17.912900+00:00"
+      },
+      {
+        "id": "21862ca654b6",
+        "arm": "family:question",
+        "text": "Can You Answer These Can You Guess The Country Without Vowels? 🌎🤔 Country Quiz?",
+        "norm": "can you answer these can you guess the country without vowels? 🌎🤔 country quiz?",
+        "wins": 0,
+        "losses": 0,
+        "active": true,
+        "source": "scrape",
+        "created": "2026-11-10T23:57:17.912929+00:00"
       }
     ],
-    "updated": "2026-11-07T23:27:29.769155+00:00"
+    "updated": "2026-11-11T20:02:26.796750+00:00"
   }
 }

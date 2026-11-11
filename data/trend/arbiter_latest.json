@@ -1,113 +1,113 @@
 {
-  "fetched": "2026-11-11T20:02:06",
+  "fetched": "2026-11-11T21:15:31",
   "geo": "",
   "topics": [
     {
-      "query": "uc davis basketball",
+      "query": "randall england",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 4283.0,
-      "momentum": 3.7983
+      "saturation_views": 56605.0,
+      "momentum": 2.6646
     },
     {
-      "query": "dartmouth basketball",
-      "traffic": 200.0,
-      "rise": 10.0,
-      "saturation_views": 6933.0,
-      "momentum": 3.5192
-    },
-    {
-      "query": "michael jackson estate value $2 billion",
-      "traffic": 500.0,
-      "rise": 10.0,
-      "saturation_views": 130256.0,
-      "momentum": 2.4302
-    },
-    {
-      "query": "lucia gta 6",
+      "query": "south florida basketball",
       "traffic": 2000.0,
       "rise": 10.0,
-      "saturation_views": 291233.0,
-      "momentum": 2.24
+      "saturation_views": 96211.0,
+      "momentum": 2.5105
     },
     {
-      "query": "joao below deck",
+      "query": "roadster",
+      "traffic": 500.0,
+      "rise": 1.5,
+      "saturation_views": 7446511.0,
+      "momentum": 0.2555
+    },
+    {
+      "query": "spx",
       "traffic": 1000.0,
-      "rise": 10.0,
-      "saturation_views": 482772.0,
-      "momentum": 2.135
+      "rise": 1.0,
+      "saturation_views": 263215.0,
+      "momentum": 0.2262
     },
     {
-      "query": "chase young",
-      "traffic": 500.0,
-      "rise": 10.0,
-      "saturation_views": 591513.0,
-      "momentum": 2.0956
+      "query": "ayesha curry",
+      "traffic": 2000.0,
+      "rise": 0.0,
+      "saturation_views": 337406.0,
+      "momentum": 0.0
     },
     {
-      "query": "billy gray",
-      "traffic": 500.0,
-      "rise": 10.0,
-      "saturation_views": 1009965.0,
-      "momentum": 1.9983
+      "query": "air force basketball",
+      "traffic": 1000.0,
+      "rise": 0.0,
+      "saturation_views": 521.0,
+      "momentum": 0.0
     },
     {
-      "query": "adults season 3",
-      "traffic": 500.0,
-      "rise": 10.0,
-      "saturation_views": 1357757.0,
-      "momentum": 1.9482
-    },
-    {
-      "query": "american airlines international route cancellations 2027",
+      "query": "weather chicago",
       "traffic": 200.0,
-      "rise": 10.0,
-      "saturation_views": 3662352.0,
-      "momentum": 1.7973
+      "rise": 0.0,
+      "saturation_views": 20579.0,
+      "momentum": 0.0
     },
     {
-      "query": "pep guardiola",
+      "query": "disco singer rochelle fleming passes",
+      "traffic": 2000.0,
+      "rise": 0.0,
+      "saturation_views": 109486.0,
+      "momentum": 0.0
+    },
+    {
+      "query": "elina svitolina",
       "traffic": 1000.0,
-      "rise": 10.0,
-      "saturation_views": 6079179.0,
-      "momentum": 1.729
+      "rise": 0.0,
+      "saturation_views": 385906.0,
+      "momentum": 0.0
+    },
+    {
+      "query": "childrens hospital",
+      "traffic": 1000.0,
+      "rise": 0.0,
+      "saturation_views": 89897553.0,
+      "momentum": 0.0
     }
   ],
   "top": [
     {
-      "query": "uc davis basketball",
+      "query": "randall england",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 4283.0,
-      "momentum": 3.7983
+      "saturation_views": 56605.0,
+      "momentum": 2.6646
     },
     {
-      "query": "dartmouth basketball",
-      "traffic": 200.0,
-      "rise": 10.0,
-      "saturation_views": 6933.0,
-      "momentum": 3.5192
-    },
-    {
-      "query": "michael jackson estate value $2 billion",
-      "traffic": 500.0,
-      "rise": 10.0,
-      "saturation_views": 130256.0,
-      "momentum": 2.4302
-    },
-    {
-      "query": "lucia gta 6",
+      "query": "south florida basketball",
       "traffic": 2000.0,
       "rise": 10.0,
-      "saturation_views": 291233.0,
-      "momentum": 2.24
+      "saturation_views": 96211.0,
+      "momentum": 2.5105
     },
     {
-      "query": "joao below deck",
+      "query": "roadster",
+      "traffic": 500.0,
+      "rise": 1.5,
+      "saturation_views": 7446511.0,
+      "momentum": 0.2555
+    },
+    {
+      "query": "spx",
       "traffic": 1000.0,
-      "rise": 10.0,
-      "saturation_views": 482772.0,
-      "momentum": 2.135
+      "rise": 1.0,
+      "saturation_views": 263215.0,
+      "momentum": 0.2262
+    },
+    {
+      "query": "ayesha curry",
+      "traffic": 2000.0,
+      "rise": 0.0,
+      "saturation_views": 337406.0,
+      "momentum": 0.0
     }
   ]
 }

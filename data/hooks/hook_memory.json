@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-11T20:02:26+00:00",
+  "updated": "2026-11-11T21:15:31+00:00",
   "publisheds": {
     "PCyc1j7hQ1s": {
       "video_id": "PCyc1j7hQ1s",
@@ -299,11 +299,11 @@
       "title": "Can You Beat This 9 Question Quiz?",
       "topic": "quiz:science",
       "views": 457,
-      "engagedViews": 0,
-      "engaged_ratio": 57.1,
-      "engaged_source": "fallback_averageViewPercentage",
+      "engagedViews": 302,
+      "engaged_ratio": 66.1,
+      "engaged_source": "engagedViews",
       "avg_view_pct": 57.1,
-      "engagement": 57.1
+      "engagement": 66.1
     },
     "cy3aSg9ujT4": {
       "video_id": "cy3aSg9ujT4",
@@ -528,7 +528,39 @@
       "engaged_source": null,
       "avg_view_pct": null,
       "engagement": null
+    },
+    "1RzlNkHCr_4": {
+      "video_id": "1RzlNkHCr_4",
+      "published_at": "2026-11-11T20:07:09.498897+00:00",
+      "hook": "Only 1% Can Guess These Food Emojis Correctly.",
+      "family": "number",
+      "hook_variant": "A",
+      "pair_id": "pair_20261111_0069",
+      "title": "Only 1% Can Guess These Food Emojis",
+      "topic": "Guess The Food By Emoji 🍔🍟 Food And Drink Emoji Quiz | Quiz Alien",
+      "views": null,
+      "engagedViews": null,
+      "engaged_ratio": null,
+      "engaged_source": null,
+      "avg_view_pct": null,
+      "engagement": null
+    },
+    "TCej10eTrUU": {
+      "video_id": "TCej10eTrUU",
+      "published_at": "2026-11-11T21:15:15.048320+00:00",
+      "hook": "How high can you score?",
+      "family": "question",
+      "hook_variant": "A",
+      "pair_id": "pair_20261111_0071",
+      "title": "This Quiz Gets Harder Every Question",
+      "topic": "quiz:movies",
+      "views": null,
+      "engagedViews": null,
+      "engaged_ratio": null,
+      "engaged_source": null,
+      "avg_view_pct": null,
+      "engagement": null
     }
   },
-  "last_checked": "2026-11-11T20:02:26+00:00"
+  "last_checked": "2026-11-11T21:15:31+00:00"
 }

@@ -1,28 +1,28 @@
 {
   "status": "ok",
-  "pairs": 65,
+  "pairs": 71,
   "joined": 9,
   "variants": {
     "A": {
-      "assigned": 39,
+      "assigned": 44,
       "measured": 4,
       "mean_engagement": 73.2,
       "mean_views": 536,
       "families": {
         "statement": 8,
-        "question": 15,
-        "number": 10,
+        "question": 17,
+        "number": 13,
         "negation": 6
       }
     },
     "B": {
-      "assigned": 26,
+      "assigned": 27,
       "measured": 5,
-      "mean_engagement": 70.4,
+      "mean_engagement": 56.5,
       "mean_views": 383,
       "families": {
         "question": 8,
-        "number": 6,
+        "number": 7,
         "negation": 3,
         "identity": 9
       }
@@ -348,7 +348,7 @@
       "hook_a": "Are you smarter than most people?",
       "hook_b": "Only top 1% brains get every single one right.",
       "video_id": "fNh2NGFifGQ",
-      "engagement": 57.1,
+      "engagement": 66.1,
       "views": 457
     },
     {
@@ -376,8 +376,8 @@
       "hook_a": "Are you smarter than most people?",
       "hook_b": "Most adults cannot get all of these right.",
       "video_id": "uBK8AeCn1LM",
-      "engagement": null,
-      "views": null
+      "engagement": 61.5,
+      "views": 1033
     },
     {
       "ts": "2026-10-31T16:15:53",
@@ -404,8 +404,8 @@
       "hook_a": "Are you smarter than most people?",
       "hook_b": "Only top 1% brains get every single one right.",
       "video_id": "fXzcJuL7tII",
-      "engagement": null,
-      "views": null
+      "engagement": 100.0,
+      "views": 1
     },
     {
       "ts": "2026-10-31T18:10:25",
@@ -418,8 +418,8 @@
       "hook_a": "Are you smarter than most people?",
       "hook_b": "If you miss three, you are officially average.",
       "video_id": "kzoLfpuh6lY",
-      "engagement": null,
-      "views": null
+      "engagement": 100.0,
+      "views": 1
     },
     {
       "ts": "2026-11-01T00:28:19",
@@ -446,8 +446,8 @@
       "hook_a": "How high can you score?",
       "hook_b": "Only top 1% brains get every single one right.",
       "video_id": "jVwLSsQx_iE",
-      "engagement": null,
-      "views": null
+      "engagement": 60.9,
+      "views": 64
     },
     {
       "ts": "2026-11-01T13:35:39",
@@ -474,8 +474,8 @@
       "hook_a": "Are you smarter than most people?",
       "hook_b": "If you miss three, you are officially average.",
       "video_id": "DEEnyERlFYg",
-      "engagement": null,
-      "views": null
+      "engagement": 64.2,
+      "views": 1250
     },
     {
       "ts": "2026-11-02T15:21:51",
@@ -488,8 +488,8 @@
       "hook_a": "Are you smarter than most people?",
       "hook_b": "Most adults cannot get all of these right.",
       "video_id": "4oBjYODEBaw",
-      "engagement": null,
-      "views": null
+      "engagement": 65.3,
+      "views": 654
     },
     {
       "ts": "2026-11-07T23:23:34",
@@ -938,7 +938,91 @@
       "video_id": null,
       "engagement": null,
       "views": null
+    },
+    {
+      "ts": "2026-11-11T20:03:49",
+      "pair_id": "pair_20261111_0066",
+      "topic": "utf8, toffsetms, ddurationms",
+      "variant": "B",
+      "hook": "3 Utf8, toffsetms, ddurationms facts they never teach you",
+      "family": "number",
+      "family_other": "question",
+      "hook_a": "Why does utf8, toffsetms, ddurationms break every rule?",
+      "hook_b": "3 Utf8, toffsetms, ddurationms facts they never teach you",
+      "video_id": null,
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-11T20:04:00",
+      "pair_id": "pair_20261111_0067",
+      "topic": "quiz:history",
+      "variant": "A",
+      "hook": "Are you smarter than most people?",
+      "family": "question",
+      "family_other": "identity",
+      "hook_a": "Are you smarter than most people?",
+      "hook_b": "Getting them all right means elite memory.",
+      "video_id": null,
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-11T20:04:30",
+      "pair_id": "pair_20261111_0068",
+      "topic": "Are You SMARTER Than a 5th Grader? 📚🤓🧠 | General Knowledge Quiz",
+      "variant": "A",
+      "hook": "Nobody talks about Are You SMARTER Than a 5th Grader? 📚🤓🧠 |",
+      "family": "number",
+      "family_other": "number",
+      "hook_a": "Nobody talks about Are You SMARTER Than a 5th Grader? 📚🤓🧠 |",
+      "hook_b": "Why does nobody explain Are You SMARTER Than 5th like this?",
+      "video_id": null,
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-11T20:04:48",
+      "pair_id": "pair_20261111_0069",
+      "topic": "Guess The Food By Emoji 🍔🍟 Food And Drink Emoji Quiz | Quiz Alien",
+      "variant": "A",
+      "hook": "Only 1% Can Guess These Food Emojis Correctly.",
+      "family": "number",
+      "family_other": "negation",
+      "hook_a": "Only 1% Can Guess These Food Emojis Correctly.",
+      "hook_b": "Nobody warned you about Guess The Food By Emoji 🍔🍟",
+      "video_id": "1RzlNkHCr_4",
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-11T20:04:49",
+      "pair_id": "pair_20261111_0070",
+      "topic": "50 Questions Everyone Should Know! | General Knowledge Trivia Quiz 🧠🔥",
+      "variant": "A",
+      "hook": "Nobody talks about 50 Questions Everyone Should Know! |",
+      "family": "number",
+      "family_other": "number",
+      "hook_a": "Nobody talks about 50 Questions Everyone Should Know! |",
+      "hook_b": "Why does nobody explain 50 Questions Everyone like this?",
+      "video_id": null,
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-11T21:12:52",
+      "pair_id": "pair_20261111_0071",
+      "topic": "quiz:movies",
+      "variant": "A",
+      "hook": "How high can you score?",
+      "family": "question",
+      "family_other": "identity",
+      "hook_a": "How high can you score?",
+      "hook_b": "If you miss three, you are officially average.",
+      "video_id": "TCej10eTrUU",
+      "engagement": null,
+      "views": null
     }
   ],
-  "fetched": "2026-11-11T20:02:24"
+  "fetched": "2026-11-11T21:15:31"
 }
