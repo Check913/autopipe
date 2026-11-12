@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-12T07:07:20.216048",
+  "date": "2026-11-12T10:11:23.058493",
   "region": "US",
   "language": "en",
   "keywords": [
@@ -12,18 +12,18 @@
   ],
   "min_views": 500000,
   "max_duration": 90,
-  "total_found": 86,
-  "rejected": 76,
+  "total_found": 88,
+  "rejected": 78,
   "hits": [
     {
       "id": "JPYF2WVSMHU",
       "title": "QUIZ Busca y Encuentra con Blui | ¿Encontrás las 3 en 10 segundos? | Los Amigurumis #quiz #shorts",
       "channel": "Los Amigurumis",
-      "views": 126251,
+      "views": 127575,
       "duration": 55.0,
       "url": "https://www.youtube.com/watch?v=JPYF2WVSMHU",
       "query": "radar:youtube",
-      "score": 420.8
+      "score": 425.2
     },
     {
       "id": "q16JX5kT0Ls",
@@ -41,7 +41,7 @@
       "views": 918,
       "duration": 71.0,
       "url": "https://www.youtube.com/watch?v=8GzHtEWXdI4",
-      "query": "ytsearch10:test your knowledge shorts"
+      "query": "ytsearch10:test your knowledge #shorts"
     },
     {
       "id": "aZbrvMznLE4",
@@ -53,13 +53,13 @@
       "query": "ytsearch10:test your knowledge shorts"
     },
     {
-      "id": "uaWbJExYEbE",
-      "title": "Test Your Knowledge #shorts",
-      "channel": "know youtube",
-      "views": 60,
-      "duration": 31.0,
-      "url": "https://www.youtube.com/watch?v=uaWbJExYEbE",
-      "query": "ytsearch10:test your knowledge shorts"
+      "id": "uQ81h8Mjwcw",
+      "title": "General Knowledge Quiz – Human Body Quiz",
+      "channel": "GH Quiz ",
+      "views": 72,
+      "duration": 90.0,
+      "url": "https://www.youtube.com/watch?v=uQ81h8Mjwcw",
+      "query": "ytsearch10:general knowledge #shorts"
     }
   ]
 }

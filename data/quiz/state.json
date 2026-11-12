@@ -1,5 +1,5 @@
 {
-  "seq": 25,
+  "seq": 26,
   "used": [
     "whatisthecapitalcityofcanada",
     "whichgasdoplantsprimarilyabsorbfromtheatmosphereforphotosynthesis",
@@ -126,18 +126,18 @@
     "whichriverisgenerallyconsideredthelongestintheworld",
     "whichmetalisliquidatroomtemperature",
     "whichfilmwonthefirstbestanimatedfeatureoscar",
-    "whichletterismissingfromallusstatenames"
-  ],
-  "generated": [
+    "whichletterismissingfromallusstatenames",
+    "whatisthelongestriverintheworld",
+    "inwhichmoviewouldyoufindthecharacterjackdawson",
+    "whatisoftenreferredtoasthepowerhouseofthecell",
+    "thefalloftheberlinwallinwhichyearsymbolizedtheendofthecoldwar",
+    "whodirectedthesciencefictionfilmjurassicpark",
+    "howmanycontinentsarethereintheworld",
     "whichfilmwonthefirstbestanimatedfeatureoscar",
     "whichletterismissingfromallusstatenames",
-    "howlongcanagiraffestonguebe",
-    "whichcountryhasthemosttimezones",
-    "whichbirdcanflybackwards",
-    "whichistheonlyflyingmammal",
-    "whatisthelargestislandintheworld",
-    "whichmetalisliquidatroomtemperature",
-    "whichfilmwonthefirstbestanimatedfeatureoscar",
+    "howlongcanagiraffestonguebe"
+  ],
+  "generated": [
     "whichletterismissingfromallusstatenames",
     "howlongcanagiraffestonguebe",
     "whichcountryhasthemosttimezones",
@@ -152,7 +152,16 @@
     "whichriverisgenerallyconsideredthelongestintheworld",
     "whichmetalisliquidatroomtemperature",
     "whichfilmwonthefirstbestanimatedfeatureoscar",
-    "whichletterismissingfromallusstatenames"
+    "whichletterismissingfromallusstatenames",
+    "whatisthelongestriverintheworld",
+    "inwhichmoviewouldyoufindthecharacterjackdawson",
+    "whatisoftenreferredtoasthepowerhouseofthecell",
+    "thefalloftheberlinwallinwhichyearsymbolizedtheendofthecoldwar",
+    "whodirectedthesciencefictionfilmjurassicpark",
+    "howmanycontinentsarethereintheworld",
+    "whichfilmwonthefirstbestanimatedfeatureoscar",
+    "whichletterismissingfromallusstatenames",
+    "howlongcanagiraffestonguebe"
   ],
   "videos": [
     {
@@ -238,6 +247,12 @@
       "idea_id": "20261112-070753-01",
       "title": "9 Questions Only 1% Finish Perfect",
       "ts": "2026-11-12T08:00:10Z"
+    },
+    {
+      "video_id": "_wndzum-WEg",
+      "idea_id": "20261112-101155-01",
+      "title": "9 Questions. 3 Seconds Each. No Cheating.",
+      "ts": "2026-11-12T10:15:14Z"
     }
   ]
 }

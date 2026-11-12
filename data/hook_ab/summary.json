@@ -1,16 +1,16 @@
 {
   "status": "ok",
-  "pairs": 78,
+  "pairs": 79,
   "joined": 9,
   "variants": {
     "A": {
-      "assigned": 46,
+      "assigned": 47,
       "measured": 4,
       "mean_engagement": 73.2,
       "mean_views": 536,
       "families": {
         "statement": 8,
-        "question": 19,
+        "question": 20,
         "number": 13,
         "negation": 6
       }
@@ -1120,7 +1120,21 @@
       "video_id": null,
       "engagement": null,
       "views": null
+    },
+    {
+      "ts": "2026-11-12T07:07:36",
+      "pair_id": "pair_20261112_0079",
+      "topic": "quiz:geography",
+      "variant": "A",
+      "hook": "Are you smarter than most people?",
+      "family": "question",
+      "family_other": "identity",
+      "hook_a": "Are you smarter than most people?",
+      "hook_b": "Getting them all right means elite memory.",
+      "video_id": "ETrOacfkwlo",
+      "engagement": null,
+      "views": null
     }
   ],
-  "fetched": "2026-11-12T07:07:09"
+  "fetched": "2026-11-12T10:11:11"
 }

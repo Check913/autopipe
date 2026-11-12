@@ -1,113 +1,113 @@
 {
-  "fetched": "2026-11-12T07:07:09",
+  "fetched": "2026-11-12T10:10:54",
   "geo": "",
   "topics": [
     {
-      "query": "measles outbreak pennsylvania",
-      "traffic": 200.0,
-      "rise": 10.0,
-      "saturation_views": 373871.0,
-      "momentum": 2.1869
-    },
-    {
-      "query": "new zealand vs india soccer",
-      "traffic": 200.0,
-      "rise": 10.0,
-      "saturation_views": 791540.0,
-      "momentum": 2.0415
-    },
-    {
-      "query": "dustin hoffman",
-      "traffic": 1000.0,
-      "rise": 10.0,
-      "saturation_views": 976642.0,
-      "momentum": 2.0041
-    },
-    {
-      "query": "hltv",
-      "traffic": 200.0,
-      "rise": 10.0,
-      "saturation_views": 981097.0,
-      "momentum": 2.0033
-    },
-    {
-      "query": "aspyn ovard kids",
-      "traffic": 200.0,
-      "rise": 10.0,
-      "saturation_views": 1629073.0,
-      "momentum": 1.9187
-    },
-    {
-      "query": "winter storm watch",
+      "query": "when will fortnite servers be back up",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 1932969.0,
-      "momentum": 1.8917
+      "saturation_views": 31603.0,
+      "momentum": 2.8573
     },
     {
-      "query": "dji",
-      "traffic": 100.0,
+      "query": "alexander darchiev",
+      "traffic": 2000.0,
       "rise": 10.0,
-      "saturation_views": 2314840.0,
-      "momentum": 1.8641
+      "saturation_views": 69149.0,
+      "momentum": 2.6043
     },
     {
-      "query": "france vs italy",
-      "traffic": 100.0,
-      "rise": 10.0,
-      "saturation_views": 2501230.0,
-      "momentum": 1.8525
-    },
-    {
-      "query": "slomw oc",
-      "traffic": 5000.0,
-      "rise": 10.0,
-      "saturation_views": 8229036.0,
-      "momentum": 1.6905
-    },
-    {
-      "query": "james acaster",
+      "query": "fugitive",
       "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 9372538.0,
-      "momentum": 1.6745
+      "saturation_views": 565630.0,
+      "momentum": 2.1041
+    },
+    {
+      "query": "noah's ark discovery",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 627556.0,
+      "momentum": 2.0843
+    },
+    {
+      "query": "weather snow",
+      "traffic": 2000.0,
+      "rise": 10.0,
+      "saturation_views": 704142.0,
+      "momentum": 2.0628
+    },
+    {
+      "query": "michael carrick",
+      "traffic": 5000.0,
+      "rise": 10.0,
+      "saturation_views": 742587.0,
+      "momentum": 2.0531
+    },
+    {
+      "query": "amber alert",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 8787016.0,
+      "momentum": 1.6824
+    },
+    {
+      "query": "jennifer aniston",
+      "traffic": 100.0,
+      "rise": 10.0,
+      "saturation_views": 24518202.0,
+      "momentum": 1.5651
+    },
+    {
+      "query": "rockstar",
+      "traffic": 100.0,
+      "rise": 10.0,
+      "saturation_views": 2646628699.0,
+      "momentum": 1.1873
+    },
+    {
+      "query": "ohio state buckeyes football",
+      "traffic": 200.0,
+      "rise": 0.0,
+      "saturation_views": 2383908.0,
+      "momentum": 0.0
     }
   ],
   "top": [
     {
-      "query": "measles outbreak pennsylvania",
-      "traffic": 200.0,
+      "query": "when will fortnite servers be back up",
+      "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 373871.0,
-      "momentum": 2.1869
+      "saturation_views": 31603.0,
+      "momentum": 2.8573
     },
     {
-      "query": "new zealand vs india soccer",
-      "traffic": 200.0,
+      "query": "alexander darchiev",
+      "traffic": 2000.0,
       "rise": 10.0,
-      "saturation_views": 791540.0,
-      "momentum": 2.0415
+      "saturation_views": 69149.0,
+      "momentum": 2.6043
     },
     {
-      "query": "dustin hoffman",
-      "traffic": 1000.0,
-      "rise": 10.0,
-      "saturation_views": 976642.0,
-      "momentum": 2.0041
-    },
-    {
-      "query": "hltv",
+      "query": "fugitive",
       "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 981097.0,
-      "momentum": 2.0033
+      "saturation_views": 565630.0,
+      "momentum": 2.1041
     },
     {
-      "query": "aspyn ovard kids",
+      "query": "noah's ark discovery",
       "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 1629073.0,
-      "momentum": 1.9187
+      "saturation_views": 627556.0,
+      "momentum": 2.0843
+    },
+    {
+      "query": "weather snow",
+      "traffic": 2000.0,
+      "rise": 10.0,
+      "saturation_views": 704142.0,
+      "momentum": 2.0628
     }
   ]
 }

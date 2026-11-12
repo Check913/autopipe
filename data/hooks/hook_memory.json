@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-12T07:07:09+00:00",
+  "updated": "2026-11-12T10:11:11+00:00",
   "publisheds": {
     "PCyc1j7hQ1s": {
       "video_id": "PCyc1j7hQ1s",
@@ -592,7 +592,23 @@
       "engaged_source": null,
       "avg_view_pct": null,
       "engagement": null
+    },
+    "ETrOacfkwlo": {
+      "video_id": "ETrOacfkwlo",
+      "published_at": "2026-11-12T08:00:10.192110+00:00",
+      "hook": "Are you smarter than most people?",
+      "family": "question",
+      "hook_variant": "A",
+      "pair_id": "pair_20261112_0079",
+      "title": "9 Questions Only 1% Finish Perfect",
+      "topic": "quiz:geography",
+      "views": null,
+      "engagedViews": null,
+      "engaged_ratio": null,
+      "engaged_source": null,
+      "avg_view_pct": null,
+      "engagement": null
     }
   },
-  "last_checked": "2026-11-12T07:07:10+00:00"
+  "last_checked": "2026-11-12T10:11:11+00:00"
 }
