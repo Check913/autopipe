@@ -1,0 +1,73 @@
+{
+  "title": "Only 1% Can Name ALL These Candies",
+  "hook": "Only the sharpest minds identify all 3 classic candies.",
+  "script": "Only the sharpest minds identify all three classic candies in this quiz. Get ready to test your sweet tooth knowledge! We've got three iconic treats, and just five seconds for each. Your timer starts now for question one! Can you name this red licorice-like delight? Time's up! That was Twizzlers, a chewy classic. Did you get it? Moving on to question two! What's this colorful, fruit-flavored bite? And the answer is... Skittles! Taste the rainbow, right? Now for the final challenge, question three! This candy is famously \"sour then sweet.\" What is it? You got it – Sour Patch Kids! So, how many did you correctly identify? Did you prove you have the sharpest mind and identify all three classic candies?",
+  "comment": "How many candies did you correctly guess? Drop your score below!",
+  "description": "Think you're a candy connoisseur? Put your knowledge to the ultimate test in this fast-paced quiz! Three iconic candies, only seconds to guess each. Share your score!\n#CandyQuiz #TriviaChallenge #GuessTheCandy",
+  "tags": [
+    "quiz",
+    "trivia",
+    "candy quiz",
+    "guess the candy",
+    "general knowledge",
+    "brain teaser",
+    "test your knowledge",
+    "only 1 percent",
+    "did you know",
+    "food quiz",
+    "challenge",
+    "ScoreNine"
+  ],
+  "density": 4,
+  "duration_format": "long",
+  "duration_target": 60,
+  "duration_range": [
+    50,
+    60
+  ],
+  "source_topic": "Guess The Candy 🍬 How Many of These Candies Do You Know? | Candy Quiz",
+  "generator": "llm:gemini-2.5-flash",
+  "score": 1903.8,
+  "pair_id": "pair_20261112_0088",
+  "hook_variant": "A",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "Only the sharpest minds identify all 3 classic candies.",
+      "family": "number"
+    },
+    {
+      "variant": "B",
+      "hook": "Nobody warned you about Guess The Candy How Many of",
+      "family": "negation"
+    }
+  ],
+  "compliance": {
+    "mode": "block",
+    "ok": true,
+    "reasons": [],
+    "checked_at": "2026-11-12T18:34:32",
+    "originality": {
+      "max_jaccard": 0.2222,
+      "max_script_jaccard": 0.2713,
+      "worst_match_src": "20261111-112846-02-only-1-pass-this-animal-quiz.json",
+      "threshold": 0.6,
+      "threshold_script": 0.65,
+      "corpus_size": 102
+    },
+    "fatigue": {
+      "hook_family": "number",
+      "consecutive_same_family": 1,
+      "max_consecutive": 3,
+      "fatigued": false
+    },
+    "policy": {
+      "violations": []
+    },
+    "ai_disclosure": {
+      "contains_synthetic_media": false,
+      "configured": true
+    }
+  },
+  "id": "20261112-183432-03"
+}

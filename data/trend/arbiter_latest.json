@@ -1,113 +1,113 @@
 {
-  "fetched": "2026-11-12T11:48:55",
+  "fetched": "2026-11-12T18:33:22",
   "geo": "",
   "topics": [
     {
-      "query": "brigham nurses strike",
-      "traffic": 100.0,
+      "query": "outlook outage",
+      "traffic": 200000.0,
       "rise": 10.0,
-      "saturation_views": 2364.0,
-      "momentum": 4.2097
+      "saturation_views": 1896.0,
+      "momentum": 4.3857
     },
     {
-      "query": "날씨",
+      "query": "internet outage",
+      "traffic": 10000.0,
+      "rise": 10.0,
+      "saturation_views": 9931.0,
+      "momentum": 3.3362
+    },
+    {
+      "query": "warrenton mo",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 46547.0,
-      "momentum": 2.7263
+      "saturation_views": 19034.0,
+      "momentum": 3.049
     },
     {
-      "query": "погода",
-      "traffic": 200.0,
+      "query": "downdetector",
+      "traffic": 10000.0,
       "rise": 10.0,
-      "saturation_views": 48854.0,
-      "momentum": 2.7108
+      "saturation_views": 61138.0,
+      "momentum": 2.641
     },
     {
-      "query": "alec bohm",
-      "traffic": 500.0,
+      "query": "gemini hydrogen",
+      "traffic": 1000.0,
       "rise": 10.0,
-      "saturation_views": 86222.0,
-      "momentum": 2.5409
+      "saturation_views": 63087.0,
+      "momentum": 2.6316
     },
     {
-      "query": "polar vortex",
-      "traffic": 200.0,
-      "rise": 10.0,
-      "saturation_views": 262275.0,
-      "momentum": 2.2631
-    },
-    {
-      "query": "box office",
-      "traffic": 100.0,
-      "rise": 10.0,
-      "saturation_views": 419159.0,
-      "momentum": 2.1634
-    },
-    {
-      "query": "chicago bears coach ben johnson",
-      "traffic": 200.0,
-      "rise": 10.0,
-      "saturation_views": 518934.0,
-      "momentum": 2.1208
-    },
-    {
-      "query": "météo",
-      "traffic": 200.0,
-      "rise": 10.0,
-      "saturation_views": 928762.0,
-      "momentum": 2.0129
-    },
-    {
-      "query": "clima",
-      "traffic": 20000.0,
-      "rise": 10.0,
-      "saturation_views": 24135260.0,
-      "momentum": 1.5667
-    },
-    {
-      "query": "tiempo",
+      "query": "turkey",
       "traffic": 2000.0,
       "rise": 10.0,
-      "saturation_views": 79249516.0,
-      "momentum": 1.4495
+      "saturation_views": 1770562.0,
+      "momentum": 1.9054
+    },
+    {
+      "query": "tommy mcmillen",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 2462722.0,
+      "momentum": 1.8548
+    },
+    {
+      "query": "tornado watch",
+      "traffic": 100000.0,
+      "rise": 10.0,
+      "saturation_views": 2935434.0,
+      "momentum": 1.8289
+    },
+    {
+      "query": "gatto",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 4883925.0,
+      "momentum": 1.7578
+    },
+    {
+      "query": "internet invitational",
+      "traffic": 1000.0,
+      "rise": 10.0,
+      "saturation_views": 20708871.0,
+      "momentum": 1.5832
     }
   ],
   "top": [
     {
-      "query": "brigham nurses strike",
-      "traffic": 100.0,
+      "query": "outlook outage",
+      "traffic": 200000.0,
       "rise": 10.0,
-      "saturation_views": 2364.0,
-      "momentum": 4.2097
+      "saturation_views": 1896.0,
+      "momentum": 4.3857
     },
     {
-      "query": "날씨",
+      "query": "internet outage",
+      "traffic": 10000.0,
+      "rise": 10.0,
+      "saturation_views": 9931.0,
+      "momentum": 3.3362
+    },
+    {
+      "query": "warrenton mo",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 46547.0,
-      "momentum": 2.7263
+      "saturation_views": 19034.0,
+      "momentum": 3.049
     },
     {
-      "query": "погода",
-      "traffic": 200.0,
+      "query": "downdetector",
+      "traffic": 10000.0,
       "rise": 10.0,
-      "saturation_views": 48854.0,
-      "momentum": 2.7108
+      "saturation_views": 61138.0,
+      "momentum": 2.641
     },
     {
-      "query": "alec bohm",
-      "traffic": 500.0,
+      "query": "gemini hydrogen",
+      "traffic": 1000.0,
       "rise": 10.0,
-      "saturation_views": 86222.0,
-      "momentum": 2.5409
-    },
-    {
-      "query": "polar vortex",
-      "traffic": 200.0,
-      "rise": 10.0,
-      "saturation_views": 262275.0,
-      "momentum": 2.2631
+      "saturation_views": 63087.0,
+      "momentum": 2.6316
     }
   ]
 }

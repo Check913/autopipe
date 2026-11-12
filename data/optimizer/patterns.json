@@ -1,25 +1,25 @@
 {
-  "fetched": "2026-11-12T11:48:56",
+  "fetched": "2026-11-12T18:33:22",
   "status": "learned",
   "min_samples": 3,
-  "n_samples": 22,
+  "n_samples": 23,
   "patterns": [
     {
       "dimension": "duration_format",
       "value": "short",
       "n": 3,
       "mean_engagement": 10.32,
-      "relative_delta": -0.494,
-      "label": "format duree=short -> -49% d'engagement"
+      "relative_delta": -0.471,
+      "label": "format duree=short -> -47% d'engagement"
     }
   ],
   "stats": {
-    "n_samples": 22,
-    "mean_engagement": 20.39,
+    "n_samples": 23,
+    "mean_engagement": 19.5,
     "engagement_min": 0.0,
     "engagement_max": 47.36
   },
-  "lessons": 34,
+  "lessons": 35,
   "kill_switch": {
     "banned_families": {},
     "niche_alert": false,

@@ -1,0 +1,73 @@
+{
+  "title": "Can You Solve These Kid Riddles?",
+  "hook": "Only 1% of Adults Solve These 3 Kid Riddles!",
+  "script": "Only 1% of adults solve these 3 kid riddles! Ready? Riddle one: What has cities but no houses? A map! Two: What has an eye but cannot see? A needle! Three: What is full of holes yet holds water? A sponge! Did YOU solve these 3 kid riddles?",
+  "comment": "How many of these kid riddles did you solve?",
+  "description": "Test your brain with these surprisingly tricky kid riddles! Can you beat the 1% and solve all three? Challenge your friends!\n#Riddles #QuizTime #BrainTeaser",
+  "tags": [
+    "quiz",
+    "trivia",
+    "riddles",
+    "brain teaser",
+    "general knowledge",
+    "test your knowledge",
+    "only 1 percent",
+    "fun quiz",
+    "mind game",
+    "kid riddles",
+    "adult quiz",
+    "scorenine"
+  ],
+  "density": 4,
+  "duration_format": "short",
+  "duration_target": 13,
+  "duration_range": [
+    12,
+    18
+  ],
+  "source_topic": "10 Fun Kiddy Riddles That Stump Most Adults",
+  "generator": "llm:gemini-2.5-flash",
+  "score": 30558.8,
+  "pair_id": "pair_20261112_0086",
+  "hook_variant": "A",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "Only 1% of Adults Solve These 3 Kid Riddles!",
+      "family": "number"
+    },
+    {
+      "variant": "B",
+      "hook": "Why does nobody explain 10 Fun Kiddy Riddles That like this?",
+      "family": "question"
+    }
+  ],
+  "compliance": {
+    "mode": "block",
+    "ok": true,
+    "reasons": [],
+    "checked_at": "2026-11-12T18:34:14",
+    "originality": {
+      "max_jaccard": 0.5455,
+      "max_script_jaccard": 0.3452,
+      "worst_match_src": "20261111-185444-01-danger-riddles-can-you-escape-these-3.json",
+      "threshold": 0.6,
+      "threshold_script": 0.65,
+      "corpus_size": 102
+    },
+    "fatigue": {
+      "hook_family": "number",
+      "consecutive_same_family": 1,
+      "max_consecutive": 3,
+      "fatigued": false
+    },
+    "policy": {
+      "violations": []
+    },
+    "ai_disclosure": {
+      "contains_synthetic_media": false,
+      "configured": true
+    }
+  },
+  "id": "20261112-183432-01"
+}

@@ -1,0 +1,73 @@
+{
+  "title": "You Won't Believe Never Have Ever Did This",
+  "hook": "Only 1% can pass THIS embarrassing quiz.",
+  "script": "Only 1% can pass THIS embarrassing quiz. Ready? Never have I ever... tripped in public, blamed farts on someone else, or sent a text to the wrong person. How many \"I have\"s? Can you pass THIS embarrassing quiz?",
+  "comment": "How many 'I have's' did you get? Let us know below!",
+  "description": "Test your honesty with this rapid-fire 'Never Have I Ever' quiz! See if your embarrassing moments make you part of the rare 1% who can pass. How many did you admit to?\n#NeverHaveIEver #EmbarrassingQuiz #TriviaChallenge",
+  "tags": [
+    "Never Have I Ever",
+    "embarrassing quiz",
+    "trivia",
+    "quiz",
+    "general knowledge",
+    "brain teaser",
+    "test your knowledge",
+    "ScoreNine",
+    "fun quiz",
+    "challenge",
+    "did you know",
+    "only 1 percent"
+  ],
+  "density": 3,
+  "duration_format": "short",
+  "duration_target": 13,
+  "duration_range": [
+    12,
+    18
+  ],
+  "source_topic": "Never Have I Ever... EMBARRASSING Edition 😳✅❌ Quiz Kingdom",
+  "generator": "llm:gemini-2.5-flash",
+  "score": 4457.5,
+  "pair_id": "pair_20261112_0087",
+  "hook_variant": "A",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "Only 1% can pass THIS embarrassing quiz.",
+      "family": "number"
+    },
+    {
+      "variant": "B",
+      "hook": "Why does nobody explain Never Have Ever like this?",
+      "family": "question"
+    }
+  ],
+  "compliance": {
+    "mode": "block",
+    "ok": true,
+    "reasons": [],
+    "checked_at": "2026-11-12T18:34:22",
+    "originality": {
+      "max_jaccard": 0.2727,
+      "max_script_jaccard": 0.1525,
+      "worst_match_src": "20261107-234705-01-you-won-t-believe-20-mind-bending-riddles-did-this.json",
+      "threshold": 0.6,
+      "threshold_script": 0.65,
+      "corpus_size": 102
+    },
+    "fatigue": {
+      "hook_family": "number",
+      "consecutive_same_family": 1,
+      "max_consecutive": 3,
+      "fatigued": false
+    },
+    "policy": {
+      "violations": []
+    },
+    "ai_disclosure": {
+      "contains_synthetic_media": false,
+      "configured": true
+    }
+  },
+  "id": "20261112-183432-02"
+}
