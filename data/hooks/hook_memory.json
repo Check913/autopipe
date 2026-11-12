@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-11T21:15:31+00:00",
+  "updated": "2026-11-12T02:28:04+00:00",
   "publisheds": {
     "PCyc1j7hQ1s": {
       "video_id": "PCyc1j7hQ1s",
@@ -560,7 +560,23 @@
       "engaged_source": null,
       "avg_view_pct": null,
       "engagement": null
+    },
+    "g_jAii6OR8E": {
+      "video_id": "g_jAii6OR8E",
+      "published_at": "2026-11-11T21:20:18.418127+00:00",
+      "hook": "If you miss three, you are officially average.",
+      "family": "statement",
+      "hook_variant": "B",
+      "pair_id": "pair_20261111_0074",
+      "title": "9 Quick Questions. No Cheating Allowed.",
+      "topic": "quiz:geography",
+      "views": null,
+      "engagedViews": null,
+      "engaged_ratio": null,
+      "engaged_source": null,
+      "avg_view_pct": null,
+      "engagement": null
     }
   },
-  "last_checked": "2026-11-11T21:15:31+00:00"
+  "last_checked": "2026-11-12T02:28:04+00:00"
 }

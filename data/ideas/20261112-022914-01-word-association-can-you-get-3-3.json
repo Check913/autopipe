@@ -1,0 +1,73 @@
+{
+  "title": "Word Association: Can You Get 3/3?",
+  "hook": "3 WORD ASSOCIATION GAME 🧠💡 facts they never teach you",
+  "script": "Only 1% of people score perfectly on THIS word association quiz. Can you? Get ready to test your brain power. You’ll have just three seconds to find the common link between three words. Let’s go! First up: 'Apple', 'Tree', 'Book'. What's the connection? Time's up! The answer is 'Leaf'. Did you get that? Moving on to question two: 'Sun', 'Moon', 'Star'. What word connects them all? Think fast! And the time is gone! The answer is 'Light'. How are you doing so far? One more to go! Final question: 'Water', 'Ocean', 'Boat'. What’s the common thread here? Three, two, one… Time! The answer is 'Ship'. So, how many did you get correct? Share your score below! Only 1% of people score perfectly on THIS word association quiz. Can you?",
+  "comment": "What was your score? Did you get 3/3?",
+  "description": "Think you're a word master? This fast-paced word association quiz will challenge your brain! Only the sharpest minds get a perfect score. Test your knowledge now!\n#WordAssociation #QuizTime #BrainTeaser",
+  "tags": [
+    "quiz",
+    "trivia",
+    "word association",
+    "brain teaser",
+    "general knowledge",
+    "test your knowledge",
+    "fast thinking",
+    "challenge",
+    "only 1 percent",
+    "scorenine",
+    "word game",
+    "puzzles"
+  ],
+  "density": 4,
+  "duration_format": "long",
+  "duration_target": 60,
+  "duration_range": [
+    50,
+    60
+  ],
+  "source_topic": "WORD ASSOCIATION GAME 🧠💡 | ABC LETTER CHALLENGE | Fast Thinking Quiz",
+  "generator": "llm:gemini-2.5-flash",
+  "score": 2333.2,
+  "pair_id": "pair_20261112_0076",
+  "hook_variant": "B",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "Only 1% score perfectly. Can you?",
+      "family": "question"
+    },
+    {
+      "variant": "B",
+      "hook": "3 WORD ASSOCIATION GAME 🧠💡 facts they never teach you",
+      "family": "number"
+    }
+  ],
+  "compliance": {
+    "mode": "block",
+    "ok": true,
+    "reasons": [],
+    "checked_at": "2026-11-12T02:28:55",
+    "originality": {
+      "max_jaccard": 0.375,
+      "max_script_jaccard": 0.2984,
+      "worst_match_src": "20261107-233755-01-are-you-a-genius-solve-these-3-riddles.json",
+      "threshold": 0.6,
+      "threshold_script": 0.65,
+      "corpus_size": 96
+    },
+    "fatigue": {
+      "hook_family": "number",
+      "consecutive_same_family": 0,
+      "max_consecutive": 3,
+      "fatigued": false
+    },
+    "policy": {
+      "violations": []
+    },
+    "ai_disclosure": {
+      "contains_synthetic_media": false,
+      "configured": true
+    }
+  },
+  "id": "20261112-022914-01"
+}

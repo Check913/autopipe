@@ -1,113 +1,113 @@
 {
-  "fetched": "2026-11-11T21:15:31",
+  "fetched": "2026-11-12T02:28:04",
   "geo": "",
   "topics": [
     {
-      "query": "randall england",
+      "query": "hoedown hill windsor ski resort news",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 56605.0,
-      "momentum": 2.6646
+      "saturation_views": 7382.0,
+      "momentum": 3.4858
     },
     {
-      "query": "south florida basketball",
-      "traffic": 2000.0,
+      "query": "predators vs ducks",
+      "traffic": 1000.0,
       "rise": 10.0,
-      "saturation_views": 96211.0,
-      "momentum": 2.5105
+      "saturation_views": 11451.0,
+      "momentum": 3.2688
     },
     {
-      "query": "roadster",
-      "traffic": 500.0,
-      "rise": 1.5,
-      "saturation_views": 7446511.0,
-      "momentum": 0.2555
-    },
-    {
-      "query": "spx",
-      "traffic": 1000.0,
-      "rise": 1.0,
-      "saturation_views": 263215.0,
-      "momentum": 0.2262
-    },
-    {
-      "query": "ayesha curry",
-      "traffic": 2000.0,
-      "rise": 0.0,
-      "saturation_views": 337406.0,
-      "momentum": 0.0
-    },
-    {
-      "query": "air force basketball",
-      "traffic": 1000.0,
-      "rise": 0.0,
-      "saturation_views": 521.0,
-      "momentum": 0.0
-    },
-    {
-      "query": "weather chicago",
+      "query": "nate ament",
       "traffic": 200.0,
-      "rise": 0.0,
-      "saturation_views": 20579.0,
-      "momentum": 0.0
+      "rise": 10.0,
+      "saturation_views": 13455.0,
+      "momentum": 3.1957
     },
     {
-      "query": "disco singer rochelle fleming passes",
+      "query": "children's place",
+      "traffic": 2000.0,
+      "rise": 10.0,
+      "saturation_views": 16529.0,
+      "momentum": 3.107
+    },
+    {
+      "query": "baylor scheierman",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 85169.0,
+      "momentum": 2.5443
+    },
+    {
+      "query": "penguins vs sharks",
+      "traffic": 1000.0,
+      "rise": 10.0,
+      "saturation_views": 145353.0,
+      "momentum": 2.4024
+    },
+    {
+      "query": "nc central vs unc",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 545037.0,
+      "momentum": 2.1113
+    },
+    {
+      "query": "behemoth movie",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 14452771.0,
+      "momentum": 1.6234
+    },
+    {
+      "query": "korean war",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 16604655.0,
+      "momentum": 1.6077
+    },
+    {
+      "query": "nebraska basketball",
       "traffic": 2000.0,
       "rise": 0.0,
-      "saturation_views": 109486.0,
-      "momentum": 0.0
-    },
-    {
-      "query": "elina svitolina",
-      "traffic": 1000.0,
-      "rise": 0.0,
-      "saturation_views": 385906.0,
-      "momentum": 0.0
-    },
-    {
-      "query": "childrens hospital",
-      "traffic": 1000.0,
-      "rise": 0.0,
-      "saturation_views": 89897553.0,
+      "saturation_views": 148210.0,
       "momentum": 0.0
     }
   ],
   "top": [
     {
-      "query": "randall england",
+      "query": "hoedown hill windsor ski resort news",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 56605.0,
-      "momentum": 2.6646
+      "saturation_views": 7382.0,
+      "momentum": 3.4858
     },
     {
-      "query": "south florida basketball",
-      "traffic": 2000.0,
-      "rise": 10.0,
-      "saturation_views": 96211.0,
-      "momentum": 2.5105
-    },
-    {
-      "query": "roadster",
-      "traffic": 500.0,
-      "rise": 1.5,
-      "saturation_views": 7446511.0,
-      "momentum": 0.2555
-    },
-    {
-      "query": "spx",
+      "query": "predators vs ducks",
       "traffic": 1000.0,
-      "rise": 1.0,
-      "saturation_views": 263215.0,
-      "momentum": 0.2262
+      "rise": 10.0,
+      "saturation_views": 11451.0,
+      "momentum": 3.2688
     },
     {
-      "query": "ayesha curry",
+      "query": "nate ament",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 13455.0,
+      "momentum": 3.1957
+    },
+    {
+      "query": "children's place",
       "traffic": 2000.0,
-      "rise": 0.0,
-      "saturation_views": 337406.0,
-      "momentum": 0.0
+      "rise": 10.0,
+      "saturation_views": 16529.0,
+      "momentum": 3.107
+    },
+    {
+      "query": "baylor scheierman",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 85169.0,
+      "momentum": 2.5443
     }
   ]
 }

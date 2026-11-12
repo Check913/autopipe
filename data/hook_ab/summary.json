@@ -1,30 +1,30 @@
 {
   "status": "ok",
-  "pairs": 71,
+  "pairs": 74,
   "joined": 9,
   "variants": {
     "A": {
-      "assigned": 44,
+      "assigned": 45,
       "measured": 4,
       "mean_engagement": 73.2,
       "mean_views": 536,
       "families": {
         "statement": 8,
-        "question": 17,
+        "question": 18,
         "number": 13,
         "negation": 6
       }
     },
     "B": {
-      "assigned": 27,
+      "assigned": 29,
       "measured": 5,
       "mean_engagement": 56.5,
       "mean_views": 383,
       "families": {
         "question": 8,
-        "number": 7,
+        "number": 8,
         "negation": 3,
-        "identity": 9
+        "identity": 10
       }
     }
   },
@@ -1022,7 +1022,49 @@
       "video_id": "TCej10eTrUU",
       "engagement": null,
       "views": null
+    },
+    {
+      "ts": "2026-11-11T21:16:38",
+      "pair_id": "pair_20261111_0072",
+      "topic": "General knowledge quiz with a focus on human biology.",
+      "variant": "B",
+      "hook": "3 General knowledge quiz with facts they never teach you",
+      "family": "number",
+      "family_other": "statement",
+      "hook_a": "Why does General knowledge quiz with a focus on human",
+      "hook_b": "3 General knowledge quiz with facts they never teach you",
+      "video_id": null,
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-11T21:17:15",
+      "pair_id": "pair_20261111_0073",
+      "topic": "utf8, toffsetms, tstartms",
+      "variant": "A",
+      "hook": "Why does utf8, toffsetms, tstartms break every rule?",
+      "family": "question",
+      "family_other": "number",
+      "hook_a": "Why does utf8, toffsetms, tstartms break every rule?",
+      "hook_b": "3 Utf8, toffsetms, tstartms facts they never teach you",
+      "video_id": null,
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-11T21:17:17",
+      "pair_id": "pair_20261111_0074",
+      "topic": "quiz:geography",
+      "variant": "B",
+      "hook": "If you miss three, you are officially average.",
+      "family": "identity",
+      "family_other": "question",
+      "hook_a": "Are you smarter than most people?",
+      "hook_b": "If you miss three, you are officially average.",
+      "video_id": "g_jAii6OR8E",
+      "engagement": null,
+      "views": null
     }
   ],
-  "fetched": "2026-11-11T21:15:31"
+  "fetched": "2026-11-12T02:28:04"
 }
