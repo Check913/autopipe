@@ -1,0 +1,72 @@
+{
+  "title": "Your IQ Will Explode With These 3 Riddles",
+  "hook": "How many of these can you get right?",
+  "script": "Your IQ will explode with these three impossible riddles. Only a true genius can solve them all. Get ready, your first challenge starts now!\n\nWhat has to be broken before you can use it? You have five seconds.\nTime's up! The answer is an egg. Did you crack it?\n\nNext up: What is always in front of you but can’t be seen? Five seconds, go!\nAnd the answer is… the future! Are you feeling smarter yet?\n\nLast one: What is full of holes but still holds water? Your final five seconds begin now!\nThe solution? A sponge! If you got all three, you're officially a genius. If not, don't worry, your IQ will explode with these three impossible riddles next time!",
+  "comment": "How many riddles did you solve correctly? Let me know!",
+  "description": "Test your intelligence with these three tricky riddles! Only a genius can get them all right. Challenge your friends and see who's the smartest!\n#Riddles #IQTest #BrainTeaser",
+  "tags": [
+    "riddles",
+    "quiz",
+    "trivia",
+    "brain teaser",
+    "IQ test",
+    "challenge",
+    "test your knowledge",
+    "only 1 percent",
+    "genius",
+    "mind games",
+    "scorenine"
+  ],
+  "density": 4,
+  "duration_format": "long",
+  "duration_target": 60,
+  "duration_range": [
+    50,
+    60
+  ],
+  "source_topic": "15 Tricky Riddles That Will Test Your IQ🧠 | Only Geniuses Can Solve All 15!🔥",
+  "generator": "llm:gemini-2.5-flash",
+  "score": 2190.2,
+  "pair_id": "pair_20261112_0090",
+  "hook_variant": "B",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "Your IQ will explode with these 3 riddles.",
+      "family": "number"
+    },
+    {
+      "variant": "B",
+      "hook": "Nobody warned you about 15 Tricky Riddles That Will",
+      "family": "number"
+    }
+  ],
+  "compliance": {
+    "mode": "block",
+    "ok": true,
+    "reasons": [],
+    "checked_at": "2026-11-12T23:51:26",
+    "originality": {
+      "max_jaccard": 0.2778,
+      "max_script_jaccard": 0.3947,
+      "worst_match_src": "20261112-115020-02-riddles-only-1-get-all-3-right.json",
+      "threshold": 0.6,
+      "threshold_script": 0.65,
+      "corpus_size": 105
+    },
+    "fatigue": {
+      "hook_family": "question",
+      "consecutive_same_family": 0,
+      "max_consecutive": 3,
+      "fatigued": false
+    },
+    "policy": {
+      "violations": []
+    },
+    "ai_disclosure": {
+      "contains_synthetic_media": false,
+      "configured": true
+    }
+  },
+  "id": "20261112-235152-01"
+}

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-12T18:33:22+00:00",
+  "updated": "2026-11-12T23:50:25+00:00",
   "publisheds": {
     "PCyc1j7hQ1s": {
       "video_id": "PCyc1j7hQ1s",
@@ -640,7 +640,23 @@
       "engaged_source": null,
       "avg_view_pct": null,
       "engagement": null
+    },
+    "w8yPraMfKBY": {
+      "video_id": "w8yPraMfKBY",
+      "published_at": "2026-11-12T18:35:27.615799+00:00",
+      "hook": "Only 1% of Adults Solve These 3 Kid Riddles!",
+      "family": "number",
+      "hook_variant": "A",
+      "pair_id": "pair_20261112_0086",
+      "title": "Can You Solve These Kid Riddles?",
+      "topic": "10 Fun Kiddy Riddles That Stump Most Adults",
+      "views": null,
+      "engagedViews": null,
+      "engaged_ratio": null,
+      "engaged_source": null,
+      "avg_view_pct": null,
+      "engagement": null
     }
   },
-  "last_checked": "2026-11-12T18:33:22+00:00"
+  "last_checked": "2026-11-12T23:50:25+00:00"
 }

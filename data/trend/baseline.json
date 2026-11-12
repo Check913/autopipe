@@ -4896,5 +4896,135 @@
         10000.0
       ]
     ]
+  },
+  "uconn vs ohio state": {
+    "traffic": 500.0,
+    "first_seen": "2026-11-12T23:49:57",
+    "last_seen": "2026-11-12T23:49:57",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-12T23:49:57",
+        500.0
+      ]
+    ]
+  },
+  "yousri belgaroui": {
+    "traffic": 1000.0,
+    "first_seen": "2026-11-12T23:49:57",
+    "last_seen": "2026-11-12T23:49:57",
+    "delta": 1000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-12T23:49:57",
+        1000.0
+      ]
+    ]
+  },
+  "tennessee tech vs indiana": {
+    "traffic": 500.0,
+    "first_seen": "2026-11-12T23:49:57",
+    "last_seen": "2026-11-12T23:49:57",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-12T23:49:57",
+        500.0
+      ]
+    ]
+  },
+  "j. d. vance": {
+    "traffic": 1000.0,
+    "first_seen": "2026-11-12T23:49:57",
+    "last_seen": "2026-11-12T23:49:57",
+    "delta": 1000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-12T23:49:57",
+        1000.0
+      ]
+    ]
+  },
+  "martinsville nascar penalty carson hocevar": {
+    "traffic": 200.0,
+    "first_seen": "2026-11-12T23:49:57",
+    "last_seen": "2026-11-12T23:49:57",
+    "delta": 200.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-12T23:49:57",
+        200.0
+      ]
+    ]
+  },
+  "estudiantes - independiente rivadavia": {
+    "traffic": 500.0,
+    "first_seen": "2026-11-12T23:49:57",
+    "last_seen": "2026-11-12T23:49:57",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-12T23:49:57",
+        500.0
+      ]
+    ]
+  },
+  "flight": {
+    "traffic": 500.0,
+    "first_seen": "2026-11-12T23:49:57",
+    "last_seen": "2026-11-12T23:49:57",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-12T23:49:57",
+        500.0
+      ]
+    ]
+  },
+  "federal reserve bitcoin price impact": {
+    "traffic": 500.0,
+    "first_seen": "2026-11-12T23:49:57",
+    "last_seen": "2026-11-12T23:49:57",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-12T23:49:57",
+        500.0
+      ]
+    ]
+  },
+  "hunger games sunrise on the reaping release date": {
+    "traffic": 200.0,
+    "first_seen": "2026-11-12T23:49:57",
+    "last_seen": "2026-11-12T23:49:57",
+    "delta": 200.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-12T23:49:57",
+        200.0
+      ]
+    ]
+  },
+  "pistons vs wizards": {
+    "traffic": 5000.0,
+    "first_seen": "2026-11-12T23:49:57",
+    "last_seen": "2026-11-12T23:49:57",
+    "delta": 5000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-12T23:49:57",
+        5000.0
+      ]
+    ]
   }
 }

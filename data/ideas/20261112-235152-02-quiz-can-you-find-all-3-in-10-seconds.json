@@ -1,0 +1,73 @@
+{
+  "title": "Quiz: Can You Find All 3 in 10 Seconds?",
+  "hook": "Why does nobody explain QUIZ Busca Encuentra con like this?",
+  "script": "Only 1% can find all 3 hidden items in 10 seconds. Get ready, because it's time for a lightning-fast search and find quiz! You'll see three different puzzles, and for each one, you have just ten seconds to spot three specific hidden objects. Can you beat the clock and prove your sharp eyes? Let's begin with the first challenge. Find the cat, the book, and the key. Time starts now! (10 seconds pause) Time's up! Did you find them all? Here are the answers. (reveal answers) Moving on to round two! Your next task: locate the apple, the hat, and the umbrella. Look closely, the clock is ticking! (10 seconds pause) Stop! Let's see how you did this time. (reveal answers) And for the final test of your observation skills: discover the star, the pencil, and the coffee cup. Ready, set, search! (10 seconds pause) Pencils down! Let's check your results. (reveal answers) How many did you find in total? If you got all three rounds correct, you're truly in that elite 1% who can find all 3 hidden items in 10 seconds!",
+  "comment": "What was your score out of 9?",
+  "description": "Test your observation skills with this tricky search and find quiz! Can you spot all the hidden items before time runs out? Only the sharpest eyes will succeed!\n#SearchAndFind #QuizTime #BrainTeaser",
+  "tags": [
+    "quiz",
+    "trivia",
+    "general knowledge",
+    "brain teaser",
+    "quiz time",
+    "test your knowledge",
+    "only 1 percent",
+    "did you know",
+    "search and find",
+    "hidden objects",
+    "puzzle",
+    "challenge"
+  ],
+  "density": 4,
+  "duration_format": "long",
+  "duration_target": 60,
+  "duration_range": [
+    50,
+    60
+  ],
+  "source_topic": "QUIZ Busca y Encuentra con Blui | ¿Encontrás las 3 en 10 segundos? | Los",
+  "generator": "llm:gemini-2.5-flash",
+  "score": 484.3,
+  "pair_id": "pair_20261112_0091",
+  "hook_variant": "B",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "Only 1% can find all 3 hidden items in 10 seconds.",
+      "family": "number"
+    },
+    {
+      "variant": "B",
+      "hook": "Why does nobody explain QUIZ Busca Encuentra con like this?",
+      "family": "question"
+    }
+  ],
+  "compliance": {
+    "mode": "block",
+    "ok": true,
+    "reasons": [],
+    "checked_at": "2026-11-12T23:51:37",
+    "originality": {
+      "max_jaccard": 0.381,
+      "max_script_jaccard": 0.3043,
+      "worst_match_src": "20261107-233755-03-can-you-solve-these-3-detective-riddles.json",
+      "threshold": 0.6,
+      "threshold_script": 0.65,
+      "corpus_size": 105
+    },
+    "fatigue": {
+      "hook_family": "question",
+      "consecutive_same_family": 0,
+      "max_consecutive": 3,
+      "fatigued": false
+    },
+    "policy": {
+      "violations": []
+    },
+    "ai_disclosure": {
+      "contains_synthetic_media": false,
+      "configured": true
+    }
+  },
+  "id": "20261112-235152-02"
+}

@@ -1,0 +1,73 @@
+{
+  "title": "Gen Z vs Millennials: Can YOU Score 3/3?",
+  "hook": "Only 1% can ace this quiz. Think you're an expert?",
+  "script": "Only one percent of people can ace this Gen Z versus Millennial quiz. Think you're a generational expert? We've got three lightning-fast questions designed to truly test your knowledge and see where you stand. You'll have just five seconds for each answer. No cheating! Let's dive in.\n\nFirst up: Which generation is widely credited with popularizing the internet slang term \"rizz\"? Is it Gen Z, or Millennials?\n[5-second timer with sound effects]\nTime's up! The correct answer is Gen Z. If you got that, you're off to a strong start.\n\nNext question, focus up: Which generation grew up experiencing the struggle and distinctive sound of dial-up internet as a common daily reality?\n[5-second timer with sound effects]\nDid you get it? That iconic struggle belongs squarely to Millennials. Gen Z, on the other hand, was born into broadband.\n\nAlright, final challenge for the title of generational guru: Which generation is most frequently associated with the 'avocado toast' food trend, often mocked for its impact on homeownership?\n[5-second timer with sound effects]\nAnd that's time! The answer, of course, is Millennials.\n\nHow many of these three did you nail? Drop your score in the comments! Only one percent of people can ace this Gen Z versus Millennial quiz. Think you're a generational expert?",
+  "comment": "What was your score out of 3? Let us know if you're Gen Z or Millennial!",
+  "description": "Test your knowledge of Gen Z and Millennials in this fun quiz! Can you get all three questions right and prove you're a generational guru?\n#GenZvsMillennials #TriviaQuiz #ScoreNine",
+  "tags": [
+    "gen z",
+    "millennials",
+    "gen z vs millennials",
+    "quiz",
+    "trivia",
+    "general knowledge",
+    "brain teaser",
+    "test your knowledge",
+    "only 1 percent",
+    "pop culture",
+    "generational quiz",
+    "fun quiz"
+  ],
+  "density": 4,
+  "duration_format": "long",
+  "duration_target": 60,
+  "duration_range": [
+    50,
+    60
+  ],
+  "source_topic": "50 Gen Z vs 50 Millennials",
+  "generator": "llm:gemini-2.5-flash",
+  "score": 63.8,
+  "pair_id": "pair_20261112_0092",
+  "hook_variant": "A",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "Only 1% can ace this quiz. Think you're an expert?",
+      "family": "question"
+    },
+    {
+      "variant": "B",
+      "hook": "3 50 Gen vs 50 Millennials facts they never teach you",
+      "family": "number"
+    }
+  ],
+  "compliance": {
+    "mode": "block",
+    "ok": true,
+    "reasons": [],
+    "checked_at": "2026-11-12T23:51:52",
+    "originality": {
+      "max_jaccard": 0.25,
+      "max_script_jaccard": 0.2637,
+      "worst_match_src": "20261111-211309-01-this-quiz-gets-harder-every-question.json",
+      "threshold": 0.6,
+      "threshold_script": 0.65,
+      "corpus_size": 105
+    },
+    "fatigue": {
+      "hook_family": "question",
+      "consecutive_same_family": 0,
+      "max_consecutive": 3,
+      "fatigued": false
+    },
+    "policy": {
+      "violations": []
+    },
+    "ai_disclosure": {
+      "contains_synthetic_media": false,
+      "configured": true
+    }
+  },
+  "id": "20261112-235152-03"
+}

@@ -1,17 +1,17 @@
 {
   "status": "ok",
-  "pairs": 84,
+  "pairs": 88,
   "joined": 9,
   "variants": {
     "A": {
-      "assigned": 51,
+      "assigned": 55,
       "measured": 4,
       "mean_engagement": 73.2,
       "mean_views": 536,
       "families": {
         "statement": 8,
-        "question": 22,
-        "number": 15,
+        "question": 23,
+        "number": 18,
         "negation": 6
       }
     },
@@ -1204,7 +1204,63 @@
       "video_id": null,
       "engagement": null,
       "views": null
+    },
+    {
+      "ts": "2026-11-12T18:33:48",
+      "pair_id": "pair_20261112_0085",
+      "topic": "quiz:history",
+      "variant": "A",
+      "hook": "Are you smarter than most people?",
+      "family": "question",
+      "family_other": "identity",
+      "hook_a": "Are you smarter than most people?",
+      "hook_b": "Most adults cannot get all of these right.",
+      "video_id": null,
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-12T18:34:14",
+      "pair_id": "pair_20261112_0086",
+      "topic": "10 Fun Kiddy Riddles That Stump Most Adults",
+      "variant": "A",
+      "hook": "Only 1% of Adults Solve These 3 Kid Riddles!",
+      "family": "number",
+      "family_other": "number",
+      "hook_a": "Only 1% of Adults Solve These 3 Kid Riddles!",
+      "hook_b": "Why does nobody explain 10 Fun Kiddy Riddles That like this?",
+      "video_id": "w8yPraMfKBY",
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-12T18:34:22",
+      "pair_id": "pair_20261112_0087",
+      "topic": "Never Have I Ever... EMBARRASSING Edition 😳✅❌ Quiz Kingdom",
+      "variant": "A",
+      "hook": "Only 1% can pass THIS embarrassing quiz.",
+      "family": "number",
+      "family_other": "question",
+      "hook_a": "Only 1% can pass THIS embarrassing quiz.",
+      "hook_b": "Why does nobody explain Never Have Ever like this?",
+      "video_id": null,
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-12T18:34:32",
+      "pair_id": "pair_20261112_0088",
+      "topic": "Guess The Candy 🍬 How Many of These Candies Do You Know? | Candy Quiz",
+      "variant": "A",
+      "hook": "Only the sharpest minds identify all 3 classic candies.",
+      "family": "number",
+      "family_other": "number",
+      "hook_a": "Only the sharpest minds identify all 3 classic candies.",
+      "hook_b": "Nobody warned you about Guess The Candy How Many of",
+      "video_id": null,
+      "engagement": null,
+      "views": null
     }
   ],
-  "fetched": "2026-11-12T18:33:22"
+  "fetched": "2026-11-12T23:50:25"
 }
