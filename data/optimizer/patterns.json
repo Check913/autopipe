@@ -1,57 +1,41 @@
 {
-  "fetched": "2026-11-12T02:28:04",
+  "fetched": "2026-11-12T07:07:09",
   "status": "learned",
   "min_samples": 3,
-  "n_samples": 19,
+  "n_samples": 20,
   "patterns": [
     {
       "dimension": "duration_format",
       "value": "short",
       "n": 3,
-      "mean_engagement": 0.0,
-      "relative_delta": -1.0,
-      "label": "format duree=short -> -100% d'engagement"
-    },
-    {
-      "dimension": "title_has_number",
-      "value": "False",
-      "n": 5,
-      "mean_engagement": 11.5,
-      "relative_delta": -0.371,
-      "label": "chiffre dans le titre=False -> -37% d'engagement"
-    },
-    {
-      "dimension": "hook_type",
-      "value": "number",
-      "n": 5,
-      "mean_engagement": 11.64,
-      "relative_delta": -0.363,
-      "label": "hook type=number -> -36% d'engagement"
+      "mean_engagement": 10.32,
+      "relative_delta": -0.499,
+      "label": "format duree=short -> -50% d'engagement"
     },
     {
       "dimension": "hook_type",
       "value": "question",
       "n": 8,
       "mean_engagement": 23.72,
-      "relative_delta": 0.297,
-      "label": "hook type=question -> +30% d'engagement"
+      "relative_delta": 0.153,
+      "label": "hook type=question -> +15% d'engagement"
     },
     {
-      "dimension": "duration_format",
-      "value": "long",
-      "n": 16,
-      "mean_engagement": 21.71,
-      "relative_delta": 0.188,
-      "label": "format duree=long -> +19% d'engagement"
+      "dimension": "hook_variant",
+      "value": "B",
+      "n": 7,
+      "mean_engagement": 17.44,
+      "relative_delta": -0.153,
+      "label": "hook A/B=B -> -15% d'engagement"
     }
   ],
   "stats": {
-    "n_samples": 19,
-    "mean_engagement": 18.29,
+    "n_samples": 20,
+    "mean_engagement": 20.58,
     "engagement_min": 0.0,
     "engagement_max": 47.36
   },
-  "lessons": 31,
+  "lessons": 32,
   "kill_switch": {
     "banned_families": {},
     "niche_alert": false,
@@ -74,12 +58,12 @@
     },
     "current": {
       "n": 10,
-      "engagement_mean": 15.24,
+      "engagement_mean": 16.99,
       "avg_view_pct_mean": null,
       "by_family": {}
     },
     "delta": {
-      "engagement_mean": -5.98,
+      "engagement_mean": -4.23,
       "avg_view_pct_mean": null
     }
   },

@@ -1,0 +1,201 @@
+{
+  "topic": "quiz",
+  "source_topic": "quiz:geography",
+  "title": "9 Questions Only 1% Finish Perfect",
+  "hook": "Are you smarter than most people?",
+  "density": 4,
+  "duration_format": "long",
+  "duration_target": 80,
+  "duration_range": [
+    74,
+    88
+  ],
+  "script": "Are you smarter than most people?\nQuestion 1: Who was the first emperor of the Roman Empire?\nLock in your answer: Three. Two. One.\nThe answer is C: Augustus.\nQuestion 2: In which epic fantasy film series does the character Frodo Baggins appear?\nLock in your answer: Three. Two. One.\nThe answer is C: The Lord of the Rings.\nQuestion 3: Which European city is famously known as the 'Eternal City'?\nLock in your answer: Three. Two. One.\nThe answer is B: Rome.\nIf you got the first three right, like the video right now.\nQuestion 4: In what year did the RMS Titanic sink on its maiden voyage?\nLock in your answer: Three. Two. One.\nThe answer is B: 1912.\nQuestion 5: Who directed the critically acclaimed 1997 film 'Titanic'?\nLock in your answer: Three. Two. One.\nThe answer is B: James Cameron.\nScore check: comment SHARP if you are still perfect, RUSTY if you already missed one.\nQuestion 6: Which river is generally considered the longest in the world?\nLock in your answer: Three. Two. One.\nThe answer is C: Nile River.\nQuestion 7: Which metal is liquid at room temperature?\nLock in your answer: Three. Two. One.\nThe answer is B: Mercury.\nAre you ready for the last question?\nDon't forget to follow and comment your score to be on the weekly leaderboard of the top performers.\nQuestion 8: Which film won the first Best Animated Feature Oscar?\nLock in your answer: Three. Two. One.\nThe answer is B: Shrek.\nQuestion 9: Which letter is missing from all US state names?\nLock in your answer: Three. Two. One.\nThe answer is A: Q.\nBonus: double or nothing - keep your score in your head and beat it on the next quiz.\nComment your score out of 9, and follow for a new quiz every day.",
+  "generator": "quiz:llm",
+  "quiz": {
+    "enabled": true,
+    "rounds": 9,
+    "countdown_s": 3,
+    "cards": true,
+    "items": [
+      {
+        "question": "Who was the first emperor of the Roman Empire?",
+        "options": [
+          "Julius Caesar",
+          "Nero",
+          "Augustus",
+          "Constantine"
+        ],
+        "answer_index": 2,
+        "explanation": "Augustus, born Octavian, was adopted by his great-uncle Julius Caesar and became the first Roman emperor.",
+        "category": "general"
+      },
+      {
+        "question": "In which epic fantasy film series does the character Frodo Baggins appear?",
+        "options": [
+          "Harry Potter",
+          "The Chronicles of Narnia",
+          "The Lord of the Rings",
+          "Game of Thrones"
+        ],
+        "answer_index": 2,
+        "explanation": "Frodo Baggins is the central protagonist in J.R.R. Tolkien's 'The Lord of the Rings'.",
+        "category": "general"
+      },
+      {
+        "question": "Which European city is famously known as the 'Eternal City'?",
+        "options": [
+          "Paris",
+          "Rome",
+          "Athens",
+          "London"
+        ],
+        "answer_index": 1,
+        "explanation": "Rome earned the nickname 'Eternal City' due to its enduring history and significance.",
+        "category": "general"
+      },
+      {
+        "question": "In what year did the RMS Titanic sink on its maiden voyage?",
+        "options": [
+          "1905",
+          "1912",
+          "1918",
+          "1923"
+        ],
+        "answer_index": 1,
+        "explanation": "The Titanic sank on April 15, 1912, after striking an iceberg in the North Atlantic.",
+        "category": "general"
+      },
+      {
+        "question": "Who directed the critically acclaimed 1997 film 'Titanic'?",
+        "options": [
+          "Steven Spielberg",
+          "James Cameron",
+          "George Lucas",
+          "Martin Scorsese"
+        ],
+        "answer_index": 1,
+        "explanation": "James Cameron wrote, directed, and produced the blockbuster film 'Titanic'.",
+        "category": "general"
+      },
+      {
+        "question": "Which river is generally considered the longest in the world?",
+        "options": [
+          "Amazon River",
+          "Yangtze River",
+          "Nile River",
+          "Mississippi River"
+        ],
+        "answer_index": 2,
+        "explanation": "The Nile River flows for approximately 6,650 kilometers (4,132 miles) through northeastern Africa.",
+        "category": "general"
+      },
+      {
+        "question": "Which metal is liquid at room temperature?",
+        "options": [
+          "Iron",
+          "Mercury",
+          "Lead",
+          "Tin"
+        ],
+        "answer_index": 1,
+        "explanation": "Mercury stays liquid even below zero.",
+        "category": "science"
+      },
+      {
+        "question": "Which film won the first Best Animated Feature Oscar?",
+        "options": [
+          "Toy Story",
+          "Shrek",
+          "Spirited Away",
+          "Finding Nemo"
+        ],
+        "answer_index": 1,
+        "explanation": "Shrek beat the field in 2002.",
+        "category": "movies"
+      },
+      {
+        "question": "Which letter is missing from all US state names?",
+        "options": [
+          "Q",
+          "Z",
+          "X",
+          "J"
+        ],
+        "answer_index": 0,
+        "explanation": "No state name contains the letter Q.",
+        "category": "geography"
+      }
+    ]
+  },
+  "comment": "Score check: how many did you get right out of 9? Comment your score and which question tricked you.",
+  "description": "Quick geography quiz: 9 questions, 3 seconds each.\nScore check: how many did you get out of 9? 0 is a valid answer.\nPlay along, beat your friends, and come back tomorrow: a new quiz every day.\n\n#quiz #trivia #quiztime #generalknowledge #shorts",
+  "tags": [
+    "quiz",
+    "trivia",
+    "quiz time",
+    "quiz questions",
+    "general knowledge",
+    "test your knowledge",
+    "geography quiz",
+    "geography trivia",
+    "quiz challenge",
+    "guess the answer",
+    "brain test",
+    "iq test",
+    "fun quiz",
+    "trivia questions and answers",
+    "general knowledge quiz",
+    "pub quiz questions",
+    "quiz for adults",
+    "hard quiz",
+    "are you smart",
+    "only 1 percent",
+    "test your brain",
+    "shorts quiz",
+    "youtube shorts",
+    "shorts"
+  ],
+  "pair_id": "pair_20261112_0079",
+  "hook_variant": "A",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "family": "question",
+      "hook": "Are you smarter than most people?"
+    },
+    {
+      "variant": "B",
+      "family": "identity",
+      "hook": "Getting them all right means elite memory."
+    }
+  ],
+  "compliance": {
+    "mode": "block",
+    "ok": true,
+    "reasons": [],
+    "checked_at": "2026-11-12T07:07:53",
+    "originality": {
+      "max_jaccard": 0.5,
+      "max_script_jaccard": 0.5301,
+      "worst_match_src": "20261102-152206-01-pass-9-questions-prove-your-iq.json",
+      "threshold": 0.6,
+      "threshold_script": 0.65,
+      "corpus_size": 97
+    },
+    "fatigue": {
+      "hook_family": "question",
+      "consecutive_same_family": 1,
+      "max_consecutive": 3,
+      "fatigued": false
+    },
+    "policy": {
+      "violations": []
+    },
+    "ai_disclosure": {
+      "contains_synthetic_media": false,
+      "configured": true
+    }
+  },
+  "id": "20261112-070753-01"
+}

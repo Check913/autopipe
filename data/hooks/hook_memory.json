@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-12T02:28:04+00:00",
+  "updated": "2026-11-12T07:07:09+00:00",
   "publisheds": {
     "PCyc1j7hQ1s": {
       "video_id": "PCyc1j7hQ1s",
@@ -283,11 +283,11 @@
       "title": "9 Question Quiz. Can You Score 9/9?",
       "topic": "quiz:general",
       "views": 598,
-      "engagedViews": 0,
-      "engaged_ratio": 47.2,
-      "engaged_source": "fallback_averageViewPercentage",
+      "engagedViews": 361,
+      "engaged_ratio": 60.4,
+      "engaged_source": "engagedViews",
       "avg_view_pct": 47.2,
-      "engagement": 47.2
+      "engagement": 60.4
     },
     "fNh2NGFifGQ": {
       "video_id": "fNh2NGFifGQ",
@@ -315,11 +315,11 @@
       "title": "Most People Fail This 9 Question Quiz",
       "topic": "quiz:movies",
       "views": 3,
-      "engagedViews": 0,
-      "engaged_ratio": 10.3,
-      "engaged_source": "fallback_averageViewPercentage",
+      "engagedViews": 2,
+      "engaged_ratio": 66.7,
+      "engaged_source": "engagedViews",
       "avg_view_pct": 10.3,
-      "engagement": 10.3
+      "engagement": 66.7
     },
     "uBK8AeCn1LM": {
       "video_id": "uBK8AeCn1LM",
@@ -576,7 +576,23 @@
       "engaged_source": null,
       "avg_view_pct": null,
       "engagement": null
+    },
+    "zWwnB20ZWbI": {
+      "video_id": "zWwnB20ZWbI",
+      "published_at": "2026-11-12T02:31:24.540605+00:00",
+      "hook": "3 WORD ASSOCIATION GAME 🧠💡 facts they never teach you",
+      "family": "number",
+      "hook_variant": "B",
+      "pair_id": "pair_20261112_0076",
+      "title": "Word Association: Can You Get 3/3?",
+      "topic": "WORD ASSOCIATION GAME 🧠💡 | ABC LETTER CHALLENGE | Fast Thinking Quiz",
+      "views": null,
+      "engagedViews": null,
+      "engaged_ratio": null,
+      "engaged_source": null,
+      "avg_view_pct": null,
+      "engagement": null
     }
   },
-  "last_checked": "2026-11-12T02:28:04+00:00"
+  "last_checked": "2026-11-12T07:07:10+00:00"
 }

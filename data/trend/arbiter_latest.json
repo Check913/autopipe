@@ -1,113 +1,113 @@
 {
-  "fetched": "2026-11-12T02:28:04",
+  "fetched": "2026-11-12T07:07:09",
   "geo": "",
   "topics": [
     {
-      "query": "hoedown hill windsor ski resort news",
-      "traffic": 500.0,
+      "query": "measles outbreak pennsylvania",
+      "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 7382.0,
-      "momentum": 3.4858
+      "saturation_views": 373871.0,
+      "momentum": 2.1869
     },
     {
-      "query": "predators vs ducks",
+      "query": "new zealand vs india soccer",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 791540.0,
+      "momentum": 2.0415
+    },
+    {
+      "query": "dustin hoffman",
       "traffic": 1000.0,
       "rise": 10.0,
-      "saturation_views": 11451.0,
-      "momentum": 3.2688
+      "saturation_views": 976642.0,
+      "momentum": 2.0041
     },
     {
-      "query": "nate ament",
+      "query": "hltv",
       "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 13455.0,
-      "momentum": 3.1957
+      "saturation_views": 981097.0,
+      "momentum": 2.0033
     },
     {
-      "query": "children's place",
-      "traffic": 2000.0,
-      "rise": 10.0,
-      "saturation_views": 16529.0,
-      "momentum": 3.107
-    },
-    {
-      "query": "baylor scheierman",
+      "query": "aspyn ovard kids",
       "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 85169.0,
-      "momentum": 2.5443
+      "saturation_views": 1629073.0,
+      "momentum": 1.9187
     },
     {
-      "query": "penguins vs sharks",
-      "traffic": 1000.0,
-      "rise": 10.0,
-      "saturation_views": 145353.0,
-      "momentum": 2.4024
-    },
-    {
-      "query": "nc central vs unc",
-      "traffic": 200.0,
-      "rise": 10.0,
-      "saturation_views": 545037.0,
-      "momentum": 2.1113
-    },
-    {
-      "query": "behemoth movie",
+      "query": "winter storm watch",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 14452771.0,
-      "momentum": 1.6234
+      "saturation_views": 1932969.0,
+      "momentum": 1.8917
     },
     {
-      "query": "korean war",
+      "query": "dji",
+      "traffic": 100.0,
+      "rise": 10.0,
+      "saturation_views": 2314840.0,
+      "momentum": 1.8641
+    },
+    {
+      "query": "france vs italy",
+      "traffic": 100.0,
+      "rise": 10.0,
+      "saturation_views": 2501230.0,
+      "momentum": 1.8525
+    },
+    {
+      "query": "slomw oc",
+      "traffic": 5000.0,
+      "rise": 10.0,
+      "saturation_views": 8229036.0,
+      "momentum": 1.6905
+    },
+    {
+      "query": "james acaster",
       "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 16604655.0,
-      "momentum": 1.6077
-    },
-    {
-      "query": "nebraska basketball",
-      "traffic": 2000.0,
-      "rise": 0.0,
-      "saturation_views": 148210.0,
-      "momentum": 0.0
+      "saturation_views": 9372538.0,
+      "momentum": 1.6745
     }
   ],
   "top": [
     {
-      "query": "hoedown hill windsor ski resort news",
-      "traffic": 500.0,
+      "query": "measles outbreak pennsylvania",
+      "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 7382.0,
-      "momentum": 3.4858
+      "saturation_views": 373871.0,
+      "momentum": 2.1869
     },
     {
-      "query": "predators vs ducks",
+      "query": "new zealand vs india soccer",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 791540.0,
+      "momentum": 2.0415
+    },
+    {
+      "query": "dustin hoffman",
       "traffic": 1000.0,
       "rise": 10.0,
-      "saturation_views": 11451.0,
-      "momentum": 3.2688
+      "saturation_views": 976642.0,
+      "momentum": 2.0041
     },
     {
-      "query": "nate ament",
+      "query": "hltv",
       "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 13455.0,
-      "momentum": 3.1957
+      "saturation_views": 981097.0,
+      "momentum": 2.0033
     },
     {
-      "query": "children's place",
-      "traffic": 2000.0,
-      "rise": 10.0,
-      "saturation_views": 16529.0,
-      "momentum": 3.107
-    },
-    {
-      "query": "baylor scheierman",
+      "query": "aspyn ovard kids",
       "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 85169.0,
-      "momentum": 2.5443
+      "saturation_views": 1629073.0,
+      "momentum": 1.9187
     }
   ]
 }

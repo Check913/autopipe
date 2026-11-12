@@ -1,28 +1,28 @@
 {
   "status": "ok",
-  "pairs": 74,
+  "pairs": 78,
   "joined": 9,
   "variants": {
     "A": {
-      "assigned": 45,
+      "assigned": 46,
       "measured": 4,
       "mean_engagement": 73.2,
       "mean_views": 536,
       "families": {
         "statement": 8,
-        "question": 18,
+        "question": 19,
         "number": 13,
         "negation": 6
       }
     },
     "B": {
-      "assigned": 29,
+      "assigned": 32,
       "measured": 5,
-      "mean_engagement": 56.5,
+      "mean_engagement": 70.4,
       "mean_views": 383,
       "families": {
-        "question": 8,
-        "number": 8,
+        "question": 10,
+        "number": 9,
         "negation": 3,
         "identity": 10
       }
@@ -334,7 +334,7 @@
       "hook_a": "Are you smarter than most people?",
       "hook_b": "Getting them all right means elite memory.",
       "video_id": "gEtui7O33o0",
-      "engagement": 47.2,
+      "engagement": 60.4,
       "views": 598
     },
     {
@@ -362,7 +362,7 @@
       "hook_a": "How high can you score?",
       "hook_b": "Most adults cannot get all of these right.",
       "video_id": "cy3aSg9ujT4",
-      "engagement": 10.3,
+      "engagement": 66.7,
       "views": 3
     },
     {
@@ -1064,7 +1064,63 @@
       "video_id": "g_jAii6OR8E",
       "engagement": null,
       "views": null
+    },
+    {
+      "ts": "2026-11-12T02:28:28",
+      "pair_id": "pair_20261112_0075",
+      "topic": "quiz:geography",
+      "variant": "A",
+      "hook": "Are you smarter than most people?",
+      "family": "question",
+      "family_other": "identity",
+      "hook_a": "Are you smarter than most people?",
+      "hook_b": "Most adults cannot get all of these right.",
+      "video_id": null,
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-12T02:28:55",
+      "pair_id": "pair_20261112_0076",
+      "topic": "WORD ASSOCIATION GAME 🧠💡 | ABC LETTER CHALLENGE | Fast Thinking Quiz",
+      "variant": "B",
+      "hook": "3 WORD ASSOCIATION GAME 🧠💡 facts they never teach you",
+      "family": "number",
+      "family_other": "question",
+      "hook_a": "Only 1% score perfectly. Can you?",
+      "hook_b": "3 WORD ASSOCIATION GAME 🧠💡 facts they never teach you",
+      "video_id": "zWwnB20ZWbI",
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-12T02:29:13",
+      "pair_id": "pair_20261112_0077",
+      "topic": "50 Questions Everyone Should Know! | General Knowledge Trivia Quiz 🧠🔥",
+      "variant": "B",
+      "hook": "Why does nobody explain 50 Questions Everyone like this?",
+      "family": "question",
+      "family_other": "question",
+      "hook_a": "Nobody talks about 50 Questions Everyone Should Know! |",
+      "hook_b": "Why does nobody explain 50 Questions Everyone like this?",
+      "video_id": null,
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-12T02:29:14",
+      "pair_id": "pair_20261112_0078",
+      "topic": "India General Knowledge Quiz | 40 Questions Challenge | Quizology",
+      "variant": "B",
+      "hook": "Why does nobody explain India General Knowledge like this?",
+      "family": "question",
+      "family_other": "number",
+      "hook_a": "Nobody talks about India General Knowledge Quiz | 40",
+      "hook_b": "Why does nobody explain India General Knowledge like this?",
+      "video_id": null,
+      "engagement": null,
+      "views": null
     }
   ],
-  "fetched": "2026-11-12T02:28:04"
+  "fetched": "2026-11-12T07:07:09"
 }

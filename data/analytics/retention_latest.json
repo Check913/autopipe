@@ -2,12 +2,12 @@
   "rows": [
     {
       "id": "gEtui7O33o0",
-      "range_start": "2026-10-14",
-      "range_end": "2026-11-11",
+      "range_start": "2026-10-15",
+      "range_end": "2026-11-12",
       "views": 598,
-      "engagedViews": 0,
-      "engaged_ratio": 47.2,
-      "engaged_source": "fallback_averageViewPercentage",
+      "engagedViews": 361,
+      "engaged_ratio": 60.4,
+      "engaged_source": "engagedViews",
       "avg_view_duration_s": 54.0,
       "avg_view_pct": 47.2,
       "likes": 8,
@@ -18,12 +18,12 @@
       "loop_rate": null,
       "loop_source": "unavailable",
       "loop_verdict": null,
-      "fetched": "2026-11-11T20:02:24"
+      "fetched": "2026-11-12T07:07:09"
     },
     {
       "id": "fNh2NGFifGQ",
-      "range_start": "2026-10-14",
-      "range_end": "2026-11-11",
+      "range_start": "2026-10-15",
+      "range_end": "2026-11-12",
       "views": 457,
       "engagedViews": 302,
       "engaged_ratio": 66.1,
@@ -38,16 +38,16 @@
       "loop_rate": null,
       "loop_source": "unavailable",
       "loop_verdict": null,
-      "fetched": "2026-11-11T20:02:24"
+      "fetched": "2026-11-12T07:07:09"
     },
     {
       "id": "cy3aSg9ujT4",
-      "range_start": "2026-10-14",
-      "range_end": "2026-11-11",
+      "range_start": "2026-10-15",
+      "range_end": "2026-11-12",
       "views": 3,
-      "engagedViews": 0,
-      "engaged_ratio": 10.3,
-      "engaged_source": "fallback_averageViewPercentage",
+      "engagedViews": 2,
+      "engaged_ratio": 66.7,
+      "engaged_source": "engagedViews",
       "avg_view_duration_s": 10.0,
       "avg_view_pct": 10.3,
       "likes": 0,
@@ -58,12 +58,12 @@
       "loop_rate": null,
       "loop_source": "unavailable",
       "loop_verdict": null,
-      "fetched": "2026-11-11T20:02:24"
+      "fetched": "2026-11-12T07:07:09"
     },
     {
       "id": "jVwLSsQx_iE",
-      "range_start": "2026-10-14",
-      "range_end": "2026-11-11",
+      "range_start": "2026-10-15",
+      "range_end": "2026-11-12",
       "views": 64,
       "engagedViews": 39,
       "engaged_ratio": 60.9,
@@ -78,12 +78,12 @@
       "loop_rate": null,
       "loop_source": "unavailable",
       "loop_verdict": null,
-      "fetched": "2026-11-11T20:02:24"
+      "fetched": "2026-11-12T07:07:09"
     },
     {
       "id": "DEEnyERlFYg",
-      "range_start": "2026-10-14",
-      "range_end": "2026-11-11",
+      "range_start": "2026-10-15",
+      "range_end": "2026-11-12",
       "views": 1250,
       "engagedViews": 803,
       "engaged_ratio": 64.2,
@@ -98,12 +98,12 @@
       "loop_rate": null,
       "loop_source": "unavailable",
       "loop_verdict": null,
-      "fetched": "2026-11-11T20:02:24"
+      "fetched": "2026-11-12T07:07:09"
     },
     {
       "id": "kzoLfpuh6lY",
-      "range_start": "2026-10-14",
-      "range_end": "2026-11-11",
+      "range_start": "2026-10-15",
+      "range_end": "2026-11-12",
       "views": 1,
       "engagedViews": 1,
       "engaged_ratio": 100.0,
@@ -118,12 +118,12 @@
       "loop_rate": null,
       "loop_source": "unavailable",
       "loop_verdict": null,
-      "fetched": "2026-11-11T20:02:24"
+      "fetched": "2026-11-12T07:07:09"
     },
     {
       "id": "uBK8AeCn1LM",
-      "range_start": "2026-10-14",
-      "range_end": "2026-11-11",
+      "range_start": "2026-10-15",
+      "range_end": "2026-11-12",
       "views": 1033,
       "engagedViews": 635,
       "engaged_ratio": 61.5,
@@ -138,12 +138,12 @@
       "loop_rate": null,
       "loop_source": "unavailable",
       "loop_verdict": null,
-      "fetched": "2026-11-11T20:02:24"
+      "fetched": "2026-11-12T07:07:09"
     },
     {
       "id": "fXzcJuL7tII",
-      "range_start": "2026-10-14",
-      "range_end": "2026-11-11",
+      "range_start": "2026-10-15",
+      "range_end": "2026-11-12",
       "views": 1,
       "engagedViews": 1,
       "engaged_ratio": 100.0,
@@ -158,12 +158,12 @@
       "loop_rate": null,
       "loop_source": "unavailable",
       "loop_verdict": null,
-      "fetched": "2026-11-11T20:02:24"
+      "fetched": "2026-11-12T07:07:09"
     },
     {
       "id": "4oBjYODEBaw",
-      "range_start": "2026-10-14",
-      "range_end": "2026-11-11",
+      "range_start": "2026-10-15",
+      "range_end": "2026-11-12",
       "views": 654,
       "engagedViews": 427,
       "engaged_ratio": 65.3,
@@ -178,10 +178,10 @@
       "loop_rate": null,
       "loop_source": "unavailable",
       "loop_verdict": null,
-      "fetched": "2026-11-11T20:02:24"
+      "fetched": "2026-11-12T07:07:09"
     }
   ],
-  "fetched": "2026-11-11T20:02:24.904476",
+  "fetched": "2026-11-12T07:07:09.884525",
   "viewed_target_pct": 70.0,
   "engaged_target_pct": 70.0
 }
