@@ -1,5 +1,5 @@
 {
-  "created": "2026-11-10T23:57:11.465230",
+  "created": "2026-11-12T11:48:56.782631",
   "label": "cycle",
   "reason": null,
   "bandit": {
@@ -224,8 +224,52 @@
         "active": true,
         "source": "post_mortem",
         "created": "2026-11-08T02:20:21.093230+00:00"
+      },
+      {
+        "id": "7f1181f1768d",
+        "arm": "family:question",
+        "text": "Can You Answer These Guess the Movie by Emoji 🎬🍿 Movie Quiz?",
+        "norm": "can you answer these guess the movie by emoji 🎬🍿 movie quiz?",
+        "wins": 0,
+        "losses": 0,
+        "active": true,
+        "source": "scrape",
+        "created": "2026-11-10T23:57:17.912764+00:00"
+      },
+      {
+        "id": "518419b702cc",
+        "arm": "family:question",
+        "text": "Can You Answer These Guess the Countries by Their Flags?",
+        "norm": "can you answer these guess the countries by their flags?",
+        "wins": 0,
+        "losses": 0,
+        "active": true,
+        "source": "scrape",
+        "created": "2026-11-10T23:57:17.912871+00:00"
+      },
+      {
+        "id": "eed96a5850c4",
+        "arm": "family:statement",
+        "text": "Can You Pass This Maths Quiz...? ➗✖️🧠 | Easy, Medium, Hard, Impossible | Quiz Blitz",
+        "norm": "can you pass this maths quiz...? ➗✖️🧠 | easy, medium, hard, impossible | quiz blitz",
+        "wins": 0,
+        "losses": 0,
+        "active": true,
+        "source": "scrape",
+        "created": "2026-11-10T23:57:17.912900+00:00"
+      },
+      {
+        "id": "21862ca654b6",
+        "arm": "family:question",
+        "text": "Can You Answer These Can You Guess The Country Without Vowels? 🌎🤔 Country Quiz?",
+        "norm": "can you answer these can you guess the country without vowels? 🌎🤔 country quiz?",
+        "wins": 0,
+        "losses": 0,
+        "active": true,
+        "source": "scrape",
+        "created": "2026-11-10T23:57:17.912929+00:00"
       }
     ],
-    "updated": "2026-11-08T02:20:21.101265+00:00"
+    "updated": "2026-11-12T10:11:11.946017+00:00"
   }
 }

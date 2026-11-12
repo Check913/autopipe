@@ -1,0 +1,73 @@
+{
+  "title": "Riddles: Only 1% Get All 3 Right",
+  "hook": "Only 1% solve all three riddles. Can YOU?",
+  "script": "Only 1% of people can solve all three of these tricky riddles. Can YOU?\nLet's find out! Riddle one: What has an eye but cannot see? Five seconds. Go! Time's up!\nIt's a needle. Did you get it? The next one's tougher.\nRiddle two: What has cities but no houses, forests but no trees, and water but no fish? Five seconds. Think! Stop!\nThat's a map! How'd you do on that brain-teaser?\nFinal challenge, riddle three: What is full of holes but still holds water? Your last five seconds start now. Good luck! Time!\nThe answer is a sponge! How many did you solve correctly? Share your score below.\nIf you aced all three, you're officially in the top 1% who can solve these tricky riddles!",
+  "comment": "How many riddles did you solve correctly? 🧠👇",
+  "description": "Test your brain with these three tricky riddles! Only a genius can get all of them right. What's your score?\n#Riddles #BrainTeaser #QuizTime",
+  "tags": [
+    "riddles",
+    "brain teaser",
+    "quiz",
+    "trivia",
+    "challenge",
+    "mind games",
+    "puzzles",
+    "test your knowledge",
+    "scorenine",
+    "only 1 percent",
+    "tricky riddles",
+    "iq test"
+  ],
+  "density": 4,
+  "duration_format": "long",
+  "duration_target": 60,
+  "duration_range": [
+    50,
+    60
+  ],
+  "source_topic": "9 TRICKY RIDDLES THAT WILL BLOW YOUR MIND",
+  "generator": "llm:gemini-2.5-flash",
+  "score": 20251.4,
+  "pair_id": "pair_20261112_0083",
+  "hook_variant": "A",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "Only 1% solve all three riddles. Can YOU?",
+      "family": "question"
+    },
+    {
+      "variant": "B",
+      "hook": "3 TRICKY RIDDLES THAT WILL facts they never teach you",
+      "family": "number"
+    }
+  ],
+  "compliance": {
+    "mode": "block",
+    "ok": true,
+    "reasons": [],
+    "checked_at": "2026-11-12T11:50:04",
+    "originality": {
+      "max_jaccard": 0.4167,
+      "max_script_jaccard": 0.4087,
+      "worst_match_src": "20261111-185444-01-danger-riddles-can-you-escape-these-3.json",
+      "threshold": 0.6,
+      "threshold_script": 0.65,
+      "corpus_size": 99
+    },
+    "fatigue": {
+      "hook_family": "question",
+      "consecutive_same_family": 0,
+      "max_consecutive": 3,
+      "fatigued": false
+    },
+    "policy": {
+      "violations": []
+    },
+    "ai_disclosure": {
+      "contains_synthetic_media": false,
+      "configured": true
+    }
+  },
+  "id": "20261112-115020-02"
+}

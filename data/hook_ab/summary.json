@@ -1,6 +1,6 @@
 {
   "status": "ok",
-  "pairs": 79,
+  "pairs": 80,
   "joined": 9,
   "variants": {
     "A": {
@@ -16,7 +16,7 @@
       }
     },
     "B": {
-      "assigned": 32,
+      "assigned": 33,
       "measured": 5,
       "mean_engagement": 70.4,
       "mean_views": 383,
@@ -24,7 +24,7 @@
         "question": 10,
         "number": 9,
         "negation": 3,
-        "identity": 10
+        "identity": 11
       }
     }
   },
@@ -1134,7 +1134,21 @@
       "video_id": "ETrOacfkwlo",
       "engagement": null,
       "views": null
+    },
+    {
+      "ts": "2026-11-12T10:11:37",
+      "pair_id": "pair_20261112_0080",
+      "topic": "quiz:science",
+      "variant": "B",
+      "hook": "Only top 1% brains get every single one right.",
+      "family": "identity",
+      "family_other": "question",
+      "hook_a": "Are you smarter than most people?",
+      "hook_b": "Only top 1% brains get every single one right.",
+      "video_id": "_wndzum-WEg",
+      "engagement": null,
+      "views": null
     }
   ],
-  "fetched": "2026-11-12T10:11:11"
+  "fetched": "2026-11-12T11:48:56"
 }

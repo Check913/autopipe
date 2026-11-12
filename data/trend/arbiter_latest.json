@@ -1,113 +1,113 @@
 {
-  "fetched": "2026-11-12T10:10:54",
+  "fetched": "2026-11-12T11:48:55",
   "geo": "",
   "topics": [
     {
-      "query": "when will fortnite servers be back up",
+      "query": "brigham nurses strike",
+      "traffic": 100.0,
+      "rise": 10.0,
+      "saturation_views": 2364.0,
+      "momentum": 4.2097
+    },
+    {
+      "query": "날씨",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 31603.0,
-      "momentum": 2.8573
+      "saturation_views": 46547.0,
+      "momentum": 2.7263
     },
     {
-      "query": "alexander darchiev",
-      "traffic": 2000.0,
-      "rise": 10.0,
-      "saturation_views": 69149.0,
-      "momentum": 2.6043
-    },
-    {
-      "query": "fugitive",
+      "query": "погода",
       "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 565630.0,
-      "momentum": 2.1041
+      "saturation_views": 48854.0,
+      "momentum": 2.7108
     },
     {
-      "query": "noah's ark discovery",
+      "query": "alec bohm",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 86222.0,
+      "momentum": 2.5409
+    },
+    {
+      "query": "polar vortex",
       "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 627556.0,
-      "momentum": 2.0843
+      "saturation_views": 262275.0,
+      "momentum": 2.2631
     },
     {
-      "query": "weather snow",
-      "traffic": 2000.0,
-      "rise": 10.0,
-      "saturation_views": 704142.0,
-      "momentum": 2.0628
-    },
-    {
-      "query": "michael carrick",
-      "traffic": 5000.0,
-      "rise": 10.0,
-      "saturation_views": 742587.0,
-      "momentum": 2.0531
-    },
-    {
-      "query": "amber alert",
-      "traffic": 200.0,
-      "rise": 10.0,
-      "saturation_views": 8787016.0,
-      "momentum": 1.6824
-    },
-    {
-      "query": "jennifer aniston",
+      "query": "box office",
       "traffic": 100.0,
       "rise": 10.0,
-      "saturation_views": 24518202.0,
-      "momentum": 1.5651
+      "saturation_views": 419159.0,
+      "momentum": 2.1634
     },
     {
-      "query": "rockstar",
-      "traffic": 100.0,
-      "rise": 10.0,
-      "saturation_views": 2646628699.0,
-      "momentum": 1.1873
-    },
-    {
-      "query": "ohio state buckeyes football",
+      "query": "chicago bears coach ben johnson",
       "traffic": 200.0,
-      "rise": 0.0,
-      "saturation_views": 2383908.0,
-      "momentum": 0.0
+      "rise": 10.0,
+      "saturation_views": 518934.0,
+      "momentum": 2.1208
+    },
+    {
+      "query": "météo",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 928762.0,
+      "momentum": 2.0129
+    },
+    {
+      "query": "clima",
+      "traffic": 20000.0,
+      "rise": 10.0,
+      "saturation_views": 24135260.0,
+      "momentum": 1.5667
+    },
+    {
+      "query": "tiempo",
+      "traffic": 2000.0,
+      "rise": 10.0,
+      "saturation_views": 79249516.0,
+      "momentum": 1.4495
     }
   ],
   "top": [
     {
-      "query": "when will fortnite servers be back up",
+      "query": "brigham nurses strike",
+      "traffic": 100.0,
+      "rise": 10.0,
+      "saturation_views": 2364.0,
+      "momentum": 4.2097
+    },
+    {
+      "query": "날씨",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 31603.0,
-      "momentum": 2.8573
+      "saturation_views": 46547.0,
+      "momentum": 2.7263
     },
     {
-      "query": "alexander darchiev",
-      "traffic": 2000.0,
-      "rise": 10.0,
-      "saturation_views": 69149.0,
-      "momentum": 2.6043
-    },
-    {
-      "query": "fugitive",
+      "query": "погода",
       "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 565630.0,
-      "momentum": 2.1041
+      "saturation_views": 48854.0,
+      "momentum": 2.7108
     },
     {
-      "query": "noah's ark discovery",
+      "query": "alec bohm",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 86222.0,
+      "momentum": 2.5409
+    },
+    {
+      "query": "polar vortex",
       "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 627556.0,
-      "momentum": 2.0843
-    },
-    {
-      "query": "weather snow",
-      "traffic": 2000.0,
-      "rise": 10.0,
-      "saturation_views": 704142.0,
-      "momentum": 2.0628
+      "saturation_views": 262275.0,
+      "momentum": 2.2631
     }
   ]
 }

@@ -1,26 +1,6 @@
 {
   "rows": [
     {
-      "id": "gEtui7O33o0",
-      "range_start": "2026-10-15",
-      "range_end": "2026-11-12",
-      "views": 598,
-      "engagedViews": 361,
-      "engaged_ratio": 60.4,
-      "engaged_source": "engagedViews",
-      "avg_view_duration_s": 54.0,
-      "avg_view_pct": 47.2,
-      "likes": 8,
-      "comments": 0,
-      "shares": 1,
-      "viewed_target_pct": 70.0,
-      "unique_viewers": null,
-      "loop_rate": null,
-      "loop_source": "unavailable",
-      "loop_verdict": null,
-      "fetched": "2026-11-12T07:07:09"
-    },
-    {
       "id": "fNh2NGFifGQ",
       "range_start": "2026-10-15",
       "range_end": "2026-11-12",
@@ -38,7 +18,27 @@
       "loop_rate": null,
       "loop_source": "unavailable",
       "loop_verdict": null,
-      "fetched": "2026-11-12T07:07:09"
+      "fetched": "2026-11-12T11:48:55"
+    },
+    {
+      "id": "gEtui7O33o0",
+      "range_start": "2026-10-15",
+      "range_end": "2026-11-12",
+      "views": 598,
+      "engagedViews": 361,
+      "engaged_ratio": 60.4,
+      "engaged_source": "engagedViews",
+      "avg_view_duration_s": 54.0,
+      "avg_view_pct": 47.2,
+      "likes": 8,
+      "comments": 0,
+      "shares": 1,
+      "viewed_target_pct": 70.0,
+      "unique_viewers": null,
+      "loop_rate": null,
+      "loop_source": "unavailable",
+      "loop_verdict": null,
+      "fetched": "2026-11-12T11:48:55"
     },
     {
       "id": "cy3aSg9ujT4",
@@ -58,7 +58,7 @@
       "loop_rate": null,
       "loop_source": "unavailable",
       "loop_verdict": null,
-      "fetched": "2026-11-12T07:07:09"
+      "fetched": "2026-11-12T11:48:55"
     },
     {
       "id": "jVwLSsQx_iE",
@@ -78,7 +78,7 @@
       "loop_rate": null,
       "loop_source": "unavailable",
       "loop_verdict": null,
-      "fetched": "2026-11-12T07:07:09"
+      "fetched": "2026-11-12T11:48:56"
     },
     {
       "id": "DEEnyERlFYg",
@@ -98,7 +98,7 @@
       "loop_rate": null,
       "loop_source": "unavailable",
       "loop_verdict": null,
-      "fetched": "2026-11-12T07:07:09"
+      "fetched": "2026-11-12T11:48:56"
     },
     {
       "id": "kzoLfpuh6lY",
@@ -118,7 +118,7 @@
       "loop_rate": null,
       "loop_source": "unavailable",
       "loop_verdict": null,
-      "fetched": "2026-11-12T07:07:09"
+      "fetched": "2026-11-12T11:48:56"
     },
     {
       "id": "uBK8AeCn1LM",
@@ -138,7 +138,7 @@
       "loop_rate": null,
       "loop_source": "unavailable",
       "loop_verdict": null,
-      "fetched": "2026-11-12T07:07:09"
+      "fetched": "2026-11-12T11:48:56"
     },
     {
       "id": "fXzcJuL7tII",
@@ -158,7 +158,7 @@
       "loop_rate": null,
       "loop_source": "unavailable",
       "loop_verdict": null,
-      "fetched": "2026-11-12T07:07:09"
+      "fetched": "2026-11-12T11:48:56"
     },
     {
       "id": "4oBjYODEBaw",
@@ -178,10 +178,10 @@
       "loop_rate": null,
       "loop_source": "unavailable",
       "loop_verdict": null,
-      "fetched": "2026-11-12T07:07:09"
+      "fetched": "2026-11-12T11:48:56"
     }
   ],
-  "fetched": "2026-11-12T07:07:09.884525",
+  "fetched": "2026-11-12T11:48:56.213529",
   "viewed_target_pct": 70.0,
   "engaged_target_pct": 70.0
 }

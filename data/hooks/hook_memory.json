@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-12T10:11:11+00:00",
+  "updated": "2026-11-12T11:48:56+00:00",
   "publisheds": {
     "PCyc1j7hQ1s": {
       "video_id": "PCyc1j7hQ1s",
@@ -608,7 +608,23 @@
       "engaged_source": null,
       "avg_view_pct": null,
       "engagement": null
+    },
+    "_wndzum-WEg": {
+      "video_id": "_wndzum-WEg",
+      "published_at": "2026-11-12T10:15:14.381882+00:00",
+      "hook": "Only top 1% brains get every single one right.",
+      "family": "number",
+      "hook_variant": "B",
+      "pair_id": "pair_20261112_0080",
+      "title": "9 Questions. 3 Seconds Each. No Cheating.",
+      "topic": "quiz:science",
+      "views": null,
+      "engagedViews": null,
+      "engaged_ratio": null,
+      "engaged_source": null,
+      "avg_view_pct": null,
+      "engagement": null
     }
   },
-  "last_checked": "2026-11-12T10:11:11+00:00"
+  "last_checked": "2026-11-12T11:48:56+00:00"
 }

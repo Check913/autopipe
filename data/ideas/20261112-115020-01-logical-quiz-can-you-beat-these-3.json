@@ -1,0 +1,73 @@
+{
+  "title": "Logical Quiz: Can You Beat These 3?",
+  "hook": "Only 1% of people can solve these 3 logic puzzles.",
+  "script": "Only 1% of people can solve these three logic puzzles. Think you're in the elite? Let's find out! You have just five seconds per question. Ready?\n\nQuestion one: I am an odd number. Take away one letter and I become even. What number am I? Time's up! The answer is SEVEN. Remove the 'S' and you get 'EVEN'.\n\nQuestion two: What has to be broken before you can use it? Five seconds, go! Got it? The answer is AN EGG. You can't make an omelet without breaking a few!\n\nQuestion three: What is full of holes but still holds water? Your final five seconds start now! Think hard! And the solution is… A SPONGE. Simple, right?\n\nHow many did you get correct? Did you prove you're part of that top 1% who can solve these three logic puzzles?",
+  "comment": "How many did you get right? Share your score below!",
+  "description": "Test your brainpower with these tricky logical reasoning questions! Only the sharpest minds can solve all three. How did you do?\n#LogicQuiz #BrainTeaser #Trivia",
+  "tags": [
+    "quiz",
+    "trivia",
+    "brain teaser",
+    "logic",
+    "logical reasoning",
+    "puzzles",
+    "riddles",
+    "test your knowledge",
+    "challenge",
+    "iq test",
+    "scorenine",
+    "general knowledge"
+  ],
+  "density": 4,
+  "duration_format": "long",
+  "duration_target": 60,
+  "duration_range": [
+    50,
+    60
+  ],
+  "source_topic": "6 Logical reasoning questions to trick your brain",
+  "generator": "llm:gemini-2.5-flash",
+  "score": 30212.7,
+  "pair_id": "pair_20261112_0082",
+  "hook_variant": "A",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "Only 1% of people can solve these 3 logic puzzles.",
+      "family": "number"
+    },
+    {
+      "variant": "B",
+      "hook": "Nobody warned you about Logical reasoning questions",
+      "family": "negation"
+    }
+  ],
+  "compliance": {
+    "mode": "block",
+    "ok": true,
+    "reasons": [],
+    "checked_at": "2026-11-12T11:49:47",
+    "originality": {
+      "max_jaccard": 0.3529,
+      "max_script_jaccard": 0.4344,
+      "worst_match_src": "20261111-112846-02-only-1-pass-this-animal-quiz.json",
+      "threshold": 0.6,
+      "threshold_script": 0.65,
+      "corpus_size": 99
+    },
+    "fatigue": {
+      "hook_family": "number",
+      "consecutive_same_family": 0,
+      "max_consecutive": 3,
+      "fatigued": false
+    },
+    "policy": {
+      "violations": []
+    },
+    "ai_disclosure": {
+      "contains_synthetic_media": false,
+      "configured": true
+    }
+  },
+  "id": "20261112-115020-01"
+}
