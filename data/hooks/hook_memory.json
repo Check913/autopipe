@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-13T03:36:29+00:00",
+  "updated": "2026-11-13T06:04:43+00:00",
   "publisheds": {
     "PCyc1j7hQ1s": {
       "video_id": "PCyc1j7hQ1s",
@@ -672,7 +672,23 @@
       "engaged_source": null,
       "avg_view_pct": null,
       "engagement": null
+    },
+    "yY3-pLp96CQ": {
+      "video_id": "yY3-pLp96CQ",
+      "published_at": "2026-11-13T04:00:05.058991+00:00",
+      "hook": "Only a genius can escape this jailbreak riddle. Can you?",
+      "family": "question",
+      "hook_variant": "A",
+      "pair_id": "pair_20261113_0094",
+      "title": "Can YOU Solve This Jail Break Riddle?",
+      "topic": "Can you solve the jail break riddle? - Dan Finkel",
+      "views": null,
+      "engagedViews": null,
+      "engaged_ratio": null,
+      "engaged_source": null,
+      "avg_view_pct": null,
+      "engagement": null
     }
   },
-  "last_checked": "2026-11-13T03:36:30+00:00"
+  "last_checked": "2026-11-13T06:04:43+00:00"
 }

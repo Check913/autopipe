@@ -1,18 +1,18 @@
 {
   "status": "ok",
-  "pairs": 92,
+  "pairs": 96,
   "joined": 12,
   "variants": {
     "A": {
-      "assigned": 57,
+      "assigned": 61,
       "measured": 7,
       "mean_engagement": 56.1,
       "mean_views": 429,
       "families": {
-        "statement": 8,
-        "question": 25,
+        "statement": 9,
+        "question": 27,
         "number": 18,
-        "negation": 6
+        "negation": 7
       }
     },
     "B": {
@@ -1316,7 +1316,63 @@
       "video_id": null,
       "engagement": null,
       "views": null
+    },
+    {
+      "ts": "2026-11-13T03:36:53",
+      "pair_id": "pair_20261113_0093",
+      "topic": "quiz:history",
+      "variant": "A",
+      "hook": "Are you smarter than most people?",
+      "family": "question",
+      "family_other": "identity",
+      "hook_a": "Are you smarter than most people?",
+      "hook_b": "Only top 1% brains get every single one right.",
+      "video_id": null,
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-13T03:37:25",
+      "pair_id": "pair_20261113_0094",
+      "topic": "Can you solve the jail break riddle? - Dan Finkel",
+      "variant": "A",
+      "hook": "Only a genius can escape this jailbreak riddle. Can you?",
+      "family": "question",
+      "family_other": "question",
+      "hook_a": "Only a genius can escape this jailbreak riddle. Can you?",
+      "hook_b": "3 Can you solve the jail break facts they never teach you",
+      "video_id": "yY3-pLp96CQ",
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-13T03:37:44",
+      "pair_id": "pair_20261113_0095",
+      "topic": "Only Real Detectives Can Solve All 20 Riddles! | Quiz Patrol",
+      "variant": "A",
+      "hook": "William Henry Pratt, known professionally as Boris Karloff",
+      "family": "statement",
+      "family_other": "question",
+      "hook_a": "William Henry Pratt, known professionally as Boris Karloff",
+      "hook_b": "Why does nobody explain Only Real Detectives Can like this?",
+      "video_id": null,
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-13T03:37:45",
+      "pair_id": "pair_20261113_0096",
+      "topic": "Islamic Paheliyan | Islamic Quiz | Islamic Gk | Kbj | Kaun Banega Jannati |",
+      "variant": "A",
+      "hook": "Nobody talks about Islamic Paheliyan | Islamic Quiz |",
+      "family": "negation",
+      "family_other": "negation",
+      "hook_a": "Nobody talks about Islamic Paheliyan | Islamic Quiz |",
+      "hook_b": "Why does nobody explain Islamic Paheliyan Islamic like this?",
+      "video_id": null,
+      "engagement": null,
+      "views": null
     }
   ],
-  "fetched": "2026-11-13T03:36:28"
+  "fetched": "2026-11-13T06:04:43"
 }

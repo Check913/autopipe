@@ -1,0 +1,62 @@
+{
+  "title": "How Puzzles That Look Easy But Took Over So Fast",
+  "hook": "The World's Hardest Game is a 2007 Flash maze game",
+  "script": "The World's Hardest Game is a 2007 Flash maze game developed by Stephen Critoph, also known as Snubby Land.\nThat is not a guess – it is what the science actually says.\nIn it, players control a red square and must get from one end of a maze to another while avoiding obstacles and collecting coins.\nIt was also released for iOS in 2009.\nAnd that is the real story of Puzzles That Look Easy But Are Actually IMPOSSIBLE!.",
+  "comment": "Which part surprised you the most? Tell me below!",
+  "description": "How Puzzles That Look Easy But Took Over So Fast\nThe real facts, in 30 seconds.\n#shorts #facts #didyouknow",
+  "tags": [
+    "shorts",
+    "Puzzles That Look Easy But Are Actually ",
+    "facts",
+    "didyouknow",
+    "mind blowing"
+  ],
+  "duration_target": 13,
+  "duration_format": "short",
+  "density": 1,
+  "source_topic": "Puzzles That Look Easy But Are Actually IMPOSSIBLE!",
+  "generator": "fallback+wiki",
+  "score": 18425.2,
+  "pair_id": "pair_20261113_0098",
+  "hook_variant": "A",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "The World's Hardest Game is a 2007 Flash maze game",
+      "family": "number"
+    },
+    {
+      "variant": "B",
+      "hook": "Nobody warned you about Puzzles That Look Easy But",
+      "family": "negation"
+    }
+  ],
+  "compliance": {
+    "mode": "block",
+    "ok": true,
+    "reasons": [],
+    "checked_at": "2026-11-13T06:05:08",
+    "originality": {
+      "max_jaccard": 0.2593,
+      "max_script_jaccard": 0.253,
+      "worst_match_src": "20261108-002012-01-how-brain-teasers-brain-games-took-over-so-fast.json",
+      "threshold": 0.6,
+      "threshold_script": 0.65,
+      "corpus_size": 110
+    },
+    "fatigue": {
+      "hook_family": "number",
+      "consecutive_same_family": 0,
+      "max_consecutive": 3,
+      "fatigued": false
+    },
+    "policy": {
+      "violations": []
+    },
+    "ai_disclosure": {
+      "contains_synthetic_media": false,
+      "configured": true
+    }
+  },
+  "id": "20261113-060514-01"
+}

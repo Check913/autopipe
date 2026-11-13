@@ -1,113 +1,113 @@
 {
-  "fetched": "2026-11-13T03:36:27",
+  "fetched": "2026-11-13T06:04:43",
   "geo": "",
   "topics": [
     {
-      "query": "joan beringer",
+      "query": "san francisco weather",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 74580.0,
-      "momentum": 2.5822
+      "saturation_views": 34836.0,
+      "momentum": 2.8231
     },
     {
-      "query": "hollywood brown",
-      "traffic": 1000.0,
+      "query": "weather tornado warning",
+      "traffic": 200000.0,
       "rise": 10.0,
-      "saturation_views": 150297.0,
-      "momentum": 2.3941
+      "saturation_views": 111443.0,
+      "momentum": 2.4709
     },
     {
-      "query": "ausar thompson",
-      "traffic": 1000.0,
-      "rise": 10.0,
-      "saturation_views": 163449.0,
-      "momentum": 2.3734
-    },
-    {
-      "query": "tre johnson",
-      "traffic": 500.0,
-      "rise": 10.0,
-      "saturation_views": 210614.0,
-      "momentum": 2.3129
-    },
-    {
-      "query": "khloe kardashian",
+      "query": "noah gragson",
       "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 239192.0,
-      "momentum": 2.2837
+      "saturation_views": 176292.0,
+      "momentum": 2.355
     },
     {
-      "query": "zaccharie risacher",
+      "query": "xbox x25",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 217216.0,
+      "momentum": 2.3058
+    },
+    {
+      "query": "afg vs zim",
       "traffic": 1000.0,
       "rise": 10.0,
-      "saturation_views": 334834.0,
-      "momentum": 2.21
+      "saturation_views": 433568.0,
+      "momentum": 2.1565
     },
     {
-      "query": "ayo dosunmu",
+      "query": "jonathan kreiss-tomkins",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 803738.0,
+      "momentum": 2.0387
+    },
+    {
+      "query": "xbox 25th anniversary console",
       "traffic": 2000.0,
       "rise": 10.0,
-      "saturation_views": 502410.0,
-      "momentum": 2.1272
+      "saturation_views": 1786309.0,
+      "momentum": 1.9041
     },
     {
-      "query": "high potential",
+      "query": "mcu",
       "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 1353124.0,
-      "momentum": 1.9488
+      "saturation_views": 12731683.0,
+      "momentum": 1.638
     },
     {
-      "query": "stefon diggs",
-      "traffic": 2000.0,
-      "rise": 10.0,
-      "saturation_views": 3058089.0,
-      "momentum": 1.823
-    },
-    {
-      "query": "tsmc",
+      "query": "mcu films",
       "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 4175832.0,
-      "momentum": 1.7791
+      "saturation_views": 19747975.0,
+      "momentum": 1.5884
+    },
+    {
+      "query": "icc",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 39398864.0,
+      "momentum": 1.5162
     }
   ],
   "top": [
     {
-      "query": "joan beringer",
+      "query": "san francisco weather",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 74580.0,
-      "momentum": 2.5822
+      "saturation_views": 34836.0,
+      "momentum": 2.8231
     },
     {
-      "query": "hollywood brown",
-      "traffic": 1000.0,
+      "query": "weather tornado warning",
+      "traffic": 200000.0,
       "rise": 10.0,
-      "saturation_views": 150297.0,
-      "momentum": 2.3941
+      "saturation_views": 111443.0,
+      "momentum": 2.4709
     },
     {
-      "query": "ausar thompson",
-      "traffic": 1000.0,
-      "rise": 10.0,
-      "saturation_views": 163449.0,
-      "momentum": 2.3734
-    },
-    {
-      "query": "tre johnson",
-      "traffic": 500.0,
-      "rise": 10.0,
-      "saturation_views": 210614.0,
-      "momentum": 2.3129
-    },
-    {
-      "query": "khloe kardashian",
+      "query": "noah gragson",
       "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 239192.0,
-      "momentum": 2.2837
+      "saturation_views": 176292.0,
+      "momentum": 2.355
+    },
+    {
+      "query": "xbox x25",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 217216.0,
+      "momentum": 2.3058
+    },
+    {
+      "query": "afg vs zim",
+      "traffic": 1000.0,
+      "rise": 10.0,
+      "saturation_views": 433568.0,
+      "momentum": 2.1565
     }
   ]
 }
