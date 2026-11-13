@@ -1,5 +1,5 @@
 {
-  "seq": 34,
+  "seq": 35,
   "used": [
     "whatisthecapitalcityofcanada",
     "whichgasdoplantsprimarilyabsorbfromtheatmosphereforphotosynthesis",
@@ -144,18 +144,18 @@
     "howmuchdoestheeiffeltowergrowinsummer",
     "whichfruithasmorevitamincthananorange",
     "whichplanetwouldfloatinwater",
+    "whichusstateisthelargestbylandarea",
+    "whatgasdoplantsabsorbfromtheatmosphereforphotosynthesis",
+    "inwhichmoviewouldyoufindthecharactertonystark",
+    "whichanimalisknownforitsabilitytochangecolortoblendintoitssurroundings",
+    "whichfamousscientistdevelopedthetheoryofrelativity",
+    "thefalloftheberlinwallsymbolizedtheendofwhatmajorhistoricalera",
+    "whichactorvoicedthecharacterofwoodyinthetoystoryfilmseries",
+    "whichfruithasmorevitamincthananorange",
+    "whichplanetwouldfloatinwater",
     "whichusstateisthelargestbylandarea"
   ],
   "generated": [
-    "whodirectedtheblockbustermoviejurassicpark",
-    "howmanycontinentsaretraditionallyrecognizedonearth",
-    "howmanybonesdoesasharkhave",
-    "whichlanguagehasthemostnativespeakers",
-    "howmuchdoestheeiffeltowergrowinsummer",
-    "whichfruithasmorevitamincthananorange",
-    "whatistraditionallyconsideredthelongestriverintheworld",
-    "whichmoviefeaturestheiconiclinemaytheforcebewithyou",
-    "whodirectedthegroundbreakingfilmjurassicpark",
     "whatisthecapitalcityoffrance",
     "whichlanguagehasthemostnativespeakers",
     "howmuchdoestheeiffeltowergrowinsummer",
@@ -168,6 +168,15 @@
     "whichriverflowsthroughcairoegypt",
     "whoplayedthecharacterofironmaninthemarvelcinematicuniverse",
     "howmuchdoestheeiffeltowergrowinsummer",
+    "whichfruithasmorevitamincthananorange",
+    "whichplanetwouldfloatinwater",
+    "whichusstateisthelargestbylandarea",
+    "whatgasdoplantsabsorbfromtheatmosphereforphotosynthesis",
+    "inwhichmoviewouldyoufindthecharactertonystark",
+    "whichanimalisknownforitsabilitytochangecolortoblendintoitssurroundings",
+    "whichfamousscientistdevelopedthetheoryofrelativity",
+    "thefalloftheberlinwallsymbolizedtheendofwhatmajorhistoricalera",
+    "whichactorvoicedthecharacterofwoodyinthetoystoryfilmseries",
     "whichfruithasmorevitamincthananorange",
     "whichplanetwouldfloatinwater",
     "whichusstateisthelargestbylandarea"
@@ -268,6 +277,12 @@
       "idea_id": "20261113-160758-01",
       "title": "Most People Fail This 9 Question Quiz",
       "ts": "2026-11-13T16:11:02Z"
+    },
+    {
+      "video_id": "IxZF6LWT5hI",
+      "idea_id": "20261113-194625-01",
+      "title": "Only 1% Score 9/9 On This Quiz",
+      "ts": "2026-11-13T20:00:08Z"
     }
   ]
 }

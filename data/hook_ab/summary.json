@@ -1,16 +1,16 @@
 {
   "status": "ok",
-  "pairs": 108,
+  "pairs": 109,
   "joined": 12,
   "variants": {
     "A": {
-      "assigned": 69,
+      "assigned": 70,
       "measured": 7,
       "mean_engagement": 56.1,
       "mean_views": 429,
       "families": {
         "statement": 9,
-        "question": 33,
+        "question": 34,
         "number": 20,
         "negation": 7
       }
@@ -1540,7 +1540,21 @@
       "video_id": null,
       "engagement": null,
       "views": null
+    },
+    {
+      "ts": "2026-11-13T16:07:42",
+      "pair_id": "pair_20261113_0109",
+      "topic": "quiz:movies",
+      "variant": "A",
+      "hook": "How high can you score?",
+      "family": "question",
+      "family_other": "identity",
+      "hook_a": "How high can you score?",
+      "hook_b": "If you miss three, you are officially average.",
+      "video_id": "UFn-R-f9Cdw",
+      "engagement": null,
+      "views": null
     }
   ],
-  "fetched": "2026-11-13T16:07:09"
+  "fetched": "2026-11-13T19:45:48"
 }

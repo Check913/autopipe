@@ -1,41 +1,49 @@
 {
-  "fetched": "2026-11-13T16:07:09",
+  "fetched": "2026-11-13T19:45:48",
   "status": "learned",
   "min_samples": 3,
-  "n_samples": 29,
+  "n_samples": 30,
   "patterns": [
     {
       "dimension": "duration_format",
       "value": "short",
       "n": 7,
       "mean_engagement": 9.07,
-      "relative_delta": -0.569,
-      "label": "format duree=short -> -57% d'engagement"
+      "relative_delta": -0.555,
+      "label": "format duree=short -> -55% d'engagement"
+    },
+    {
+      "dimension": "duration_format",
+      "value": "long",
+      "n": 23,
+      "mean_engagement": 23.8,
+      "relative_delta": 0.169,
+      "label": "format duree=long -> +17% d'engagement"
+    },
+    {
+      "dimension": "hook_type",
+      "value": "number",
+      "n": 11,
+      "mean_engagement": 23.68,
+      "relative_delta": 0.163,
+      "label": "hook type=number -> +16% d'engagement"
     },
     {
       "dimension": "title_has_number",
       "value": "False",
       "n": 9,
       "mean_engagement": 17.06,
-      "relative_delta": -0.19,
-      "label": "chiffre dans le titre=False -> -19% d'engagement"
-    },
-    {
-      "dimension": "duration_format",
-      "value": "long",
-      "n": 22,
-      "mean_engagement": 24.88,
-      "relative_delta": 0.181,
-      "label": "format duree=long -> +18% d'engagement"
+      "relative_delta": -0.162,
+      "label": "chiffre dans le titre=False -> -16% d'engagement"
     }
   ],
   "stats": {
-    "n_samples": 29,
-    "mean_engagement": 21.07,
+    "n_samples": 30,
+    "mean_engagement": 20.37,
     "engagement_min": 0.0,
     "engagement_max": 47.36
   },
-  "lessons": 41,
+  "lessons": 42,
   "kill_switch": {
     "banned_families": {},
     "niche_alert": false,
@@ -58,12 +66,12 @@
     },
     "current": {
       "n": 10,
-      "engagement_mean": 15.97,
+      "engagement_mean": 12.22,
       "avg_view_pct_mean": null,
       "by_family": {}
     },
     "delta": {
-      "engagement_mean": -5.25,
+      "engagement_mean": -9.0,
       "avg_view_pct_mean": null
     }
   },

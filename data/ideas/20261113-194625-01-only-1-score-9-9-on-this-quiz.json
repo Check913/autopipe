@@ -1,0 +1,201 @@
+{
+  "topic": "quiz",
+  "source_topic": "quiz:general",
+  "title": "Only 1% Score 9/9 On This Quiz",
+  "hook": "If you miss three, you are officially average.",
+  "density": 4,
+  "duration_format": "long",
+  "duration_target": 80,
+  "duration_range": [
+    74,
+    88
+  ],
+  "script": "If you miss three, you are officially average.\nQuestion 1: What gas do plants absorb from the atmosphere for photosynthesis?\nLock in your answer: Three. Two. One.\nThe answer is C: Carbon Dioxide.\nQuestion 2: In which movie would you find the character 'Tony Stark'?\nLock in your answer: Three. Two. One.\nThe answer is B: The Avengers.\nQuestion 3: Which animal is known for its ability to change color to blend into its surroundings?\nLock in your answer: Three. Two. One.\nThe answer is B: Chameleon.\nIf you got the first three right, like the video right now.\nQuestion 4: Which famous scientist developed the theory of relativity?\nLock in your answer: Three. Two. One.\nThe answer is C: Albert Einstein.\nQuestion 5: The fall of the Berlin Wall symbolized the end of what major historical era?\nLock in your answer: Three. Two. One.\nThe answer is B: The Cold War.\nScore check: comment SHARP if you are still perfect, RUSTY if you already missed one.\nQuestion 6: Which actor voiced the character of Woody in the 'Toy Story' film series?\nLock in your answer: Three. Two. One.\nThe answer is B: Tom Hanks.\nQuestion 7: Which fruit has more vitamin C than an orange?\nLock in your answer: Three. Two. One.\nThe answer is C: Kiwi.\nAre you ready for the last question?\nDon't forget to follow and comment your score to be on the weekly leaderboard of the top performers.\nQuestion 8: Which planet would float in water?\nLock in your answer: Three. Two. One.\nThe answer is B: Saturn.\nQuestion 9: Which US state is the largest by land area?\nLock in your answer: Three. Two. One.\nThe answer is B: Alaska.\nBonus: double or nothing - keep your score in your head and beat it on the next quiz.\nComment your score out of 9, and follow for a new quiz every day.",
+  "generator": "quiz:llm",
+  "quiz": {
+    "enabled": true,
+    "rounds": 9,
+    "countdown_s": 3,
+    "cards": true,
+    "items": [
+      {
+        "question": "What gas do plants absorb from the atmosphere for photosynthesis?",
+        "options": [
+          "Oxygen",
+          "Nitrogen",
+          "Carbon Dioxide",
+          "Hydrogen"
+        ],
+        "answer_index": 2,
+        "explanation": "Plants convert carbon dioxide and water into glucose and oxygen using sunlight.",
+        "category": "general"
+      },
+      {
+        "question": "In which movie would you find the character 'Tony Stark'?",
+        "options": [
+          "Spider-Man",
+          "The Avengers",
+          "Batman",
+          "Superman"
+        ],
+        "answer_index": 1,
+        "explanation": "Tony Stark is the billionaire industrialist and superhero known as Iron Man in the Marvel Cinematic Universe.",
+        "category": "general"
+      },
+      {
+        "question": "Which animal is known for its ability to change color to blend into its surroundings?",
+        "options": [
+          "Lion",
+          "Chameleon",
+          "Elephant",
+          "Penguin"
+        ],
+        "answer_index": 1,
+        "explanation": "Chameleons change color for camouflage, communication, and to regulate body temperature.",
+        "category": "general"
+      },
+      {
+        "question": "Which famous scientist developed the theory of relativity?",
+        "options": [
+          "Isaac Newton",
+          "Galileo Galilei",
+          "Albert Einstein",
+          "Stephen Hawking"
+        ],
+        "answer_index": 2,
+        "explanation": "Albert Einstein's theory of relativity revolutionized physics with its concepts of space, time, gravity, and the universe.",
+        "category": "general"
+      },
+      {
+        "question": "The fall of the Berlin Wall symbolized the end of what major historical era?",
+        "options": [
+          "World War I",
+          "The Cold War",
+          "The Renaissance",
+          "The Great Depression"
+        ],
+        "answer_index": 1,
+        "explanation": "The fall of the Berlin Wall in 1989 marked a pivotal moment in the winding down of the Cold War and the reunification of Germany.",
+        "category": "general"
+      },
+      {
+        "question": "Which actor voiced the character of Woody in the 'Toy Story' film series?",
+        "options": [
+          "Tim Allen",
+          "Tom Hanks",
+          "Billy Crystal",
+          "Robin Williams"
+        ],
+        "answer_index": 1,
+        "explanation": "Tom Hanks famously lent his voice to the beloved cowboy doll, Woody, throughout the entire 'Toy Story' franchise.",
+        "category": "general"
+      },
+      {
+        "question": "Which fruit has more vitamin C than an orange?",
+        "options": [
+          "Apple",
+          "Banana",
+          "Kiwi",
+          "Grape"
+        ],
+        "answer_index": 2,
+        "explanation": "Kiwis pack about double the vitamin C.",
+        "category": "general"
+      },
+      {
+        "question": "Which planet would float in water?",
+        "options": [
+          "Earth",
+          "Saturn",
+          "Neptune",
+          "Mars"
+        ],
+        "answer_index": 1,
+        "explanation": "Saturn is less dense than water.",
+        "category": "science"
+      },
+      {
+        "question": "Which US state is the largest by land area?",
+        "options": [
+          "Texas",
+          "Alaska",
+          "California",
+          "Montana"
+        ],
+        "answer_index": 1,
+        "explanation": "Alaska is more than twice the size of Texas.",
+        "category": "geography"
+      }
+    ]
+  },
+  "comment": "Score check: how many did you get right out of 9? Comment your score and which question tricked you.",
+  "description": "Quick general quiz: 9 questions, 3 seconds each.\nScore check: how many did you get out of 9? 0 is a valid answer.\nPlay along, beat your friends, and come back tomorrow: a new quiz every day.\n\n#quiz #trivia #quiztime #generalknowledge #shorts",
+  "tags": [
+    "quiz",
+    "trivia",
+    "quiz time",
+    "quiz questions",
+    "general knowledge",
+    "test your knowledge",
+    "general quiz",
+    "general trivia",
+    "quiz challenge",
+    "guess the answer",
+    "brain test",
+    "iq test",
+    "fun quiz",
+    "trivia questions and answers",
+    "general knowledge quiz",
+    "pub quiz questions",
+    "quiz for adults",
+    "hard quiz",
+    "are you smart",
+    "only 1 percent",
+    "test your brain",
+    "shorts quiz",
+    "youtube shorts",
+    "shorts"
+  ],
+  "pair_id": "pair_20261113_0110",
+  "hook_variant": "B",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "family": "question",
+      "hook": "Are you smarter than most people?"
+    },
+    {
+      "variant": "B",
+      "family": "identity",
+      "hook": "If you miss three, you are officially average."
+    }
+  ],
+  "compliance": {
+    "mode": "block",
+    "ok": true,
+    "reasons": [],
+    "checked_at": "2026-11-13T19:46:25",
+    "originality": {
+      "max_jaccard": 0.5625,
+      "max_script_jaccard": 0.4848,
+      "worst_match_src": "20261031-181041-01-this-quiz-looks-easy-until-question-4.json",
+      "threshold": 0.6,
+      "threshold_script": 0.65,
+      "corpus_size": 117
+    },
+    "fatigue": {
+      "hook_family": "statement",
+      "consecutive_same_family": 0,
+      "max_consecutive": 3,
+      "fatigued": false
+    },
+    "policy": {
+      "violations": []
+    },
+    "ai_disclosure": {
+      "contains_synthetic_media": false,
+      "configured": true
+    }
+  },
+  "id": "20261113-194625-01"
+}

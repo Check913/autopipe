@@ -1,26 +1,6 @@
 {
   "rows": [
     {
-      "id": "fNh2NGFifGQ",
-      "range_start": "2026-10-16",
-      "range_end": "2026-11-13",
-      "views": 457,
-      "engagedViews": 302,
-      "engaged_ratio": 66.1,
-      "engaged_source": "engagedViews",
-      "avg_view_duration_s": 59.0,
-      "avg_view_pct": 57.1,
-      "likes": 6,
-      "comments": 2,
-      "shares": 0,
-      "viewed_target_pct": 70.0,
-      "unique_viewers": null,
-      "loop_rate": null,
-      "loop_source": "unavailable",
-      "loop_verdict": null,
-      "fetched": "2026-11-13T16:07:08"
-    },
-    {
       "id": "gEtui7O33o0",
       "range_start": "2026-10-16",
       "range_end": "2026-11-13",
@@ -38,7 +18,27 @@
       "loop_rate": null,
       "loop_source": "unavailable",
       "loop_verdict": null,
-      "fetched": "2026-11-13T16:07:08"
+      "fetched": "2026-11-13T19:45:47"
+    },
+    {
+      "id": "fNh2NGFifGQ",
+      "range_start": "2026-10-16",
+      "range_end": "2026-11-13",
+      "views": 457,
+      "engagedViews": 302,
+      "engaged_ratio": 66.1,
+      "engaged_source": "engagedViews",
+      "avg_view_duration_s": 59.0,
+      "avg_view_pct": 57.1,
+      "likes": 6,
+      "comments": 2,
+      "shares": 0,
+      "viewed_target_pct": 70.0,
+      "unique_viewers": null,
+      "loop_rate": null,
+      "loop_source": "unavailable",
+      "loop_verdict": null,
+      "fetched": "2026-11-13T19:45:47"
     },
     {
       "id": "cy3aSg9ujT4",
@@ -58,7 +58,7 @@
       "loop_rate": null,
       "loop_source": "unavailable",
       "loop_verdict": null,
-      "fetched": "2026-11-13T16:07:08"
+      "fetched": "2026-11-13T19:45:47"
     },
     {
       "id": "jVwLSsQx_iE",
@@ -78,7 +78,7 @@
       "loop_rate": null,
       "loop_source": "unavailable",
       "loop_verdict": null,
-      "fetched": "2026-11-13T16:07:08"
+      "fetched": "2026-11-13T19:45:47"
     },
     {
       "id": "DEEnyERlFYg",
@@ -98,7 +98,7 @@
       "loop_rate": null,
       "loop_source": "unavailable",
       "loop_verdict": null,
-      "fetched": "2026-11-13T16:07:08"
+      "fetched": "2026-11-13T19:45:47"
     },
     {
       "id": "DXTbQ9natE0",
@@ -118,7 +118,7 @@
       "loop_rate": null,
       "loop_source": "unavailable",
       "loop_verdict": null,
-      "fetched": "2026-11-13T16:07:08"
+      "fetched": "2026-11-13T19:45:47"
     },
     {
       "id": "kzoLfpuh6lY",
@@ -138,7 +138,7 @@
       "loop_rate": null,
       "loop_source": "unavailable",
       "loop_verdict": null,
-      "fetched": "2026-11-13T16:07:08"
+      "fetched": "2026-11-13T19:45:47"
     },
     {
       "id": "uBK8AeCn1LM",
@@ -158,7 +158,7 @@
       "loop_rate": null,
       "loop_source": "unavailable",
       "loop_verdict": null,
-      "fetched": "2026-11-13T16:07:08"
+      "fetched": "2026-11-13T19:45:47"
     },
     {
       "id": "fXzcJuL7tII",
@@ -178,7 +178,7 @@
       "loop_rate": null,
       "loop_source": "unavailable",
       "loop_verdict": null,
-      "fetched": "2026-11-13T16:07:08"
+      "fetched": "2026-11-13T19:45:47"
     },
     {
       "id": "4oBjYODEBaw",
@@ -198,7 +198,7 @@
       "loop_rate": null,
       "loop_source": "unavailable",
       "loop_verdict": null,
-      "fetched": "2026-11-13T16:07:08"
+      "fetched": "2026-11-13T19:45:47"
     },
     {
       "id": "IcKndL0Ulfc",
@@ -218,7 +218,7 @@
       "loop_rate": null,
       "loop_source": "unavailable",
       "loop_verdict": null,
-      "fetched": "2026-11-13T16:07:09"
+      "fetched": "2026-11-13T19:45:48"
     },
     {
       "id": "0hAve-MUuww",
@@ -238,10 +238,10 @@
       "loop_rate": null,
       "loop_source": "unavailable",
       "loop_verdict": null,
-      "fetched": "2026-11-13T16:07:09"
+      "fetched": "2026-11-13T19:45:48"
     }
   ],
-  "fetched": "2026-11-13T16:07:09.250176",
+  "fetched": "2026-11-13T19:45:48.302336",
   "viewed_target_pct": 70.0,
   "engaged_target_pct": 70.0
 }

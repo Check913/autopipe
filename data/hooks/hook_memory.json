@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-13T16:07:09+00:00",
+  "updated": "2026-11-13T19:45:48+00:00",
   "publisheds": {
     "PCyc1j7hQ1s": {
       "video_id": "PCyc1j7hQ1s",
@@ -331,11 +331,11 @@
       "title": "Only 1% Score 9/9 On This Quiz",
       "topic": "quiz:geography",
       "views": 1033,
-      "engagedViews": 635,
-      "engaged_ratio": 61.5,
-      "engaged_source": "engagedViews",
+      "engagedViews": 0,
+      "engaged_ratio": 50.7,
+      "engaged_source": "fallback_averageViewPercentage",
       "avg_view_pct": 50.7,
-      "engagement": 61.5
+      "engagement": 50.7
     },
     "fXzcJuL7tII": {
       "video_id": "fXzcJuL7tII",
@@ -347,11 +347,11 @@
       "title": "Test Yourself: 9 Questions, No Cheating",
       "topic": "quiz:science",
       "views": 1,
-      "engagedViews": 1,
-      "engaged_ratio": 100.0,
-      "engaged_source": "engagedViews",
+      "engagedViews": 0,
+      "engaged_ratio": 6.8,
+      "engaged_source": "fallback_averageViewPercentage",
       "avg_view_pct": 6.8,
-      "engagement": 100.0
+      "engagement": 6.8
     },
     "kzoLfpuh6lY": {
       "video_id": "kzoLfpuh6lY",
@@ -363,11 +363,11 @@
       "title": "This Quiz Looks Easy Until Question 4",
       "topic": "quiz:history",
       "views": 1,
-      "engagedViews": 1,
-      "engaged_ratio": 100.0,
-      "engaged_source": "engagedViews",
+      "engagedViews": 0,
+      "engaged_ratio": 30.7,
+      "engaged_source": "fallback_averageViewPercentage",
       "avg_view_pct": 30.7,
-      "engagement": 100.0
+      "engagement": 30.7
     },
     "jVwLSsQx_iE": {
       "video_id": "jVwLSsQx_iE",
@@ -379,11 +379,11 @@
       "title": "Question 4 Is Where Streaks End",
       "topic": "quiz:movies",
       "views": 64,
-      "engagedViews": 39,
-      "engaged_ratio": 60.9,
-      "engaged_source": "engagedViews",
+      "engagedViews": 0,
+      "engaged_ratio": 43.1,
+      "engaged_source": "fallback_averageViewPercentage",
       "avg_view_pct": 43.1,
-      "engagement": 60.9
+      "engagement": 43.1
     },
     "o9pVmfwNbek": {
       "video_id": "o9pVmfwNbek",
@@ -411,11 +411,11 @@
       "title": "You Have 3 Seconds Per Question. Start.",
       "topic": "quiz:general",
       "views": 1250,
-      "engagedViews": 803,
-      "engaged_ratio": 64.2,
-      "engaged_source": "engagedViews",
+      "engagedViews": 0,
+      "engaged_ratio": 54.9,
+      "engaged_source": "fallback_averageViewPercentage",
       "avg_view_pct": 54.9,
-      "engagement": 64.2
+      "engagement": 54.9
     },
     "4oBjYODEBaw": {
       "video_id": "4oBjYODEBaw",
@@ -427,11 +427,11 @@
       "title": "Pass 9 Questions. Prove Your IQ.",
       "topic": "quiz:general",
       "views": 654,
-      "engagedViews": 427,
-      "engaged_ratio": 65.3,
-      "engaged_source": "engagedViews",
+      "engagedViews": 0,
+      "engaged_ratio": 45.3,
+      "engaged_source": "fallback_averageViewPercentage",
       "avg_view_pct": 45.3,
-      "engagement": 65.3
+      "engagement": 45.3
     },
     "BUubckp4nX0": {
       "video_id": "BUubckp4nX0",
@@ -736,7 +736,23 @@
       "engaged_source": null,
       "avg_view_pct": null,
       "engagement": null
+    },
+    "UFn-R-f9Cdw": {
+      "video_id": "UFn-R-f9Cdw",
+      "published_at": "2026-11-13T16:10:56.983673+00:00",
+      "hook": "How high can you score?",
+      "family": "question",
+      "hook_variant": "A",
+      "pair_id": "pair_20261113_0109",
+      "title": "Most People Fail This 9 Question Quiz",
+      "topic": "quiz:movies",
+      "views": null,
+      "engagedViews": null,
+      "engaged_ratio": null,
+      "engaged_source": null,
+      "avg_view_pct": null,
+      "engagement": null
     }
   },
-  "last_checked": "2026-11-13T16:07:10+00:00"
+  "last_checked": "2026-11-13T19:45:48+00:00"
 }
