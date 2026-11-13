@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-13T11:31:23+00:00",
+  "updated": "2026-11-13T14:28:56+00:00",
   "publisheds": {
     "PCyc1j7hQ1s": {
       "video_id": "PCyc1j7hQ1s",
@@ -704,7 +704,23 @@
       "engaged_source": null,
       "avg_view_pct": null,
       "engagement": null
+    },
+    "h9UHYj0pTh0": {
+      "video_id": "h9UHYj0pTh0",
+      "published_at": "2026-11-13T12:00:04.249722+00:00",
+      "hook": "Can you pass this 3-question animal quiz?",
+      "family": "question",
+      "hook_variant": "A",
+      "pair_id": "pair_20261113_0102",
+      "title": "Would You Rather: 3 Animal Questions. Pass?",
+      "topic": "Would You Rather...? Build Your Fantasy Animal World 🐶🐱🌈✨",
+      "views": null,
+      "engagedViews": null,
+      "engaged_ratio": null,
+      "engaged_source": null,
+      "avg_view_pct": null,
+      "engagement": null
     }
   },
-  "last_checked": "2026-11-13T11:31:24+00:00"
+  "last_checked": "2026-11-13T14:28:56+00:00"
 }

@@ -1,27 +1,27 @@
 {
   "status": "ok",
-  "pairs": 100,
+  "pairs": 104,
   "joined": 12,
   "variants": {
     "A": {
-      "assigned": 63,
+      "assigned": 66,
       "measured": 7,
       "mean_engagement": 56.1,
       "mean_views": 429,
       "families": {
         "statement": 9,
-        "question": 28,
+        "question": 31,
         "number": 19,
         "negation": 7
       }
     },
     "B": {
-      "assigned": 37,
+      "assigned": 38,
       "measured": 5,
       "mean_engagement": 70.4,
       "mean_views": 383,
       "families": {
-        "question": 14,
+        "question": 15,
         "number": 9,
         "negation": 3,
         "identity": 11
@@ -1428,7 +1428,63 @@
       "video_id": null,
       "engagement": null,
       "views": null
+    },
+    {
+      "ts": "2026-11-13T11:31:48",
+      "pair_id": "pair_20261113_0101",
+      "topic": "quiz:geography",
+      "variant": "A",
+      "hook": "Are you smarter than most people?",
+      "family": "question",
+      "family_other": "identity",
+      "hook_a": "Are you smarter than most people?",
+      "hook_b": "Most adults cannot get all of these right.",
+      "video_id": null,
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-13T11:32:04",
+      "pair_id": "pair_20261113_0102",
+      "topic": "Would You Rather...? Build Your Fantasy Animal World 🐶🐱🌈✨",
+      "variant": "A",
+      "hook": "Can you pass this 3-question animal quiz?",
+      "family": "question",
+      "family_other": "question",
+      "hook_a": "Can you pass this 3-question animal quiz?",
+      "hook_b": "3 Would You Rather...? Build facts they never teach you",
+      "video_id": "h9UHYj0pTh0",
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-13T11:32:26",
+      "pair_id": "pair_20261113_0103",
+      "topic": "11 Adults vs General Knowledge Quiz",
+      "variant": "B",
+      "hook": "Why does nobody explain 11 Adults vs General like this?",
+      "family": "question",
+      "family_other": "question",
+      "hook_a": "The Quiz with Balls is an American game show that premiered",
+      "hook_b": "Why does nobody explain 11 Adults vs General like this?",
+      "video_id": null,
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-13T11:32:42",
+      "pair_id": "pair_20261113_0104",
+      "topic": "Would You Rather - Build Your CRAZY $100,000,000 HOUSE 🏠🎢✨🤑💸 Dream Futuristic House 🚀",
+      "variant": "A",
+      "hook": "Build YOUR $100M Dream House?",
+      "family": "question",
+      "family_other": "question",
+      "hook_a": "Build YOUR $100M Dream House?",
+      "hook_b": "3 Would You Rather Build Your facts they never teach you",
+      "video_id": null,
+      "engagement": null,
+      "views": null
     }
   ],
-  "fetched": "2026-11-13T11:31:23"
+  "fetched": "2026-11-13T14:28:55"
 }

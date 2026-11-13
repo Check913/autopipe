@@ -1,0 +1,62 @@
+{
+  "title": "How Urdu Islamic Quiz Top Sawal Took Over So Fast",
+  "hook": "3 Urdu Islamic Quiz Top Sawal facts they never teach you",
+  "script": "A general officer is an officer of high rank in the armies, and in some nations' air and space forces, marines or naval infantry.\nThat is not a guess – it is what the science actually says.\nA general officer is an officer of high rank in the armies, and in some nations' air and space forces, marines or naval infantry.\nMost people have never heard this.\nAnd that is the real story of Urdu Islamic Quiz | Top Sawal Jawab | Islamic GK | Urdu Quiz | General.",
+  "comment": "Be honest: did you already know this?",
+  "description": "How Urdu Islamic Quiz Top Sawal Took Over So Fast\nThe real facts, in 30 seconds.\n#shorts #facts #didyouknow",
+  "tags": [
+    "shorts",
+    "Urdu Islamic Quiz | Top Sawal Jawab | Is",
+    "facts",
+    "didyouknow",
+    "mind blowing"
+  ],
+  "duration_target": 13,
+  "duration_format": "short",
+  "density": 1,
+  "source_topic": "Urdu Islamic Quiz | Top Sawal Jawab | Islamic GK | Urdu Quiz | General",
+  "generator": "fallback+wiki",
+  "score": 38.8,
+  "pair_id": "pair_20261113_0106",
+  "hook_variant": "B",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "A general officer is an officer of high rank in the armies",
+      "family": "statement"
+    },
+    {
+      "variant": "B",
+      "hook": "3 Urdu Islamic Quiz Top Sawal facts they never teach you",
+      "family": "number"
+    }
+  ],
+  "compliance": {
+    "mode": "block",
+    "ok": true,
+    "reasons": [],
+    "checked_at": "2026-11-13T14:30:35",
+    "originality": {
+      "max_jaccard": 0.5263,
+      "max_script_jaccard": 0.3607,
+      "worst_match_src": "20261027-200041-03-how-donkey-ki-mazedaar-amazing-took-over-so-fast.json",
+      "threshold": 0.6,
+      "threshold_script": 0.65,
+      "corpus_size": 113
+    },
+    "fatigue": {
+      "hook_family": "number",
+      "consecutive_same_family": 0,
+      "max_consecutive": 3,
+      "fatigued": false
+    },
+    "policy": {
+      "violations": []
+    },
+    "ai_disclosure": {
+      "contains_synthetic_media": false,
+      "configured": true
+    }
+  },
+  "id": "20261113-143106-01"
+}

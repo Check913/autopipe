@@ -1,0 +1,73 @@
+{
+  "title": "Quiz: Can You Get 3/3 On This Tough Quiz?",
+  "hook": "Can you get 3/3 on this quiz?",
+  "script": "Can you get 3 out of 3 on this tough trivia quiz? Only the sharpest minds pass. You've got three seconds per question. Ready? Let's begin! First up: What is the only letter that does NOT appear on the periodic table? Is it J, Q, or Z? Think fast! The answer is... J! Did you get it? Next question: Which ocean is both the largest and deepest on Earth? Atlantic, Indian, or Pacific? Time's up! The correct answer is... The Pacific Ocean! Two down, one to go. Final challenge: What is the scientific name for the fear of heights? Agoraphobia, Acrophobia, or Claustrophobia? This one trips up many! It's Acrophobia. So, how many did you ace? If you got all three, you're a true trivia master! Now, can you get 3 out of 3 on this tough trivia quiz? Only the sharpest minds pass.",
+  "comment": "How many questions did you get right? Let us know!",
+  "description": "Test your general knowledge with our quick three-question challenge! Can you ace this quiz and prove you're a trivia master? Find out now!\n#TriviaQuiz #GeneralKnowledge #BrainTeaser",
+  "tags": [
+    "quiz",
+    "trivia",
+    "general knowledge",
+    "brain teaser",
+    "quiz time",
+    "test your knowledge",
+    "only 1 percent",
+    "did you know",
+    "challenge",
+    "scorenine",
+    "iq test",
+    "fun quiz"
+  ],
+  "density": 4,
+  "duration_format": "long",
+  "duration_target": 60,
+  "duration_range": [
+    50,
+    60
+  ],
+  "source_topic": "Assamese GK Questions || 23 টা সাধাৰণ জ্ঞানৰ প্ৰশ্ন আৰু উত্তৰ || GK In Assamese",
+  "generator": "llm:gemini-2.5-flash",
+  "score": 27.1,
+  "pair_id": "pair_20261113_0107",
+  "hook_variant": "A",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "Can you get 3/3 on this quiz?",
+      "family": "question"
+    },
+    {
+      "variant": "B",
+      "hook": "3 Assamese GK Questions || 23 facts they never teach you",
+      "family": "number"
+    }
+  ],
+  "compliance": {
+    "mode": "block",
+    "ok": true,
+    "reasons": [],
+    "checked_at": "2026-11-13T14:30:51",
+    "originality": {
+      "max_jaccard": 0.3077,
+      "max_script_jaccard": 0.3613,
+      "worst_match_src": "20261113-113242-01-would-you-rather-3-animal-questions-pass.json",
+      "threshold": 0.6,
+      "threshold_script": 0.65,
+      "corpus_size": 113
+    },
+    "fatigue": {
+      "hook_family": "question",
+      "consecutive_same_family": 1,
+      "max_consecutive": 3,
+      "fatigued": false
+    },
+    "policy": {
+      "violations": []
+    },
+    "ai_disclosure": {
+      "contains_synthetic_media": false,
+      "configured": true
+    }
+  },
+  "id": "20261113-143106-02"
+}

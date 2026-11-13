@@ -1,0 +1,73 @@
+{
+  "title": "Your Islamic Quiz Starts Now!",
+  "hook": "3 Seconds Per Question. Start.",
+  "script": "You have 3 seconds per question. Start! Last prophet in Islam? Prophet Muhammad. Holy book? The Quran. Daily prayers? Five. Did you pass this 3-second challenge?",
+  "comment": "How many did you get right? Let us know!",
+  "description": "Test your knowledge with 3 rapid-fire Islamic trivia questions! Only true experts can ace this 13-second challenge. Can you get all three? #IslamicQuiz #TriviaChallenge #ScoreNine",
+  "tags": [
+    "Islamic quiz",
+    "Trivia",
+    "General knowledge",
+    "Brain teaser",
+    "Quiz time",
+    "Test your knowledge",
+    "Islamic facts",
+    "ScoreNine",
+    "Short quiz",
+    "Muslim quiz",
+    "Fast quiz",
+    "Did you know"
+  ],
+  "density": 4,
+  "duration_format": "short",
+  "duration_target": 13,
+  "duration_range": [
+    12,
+    18
+  ],
+  "source_topic": "Islamic Paheliyan | Islamic Quiz | Islamic Gk | Kbj | Kaun Banega Jannati |",
+  "generator": "llm:gemini-2.5-flash",
+  "score": 22.2,
+  "pair_id": "pair_20261113_0108",
+  "hook_variant": "A",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "3 Seconds Per Question. Start.",
+      "family": "number"
+    },
+    {
+      "variant": "B",
+      "hook": "Why does nobody explain Islamic Paheliyan Islamic like this?",
+      "family": "question"
+    }
+  ],
+  "compliance": {
+    "mode": "block",
+    "ok": true,
+    "reasons": [],
+    "checked_at": "2026-11-13T14:31:06",
+    "originality": {
+      "max_jaccard": 0.2353,
+      "max_script_jaccard": 0.2703,
+      "worst_match_src": "20261101-210948-01-you-have-3-seconds-per-question-start.json",
+      "threshold": 0.6,
+      "threshold_script": 0.65,
+      "corpus_size": 113
+    },
+    "fatigue": {
+      "hook_family": "number",
+      "consecutive_same_family": 0,
+      "max_consecutive": 3,
+      "fatigued": false
+    },
+    "policy": {
+      "violations": []
+    },
+    "ai_disclosure": {
+      "contains_synthetic_media": false,
+      "configured": true
+    }
+  },
+  "id": "20261113-143106-03"
+}

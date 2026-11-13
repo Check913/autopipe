@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T23:50:25",
+  "generated_at": "2026-11-13T14:28:55",
   "errors": [],
   "warnings": [],
   "targets": {
@@ -13,12 +13,12 @@
     "title": "ViralScope",
     "channel_created_at": "2023-09-28T13:24:48.974359Z",
     "hidden_subs": false,
-    "video_count": 16
+    "video_count": 20
   },
-  "total_views": 38,
+  "total_views": 57,
   "subs": 13,
-  "shorts_views_90d": 4093,
-  "n_shorts_90d": 24,
+  "shorts_views_90d": 4103,
+  "n_shorts_90d": 28,
   "watch_hours_12m": null,
   "ypp": {
     "checks": {
@@ -35,7 +35,7 @@
         "pct": 0.0
       },
       "shorts_views": {
-        "current": 4093,
+        "current": 4103,
         "target": 10000000,
         "ok": false,
         "pct": 0.04
@@ -49,12 +49,12 @@
   },
   "velocities_per_day": {
     "subs": 0.0,
-    "shorts_views_90d": 19.335,
+    "shorts_views_90d": 16.391,
     "watch_hours_12m": null
   },
   "eta_days": {
     "subs": null,
-    "shorts_views_90d": 516986,
+    "shorts_views_90d": 609841,
     "watch_hours_12m": null
   },
   "est_monthly_revenue_usd": 0.11,

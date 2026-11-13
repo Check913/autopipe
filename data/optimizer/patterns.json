@@ -1,33 +1,41 @@
 {
-  "fetched": "2026-11-13T11:31:23",
+  "fetched": "2026-11-13T14:28:55",
   "status": "learned",
   "min_samples": 3,
-  "n_samples": 27,
+  "n_samples": 28,
   "patterns": [
     {
       "dimension": "duration_format",
       "value": "short",
-      "n": 5,
-      "mean_engagement": 12.7,
-      "relative_delta": -0.434,
-      "label": "format duree=short -> -43% d'engagement"
+      "n": 6,
+      "mean_engagement": 10.58,
+      "relative_delta": -0.515,
+      "label": "format duree=short -> -51% d'engagement"
+    },
+    {
+      "dimension": "hook_type",
+      "value": "number",
+      "n": 10,
+      "mean_engagement": 25.99,
+      "relative_delta": 0.192,
+      "label": "hook type=number -> +19% d'engagement"
     },
     {
       "dimension": "hook_type",
       "value": "statement",
       "n": 5,
       "mean_engagement": 18.38,
-      "relative_delta": -0.182,
-      "label": "hook type=statement -> -18% d'engagement"
+      "relative_delta": -0.157,
+      "label": "hook type=statement -> -16% d'engagement"
     }
   ],
   "stats": {
-    "n_samples": 27,
-    "mean_engagement": 22.45,
+    "n_samples": 28,
+    "mean_engagement": 21.8,
     "engagement_min": 0.0,
     "engagement_max": 47.36
   },
-  "lessons": 39,
+  "lessons": 40,
   "kill_switch": {
     "banned_families": {},
     "niche_alert": false,
@@ -50,12 +58,12 @@
     },
     "current": {
       "n": 10,
-      "engagement_mean": 18.75,
+      "engagement_mean": 15.92,
       "avg_view_pct_mean": null,
       "by_family": {}
     },
     "delta": {
-      "engagement_mean": -2.47,
+      "engagement_mean": -5.3,
       "avg_view_pct_mean": null
     }
   },

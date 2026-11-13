@@ -5416,5 +5416,135 @@
         500.0
       ]
     ]
+  },
+  "what time does the stock market open": {
+    "traffic": 200.0,
+    "first_seen": "2026-11-13T14:28:29",
+    "last_seen": "2026-11-13T14:28:29",
+    "delta": 200.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-13T14:28:29",
+        200.0
+      ]
+    ]
+  },
+  "john turturro": {
+    "traffic": 200.0,
+    "first_seen": "2026-11-13T14:28:29",
+    "last_seen": "2026-11-13T14:28:29",
+    "delta": 200.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-13T14:28:29",
+        200.0
+      ]
+    ]
+  },
+  "sirik": {
+    "traffic": 200.0,
+    "first_seen": "2026-11-13T14:28:29",
+    "last_seen": "2026-11-13T14:28:29",
+    "delta": 200.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-13T14:28:29",
+        200.0
+      ]
+    ]
+  },
+  "forex factory": {
+    "traffic": 500.0,
+    "first_seen": "2026-11-13T14:28:29",
+    "last_seen": "2026-11-13T14:28:29",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-13T14:28:29",
+        500.0
+      ]
+    ]
+  },
+  "taylor swift": {
+    "traffic": 5000.0,
+    "first_seen": "2026-11-13T14:28:29",
+    "last_seen": "2026-11-13T14:28:29",
+    "delta": 5000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-13T14:28:29",
+        5000.0
+      ]
+    ]
+  },
+  "anthony mackie": {
+    "traffic": 500.0,
+    "first_seen": "2026-11-13T14:28:29",
+    "last_seen": "2026-11-13T14:28:29",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-13T14:28:29",
+        500.0
+      ]
+    ]
+  },
+  "warren buffett investing tips downturn": {
+    "traffic": 200.0,
+    "first_seen": "2026-11-13T14:28:29",
+    "last_seen": "2026-11-13T14:28:29",
+    "delta": 200.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-13T14:28:29",
+        200.0
+      ]
+    ]
+  },
+  "christian bale": {
+    "traffic": 1000.0,
+    "first_seen": "2026-11-13T14:28:29",
+    "last_seen": "2026-11-13T14:28:29",
+    "delta": 1000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-13T14:28:29",
+        1000.0
+      ]
+    ]
+  },
+  "king charles": {
+    "traffic": 200.0,
+    "first_seen": "2026-11-13T14:28:29",
+    "last_seen": "2026-11-13T14:28:29",
+    "delta": 200.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-13T14:28:29",
+        200.0
+      ]
+    ]
+  },
+  "economic calendar": {
+    "traffic": 200.0,
+    "first_seen": "2026-11-13T14:28:29",
+    "last_seen": "2026-11-13T14:28:29",
+    "delta": 200.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-13T14:28:29",
+        200.0
+      ]
+    ]
   }
 }
