@@ -1,0 +1,62 @@
+{
+  "title": "How Only Real Detectives Can Took Over So Fast",
+  "hook": "William Henry Pratt, known professionally as Boris Karloff",
+  "script": "William Henry Pratt, known professionally as Boris Karloff, was an English actor.\nThat is not a guess – it is what the science actually says.\nHis portrayal of Frankenstein's monster in the horror film Frankenstein (1931), his 82nd film, established him as a horror icon, and he reprised the role for the sequels Bride of Frankenstein (1935) and Son of Frankenstein (1939).\nHe also appeared as Imhotep in The Mummy (1932), and voiced the Grinch in, as well as narrating, the animated television special of Dr.\nAnd that is the real story of Only Real Detectives Can Solve All 20 Riddles! | Quiz Patrol.",
+  "comment": "Which part surprised you the most? Tell me below!",
+  "description": "How Only Real Detectives Can Took Over So Fast\nThe real facts, in 30 seconds.\n#shorts #facts #didyouknow",
+  "tags": [
+    "shorts",
+    "Only Real Detectives Can Solve All 20 Ri",
+    "facts",
+    "didyouknow",
+    "mind blowing"
+  ],
+  "duration_target": 13,
+  "duration_format": "short",
+  "density": 1,
+  "source_topic": "Only Real Detectives Can Solve All 20 Riddles! | Quiz Patrol",
+  "generator": "fallback+wiki",
+  "score": 1499.1,
+  "pair_id": "pair_20261113_0095",
+  "hook_variant": "A",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "William Henry Pratt, known professionally as Boris Karloff",
+      "family": "statement"
+    },
+    {
+      "variant": "B",
+      "hook": "Why does nobody explain Only Real Detectives Can like this?",
+      "family": "question"
+    }
+  ],
+  "compliance": {
+    "mode": "block",
+    "ok": true,
+    "reasons": [],
+    "checked_at": "2026-11-13T03:37:44",
+    "originality": {
+      "max_jaccard": 0.2083,
+      "max_script_jaccard": 0.1835,
+      "worst_match_src": "20261029-200205-02-how-killswitch-88thagang-true-took-over-so-fast.json",
+      "threshold": 0.6,
+      "threshold_script": 0.65,
+      "corpus_size": 108
+    },
+    "fatigue": {
+      "hook_family": "statement",
+      "consecutive_same_family": 0,
+      "max_consecutive": 3,
+      "fatigued": false
+    },
+    "policy": {
+      "violations": []
+    },
+    "ai_disclosure": {
+      "contains_synthetic_media": false,
+      "configured": true
+    }
+  },
+  "id": "20261113-033745-02"
+}

@@ -1,0 +1,73 @@
+{
+  "title": "Can YOU Solve This Jail Break Riddle?",
+  "hook": "Only a genius can escape this jailbreak riddle. Can you?",
+  "script": "Only a genius can escape this jailbreak riddle. Can you? A prisoner faces two doors: freedom or trap. Two guards: one always truthful, one always lies. He doesn't know who is who. One question to one guard. What does he ask to choose freedom? Think fast!\nQuestion 1: What's the key to tricking both guards? (5 seconds) Time's up!\nQuestion 2: How do you force them to give the same answer? (5 seconds) Think harder!\nQuestion 3: What's the exact question to ask? (5 seconds) Last chance!\nReady for the answers? The trick is to ask a question about what the other guard would say. Point to a door and ask either guard: \"If I asked the other guard which door leads to freedom, what would he say?\" Both guards, truthful or liar, would point to the trap door. So, pick the opposite door. Did you outsmart them? Only a genius can escape this jailbreak riddle. Can you?",
+  "comment": "Did you solve the riddle before the answers were revealed?",
+  "description": "Test your logic with this classic jailbreak riddle! Can you outsmart the guards and find the path to freedom? Only the sharpest minds crack this one.\n#JailbreakRiddle #BrainTeaser #QuizTime",
+  "tags": [
+    "quiz",
+    "trivia",
+    "riddle",
+    "brain teaser",
+    "logic puzzle",
+    "jailbreak",
+    "challenge",
+    "mind game",
+    "test your knowledge",
+    "only 1 percent",
+    "scorenine",
+    "impossible riddle"
+  ],
+  "density": 4,
+  "duration_format": "long",
+  "duration_target": 60,
+  "duration_range": [
+    50,
+    60
+  ],
+  "source_topic": "Can you solve the jail break riddle? - Dan Finkel",
+  "generator": "llm:gemini-2.5-flash",
+  "score": 24018.0,
+  "pair_id": "pair_20261113_0094",
+  "hook_variant": "A",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "Only a genius can escape this jailbreak riddle. Can you?",
+      "family": "question"
+    },
+    {
+      "variant": "B",
+      "hook": "3 Can you solve the jail break facts they never teach you",
+      "family": "number"
+    }
+  ],
+  "compliance": {
+    "mode": "block",
+    "ok": true,
+    "reasons": [],
+    "checked_at": "2026-11-13T03:37:25",
+    "originality": {
+      "max_jaccard": 0.3571,
+      "max_script_jaccard": 0.1818,
+      "worst_match_src": "20261111-185444-01-danger-riddles-can-you-escape-these-3.json",
+      "threshold": 0.6,
+      "threshold_script": 0.65,
+      "corpus_size": 108
+    },
+    "fatigue": {
+      "hook_family": "question",
+      "consecutive_same_family": 1,
+      "max_consecutive": 3,
+      "fatigued": false
+    },
+    "policy": {
+      "violations": []
+    },
+    "ai_disclosure": {
+      "contains_synthetic_media": false,
+      "configured": true
+    }
+  },
+  "id": "20261113-033745-01"
+}

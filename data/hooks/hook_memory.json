@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-12T23:50:25+00:00",
+  "updated": "2026-11-13T03:36:29+00:00",
   "publisheds": {
     "PCyc1j7hQ1s": {
       "video_id": "PCyc1j7hQ1s",
@@ -474,12 +474,12 @@
       "pair_id": "pair_20261110_0051",
       "title": "How What Really Happens With Took Over So Fast",
       "topic": "Cognitive trick/brain teaser",
-      "views": null,
-      "engagedViews": null,
-      "engaged_ratio": null,
-      "engaged_source": null,
-      "avg_view_pct": null,
-      "engagement": null
+      "views": 1,
+      "engagedViews": 1,
+      "engaged_ratio": 100.0,
+      "engaged_source": "engagedViews",
+      "avg_view_pct": 45.9,
+      "engagement": 100.0
     },
     "0hAve-MUuww": {
       "video_id": "0hAve-MUuww",
@@ -490,12 +490,12 @@
       "pair_id": "pair_20261111_0059",
       "title": "You Won't Believe Trivia All-Stars vs Did This",
       "topic": "Trivia All-Stars vs. Impossible Quiz",
-      "views": null,
-      "engagedViews": null,
-      "engaged_ratio": null,
-      "engaged_source": null,
-      "avg_view_pct": null,
-      "engagement": null
+      "views": 0,
+      "engagedViews": 0,
+      "engaged_ratio": 0.0,
+      "engaged_source": "fallback_averageViewPercentage",
+      "avg_view_pct": 0.0,
+      "engagement": 0.0
     },
     "IcKndL0Ulfc": {
       "video_id": "IcKndL0Ulfc",
@@ -506,12 +506,12 @@
       "pair_id": "pair_20261111_0061",
       "title": "The Question Most People Get Wrong Is Next",
       "topic": "quiz:history",
-      "views": null,
-      "engagedViews": null,
-      "engaged_ratio": null,
-      "engaged_source": null,
-      "avg_view_pct": null,
-      "engagement": null
+      "views": 0,
+      "engagedViews": 0,
+      "engaged_ratio": 0.0,
+      "engaged_source": "fallback_averageViewPercentage",
+      "avg_view_pct": 0.0,
+      "engagement": 0.0
     },
     "0Zg42HIOslg": {
       "video_id": "0Zg42HIOslg",
@@ -656,7 +656,23 @@
       "engaged_source": null,
       "avg_view_pct": null,
       "engagement": null
+    },
+    "QaKuxwgMUdI": {
+      "video_id": "QaKuxwgMUdI",
+      "published_at": "2026-11-12T23:54:09.338162+00:00",
+      "hook": "How many of these can you get right?",
+      "family": "question",
+      "hook_variant": "B",
+      "pair_id": "pair_20261112_0090",
+      "title": "Your IQ Will Explode With These 3 Riddles",
+      "topic": "15 Tricky Riddles That Will Test Your IQ🧠 | Only Geniuses Can Solve All 15!🔥",
+      "views": null,
+      "engagedViews": null,
+      "engaged_ratio": null,
+      "engaged_source": null,
+      "avg_view_pct": null,
+      "engagement": null
     }
   },
-  "last_checked": "2026-11-12T23:50:25+00:00"
+  "last_checked": "2026-11-13T03:36:30+00:00"
 }

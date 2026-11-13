@@ -1,9 +1,9 @@
 {
   "arms": {
     "family:question": {
-      "alpha": 3.928,
+      "alpha": 4.928,
       "beta": 2.072,
-      "pulls": 4
+      "pulls": 5
     },
     "family:number": {
       "alpha": 1.609,
@@ -26,9 +26,9 @@
       "pulls": 0
     },
     "format:long": {
-      "alpha": 7.464,
+      "alpha": 8.464,
       "beta": 3.5359999999999996,
-      "pulls": 9
+      "pulls": 10
     },
     "quiz:on": {
       "alpha": 1.0,
@@ -36,10 +36,10 @@
       "pulls": 0
     },
     "quiz:off": {
-      "alpha": 7.464,
+      "alpha": 8.464,
       "beta": 3.5359999999999996,
-      "pulls": 9
+      "pulls": 10
     }
   },
-  "updated": "2026-11-08T02:20:21.100321+00:00"
+  "updated": "2026-11-13T03:36:30.055263+00:00"
 }
