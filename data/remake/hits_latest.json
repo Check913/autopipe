@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-13T06:04:58.654267",
+  "date": "2026-11-13T11:31:34.085978",
   "region": "US",
   "language": "en",
   "keywords": [
@@ -12,26 +12,26 @@
   ],
   "min_views": 500000,
   "max_duration": 90,
-  "total_found": 75,
-  "rejected": 65,
+  "total_found": 86,
+  "rejected": 76,
   "hits": [
     {
-      "id": "cw-J2cpHW9M",
-      "title": "QUIZ Time with Intellipaat | Answer & Win Vouchers | Quiz - 3 | Intellipaat #Shorts",
+      "id": "q16JX5kT0Ls",
+      "title": "QUIZ Time with Intellipaat | Answer & Win Vouchers | Quiz - 2 | Intellipaat #Shorts",
       "channel": "Intellipaat",
-      "views": 1507,
-      "duration": 45.0,
-      "url": "https://www.youtube.com/watch?v=cw-J2cpHW9M",
+      "views": 1704,
+      "duration": 31.0,
+      "url": "https://www.youtube.com/watch?v=q16JX5kT0Ls",
       "query": "ytsearch10:quiz time #shorts"
     },
     {
-      "id": "DRWiXfVGs7Y",
-      "title": "QUIZ Time with Intellipaat | Answer & Win Vouchers | Quiz - 1 | Intellipaat #Shorts",
-      "channel": "Intellipaat",
-      "views": 1412,
-      "duration": 55.0,
-      "url": "https://www.youtube.com/watch?v=DRWiXfVGs7Y",
-      "query": "ytsearch10:quiz time #shorts"
+      "id": "8GzHtEWXdI4",
+      "title": "Quiz / Trivia - Test your knowledge #shorts #quiz #trivia #challenge",
+      "channel": "DY-VideoLand",
+      "views": 918,
+      "duration": 71.0,
+      "url": "https://www.youtube.com/watch?v=8GzHtEWXdI4",
+      "query": "ytsearch10:test your knowledge shorts"
     },
     {
       "id": "aZbrvMznLE4",
@@ -43,23 +43,22 @@
       "query": "ytsearch10:test your knowledge shorts"
     },
     {
-      "id": "cLepZsyb04w",
-      "title": "NBA 2K27 2KTV Answers Episode 9 #shorts",
-      "channel": "Soopa Mario",
-      "views": 510,
-      "duration": 59.0,
-      "url": "https://www.youtube.com/watch?v=cLepZsyb04w",
-      "query": "radar:youtube",
-      "score": 5.1
+      "id": "mtE5tpu3S8c",
+      "title": "\"Test your knowledge\" #shorts",
+      "channel": "Let's Crack NTA-UGC NET",
+      "views": 106,
+      "duration": 19.0,
+      "url": "https://www.youtube.com/watch?v=mtE5tpu3S8c",
+      "query": "ytsearch10:test your knowledge #shorts"
     },
     {
-      "id": "k2ZfRmjc3_E",
-      "title": "#shorts Brain Teasers",
-      "channel": "IYA Sisters",
-      "views": 292,
-      "duration": 57.0,
-      "url": "https://www.youtube.com/watch?v=k2ZfRmjc3_E",
-      "query": "ytsearch10:brain teaser #shorts"
+      "id": "uQ81h8Mjwcw",
+      "title": "General Knowledge Quiz – Human Body Quiz",
+      "channel": "GH Quiz ",
+      "views": 72,
+      "duration": 90.0,
+      "url": "https://www.youtube.com/watch?v=uQ81h8Mjwcw",
+      "query": "ytsearch10:general knowledge #shorts"
     }
   ]
 }

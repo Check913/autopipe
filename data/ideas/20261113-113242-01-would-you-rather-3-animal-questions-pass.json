@@ -1,0 +1,73 @@
+{
+  "title": "Would You Rather: 3 Animal Questions. Pass?",
+  "hook": "Can you pass this 3-question animal quiz?",
+  "script": "Can you pass this 3-question animal quiz? Dragon or unicorn? Talk or understand animals? Giant hamster or tiny elephant? Time's up! Your choices? Can you pass this 3-question animal quiz?",
+  "comment": "Which of your answers was the hardest choice?",
+  "description": "Test your knowledge with these tough 'Would You Rather' animal questions! Can you build the ultimate fantasy world?\nShare your answers and challenge your friends!",
+  "tags": [
+    "quiz",
+    "trivia",
+    "animals",
+    "would you rather",
+    "animal quiz",
+    "brain teaser",
+    "general knowledge",
+    "test your knowledge",
+    "fantasy animals",
+    "fun quiz",
+    "scorenine",
+    "challenge"
+  ],
+  "density": 2,
+  "duration_format": "short",
+  "duration_target": 13,
+  "duration_range": [
+    12,
+    18
+  ],
+  "source_topic": "Would You Rather...? Build Your Fantasy Animal World 🐶🐱🌈✨",
+  "generator": "llm:gemini-2.5-flash",
+  "score": 1275.2,
+  "pair_id": "pair_20261113_0102",
+  "hook_variant": "A",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "Can you pass this 3-question animal quiz?",
+      "family": "question"
+    },
+    {
+      "variant": "B",
+      "hook": "3 Would You Rather...? Build facts they never teach you",
+      "family": "number"
+    }
+  ],
+  "compliance": {
+    "mode": "block",
+    "ok": true,
+    "reasons": [],
+    "checked_at": "2026-11-13T11:32:04",
+    "originality": {
+      "max_jaccard": 0.3125,
+      "max_script_jaccard": 0.1395,
+      "worst_match_src": "20261111-112846-02-only-1-pass-this-animal-quiz.json",
+      "threshold": 0.6,
+      "threshold_script": 0.65,
+      "corpus_size": 111
+    },
+    "fatigue": {
+      "hook_family": "question",
+      "consecutive_same_family": 1,
+      "max_consecutive": 3,
+      "fatigued": false
+    },
+    "policy": {
+      "violations": []
+    },
+    "ai_disclosure": {
+      "contains_synthetic_media": false,
+      "configured": true
+    }
+  },
+  "id": "20261113-113242-01"
+}

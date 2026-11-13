@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-13T06:04:43+00:00",
+  "updated": "2026-11-13T11:31:23+00:00",
   "publisheds": {
     "PCyc1j7hQ1s": {
       "video_id": "PCyc1j7hQ1s",
@@ -688,7 +688,23 @@
       "engaged_source": null,
       "avg_view_pct": null,
       "engagement": null
+    },
+    "4lcjWgsJ-Lc": {
+      "video_id": "4lcjWgsJ-Lc",
+      "published_at": "2026-11-13T06:06:12.590902+00:00",
+      "hook": "The World's Hardest Game is a 2007 Flash maze game",
+      "family": "number",
+      "hook_variant": "A",
+      "pair_id": "pair_20261113_0098",
+      "title": "How Puzzles That Look Easy But Took Over So Fast",
+      "topic": "Puzzles That Look Easy But Are Actually IMPOSSIBLE!",
+      "views": null,
+      "engagedViews": null,
+      "engaged_ratio": null,
+      "engaged_source": null,
+      "avg_view_pct": null,
+      "engagement": null
     }
   },
-  "last_checked": "2026-11-13T06:04:43+00:00"
+  "last_checked": "2026-11-13T11:31:24+00:00"
 }

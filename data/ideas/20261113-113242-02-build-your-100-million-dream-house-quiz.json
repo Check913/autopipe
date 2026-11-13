@@ -1,0 +1,73 @@
+{
+  "title": "Build Your $100 Million Dream House? Quiz!",
+  "hook": "Build YOUR $100M Dream House?",
+  "script": "Could your $100 million dream house truly stand out? Let's test your luxury taste! For your mansion, would you rather have a full-sized indoor roller coaster, OR a private underwater viewing lounge? 5 seconds! Time's up! Roller coaster is wild, but an underwater lounge offers unique tranquility. Did you pick wisely? Next, for relaxation, a zero-gravity meditation room, OR a personal cloud-seeding weather control system for your garden? Decide now! Tough choice! Zero-gravity is futuristic, but controlling weather? That's next level! Finally, entertainment: a holographic AI butler managing your estate, OR a secret underground tunnel system to local hotspots? Go! Convenience vs. exclusivity! How many did you get right? Could your $100 million dream house truly stand out?",
+  "comment": "Which of these crazy options would you pick for YOUR dream home?",
+  "description": "Test your ultimate luxury taste! Can you design the perfect $100 million mansion? Take this quiz and find out your dream home style! #DreamHouseQuiz #LuxuryLifestyle #WouldYouRather",
+  "tags": [
+    "dream house",
+    "$100 million",
+    "luxury home",
+    "would you rather",
+    "quiz",
+    "trivia",
+    "general knowledge",
+    "brain teaser",
+    "quiz time",
+    "test your knowledge",
+    "scorenine",
+    "mansion"
+  ],
+  "density": 3,
+  "duration_format": "long",
+  "duration_target": 60,
+  "duration_range": [
+    50,
+    60
+  ],
+  "source_topic": "Would You Rather - Build Your CRAZY $100,000,000 HOUSE 🏠🎢✨🤑💸 Dream Futuristic House 🚀",
+  "generator": "llm:gemini-2.5-flash",
+  "score": 850.6,
+  "pair_id": "pair_20261113_0104",
+  "hook_variant": "A",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "Build YOUR $100M Dream House?",
+      "family": "question"
+    },
+    {
+      "variant": "B",
+      "hook": "3 Would You Rather Build Your facts they never teach you",
+      "family": "number"
+    }
+  ],
+  "compliance": {
+    "mode": "block",
+    "ok": true,
+    "reasons": [],
+    "checked_at": "2026-11-13T11:32:42",
+    "originality": {
+      "max_jaccard": 0.1176,
+      "max_script_jaccard": 0.1429,
+      "worst_match_src": "20261029-004004-01-rome-s-catacombs-hid-your-ancient-faith.json",
+      "threshold": 0.6,
+      "threshold_script": 0.65,
+      "corpus_size": 111
+    },
+    "fatigue": {
+      "hook_family": "question",
+      "consecutive_same_family": 1,
+      "max_consecutive": 3,
+      "fatigued": false
+    },
+    "policy": {
+      "violations": []
+    },
+    "ai_disclosure": {
+      "contains_synthetic_media": false,
+      "configured": true
+    }
+  },
+  "id": "20261113-113242-02"
+}

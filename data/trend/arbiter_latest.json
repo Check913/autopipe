@@ -1,113 +1,113 @@
 {
-  "fetched": "2026-11-13T06:04:43",
+  "fetched": "2026-11-13T11:31:22",
   "geo": "",
   "topics": [
     {
-      "query": "san francisco weather",
+      "query": "pakistan vs sri lanka",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 0.0,
+      "momentum": 33.2193
+    },
+    {
+      "query": "王忠林",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 34836.0,
-      "momentum": 2.8231
+      "saturation_views": 46694.0,
+      "momentum": 2.7253
     },
     {
-      "query": "weather tornado warning",
-      "traffic": 200000.0,
+      "query": "weather new york",
+      "traffic": 100.0,
       "rise": 10.0,
-      "saturation_views": 111443.0,
-      "momentum": 2.4709
+      "saturation_views": 81890.0,
+      "momentum": 2.5554
     },
     {
-      "query": "noah gragson",
-      "traffic": 200.0,
+      "query": "espncricinfo",
+      "traffic": 100.0,
       "rise": 10.0,
-      "saturation_views": 176292.0,
-      "momentum": 2.355
+      "saturation_views": 270961.0,
+      "momentum": 2.2558
     },
     {
-      "query": "xbox x25",
-      "traffic": 200.0,
+      "query": "la weather",
+      "traffic": 100.0,
       "rise": 10.0,
-      "saturation_views": 217216.0,
-      "momentum": 2.3058
+      "saturation_views": 361888.0,
+      "momentum": 2.1937
     },
     {
-      "query": "afg vs zim",
+      "query": "avatar seven havens season 2",
+      "traffic": 100.0,
+      "rise": 10.0,
+      "saturation_views": 394483.0,
+      "momentum": 2.1758
+    },
+    {
+      "query": "chip roy",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 650647.0,
+      "momentum": 2.0776
+    },
+    {
+      "query": "laurence fishburne",
+      "traffic": 100.0,
+      "rise": 10.0,
+      "saturation_views": 16771575.0,
+      "momentum": 1.6065
+    },
+    {
+      "query": "storm",
       "traffic": 1000.0,
       "rise": 10.0,
-      "saturation_views": 433568.0,
-      "momentum": 2.1565
+      "saturation_views": 284968980.0,
+      "momentum": 1.3414
     },
     {
-      "query": "jonathan kreiss-tomkins",
-      "traffic": 200.0,
+      "query": "trust",
+      "traffic": 100.0,
       "rise": 10.0,
-      "saturation_views": 803738.0,
-      "momentum": 2.0387
-    },
-    {
-      "query": "xbox 25th anniversary console",
-      "traffic": 2000.0,
-      "rise": 10.0,
-      "saturation_views": 1786309.0,
-      "momentum": 1.9041
-    },
-    {
-      "query": "mcu",
-      "traffic": 200.0,
-      "rise": 10.0,
-      "saturation_views": 12731683.0,
-      "momentum": 1.638
-    },
-    {
-      "query": "mcu films",
-      "traffic": 200.0,
-      "rise": 10.0,
-      "saturation_views": 19747975.0,
-      "momentum": 1.5884
-    },
-    {
-      "query": "icc",
-      "traffic": 200.0,
-      "rise": 10.0,
-      "saturation_views": 39398864.0,
-      "momentum": 1.5162
+      "saturation_views": 310074833.0,
+      "momentum": 1.3349
     }
   ],
   "top": [
     {
-      "query": "san francisco weather",
+      "query": "pakistan vs sri lanka",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 0.0,
+      "momentum": 33.2193
+    },
+    {
+      "query": "王忠林",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 34836.0,
-      "momentum": 2.8231
+      "saturation_views": 46694.0,
+      "momentum": 2.7253
     },
     {
-      "query": "weather tornado warning",
-      "traffic": 200000.0,
+      "query": "weather new york",
+      "traffic": 100.0,
       "rise": 10.0,
-      "saturation_views": 111443.0,
-      "momentum": 2.4709
+      "saturation_views": 81890.0,
+      "momentum": 2.5554
     },
     {
-      "query": "noah gragson",
-      "traffic": 200.0,
+      "query": "espncricinfo",
+      "traffic": 100.0,
       "rise": 10.0,
-      "saturation_views": 176292.0,
-      "momentum": 2.355
+      "saturation_views": 270961.0,
+      "momentum": 2.2558
     },
     {
-      "query": "xbox x25",
-      "traffic": 200.0,
+      "query": "la weather",
+      "traffic": 100.0,
       "rise": 10.0,
-      "saturation_views": 217216.0,
-      "momentum": 2.3058
-    },
-    {
-      "query": "afg vs zim",
-      "traffic": 1000.0,
-      "rise": 10.0,
-      "saturation_views": 433568.0,
-      "momentum": 2.1565
+      "saturation_views": 361888.0,
+      "momentum": 2.1937
     }
   ]
 }
