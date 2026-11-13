@@ -1,0 +1,201 @@
+{
+  "topic": "quiz",
+  "source_topic": "quiz:movies",
+  "title": "Most People Fail This 9 Question Quiz",
+  "hook": "How high can you score?",
+  "density": 4,
+  "duration_format": "long",
+  "duration_target": 80,
+  "duration_range": [
+    74,
+    88
+  ],
+  "script": "How high can you score?\nQuestion 1: Which European city is famous for its leaning tower?\nLock in your answer: Three. Two. One.\nThe answer is C: Pisa.\nQuestion 2: Which movie features a friendly alien named E.T.?\nLock in your answer: Three. Two. One.\nThe answer is B: E.T. the Extra-Terrestrial.\nQuestion 3: How many colors are in a rainbow?\nLock in your answer: Three. Two. One.\nThe answer is C: Seven.\nIf you got the first three right, like the video right now.\nQuestion 4: Which river flows through Cairo, Egypt?\nLock in your answer: Three. Two. One.\nThe answer is B: Nile.\nQuestion 5: Who played the character of Iron Man in the Marvel Cinematic Universe?\nLock in your answer: Three. Two. One.\nThe answer is C: Robert Downey Jr..\nScore check: comment SHARP if you are still perfect, RUSTY if you already missed one.\nQuestion 6: How much does the Eiffel Tower grow in summer?\nLock in your answer: Three. Two. One.\nThe answer is C: 15 cm.\nQuestion 7: Which fruit has more vitamin C than an orange?\nLock in your answer: Three. Two. One.\nThe answer is C: Kiwi.\nAre you ready for the last question?\nDon't forget to follow and comment your score to be on the weekly leaderboard of the top performers.\nQuestion 8: Which planet would float in water?\nLock in your answer: Three. Two. One.\nThe answer is B: Saturn.\nQuestion 9: Which US state is the largest by land area?\nLock in your answer: Three. Two. One.\nThe answer is B: Alaska.\nBonus: double or nothing - keep your score in your head and beat it on the next quiz.\nComment your score out of 9, and follow for a new quiz every day.",
+  "generator": "quiz:llm",
+  "quiz": {
+    "enabled": true,
+    "rounds": 9,
+    "countdown_s": 3,
+    "cards": true,
+    "items": [
+      {
+        "question": "Which European city is famous for its leaning tower?",
+        "options": [
+          "Rome",
+          "Venice",
+          "Pisa",
+          "Florence"
+        ],
+        "answer_index": 2,
+        "explanation": "The Leaning Tower of Pisa is the campanile, or bell tower, of the Pisa Cathedral.",
+        "category": "general"
+      },
+      {
+        "question": "Which movie features a friendly alien named E.T.?",
+        "options": [
+          "Close Encounters of the Third Kind",
+          "E.T. the Extra-Terrestrial",
+          "Alien",
+          "Arrival"
+        ],
+        "answer_index": 1,
+        "explanation": "\"E.T. the Extra-Terrestrial\" is a classic 1982 science fiction film directed by Steven Spielberg.",
+        "category": "general"
+      },
+      {
+        "question": "How many colors are in a rainbow?",
+        "options": [
+          "Five",
+          "Six",
+          "Seven",
+          "Eight"
+        ],
+        "answer_index": 2,
+        "explanation": "The seven colors of the rainbow are red, orange, yellow, green, blue, indigo, and violet.",
+        "category": "general"
+      },
+      {
+        "question": "Which river flows through Cairo, Egypt?",
+        "options": [
+          "Amazon",
+          "Nile",
+          "Mississippi",
+          "Yangtze"
+        ],
+        "answer_index": 1,
+        "explanation": "The Nile River is the longest river in Africa and historically important to Egyptian civilization.",
+        "category": "general"
+      },
+      {
+        "question": "Who played the character of Iron Man in the Marvel Cinematic Universe?",
+        "options": [
+          "Chris Evans",
+          "Mark Ruffalo",
+          "Robert Downey Jr.",
+          "Chris Hemsworth"
+        ],
+        "answer_index": 2,
+        "explanation": "Robert Downey Jr. famously portrayed Tony Stark, also known as Iron Man, from 2008 to 2019.",
+        "category": "general"
+      },
+      {
+        "question": "How much does the Eiffel Tower grow in summer?",
+        "options": [
+          "It shrinks",
+          "5 cm",
+          "15 cm",
+          "1 meter"
+        ],
+        "answer_index": 2,
+        "explanation": "Heat expands the iron by about fifteen centimeters.",
+        "category": "general"
+      },
+      {
+        "question": "Which fruit has more vitamin C than an orange?",
+        "options": [
+          "Apple",
+          "Banana",
+          "Kiwi",
+          "Grape"
+        ],
+        "answer_index": 2,
+        "explanation": "Kiwis pack about double the vitamin C.",
+        "category": "general"
+      },
+      {
+        "question": "Which planet would float in water?",
+        "options": [
+          "Earth",
+          "Saturn",
+          "Neptune",
+          "Mars"
+        ],
+        "answer_index": 1,
+        "explanation": "Saturn is less dense than water.",
+        "category": "science"
+      },
+      {
+        "question": "Which US state is the largest by land area?",
+        "options": [
+          "Texas",
+          "Alaska",
+          "California",
+          "Montana"
+        ],
+        "answer_index": 1,
+        "explanation": "Alaska is more than twice the size of Texas.",
+        "category": "geography"
+      }
+    ]
+  },
+  "comment": "Score check: how many did you get right out of 9? Comment your score and which question tricked you.",
+  "description": "Quick movies quiz: 9 questions, 3 seconds each.\nScore check: how many did you get out of 9? 0 is a valid answer.\nPlay along, beat your friends, and come back tomorrow: a new quiz every day.\n\n#quiz #trivia #quiztime #generalknowledge #shorts",
+  "tags": [
+    "quiz",
+    "trivia",
+    "quiz time",
+    "quiz questions",
+    "general knowledge",
+    "test your knowledge",
+    "movies quiz",
+    "movies trivia",
+    "quiz challenge",
+    "guess the answer",
+    "brain test",
+    "iq test",
+    "fun quiz",
+    "trivia questions and answers",
+    "general knowledge quiz",
+    "pub quiz questions",
+    "quiz for adults",
+    "hard quiz",
+    "are you smart",
+    "only 1 percent",
+    "test your brain",
+    "shorts quiz",
+    "youtube shorts",
+    "shorts"
+  ],
+  "pair_id": "pair_20261113_0109",
+  "hook_variant": "A",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "family": "question",
+      "hook": "How high can you score?"
+    },
+    {
+      "variant": "B",
+      "family": "identity",
+      "hook": "If you miss three, you are officially average."
+    }
+  ],
+  "compliance": {
+    "mode": "block",
+    "ok": true,
+    "reasons": [],
+    "checked_at": "2026-11-13T16:07:58",
+    "originality": {
+      "max_jaccard": 0.5714,
+      "max_script_jaccard": 0.5986,
+      "worst_match_src": "20261111-211309-01-this-quiz-gets-harder-every-question.json",
+      "threshold": 0.6,
+      "threshold_script": 0.65,
+      "corpus_size": 116
+    },
+    "fatigue": {
+      "hook_family": "question",
+      "consecutive_same_family": 1,
+      "max_consecutive": 3,
+      "fatigued": false
+    },
+    "policy": {
+      "violations": []
+    },
+    "ai_disclosure": {
+      "contains_synthetic_media": false,
+      "configured": true
+    }
+  },
+  "id": "20261113-160758-01"
+}

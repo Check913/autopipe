@@ -1,113 +1,113 @@
 {
-  "fetched": "2026-11-13T14:28:38",
+  "fetched": "2026-11-13T16:07:07",
   "geo": "",
   "topics": [
     {
-      "query": "sirik",
-      "traffic": 200.0,
+      "query": "nigeria vs tanzania",
+      "traffic": 2000.0,
       "rise": 10.0,
-      "saturation_views": 164450.0,
-      "momentum": 2.3719
+      "saturation_views": 0.0,
+      "momentum": 33.2193
     },
     {
-      "query": "forex factory",
+      "query": "south africa vs kenya",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 210230.0,
-      "momentum": 2.3134
+      "saturation_views": 6956.0,
+      "momentum": 3.5174
     },
     {
-      "query": "economic calendar",
-      "traffic": 200.0,
-      "rise": 10.0,
-      "saturation_views": 251030.0,
-      "momentum": 2.2729
-    },
-    {
-      "query": "king charles",
-      "traffic": 200.0,
-      "rise": 10.0,
-      "saturation_views": 299856.0,
-      "momentum": 2.2337
-    },
-    {
-      "query": "john turturro",
-      "traffic": 200.0,
-      "rise": 10.0,
-      "saturation_views": 1009413.0,
-      "momentum": 1.9984
-    },
-    {
-      "query": "warren buffett investing tips downturn",
-      "traffic": 200.0,
-      "rise": 10.0,
-      "saturation_views": 2182621.0,
-      "momentum": 1.873
-    },
-    {
-      "query": "anthony mackie",
+      "query": "avgo",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 13448679.0,
-      "momentum": 1.6317
+      "saturation_views": 42840.0,
+      "momentum": 2.7533
     },
     {
-      "query": "what time does the stock market open",
-      "traffic": 200.0,
+      "query": "laura samson",
+      "traffic": 2000.0,
       "rise": 10.0,
-      "saturation_views": 13654487.0,
-      "momentum": 1.6299
+      "saturation_views": 43091.0,
+      "momentum": 2.7514
     },
     {
-      "query": "christian bale",
+      "query": "alex murdaugh",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 105314.0,
+      "momentum": 2.486
+    },
+    {
+      "query": "zelda ocarina of time remake sales",
       "traffic": 1000.0,
       "rise": 10.0,
-      "saturation_views": 24843467.0,
-      "momentum": 1.5637
+      "saturation_views": 172708.0,
+      "momentum": 2.36
     },
     {
-      "query": "taylor swift",
-      "traffic": 5000.0,
+      "query": "bahrain news",
+      "traffic": 2000.0,
       "rise": 10.0,
-      "saturation_views": 6256986438.0,
-      "momentum": 1.1368
+      "saturation_views": 398422.0,
+      "momentum": 2.1737
+    },
+    {
+      "query": "ruby bridges",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 3175943.0,
+      "momentum": 1.8176
+    },
+    {
+      "query": "nayib bukele",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 8945906.0,
+      "momentum": 1.6802
+    },
+    {
+      "query": "mark cuban",
+      "traffic": 200.0,
+      "rise": 0.0,
+      "saturation_views": 0.0,
+      "momentum": 0.0
     }
   ],
   "top": [
     {
-      "query": "sirik",
-      "traffic": 200.0,
+      "query": "nigeria vs tanzania",
+      "traffic": 2000.0,
       "rise": 10.0,
-      "saturation_views": 164450.0,
-      "momentum": 2.3719
+      "saturation_views": 0.0,
+      "momentum": 33.2193
     },
     {
-      "query": "forex factory",
+      "query": "south africa vs kenya",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 210230.0,
-      "momentum": 2.3134
+      "saturation_views": 6956.0,
+      "momentum": 3.5174
     },
     {
-      "query": "economic calendar",
-      "traffic": 200.0,
+      "query": "avgo",
+      "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 251030.0,
-      "momentum": 2.2729
+      "saturation_views": 42840.0,
+      "momentum": 2.7533
     },
     {
-      "query": "king charles",
-      "traffic": 200.0,
+      "query": "laura samson",
+      "traffic": 2000.0,
       "rise": 10.0,
-      "saturation_views": 299856.0,
-      "momentum": 2.2337
+      "saturation_views": 43091.0,
+      "momentum": 2.7514
     },
     {
-      "query": "john turturro",
-      "traffic": 200.0,
+      "query": "alex murdaugh",
+      "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 1009413.0,
-      "momentum": 1.9984
+      "saturation_views": 105314.0,
+      "momentum": 2.486
     }
   ]
 }

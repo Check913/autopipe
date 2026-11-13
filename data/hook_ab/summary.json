@@ -1,28 +1,28 @@
 {
   "status": "ok",
-  "pairs": 104,
+  "pairs": 108,
   "joined": 12,
   "variants": {
     "A": {
-      "assigned": 66,
+      "assigned": 69,
       "measured": 7,
       "mean_engagement": 56.1,
       "mean_views": 429,
       "families": {
         "statement": 9,
-        "question": 31,
-        "number": 19,
+        "question": 33,
+        "number": 20,
         "negation": 7
       }
     },
     "B": {
-      "assigned": 38,
+      "assigned": 39,
       "measured": 5,
       "mean_engagement": 70.4,
       "mean_views": 383,
       "families": {
         "question": 15,
-        "number": 9,
+        "number": 10,
         "negation": 3,
         "identity": 11
       }
@@ -1484,7 +1484,63 @@
       "video_id": null,
       "engagement": null,
       "views": null
+    },
+    {
+      "ts": "2026-11-13T14:29:59",
+      "pair_id": "pair_20261113_0105",
+      "topic": "quiz:movies",
+      "variant": "A",
+      "hook": "How high can you score?",
+      "family": "question",
+      "family_other": "identity",
+      "hook_a": "How high can you score?",
+      "hook_b": "Only top 1% brains get every single one right.",
+      "video_id": null,
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-13T14:30:35",
+      "pair_id": "pair_20261113_0106",
+      "topic": "Urdu Islamic Quiz | Top Sawal Jawab | Islamic GK | Urdu Quiz | General",
+      "variant": "B",
+      "hook": "3 Urdu Islamic Quiz Top Sawal facts they never teach you",
+      "family": "number",
+      "family_other": "statement",
+      "hook_a": "A general officer is an officer of high rank in the armies",
+      "hook_b": "3 Urdu Islamic Quiz Top Sawal facts they never teach you",
+      "video_id": "RDHgjtgiT-Y",
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-13T14:30:51",
+      "pair_id": "pair_20261113_0107",
+      "topic": "Assamese GK Questions || 23 টা সাধাৰণ জ্ঞানৰ প্ৰশ্ন আৰু উত্তৰ || GK In Assamese",
+      "variant": "A",
+      "hook": "Can you get 3/3 on this quiz?",
+      "family": "question",
+      "family_other": "number",
+      "hook_a": "Can you get 3/3 on this quiz?",
+      "hook_b": "3 Assamese GK Questions || 23 facts they never teach you",
+      "video_id": null,
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-13T14:31:06",
+      "pair_id": "pair_20261113_0108",
+      "topic": "Islamic Paheliyan | Islamic Quiz | Islamic Gk | Kbj | Kaun Banega Jannati |",
+      "variant": "A",
+      "hook": "3 Seconds Per Question. Start.",
+      "family": "number",
+      "family_other": "number",
+      "hook_a": "3 Seconds Per Question. Start.",
+      "hook_b": "Why does nobody explain Islamic Paheliyan Islamic like this?",
+      "video_id": null,
+      "engagement": null,
+      "views": null
     }
   ],
-  "fetched": "2026-11-13T14:28:55"
+  "fetched": "2026-11-13T16:07:09"
 }
