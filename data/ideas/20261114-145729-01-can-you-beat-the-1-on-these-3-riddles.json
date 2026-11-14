@@ -1,0 +1,73 @@
+{
+  "title": "Can You Beat The 1% On These 3 Riddles?",
+  "hook": "Only 1% solve these 3 riddles.",
+  "script": "Can you beat the 1% who solve these 3 impossible riddles? Get ready to test your brainpower! Time for your first challenge. Question one: What has cities, but no houses, forests, but no trees, and water, but no fish? You have five seconds! Time's up! The answer is a map. Did you get it? Don't worry, they get harder!\n\nNext up, Question two: I speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am I? Five seconds on the clock! And time is out! The answer is an echo. Two down, one to go. This last one stumps most people, even professors!\n\nQuestion three: What is full of holes but still holds water? Think carefully, this is the trickiest! Five seconds! Time's gone! The answer is a sponge. How many did you solve correctly? Only 1% of people can beat the 1% who solve these 3 impossible riddles.",
+  "comment": "How many riddles did YOU solve correctly? Let us know!",
+  "description": "Think you're a riddle master? Only 1% of people can solve all three of these brain teasers. Test your knowledge and see if you're smarter than a professor!\n#Riddles #BrainTeasers #QuizTime",
+  "tags": [
+    "quiz",
+    "trivia",
+    "general knowledge",
+    "brain teaser",
+    "riddles",
+    "test your knowledge",
+    "only 1 percent",
+    "impossible riddles",
+    "challenge",
+    "mind games",
+    "scorenine",
+    "puzzle"
+  ],
+  "density": 4,
+  "duration_format": "long",
+  "duration_target": 60,
+  "duration_range": [
+    50,
+    60
+  ],
+  "source_topic": "Even the Smartest Professor Can't Solve All 17 Riddles",
+  "generator": "llm:gemini-2.5-flash",
+  "score": 28541.7,
+  "pair_id": "pair_20261114_0124",
+  "hook_variant": "A",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "Only 1% solve these 3 riddles.",
+      "family": "number"
+    },
+    {
+      "variant": "B",
+      "hook": "Nobody warned you about Even the Smartest Professor",
+      "family": "negation"
+    }
+  ],
+  "compliance": {
+    "mode": "block",
+    "ok": true,
+    "reasons": [],
+    "checked_at": "2026-11-14T14:56:54",
+    "originality": {
+      "max_jaccard": 0.5455,
+      "max_script_jaccard": 0.4397,
+      "worst_match_src": "20261111-185444-01-danger-riddles-can-you-escape-these-3.json",
+      "threshold": 0.6,
+      "threshold_script": 0.65,
+      "corpus_size": 120
+    },
+    "fatigue": {
+      "hook_family": "number",
+      "consecutive_same_family": 0,
+      "max_consecutive": 3,
+      "fatigued": false
+    },
+    "policy": {
+      "violations": []
+    },
+    "ai_disclosure": {
+      "contains_synthetic_media": false,
+      "configured": true
+    }
+  },
+  "id": "20261114-145729-01"
+}

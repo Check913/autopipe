@@ -1,28 +1,28 @@
 {
   "status": "ok",
-  "pairs": 118,
+  "pairs": 122,
   "joined": 17,
   "variants": {
     "A": {
-      "assigned": 77,
+      "assigned": 79,
       "measured": 10,
       "mean_engagement": 59.1,
       "mean_views": 240,
       "families": {
-        "statement": 9,
-        "question": 38,
+        "statement": 10,
+        "question": 39,
         "number": 23,
         "negation": 7
       }
     },
     "B": {
-      "assigned": 41,
+      "assigned": 43,
       "measured": 7,
       "mean_engagement": 53.9,
       "mean_views": 320,
       "families": {
         "question": 16,
-        "number": 10,
+        "number": 12,
         "negation": 3,
         "identity": 12
       }
@@ -1680,7 +1680,63 @@
       "video_id": null,
       "engagement": null,
       "views": null
+    },
+    {
+      "ts": "2026-11-14T10:54:54",
+      "pair_id": "pair_20261114_0119",
+      "topic": "quiz:science",
+      "variant": "A",
+      "hook": "Are you smarter than most people?",
+      "family": "question",
+      "family_other": "identity",
+      "hook_a": "Are you smarter than most people?",
+      "hook_b": "Only top 1% brains get every single one right.",
+      "video_id": null,
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-14T10:55:30",
+      "pair_id": "pair_20261114_0120",
+      "topic": "11 Adults vs General Knowledge Quiz",
+      "variant": "A",
+      "hook": "The Quiz with Balls is an American game show that premiered",
+      "family": "statement",
+      "family_other": "statement",
+      "hook_a": "The Quiz with Balls is an American game show that premiered",
+      "hook_b": "Why does nobody explain 11 Adults vs General like this?",
+      "video_id": "TLzgUXtaY58",
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-14T10:55:41",
+      "pair_id": "pair_20261114_0121",
+      "topic": "japão x brasil",
+      "variant": "B",
+      "hook": "3 Japão brasil facts they never teach you",
+      "family": "number",
+      "family_other": "number",
+      "hook_a": "Score 3/3: Japan vs Brazil?",
+      "hook_b": "3 Japão brasil facts they never teach you",
+      "video_id": null,
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-14T10:55:53",
+      "pair_id": "pair_20261114_0122",
+      "topic": "japon – brésil",
+      "variant": "B",
+      "hook": "3 Japon brésil facts they never teach you",
+      "family": "number",
+      "family_other": "question",
+      "hook_a": "Only 1% can answer these 3 Japan-Brazil questions?",
+      "hook_b": "3 Japon brésil facts they never teach you",
+      "video_id": null,
+      "engagement": null,
+      "views": null
     }
   ],
-  "fetched": "2026-11-14T10:54:28"
+  "fetched": "2026-11-14T14:56:00"
 }

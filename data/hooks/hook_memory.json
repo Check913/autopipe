@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-14T10:54:28+00:00",
+  "updated": "2026-11-14T14:56:00+00:00",
   "publisheds": {
     "PCyc1j7hQ1s": {
       "video_id": "PCyc1j7hQ1s",
@@ -800,7 +800,23 @@
       "engaged_source": null,
       "avg_view_pct": null,
       "engagement": null
+    },
+    "TLzgUXtaY58": {
+      "video_id": "TLzgUXtaY58",
+      "published_at": "2026-11-14T12:00:05.894361+00:00",
+      "hook": "The Quiz with Balls is an American game show that premiered",
+      "family": "statement",
+      "hook_variant": "A",
+      "pair_id": "pair_20261114_0120",
+      "title": "You Won't Believe 11 Adults vs General Did This",
+      "topic": "11 Adults vs General Knowledge Quiz",
+      "views": null,
+      "engagedViews": null,
+      "engaged_ratio": null,
+      "engaged_source": null,
+      "avg_view_pct": null,
+      "engagement": null
     }
   },
-  "last_checked": "2026-11-14T10:54:29+00:00"
+  "last_checked": "2026-11-14T14:56:00+00:00"
 }

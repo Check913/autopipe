@@ -1,0 +1,62 @@
+{
+  "title": "Why Everyone Gets Bangladesh vs pakistan Wrong",
+  "hook": "Why does nobody explain Bangladesh vs pakistan like this?",
+  "script": "The 2023 Cricket World Cup group stage was played in a round-robin league format, with all ten teams playing each other once in a single group, resulting in a total of 45 matches being played.\nThat is not a guess – it is what the science actually says.\nThe top four teams from the group progressed to the knockout stage.\nThis format was the same as the preceding 2019 Cricket World Cup and was also used in the 1992 Cricket World Cup.\nAnd that is the real story of bangladesh vs pakistan.",
+  "comment": "Be honest: did you already know this?",
+  "description": "Why Everyone Gets Bangladesh vs pakistan Wrong\nThe real facts, in 30 seconds.\n#shorts #facts #didyouknow",
+  "tags": [
+    "shorts",
+    "bangladesh vs pakistan",
+    "facts",
+    "didyouknow",
+    "mind blowing"
+  ],
+  "duration_target": 13,
+  "duration_format": "short",
+  "density": 1,
+  "source_topic": "bangladesh vs pakistan",
+  "generator": "fallback+wiki",
+  "score": 33.219,
+  "pair_id": "pair_20261114_0125",
+  "hook_variant": "B",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "The 2023 Cricket World Cup group stage was played in a",
+      "family": "number"
+    },
+    {
+      "variant": "B",
+      "hook": "Why does nobody explain Bangladesh vs pakistan like this?",
+      "family": "question"
+    }
+  ],
+  "compliance": {
+    "mode": "block",
+    "ok": true,
+    "reasons": [],
+    "checked_at": "2026-11-14T14:57:12",
+    "originality": {
+      "max_jaccard": 0.3333,
+      "max_script_jaccard": 0.2234,
+      "worst_match_src": "20261107-233755-03-can-you-solve-these-3-detective-riddles.json",
+      "threshold": 0.6,
+      "threshold_script": 0.65,
+      "corpus_size": 120
+    },
+    "fatigue": {
+      "hook_family": "question",
+      "consecutive_same_family": 1,
+      "max_consecutive": 3,
+      "fatigued": false
+    },
+    "policy": {
+      "violations": []
+    },
+    "ai_disclosure": {
+      "contains_synthetic_media": false,
+      "configured": true
+    }
+  },
+  "id": "20261114-145729-02"
+}

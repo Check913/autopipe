@@ -1,0 +1,73 @@
+{
+  "title": "Frank Grillo: Only 1% Know These 3 Facts",
+  "hook": "Only 1% Know These 3 Grillo Facts",
+  "script": "Only 1% of fans know these 3 Frank Grillo facts. Can you? Get ready to test your knowledge on the action star! Three seconds per question. Let's go!\n\nQuestion one: In which Marvel movie did Frank Grillo first appear as Brock Rumlow? Was it Captain America: The Winter Soldier, Civil War, or Endgame?\n(Pause)\nIt was Captain America: The Winter Soldier! He debuted there.\n\nQuestion two: Which martial art is Frank Grillo a highly skilled practitioner of? Is it Brazilian Jiu-Jitsu, Boxing, or Muay Thai?\n(Pause)\nIt's Boxing! He's been boxing since he was 18.\n\nFinal challenge: What was the name of Frank Grillo's character in the first Purge movie? Leo Barnes, Sergeant, or James Sandin?\n(Pause)\nThe correct answer is James Sandin! He led the original film.\n\nHow many did you get right? Did you ace all three? Only 1% of fans know these 3 Frank Grillo facts. Can you?",
+  "comment": "How many did you get right? Let me know!",
+  "description": "Test your Frank Grillo knowledge with 3 rapid-fire trivia questions! Only true fans will score 3/3. Challenge yourself and see if you're in the elite 1%!\n#FrankGrillo #MovieQuiz #Trivia",
+  "tags": [
+    "Frank Grillo",
+    "Movie Quiz",
+    "Trivia",
+    "Quiz Time",
+    "Actor Trivia",
+    "Hollywood Quiz",
+    "Action Movies",
+    "Marvel Quiz",
+    "The Purge",
+    "Test Your Knowledge",
+    "General Knowledge",
+    "ScoreNine"
+  ],
+  "density": 4,
+  "duration_format": "long",
+  "duration_target": 60,
+  "duration_range": [
+    50,
+    60
+  ],
+  "source_topic": "frank grillo",
+  "generator": "llm:gemini-2.5-flash",
+  "score": 33.219,
+  "pair_id": "pair_20261114_0126",
+  "hook_variant": "A",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "Only 1% Know These 3 Grillo Facts",
+      "family": "number"
+    },
+    {
+      "variant": "B",
+      "hook": "Why does nobody explain Frank grillo like this?",
+      "family": "question"
+    }
+  ],
+  "compliance": {
+    "mode": "block",
+    "ok": true,
+    "reasons": [],
+    "checked_at": "2026-11-14T14:57:29",
+    "originality": {
+      "max_jaccard": 0.2,
+      "max_script_jaccard": 0.2537,
+      "worst_match_src": "20261107-233755-01-are-you-a-genius-solve-these-3-riddles.json",
+      "threshold": 0.6,
+      "threshold_script": 0.65,
+      "corpus_size": 120
+    },
+    "fatigue": {
+      "hook_family": "number",
+      "consecutive_same_family": 0,
+      "max_consecutive": 3,
+      "fatigued": false
+    },
+    "policy": {
+      "violations": []
+    },
+    "ai_disclosure": {
+      "contains_synthetic_media": false,
+      "configured": true
+    }
+  },
+  "id": "20261114-145729-03"
+}

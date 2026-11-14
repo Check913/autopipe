@@ -1,113 +1,113 @@
 {
-  "fetched": "2026-11-14T10:54:27",
+  "fetched": "2026-11-14T14:56:00",
   "geo": "",
   "topics": [
     {
-      "query": "japão x brasil",
+      "query": "bangladesh vs pakistan",
       "traffic": 200.0,
       "rise": 10.0,
       "saturation_views": 0.0,
       "momentum": 33.2193
     },
     {
-      "query": "japon – brésil",
+      "query": "frank grillo",
       "traffic": 200.0,
       "rise": 10.0,
       "saturation_views": 0.0,
       "momentum": 33.2193
     },
     {
-      "query": "japón - brasil",
-      "traffic": 2000.0,
-      "rise": 10.0,
-      "saturation_views": 3454.0,
-      "momentum": 3.9377
-    },
-    {
-      "query": "louisiana high school football scores",
+      "query": "spencer danielson",
       "traffic": 1000.0,
       "rise": 10.0,
-      "saturation_views": 108681.0,
-      "momentum": 2.4776
+      "saturation_views": 21318.0,
+      "momentum": 3.004
     },
     {
-      "query": "rory mcilroy",
-      "traffic": 100.0,
-      "rise": 10.0,
-      "saturation_views": 382382.0,
-      "momentum": 2.1822
-    },
-    {
-      "query": "what time does gta 6 come out",
-      "traffic": 200.0,
-      "rise": 10.0,
-      "saturation_views": 856296.0,
-      "momentum": 2.0273
-    },
-    {
-      "query": "jared gordon",
-      "traffic": 100.0,
-      "rise": 10.0,
-      "saturation_views": 1043203.0,
-      "momentum": 1.9927
-    },
-    {
-      "query": "ben roethlisberger",
-      "traffic": 100.0,
-      "rise": 10.0,
-      "saturation_views": 1813891.0,
-      "momentum": 1.9016
-    },
-    {
-      "query": "rodtang",
-      "traffic": 200.0,
-      "rise": 10.0,
-      "saturation_views": 17304385.0,
-      "momentum": 1.603
-    },
-    {
-      "query": "tormenta",
+      "query": "wake forest vs smu",
       "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 30037133.0,
-      "momentum": 1.5438
+      "saturation_views": 42016.0,
+      "momentum": 2.7597
+    },
+    {
+      "query": "pfl",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 63673.0,
+      "momentum": 2.6288
+    },
+    {
+      "query": "boise state football",
+      "traffic": 5000.0,
+      "rise": 10.0,
+      "saturation_views": 96011.0,
+      "momentum": 2.5111
+    },
+    {
+      "query": "charles iii",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 710152.0,
+      "momentum": 2.0613
+    },
+    {
+      "query": "surveillance aircraft",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 895277.0,
+      "momentum": 2.0194
+    },
+    {
+      "query": "cancer",
+      "traffic": 2000.0,
+      "rise": 10.0,
+      "saturation_views": 1828531.0,
+      "momentum": 1.9004
+    },
+    {
+      "query": "alex murdaugh",
+      "traffic": 2000.0,
+      "rise": 3.0,
+      "saturation_views": 143956.0,
+      "momentum": 0.7215
     }
   ],
   "top": [
     {
-      "query": "japão x brasil",
+      "query": "bangladesh vs pakistan",
       "traffic": 200.0,
       "rise": 10.0,
       "saturation_views": 0.0,
       "momentum": 33.2193
     },
     {
-      "query": "japon – brésil",
+      "query": "frank grillo",
       "traffic": 200.0,
       "rise": 10.0,
       "saturation_views": 0.0,
       "momentum": 33.2193
     },
     {
-      "query": "japón - brasil",
-      "traffic": 2000.0,
-      "rise": 10.0,
-      "saturation_views": 3454.0,
-      "momentum": 3.9377
-    },
-    {
-      "query": "louisiana high school football scores",
+      "query": "spencer danielson",
       "traffic": 1000.0,
       "rise": 10.0,
-      "saturation_views": 108681.0,
-      "momentum": 2.4776
+      "saturation_views": 21318.0,
+      "momentum": 3.004
     },
     {
-      "query": "rory mcilroy",
-      "traffic": 100.0,
+      "query": "wake forest vs smu",
+      "traffic": 500.0,
       "rise": 10.0,
-      "saturation_views": 382382.0,
-      "momentum": 2.1822
+      "saturation_views": 42016.0,
+      "momentum": 2.7597
+    },
+    {
+      "query": "pfl",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 63673.0,
+      "momentum": 2.6288
     }
   ]
 }
