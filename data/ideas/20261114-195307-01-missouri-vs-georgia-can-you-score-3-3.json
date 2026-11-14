@@ -1,0 +1,73 @@
+{
+  "title": "Missouri vs Georgia: Can YOU Score 3/3?",
+  "hook": "Why does nobody explain Missouri vs georgia like this?",
+  "script": "Only 1% of people can ace this rapid-fire Missouri vs. Georgia quiz! Think you're one of them?\nYou have 5 seconds. Which state is nicknamed the \"Show-Me State\"? A) Missouri or B) Georgia?\nThe answer is A) Missouri. Get ready for question two!\nNext up! Which state is famous for its peaches and has Atlanta as its capital? A) Missouri or B) Georgia?\nThat's B) Georgia. One more to go!\nFinal challenge: Which state's largest river is the Missouri River, and which state's largest is the Chattahoochee?\nThe Missouri River is A) Missouri, and the Chattahoochee is B) Georgia.\nHow many did you score? Only the sharpest minds get three out of three.\nLet us know your score, and see if you're among the 1% who can ace this rapid-fire Missouri vs. Georgia quiz!",
+  "comment": "How many questions did you get right? Let us know your score!",
+  "description": "Test your knowledge on Missouri and Georgia with this quick quiz! Only 1% can score perfectly. How well did you do? #MissouriVsGeorgia #StateQuiz #TriviaTime",
+  "tags": [
+    "quiz",
+    "trivia",
+    "general knowledge",
+    "brain teaser",
+    "quiz time",
+    "test your knowledge",
+    "only 1 percent",
+    "did you know",
+    "Missouri",
+    "Georgia",
+    "US states",
+    "geography quiz"
+  ],
+  "density": 4,
+  "duration_format": "long",
+  "duration_target": 60,
+  "duration_range": [
+    50,
+    60
+  ],
+  "source_topic": "missouri vs georgia",
+  "generator": "llm:gemini-2.5-flash",
+  "score": 33.219,
+  "pair_id": "pair_20261114_0128",
+  "hook_variant": "B",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "Only 1% ace this quiz.",
+      "family": "number"
+    },
+    {
+      "variant": "B",
+      "hook": "Why does nobody explain Missouri vs georgia like this?",
+      "family": "question"
+    }
+  ],
+  "compliance": {
+    "mode": "block",
+    "ok": true,
+    "reasons": [],
+    "checked_at": "2026-11-14T19:52:34",
+    "originality": {
+      "max_jaccard": 0.5,
+      "max_script_jaccard": 0.3578,
+      "worst_match_src": "20261107-233755-03-can-you-solve-these-3-detective-riddles.json",
+      "threshold": 0.6,
+      "threshold_script": 0.65,
+      "corpus_size": 120
+    },
+    "fatigue": {
+      "hook_family": "question",
+      "consecutive_same_family": 2,
+      "max_consecutive": 3,
+      "fatigued": false
+    },
+    "policy": {
+      "violations": []
+    },
+    "ai_disclosure": {
+      "contains_synthetic_media": false,
+      "configured": true
+    }
+  },
+  "id": "20261114-195307-01"
+}

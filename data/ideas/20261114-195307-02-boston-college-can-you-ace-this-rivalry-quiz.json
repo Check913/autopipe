@@ -1,0 +1,73 @@
+{
+  "title": "Boston College: Can YOU Ace This Rivalry Quiz?",
+  "hook": "What's the BC-Notre Dame rivalry called?",
+  "script": "Do you know the real name for the Boston College versus Notre Dame rivalry? Get ready to prove your knowledge with three rapid-fire questions! You have just three seconds per question. Let's begin!\n\nQuestion one: What famous trophy is awarded to the winner of the Boston College and Notre Dame football game? Time starts now!\n(Pause)\nTime's up! The answer is the Frank Leahy Memorial Bowl. Leahy, a legendary coach, led both teams during his incredible career.\n\nQuestion two: Which of these iconic Notre Dame quarterbacks never played against Boston College? a) Joe Montana, b) Brady Quinn, or c) Ian Book? Quick!\n(Pause)\nGot it? The correct answer is a) Joe Montana. The rivalry wasn't consistently played every year during his time with the Fighting Irish.\n\nQuestion three: Boston College pulled off a massive upset against undefeated Notre Dame in 1993, but what was the exact final score? This one's for the true fans!\n(Pause)\nAnd the score was 41-39! BC stunned the number one Fighting Irish that day in a true college football classic.\n\nHow many did you get right? Tell us your score! So, do you know the real name for the Boston College versus Notre Dame rivalry?",
+  "comment": "How many questions did you ace in this rivalry quiz?",
+  "description": "Test your knowledge on one of college football's most historic rivalries! Can you get all three questions right? Drop your score in the comments!\n#CollegeFootball #NotreDame #BostonCollege",
+  "tags": [
+    "quiz",
+    "trivia",
+    "general knowledge",
+    "brain teaser",
+    "quiz time",
+    "test your knowledge",
+    "Boston College",
+    "Notre Dame",
+    "college football",
+    "NCAA",
+    "sports trivia",
+    "rivalry"
+  ],
+  "density": 4,
+  "duration_format": "long",
+  "duration_target": 60,
+  "duration_range": [
+    50,
+    60
+  ],
+  "source_topic": "boston college vs notre dame",
+  "generator": "llm:gemini-2.5-flash",
+  "score": 33.219,
+  "pair_id": "pair_20261114_0129",
+  "hook_variant": "A",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "What's the BC-Notre Dame rivalry called?",
+      "family": "question"
+    },
+    {
+      "variant": "B",
+      "hook": "3 Boston college vs notre dame facts they never teach you",
+      "family": "number"
+    }
+  ],
+  "compliance": {
+    "mode": "block",
+    "ok": true,
+    "reasons": [],
+    "checked_at": "2026-11-14T19:52:48",
+    "originality": {
+      "max_jaccard": 0.2353,
+      "max_script_jaccard": 0.2484,
+      "worst_match_src": "20261113-143106-02-quiz-can-you-get-3-3-on-this-tough-quiz.json",
+      "threshold": 0.6,
+      "threshold_script": 0.65,
+      "corpus_size": 120
+    },
+    "fatigue": {
+      "hook_family": "question",
+      "consecutive_same_family": 2,
+      "max_consecutive": 3,
+      "fatigued": false
+    },
+    "policy": {
+      "violations": []
+    },
+    "ai_disclosure": {
+      "contains_synthetic_media": false,
+      "configured": true
+    }
+  },
+  "id": "20261114-195307-02"
+}

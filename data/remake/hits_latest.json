@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-14T14:56:10.647236",
+  "date": "2026-11-14T19:51:48.998974",
   "region": "US",
   "language": "en",
   "keywords": [
@@ -12,8 +12,8 @@
   ],
   "min_views": 500000,
   "max_duration": 90,
-  "total_found": 86,
-  "rejected": 77,
+  "total_found": 88,
+  "rejected": 78,
   "hits": [
     {
       "id": "q16JX5kT0Ls",
@@ -23,15 +23,6 @@
       "duration": 31.0,
       "url": "https://www.youtube.com/watch?v=q16JX5kT0Ls",
       "query": "ytsearch10:quiz time #shorts"
-    },
-    {
-      "id": "8GzHtEWXdI4",
-      "title": "Quiz / Trivia - Test your knowledge #shorts #quiz #trivia #challenge",
-      "channel": "DY-VideoLand",
-      "views": 918,
-      "duration": 71.0,
-      "url": "https://www.youtube.com/watch?v=8GzHtEWXdI4",
-      "query": "ytsearch10:test your knowledge shorts"
     },
     {
       "id": "aZbrvMznLE4",
@@ -55,10 +46,19 @@
       "id": "_V-LzoLIRGI",
       "title": "General Knowledge Trivia Quiz |  Questions Everyone Should Know! 🙂",
       "channel": "Metro Mind AI",
-      "views": 44,
+      "views": 46,
       "duration": 64.0,
       "url": "https://www.youtube.com/watch?v=_V-LzoLIRGI",
       "query": "ytsearch10:general knowledge #shorts"
+    },
+    {
+      "id": "5Ia2nuHj-N4",
+      "title": "Test Your Knowledge!! Short Quiz 1",
+      "channel": "Idea Voyager",
+      "views": 40,
+      "duration": 77.0,
+      "url": "https://www.youtube.com/watch?v=5Ia2nuHj-N4",
+      "query": "ytsearch10:test your knowledge shorts"
     }
   ]
 }

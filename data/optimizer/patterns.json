@@ -1,41 +1,41 @@
 {
-  "fetched": "2026-11-14T14:56:00",
+  "fetched": "2026-11-14T19:51:38",
   "status": "learned",
   "min_samples": 3,
-  "n_samples": 34,
+  "n_samples": 35,
   "patterns": [
-    {
-      "dimension": "hook_type",
-      "value": "number",
-      "n": 11,
-      "mean_engagement": 27.09,
-      "relative_delta": 0.351,
-      "label": "hook type=number -> +35% d'engagement"
-    },
     {
       "dimension": "duration_format",
       "value": "short",
       "n": 10,
-      "mean_engagement": 13.04,
-      "relative_delta": -0.35,
-      "label": "format duree=short -> -35% d'engagement"
+      "mean_engagement": 16.1,
+      "relative_delta": -0.24,
+      "label": "format duree=short -> -24% d'engagement"
     },
     {
       "dimension": "hook_type",
       "value": "statement",
       "n": 7,
-      "mean_engagement": 13.13,
-      "relative_delta": -0.345,
-      "label": "hook type=statement -> -35% d'engagement"
+      "mean_engagement": 17.24,
+      "relative_delta": -0.186,
+      "label": "hook type=statement -> -19% d'engagement"
+    },
+    {
+      "dimension": "hook_type",
+      "value": "number",
+      "n": 12,
+      "mean_engagement": 24.99,
+      "relative_delta": 0.18,
+      "label": "hook type=number -> +18% d'engagement"
     }
   ],
   "stats": {
-    "n_samples": 34,
-    "mean_engagement": 20.05,
+    "n_samples": 35,
+    "mean_engagement": 21.17,
     "engagement_min": 0.0,
     "engagement_max": 47.36
   },
-  "lessons": 46,
+  "lessons": 47,
   "kill_switch": {
     "banned_families": {},
     "niche_alert": false,
@@ -58,12 +58,12 @@
     },
     "current": {
       "n": 10,
-      "engagement_mean": 6.57,
+      "engagement_mean": 12.4,
       "avg_view_pct_mean": null,
       "by_family": {}
     },
     "delta": {
-      "engagement_mean": -14.65,
+      "engagement_mean": -8.82,
       "avg_view_pct_mean": null
     }
   },

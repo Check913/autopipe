@@ -1,27 +1,27 @@
 {
   "status": "ok",
-  "pairs": 122,
+  "pairs": 126,
   "joined": 17,
   "variants": {
     "A": {
-      "assigned": 79,
+      "assigned": 82,
       "measured": 10,
       "mean_engagement": 59.1,
       "mean_views": 240,
       "families": {
         "statement": 10,
-        "question": 39,
-        "number": 23,
+        "question": 40,
+        "number": 25,
         "negation": 7
       }
     },
     "B": {
-      "assigned": 43,
+      "assigned": 44,
       "measured": 7,
       "mean_engagement": 53.9,
       "mean_views": 320,
       "families": {
-        "question": 16,
+        "question": 17,
         "number": 12,
         "negation": 3,
         "identity": 12
@@ -1736,7 +1736,63 @@
       "video_id": null,
       "engagement": null,
       "views": null
+    },
+    {
+      "ts": "2026-11-14T14:56:21",
+      "pair_id": "pair_20261114_0123",
+      "topic": "quiz:science",
+      "variant": "A",
+      "hook": "Are you smarter than most people?",
+      "family": "question",
+      "family_other": "identity",
+      "hook_a": "Are you smarter than most people?",
+      "hook_b": "If you miss three, you are officially average.",
+      "video_id": null,
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-14T14:56:54",
+      "pair_id": "pair_20261114_0124",
+      "topic": "Even the Smartest Professor Can't Solve All 17 Riddles",
+      "variant": "A",
+      "hook": "Only 1% solve these 3 riddles.",
+      "family": "number",
+      "family_other": "number",
+      "hook_a": "Only 1% solve these 3 riddles.",
+      "hook_b": "Nobody warned you about Even the Smartest Professor",
+      "video_id": "p9cTSyjz2Z8",
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-14T14:57:12",
+      "pair_id": "pair_20261114_0125",
+      "topic": "bangladesh vs pakistan",
+      "variant": "B",
+      "hook": "Why does nobody explain Bangladesh vs pakistan like this?",
+      "family": "question",
+      "family_other": "question",
+      "hook_a": "The 2023 Cricket World Cup group stage was played in a",
+      "hook_b": "Why does nobody explain Bangladesh vs pakistan like this?",
+      "video_id": null,
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-14T14:57:29",
+      "pair_id": "pair_20261114_0126",
+      "topic": "frank grillo",
+      "variant": "A",
+      "hook": "Only 1% Know These 3 Grillo Facts",
+      "family": "number",
+      "family_other": "number",
+      "hook_a": "Only 1% Know These 3 Grillo Facts",
+      "hook_b": "Why does nobody explain Frank grillo like this?",
+      "video_id": null,
+      "engagement": null,
+      "views": null
     }
   ],
-  "fetched": "2026-11-14T14:56:00"
+  "fetched": "2026-11-14T19:51:38"
 }
