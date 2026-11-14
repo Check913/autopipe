@@ -1,25 +1,25 @@
 {
   "status": "ok",
-  "pairs": 114,
-  "joined": 12,
+  "pairs": 118,
+  "joined": 17,
   "variants": {
     "A": {
-      "assigned": 73,
-      "measured": 7,
-      "mean_engagement": 56.1,
-      "mean_views": 429,
+      "assigned": 77,
+      "measured": 10,
+      "mean_engagement": 59.1,
+      "mean_views": 240,
       "families": {
         "statement": 9,
-        "question": 36,
-        "number": 21,
+        "question": 38,
+        "number": 23,
         "negation": 7
       }
     },
     "B": {
       "assigned": 41,
-      "measured": 5,
-      "mean_engagement": 70.4,
-      "mean_views": 383,
+      "measured": 7,
+      "mean_engagement": 53.9,
+      "mean_views": 320,
       "families": {
         "question": 16,
         "number": 10,
@@ -852,8 +852,8 @@
       "hook_a": "100 is an American game show that was broadcast by NBC from",
       "hook_b": "Why does nobody explain Trivia All-Stars vs like this?",
       "video_id": "0hAve-MUuww",
-      "engagement": 0.0,
-      "views": 0
+      "engagement": 50.0,
+      "views": 2
     },
     {
       "ts": "2026-11-11T05:42:32",
@@ -880,8 +880,8 @@
       "hook_a": "Are you smarter than most people?",
       "hook_b": "If you miss three, you are officially average.",
       "video_id": "IcKndL0Ulfc",
-      "engagement": 0.0,
-      "views": 0
+      "engagement": 100.0,
+      "views": 1
     },
     {
       "ts": "2026-11-11T11:27:38",
@@ -908,8 +908,8 @@
       "hook_a": "Only 1% score 3/3 on THIS Phrase Quiz.",
       "hook_b": "Nobody warned you about Guess The Phrase Quiz Word",
       "video_id": "0Zg42HIOslg",
-      "engagement": null,
-      "views": null
+      "engagement": 28.6,
+      "views": 7
     },
     {
       "ts": "2026-11-11T11:28:28",
@@ -992,8 +992,8 @@
       "hook_a": "Only 1% Can Guess These Food Emojis Correctly.",
       "hook_b": "Nobody warned you about Guess The Food By Emoji 🍔🍟",
       "video_id": "1RzlNkHCr_4",
-      "engagement": null,
-      "views": null
+      "engagement": 20.0,
+      "views": 5
     },
     {
       "ts": "2026-11-11T20:04:49",
@@ -1020,8 +1020,8 @@
       "hook_a": "How high can you score?",
       "hook_b": "If you miss three, you are officially average.",
       "video_id": "TCej10eTrUU",
-      "engagement": null,
-      "views": null
+      "engagement": 0.0,
+      "views": 0
     },
     {
       "ts": "2026-11-11T21:16:38",
@@ -1062,8 +1062,8 @@
       "hook_a": "Are you smarter than most people?",
       "hook_b": "If you miss three, you are officially average.",
       "video_id": "g_jAii6OR8E",
-      "engagement": null,
-      "views": null
+      "engagement": 0.0,
+      "views": 0
     },
     {
       "ts": "2026-11-12T02:28:28",
@@ -1090,8 +1090,8 @@
       "hook_a": "Only 1% score perfectly. Can you?",
       "hook_b": "3 WORD ASSOCIATION GAME 🧠💡 facts they never teach you",
       "video_id": "zWwnB20ZWbI",
-      "engagement": null,
-      "views": null
+      "engagement": 25.0,
+      "views": 4
     },
     {
       "ts": "2026-11-12T02:29:13",
@@ -1624,7 +1624,63 @@
       "video_id": null,
       "engagement": null,
       "views": null
+    },
+    {
+      "ts": "2026-11-14T07:58:03",
+      "pair_id": "pair_20261114_0115",
+      "topic": "quiz:geography",
+      "variant": "A",
+      "hook": "Are you smarter than most people?",
+      "family": "question",
+      "family_other": "identity",
+      "hook_a": "Are you smarter than most people?",
+      "hook_b": "Getting them all right means elite memory.",
+      "video_id": null,
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-14T07:58:31",
+      "pair_id": "pair_20261114_0116",
+      "topic": "Guess the Logo in 3 Seconds | 300 Famous Logos | Logo Quiz 2024",
+      "variant": "A",
+      "hook": "Identify 3 logos in 3 seconds?",
+      "family": "question",
+      "family_other": "question",
+      "hook_a": "Identify 3 logos in 3 seconds?",
+      "hook_b": "3 Guess the Logo in Seconds facts they never teach you",
+      "video_id": "5VF-pH4ueU8",
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-14T07:58:41",
+      "pair_id": "pair_20261114_0117",
+      "topic": "Your IQ Is Impressive If You Pass This General Knowledge Quiz 🧠🔥",
+      "variant": "A",
+      "hook": "Only 1% pass this 3-question quiz!",
+      "family": "number",
+      "family_other": "negation",
+      "hook_a": "Only 1% pass this 3-question quiz!",
+      "hook_b": "Nobody warned you about Your IQ Is Impressive If You",
+      "video_id": null,
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-14T07:58:43",
+      "pair_id": "pair_20261114_0118",
+      "topic": "IF YOU CAN GET 3 OUT OF 20 YOUR BRAIN IS EXTRAORDINARY | GK IQ | general knowledge quiz",
+      "variant": "A",
+      "hook": "Nobody talks about IF YOU CAN GET 3 OUT OF 20 YOUR BRAIN IS",
+      "family": "number",
+      "family_other": "number",
+      "hook_a": "Nobody talks about IF YOU CAN GET 3 OUT OF 20 YOUR BRAIN IS",
+      "hook_b": "Why does nobody explain IF YOU CAN GET OUT OF like this?",
+      "video_id": null,
+      "engagement": null,
+      "views": null
     }
   ],
-  "fetched": "2026-11-14T07:57:41"
+  "fetched": "2026-11-14T10:54:28"
 }

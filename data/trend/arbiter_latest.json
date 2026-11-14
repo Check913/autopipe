@@ -1,113 +1,113 @@
 {
-  "fetched": "2026-11-14T07:57:25",
+  "fetched": "2026-11-14T10:54:27",
   "geo": "",
   "topics": [
     {
-      "query": "under-19 ind vs pak live score",
-      "traffic": 100.0,
-      "rise": 10.0,
-      "saturation_views": 0.0,
-      "momentum": 33.2193
-    },
-    {
-      "query": "chris duncan",
+      "query": "japão x brasil",
       "traffic": 200.0,
       "rise": 10.0,
       "saturation_views": 0.0,
       "momentum": 33.2193
     },
     {
-      "query": "santa cruz beach closures",
+      "query": "japon – brésil",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 0.0,
+      "momentum": 33.2193
+    },
+    {
+      "query": "japón - brasil",
+      "traffic": 2000.0,
+      "rise": 10.0,
+      "saturation_views": 3454.0,
+      "momentum": 3.9377
+    },
+    {
+      "query": "louisiana high school football scores",
       "traffic": 1000.0,
       "rise": 10.0,
-      "saturation_views": 74229.0,
-      "momentum": 2.5836
+      "saturation_views": 108681.0,
+      "momentum": 2.4776
     },
     {
-      "query": "los angeles weather",
+      "query": "rory mcilroy",
+      "traffic": 100.0,
+      "rise": 10.0,
+      "saturation_views": 382382.0,
+      "momentum": 2.1822
+    },
+    {
+      "query": "what time does gta 6 come out",
       "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 229283.0,
-      "momentum": 2.2934
+      "saturation_views": 856296.0,
+      "momentum": 2.0273
     },
     {
-      "query": "nathan fillion",
+      "query": "jared gordon",
       "traffic": 100.0,
       "rise": 10.0,
-      "saturation_views": 670457.0,
-      "momentum": 2.0719
+      "saturation_views": 1043203.0,
+      "momentum": 1.9927
     },
     {
-      "query": "tahiti",
+      "query": "ben roethlisberger",
       "traffic": 100.0,
       "rise": 10.0,
-      "saturation_views": 1642747.0,
-      "momentum": 1.9173
+      "saturation_views": 1813891.0,
+      "momentum": 1.9016
     },
     {
-      "query": "gen x",
-      "traffic": 100.0,
-      "rise": 10.0,
-      "saturation_views": 6343560.0,
-      "momentum": 1.7234
-    },
-    {
-      "query": "monica barbaro",
-      "traffic": 100.0,
-      "rise": 10.0,
-      "saturation_views": 11340740.0,
-      "momentum": 1.6516
-    },
-    {
-      "query": "harrison ford",
-      "traffic": 100.0,
-      "rise": 10.0,
-      "saturation_views": 30407183.0,
-      "momentum": 1.5425
-    },
-    {
-      "query": "jennifer aniston",
+      "query": "rodtang",
       "traffic": 200.0,
-      "rise": 1.0,
-      "saturation_views": 11771348.0,
-      "momentum": 0.1647
+      "rise": 10.0,
+      "saturation_views": 17304385.0,
+      "momentum": 1.603
+    },
+    {
+      "query": "tormenta",
+      "traffic": 500.0,
+      "rise": 10.0,
+      "saturation_views": 30037133.0,
+      "momentum": 1.5438
     }
   ],
   "top": [
     {
-      "query": "under-19 ind vs pak live score",
-      "traffic": 100.0,
-      "rise": 10.0,
-      "saturation_views": 0.0,
-      "momentum": 33.2193
-    },
-    {
-      "query": "chris duncan",
+      "query": "japão x brasil",
       "traffic": 200.0,
       "rise": 10.0,
       "saturation_views": 0.0,
       "momentum": 33.2193
     },
     {
-      "query": "santa cruz beach closures",
+      "query": "japon – brésil",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 0.0,
+      "momentum": 33.2193
+    },
+    {
+      "query": "japón - brasil",
+      "traffic": 2000.0,
+      "rise": 10.0,
+      "saturation_views": 3454.0,
+      "momentum": 3.9377
+    },
+    {
+      "query": "louisiana high school football scores",
       "traffic": 1000.0,
       "rise": 10.0,
-      "saturation_views": 74229.0,
-      "momentum": 2.5836
+      "saturation_views": 108681.0,
+      "momentum": 2.4776
     },
     {
-      "query": "los angeles weather",
-      "traffic": 200.0,
-      "rise": 10.0,
-      "saturation_views": 229283.0,
-      "momentum": 2.2934
-    },
-    {
-      "query": "nathan fillion",
+      "query": "rory mcilroy",
       "traffic": 100.0,
       "rise": 10.0,
-      "saturation_views": 670457.0,
-      "momentum": 2.0719
+      "saturation_views": 382382.0,
+      "momentum": 2.1822
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-14T07:57:41+00:00",
+  "updated": "2026-11-14T10:54:28+00:00",
   "publisheds": {
     "PCyc1j7hQ1s": {
       "video_id": "PCyc1j7hQ1s",
@@ -490,12 +490,12 @@
       "pair_id": "pair_20261111_0059",
       "title": "You Won't Believe Trivia All-Stars vs Did This",
       "topic": "Trivia All-Stars vs. Impossible Quiz",
-      "views": 0,
-      "engagedViews": 0,
-      "engaged_ratio": 0.0,
-      "engaged_source": "fallback_averageViewPercentage",
-      "avg_view_pct": 0.0,
-      "engagement": 0.0
+      "views": 2,
+      "engagedViews": 1,
+      "engaged_ratio": 50.0,
+      "engaged_source": "engagedViews",
+      "avg_view_pct": 18.4,
+      "engagement": 50.0
     },
     "IcKndL0Ulfc": {
       "video_id": "IcKndL0Ulfc",
@@ -506,12 +506,12 @@
       "pair_id": "pair_20261111_0061",
       "title": "The Question Most People Get Wrong Is Next",
       "topic": "quiz:history",
-      "views": 0,
-      "engagedViews": 0,
-      "engaged_ratio": 0.0,
-      "engaged_source": "fallback_averageViewPercentage",
-      "avg_view_pct": 0.0,
-      "engagement": 0.0
+      "views": 1,
+      "engagedViews": 1,
+      "engaged_ratio": 100.0,
+      "engaged_source": "engagedViews",
+      "avg_view_pct": 6.2,
+      "engagement": 100.0
     },
     "0Zg42HIOslg": {
       "video_id": "0Zg42HIOslg",
@@ -522,12 +522,12 @@
       "pair_id": "pair_20261111_0063",
       "title": "Guess The Phrase: Only 1% Get All 3 Right",
       "topic": "Guess The Phrase Quiz | Word Puzzle Challenge",
-      "views": null,
-      "engagedViews": null,
-      "engaged_ratio": null,
-      "engaged_source": null,
-      "avg_view_pct": null,
-      "engagement": null
+      "views": 7,
+      "engagedViews": 2,
+      "engaged_ratio": 28.6,
+      "engaged_source": "engagedViews",
+      "avg_view_pct": 118.2,
+      "engagement": 28.6
     },
     "1RzlNkHCr_4": {
       "video_id": "1RzlNkHCr_4",
@@ -538,12 +538,12 @@
       "pair_id": "pair_20261111_0069",
       "title": "Only 1% Can Guess These Food Emojis",
       "topic": "Guess The Food By Emoji 🍔🍟 Food And Drink Emoji Quiz | Quiz Alien",
-      "views": null,
-      "engagedViews": null,
-      "engaged_ratio": null,
-      "engaged_source": null,
-      "avg_view_pct": null,
-      "engagement": null
+      "views": 5,
+      "engagedViews": 1,
+      "engaged_ratio": 20.0,
+      "engaged_source": "engagedViews",
+      "avg_view_pct": 37.3,
+      "engagement": 20.0
     },
     "TCej10eTrUU": {
       "video_id": "TCej10eTrUU",
@@ -554,12 +554,12 @@
       "pair_id": "pair_20261111_0071",
       "title": "This Quiz Gets Harder Every Question",
       "topic": "quiz:movies",
-      "views": null,
-      "engagedViews": null,
-      "engaged_ratio": null,
-      "engaged_source": null,
-      "avg_view_pct": null,
-      "engagement": null
+      "views": 0,
+      "engagedViews": 0,
+      "engaged_ratio": 0.0,
+      "engaged_source": "fallback_averageViewPercentage",
+      "avg_view_pct": 0.0,
+      "engagement": 0.0
     },
     "g_jAii6OR8E": {
       "video_id": "g_jAii6OR8E",
@@ -570,12 +570,12 @@
       "pair_id": "pair_20261111_0074",
       "title": "9 Quick Questions. No Cheating Allowed.",
       "topic": "quiz:geography",
-      "views": null,
-      "engagedViews": null,
-      "engaged_ratio": null,
-      "engaged_source": null,
-      "avg_view_pct": null,
-      "engagement": null
+      "views": 0,
+      "engagedViews": 0,
+      "engaged_ratio": 0.0,
+      "engaged_source": "fallback_averageViewPercentage",
+      "avg_view_pct": 0.0,
+      "engagement": 0.0
     },
     "zWwnB20ZWbI": {
       "video_id": "zWwnB20ZWbI",
@@ -586,12 +586,12 @@
       "pair_id": "pair_20261112_0076",
       "title": "Word Association: Can You Get 3/3?",
       "topic": "WORD ASSOCIATION GAME 🧠💡 | ABC LETTER CHALLENGE | Fast Thinking Quiz",
-      "views": null,
-      "engagedViews": null,
-      "engaged_ratio": null,
-      "engaged_source": null,
-      "avg_view_pct": null,
-      "engagement": null
+      "views": 4,
+      "engagedViews": 1,
+      "engaged_ratio": 25.0,
+      "engaged_source": "engagedViews",
+      "avg_view_pct": 26.3,
+      "engagement": 25.0
     },
     "ETrOacfkwlo": {
       "video_id": "ETrOacfkwlo",
@@ -784,7 +784,23 @@
       "engaged_source": null,
       "avg_view_pct": null,
       "engagement": null
+    },
+    "5VF-pH4ueU8": {
+      "video_id": "5VF-pH4ueU8",
+      "published_at": "2026-11-14T07:59:45.744151+00:00",
+      "hook": "Identify 3 logos in 3 seconds?",
+      "family": "question",
+      "hook_variant": "A",
+      "pair_id": "pair_20261114_0116",
+      "title": "Guess These Logos in 3 Seconds?",
+      "topic": "Guess the Logo in 3 Seconds | 300 Famous Logos | Logo Quiz 2024",
+      "views": null,
+      "engagedViews": null,
+      "engaged_ratio": null,
+      "engaged_source": null,
+      "avg_view_pct": null,
+      "engagement": null
     }
   },
-  "last_checked": "2026-11-14T07:57:41+00:00"
+  "last_checked": "2026-11-14T10:54:29+00:00"
 }

@@ -1,0 +1,62 @@
+{
+  "title": "You Won't Believe 11 Adults vs General Did This",
+  "hook": "The Quiz with Balls is an American game show that premiered",
+  "script": "The Quiz with Balls is an American game show that premiered on May 28, 2024, on Fox.\nThat is not a guess – it is what the science actually says.\nThe series is produced by Talpa Studios and Eureka Productions which is a division of Fremantle, and is hosted by Jay Pharoah.\nContestants must answer pop culture and general knowledge questions correctly, or else incorrect answers will result in contestants being pushed into a giant pool of water by large size balls.\nAnd that is the real story of 11 Adults vs General Knowledge Quiz.",
+  "comment": "What should I cover next? Drop your idea in the comments!",
+  "description": "You Won't Believe 11 Adults vs General Did This\nThe real facts, in 30 seconds.\n#shorts #facts #didyouknow",
+  "tags": [
+    "shorts",
+    "11 Adults vs General Knowledge Quiz",
+    "facts",
+    "didyouknow",
+    "mind blowing"
+  ],
+  "duration_target": 13,
+  "duration_format": "short",
+  "density": 1,
+  "source_topic": "11 Adults vs General Knowledge Quiz",
+  "generator": "fallback+wiki",
+  "score": 1221.6,
+  "pair_id": "pair_20261114_0120",
+  "hook_variant": "A",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "The Quiz with Balls is an American game show that premiered",
+      "family": "statement"
+    },
+    {
+      "variant": "B",
+      "hook": "Why does nobody explain 11 Adults vs General like this?",
+      "family": "question"
+    }
+  ],
+  "compliance": {
+    "mode": "block",
+    "ok": true,
+    "reasons": [],
+    "checked_at": "2026-11-14T10:55:30",
+    "originality": {
+      "max_jaccard": 0.4138,
+      "max_script_jaccard": 0.25,
+      "worst_match_src": "20261111-001313-01-you-won-t-believe-trivia-all-stars-vs-did-this.json",
+      "threshold": 0.6,
+      "threshold_script": 0.65,
+      "corpus_size": 120
+    },
+    "fatigue": {
+      "hook_family": "statement",
+      "consecutive_same_family": 0,
+      "max_consecutive": 3,
+      "fatigued": false
+    },
+    "policy": {
+      "violations": []
+    },
+    "ai_disclosure": {
+      "contains_synthetic_media": false,
+      "configured": true
+    }
+  },
+  "id": "20261114-105553-01"
+}
