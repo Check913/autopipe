@@ -1,0 +1,73 @@
+{
+  "title": "Guess These Logos in 3 Seconds?",
+  "hook": "Identify 3 logos in 3 seconds?",
+  "script": "Can you identify these three famous logos in just three seconds each? Time starts now! First up: (3s pause, reveal: Apple). Next: (3s pause, reveal: Starbucks). Last one: (3s pause, reveal: Netflix). How many did you guess right? Can you identify these three famous logos in just three seconds each?",
+  "comment": "Which logo was the hardest for you to guess?",
+  "description": "Test your brand knowledge! Can you identify all three famous logos in just three seconds each? Challenge your friends and see who's the ultimate logo master!\n#LogoQuiz #Trivia #BrainTeaser",
+  "tags": [
+    "logo quiz",
+    "guess the logo",
+    "trivia",
+    "quiz time",
+    "brain teaser",
+    "general knowledge",
+    "challenge",
+    "brand quiz",
+    "only 1 percent",
+    "did you know",
+    "shorts",
+    "scorenine"
+  ],
+  "density": 5,
+  "duration_format": "short",
+  "duration_target": 13,
+  "duration_range": [
+    12,
+    18
+  ],
+  "source_topic": "Guess the Logo in 3 Seconds | 300 Famous Logos | Logo Quiz 2024",
+  "generator": "llm:gemini-2.5-flash",
+  "score": 9313.9,
+  "pair_id": "pair_20261114_0116",
+  "hook_variant": "A",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "Identify 3 logos in 3 seconds?",
+      "family": "question"
+    },
+    {
+      "variant": "B",
+      "hook": "3 Guess the Logo in Seconds facts they never teach you",
+      "family": "number"
+    }
+  ],
+  "compliance": {
+    "mode": "block",
+    "ok": true,
+    "reasons": [],
+    "checked_at": "2026-11-14T07:58:31",
+    "originality": {
+      "max_jaccard": 0.1818,
+      "max_script_jaccard": 0.2222,
+      "worst_match_src": "20261111-200449-01-only-1-can-guess-these-food-emojis.json",
+      "threshold": 0.6,
+      "threshold_script": 0.65,
+      "corpus_size": 120
+    },
+    "fatigue": {
+      "hook_family": "question",
+      "consecutive_same_family": 0,
+      "max_consecutive": 3,
+      "fatigued": false
+    },
+    "policy": {
+      "violations": []
+    },
+    "ai_disclosure": {
+      "contains_synthetic_media": false,
+      "configured": true
+    }
+  },
+  "id": "20261114-075843-01"
+}

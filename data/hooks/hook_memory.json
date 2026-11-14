@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-14T01:23:30+00:00",
+  "updated": "2026-11-14T07:57:41+00:00",
   "publisheds": {
     "PCyc1j7hQ1s": {
       "video_id": "PCyc1j7hQ1s",
@@ -768,7 +768,23 @@
       "engaged_source": null,
       "avg_view_pct": null,
       "engagement": null
+    },
+    "HIPCG_-B6is": {
+      "video_id": "HIPCG_-B6is",
+      "published_at": "2026-11-14T01:25:29.088438+00:00",
+      "hook": "Choose Your $15M House?",
+      "family": "question",
+      "hook_variant": "A",
+      "pair_id": "pair_20261114_0112",
+      "title": "Build Your $15M Dream House: Would You Rather?",
+      "topic": "Would You Rather - Build Your $15,000,000 HOUSE 🏡🤑💸🤖 Futuristic Luxury House | Daily Quiz",
+      "views": null,
+      "engagedViews": null,
+      "engaged_ratio": null,
+      "engaged_source": null,
+      "avg_view_pct": null,
+      "engagement": null
     }
   },
-  "last_checked": "2026-11-14T01:23:30+00:00"
+  "last_checked": "2026-11-14T07:57:41+00:00"
 }

@@ -1,0 +1,73 @@
+{
+  "title": "Only 1% Pass This 3-Question IQ Quiz",
+  "hook": "Only 1% pass this 3-question quiz!",
+  "script": "Only 1% pass this 3-question quiz! What's the Red Planet? Who painted the Mona Lisa? Capital of France? Time's up! Answers: Mars, Da Vinci, Paris. Did you get all three? Only 1% pass this 3-question quiz!",
+  "comment": "How many did you get right? Let us know!",
+  "description": "Test your general knowledge with three rapid-fire questions! Can you join the elite 1% who ace this quiz? Challenge your friends!\n#QuizTime #GeneralKnowledge #BrainTeaser",
+  "tags": [
+    "quiz",
+    "trivia",
+    "general knowledge",
+    "brain teaser",
+    "test your knowledge",
+    "IQ test",
+    "only 1 percent",
+    "did you know",
+    "challenge",
+    "fun quiz",
+    "short quiz",
+    "scorenine"
+  ],
+  "density": 5,
+  "duration_format": "short",
+  "duration_target": 13,
+  "duration_range": [
+    12,
+    18
+  ],
+  "source_topic": "Your IQ Is Impressive If You Pass This General Knowledge Quiz 🧠🔥",
+  "generator": "llm:gemini-2.5-flash",
+  "score": 1821.9,
+  "pair_id": "pair_20261114_0117",
+  "hook_variant": "A",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "Only 1% pass this 3-question quiz!",
+      "family": "number"
+    },
+    {
+      "variant": "B",
+      "hook": "Nobody warned you about Your IQ Is Impressive If You",
+      "family": "negation"
+    }
+  ],
+  "compliance": {
+    "mode": "block",
+    "ok": true,
+    "reasons": [],
+    "checked_at": "2026-11-14T07:58:41",
+    "originality": {
+      "max_jaccard": 0.4,
+      "max_script_jaccard": 0.25,
+      "worst_match_src": "20261114-012454-02-islamic-quiz-can-you-pass-this-test.json",
+      "threshold": 0.6,
+      "threshold_script": 0.65,
+      "corpus_size": 120
+    },
+    "fatigue": {
+      "hook_family": "number",
+      "consecutive_same_family": 0,
+      "max_consecutive": 3,
+      "fatigued": false
+    },
+    "policy": {
+      "violations": []
+    },
+    "ai_disclosure": {
+      "contains_synthetic_media": false,
+      "configured": true
+    }
+  },
+  "id": "20261114-075843-02"
+}

@@ -1,27 +1,27 @@
 {
   "status": "ok",
-  "pairs": 110,
+  "pairs": 114,
   "joined": 12,
   "variants": {
     "A": {
-      "assigned": 70,
+      "assigned": 73,
       "measured": 7,
       "mean_engagement": 56.1,
       "mean_views": 429,
       "families": {
         "statement": 9,
-        "question": 34,
-        "number": 20,
+        "question": 36,
+        "number": 21,
         "negation": 7
       }
     },
     "B": {
-      "assigned": 40,
+      "assigned": 41,
       "measured": 5,
       "mean_engagement": 70.4,
       "mean_views": 383,
       "families": {
-        "question": 15,
+        "question": 16,
         "number": 10,
         "negation": 3,
         "identity": 12
@@ -1568,7 +1568,63 @@
       "video_id": "IxZF6LWT5hI",
       "engagement": null,
       "views": null
+    },
+    {
+      "ts": "2026-11-14T01:24:01",
+      "pair_id": "pair_20261114_0111",
+      "topic": "quiz:geography",
+      "variant": "A",
+      "hook": "Are you smarter than most people?",
+      "family": "question",
+      "family_other": "identity",
+      "hook_a": "Are you smarter than most people?",
+      "hook_b": "Most adults cannot get all of these right.",
+      "video_id": null,
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-14T01:24:26",
+      "pair_id": "pair_20261114_0112",
+      "topic": "Would You Rather - Build Your $15,000,000 HOUSE 🏡🤑💸🤖 Futuristic Luxury House | Daily Quiz",
+      "variant": "A",
+      "hook": "Choose Your $15M House?",
+      "family": "question",
+      "family_other": "question",
+      "hook_a": "Choose Your $15M House?",
+      "hook_b": "3 Would You Rather Build Your facts they never teach you",
+      "video_id": "HIPCG_-B6is",
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-14T01:24:44",
+      "pair_id": "pair_20261114_0113",
+      "topic": "11 Adults vs General Knowledge Quiz",
+      "variant": "B",
+      "hook": "Why does nobody explain 11 Adults vs General like this?",
+      "family": "question",
+      "family_other": "question",
+      "hook_a": "The Quiz with Balls is an American game show that premiered",
+      "hook_b": "Why does nobody explain 11 Adults vs General like this?",
+      "video_id": null,
+      "engagement": null,
+      "views": null
+    },
+    {
+      "ts": "2026-11-14T01:24:54",
+      "pair_id": "pair_20261114_0114",
+      "topic": "Islamic Sawal Jawab | Islamic Quiz | Deeni Maloomat | Urdu Islamic Questions",
+      "variant": "A",
+      "hook": "Only 1% can pass this Islamic quiz!",
+      "family": "number",
+      "family_other": "number",
+      "hook_a": "Only 1% can pass this Islamic quiz!",
+      "hook_b": "Nobody warned you about Islamic Sawal Jawab Islamic",
+      "video_id": null,
+      "engagement": null,
+      "views": null
     }
   ],
-  "fetched": "2026-11-14T01:23:30"
+  "fetched": "2026-11-14T07:57:41"
 }

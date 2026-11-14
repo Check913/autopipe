@@ -1,113 +1,113 @@
 {
-  "fetched": "2026-11-14T01:23:30",
+  "fetched": "2026-11-14T07:57:25",
   "geo": "",
   "topics": [
     {
-      "query": "virginia vs maryland",
-      "traffic": 2000.0,
+      "query": "under-19 ind vs pak live score",
+      "traffic": 100.0,
       "rise": 10.0,
       "saturation_views": 0.0,
       "momentum": 33.2193
     },
     {
-      "query": "northern arizona basketball",
-      "traffic": 1000.0,
-      "rise": 10.0,
-      "saturation_views": 2099.0,
-      "momentum": 4.3028
-    },
-    {
-      "query": "peoria bomb threat",
-      "traffic": 500.0,
-      "rise": 10.0,
-      "saturation_views": 6167.0,
-      "momentum": 3.5832
-    },
-    {
-      "query": "white house press conference",
-      "traffic": 500.0,
-      "rise": 10.0,
-      "saturation_views": 27765.0,
-      "momentum": 2.9039
-    },
-    {
-      "query": "oklahoma state wrestling",
-      "traffic": 500.0,
-      "rise": 10.0,
-      "saturation_views": 125311.0,
-      "momentum": 2.4402
-    },
-    {
-      "query": "andrew nembhard",
-      "traffic": 500.0,
-      "rise": 10.0,
-      "saturation_views": 243953.0,
-      "momentum": 2.2793
-    },
-    {
-      "query": "amy acker",
+      "query": "chris duncan",
       "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 249765.0,
-      "momentum": 2.274
+      "saturation_views": 0.0,
+      "momentum": 33.2193
     },
     {
-      "query": "rangers vs canucks",
+      "query": "santa cruz beach closures",
       "traffic": 1000.0,
       "rise": 10.0,
-      "saturation_views": 297964.0,
-      "momentum": 2.235
+      "saturation_views": 74229.0,
+      "momentum": 2.5836
     },
     {
-      "query": "charlotte flair",
-      "traffic": 500.0,
+      "query": "los angeles weather",
+      "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 454629.0,
-      "momentum": 2.147
+      "saturation_views": 229283.0,
+      "momentum": 2.2934
     },
     {
-      "query": "avengers",
-      "traffic": 2000.0,
+      "query": "nathan fillion",
+      "traffic": 100.0,
       "rise": 10.0,
-      "saturation_views": 88305933.0,
-      "momentum": 1.4397
+      "saturation_views": 670457.0,
+      "momentum": 2.0719
+    },
+    {
+      "query": "tahiti",
+      "traffic": 100.0,
+      "rise": 10.0,
+      "saturation_views": 1642747.0,
+      "momentum": 1.9173
+    },
+    {
+      "query": "gen x",
+      "traffic": 100.0,
+      "rise": 10.0,
+      "saturation_views": 6343560.0,
+      "momentum": 1.7234
+    },
+    {
+      "query": "monica barbaro",
+      "traffic": 100.0,
+      "rise": 10.0,
+      "saturation_views": 11340740.0,
+      "momentum": 1.6516
+    },
+    {
+      "query": "harrison ford",
+      "traffic": 100.0,
+      "rise": 10.0,
+      "saturation_views": 30407183.0,
+      "momentum": 1.5425
+    },
+    {
+      "query": "jennifer aniston",
+      "traffic": 200.0,
+      "rise": 1.0,
+      "saturation_views": 11771348.0,
+      "momentum": 0.1647
     }
   ],
   "top": [
     {
-      "query": "virginia vs maryland",
-      "traffic": 2000.0,
+      "query": "under-19 ind vs pak live score",
+      "traffic": 100.0,
       "rise": 10.0,
       "saturation_views": 0.0,
       "momentum": 33.2193
     },
     {
-      "query": "northern arizona basketball",
+      "query": "chris duncan",
+      "traffic": 200.0,
+      "rise": 10.0,
+      "saturation_views": 0.0,
+      "momentum": 33.2193
+    },
+    {
+      "query": "santa cruz beach closures",
       "traffic": 1000.0,
       "rise": 10.0,
-      "saturation_views": 2099.0,
-      "momentum": 4.3028
+      "saturation_views": 74229.0,
+      "momentum": 2.5836
     },
     {
-      "query": "peoria bomb threat",
-      "traffic": 500.0,
+      "query": "los angeles weather",
+      "traffic": 200.0,
       "rise": 10.0,
-      "saturation_views": 6167.0,
-      "momentum": 3.5832
+      "saturation_views": 229283.0,
+      "momentum": 2.2934
     },
     {
-      "query": "white house press conference",
-      "traffic": 500.0,
+      "query": "nathan fillion",
+      "traffic": 100.0,
       "rise": 10.0,
-      "saturation_views": 27765.0,
-      "momentum": 2.9039
-    },
-    {
-      "query": "oklahoma state wrestling",
-      "traffic": 500.0,
-      "rise": 10.0,
-      "saturation_views": 125311.0,
-      "momentum": 2.4402
+      "saturation_views": 670457.0,
+      "momentum": 2.0719
     }
   ]
 }
