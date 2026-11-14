@@ -230,7 +230,51 @@
       "active": true,
       "source": "post_mortem",
       "created": "2026-11-13T03:36:30.055811+00:00"
+    },
+    {
+      "id": "643713e4dd5b",
+      "arm": "family:statement",
+      "text": "Guess the Movie by Emoji 🎬🍿 Movie Quiz",
+      "norm": "guess the movie by emoji 🎬🍿 movie quiz",
+      "wins": 0,
+      "losses": 0,
+      "active": true,
+      "source": "scrape",
+      "created": "2026-11-14T01:23:36.667755+00:00"
+    },
+    {
+      "id": "979ec7f0d8be",
+      "arm": "family:number",
+      "text": "Guess and Learn ALL 49 FLAGS Of ASIA | Flag Quiz",
+      "norm": "guess and learn all 49 flags of asia | flag quiz",
+      "wins": 0,
+      "losses": 0,
+      "active": true,
+      "source": "scrape",
+      "created": "2026-11-14T01:23:36.667788+00:00"
+    },
+    {
+      "id": "0659f9e21b04",
+      "arm": "family:statement",
+      "text": "Can You Guess The Country Without Vowels? 🌎🤔 Country Quiz",
+      "norm": "can you guess the country without vowels? 🌎🤔 country quiz",
+      "wins": 0,
+      "losses": 0,
+      "active": true,
+      "source": "scrape",
+      "created": "2026-11-14T01:23:36.667819+00:00"
+    },
+    {
+      "id": "371f6625f5ca",
+      "arm": "family:question",
+      "text": "Can You Answer These General Knowledge Quiz About Philippines 🇵🇭?",
+      "norm": "can you answer these general knowledge quiz about philippines 🇵🇭?",
+      "wins": 0,
+      "losses": 0,
+      "active": true,
+      "source": "scrape",
+      "created": "2026-11-14T01:23:36.667839+00:00"
     }
   ],
-  "updated": "2026-11-13T19:45:48.850098+00:00"
+  "updated": "2026-11-14T01:23:36.667841+00:00"
 }

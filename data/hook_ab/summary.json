@@ -1,6 +1,6 @@
 {
   "status": "ok",
-  "pairs": 109,
+  "pairs": 110,
   "joined": 12,
   "variants": {
     "A": {
@@ -16,7 +16,7 @@
       }
     },
     "B": {
-      "assigned": 39,
+      "assigned": 40,
       "measured": 5,
       "mean_engagement": 70.4,
       "mean_views": 383,
@@ -24,7 +24,7 @@
         "question": 15,
         "number": 10,
         "negation": 3,
-        "identity": 11
+        "identity": 12
       }
     }
   },
@@ -1554,7 +1554,21 @@
       "video_id": "UFn-R-f9Cdw",
       "engagement": null,
       "views": null
+    },
+    {
+      "ts": "2026-11-13T19:46:09",
+      "pair_id": "pair_20261113_0110",
+      "topic": "quiz:general",
+      "variant": "B",
+      "hook": "If you miss three, you are officially average.",
+      "family": "identity",
+      "family_other": "question",
+      "hook_a": "Are you smarter than most people?",
+      "hook_b": "If you miss three, you are officially average.",
+      "video_id": "IxZF6LWT5hI",
+      "engagement": null,
+      "views": null
     }
   ],
-  "fetched": "2026-11-13T19:45:48"
+  "fetched": "2026-11-14T01:23:30"
 }

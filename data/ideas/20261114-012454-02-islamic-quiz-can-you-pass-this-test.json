@@ -1,0 +1,73 @@
+{
+  "title": "Islamic Quiz: Can YOU Pass This Test?",
+  "hook": "Only 1% can pass this Islamic quiz!",
+  "script": "Only 1% can pass this Islamic quiz! What's the holiest city in Islam? (Pause) Next, who was the last prophet? (Pause) Finally, what's the fasting month called? (Pause) Answers: Mecca, Muhammad, Ramadan. Can you beat the 1%?",
+  "comment": "How many did you get right? Share your score!",
+  "description": "Test your knowledge with these rapid-fire Islamic trivia questions! Only a true trivia master can get all three. Challenge yourself now!\n#IslamicQuiz #TriviaTime #BrainTeaser",
+  "tags": [
+    "quiz",
+    "trivia",
+    "islamic quiz",
+    "general knowledge",
+    "brain teaser",
+    "quiz time",
+    "test your knowledge",
+    "only 1 percent",
+    "did you know",
+    "islam",
+    "mecca",
+    "ramadan"
+  ],
+  "density": 4,
+  "duration_format": "short",
+  "duration_target": 13,
+  "duration_range": [
+    12,
+    18
+  ],
+  "source_topic": "Islamic Sawal Jawab | Islamic Quiz | Deeni Maloomat | Urdu Islamic Questions",
+  "generator": "llm:gemini-2.5-flash",
+  "score": 39.2,
+  "pair_id": "pair_20261114_0114",
+  "hook_variant": "A",
+  "hook_variants": [
+    {
+      "variant": "A",
+      "hook": "Only 1% can pass this Islamic quiz!",
+      "family": "number"
+    },
+    {
+      "variant": "B",
+      "hook": "Nobody warned you about Islamic Sawal Jawab Islamic",
+      "family": "negation"
+    }
+  ],
+  "compliance": {
+    "mode": "block",
+    "ok": true,
+    "reasons": [],
+    "checked_at": "2026-11-14T01:24:54",
+    "originality": {
+      "max_jaccard": 0.4615,
+      "max_script_jaccard": 0.2143,
+      "worst_match_src": "20261108-022105-01-90-fail-this-common-sense-test-can-you.json",
+      "threshold": 0.6,
+      "threshold_script": 0.65,
+      "corpus_size": 118
+    },
+    "fatigue": {
+      "hook_family": "number",
+      "consecutive_same_family": 0,
+      "max_consecutive": 3,
+      "fatigued": false
+    },
+    "policy": {
+      "violations": []
+    },
+    "ai_disclosure": {
+      "contains_synthetic_media": false,
+      "configured": true
+    }
+  },
+  "id": "20261114-012454-02"
+}

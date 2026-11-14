@@ -5797,5 +5797,135 @@
         20000.0
       ]
     ]
+  },
+  "rangers vs canucks": {
+    "traffic": 1000.0,
+    "first_seen": "2026-11-14T01:23:21",
+    "last_seen": "2026-11-14T01:23:21",
+    "delta": 1000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-14T01:23:21",
+        1000.0
+      ]
+    ]
+  },
+  "charlotte flair": {
+    "traffic": 500.0,
+    "first_seen": "2026-11-14T01:23:21",
+    "last_seen": "2026-11-14T01:23:21",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-14T01:23:21",
+        500.0
+      ]
+    ]
+  },
+  "white house press conference": {
+    "traffic": 500.0,
+    "first_seen": "2026-11-14T01:23:21",
+    "last_seen": "2026-11-14T01:23:21",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-14T01:23:21",
+        500.0
+      ]
+    ]
+  },
+  "northern arizona basketball": {
+    "traffic": 1000.0,
+    "first_seen": "2026-11-14T01:23:21",
+    "last_seen": "2026-11-14T01:23:21",
+    "delta": 1000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-14T01:23:21",
+        1000.0
+      ]
+    ]
+  },
+  "amy acker": {
+    "traffic": 200.0,
+    "first_seen": "2026-11-14T01:23:21",
+    "last_seen": "2026-11-14T01:23:21",
+    "delta": 200.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-14T01:23:21",
+        200.0
+      ]
+    ]
+  },
+  "virginia vs maryland": {
+    "traffic": 2000.0,
+    "first_seen": "2026-11-14T01:23:21",
+    "last_seen": "2026-11-14T01:23:21",
+    "delta": 2000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-14T01:23:21",
+        2000.0
+      ]
+    ]
+  },
+  "oklahoma state wrestling": {
+    "traffic": 500.0,
+    "first_seen": "2026-11-14T01:23:21",
+    "last_seen": "2026-11-14T01:23:21",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-14T01:23:21",
+        500.0
+      ]
+    ]
+  },
+  "peoria bomb threat": {
+    "traffic": 500.0,
+    "first_seen": "2026-11-14T01:23:21",
+    "last_seen": "2026-11-14T01:23:21",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-14T01:23:21",
+        500.0
+      ]
+    ]
+  },
+  "andrew nembhard": {
+    "traffic": 500.0,
+    "first_seen": "2026-11-14T01:23:21",
+    "last_seen": "2026-11-14T01:23:21",
+    "delta": 500.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-14T01:23:21",
+        500.0
+      ]
+    ]
+  },
+  "avengers": {
+    "traffic": 2000.0,
+    "first_seen": "2026-11-14T01:23:21",
+    "last_seen": "2026-11-14T01:23:21",
+    "delta": 2000.0,
+    "rise": 10.0,
+    "history": [
+      [
+        "2026-11-14T01:23:21",
+        2000.0
+      ]
+    ]
   }
 }
